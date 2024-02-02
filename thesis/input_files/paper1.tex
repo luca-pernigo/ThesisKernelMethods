@@ -1,0 +1,81 @@
+% Some commands used in this file
+
+\section{\href{https://arxiv.org/abs/1605.09522}{Kernel Mean Embedding of Distributions: A Review and Beyond}}
+From this first paper \cite{Muandet_2017}, the notation and terms used in the theory of Reproducing Kernel Hilbert Spaces are summarized.
+\\
+Many algorithms use the inner product as similarity measure between data instances $x, x' \in \mathcal{X}$. However, this inner product spans only the class of linear similarity measures. 
+\\
+The idea behind kernel methods is to apply a non-linear transformation $\phi$ to the data $x$ 
+in order to get a more powerful non linear similarity measure.
+\begin{align*}
+\phi(x):\mathcal{X} &\longrightarrow \mathcal{F}
+    \\
+    x&\mapsto \phi(x)
+\end{align*}
+
+
+Then we take the inner product in the high dimensional space $\mathcal{F}$ mapped by $\phi(x)$.
+\\
+\begin{align*}
+k(x,x'):=&\langle \phi(x), \phi(x') \rangle_{\mathcal{F}}
+\end{align*}
+\\
+$\phi(x)$ is referred as feature map while $k$ as kernel function.
+\\
+Therefore, we can kernelize any algorithm involving a dot product by substituting $\langle x, x' \rangle_{\mathcal{X}}$ with $\langle \phi(x), \phi(x') \rangle_{\mathcal{F}}$
+\\
+One would expect constructing the feature maps explicitly and then evaluate their inner product in $\mathcal{F}$ to be computationally expensive, and indeed it is. However, we do not have to explicitly perform such calculations. This is because of the existence of the kernel trick.
+To illustrate the idea behind the kernel trick consider the following example. 
+\\
+Suppose $x \in \mathbb{R}^2$ and assume to select $\phi(x)=(x_{1}^{2},x_{2}^{2},\sqrt{2}x_{1}x_{2})$, then the inner product in the feature space is $x_{1}^{2}x_{1}^{'2},x_{2}^{2}x_{2}^{'2}+2x_{1}x_{2}x'_{1}x'_{2}$.
+Notice that this is the same of $\langle \phi(x), \phi(x') \rangle$; thus the kernel trick consists of just using $k(x,x')=:(x^Tx')^2$.
+
+
+
+\subsection{RKHS}
+Following are the definitions that make up the basis for the theory of kernel methods.
+
+
+\begin{definition}
+    A sequence $\{v_n\}_{n=1}^{\infty}$ of elements of a normed space $\mathcal{V}$ is a Cauchy sequence if for every $\epsilon>0$, there exist $N=N(\epsilon) \in \mathbf{N}$ such that $\|v_n-v_m\|_{\mathcal{V}}<\epsilon \ \ \forall m,n\geq N$  
+\end{definition}
+
+
+\begin{definition}
+    A complete metric space is a metric space in which every Cauchy sequence is convergent.
+\end{definition}
+
+
+\begin{definition}
+    A Hilbert space is a vector space $\mathcal{H}$ with an inner product $\langle f, g \rangle$ such that the norm defined by $\|f\|=\sqrt{\langle f, f \rangle}$
+turns $\mathcal{H}$ into a complete metric space.
+\end{definition}
+
+\begin{definition}
+    RKHS.
+    A Reproducing Kernel Hilbert Space is an Hilbert space with the evaluation functionals $\mathcal{F}_{x}(f):=f(x)$ bounded, i.e. $\forall x \in \mathcal{X}$ there exists some $C>0$ such that $\| \mathcal{F}_{x}(f)\|=\|f(x)\| \leq C \|f\|_{\mathcal{H}} \ \forall f \in \mathcal{H}$
+\end{definition}
+
+
+\begin{theorem}
+    Riesz Representation. If $A : \mathcal{H} \rightarrow \mathbf{R}$ is a bounded linear operator in a Hilbert space $\mathcal{H}$ , there exists some $g_{A} \in \mathcal{H}$ such that $A(f) = \langle f,g_A\rangle_\mathcal{H}, \ \forall f \in \mathcal{H}$.
+\end{theorem}
+
+
+The Riesz representation theorem results in the following proposition for RKHS.
+\begin{proposition}
+For each $x \in \mathcal{X}$ there exists a function $k_{x} \in \mathcal{H}$ such that $\mathcal{F}_{x}(f)=\langle k_{x}, f\rangle_{\mathcal{H}}=f(x)$    
+\end{proposition}
+
+The function $k_{x}$ is the reproducing kernel for the point $x$.
+Furthermore, note that $k_{x}$ is itself a function lying on $\mathcal{X}$
+
+\begin{align*}
+    k_{x}(y)=\mathcal{F}_{y}(k_{x})=\langle k_{x}, k_{y}\rangle_{\mathcal{H}=\langle \phi(x), \phi(x)\rangle_{\mathcal{H}}}
+\end{align*}
+
+
+
+
+
+

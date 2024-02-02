@@ -1,0 +1,6 @@
+Workplan is to start by considering the performance of kernel herding in generating an empirical distribution of the electricity prices and compare the performance to the methods in \cite{probablistic_electricity_forecast}.
+To do so, with kernel herding we generate samples and as a consequence we also have an empirical distribution of electricity prices. Then we take the quantiles from 0.01 to 0.99 and finally we evaluate the distribution forecast through the Continous Ranked Probability Score CRPS.
+\\
+In this study, the data from the \href{https://www.epexspot.com/en/market-data?market_area=CH&trading_date=2023-12-11&delivery_date=2023-12-12&underlying_year=&modality=Auction&sub_modality=DayAhead&technology=&product=60&data_mode=table&period=&production_period=}{EPX} martket will be used; data is retrieved daily from the data provider through an automatic python script.
+\\
+Depending on the results of kernel herding, we may also consider how kernelized quantile regression behaves in the same setting. Next, additional kernel methods applied to problems concerning energy prices and related subjects could be taken into account.

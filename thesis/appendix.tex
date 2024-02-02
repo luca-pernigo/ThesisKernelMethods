@@ -1,0 +1,34 @@
+\chapter{Appendix}
+\section{Feature Map Normalization}\label{appendix:new_feature}
+\begin{proof}
+\begin{align*}
+    \|
+    \phi^{new}(x)\|_{\mathcal{H}}^{2} &= \|\frac{\phi(x)}{\|\phi(x)\|_{\mathcal{H}}}
+    \|_{\mathcal{H}}^{2}
+    \\
+    &=
+    \|
+    \frac{\phi(x)}
+    {\sqrt{k(x,x)}}
+    \|_{\mathcal{H}}^{2}
+    \\
+    &=
+    \langle
+    \frac{\phi(x)}
+    {\sqrt{k(x,x)}}
+    ,
+    \frac{\phi(x)}
+    {\sqrt{k(x,x)}}
+    \rangle_{\mathcal{H}}
+    \\
+    &=
+    \frac{1}{\sqrt{k(x,x)^{2}}}
+    \langle
+    \phi(x)
+    ,
+    \phi(x)
+    \rangle_{\mathcal{H}}
+    \\
+    &=1
+\end{align*}
+\end{proof}

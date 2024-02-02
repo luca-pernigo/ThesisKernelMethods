@@ -1,0 +1,13 @@
+\changetocdepth {2}
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Contents}{iii}{section*.1}%
+\contentsline {chapter}{\chapternumberline {1}Problem Description and Literature Review}{1}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {2}Paper review}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}\href {https://arxiv.org/abs/1605.09522}{Kernel Mean Embedding of Distributions: A Review and Beyond}}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}RKHS}{4}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}\href {http://proceedings.mlr.press/v33/kanagawa14.pdf}{Recovering Distributions from Gaussian RKHS Embeddings}}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}\href {https://arxiv.org/pdf/1203.3472.pdf}{Super-Samples from Kernel Herding}}{6}{section.2.3}%
+\contentsline {chapter}{\chapternumberline {3}Workplan}{11}{chapter.3}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{13}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{13}{section.A.1}%
+\contentsline {chapter}{Bibliography}{15}{appendix*.2}%

@@ -1,0 +1,48 @@
+\section{\href{http://proceedings.mlr.press/v33/kanagawa14.pdf}{Recovering Distributions from Gaussian RKHS Embeddings}}
+This paper covers the RKHS embedding approach to nonparametric statistical inference \cite{pmlr}.
+The idea here is computing an estimate of the kernel mean in order to obtain an approximation of the underlying distribution of the observed random variable.
+The kernel mean embedding $\mu_{\mathbb{P}}$ of a probability $\mathbb{P}$ corresponds to the feauture map $\phi(x)$ integrated with respect to the $\mathbb{P}$ measure.
+\\
+That is $\mu_{\mathbb{P}}:=\int_{\mathcal{X}}k(x,\cdot)d\mathbb{P}(x)$.
+\\
+Kernel mean embedding serves as a unique representation of $\mathbb{P}$ in the RKHS $\mathcal{H}$. This holds provided  that $\mathcal{H}$ is characteristic. 
+\begin{definition}
+The RKHS $\mathcal{H}$ and the associated kernel k are said characteristic, when the mapping $\mu : \mathbb{P} \rightarrow \mathcal{H}$ is injective.
+\end{definition}
+%Hence, H is characteristic, if for any P,Q ∈ P, we have μP = μQ if and only if P = Q. 
+When the mapping is injective, we have that $\mu_{\mathbb{P}}$ is uniquely associated with $\mathbb{P}$; thus, $\mu_{\mathbb{P}}$ is a unique representation of $\mathbb{P}$ in $\mathcal{H}$. 
+%Characteristic kernels on X = Rd include {Gaussian, Matérn and Laplace}(Sriperumbudur et al., 2010).
+%On the other hand, linear and polynomial kernels are not characteristic.
+\\
+Note that, by the reproducing property of RKHS $\langle f, k(x,\cdot) \rangle=f(x)$ we have:
+\\
+\begin{center}
+    $E_{\mathbb{P}}[f(x)]=\langle f,\mu_{\mathbb{P}} \rangle_{\mathcal{H}}, \ \forall f \in \mathcal{H}$
+\end{center}
+
+\begin{proof}   
+\begin{align*}
+E_{\mathbb{P}}[f(x)]&=\int_{\mathcal{X}} f(x) d\mathbb{P}(x)\\
+&=\int_{\mathcal{X}} \langle f, k(x,\cdot) \rangle_{\mathcal{H}} d\mathbb{P}(x)\\
+&= \sum_{i=1}^{\infty} \langle f, k(x_{i}, \cdot) \rangle_{\mathcal{H}} \mathbb{P}(\mathcal{X}_{i}) \\
+&=\langle f, \sum_{i=1}^{\infty} k(x_{i}, \cdot)\mathbb{P}(\mathcal{X}_{i}) \rangle_{\mathcal{H}}\\
+&=\langle f, \mu_{\mathbb{P}} \rangle_{\mathcal{H}}
+\end{align*}
+\end{proof}
+
+The kernel mean embedding can be employed to estimate the density $p$ at any fixed point $x_{0}$. Letting $\delta_{x_{0}}$ to be the dirac delta function we have:
+\\
+\begin{center}
+$p(x_{0})=\int \delta_{x_{0}}p(x)dx=E_{\mathbb{P}}[\delta_{x_{0}}]$    
+\end{center}
+
+Therefore, the idea is to define an estimator for the expectation of $\delta_{x_{0}}$ through $\mu_{\mathbb{P}}$; this would result in an estimator of $p(x_{0})$.
+\\
+A kernel $k(x_{0},\cdot)$ is used to approximate the delta function, furthermore applying theorem 1 of \cite{pmlr} we have that a consistent estimator of $E_{\mathbb{P}}[k(x_{0}, \cdot)]$ is given by $\sum\limits_{i=1}^{n}w_{i}k(x_{0},x_{i})$
+\\
+When the weigths are all $1/n$ we end up with the standard kernel density estimation.
+\\
+Alternatively,  the optimal weights can be found by minimizing the following problem $ \| \hat{\mu}-\Phi w\|^2$ 
+where $\Phi:\mathbb{R}^{n} \rightarrow \mathcal{H}$.
+%, \alpha \rightarrow \sum\limits_{j=1}^{n}\alpha_{j} \phi(x_{j})$
+\\

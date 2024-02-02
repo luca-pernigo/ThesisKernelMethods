@@ -1,0 +1,56 @@
+\begin{thebibliography}{10}
+
+\bibitem{probablistic_electricity_forecast}
+Ilyas Agakishiev, Wolfgang~Karl Härdle, Karel Kozmik, Milos Kopa, and Alla Petukhina.
+\newblock Multivariate probabilistic forecasting of electricity prices with trading applications.
+\newblock {\em SSRN Electronic Journal}, 01 2023.
+
+\bibitem{bringhurst1996ets}
+Robert Bringhurst.
+\newblock {\em {The Elements of Typographic Style}}.
+\newblock Hartley \& Marks, 1996.
+
+\bibitem{2022nystrom}
+Antoine Chatalic, Nicolas Schreuder, Alessandro Rudi, and Lorenzo Rosasco.
+\newblock Nystr\"om kernel mean embeddings, 2022.
+
+\bibitem{supersamples}
+Yutian Chen, Max Welling, and Alex Smola.
+\newblock Super-samples from kernel herding.
+\newblock 2012.
+
+\bibitem{jebara}
+Tony Jebara and Risi Kondor.
+\newblock Bhattacharyya expected likelihood kernels.
+\newblock volume 2777, pages 57--71, 01 2003.
+
+\bibitem{pmlr}
+Motonobu Kanagawa and Kenji Fukumizu.
+\newblock {\em {Recovering Distributions from Gaussian RKHS Embeddings}}, volume~33 of {\em Proceedings of Machine Learning Research}.
+\newblock PMLR, Reykjavik, Iceland, 22--25 Apr 2014.
+
+\bibitem{Kazashi_2023}
+Yoshihito Kazashi and Fabio Nobile.
+\newblock Density estimation in {RKHS} with application to korobov spaces in high dimensions.
+\newblock {\em {SIAM} Journal on Numerical Analysis}, 61(2):1080--1102, apr 2023.
+
+\bibitem{probablistic_electricity_forecast2}
+Grzegorz Marcjasz, Michał Narajewski, Rafał Weron, and Florian Ziel.
+\newblock Distributional neural networks for electricity price forecasting.
+\newblock {\em Energy Economics}, 125:106843, September 2023.
+
+\bibitem{Muandet_2017}
+Krikamol Muandet, Kenji Fukumizu, Bharath Sriperumbudur, and Bernhard Schölkopf.
+\newblock Kernel mean embedding of distributions: A review and beyond.
+\newblock {\em Foundations and Trends{\textregistered} in Machine Learning}, 10(1-2):1--141, 2017.
+
+\bibitem{multere2023fast}
+Michael Multerer, Paul Schneider, and Rohan Sen.
+\newblock Fast empirical scenarios, 2023.
+
+\bibitem{Scott2015}
+David~W. Scott.
+\newblock {\em Multivariate Density Estimation: Theory, Practice, and Visualization}.
+\newblock Wiley Series in Probability and Statistics. Wiley, 2 edition, 2015.
+
+\end{thebibliography}

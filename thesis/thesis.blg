@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+The style file: plain.bst
+Database file #1: refs.bib
+Warning--empty journal in supersamples
+Warning--empty booktitle in jebara
+Warning--can't use both author and editor fields in pmlr
+You've used 11 entries,
+            2118 wiz_defined-function locations,
+            570 strings with 5925 characters,
+and the built_in function-call counts, 3424 in all, are:
+= -- 314
+> -- 186
+< -- 3
++ -- 73
+- -- 62
+* -- 244
+:= -- 588
+add.period$ -- 32
+call.type$ -- 11
+change.case$ -- 62
+chr.to.int$ -- 0
+cite$ -- 14
+duplicate$ -- 124
+empty$ -- 261
+format.name$ -- 62
+if$ -- 700
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 12
+newline$ -- 56
+num.names$ -- 22
+pop$ -- 79
+preamble$ -- 1
+purify$ -- 53
+quote$ -- 0
+skip$ -- 89
+stack$ -- 0
+substring$ -- 143
+swap$ -- 21
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 38
+warning$ -- 3
+while$ -- 29
+width$ -- 13
+write$ -- 115
+(There were 3 warnings)

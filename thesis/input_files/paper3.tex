@@ -1,0 +1,145 @@
+\section{\href{https://arxiv.org/pdf/1203.3472.pdf}{Super-Samples from Kernel Herding}}
+
+Kernel herding is a deterministic sampling algorithm designed to draw "Super Samples" from probability distributions \cite{supersamples}. The idea of herding, is to generate pseudo-samples that greedily minimize the error betweeen the mean operator and the empirical mean operator resulting from the selected herding points.
+% note the kernel mean embedding lies in a.
+%\\
+
+%Let $x \in \mathcal{X}$, where a general $x$ is a state over the index set $\mathcal{X}$. Note, $\mathcal{X}$ is typically the space of covariates.
+
+%\\
+%Let $\phi:\mathcal{X}\rightarrow \mathcal{H}$ denote a feature map into a Hilbert space $\mathcal{H}$ endowed with inner product $\langle \cdot, \cdot \rangle_{\mathcal{H}}$
+Letting $p(x)$ be a probability distribution, kernel herding is recursively defined as follows:
+\begin{align*}
+x_{t+1} &=\argmax{x\forall \mathcal{X}}\langle w_{t},\phi(x)\rangle 
+\\
+w_{t+1} &= w_{t} + E_{\mathbb{P}}[\phi(x)]-\phi(x_{t+1})    
+\end{align*}
+\\
+$w$ denotes a weight vector that lies in $\mathcal{H}$.
+\\
+Here, by assuming that the inner product between weights and the mean operator is equal to a general functional f evaluated at x, that is $\langle w, \phi(x) \rangle_{\mathcal{H}}=f(x)$.
+We have:
+\begin{align*}
+\langle w, \mu_{\mathbb{P}} \rangle_{\mathcal{H}}
+&= \langle w, \int k(x,\cdot)d\mathbb{P}(x) \rangle_{\mathcal{H}}
+\\
+&= \langle w, \sum\limits_{i=1}^{\infty} k(x_{i},\cdot)\mathbb{P}(\mathcal{X}_{i})\rangle_{\mathcal{H}}
+\\
+&= \sum \limits_{i=1}^{\infty} \langle w, k(x_{i}, \cdot) \rangle_{\mathcal{H}}\mathbb{P}(\mathcal{X}_{i})
+\\
+&= \sum \limits_{i=1}^{\infty}f(x_{i})\mathbb{P}(\mathcal{X}_{i})
+\\
+&=\int f(x) d\mathbb{P}(x)
+\\
+&= \mathbb{E}_{\mathbb{P}} [f(x)]
+\end{align*}
+\\
+Moreover, second assumption of the model is that $\|\phi(x)\|_{\mathcal{H}}=R \quad \forall x \in X$.
+That is the Hilbert space norm of the feature vector is equal to a constant R for all states in the set $\mathcal{X}$.
+\\
+\\
+This can be achieved by taking the new feature vector as $\phi^{new} (x)=\frac{\phi(x)}{\|\phi(x)\|_{\mathcal{H}}}$.
+See \ref{appendix:new_feature} for details.
+\\
+By rewriting the formula for the weights we end up with
+\begin{align*}
+w_{t+1} &= w_{t} + E_{\mathbb{P}}[\phi(x)]-\phi(x_{t+1})
+\\
+&= w_{t-1} + E_{\mathbb{P}}[\phi(x)]+E_{\mathbb{P}}[\phi(x)]-\phi(x_{t+1})-\phi(x_{t})
+\\
+&= w_{t-2} + E_{\mathbb{P}}[\phi(x)]+E_{\mathbb{P}}[\phi(x)]+E_{\mathbb{P}}[\phi(x)]-\phi(x_{t+1})-\phi(x_{t})-\phi(x_{t-1})
+\\
+&\text{Considering $w_{T}$, we have}
+\\
+&
+w_{T}=w_{0}+TE_{\mathbb{P}}[\phi(x)]-\sum\limits_{t=1}^{T}\phi(x_{t})
+\end{align*}
+Note that
+$E_{\mathbb{P}}[\phi(x)]=\int_{\mathcal{X}}\phi(x)d\mathbb{P}(x)$ which corresponds to the definition of $\mu_\mathbb{P}$. 
+That is $\mu$ is the mean operator associated with the distribution $\mathbb{P}$; it lies in $\mathcal{H}$.
+\\
+Thus,
+\begin{align*}
+   w_{T}= w_{0}+T\mu_{\mathbb{P}}-\sum\limits_{t=1}^{T}\phi(x_{t})
+\end{align*}
+\\
+Notice we do not have to compute $\mu_{\mathbb{P}}$  explicitly, the terms involving $\mu_{\mathbb  {P}}$ will be computed by applying the kernel trick.
+\\
+% In addition we can construct an estimate $\hat{\mu}=:\frac{1}{N}\sum \limits_{i=1}^{N} k(x_{i},\cdot)$.
+\\
+Now we have everything we need in order to reformulate the original problem in a way such that it depends just on the states x.
+Plug the formula for the weights in the formula for the $x_{t}$ and use the kernel trick; we end up with
+\\
+\begin{align*}
+    x_{T+1} &=\argmax{x\forall \mathcal{X}}\langle w_{0}+T\mu_{\mathbb{P}}-\sum\limits_{t=1}^{T}\phi(x_{t}),\phi(x)\rangle_{\mathcal{H}} \\
+&=\argmax{x\forall \mathcal{X}}\langle w_{0},\phi(x)\rangle_{\mathcal{H}}
++\langle T\mu_{\mathbb{P}},\phi(x)\rangle_{\mathcal{H}}
+-\langle \sum\limits_{t=1}^{T}\phi(x_{t}),\phi(x)\rangle_{\mathcal{H}}
+\\
+&=\argmax{x\forall \mathcal{X}}\langle w_{0},\phi(x)\rangle_{\mathcal{H}}
++T\langle \mu_{\mathbb{P}},\phi(x)\rangle_{\mathcal{H}}
+- \sum\limits_{t=1}^{T}k(x_{t}, x)
+\end{align*}
+\\
+Notice $\langle \mu_{\mathbb{P}},\phi(x)\rangle_{\mathcal{H}}$ can be rewritten in the following way
+\\
+\begin{align*}
+\langle \mu_{\mathbb{P}},\phi(x)\rangle_{\mathcal{H}}&=
+\langle \int_{\mathcal{X'}}\phi(x')d\mathbb{P}(x'),\phi(x)\rangle_{\mathcal{H}}
+\\
+&=
+\langle  \sum\limits_{i=1}^{\infty}\phi(x'_{i})\mathbb{P}(\mathcal{X'}_{i}),\phi(x)\rangle_{\mathcal{H}}
+\\
+&=
+\sum\limits_{i=1}^{\infty}\langle \phi(x'_{i}),\phi(x)\rangle_{\mathcal{H}} \mathbb{P}(\mathcal{X'}_{i})
+\\
+&=
+\sum\limits_{i=1}^{\infty}k(x'_{i},x) \mathbb{P}(\mathcal{X'}_{i})
+\\
+&=
+\int_{\mathcal{X'}}k(x',x)d\mathbb{P}(x')
+\\
+&=
+E_{\mathbb{P}}[k(x',x)]
+\end{align*}
+\\
+% Note the introduction of $x'$ is the same as as $x$ it is just notation.
+\\
+Furthermore, by initializing $w_{0}=\mu_{\mathbb{P}}$ we end up with the following function to be optimized, i.e.
+\\
+\begin{align*}
+x_{T+1}&=\argmax{x\forall \mathcal{X}}\langle w_{0},\phi(x)\rangle +T\langle \mu_{\mathbb{P}},\phi(x)\rangle- \sum\limits_{t=1}^{T}k(x_{t}, x)    
+\\
+&=\argmax{x\forall \mathcal{X}} (T+1)E_{\mathbb{P}}[k(x',x)]- \sum\limits_{t=1}^{T}k(x_{t}, x)    
+\end{align*}
+\\ 
+Now consider the error term between the mean kernel operator and its estimation through herding samples
+\\
+\begin{align*}
+\varepsilon_{T+1}&=\| \mu_{\mathbb{P}} -\frac{1}{T+1}\sum\limits_{i=1}^{T+1} \phi(x_{t})\|_{\mathcal{H}}^{2}
+\\
+&=\mathbb{E}_{x,x' \sim \mathbb{P}} [k(x',x)] - \frac{2}{T+1}\sum \limits_{t=1}^{T+1} \mathbb{E}_{x \sim \mathbb{P}} [k(x,x_{t})] +\frac{1}{(T+1)^2}\sum \limits_{t,t'=1}^{T+1} k(x_{t}, x_{t'})
+\\
+&=
+\mathbb{E}_{x,x' \sim \mathbb{P}} [k(x',x)] - \frac{2}{T+1}\sum \limits_{t=1}^{T+1} \mathbb{E}_{x \sim \mathbb{P}} [k(x,x_{t})] +\frac{1}{(T+1)^2}\sum \limits_{\substack{
+t=1\\ t=t'}}^{T+1} k(x_{t}, x_{t'})+
+\\
+&\hspace{0.5cm}
++\frac{2}{(T+1)^2}\sum \limits_{\substack{
+t=1\\ t\neq t'}}^{T+1} k(x_{t}, x_{t'})
+\\
+\end{align*}
+So $\varepsilon_{T+1}$ depends on $x_{T+1}$ only through $-\frac{2}{T+1} \mathbb{E}_{x \sim \mathbb{P}} [k(x,x_{T+1})]+
+\frac{2}{(T+1)^2} \sum \limits_{t=1}^{T}k(x_{t},x_{T+1})
+$
+The term $k(x_{T+1},x_{T+1})$ is not included, because by assumption it is equal to the constant R.
+\\
+Recognize that this term is the negative of the objective function maximized with respect to x. So the sample $x_{T+1}$ minimizes the error at time step $T+1$, i.e. $\varepsilon_{T+1}$ 
+%Notice that for many kernels, explicit expressions for ${E}_{x' \sim \mathbb{P}} [k(x,x')]$ have been obtained, see \cite{jebara}.
+\\
+During the iterative step of kernel herding we maximize the negative of this quantity, thus we are minimizing the error greedily. In the sense that at each iteration we choose the x that minimizes our current error; however this does not guarantee that the samples states are jointly optimal.
+\\
+Intuitively, at each iteration, herding searches for a new sample to add to the pool; it is attracted to the regions where p is high and pushed away from regions where samples have already been selected.
+\\
+% At each iteration, this algorithm searches for a new datapoint to add to the set of supersamples. After that, kernel mean embedding using the supersamples can be computed.
+% Additionally, note that the kernel herding algorithm can be used to generate samples from the learned distribution that are more informative then i.i.d. random samples.

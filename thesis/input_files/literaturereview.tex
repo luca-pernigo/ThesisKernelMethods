@@ -1,0 +1,18 @@
+
+%INTRO KERNEL METHODS E ENERGY PRICE MODELLING
+
+Kernel methods are a class of algorithms for patter analysis.
+With kernel methods we are able to apply linear methods with predictors in a high dimensional space, without having to explicitly evaluate the involved dot products of the features.
+In this thesis work I will address the performance of kernel methods in the context of probabilistic forecasting; the area of application will be the electricity market. 
+Probabilistic forecasting may be useful to power producers, traders and consumers in order to improve their decision making process and managing risk(VaR). This is because probabilistic forecast enables them to simulate scenarios and carry out stress tests.
+
+
+%SPIEGO UN PO' I PAPER CHE HO FATTO PASSARE VELOCEMENTE 
+This problem has been already addressed in \cite{probablistic_electricity_forecast} and \cite{probablistic_electricity_forecast2}. 
+These papers surveyed the performance of neural network architectures against simpler approaches like quantile regression and data fitting to Johnson distribution. Their conclusion is that distributional NN perform a little worse than quantile regression but the former has smaller computational cost; that is because the quantile regression is run for every quantile from 0.01 to 0.99.
+Nevertheless kernel methods received very little attention in this specific setting.
+\\
+Kernel methods considered are kernel mean embedding \cite{pmlr}, \cite{Muandet_2017} and kernel herding \cite{supersamples}. Particularly extending the idea of \cite{2022nystrom}, where the Nyström approximation is employed in computing the kernel mean embedding, experiments with the Pivoted Cholesky decomposition will be performed.
+\\
+In section 2, three papers that lay the basis for this thesis’ work are summarized.
+\\
