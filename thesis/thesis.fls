@@ -1287,6 +1287,10 @@ INPUT input_files/workplan.tex
 INPUT ./input_files/workplan.tex
 INPUT ./input_files/workplan.tex
 INPUT input_files/workplan.tex
+INPUT ./input_files/data_exploratory.tex
+INPUT input_files/data_exploratory.tex
+INPUT ./input_files/data_exploratory.tex
+INPUT input_files/data_exploratory.tex
 INPUT ./appendix.tex
 INPUT ./appendix.tex
 INPUT ./appendix.tex

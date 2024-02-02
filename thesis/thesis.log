@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  2 FEB 2024 10:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  2 FEB 2024 18:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -962,7 +962,7 @@ Package hyperref Info: Link coloring ON on input line 92.
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
-<USIlogo.pdf, id=48, 1204.5pt x 1204.5pt>
+<USIlogo.pdf, id=52, 1204.5pt x 1204.5pt>
 File: USIlogo.pdf Graphic file (type pdf)
 <use USIlogo.pdf>
 Package pdftex.def Info: USIlogo.pdf  used on input line 102.
@@ -1130,42 +1130,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--128
 
 [8] [9] [10
 
-] (./input_files/workplan.tex) (./appendix.tex [11] [12
+] (./input_files/workplan.tex) [11] [12
 
-]) [13] [14
+] (./input_files/data_exploratory.tex) (./appendix.tex [13] [14
+
+]) [15] [16
 
 ] (./thesis.bbl
 bibitemlist
 LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 45.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
-) [15
+) [17
 
 ])
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- [16]
+ [18]
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
  (./thesis.aux)
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6B8F88C7643E1AD38A161B950FDBC792;1931.
+(rerunfilecheck)             Checksum: F13D3F481E92B9D3F4D472C64B93383F;2129.
  ) 
 Here is how much of TeX's memory you used:
- 22167 strings out of 476025
- 348075 string characters out of 5790017
+ 22177 strings out of 476025
+ 348277 string characters out of 5790017
  1869388 words of memory out of 5000000
- 41820 multiletter control sequences out of 15000+600000
+ 41823 multiletter control sequences out of 15000+600000
  559325 words of font info for 332 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,14n,125p,1081b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (22 pages, 238595 bytes).
+Output written on thesis.pdf (24 pages, 239697 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 86110 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 310 PDF objects out of 1000 (max. 8388607)
+ 248 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 86118 words of extra memory for PDF output out of 89155 (max. 10000000)
 
