@@ -1,7 +1,7 @@
 # function to compute pinball score
 
 from sklearn.metrics import mean_pinball_loss
-
+import numpy as np
 
 
 def pinball(tau, Yt_pred, Yt):
@@ -20,6 +20,11 @@ def CRPS(Y_pred_test, Y_test):
     Y_test= observed Y for t in test:=[T, T']
     Y_pred_test=predicted for Y_test
     """
+    # pinball requires input to be passed as np([[]])
+    Y_pred_test=np.array([Y_pred_test])
+    Y_test=np.array([Y_test])
+
+
     CRPS=0
     # for every t in test
     for t in range(len(Y_test)):
@@ -28,7 +33,7 @@ def CRPS(Y_pred_test, Y_test):
             # discrete approximation of CPRS
             CRPS+=pinball(tau/100, Y_pred_test[t], Y_test[t])
     
-    CRPS/=len(Y_test)
+    CRPS/=Y_test.size
 
     return CRPS
 

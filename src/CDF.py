@@ -5,6 +5,9 @@ def cdf_funct(x):
 
 
 def inv_cdf_funct(y,x):
+    # x has to be in format np([])
+    x=x.reshape(x.size,)
+
     sorted_x_axis=np.sort(x)
     idx_pos= y*float(len(sorted_x_axis))
     # print(idx_pos)
