@@ -1,6 +1,6 @@
 import numpy as np
 def cdf_funct(x):
-    ans=np.arange(len(x)) / float(len(x))
+    ans=np.arange(len(x)) / float(len(x)-1)
     return ans
 
 
