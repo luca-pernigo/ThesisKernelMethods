@@ -18,7 +18,7 @@ def beta_rat_polyfit(x, y, order):
 def polyfit_evaluate(x, b):
     m=b.size
     x_vec=np.ones(math.ceil(m/2))
-    print(x_vec.size)
+
     for i in range(len(x_vec)):
         x_vec[i]=x**i
 
