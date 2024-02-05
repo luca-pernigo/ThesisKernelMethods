@@ -1,9 +1,11 @@
 TODO:
 
-- Make polyfit for every desired order
-- Consider spline instead of polynomial so that we mitigate oscillations ==> results are reasonable
+- Clean Elaboration data code
 - Explain how data have been retrieved, explain it in data and exploratory analysis chapter
 - Explain upon which conditions KME and KDE are the same and when they differ
 
 
 DONE:
+- Make polyfit for every desired order
+- python code in src all lowercase for convention
+- Consider spline instead of polynomial so that we mitigate oscillations ==> results are reasonable
