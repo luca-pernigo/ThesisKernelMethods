@@ -1,7 +1,7 @@
 from sklearn.metrics.pairwise import pairwise_distances
 import numpy as np
-from src.PivCholesky import piv_chol
-from src.Gramian import eval_kernel, gram
+from src.piv_cholesky import piv_chol
+from src.gramian import eval_kernel, gram
 import FMCA
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
