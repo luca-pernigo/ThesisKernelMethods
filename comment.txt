@@ -1,1 +1,0 @@
-Per fare kde f(x)=1/n summation of k(x,Xi) dove Xi sono le colonne della matrice di dati. ogni x per cui approssimiamo f(x) si trova in R^24. La mia idea era creare una griglia di dimensione 24 e per ogni punto della griglia calcolare f(x). Il risultato f(x) sarebbe in teoria l'approssimazione della densità giornaliera, una densità 24 dimensionale. 
