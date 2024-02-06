@@ -48,7 +48,14 @@ def beta_rat_polyfit(x, y, order):
     for i in range(order):
         A[:,order+i+1]=-x**(i+1)*y
 
-    b=np.linalg.inv(A.T@A)@A.T@y
+    # b=np.linalg.inv(A.T@A)@A.T@y
+    
+    # solve with QR decomposition
+    Q, R = np.linalg.qr(A)
+    p = np.dot(Q.T, y)
+    b=np.dot(np.linalg.inv(R), p)
+
+
     return b
 
 

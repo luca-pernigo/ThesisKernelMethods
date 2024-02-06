@@ -1,8 +1,11 @@
 TODO:
 
+- Risolvere sistema rational polynomial con QR
 - Clean Elaboration data code
 - Explain how data have been retrieved, explain it in data and exploratory analysis chapter
 - Explain upon which conditions KME and KDE are the same and when they differ
+- in this paper "Nyström Kernel Mean Embeddings" they use Nyström approximation to reduce computations,
+  thus try pivoted cholesky to see how it behaves. People have considered pivoted cholesky but have
 
 
 DONE:
