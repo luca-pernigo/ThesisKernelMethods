@@ -15,4 +15,4 @@ def mmd(x,y, kernel_type, kernel_prm):
 
     mmd2=A-2*B+C
 
-    return mmd2
+    return np.sqrt(mmd2)

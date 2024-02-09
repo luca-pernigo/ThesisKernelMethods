@@ -2,6 +2,7 @@ import numpy as np
 import math
 from src.cdf import cdf_funct
 from src.miscellaneous import find
+from scipy.optimize import curve_fit
 
 
 def spl_polyfit(x,y):
@@ -41,20 +42,20 @@ def simulate_spl_polyfit(unif,y, fit_spl_rpol):
 
 def beta_rat_polyfit(x, y, order):
     n=y.size
-    A=np.zeros([n,order*2+1])
+    A=np.zeros([n, order*2+1])
     A[:,0]=np.ones(y.size)
     for i in range(order):
         A[:,i+1]=x**(i+1)
     for i in range(order):
         A[:,order+i+1]=-x**(i+1)*y
-
+    
     # b=np.linalg.inv(A.T@A)@A.T@y
     
-    # solve with QR decomposition
+    # # solve with QR decomposition
     Q, R = np.linalg.qr(A)
     p = np.dot(Q.T, y)
     b=np.dot(np.linalg.inv(R), p)
-
+    
 
     return b
 
@@ -75,6 +76,35 @@ def polyfit(xvec,b):
     return ans
 
 
+
+# optimization by Gauss Newton method
+def A(x, y, order):
+    n=y.size
+    A=np.zeros([n, order*2+1])
+    A[:,0]=np.ones(y.size)
+    for i in range(order):
+        A[:,i+1]=x**(i+1)
+    for i in range(order):
+        A[:,order+i+1]=-x**(i+1)*y
+    
+    
+    return A
+
+def rf(A,beta,y):
+    r=y-A@beta
+    return r
+
+def GaussNewton(x,y, order):
+    beta=np.zeros(order*2+1)
+    M=A(x,y,order=2)
+    i=0
+    while i<100:
+        M=-A(x,y,order)
+        r=rf(-M, beta, y)
+        q=np.linalg.solve(M.T@M, M.T@r)
+        beta=beta-q
+        i+=1
+    return beta
 
 
 # naive implementation
@@ -105,3 +135,24 @@ def polyfit(xvec,b):
 # def polyfit(xvec,b):
 #     ans=np.array([polyfit_evaluate(i,b) for i in xvec])
 #     return ans
+
+
+def rational(x, p, q):
+    return np.polyval(p, x) / ([1.0]+np.polyval(q, x))
+
+def rational_2(x, p0, p1, p2, q1, q2):
+    return rational(x, [p0, p1, p2], [q1, q2])
+
+
+def rational_3(x, p0, p1, p2,p3, q1, q2,q3):
+    return rational(x, [p0, p1, p2, p3], [q1, q2,q3])
+
+def rational_4(x, p0, p1, p2,p3,p4, q1, q2,q3,q4):
+    return rational(x, [p0, p1, p2, p3,p4], [q1, q2,q3,q4])
+
+
+def rational_5(x, p0, p1, p2,p3,p4,p5, q1, q2,q3,q4,q5):
+    return rational(x, [p0, p1, p2, p3,p4,p5], [q1, q2,q3,q4,q5])
+
+
+
