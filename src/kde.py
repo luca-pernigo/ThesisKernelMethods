@@ -68,6 +68,7 @@ def eval_kernel2(x,x0, kernel):
 
 
 
+
 def standardize(data):
     return (data-np.mean(data))/np.std(data)
 
@@ -81,7 +82,6 @@ class Kde:
         # empty array to store the estimated kme of pdf
         self.grid_size=grid_size
         self.y_axis=np.zeros(grid_size)
-        self.cov=FMCA.CovarianceKernel(self.kernel_type, self.kernel_prm)
 
 
     def Kme(self, data):
@@ -97,17 +97,20 @@ class Kde:
         data=data.reshape(data.size,)
 
         # standardize
-        self.data_standardized=standardize(data)
+        # self.data_standardized=standardize(data)
 
-        self.x_axis=np.linspace(self.data_standardized.min(), self.data_standardized.max(),self.grid_size)
+        self.x_axis=np.linspace(self.data.min(), self.data.max(),self.grid_size)
 
         m=self.x_axis.size
         
+        # print(self.kernel_prm*np.sqrt(self.sigma))
+        self.cov=FMCA.CovarianceKernel(self.kernel_type, self.kernel_prm*np.sqrt(self.sigma))
 
         for k in range (m):
-            self.y_axis[k]=np.sum([self.cov.eval(np.array([np.array([self.data_standardized[i]])]),np.array([[self.x_axis[k]]])) for i in range(data_size)])/data_size
+            self.y_axis[k]=1/(self.kernel_prm*2*np.sqrt(self.sigma))*np.sum([self.cov.eval(np.array([np.array([self.data[i]])]),np.array([[self.x_axis[k]]])) for i in range(data_size)])/data_size
+       
         
-    def PlotKde(self):
+    def PlotKde(self, nbin):
         # plot kme and hist plot of original data
         # note that we have to scale back the data
         # the shift in the direction of mu does not affect the density
@@ -122,10 +125,10 @@ class Kde:
             
         m=self.x_axis.size
         self.data=self.data.reshape(self.data.size,)
-        plt.plot(self.mu+self.sigma*self.x_axis.reshape(m,), self.y_axis/self.sigma)
+        plt.plot(self.x_axis.reshape(m,), self.y_axis)
 
         # hist of original data
-        plt.hist(self.data, bins=100, density=True)
+        plt.hist(self.data, bins=nbin, density=True, edgecolor='w', linewidth=0.5)
 
         plt.xlabel("Price range")
         plt.ylabel("PDF")
