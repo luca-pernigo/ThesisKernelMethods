@@ -1,7 +1,10 @@
 TODO:
 
     IMPLEMENTATION:
-    -Clean NLS test implemntation and put it into src python file
+    - Compare approaches: 1. kme cdf, 2. kernel herding, 3. fit model of empirical cdf(non kernel model)
+    take same window of data as the one of the competitor paper
+
+    - Clean NLS test implemntation and put it into src python file
 
     - MMD(X,Y) X is original data while Y are the generated samples; so idea is that we have mean embeddings (standard,
     Nyström, Piv Cholesky, KernelHerding) we compute their inverse cdf such that we can simulate Y 
