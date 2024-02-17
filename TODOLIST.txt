@@ -1,6 +1,7 @@
 TODO:
 
     IMPLEMENTATION:
+    -Clean NLS test implemntation and put it into src python file
 
     - MMD(X,Y) X is original data while Y are the generated samples; so idea is that we have mean embeddings (standard,
     Nyström, Piv Cholesky, KernelHerding) we compute their inverse cdf such that we can simulate Y 
@@ -8,7 +9,7 @@ TODO:
     For MMD we compare xtrain with generated sample and see the performance of our methods.
 
     LATEX:
-    
+
     - Explain the importance of standardizing the right way
     explain reasoning for why dividing multiplying the kernel parameter by the standard deviation in the exponent
     is equivalent to calculating the kernel of standardized data.
