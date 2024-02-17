@@ -11,6 +11,10 @@ TODO:
     and finally we can compute MMD. remember kernel herding we dont need to invert cdf.
     For MMD we compare xtrain with generated sample and see the performance of our methods.
 
+    - NO (in this paper "Nyström Kernel Mean Embeddings" they use Nyström approximation to reduce computations,
+    thus try pivoted cholesky to see how it behaves. People have considered pivoted cholesky for kernels in general
+    but have not considered Pivoted Cholesky Kernel Mean Embeddings.)
+
     LATEX:
 
     - Explain the importance of standardizing the right way
@@ -19,10 +23,6 @@ TODO:
 
     - Explain how data have been retrieved, explain it in data and exploratory analysis chapter
     - Explain upon which conditions KME and KDE are the same and when they differ
-
-    - NO (in this paper "Nyström Kernel Mean Embeddings" they use Nyström approximation to reduce computations,
-    thus try pivoted cholesky to see how it behaves. People have considered pivoted cholesky for kernels in general
-    but have not considered Pivoted Cholesky Kernel Mean Embeddings.)
 
 
 DONE:
