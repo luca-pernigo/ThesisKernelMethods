@@ -4,10 +4,6 @@ TODO:
 explain reasoning for why dividing multiplying the kernel parameter by the standard deviation in the exponent
 is equivalent to calculating the kernel of standardized data.
 
-- Newton's method to find inverse of cdf
-
--Try by applying cdf inverse method to the smoothed data of kernel mean embedding
-
 - MMD(X,Y) X is original data while Y are the generated samples; so idea is that we have mean embeddings (standard,
 Nyström, Piv Cholesky, KernelHerding) we compute their inverse cdf such that we can simulate Y 
 and finally we can compute MMD. remember kernel herding we dont need to invert cdf.
@@ -32,4 +28,6 @@ DONE:
 - Added Non linear least squares to approximate the inverse of cdf, remeber it is import to fit a good ansatz for a
 succesful non linear least squares
 
-- 
+1708180016
+- Newton's method to find inverse of cdf
+-Try by applying cdf inverse method to the smoothed data of kernel mean embedding
