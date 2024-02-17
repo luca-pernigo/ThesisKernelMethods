@@ -1,20 +1,24 @@
 TODO:
 
-- Correct the Kernel mean embedding step, explain the importance of standardizing the right way
-explain reasoning for why dividing multiplying the kernel parameter by the standard deviation in the exponent
-is equivalent to calculating the kernel of standardized data.
+    IMPLEMENTATION:
 
-- MMD(X,Y) X is original data while Y are the generated samples; so idea is that we have mean embeddings (standard,
-Nyström, Piv Cholesky, KernelHerding) we compute their inverse cdf such that we can simulate Y 
-and finally we can compute MMD. remember kernel herding we dont need to invert cdf.
-For MMD we compare xtrain with generated sample and see the performance of our methods.
+    - MMD(X,Y) X is original data while Y are the generated samples; so idea is that we have mean embeddings (standard,
+    Nyström, Piv Cholesky, KernelHerding) we compute their inverse cdf such that we can simulate Y 
+    and finally we can compute MMD. remember kernel herding we dont need to invert cdf.
+    For MMD we compare xtrain with generated sample and see the performance of our methods.
 
-- Explain how data have been retrieved, explain it in data and exploratory analysis chapter
-- Explain upon which conditions KME and KDE are the same and when they differ
+    LATEX:
+    
+    - Explain the importance of standardizing the right way
+    explain reasoning for why dividing multiplying the kernel parameter by the standard deviation in the exponent
+    is equivalent to calculating the kernel of standardized data.
 
-- NO (in this paper "Nyström Kernel Mean Embeddings" they use Nyström approximation to reduce computations,
-  thus try pivoted cholesky to see how it behaves. People have considered pivoted cholesky for kernels in general
-  but have not considered Pivoted Cholesky Kernel Mean Embeddings.)
+    - Explain how data have been retrieved, explain it in data and exploratory analysis chapter
+    - Explain upon which conditions KME and KDE are the same and when they differ
+
+    - NO (in this paper "Nyström Kernel Mean Embeddings" they use Nyström approximation to reduce computations,
+    thus try pivoted cholesky to see how it behaves. People have considered pivoted cholesky for kernels in general
+    but have not considered Pivoted Cholesky Kernel Mean Embeddings.)
 
 
 DONE:
@@ -30,4 +34,5 @@ succesful non linear least squares
 
 1708180016
 - Newton's method to find inverse of cdf
--Try by applying cdf inverse method to the smoothed data of kernel mean embedding
+- Try by applying cdf inverse method to the smoothed data of kernel mean embedding
+- Correct the Kernel mean embedding step
