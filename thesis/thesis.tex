@@ -75,7 +75,7 @@
 %% above.  We just load it last to be safe.
 \usepackage[linkcolor=black,colorlinks=true,citecolor=black,filecolor=black]{hyperref}
 
-
+\usepackage[symbols,nogroupskip,sort=none]{glossaries-extra}
 %% Document information
 %% ====================
 
@@ -115,29 +115,41 @@
 \listoftables
 
 %% Your real content!
-\chapter{Problem Description and Literature Review}
+\chapter{Problem Description}
 \input{input_files/problemdescription}
+
+\chapter{Literature Review}
 \input{input_files/literaturereview}
+
+\chapter{Workplan}
+\input{input_files/workplan}
 
 % this introduction file explains how to use the 
 % provided template
 % \input{introduction}
 
-\chapter{Paper review}
+\chapter{Kernel Theory}
 
 \input{input_files/paper1}
 \input{input_files/paper2}
 \input{input_files/paper3}
 \input{input_files/paper4}
+\newpage
+\input{input_files/kerneltheory.tex}
 
+\chapter{Quantile Regression}
+\input{input_files/qr.tex}
 
-\chapter{Workplan}
-\input{input_files/workplan}
+\chapter{Random Forest}
+\input{input_files/randomforest.tex}
+
+\chapter{Gradient Boosting}
+\input{input_files/gradientboosting.tex}
 
 \chapter{The Energy Market}
 \input{input_files/energymarket.tex}
 
-\chapter{Exploratory Analysis and Data}
+\chapter{Exploratory Analysis and Data ETL}
 \input{input_files/data_exploratory.tex}
 
 \chapter{Implementation}
@@ -145,6 +157,13 @@
 
 \chapter{Experiments Analysis}
 \input{input_files/analysis}
+
+
+%SYMBOLS LISTINGS
+\input{input_files/symbols.tex}
+\printunsrtglossary[type=symbols,style=long]
+
+
 
 \appendix
 
