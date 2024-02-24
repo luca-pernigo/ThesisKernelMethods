@@ -1,15 +1,21 @@
 TODO:
 
     IMPLEMENTATION:
+    - correct CRPS function
+
+
+    - comparare cprs con xgboost, quantile regression, distributional neural network
+
+
     - Compare approaches: 1. kme cdf, 2. kernel herding, 3. fit model of empirical cdf(non kernel model)
     take same window of data as the one of the competitor paper
 
-    - Clean NLS test implemntation and put it into src python file
+    - Clean NLS test implementation and put it into src python file
 
     - MMD(X,Y) X is original data while Y are the generated samples; so idea is that we have mean embeddings (standard,
-    Nyström, Piv Cholesky, KernelHerding) we compute their inverse cdf such that we can simulate Y 
+    Nyström, Piv Cholesky, KernelHerding, non kernel interpolations) we compute their inverse cdf such that we can simulate Y 
     and finally we can compute MMD. remember kernel herding we dont need to invert cdf.
-    For MMD we compare xtrain with generated sample and see the performance of our methods.
+    For MMD we compare xtrain/xtest with generated sample and see the performance of our methods.
 
     - NO (in this paper "Nyström Kernel Mean Embeddings" they use Nyström approximation to reduce computations,
     thus try pivoted cholesky to see how it behaves. People have considered pivoted cholesky for kernels in general
