@@ -3,7 +3,6 @@
 from sklearn.metrics import mean_pinball_loss
 import numpy as np
 
-
 def pinball(tau, Yt_pred, Yt):
     """
     - quantile tau
@@ -27,11 +26,13 @@ def CRPS(Y_pred_test, Y_test):
 
     CRPS=0
     # for every t in test
-    for t in range(len(Y_test)):
+    for t in range(Y_test):
         # for every tau in [0.01, ..., 0.99]
         for tau in range(1,100):
             # discrete approximation of CPRS
             CRPS+=pinball(tau/100, Y_pred_test[t], Y_test[t])
+            print("tau: ", tau, "t: ", t, "CRPS: ", CRPS)
+            print("------------------")
     
     CRPS/=Y_test.size
 
