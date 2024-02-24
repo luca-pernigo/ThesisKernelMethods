@@ -1,0 +1,5 @@
+# ignore articles
+literature\ articles/
+
+# ignore python packages
+summercode/
