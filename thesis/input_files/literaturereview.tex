@@ -1,4 +1,5 @@
 
+
 %INTRO KERNEL METHODS E ENERGY PRICE MODELLING
 
 Kernel methods are a class of algorithms for patter analysis.
@@ -8,6 +9,15 @@ Probabilistic forecasting may be useful to power producers, traders and consumer
 
 
 %SPIEGO UN PO' I PAPER CHE HO FATTO PASSARE VELOCEMENTE 
+Every paper uses different datasets (heterogeneous)
+So it is not possible to compare directly results
+from one paper to another without implementing the
+paper specific algorithms and the applying them to
+your dataset.
+This is why sections after are destined to analyzing
+how these proposed methods so far work and their mathematical
+theory details
+\\
 This problem has been already addressed in \cite{probablistic_electricity_forecast} and \cite{probablistic_electricity_forecast2}. 
 These papers surveyed the performance of neural network architectures against simpler approaches like quantile regression and data fitting to Johnson distribution. Their conclusion is that distributional NN perform a little worse than quantile regression but the former has smaller computational cost; that is because the quantile regression is run for every quantile from 0.01 to 0.99.
 Nevertheless kernel methods received very little attention in this specific setting.
