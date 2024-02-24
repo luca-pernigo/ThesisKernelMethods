@@ -12,8 +12,8 @@
 \contentsline {section}{\numberline {4.2}\href {http://proceedings.mlr.press/v33/kanagawa14.pdf}{Recovering Distributions from Gaussian RKHS Embeddings}}{10}{section.4.2}%
 \contentsline {section}{\numberline {4.3}\href {https://arxiv.org/pdf/1203.3472.pdf}{Super-Samples from Kernel Herding}}{12}{section.4.3}%
 \contentsline {chapter}{\chapternumberline {5}Quantile Regression}{17}{chapter.5}%
-\contentsline {chapter}{\chapternumberline {6}Random Forest}{19}{chapter.6}%
-\contentsline {chapter}{\chapternumberline {7}Gradient Boosting}{21}{chapter.7}%
+\contentsline {chapter}{\chapternumberline {6}Kernel Density Estimation}{19}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {7}Ensemble Methods}{21}{chapter.7}%
 \contentsline {chapter}{\chapternumberline {8}The Energy Market}{23}{chapter.8}%
 \contentsline {chapter}{\chapternumberline {9}Exploratory Analysis and Data ETL}{25}{chapter.9}%
 \contentsline {chapter}{\chapternumberline {10}Implementation}{27}{chapter.10}%
