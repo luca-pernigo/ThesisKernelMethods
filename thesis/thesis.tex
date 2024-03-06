@@ -76,6 +76,7 @@
 \usepackage[linkcolor=black,colorlinks=true,citecolor=black,filecolor=black]{hyperref}
 
 \usepackage[symbols,nogroupskip,sort=none]{glossaries-extra}
+
 %% Document information
 %% ====================
 
@@ -118,17 +119,18 @@
 \chapter{Problem Description}
 \input{input_files/problemdescription}
 
-\chapter{Literature Review}
+\chapter{Literature Review}\label{literature_review}
 \input{input_files/literaturereview}
 
-\chapter{Workplan}
-\input{input_files/workplan}
+% WORKPLAN from Fall semester
+% \chapter{Workplan}
+% \input{input_files/workplan}
 
 % this introduction file explains how to use the 
 % provided template
 % \input{introduction}
 
-\chapter{Kernel Theory}
+\chapter{Kernel Theory}\label{kernel_theory}
 
 \input{input_files/paper1}
 \input{input_files/paper2}
@@ -136,6 +138,8 @@
 \input{input_files/paper4}
 \newpage
 \input{input_files/kerneltheory.tex}
+
+
 
 \chapter{Quantile Regression}
 \input{input_files/qr.tex}
@@ -146,22 +150,25 @@
 \chapter{Ensemble Methods}
 \input{input_files/ensemble.tex}
 
-\chapter{The Energy Market}
+\chapter{The Energy Market}\label{energy_market}
 \input{input_files/energymarket.tex}
 
-\chapter{Exploratory Analysis and Data ETL}
+\chapter{Evaluation metrics}\label{metrics}
+\input{input_files/metrics.tex}
+
+\chapter{Exploratory Analysis and Data ETL}\label{eda}
 \input{input_files/data_exploratory.tex}
 
-\chapter{Implementation}
+\chapter{Implementation}\label{implementation}
 \input{input_files/implementation.tex}
 
-\chapter{Experiments Analysis}
+\chapter{Experiments Analysis}\label{experiments}
 \input{input_files/analysis}
 
 
 %SYMBOLS LISTINGS
 \input{input_files/symbols.tex}
-\printunsrtglossary[type=symbols,style=long]
+\printunsrtglossary[title=List of Symbols, type=symbols,style=long]
 
 
 

@@ -3,48 +3,51 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
+Warning--entry type for "un_sdgs" isn't style-file defined
+--line 258 of file refs.bib
+Warning--to sort, need author or key in un_sdgs
 Warning--empty journal in supersamples
 Warning--empty booktitle in jebara
 Warning--can't use both author and editor fields in pmlr
-You've used 11 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            570 strings with 5925 characters,
-and the built_in function-call counts, 3424 in all, are:
-= -- 314
-> -- 186
-< -- 3
-+ -- 73
-- -- 62
-* -- 244
-:= -- 588
-add.period$ -- 32
-call.type$ -- 11
-change.case$ -- 62
+            627 strings with 7316 characters,
+and the built_in function-call counts, 6344 in all, are:
+= -- 607
+> -- 318
+< -- 4
++ -- 127
+- -- 106
+* -- 461
+:= -- 1070
+add.period$ -- 58
+call.type$ -- 20
+change.case$ -- 110
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 124
-empty$ -- 261
-format.name$ -- 62
-if$ -- 700
+cite$ -- 24
+duplicate$ -- 225
+empty$ -- 489
+format.name$ -- 106
+if$ -- 1301
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 12
-newline$ -- 56
-num.names$ -- 22
-pop$ -- 79
+int.to.str$ -- 20
+missing$ -- 20
+newline$ -- 100
+num.names$ -- 38
+pop$ -- 121
 preamble$ -- 1
-purify$ -- 53
+purify$ -- 92
 quote$ -- 0
-skip$ -- 89
+skip$ -- 166
 stack$ -- 0
-substring$ -- 143
-swap$ -- 21
-text.length$ -- 3
+substring$ -- 350
+swap$ -- 37
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 38
-warning$ -- 3
-while$ -- 29
-width$ -- 13
-write$ -- 115
-(There were 3 warnings)
+type$ -- 74
+warning$ -- 4
+while$ -- 59
+width$ -- 22
+write$ -- 210
+(There were 5 warnings)

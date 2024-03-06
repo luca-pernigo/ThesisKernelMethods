@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  24 FEB 2024 11:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  6 MAR 2024 11:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1011,7 +1011,7 @@ File: glossaries-extra-abbrstyles.def 2022/06/16 v1.48b (NLCT)
 )
 \mglselementindex=\count435
 )
-LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 92.
+LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 93.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -1023,27 +1023,31 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [titlepage].
 
-(./thesis.aux)
+(./thesis.aux
+
+LaTeX Warning: Label `fig:point_vs_prob' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count437
@@ -1072,34 +1076,34 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
 \c@lstlisting=\count443
-LaTeX Info: Redefining \microtypecontext on input line 92.
-Package microtype Info: Applying patch `item' on input line 92.
-Package microtype Info: Applying patch `toc' on input line 92.
-Package microtype Info: Applying patch `eqnum' on input line 92.
-Package microtype Info: Applying patch `footnote' on input line 92.
-Package microtype Info: Applying patch `verbatim' on input line 92.
+LaTeX Info: Redefining \microtypecontext on input line 93.
+Package microtype Info: Applying patch `item' on input line 93.
+Package microtype Info: Applying patch `toc' on input line 93.
+Package microtype Info: Applying patch `eqnum' on input line 93.
+Package microtype Info: Applying patch `footnote' on input line 93.
+Package microtype Info: Applying patch `verbatim' on input line 93.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 92.
+LaTeX Info: Redefining \showhyphens on input line 93.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-ppl.cfg
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
-Package hyperref Info: Link coloring ON on input line 92.
+Package hyperref Info: Link coloring ON on input line 93.
  (./thesis.out) (./thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
-<USIlogo.pdf, id=96, 1204.5pt x 1204.5pt>
+<USIlogo.pdf, id=124, 1204.5pt x 1204.5pt>
 File: USIlogo.pdf Graphic file (type pdf)
 <use USIlogo.pdf>
-Package pdftex.def Info: USIlogo.pdf  used on input line 102.
+Package pdftex.def Info: USIlogo.pdf  used on input line 103.
 (pdftex.def)             Requested size: 1204.49707pt x 1204.49707pt.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
@@ -1114,12 +1118,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 \cleartorecto
+l.110 \cleartorecto
                     [1{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 \cleartorecto
+l.110 \cleartorecto
                     [2
 
 ] (./thesis.toc
@@ -1176,16 +1180,76 @@ Package microtype Info: Character `013' is missing
 
 ] [2
 
-] (./input_files/problemdescription.tex) [3] [4
-
-] (./input_files/literaturereview.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 12--123
+] (./input_files/problemdescription.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--15
 
  []
 
-[5] [6
 
-] (./input_files/workplan.tex) [7] [8
+Underfull \hbox (badness 10000) in paragraph at lines 1--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--23
+
+ []
+
+[3]
+
+LaTeX Warning: Reference `state_of_the_art' on page 4 undefined on input line 44.
+
+) [4] [5] [6
+
+] (./input_files/literaturereview.tex
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 3.
+
+<images/epf_evolution1.jpg, id=246, 1084.05pt x 722.7pt>
+File: images/epf_evolution1.jpg Graphic file (type jpg)
+<use images/epf_evolution1.jpg>
+Package pdftex.def Info: images/epf_evolution1.jpg  used on input line 18.
+(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/point_vs_prob.jpg, id=249, 1084.05pt x 722.7pt>
+File: images/point_vs_prob.jpg Graphic file (type jpg)
+<use images/point_vs_prob.jpg>
+Package pdftex.def Info: images/point_vs_prob.jpg  used on input line 24.
+(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/cs_stat_both.jpg, id=250, 1084.05pt x 722.7pt>
+File: images/cs_stat_both.jpg Graphic file (type jpg)
+<use images/cs_stat_both.jpg>
+Package pdftex.def Info: images/cs_stat_both.jpg  used on input line 30.
+(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/subject_area.jpg, id=251, 1084.05pt x 722.7pt>
+File: images/subject_area.jpg Graphic file (type jpg)
+<use images/subject_area.jpg>
+Package pdftex.def Info: images/subject_area.jpg  used on input line 37.
+(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/src_title.jpg, id=252, 722.7pt x 361.35pt>
+File: images/src_title.jpg Graphic file (type jpg)
+<use images/src_title.jpg>
+Package pdftex.def Info: images/src_title.jpg  used on input line 44.
+(pdftex.def)             Requested size: 369.0pt x 184.5011pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [7] [8 <./images/epf_evolution1.jpg> <./images/point_vs_prob.jpg>] [9 <./images/cs_stat_both.jpg> <./images/subject_area.jpg>]
+Underfull \vbox (badness 2245) has occurred while \output is active []
+
+ [10 <./images/src_title.jpg>] [11] [12
 
 ] (./input_files/paper1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 17--19
@@ -1195,11 +1259,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--19
 LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 30.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [9]
+) [13]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 40.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 61.
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 67.
-) (./input_files/paper2.tex [10]
+) (./input_files/paper2.tex [14]
 Underfull \hbox (badness 10000) in paragraph at lines 13--19
 
  []
@@ -1215,7 +1279,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--1
 
  []
 
-[11]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 35--45
 
  []
@@ -1223,7 +1287,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--45
 
 Underfull \vbox (badness 6641) has occurred while \output is active []
 
- [12]
+ [16]
 Underfull \hbox (badness 10000) in paragraph at lines 64--73
 
  []
@@ -1241,7 +1305,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [17]
 Underfull \hbox (badness 10000) in paragraph at lines 104--110
 
  []
@@ -1257,36 +1321,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--118
  []
 
 ) (./input_files/paper4.tex)
-Overfull \hbox (32.04327pt too wide) in paragraph at lines 131--137
+Overfull \hbox (32.04327pt too wide) in paragraph at lines 131--139
 \OT1/pplx/m/n/10.95 (-20) So $\OML/zplm/m/it/10.95 "[]$ \OT1/pplx/m/n/10.95 (-20) de-pends on $\OML/zplm/m/it/10.95 x[]$ \OT1/pplx/m/n/10.95 (-20) only through $\OMS/zplm/m/n/10.95 ^^@[]\U/fplmbb/m/n/10.95 E[]\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 k\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 x\OT1/pplx/m/n/10.95 (-20) , \OML/zplm/m/it/10.95 x[]\OT1/zplm/m/n/10.95 )] + [] [] \OML/zplm/m/it/10.95 k\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 x[]\OT1/pplx/m/n/10.95 (-20) , \OML/zplm/m/it/10.95 x[]\OT1/zplm/m/n/10.95 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--137
+Underfull \hbox (badness 10000) in paragraph at lines 131--139
 
  []
 
-[14] [15] (./input_files/kerneltheory.tex) [16] (./input_files/qr.tex) [17
+[18] [19] (./input_files/kerneltheory.tex) [20] (./input_files/qr.tex) [21
 
-] [18
+] [22
 
-] (./input_files/kde.tex) [19] [20
+] (./input_files/kde.tex) [23] [24
 
-] (./input_files/ensemble.tex) [21] [22
+] (./input_files/ensemble.tex) [25] [26
 
-] (./input_files/energymarket.tex) [23] [24
+] (./input_files/energymarket.tex
+<images/electricity-production-by-source.png, id=389, 3412.75pt x 2775.36874pt>
+File: images/electricity-production-by-source.png Graphic file (type png)
+<use images/electricity-production-by-source.png>
+Package pdftex.def Info: images/electricity-production-by-source.png  used on input line 9.
+(pdftex.def)             Requested size: 369.0pt x 300.08263pt.
+ [27 <./images/electricity-production-by-source.png>]) [28] (./input_files/metrics.tex) [29
 
-] (./input_files/data_exploratory.tex) [25] [26
+] [30
 
-] (./input_files/implementation.tex) [27] [28
+] (./input_files/data_exploratory.tex) [31] [32
 
-] (./input_files/analysis.tex) (./input_files/symbols.tex) [29] [30
+] (./input_files/implementation.tex) [33] [34
 
-] (./appendix.tex [31
+] (./input_files/analysis.tex) (./input_files/symbols.tex) [35] [36
 
-] [32
+] (./appendix.tex [37
 
-] [33]
+] [38
+
+] [39]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1296,19 +1368,24 @@ Overfull \hbox (17.89413pt too wide) in paragraph at lines 38--42
 \OT1/pplx/m/n/10.95 (-20) The whole code for the project is hosted on [][]$\OT1/cmtt/m/n/10.95 https : / / github . com / luca-[]pernigo /
  []
 
-) [34] (./thesis.bbl
-bibitemlist
-LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 45.
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--42
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 42.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
-) [35
+)) [40] (./thesis.bbl
+bibitemlist
+[41
 
 
 ])
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- [36]
+ [42]
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
@@ -1319,22 +1396,28 @@ File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 \openout8 = `thesis.lot'.
 
  (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4D1C7D5EF39F47758390F78846D2FB7B;3438.
+(rerunfilecheck)             Checksum: C795F8B7D5BA64FC31A1080693545FB8;4488.
  ) 
 Here is how much of TeX's memory you used:
- 30856 strings out of 476025
- 526038 string characters out of 5790017
+ 31299 strings out of 476025
+ 532831 string characters out of 5790017
  1869388 words of memory out of 5000000
- 50322 multiletter control sequences out of 15000+600000
- 559893 words of font info for 339 fonts, out of 8000000 for 9000
+ 50668 multiletter control sequences out of 15000+600000
+ 563104 words of font info for 375 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,14n,125p,2312b,743s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (42 pages, 267735 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on thesis.pdf (48 pages, 1227296 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 380 compressed objects within 4 object streams
- 91 named destinations out of 1000 (max. 500000)
- 86718 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 594 PDF objects out of 1000 (max. 8388607)
+ 494 compressed objects within 5 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 94996 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -1,15 +1,31 @@
 \changetocdepth {2}
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Contents}{iii}{section*.1}%
-\contentsline {chapter}{\chapternumberline {1}Problem Description and Literature Review}{1}{chapter.1}%
-\contentsline {chapter}{\chapternumberline {2}Paper review}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}\href {https://arxiv.org/abs/1605.09522}{Kernel Mean Embedding of Distributions: A Review and Beyond}}{3}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}RKHS}{4}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}\href {http://proceedings.mlr.press/v33/kanagawa14.pdf}{Recovering Distributions from Gaussian RKHS Embeddings}}{4}{section.2.2}%
-\contentsline {section}{\numberline {2.3}\href {https://arxiv.org/pdf/1203.3472.pdf}{Super-Samples from Kernel Herding}}{6}{section.2.3}%
-\contentsline {chapter}{\chapternumberline {3}Workplan}{11}{chapter.3}%
-\contentsline {chapter}{\chapternumberline {4}The Energy Market}{13}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}Exploratory Analysis and Data}{15}{chapter.5}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{17}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{17}{section.A.1}%
-\contentsline {chapter}{Bibliography}{19}{appendix*.3}%
+\contentsline {chapter}{List of Figures}{1}{section*.2}%
+\contentsline {chapter}{List of Tables}{1}{section*.3}%
+\contentsline {chapter}{\chapternumberline {1}Problem Description}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivating examples}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Load forecasting}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Price forecasting}{4}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Point vs probabilistic forecast}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Aims and objectives}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Outline}{4}{section.1.4}%
+\contentsline {chapter}{\chapternumberline {2}Literature Review}{5}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {3}Workplan}{9}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {4}Kernel Theory}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}\href {https://arxiv.org/abs/1605.09522}{Kernel Mean Embedding of Distributions: A Review and Beyond}}{11}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}RKHS}{12}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}\href {http://proceedings.mlr.press/v33/kanagawa14.pdf}{Recovering Distributions from Gaussian RKHS Embeddings}}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}\href {https://arxiv.org/pdf/1203.3472.pdf}{Super-Samples from Kernel Herding}}{14}{section.4.3}%
+\contentsline {chapter}{\chapternumberline {5}Quantile Regression}{19}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {6}Kernel Density Estimation}{21}{chapter.6}%
+\contentsline {chapter}{\chapternumberline {7}Ensemble Methods}{23}{chapter.7}%
+\contentsline {chapter}{\chapternumberline {8}The Energy Market}{25}{chapter.8}%
+\contentsline {chapter}{\chapternumberline {9}Exploratory Analysis and Data ETL}{27}{chapter.9}%
+\contentsline {chapter}{\chapternumberline {10}Implementation}{29}{chapter.10}%
+\contentsline {chapter}{\chapternumberline {11}Experiments Analysis}{31}{chapter.11}%
+\contentsline {chapter}{List of Symbols}{33}{section*.4}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{35}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{35}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Src code}{36}{section.A.2}%
+\contentsline {chapter}{Bibliography}{37}{appendix*.6}%

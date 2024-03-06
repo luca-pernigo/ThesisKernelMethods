@@ -1,9 +1,23 @@
 \begin{thebibliography}{10}
 
+\bibitem{un_sdgs}
+{THE 17 GOALS Sustainable Development - the United Nations}.
+\newblock https://sdgs.un.org/goals.
+
 \bibitem{probablistic_electricity_forecast}
 Ilyas Agakishiev, Wolfgang~Karl Härdle, Karel Kozmik, Milos Kopa, and Alla Petukhina.
 \newblock Multivariate probabilistic forecasting of electricity prices with trading applications.
 \newblock {\em SSRN Electronic Journal}, 01 2023.
+
+\bibitem{new_multi_test2}
+Ludwig Baringhaus and Carsten Franz.
+\newblock On a new multivariate two-sample test.
+\newblock {\em Journal of multivariate analysis}, 88(1):190--206, 2004.
+
+\bibitem{california}
+Ashutosh Bhagwat.
+\newblock Institutions and long term planning: Lessons from the california electricity crisis.
+\newblock {\em Administrative Law Review}, 55(1):95--125, 2003.
 
 \bibitem{bringhurst1996ets}
 Robert Bringhurst.
@@ -18,6 +32,16 @@ Antoine Chatalic, Nicolas Schreuder, Alessandro Rudi, and Lorenzo Rosasco.
 Yutian Chen, Max Welling, and Alex Smola.
 \newblock Super-samples from kernel herding.
 \newblock 2012.
+
+\bibitem{gneiting_weather_ensemble}
+Tilmann Gneiting and Adrian~E Raftery.
+\newblock Weather forecasting with ensemble methods.
+\newblock {\em Science}, 310(5746):248--249, 2005.
+
+\bibitem{proper_scores}
+Tilmann Gneiting and Adrian~E Raftery.
+\newblock Strictly proper scoring rules, prediction, and estimation.
+\newblock {\em Journal of the American statistical Association}, 102(477):359--378, 2007.
 
 \bibitem{jebara}
 Tony Jebara and Risi Kondor.
@@ -48,9 +72,29 @@ Krikamol Muandet, Kenji Fukumizu, Bharath Sriperumbudur, and Bernhard Schölkopf
 Michael Multerer, Paul Schneider, and Rohan Sen.
 \newblock Fast empirical scenarios, 2023.
 
+\bibitem{forecasting_big}
+Fotios Petropoulos, Daniele Apiletti, Vassilios Assimakopoulos, Mohamed~Zied Babai, Devon~K Barrow, Souhaib~Ben Taieb, Christoph Bergmeir, Ricardo~J Bessa, Jakub Bijak, John~E Boylan, et~al.
+\newblock Forecasting: theory and practice.
+\newblock {\em International Journal of Forecasting}, 38(3):705--871, 2022.
+
 \bibitem{Scott2015}
 David~W. Scott.
 \newblock {\em Multivariate Density Estimation: Theory, Practice, and Visualization}.
 \newblock Wiley Series in Probability and Statistics. Wiley, 2 edition, 2015.
+
+\bibitem{new_multi_tes1}
+G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
+\newblock A new test for multivariate normality.
+\newblock {\em Journal of Multivariate Analysis}, 93(1):58--80, 2005.
+
+\bibitem{savings}
+Hong Tao.
+\newblock Crystal ball lessons in predictive analytics.
+\newblock {\em EnergyBiz}, pages 35--37, 2015.
+
+\bibitem{EPF_review}
+Rafał Weron.
+\newblock Electricity price forecasting: A review of the state-of-the-art with a look into the future.
+\newblock {\em International Journal of Forecasting}, 30, 10 2014.
 
 \end{thebibliography}

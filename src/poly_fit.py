@@ -1,9 +1,10 @@
 import numpy as np
-import math
-from src.cdf import cdf_funct
-from src.miscellaneous import find
 from scipy.optimize import curve_fit
 
+import math
+
+from src.cdf import cdf_funct
+from src.miscellaneous import find
 
 def spl_polyfit(x,y):
     s=3

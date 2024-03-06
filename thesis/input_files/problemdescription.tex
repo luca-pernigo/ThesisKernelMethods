@@ -1,9 +1,47 @@
-- Here explain in detail what this thesis is about.
+Individuals and organizations constantly face situations of uncertainty. Thus, the need of robust forecasting methods. Such methods are crucial to the process of taking informed decision and to strategic planning.
+\\
+The basic idea of forecasting is that we can extract knowledge from the past in order to make educated guess about the future. Consequently, the range of fields where forecasting can be applied is very wide.
+In this thesis, our focus lies on applying forecasting to the energy sector. 
+\\
+\\
+The reason of our decision to focus on the energy market is mainly motivated by the rapid changes it has experienced.
+Over the last decades, electricity markets have gone through an unprecedented transformation; this shift was driven by the liberalization of such markets, the development and integration of renewable energy sources, the  increase of low carbon technologies and the adoption of smart meters. Events like the California electricity crisis help also motivating the choice of the electricity sector as subject of our studies, see \cite{california}.
+Interestingly, the process of deregulation lead to an increasing interest in the field of electricity price forecasting (EF) within the academic community \ref{fig:epf_evolution}.
+\\
+Moreover, the United Nations have identified the right to access affordable, reliable, sustainable and modern energy as one of their 17 SDGs \cite{un_sdgs}
+\\
+Finally, the electricity market has a set of features that make it unique: electricity cannot be stored in an efficient way and supply and demand have to be matched instantly.
+\\
+\section{Motivation}
+The are mutliple reasons why the energy sector needs robust forecasting techniques.
+For power market companies, being able to predict prices with a low MAPE \ref{mape} results in increased savings \cite{savings}. Furthermore,the adoption of smart meters provides power market companies with a ton of consumer data; this will enable them to better model consumer preferences.
+\\
+Transmission system operators main goal is to match supply and deman, generally TSO do so by increasing or decreasing the generation supplied. Thus, from their view point forecasting is critical for balancing the electricity netwrok.
+\\
+Other possible applications are: control of storage, demand side response, anomaly detection, network design and planning, simulating inputs and hangling missing data.
+\\
+\section{Point vs probabilistic forecast}
+A distinction has to be made between two types of forecasting approaches: point forecasts and probabilistic forecasts.
+Point prediction, also called deterministic forecasting in the literature, is all about predicting a particular value in time.
+On the other hand, with probabilistic forecasting we aim at predicting either a prediction interval, quantiles or a probability distribution for each point in time. For this reason, probabilistic forecasts are more informative than point forecasts; and this is why the interest of the research community is shifting towards them.
+Note that a probabilistic forecast can be turned into a point forecast by simply taking its expecatation.
+Alternatively, a probabilistic forecast can be derived from a point one by modeling the residuals of the point prediction.
+
+
+
+\section{Aims and objectives}
 
 - what is the question? objectives of the thesis
 the description of the problem tackled and the methodology used to solve
 it.
 
-- why is it relevant.
+The scope of the thesis is analyzing state of the art forecasting methods in the energy market and to compare them with ideas coming from kernel theory. Applications of such methods to 
 
-- an outline of the thesis with the main points presented in each chapter.
+
+
+\section{Outline}
+We start with a literature review and bibliometric analysis in section \ref{literature_review}.
+Then the theory underlying kernel methods is covered in section \ref{kernel_theory}. Following, section \ref{state_of_the_art} introduces the state of the art methods in the context of both point and probabilistic forecasting. Section \ref{energy_market} explains the core features and terminology of the energy market and of the electricity newtork.
+Evaluation metrics necessary to rank the forecasting techniques are presented in section \ref{metrics}. Section \ref{eda} goes on with the ETL pipeline and the exploratory analysis. 
+Implementation details are included in \ref{implementation}.
+Finally section \ref{experiments} presents the experiments, the results and discusses models' strenghts, weaknesses and possible improvements.

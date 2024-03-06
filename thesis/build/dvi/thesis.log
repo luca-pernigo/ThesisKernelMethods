@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=latex 2023.5.10)  6 FEB 2024 08:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=latex 2023.5.10)  27 FEB 2024 11:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -995,20 +995,192 @@ LaTeX Info: Redefining \nameref on input line 106.
 \c@memhycontfloat=\count405
 \c@Hpagenote=\count406
 )
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries-extra/glossaries-extra
+.sty
+Package: glossaries-extra 2022/11/08 v1.50 (NLCT)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2022/11/03 v4.52 (NLCT)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2022/10/14 v2.08 (NLCT)
+\@glsmfirst=\toks70
+\@glsmrest=\toks71
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2019/09/27 v2.32 (NLCT)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count407
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2019/09/27 v2.32 (NLCT)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count408
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count409
+\FP@xia=\count410
+\FP@xib=\count411
+\FP@xfa=\count412
+\FP@xfb=\count413
+\FP@rega=\count414
+\FP@regb=\count415
+\FP@regs=\count416
+\FP@times=\count417
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count418
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks72
+\@dtl@tmpcount=\count419
+\dtl@tmplength=\skip267
+\dtl@sortresult=\count420
+\@dtl@numgrpsepcount=\count421
+\@dtl@datatype=\count422
+\dtl@codeA=\count423
+\dtl@codeB=\count424
+\@dtl@foreach@level=\count425
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
+
+(/usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries-english/glossaries-eng
+lish.ldf
+File: glossaries-english.ldf 2014/11/23 v1.0
+)
+\gls@level=\count426
+\@gls@tmpb=\toks73
+\gls@tmplen=\skip268
+\glskeylisttok=\toks74
+\glslabeltok=\toks75
+\glsshorttok=\toks76
+\glslongtok=\toks77
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries/styles/glossary-hypern
+av.sty
+Package: glossary-hypernav 2022/11/03 v4.52 (NLCT)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries/styles/glossary-list.s
+ty
+Package: glossary-list 2022/11/03 v4.52 (NLCT)
+\glslistdottedwidth=\skip269
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries/styles/glossary-long.s
+ty
+Package: glossary-long 2022/11/03 v4.52 (NLCT)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip270
+\LTright=\skip271
+\LTpre=\skip272
+\LTpost=\skip273
+\LTchunksize=\count427
+\LTcapwidth=\dimen294
+\LT@head=\box66
+\LT@firsthead=\box67
+\LT@foot=\box68
+\LT@lastfoot=\box69
+\LT@gbox=\box70
+\LT@cols=\count428
+\LT@rows=\count429
+\c@LT@tables=\count430
+\c@LT@chunks=\count431
+\LT@p@ftn=\toks78
+)
+\glsdescwidth=\skip274
+\glspagelistwidth=\skip275
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries/styles/glossary-super.
+sty
+Package: glossary-super 2022/11/03 v4.52 (NLCT)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2020/02/02 v4.1g the supertabular environment
+\c@tracingst=\count432
+\ST@wd=\dimen295
+\ST@rightskip=\skip276
+\ST@leftskip=\skip277
+\ST@parfillskip=\skip278
+\ST@pageleft=\dimen296
+\ST@headht=\dimen297
+\ST@tailht=\dimen298
+\ST@pagesofar=\dimen299
+\ST@pboxht=\dimen300
+\ST@lineht=\dimen301
+\ST@prevht=\dimen302
+\ST@toadd=\dimen303
+\ST@dimen=\dimen304
+\ST@pbox=\box71
+))
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries/styles/glossary-tree.s
+ty
+Package: glossary-tree 2022/11/03 v4.52 (NLCT)
+\glstreeindent=\skip279
+))
+\@glsxtr@leveloffset=\count433
+\glsxtrresourcecount=\count434
+\@glsxtrnewgls@inner=\count435
+\glsshortpltok=\toks79
+\glslongpltok=\toks80
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/glossaries-extra/glossaries-extra
+-abbrstyles.def
+File: glossaries-extra-abbrstyles.def 2022/06/16 v1.48b (NLCT)
+)
+\mglselementindex=\count436
+)
 LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 
 92.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2023-01-16 L3 backend support: dvips
-\l__pdf_internal_box=\box66
-\g__pdf_backend_object_int=\count407
-\l__pdf_backend_content_box=\box67
-\l__pdf_backend_model_box=\box68
-\g__pdf_backend_annotation_int=\count408
-\g__pdf_backend_link_int=\count409
-\g__pdf_backend_link_sf_int=\count410
+\l__pdf_internal_box=\box72
+\g__pdf_backend_object_int=\count437
+\l__pdf_backend_content_box=\box73
+\l__pdf_backend_model_box=\box74
+\g__pdf_backend_annotation_int=\count438
+\g__pdf_backend_link_int=\count439
+\g__pdf_backend_link_sf_int=\count440
 )
 
 LaTeX Warning: Unused global option(s):
@@ -1048,7 +1220,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: dvips (dvips) on input line 124.
 ))
-\c@lstlisting=\count411
+\c@lstlisting=\count441
 LaTeX Info: Redefining \microtypecontext on input line 92.
 Package microtype Info: Applying patch `item' on input line 92.
 Package microtype Info: Applying patch `toc' on input line 92.
@@ -1072,8 +1244,12 @@ Package hyperref Info: Link coloring ON on input line 92.
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 File: USIlogo.ps Graphic file (type eps)
- <USIlogo.ps>
+<USIlogo.ps>
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1146,24 +1322,76 @@ LaTeX Font Info:    Trying to load font information for U+esvect on input line
 (/usr/local/texlive/2023/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-Overfull \hbox (8.29283pt too wide) in paragraph at lines 6--6
+Overfull \hbox (8.29283pt too wide) in paragraph at lines 16--16
  [][] [] []  
  []
 
-) [3] [4
-
-] (../../input_files/problemdescription.tex)
-(../../input_files/literaturereview.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 11--117
-
- []
-
-[1
+[3])
+Package microtype Info: Character `013' is missing
+(microtype)             in font `OT1/pplx/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+ [4] (../../thesis.lof) (../../thesis.lot) [1
 
 ] [2
 
+]
+(../../input_files/problemdescription.tex
+Overfull \hbox (1.17148pt too wide) in paragraph at lines 1--7
+\OT1/pplx/m/n/10.95 Individuals and or-ga-ni-za-tions con-stantly face sit-u-a-
+tions of un-cer-tainty. Thus,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--7
+
+ []
+
+
+Underfull \vbox (badness 6944) has occurred while \output is active []
+
+ [3]
+LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 
+39.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
+File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
+)) [4]
+(../../input_files/literaturereview.tex
+
+../../input_files/literaturereview.tex:5: LaTeX Error: Cannot determine size of
+ graphic in images/epf_evolution.jpg (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 ...width=\textwidth]{images/epf_evolution.jpg}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: images/epf_evolution.jpg Graphic file (type eps)
+<images/epf_evolution.jpg>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [5
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+[7] [8
+
+] (../../input_files/workplan.tex) [9] [10
+
 ] (../../input_files/paper1.tex
-Overfull \hbox (94.86577pt too wide) in paragraph at lines 3--3
+Overfull \hbox (94.46977pt too wide) in paragraph at lines 3--3
 [][][][][][][] 
  []
 
@@ -1176,7 +1404,7 @@ LaTeX Font Info:    Trying to load font information for U+fplmbb on input line
 30.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [3]
+) [11]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 40.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
@@ -1185,14 +1413,11 @@ Package hyperref Info: bookmark level for unknown proposition defaults to 0 on
 input line 67.
 )
 (../../input_files/paper2.tex
-Overfull \hbox (58.44165pt too wide) in paragraph at lines 1--1
+Overfull \hbox (58.04565pt too wide) in paragraph at lines 1--1
 [][][][][][][] 
  []
 
-Package microtype Info: Character `013' is missing
-(microtype)             in font `OT1/pplx/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-[4]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 13--19
 
  []
@@ -1209,7 +1434,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--1
 
  []
 
-[5]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 35--45
 
  []
@@ -1217,7 +1442,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--45
 
 Underfull \vbox (badness 6641) has occurred while \output is active []
 
- [6]
+ [14]
 Underfull \hbox (badness 10000) in paragraph at lines 64--73
 
  []
@@ -1235,7 +1460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
+ [15]
 Underfull \hbox (badness 10000) in paragraph at lines 104--110
 
  []
@@ -1251,7 +1476,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--118
  []
 
 ) (../../input_files/paper4.tex)
-Overfull \hbox (34.6824pt too wide) in paragraph at lines 131--128
+Overfull \hbox (34.6824pt too wide) in paragraph at lines 131--137
 \OT1/pplx/m/n/10.95 So $\OML/zplm/m/it/10.95 "[]$ \OT1/pplx/m/n/10.95 de-pends 
 on $\OML/zplm/m/it/10.95 x[]$ \OT1/pplx/m/n/10.95 only through $\OMS/zplm/m/n/1
 0.95 ^^@[]\U/fplmbb/m/n/10.95 E[]\OT1/zplm/m/n/10.95 [\OML/zplm/m/it/10.95 k\OT
@@ -1262,50 +1487,75 @@ lm/m/n/10.95 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--128
+Underfull \hbox (badness 10000) in paragraph at lines 131--137
 
  []
 
-[8] [9] [10
+[16] [17] (../../input_files/kerneltheory.tex) [18] (../../input_files/qr.tex)
+[19
 
-] (../../input_files/workplan.tex) [11] [12
+] [20
 
-] [13] [14
+] (../../input_files/kde.tex) [21] [22
+
+] (../../input_files/ensemble.tex) [23] [24
+
+] (../../input_files/energymarket.tex) [25] [26
 
 ]
-(../../input_files/data_exploratory.tex) (../../appendix.tex [15] [16
+(../../input_files/data_exploratory.tex) [27] [28
 
-])
-[17] [18
+]
+(../../input_files/implementation.tex) [29] [30
 
-] (../../thesis.bbl
+]
+(../../input_files/analysis.tex) (../../input_files/symbols.tex) [31] [32
+
+]
+(../../appendix.tex [33
+
+] [34
+
+] [35]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (134.72565pt too wide) in paragraph at lines 38--42
+\OT1/pplx/m/n/10.95 The whole code for the project is hosted on [][][][][][]. 
+ []
+
+) [36] (../../thesis.bbl
 bibitemlist
-LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 
-51.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
-File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
-) [19
+[37
+
 
 ])
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- [20]
+ [38]
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
+\tf@lof=\write7
+\openout7 = `thesis.lof'.
 
-(../../thesis.aux)
+\tf@lot=\write8
+\openout8 = `thesis.lot'.
+
+ (../../thesis.aux)
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4218C50EB6A35F15C05D668FF0B25560;2264.
+(rerunfilecheck)             Checksum: 7AECC0AF8AFDAC2F97C441CE90BB611E;4397.
  ) 
 Here is how much of TeX's memory you used:
- 21384 strings out of 476026
- 338954 string characters out of 5790043
- 1868385 words of memory out of 5000000
- 41443 multiletter control sequences out of 15000+600000
- 534242 words of font info for 99 fonts, out of 8000000 for 9000
+ 30039 strings out of 476026
+ 517336 string characters out of 5790043
+ 1869385 words of memory out of 5000000
+ 49950 multiletter control sequences out of 15000+600000
+ 535617 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,14n,125p,1016b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,14n,125p,2271b,737s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thesis.dvi (26 pages, 64860 bytes).
+Output written on thesis.dvi (44 pages, 102640 bytes).
