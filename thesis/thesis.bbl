@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{gm_22}
+{GM22TutorialProbabilisticEnergyForecasting}.
+\newblock https://resourcecenter.ieee-pes.org/education/tutorials/pes\_ed\_tut\_gm22\_0717\_pefm\_sld.
+
 \bibitem{un_sdgs}
 {THE 17 GOALS Sustainable Development - the United Nations}.
 \newblock https://sdgs.un.org/goals.
@@ -8,6 +12,21 @@
 Ilyas Agakishiev, Wolfgang~Karl Härdle, Karel Kozmik, Milos Kopa, and Alla Petukhina.
 \newblock Multivariate probabilistic forecasting of electricity prices with trading applications.
 \newblock {\em SSRN Electronic Journal}, 01 2023.
+
+\bibitem{aizerman}
+A~Aizerman.
+\newblock Theoretical foundations of the potential function method in pattern recognition learning.
+\newblock {\em Automation and remote control}, 25:821--837, 1964.
+
+\bibitem{aronszajn}
+Nachman Aronszajn.
+\newblock Theory of reproducing kernels.
+\newblock {\em Transactions of the American mathematical society}, 68(3):337--404, 1950.
+
+\bibitem{arora2016forecasting}
+Siddharth Arora and James~W Taylor.
+\newblock Forecasting electricity smart meter data using conditional kernel density estimation.
+\newblock {\em Omega}, 59:47--59, 2016.
 
 \bibitem{new_multi_test2}
 Ludwig Baringhaus and Carsten Franz.
@@ -33,6 +52,25 @@ Yutian Chen, Max Welling, and Alex Smola.
 \newblock Super-samples from kernel herding.
 \newblock 2012.
 
+\bibitem{david2016probabilistic}
+Mathieu David, F~Ramahatana, Pierre-Julien Trombe, and Philippe Lauret.
+\newblock Probabilistic forecasting of the solar irradiance with recursive arma and garch models.
+\newblock {\em Solar Energy}, 133:55--72, 2016.
+
+\bibitem{de200625}
+Jan~G De~Gooijer and Rob~J Hyndman.
+\newblock 25 years of time series forecasting.
+\newblock {\em International journal of forecasting}, 22(3):443--473, 2006.
+
+\bibitem{gaillard2016additive}
+Pierre Gaillard, Yannig Goude, and Rapha{\"e}l Nedellec.
+\newblock Additive models and robust aggregation for gefcom2014 probabilistic electric load and electricity price forecasting.
+\newblock {\em International Journal of forecasting}, 32(3):1038--1050, 2016.
+
+\bibitem{gaillardasemi}
+Pierre Gaillarda, Yannig Goudea, and Rapha{\"e}l Nedelleca.
+\newblock Semi-parametric models and robust aggregation for gefcom2014 probabilistic electric load and electricity price forecasting.
+
 \bibitem{gneiting_weather_ensemble}
 Tilmann Gneiting and Adrian~E Raftery.
 \newblock Weather forecasting with ensemble methods.
@@ -43,10 +81,73 @@ Tilmann Gneiting and Adrian~E Raftery.
 \newblock Strictly proper scoring rules, prediction, and estimation.
 \newblock {\em Journal of the American statistical Association}, 102(477):359--378, 2007.
 
+\bibitem{haben2016hybrid}
+Stephen Haben and Georgios Giasemidis.
+\newblock A hybrid model of kernel density estimation and quantile regression for gefcom2014 probabilistic load forecasting.
+\newblock {\em International Journal of Forecasting}, 32(3):1017--1022, 2016.
+
+\bibitem{haben2018short}
+Stephen Haben, Georgios Giasemidis, Florian Ziel, and Siddharth Arora.
+\newblock Short term load forecasts of low voltage demand and the effects of weather.
+\newblock {\em arXiv preprint arXiv:1804.02955}, 2018.
+
+\bibitem{hastie2017generalized}
+Trevor~J Hastie.
+\newblock Generalized additive models.
+\newblock In {\em Statistical models in S}, pages 249--307. Routledge, 2017.
+
+\bibitem{he2022cooperative}
+Yaoyao He, Yun Wang, Shuo Wang, and Xin Yao.
+\newblock A cooperative ensemble method for multistep wind speed probabilistic forecasting.
+\newblock {\em Chaos, Solitons \& Fractals}, 162:112416, 2022.
+
+\bibitem{hilbert}
+David Hilbert.
+\newblock Grundzuge einer allgemeinen theorie der linearen integralgleichungen.
+\newblock {\em Gott. Nachr.}, pages 307--338, 1904.
+
+\bibitem{hong_phd}
+Tao Hong.
+\newblock {\em Short term electric load forecasting}.
+\newblock North Carolina State University, 2010.
+
+\bibitem{prob_elf}
+Tao Hong and Shu Fan.
+\newblock Probabilistic electric load forecasting: A tutorial review.
+\newblock {\em International Journal of Forecasting}, 32(3):914--938, 2016.
+
+\bibitem{hong2014global}
+Tao Hong, Pierre Pinson, and Shu Fan.
+\newblock Global energy forecasting competition 2012, 2014.
+
+\bibitem{hong2016probabilistic}
+Tao Hong, Pierre Pinson, Shu Fan, Hamidreza Zareipour, Alberto Troccoli, and Rob~J Hyndman.
+\newblock Probabilistic energy forecasting: Global energy forecasting competition 2014 and beyond, 2016.
+
+\bibitem{hong2019global}
+Tao Hong, Jingrui Xie, and Jonathan Black.
+\newblock Global energy forecasting competition 2017: Hierarchical probabilistic load forecasting.
+\newblock {\em International Journal of Forecasting}, 35(4):1389--1399, 2019.
+
+\bibitem{huurman2012power}
+Christian Huurman, Francesco Ravazzolo, and Chen Zhou.
+\newblock The power of weather.
+\newblock {\em Computational Statistics \& Data Analysis}, 56(11):3793--3807, 2012.
+
+\bibitem{hyndman1996estimating}
+Rob~J Hyndman, David~M Bashtannyk, and Gary~K Grunwald.
+\newblock Estimating and visualizing conditional densities.
+\newblock {\em Journal of Computational and Graphical Statistics}, 5(4):315--336, 1996.
+
 \bibitem{jebara}
 Tony Jebara and Risi Kondor.
 \newblock Bhattacharyya expected likelihood kernels.
 \newblock volume 2777, pages 57--71, 01 2003.
+
+\bibitem{jonsson2014predictive}
+Tryggvi J{\'o}nsson, Pierre Pinson, Henrik Madsen, and Henrik~Aalborg Nielsen.
+\newblock Predictive densities for day-ahead electricity prices using time-adaptive quantile regression.
+\newblock {\em Energies}, 7(9):5523--5547, 2014.
 
 \bibitem{pmlr}
 Motonobu Kanagawa and Kenji Fukumizu.
@@ -58,10 +159,35 @@ Yoshihito Kazashi and Fabio Nobile.
 \newblock Density estimation in {RKHS} with application to korobov spaces in high dimensions.
 \newblock {\em {SIAM} Journal on Numerical Analysis}, 61(2):1080--1102, apr 2023.
 
+\bibitem{kolmogorov}
+Andrei~Nikolaevitch Kolmogorov.
+\newblock Stationary sequences in hilbert space.
+\newblock {\em Bull. Math. Univ. Moscow}, 2(6):1--40, 1941.
+
+\bibitem{lago}
+Jesus Lago, Grzegorz Marcjasz, Bart De~Schutter, and Rafa{\l} Weron.
+\newblock Forecasting day-ahead electricity prices: A review of state-of-the-art algorithms, best practices and an open-access benchmark.
+\newblock {\em Applied Energy}, 293:116983, 2021.
+
+\bibitem{maciejowska2016hybrid}
+Katarzyna Maciejowska and Jakub Nowotarski.
+\newblock A hybrid model for gefcom2014 probabilistic electricity price forecasting.
+\newblock {\em International Journal of Forecasting}, 32(3):1051--1056, 2016.
+
 \bibitem{probablistic_electricity_forecast2}
 Grzegorz Marcjasz, Michał Narajewski, Rafał Weron, and Florian Ziel.
 \newblock Distributional neural networks for electricity price forecasting.
 \newblock {\em Energy Economics}, 125:106843, September 2023.
+
+\bibitem{mercer}
+James Mercer.
+\newblock Xvi. functions of positive and negative type, and their connection the theory of integral equations.
+\newblock {\em Philosophical transactions of the royal society of London. Series A, containing papers of a mathematical or physical character}, 209(441-458):415--446, 1909.
+
+\bibitem{moller2008time}
+Jan~Kloppenborg M{\o}ller, Henrik~Aalborg Nielsen, and Henrik Madsen.
+\newblock Time-adaptive quantile regression.
+\newblock {\em Computational Statistics \& Data Analysis}, 52(3):1292--1303, 2008.
 
 \bibitem{Muandet_2017}
 Krikamol Muandet, Kenji Fukumizu, Bharath Sriperumbudur, and Bernhard Schölkopf.
@@ -72,15 +198,60 @@ Krikamol Muandet, Kenji Fukumizu, Bharath Sriperumbudur, and Bernhard Schölkopf
 Michael Multerer, Paul Schneider, and Rohan Sen.
 \newblock Fast empirical scenarios, 2023.
 
+\bibitem{nowotarski2015computing}
+Jakub Nowotarski and Rafa{\l} Weron.
+\newblock Computing electricity spot price prediction intervals using quantile regression and forecast averaging.
+\newblock {\em Computational Statistics}, 30:791--803, 2015.
+
+\bibitem{nowotarski}
+Jakub Nowotarski and Rafa{\l} Weron.
+\newblock Recent advances in electricity price forecasting: A review of probabilistic forecasting.
+\newblock {\em Renewable and Sustainable Energy Reviews}, 81:1548--1568, 2018.
+
+\bibitem{nystrom}
+Evert~J Nystr{\"o}m.
+\newblock {\"U}ber die praktische aufl{\"o}sung von integralgleichungen mit anwendungen auf randwertaufgaben.
+\newblock 1930.
+
 \bibitem{forecasting_big}
 Fotios Petropoulos, Daniele Apiletti, Vassilios Assimakopoulos, Mohamed~Zied Babai, Devon~K Barrow, Souhaib~Ben Taieb, Christoph Bergmeir, Ricardo~J Bessa, Jakub Bijak, John~E Boylan, et~al.
 \newblock Forecasting: theory and practice.
 \newblock {\em International Journal of Forecasting}, 38(3):705--871, 2022.
 
+\bibitem{poggio}
+Tomaso Poggio and Federico Girosi.
+\newblock Networks for approximation and learning.
+\newblock {\em Proceedings of the IEEE}, 78(9):1481--1497, 1990.
+
+\bibitem{rosenblatt1969conditional}
+Murray Rosenblatt.
+\newblock Conditional probability density and regression estimators.
+\newblock {\em Multivariate analysis II}, 25:31, 1969.
+
+\bibitem{schmidt}
+Erhard Ing~Grad Schmidt.
+\newblock {\"U}ber die aufl{\"o}sung linearer gleichungen mit unendlich vielen unbekannten.
+\newblock {\em Rendiconti del Circolo Matematico di Palermo (1884-1940)}, 25:53--77, 1908.
+
+\bibitem{schoenberg}
+Isaac~J Schoenberg.
+\newblock Metric spaces and positive definite functions.
+\newblock {\em Transactions of the American Mathematical Society}, 44(3):522--536, 1938.
+
+\bibitem{pca_scholkopf}
+Bernhard Sch{\"o}lkopf, Alexander Smola, and Klaus-Robert M{\"u}ller.
+\newblock Nonlinear component analysis as a kernel eigenvalue problem.
+\newblock {\em Neural computation}, 10(5):1299--1319, 1998.
+
 \bibitem{Scott2015}
 David~W. Scott.
 \newblock {\em Multivariate Density Estimation: Theory, Practice, and Visualization}.
 \newblock Wiley Series in Probability and Statistics. Wiley, 2 edition, 2015.
+
+\bibitem{learning_with_kernels}
+Alex~J Smola and Bernhard Sch{\"o}lkopf.
+\newblock {\em Learning with kernels}, volume~4.
+\newblock Citeseer, 1998.
 
 \bibitem{new_multi_tes1}
 G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
@@ -92,9 +263,73 @@ Hong Tao.
 \newblock Crystal ball lessons in predictive analytics.
 \newblock {\em EnergyBiz}, pages 35--37, 2015.
 
+\bibitem{tibshirani1996regression}
+Robert Tibshirani.
+\newblock Regression shrinkage and selection via the lasso.
+\newblock {\em Journal of the Royal Statistical Society Series B: Statistical Methodology}, 58(1):267--288, 1996.
+
+\bibitem{van2018review}
+Dennis~W Van~der Meer, Joakim Wid{\'e}n, and Joakim Munkhammar.
+\newblock Review on probabilistic forecasting of photovoltaic power production and electricity consumption.
+\newblock {\em Renewable and Sustainable Energy Reviews}, 81:1484--1512, 2018.
+
+\bibitem{vapnik2}
+Vladimir Vapnik.
+\newblock {\em The nature of statistical learning theory}.
+\newblock Springer science \& business media, 1995.
+
+\bibitem{vapnik1}
+Vladimir Vapnik and Alexey Chervonenkis.
+\newblock Theory of pattern recognition, 1974.
+
+\bibitem{wahba}
+Grace Wahba.
+\newblock {\em Spline models for observational data}.
+\newblock SIAM, 1990.
+
+\bibitem{wan2016direct}
+Can Wan, Jin Lin, Jianhui Wang, Yonghua Song, and Zhao~Yang Dong.
+\newblock Direct quantile regression for nonparametric probabilistic forecasting of wind power generation.
+\newblock {\em IEEE Transactions on Power Systems}, 32(4):2767--2778, 2016.
+
 \bibitem{EPF_review}
 Rafał Weron.
 \newblock Electricity price forecasting: A review of the state-of-the-art with a look into the future.
 \newblock {\em International Journal of Forecasting}, 30, 10 2014.
+
+\bibitem{williams}
+Christopher~KI Williams and David Barber.
+\newblock Bayesian classification with gaussian processes.
+\newblock {\em IEEE Transactions on pattern analysis and machine intelligence}, 20(12):1342--1351, 1998.
+
+\bibitem{xie2016gefcom2014}
+Jingrui Xie and Tao Hong.
+\newblock Gefcom2014 probabilistic electric load forecasting: An integrated solution with forecast combination and residual simulation.
+\newblock {\em International Journal of Forecasting}, 32(3):1012--1016, 2016.
+
+\bibitem{zhang2020two}
+Jiawei Zhang, Yi~Wang, Mingyang Sun, and Ning Zhang.
+\newblock Two-stage bootstrap sampling for probabilistic load forecasting.
+\newblock {\em IEEE Transactions on Engineering Management}, 69(3):720--728, 2020.
+
+\bibitem{zhang2020probability}
+Lei Zhang, Lun Xie, Qinkai Han, Zhiliang Wang, and Chen Huang.
+\newblock Probability density forecasting of wind speed based on quantile regression and kernel density estimation.
+\newblock {\em Energies}, 13(22):6125, 2020.
+
+\bibitem{zhang2014review}
+Yao Zhang, Jianxue Wang, and Xifan Wang.
+\newblock Review on probabilistic forecasting of wind power generation.
+\newblock {\em Renewable and Sustainable Energy Reviews}, 32:255--270, 2014.
+
+\bibitem{ziel2016lasso}
+Florian Ziel and Bidong Liu.
+\newblock Lasso estimation for gefcom2014 probabilistic electric load forecasting.
+\newblock {\em International Journal of Forecasting}, 32(3):1029--1037, 2016.
+
+\bibitem{ziel2018probabilistic}
+Florian Ziel and Rick Steinert.
+\newblock Probabilistic mid-and long-term electricity price forecasting.
+\newblock {\em Renewable and Sustainable Energy Reviews}, 94:251--266, 2018.
 
 \end{thebibliography}

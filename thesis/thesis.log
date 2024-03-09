@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  6 MAR 2024 11:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  9 MAR 2024 21:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1023,11 +1023,7 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [titlepage].
 
-(./thesis.aux
-
-LaTeX Warning: Label `fig:point_vs_prob' multiply defined.
-
-)
+(./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
@@ -1100,7 +1096,7 @@ Package hyperref Info: Link coloring ON on input line 93.
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
-<USIlogo.pdf, id=124, 1204.5pt x 1204.5pt>
+<USIlogo.pdf, id=152, 1204.5pt x 1204.5pt>
 File: USIlogo.pdf Graphic file (type pdf)
 <use USIlogo.pdf>
 Package pdftex.def Info: USIlogo.pdf  used on input line 103.
@@ -1191,65 +1187,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--15
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--23
+Underfull \hbox (badness 10000) in paragraph at lines 16--25
 
  []
 
 [3]
 
-LaTeX Warning: Reference `state_of_the_art' on page 4 undefined on input line 44.
+LaTeX Warning: Reference `state_of_the_art' on page 4 undefined on input line 46.
 
 ) [4] [5] [6
 
 ] (./input_files/literaturereview.tex
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 3.
+LaTeX Warning: Citation `review_2021' on page 7 undefined on input line 13.
 
-<images/epf_evolution1.jpg, id=246, 1084.05pt x 722.7pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+<images/time.jpg, id=293, 358.79176pt x 231.51982pt>
+File: images/time.jpg Graphic file (type jpg)
+<use images/time.jpg>
+Package pdftex.def Info: images/time.jpg  used on input line 24.
+(pdftex.def)             Requested size: 369.0pt x 238.11125pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--39
+
+ []
+
+[8 <./images/time.jpg>]
+<images/epf_evolution1.jpg, id=305, 1084.05pt x 722.7pt>
 File: images/epf_evolution1.jpg Graphic file (type jpg)
 <use images/epf_evolution1.jpg>
-Package pdftex.def Info: images/epf_evolution1.jpg  used on input line 18.
+Package pdftex.def Info: images/epf_evolution1.jpg  used on input line 45.
 (pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/point_vs_prob.jpg, id=249, 1084.05pt x 722.7pt>
+<images/point_vs_prob.jpg, id=307, 1084.05pt x 722.7pt>
 File: images/point_vs_prob.jpg Graphic file (type jpg)
 <use images/point_vs_prob.jpg>
-Package pdftex.def Info: images/point_vs_prob.jpg  used on input line 24.
+Package pdftex.def Info: images/point_vs_prob.jpg  used on input line 53.
 (pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/cs_stat_both.jpg, id=250, 1084.05pt x 722.7pt>
+<images/cs_stat_both.jpg, id=309, 1084.05pt x 722.7pt>
 File: images/cs_stat_both.jpg Graphic file (type jpg)
 <use images/cs_stat_both.jpg>
-Package pdftex.def Info: images/cs_stat_both.jpg  used on input line 30.
+Package pdftex.def Info: images/cs_stat_both.jpg  used on input line 60.
 (pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/subject_area.jpg, id=251, 1084.05pt x 722.7pt>
+<images/subject_area.jpg, id=311, 1084.05pt x 722.7pt>
 File: images/subject_area.jpg Graphic file (type jpg)
 <use images/subject_area.jpg>
-Package pdftex.def Info: images/subject_area.jpg  used on input line 37.
+Package pdftex.def Info: images/subject_area.jpg  used on input line 67.
 (pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/src_title.jpg, id=252, 722.7pt x 361.35pt>
+<images/src_title.jpg, id=313, 722.7pt x 361.35pt>
 File: images/src_title.jpg Graphic file (type jpg)
 <use images/src_title.jpg>
-Package pdftex.def Info: images/src_title.jpg  used on input line 44.
+Package pdftex.def Info: images/src_title.jpg  used on input line 74.
 (pdftex.def)             Requested size: 369.0pt x 184.5011pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 41--79
 
-) [7] [8 <./images/epf_evolution1.jpg> <./images/point_vs_prob.jpg>] [9 <./images/cs_stat_both.jpg> <./images/subject_area.jpg>]
+ []
+
+[9 <./images/epf_evolution1.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 80--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--141
+
+ []
+
+[10 <./images/point_vs_prob.jpg>] [11 <./images/cs_stat_both.jpg> <./images/subject_area.jpg>]
 Underfull \vbox (badness 2245) has occurred while \output is active []
 
- [10 <./images/src_title.jpg>] [11] [12
+ [12 <./images/src_title.jpg>] [13])
+Underfull \hbox (badness 10000) in paragraph at lines 143--124
+
+ []
+
+[14] [15] [16
 
 ] (./input_files/paper1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 17--19
@@ -1259,11 +1274,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--19
 LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 30.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [13]
+) [17]
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 40.
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 61.
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 67.
-) (./input_files/paper2.tex [14]
+) (./input_files/paper2.tex [18]
 Underfull \hbox (badness 10000) in paragraph at lines 13--19
 
  []
@@ -1279,7 +1294,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--1
 
  []
 
-[15]
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 35--45
 
  []
@@ -1287,7 +1302,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--45
 
 Underfull \vbox (badness 6641) has occurred while \output is active []
 
- [16]
+ [20]
 Underfull \hbox (badness 10000) in paragraph at lines 64--73
 
  []
@@ -1305,7 +1320,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--86
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
+ [21]
 Underfull \hbox (badness 10000) in paragraph at lines 104--110
 
  []
@@ -1330,35 +1345,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--139
 
  []
 
-[18] [19] (./input_files/kerneltheory.tex) [20] (./input_files/qr.tex) [21
+[22] [23] (./input_files/kerneltheory.tex) [24] (./input_files/qr.tex) [25
 
-] [22
+] [26
 
-] (./input_files/kde.tex) [23] [24
+] (./input_files/kde.tex) [27] [28
 
-] (./input_files/ensemble.tex) [25] [26
+] (./input_files/ensemble.tex) [29] [30
 
 ] (./input_files/energymarket.tex
-<images/electricity-production-by-source.png, id=389, 3412.75pt x 2775.36874pt>
+<images/electricity-production-by-source.png, id=549, 3412.75pt x 2775.36874pt>
 File: images/electricity-production-by-source.png Graphic file (type png)
 <use images/electricity-production-by-source.png>
 Package pdftex.def Info: images/electricity-production-by-source.png  used on input line 9.
 (pdftex.def)             Requested size: 369.0pt x 300.08263pt.
- [27 <./images/electricity-production-by-source.png>]) [28] (./input_files/metrics.tex) [29
+ [31 <./images/electricity-production-by-source.png>]) [32] (./input_files/metrics.tex) [33
 
-] [30
+] [34
 
-] (./input_files/data_exploratory.tex) [31] [32
+] (./input_files/data_exploratory.tex) [35] [36
 
-] (./input_files/implementation.tex) [33] [34
+] (./input_files/implementation.tex) [37] [38
 
-] (./input_files/analysis.tex) (./input_files/symbols.tex) [35] [36
+] (./input_files/analysis.tex) (./input_files/symbols.tex) [39] [40
 
-] (./appendix.tex [37
+] [41
 
-] [38
+] (./appendix.tex [42] [43
 
-] [39]
+]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1376,16 +1391,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--42
 LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 42.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
-)) [40] (./thesis.bbl
+)) [44] (./thesis.bbl
 bibitemlist
-[41
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+[]\OT1/pplx/m/n/10.95 (+20) GM22TutorialProbabilisticEnergyForecasting.
+ []
 
 
-])
+Overfull \hbox (81.13945pt too wide) in paragraph at lines 4--6
+\OT1/pplx/m/n/10.95 (-20) https://resourcecenter.ieee-pes.org/education/tutorials/pes[]ed[]tut[]gm22[]0717[]pefm[]sld. 
+ []
+
+[45
+
+
+] [46] [47] [48] [49])
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- [42]
+ [50]
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
@@ -1399,25 +1424,22 @@ bibitemlist
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C795F8B7D5BA64FC31A1080693545FB8;4488.
+(rerunfilecheck)             Checksum: 2145A4C325AF3B592B4FA4754D3C612E;5573.
  ) 
 Here is how much of TeX's memory you used:
- 31299 strings out of 476025
- 532831 string characters out of 5790017
- 1869388 words of memory out of 5000000
- 50668 multiletter control sequences out of 15000+600000
- 563104 words of font info for 375 fonts, out of 8000000 for 9000
+ 32351 strings out of 476025
+ 548023 string characters out of 5790017
+ 1871388 words of memory out of 5000000
+ 51593 multiletter control sequences out of 15000+600000
+ 565056 words of font info for 405 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,14n,125p,2312b,743s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,14n,125p,2312b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (48 pages, 1227296 bytes).
+Output written on thesis.pdf (56 pages, 1343906 bytes).
 PDF statistics:
- 594 PDF objects out of 1000 (max. 8388607)
- 494 compressed objects within 5 object streams
- 129 named destinations out of 1000 (max. 500000)
- 94996 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 817 PDF objects out of 1000 (max. 8388607)
+ 705 compressed objects within 8 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 95057 words of extra memory for PDF output out of 106986 (max. 10000000)
 

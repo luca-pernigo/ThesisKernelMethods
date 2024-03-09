@@ -1,60 +1,123 @@
-Energy Forecasting 
+Electricity Forecasting 
+%intro
+During the past 25 years %because paper of 2014 says 15, so now it is 25
+a wide range of new ideas have been proposed for point forecasting and for probabilistic forecasting.
+\\
+The field benefitted greatly from the increse of computing power, the greater availability of dataset and the interest in data science.
+As a consequence, the forecaster's toolbox has grown in size and complexity.
+\\
+As already pointed out, such variety of methods is characterized by the heterogeneity in the fields from which they come from; methods come from statisitics, mathematics, econometrics, electrical engineering and the artificial intelligence communities.
+\\
+Before delving into the literature review, it is important to make clear that at this point in time there is no superior method. Different solutions may outperform or underperform compared to other techniques depending on the problem settings. Thus, understanding the complexity, strenghts and weaknesses of each method is crucial for fitting the right model to the right setting.
+\\
+Finally, within this research community, it emerged the need of more homogeneity in the choice of the error valuation metrics (section \ref{metrics}), data quality and in the way of comparing model performances \cite{EPF_review}; as a solution, \cite{review_2021} proposes a checklist to aid evaluating the meaningfulness of new research. Hence, throughout this thesis work, we will stick to the proposed principles and best practices peculiar of the EF field.
+%literature review
 
-\subsection{Energy forecasting classification}
+\section{Electricity forecasting classification}
+Electricity forecasting is a vague term and it is used in the literature to refer to the whole field. Thus, in order to introduce some clarity it is useful to classify the range of EF articles in terms of their core attributes.
+\subsection{Types}
+In the context of energy forecasting, the quantities of most interest are prices (EPF), loads (ELF) and renewables generation (mostly wind and solar).
 
-\subsubsection{Types}
-In the context of energy forecasting, the quantities of most interest are price, load and renewables generation.
+\subsection{Forecasting horizons}\label{cls_time}
+In terms of forecasting horizons, we can group EF into four major categories: very short term forcasting (VSTF), short term load forecasting (STF), medum term forecasting (MTF) and long term forecasting (LTF). Consensus in the literature is to use as cut off horizons one day, two weeks and three years respectilvely \cite{hong_phd}; see \ref{fig:time} for a visualisation. 
+\begin{figure}
+  \includegraphics[width=\textwidth]{images/time.jpg}
+  \caption{Time classsification \cite{prob_elf}}
+  \label{fig:time}
+\end{figure}
 
-\subsubsection{Forecasting horizons}
-\subsubsection{Size}
-- Forecasting horizons
 
-- Refer to section \ref*{metrics} for evaluating metrics
+\subsection{Size}
+Forecasts can either be for the whole target electricity network (system) or for a subset of it (zonal).
 
-- plots come quelli delle review con i dati di Scopus se é una cosa fattibile
-\label{sec:literaturereview}
+\subsection{Point vs Probabilistic}\label{cls_pp}
+Finally, EF literature distinguishes between point and probabilistic forecasts. Each of the two has its advantages and disadvantages; point forecasts are easier to generate and less computationally intensive while probabilistic forecast are more informative. Industry and research efforts have focused primarily on point forcasting. Nevertheless, interest in probabilistic forecasting has risen considerably over the last years due to renewable integration requirements, introduction of smart grids and increased market competitivness.
+\\
+\\
+To conclude this section
+Ziel et Steinert carefully tables, are reported in the appendix for the interested reader.
 
-\begin{figure}[h!]
+\section{Bibliographic analysis}
+This section presents the results of the bibliometric analysis we performed on 6th March 2024. This survey has been carried out by using the Scopus citation database. For details on the specific queries entered in Scopus, refer to \ref{src_code}.
+\\
+To get started, let us consider the evolution of the EF field over the years. This is visualized in figure \ref{fig:epf_evolution}, with results grouped by category; note, articles prior to the 2000 have been aggregated together due to their small number. Figure \ref{fig:epf_evolution} shows the trend of an increasing interest in EF.
+\begin{figure}
     \includegraphics[width=\textwidth]{images/epf_evolution1.jpg}
-    \caption{EPF publications \cite{EPF_review}}
+    \caption{EF publications}
     \label{fig:epf_evolution}
   \end{figure}
-
-\begin{figure}[h!]
+\\
+The next question was to compare the state of point versus probabilistic forecasting, this is visualized in figure \ref{fig:point_vs_prob}. What it can be concluded is that probabilistic is less developed than point forecasting. To our mind this is due to the complexity of probabilistic forecast.
+Nevertheless, we can see a trend that suggests researchers are making an effort to fill this gap.
+\begin{figure}
   \includegraphics[width=\textwidth]{images/point_vs_prob.jpg}
   \caption{Point vs probabilistic pubblications}
   \label{fig:point_vs_prob}
 \end{figure}
-
-\begin{figure}[h!]
+\\
+The EF literature is dominated by statistical and computational intelligence methods as can be seen from figure \ref{fig:cs_stat_both}, with CI methods beign slightly preferred. 
+\begin{figure}
   \includegraphics[width=\textwidth]{images/cs_stat_both.jpg}
   \caption{Pubblications by method}
-  \label{fig:point_vs_prob}
+  \label{fig:cs_stat_both}
 \end{figure}
-
-
-\begin{figure}[h!]
+\\
+EF is an heterogenous field of research, its researchers come from a wide array of backgrounds, with electrical engineers and statisticians making up the top contributors; their different educational training may explain why the split between statistical and computational intelligence methods is so marked. Figure \ref{fig:subject_area} depitcs the EF publications by subject area. What can be concluded, is that the bulk of pubblications come from engineering, computer science, mathematics and econometrics.
+\begin{figure}
   \includegraphics[width=\textwidth]{images/subject_area.jpg}
   \caption{Pubblications by subject area}
   \label{fig:subject_area}
 \end{figure}
-
-
-\begin{figure}[h!]
+\\
+Finally, in order to refer to the most relevant source in the field, EF outlets have been ranked by popularity and plotted in \ref{fig:src_title}.
+\begin{figure}
   \includegraphics[width=\textwidth]{images/src_title.jpg}
   \caption{Most popolar sources/outlets}
   \label{fig:src_title}
 \end{figure}
-
-%INTRO KERNEL METHODS E ENERGY PRICE MODELLING
-
-Kernel methods are a class of algorithms for patter analysis.
-With kernel methods we are able to apply linear methods with predictors in a high dimensional space, without having to explicitly evaluate the involved dot products of the features.
-In this thesis work I will address the performance of kernel methods in the context of probabilistic forecasting; the area of application will be the electricity market. 
-Probabilistic forecasting may be useful to power producers, traders and consumers in order to improve their decision making process and managing risk(VaR). This is because probabilistic forecast enables them to simulate scenarios and carry out stress tests.
-
-
-%SPIEGO UN PO' I PAPER CHE HO FATTO PASSARE VELOCEMENTE 
+\\
+\section{EF literature review}
+To get started a few review articles were collected in order to understand conventions, best practicies and terminology of the EF community.
+Weron \cite{EPF_review} reviews the state of the art for electricity price forecasting; beside analysing complexity of available solutions, strenghts and weaknesses it also stresses the need for objective comparative EPF studies. Specifically, it advocates for studies using similar datasets, using the same error evaluation metric and statistical testing model's outperformance.
+Hong et al. \cite{prob_elf} discusses the state of the art in probabilistic electric load forecasting; it differentiates between techniques and methodologies. With techniques they refer to a family of models, like multiple linear regression or artificial neural networks. On the other hand, methodologies consist of general frameworks that can be incorporated into any method, for example variable selection mechanisms. Also this paper stresses the need for some guidelines to standardize research in the field.
+Nowotarski et al. \cite{nowotarski} also carried out a thorough review of probabilistic forecasting.
+Weron et al. \cite{lago} offer a set of best practices when forecasting electricity prices in order to have a common framework to evaluate and compare future research.
+Zhang et al. \cite{zhang2014review} considers state of the art methods in wind power probabilistic forecasting and describes current challenges and possible future developments.
+Ziel et al. \cite{ziel2018probabilistic} provides detailed tables, grouping research papers by the time dimension \ref{cls_time} and objective \ref{cls_pp} and reporting dataset, model and accuracy 
+measures adopted.
+David et al. \cite{david2016probabilistic} adopt a combination of ARMA and GARCH in probabilistic forecasts of solar irradiance. Furthermore, they propose a recursive framework for parameter estimation.
+De Gooijer \cite{de200625} reviews 25 years of time series forecasting for the period 1990-2005, highlighting the most influential works.
+He et al. \cite{he2022cooperative} models  multistep wind speed probabilistic forecasting by mixing CEEDMAN, LASSO and QRNN. In this work, CEEMDAN is used to decompose the wind speed time series; LASSO compresses high dimensional features; QR is used for obtaining quantile forecasts; finally KDE converts quantile forecasts into density estimates.
+Wan et al. \cite{wan2016direct} proposes a combination of QR and ELM to generate non parametric probabilistic forecast of wind generation.
+Van der Meer et al. \cite{van2018review} provides another thorough anlysis of the probabilistic forecasting realm by covering recent advances and identifying research gaps.
+The IEEE Power and Energy Society provides also insightful lecture notes on probabilistic energy forecasting methodologies,
+implementations, and applications \cite{gm_22}.
+Marcjasz et al \cite{probablistic_electricity_forecast2} uses distributional neural networks to crete probabilistic forecasts for the day ahead electricity prices in the german market.
+Nowotarski et al. \cite{nowotarski2015computing} introduce a method for constructing PI and call it quantile regression averaging. Their idea is weighting a set of models' prediction such that the pinball loss of the weighted model is minimized. The observed results is that QRA performed better compared to twelve individual models.
+Arora et al. \cite{arora2016forecasting} focus on modelling electricity smart meter data by proposing a non parametric probabilistic technique based on kernel density estimation and conditional kernel density estimation \cite{rosenblatt1969conditional} \cite{hyndman1996estimating}. Their conclusion is that kernel density methods are competitive against exponential smoothing when forecasting residential data. Conversely, exponential smoothing has still an edge in predicting SME data.
+Zhang et al. \cite{zhang2020probability} introduce a framework based on quantile regression and kernel density estimation in the context of short term wind forecasting. The proposed methods behave well compared to a ARMA(1,1).
+Haben et al. \cite{haben2018short} analyses a variety of techniques in terms of both probabilistic and point forecasting, within this study they focus on load forecasting at the low voltage level.
+Zhang et al \cite{zhang2020two} proposes a two stage bootstrap sampling framework for probabilistic load forecasting. They test it for different regression models such as RF, GBRT, linear regression, and LSSVM regression.
+Jónsson et al. \cite{jonsson2014predictive}
+introduces a density model for the day ahead market extending the adaptive QR framework of \cite{moller2008time} by modelling the tails of the predicted density with an exponential distribution.
+Huurman et al. \cite{huurman2012power} surveys the predictive power of weather variables for electricity prices in danish market. Their empirical results suggest that weather is central for point forecasting day ahead prices. The opposite conclusion are drawn for density forecasting
+%GEFCom2012
+A major step forward in EF was the creation of the global energy forecasting competition (GEFCom) in 2012. Until then, no formal benchmarking process or data pool was established and new publications rarely reproduced the results from work done by others. Addressing these issues was the motivation behind the creation of GEFCom by the IEEE working group on energy forecasting. The EF field was positively affected by this competition; a number of ideas were tested on the same setting with only the best ones being published and it also contributed bridging the gap between industry practice and academic research. GEFCom 2012 had two tracks; the former about hierarchical load forecasting, the latter about wind power forecasting, see \cite{hong2014global} for a comprehensive review. 
+\\
+%GEFCom 2014
+The focus of GEFCom 2014 was on probabilistic forecasting, Hong et al. \cite{hong2016probabilistic} discusses the problem tracks, the data and the winning methods.
+In this paragraph some of the winning entries of the 2014 GEFCom edition are discussed.
+Xie et al. \cite{xie2016gefcom2014} propose a two stage approach; in the first stage they use MLR to build a point forecast, then in the second stage they try different approaches for modelling the MLR residuals, among other they tried ESM, ANN and ARIMA. 
+Maciejowska et al. \cite{maciejowska2016hybrid} proposes a new probabilistic model extending the idea of QRA \cite{nowotarski2015computing}.
+Haben et al. \cite{haben2016hybrid} mixes CKD and QR in their competition entry.
+Gaillard et al. \cite{gaillard2016additive} \cite{gaillardasemi} combines quantile regression with generalized additive models \cite{hastie2017generalized}.
+Ziel et al. \cite{ziel2016lasso} estimates an AR model through the LASSO \cite{tibshirani1996regression} instead of the standard OLS.
+\\
+%GEFCom 2017
+The last GEFCom was held in 2017, its focus was providing probabilistic load forecasts, see \cite{hong2019global}. The GEFCom competition has also inspired the organization of other competitions such as the RWEnpower competition in the UK, the RTE competition in France, the Tokyo electric power company competition in Japan and the BigDEAL forecasting competitions.
+\\
+\\
+Considerations that can be drawn from the above literature review.
 Every paper uses different datasets (heterogeneous)
 So it is not possible to compare directly results
 from one paper to another without implementing the
@@ -64,27 +127,7 @@ This is why sections after are destined to analyzing
 how these proposed methods so far work and their mathematical
 theory details
 \\
-This problem has been already addressed in \cite{probablistic_electricity_forecast} and \cite{probablistic_electricity_forecast2}. 
-These papers surveyed the performance of neural network architectures against simpler approaches like quantile regression and data fitting to Johnson distribution. Their conclusion is that distributional NN perform a little worse than quantile regression but the former has smaller computational cost; that is because the quantile regression is run for every quantile from 0.01 to 0.99.
-Nevertheless kernel methods received very little attention in this specific setting.
-\\
-Kernel methods considered are kernel mean embedding \cite{pmlr}, \cite{Muandet_2017} and kernel herding \cite{supersamples}. Particularly extending the idea of \cite{2022nystrom}, where the Nyström approximation is employed in computing the kernel mean embedding, experiments with the Pivoted Cholesky decomposition will be performed.
-\\
-In section 2, three papers that lay the basis for this thesis’ work are summarized.
-\\
 ************************
-\\
-During the past 25 years %because paper of 2014 says 15, so now it is 25
-a wide range of new ideas have been proposed for point forecasting and for probabilistic forecasting.
-\\
-The field benefitted greatly from the increse of computing power, the greater availability of dataset and the interest in data science.
-As a consequence, the forecaster's toolbox has grown in size and complexity.
-\\
-Such variety of methods is characterized by heterogeneity in the fields from which they come from; methods come from statisitics, mathematics, econometrics, electrical engineering and the artificial intelligence communities.
-\\
-Before delving into the literature review, it is important to make clear that at this point in time there is no superior method. Different solutions may outperform or underperform compared to other techniques depending on the problem settings. Thus, understanding the complexity, strenghts and weaknesses of each method is crucial for fitting the right model to the right setting.
-\\
-Finally, within this research community, emerged the need of more homogeneity in the choice of the error valuation metrics and in the way of comparing model performances \cite{EPF_review}.
 \\
 ************************
 \\
@@ -94,3 +137,28 @@ Experimental results have shown ensemble methods to outperform their component f
 Note that the more the errors of the combined models are not correlated the more we can benefit from ensembles.
 \\
 It is also worth noting that older and simpler methods are still valuable(in combination with other models or on their own); these being less subject to overfitting than complex models.
+\\
+\section{Kernel methods literature review}
+%INTRO KERNEL METHODS E ENERGY PRICE MODELLING
+Kernel methods are a class of algorithms for patter analysis.
+With kernel methods we are able to apply linear methods with predictors in a high dimensional space, without having to explicitly evaluate the involved dot products of the features.
+Throughout this thesis work, we will address the performance of kernel methods in the context of EF.
+\\
+- Kernel history evolution.
+Their name comes from the german word kern, which translates to core in english. Such term was first used by David Hilbert in his paper on integral equations \cite{hilbert} where he defined a definite kernel. Following, Hilbert's and Schmidt's \cite{schmidt} work lead to the introduction of a new space, the Hilbert space.
+In 1909, James Mercer improved Hilbert's work by proposing his theorem \cite{mercer}. This theorem underlies the power of kernel methods, that is the kernel trick.
+In 1938, Schoenberg \cite{schoenberg} developed the mathematical results that allow us to find the kernel associated to a specific feature space metric.
+In 1941, Kolmogorov \cite{kolmogorov} carried out stuides on representing kernel in linear spaces.
+In 1950, Aronszajn \cite{aronszajn} published the first work on RKHS; developing the general method for representing kernels in linear spaces.
+In 1964, Aizerman \cite{aizerman} further improved the theory of RKHS.
+It was in the nineties that theory of kernel methods got popular, particularly in the field of machine learning. Kernels have been used in various different tasks such as SVM \cite{vapnik1} \cite{vapnik2}, Gaussian process classifiers \cite{williams}, spline methods \cite{wahba}, neural networks \cite{poggio} and principal component analysis \cite{pca_scholkopf}.
+Nevertheless kernel methods received very little attention in the specific setting of EF literature.
+\\
+The theory needed for this thesis work is covered in section \ref{kernel_theory}. 
+For an introduction to kernel methods, we referred to \cite{learning_with_kernels}.
+Kanagawa et Fukumizu introduces to the concept of kernel mean embedding \cite{pmlr}. Muandet et al. \cite{Muandet_2017} surveys established results and new advances in the theory of Hilbert space distribution embeddings. 
+It has to be said that computing and storing such embeddings becomes prohibitive for large scale settings. Rudi et al. \cite{2022nystrom} proposes an efficient approximation procedure based on the Nyström method \cite{nystrom}, providing also an upper bound for the approximation error.
+Article \cite{supersamples} presents kernel herding; basically, Smola et al. used the kernel trick to extend the herding algorithm to continous spaces. The result is an infinite memory deterministic process that takes in a collection of samples and learns to approximate a pdf.
+\\
+%QUESTO DA VEDERE
+% Particularly extending the idea of \cite{2022nystrom}, where the Nyström approximation is employed in computing the kernel mean embedding, experiments with the Pivoted Cholesky decomposition will be performed.
