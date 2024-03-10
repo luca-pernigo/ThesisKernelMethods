@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  9 MAR 2024 21:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  10 MAR 2024 16:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1177,94 +1177,81 @@ Package microtype Info: Character `013' is missing
 ] [2
 
 ] (./input_files/problemdescription.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--15
+Underfull \hbox (badness 10000) in paragraph at lines 1--14
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--25
+Underfull \hbox (badness 10000) in paragraph at lines 15--24
 
  []
 
 [3]
 
-LaTeX Warning: Reference `state_of_the_art' on page 4 undefined on input line 46.
+LaTeX Warning: Reference `state_of_the_art' on page 4 undefined on input line 45.
 
 ) [4] [5] [6
 
 ] (./input_files/literaturereview.tex
+<images/time.jpg, id=288, 358.79176pt x 231.51982pt>
+File: images/time.jpg Graphic file (type jpg)
+<use images/time.jpg>
+Package pdftex.def Info: images/time.jpg  used on input line 22.
+(pdftex.def)             Requested size: 369.0pt x 238.11125pt.
+ [7]
+<images/epf_evolution1.jpg, id=301, 1084.05pt x 722.7pt>
+File: images/epf_evolution1.jpg Graphic file (type jpg)
+<use images/epf_evolution1.jpg>
+Package pdftex.def Info: images/epf_evolution1.jpg  used on input line 38.
+(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
+<images/point_vs_prob.jpg, id=303, 1084.05pt x 722.7pt>
+File: images/point_vs_prob.jpg Graphic file (type jpg)
+<use images/point_vs_prob.jpg>
+Package pdftex.def Info: images/point_vs_prob.jpg  used on input line 46.
+(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
+<images/cs_stat_both.jpg, id=305, 1084.05pt x 722.7pt>
+File: images/cs_stat_both.jpg Graphic file (type jpg)
+<use images/cs_stat_both.jpg>
+Package pdftex.def Info: images/cs_stat_both.jpg  used on input line 53.
+(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
+<images/subject_area.jpg, id=307, 1084.05pt x 722.7pt>
+File: images/subject_area.jpg Graphic file (type jpg)
+<use images/subject_area.jpg>
+Package pdftex.def Info: images/subject_area.jpg  used on input line 60.
+(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
+<images/src_title.jpg, id=309, 722.7pt x 361.35pt>
+File: images/src_title.jpg Graphic file (type jpg)
+<use images/src_title.jpg>
+Package pdftex.def Info: images/src_title.jpg  used on input line 67.
+(pdftex.def)             Requested size: 369.0pt x 184.5011pt.
 
-LaTeX Warning: Citation `review_2021' on page 7 undefined on input line 13.
+Underfull \hbox (badness 10000) in paragraph at lines 34--72
+
+ []
+
+
+Underfull \vbox (badness 1400) has occurred while \output is active []
+
+ [8 <./images/time.jpg>] [9 <./images/epf_evolution1.jpg>] [10 <./images/point_vs_prob.jpg> <./images/cs_stat_both.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 73--140
+
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-<images/time.jpg, id=293, 358.79176pt x 231.51982pt>
-File: images/time.jpg Graphic file (type jpg)
-<use images/time.jpg>
-Package pdftex.def Info: images/time.jpg  used on input line 24.
-(pdftex.def)             Requested size: 369.0pt x 238.11125pt.
+ [11 <./images/subject_area.jpg> <./images/src_title.jpg>]
+Underfull \vbox (badness 2495) has occurred while \output is active []
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--39
-
- []
-
-[8 <./images/time.jpg>]
-<images/epf_evolution1.jpg, id=305, 1084.05pt x 722.7pt>
-File: images/epf_evolution1.jpg Graphic file (type jpg)
-<use images/epf_evolution1.jpg>
-Package pdftex.def Info: images/epf_evolution1.jpg  used on input line 45.
-(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-<images/point_vs_prob.jpg, id=307, 1084.05pt x 722.7pt>
-File: images/point_vs_prob.jpg Graphic file (type jpg)
-<use images/point_vs_prob.jpg>
-Package pdftex.def Info: images/point_vs_prob.jpg  used on input line 53.
-(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-<images/cs_stat_both.jpg, id=309, 1084.05pt x 722.7pt>
-File: images/cs_stat_both.jpg Graphic file (type jpg)
-<use images/cs_stat_both.jpg>
-Package pdftex.def Info: images/cs_stat_both.jpg  used on input line 60.
-(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-<images/subject_area.jpg, id=311, 1084.05pt x 722.7pt>
-File: images/subject_area.jpg Graphic file (type jpg)
-<use images/subject_area.jpg>
-Package pdftex.def Info: images/subject_area.jpg  used on input line 67.
-(pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-<images/src_title.jpg, id=313, 722.7pt x 361.35pt>
-File: images/src_title.jpg Graphic file (type jpg)
-<use images/src_title.jpg>
-Package pdftex.def Info: images/src_title.jpg  used on input line 74.
-(pdftex.def)             Requested size: 369.0pt x 184.5011pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--79
-
- []
-
-[9 <./images/epf_evolution1.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 80--141
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--141
-
- []
-
-[10 <./images/point_vs_prob.jpg>] [11 <./images/cs_stat_both.jpg> <./images/subject_area.jpg>]
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
- [12 <./images/src_title.jpg>] [13])
+ [12] [13])
 Underfull \hbox (badness 10000) in paragraph at lines 143--124
 
  []
 
-[14] [15] [16
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14] [15] [16
 
 ] (./input_files/paper1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 17--19
@@ -1354,7 +1341,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--139
 ] (./input_files/ensemble.tex) [29] [30
 
 ] (./input_files/energymarket.tex
-<images/electricity-production-by-source.png, id=549, 3412.75pt x 2775.36874pt>
+<images/electricity-production-by-source.png, id=573, 3412.75pt x 2775.36874pt>
 File: images/electricity-production-by-source.png Graphic file (type png)
 <use images/electricity-production-by-source.png>
 Package pdftex.def Info: images/electricity-production-by-source.png  used on input line 9.
@@ -1406,11 +1393,11 @@ Overfull \hbox (81.13945pt too wide) in paragraph at lines 4--6
 [45
 
 
-] [46] [47] [48] [49])
+] [46] [47] [48] [49] [50])
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- [50]
+ [51]
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
@@ -1428,18 +1415,18 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 2145A4C325AF3B592B4FA4754D3C612E;5573.
  ) 
 Here is how much of TeX's memory you used:
- 32351 strings out of 476025
- 548023 string characters out of 5790017
- 1871388 words of memory out of 5000000
- 51593 multiletter control sequences out of 15000+600000
- 565056 words of font info for 405 fonts, out of 8000000 for 9000
+ 32440 strings out of 476025
+ 549458 string characters out of 5790017
+ 1873388 words of memory out of 5000000
+ 51670 multiletter control sequences out of 15000+600000
+ 564958 words of font info for 403 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,14n,125p,2312b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (56 pages, 1343906 bytes).
+Output written on thesis.pdf (57 pages, 1347243 bytes).
 PDF statistics:
- 817 PDF objects out of 1000 (max. 8388607)
- 705 compressed objects within 8 object streams
- 216 named destinations out of 1000 (max. 500000)
+ 853 PDF objects out of 1000 (max. 8388607)
+ 740 compressed objects within 8 object streams
+ 230 named destinations out of 1000 (max. 500000)
  95057 words of extra memory for PDF output out of 106986 (max. 10000000)
 

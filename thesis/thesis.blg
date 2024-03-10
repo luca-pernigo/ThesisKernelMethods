@@ -4,10 +4,9 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
 Warning--entry type for "un_sdgs" isn't style-file defined
---line 700 of file refs.bib
+--line 802 of file refs.bib
 Warning--entry type for "gm_22" isn't style-file defined
---line 705 of file refs.bib
-Warning--I didn't find a database entry for "review_2021"
+--line 807 of file refs.bib
 Warning--to sort, need author or key in un_sdgs
 Warning--to sort, need author or key in gm_22
 Warning--empty journal in supersamples
@@ -16,45 +15,45 @@ Warning--empty year in gaillardasemi
 Warning--empty booktitle in jebara
 Warning--can't use both author and editor fields in pmlr
 Warning--empty journal in nystrom
-You've used 68 entries,
+You've used 79 entries,
             2118 wiz_defined-function locations,
-            898 strings with 14934 characters,
-and the built_in function-call counts, 21949 in all, are:
-= -- 2173
-> -- 1006
-< -- 7
-+ -- 404
-- -- 330
-* -- 1605
-:= -- 3673
-add.period$ -- 198
-call.type$ -- 68
-change.case$ -- 362
+            954 strings with 16800 characters,
+and the built_in function-call counts, 25931 in all, are:
+= -- 2575
+> -- 1196
+< -- 9
++ -- 480
+- -- 394
+* -- 1907
+:= -- 4336
+add.period$ -- 232
+call.type$ -- 79
+change.case$ -- 427
 chr.to.int$ -- 0
-cite$ -- 76
-duplicate$ -- 760
-empty$ -- 1734
-format.name$ -- 330
-if$ -- 4496
+cite$ -- 87
+duplicate$ -- 897
+empty$ -- 2032
+format.name$ -- 394
+if$ -- 5315
 int.to.chr$ -- 0
-int.to.str$ -- 68
-missing$ -- 68
-newline$ -- 335
-num.names$ -- 132
-pop$ -- 354
+int.to.str$ -- 79
+missing$ -- 79
+newline$ -- 390
+num.names$ -- 154
+pop$ -- 404
 preamble$ -- 1
-purify$ -- 300
+purify$ -- 354
 quote$ -- 0
-skip$ -- 537
+skip$ -- 635
 stack$ -- 0
-substring$ -- 1547
-swap$ -- 102
-text.length$ -- 7
+substring$ -- 1843
+swap$ -- 128
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 258
+type$ -- 302
 warning$ -- 8
-while$ -- 224
-width$ -- 70
-write$ -- 716
-(There were 11 warnings)
+while$ -- 266
+width$ -- 81
+write$ -- 838
+(There were 10 warnings)
