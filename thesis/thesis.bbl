@@ -111,6 +111,11 @@ Stephen Haben, Georgios Giasemidis, Florian Ziel, and Siddharth Arora.
 \newblock Short term load forecasts of low voltage demand and the effects of weather.
 \newblock {\em arXiv preprint arXiv:1804.02955}, 2018.
 
+\bibitem{haben2023core}
+Stephen Haben, Marcus Voss, and William Holderbaum.
+\newblock {\em Core Concepts and Methods in Load Forecasting: With Applications in Distribution Networks}.
+\newblock Springer Nature, 2023.
+
 \bibitem{hastie2017generalized}
 Trevor~J Hastie.
 \newblock Generalized additive models.

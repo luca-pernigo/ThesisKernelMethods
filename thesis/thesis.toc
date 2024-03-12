@@ -22,18 +22,52 @@
 \contentsline {subsection}{\numberline {3.1.1}RKHS}{18}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}\href {http://proceedings.mlr.press/v33/kanagawa14.pdf}{Recovering Distributions from Gaussian RKHS Embeddings}}{18}{section.3.2}%
 \contentsline {section}{\numberline {3.3}\href {https://arxiv.org/pdf/1203.3472.pdf}{Super-Samples from Kernel Herding}}{20}{section.3.3}%
-\contentsline {chapter}{\chapternumberline {4}Quantile Regression}{25}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5}Kernel Density Estimation}{27}{chapter.5}%
-\contentsline {chapter}{\chapternumberline {6}Ensemble Methods}{29}{chapter.6}%
-\contentsline {chapter}{\chapternumberline {7}The Energy Market}{31}{chapter.7}%
-\contentsline {chapter}{\chapternumberline {8}Evaluation metrics}{33}{chapter.8}%
-\contentsline {section}{\numberline {8.1}MAPE}{33}{section.8.1}%
-\contentsline {section}{\numberline {8.2}CRPS}{33}{section.8.2}%
-\contentsline {chapter}{\chapternumberline {9}Exploratory Analysis and Data ETL}{35}{chapter.9}%
-\contentsline {chapter}{\chapternumberline {10}Implementation}{37}{chapter.10}%
-\contentsline {chapter}{\chapternumberline {11}Experiments Analysis}{39}{chapter.11}%
-\contentsline {chapter}{List of Symbols}{41}{section*.4}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{43}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{43}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Src code}{44}{section.A.2}%
-\contentsline {chapter}{Bibliography}{45}{appendix*.6}%
+\contentsline {chapter}{\chapternumberline {4}Evaluation metrics}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}MAE}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}RMSE}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}MAPE}{26}{section.4.3}%
+\contentsline {section}{\numberline {4.4}RMSPE}{26}{section.4.4}%
+\contentsline {section}{\numberline {4.5}MASE}{26}{section.4.5}%
+\contentsline {section}{\numberline {4.6}RMSSE}{26}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Pinball}{26}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Winkler}{27}{section.4.8}%
+\contentsline {section}{\numberline {4.9}CRPS}{27}{section.4.9}%
+\contentsline {section}{\numberline {4.10}PIT}{29}{section.4.10}%
+\contentsline {chapter}{\chapternumberline {5}The Energy Market}{31}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {6}Point forecasting}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Exponential smoothing}{33}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Multiple linear regression}{33}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Autoregressive models}{33}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}ARIMA}{34}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}ARIMAX}{34}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}SARIMA}{34}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}SARIMAX}{34}{subsection.6.3.4}%
+\contentsline {section}{\numberline {6.4}Generalized additive model}{34}{section.6.4}%
+\contentsline {section}{\numberline {6.5}K-nearest neighbors}{34}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Support vector regression}{34}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Artificial neural networks}{34}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}DNN}{34}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}LSTM}{34}{subsection.6.7.2}%
+\contentsline {subsection}{\numberline {6.7.3}DeepAr}{34}{subsection.6.7.3}%
+\contentsline {subsection}{\numberline {6.7.4}AR Net}{34}{subsection.6.7.4}%
+\contentsline {section}{\numberline {6.8}Kernel methods}{34}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Kernel regression}{34}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Kernel support vector regression}{34}{subsection.6.8.2}%
+\contentsline {chapter}{\chapternumberline {7}Probabilistic forecasting}{35}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Quantile regression}{35}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Kernel density estimation}{35}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ensemble methods}{35}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Copula models}{36}{section.7.4}%
+\contentsline {section}{\numberline {7.5}DMLP}{36}{section.7.5}%
+\contentsline {section}{\numberline {7.6}DeepAR}{36}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Kernel methods}{36}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Kernel quantile regression}{36}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Kernel herding}{36}{subsection.7.7.2}%
+\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{37}{chapter.8}%
+\contentsline {chapter}{\chapternumberline {9}Implementation}{39}{chapter.9}%
+\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{41}{chapter.10}%
+\contentsline {chapter}{List of Symbols}{43}{section*.4}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{45}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{45}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Src code}{46}{section.A.2}%
+\contentsline {chapter}{Bibliography}{47}{appendix*.6}%
