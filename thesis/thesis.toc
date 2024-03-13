@@ -55,8 +55,8 @@
 \contentsline {subsection}{\numberline {6.8.2}Kernel support vector regression}{34}{subsection.6.8.2}%
 \contentsline {chapter}{\chapternumberline {7}Probabilistic forecasting}{35}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Quantile regression}{35}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Kernel density estimation}{35}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Ensemble methods}{35}{section.7.3}%
+\contentsline {section}{\numberline {7.2}Kernel density estimation}{36}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ensemble methods}{36}{section.7.3}%
 \contentsline {section}{\numberline {7.4}Copula models}{36}{section.7.4}%
 \contentsline {section}{\numberline {7.5}DMLP}{36}{section.7.5}%
 \contentsline {section}{\numberline {7.6}DeepAR}{36}{section.7.6}%
