@@ -38,6 +38,11 @@ Ashutosh Bhagwat.
 \newblock Institutions and long term planning: Lessons from the california electricity crisis.
 \newblock {\em Administrative Law Review}, 55(1):95--125, 2003.
 
+\bibitem{boyd2004convex}
+Stephen~P Boyd and Lieven Vandenberghe.
+\newblock {\em Convex optimization}.
+\newblock Cambridge university press, 2004.
+
 \bibitem{bringhurst1996ets}
 Robert Bringhurst.
 \newblock {\em {The Elements of Typographic Style}}.
@@ -224,6 +229,11 @@ James~E Matheson and Robert~L Winkler.
 \newblock Scoring rules for continuous probability distributions.
 \newblock {\em Management science}, 22(10):1087--1096, 1976.
 
+\bibitem{meinshausen2006quantile}
+Nicolai Meinshausen and Greg Ridgeway.
+\newblock Quantile regression forests.
+\newblock {\em Journal of machine learning research}, 7(6), 2006.
+
 \bibitem{mercer}
 James Mercer.
 \newblock Xvi. functions of positive and negative type, and their connection the theory of integral equations.
@@ -307,6 +317,11 @@ Alex~J Smola and Bernhard Sch{\"o}lkopf.
 G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
 \newblock A new test for multivariate normality.
 \newblock {\em Journal of Multivariate Analysis}, 93(1):58--80, 2005.
+
+\bibitem{takeuchi2006nonparametric}
+Ichiro Takeuchi, Quoc Le, Timothy Sears, Alexander Smola, et~al.
+\newblock Nonparametric quantile estimation.
+\newblock 2006.
 
 \bibitem{savings}
 Hong Tao.

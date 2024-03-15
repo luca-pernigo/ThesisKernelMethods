@@ -62,12 +62,12 @@
 \contentsline {section}{\numberline {7.6}DeepAR}{36}{section.7.6}%
 \contentsline {section}{\numberline {7.7}Kernel methods}{36}{section.7.7}%
 \contentsline {subsection}{\numberline {7.7.1}Kernel quantile regression}{36}{subsection.7.7.1}%
-\contentsline {subsection}{\numberline {7.7.2}Kernel herding}{36}{subsection.7.7.2}%
-\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{37}{chapter.8}%
-\contentsline {chapter}{\chapternumberline {9}Implementation}{39}{chapter.9}%
-\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{41}{chapter.10}%
-\contentsline {chapter}{List of Symbols}{43}{section*.4}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{45}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{45}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Src code}{46}{section.A.2}%
-\contentsline {chapter}{Bibliography}{47}{appendix*.6}%
+\contentsline {subsection}{\numberline {7.7.2}Kernel herding}{38}{subsection.7.7.2}%
+\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{39}{chapter.8}%
+\contentsline {chapter}{\chapternumberline {9}Implementation}{41}{chapter.9}%
+\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{43}{chapter.10}%
+\contentsline {chapter}{List of Symbols}{45}{section*.4}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{47}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{47}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Src code}{48}{section.A.2}%
+\contentsline {chapter}{Bibliography}{49}{appendix*.6}%

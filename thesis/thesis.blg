@@ -4,10 +4,9 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
 Warning--entry type for "un_sdgs" isn't style-file defined
---line 808 of file refs.bib
+--line 830 of file refs.bib
 Warning--entry type for "gm_22" isn't style-file defined
---line 813 of file refs.bib
-Warning--I didn't find a database entry for ""
+--line 835 of file refs.bib
 Warning--to sort, need author or key in un_sdgs
 Warning--to sort, need author or key in gm_22
 Warning--empty journal in supersamples
@@ -16,45 +15,46 @@ Warning--empty year in gaillardasemi
 Warning--empty booktitle in jebara
 Warning--can't use both author and editor fields in pmlr
 Warning--empty journal in nystrom
-You've used 80 entries,
+Warning--empty journal in takeuchi2006nonparametric
+You've used 83 entries,
             2118 wiz_defined-function locations,
-            958 strings with 16972 characters,
-and the built_in function-call counts, 26213 in all, are:
-= -- 2599
-> -- 1214
+            969 strings with 17334 characters,
+and the built_in function-call counts, 27042 in all, are:
+= -- 2673
+> -- 1268
 < -- 9
-+ -- 487
-- -- 400
-* -- 1924
-:= -- 4386
-add.period$ -- 235
-call.type$ -- 80
-change.case$ -- 432
++ -- 508
+- -- 418
+* -- 1976
+:= -- 4538
+add.period$ -- 244
+call.type$ -- 83
+change.case$ -- 448
 chr.to.int$ -- 0
-cite$ -- 88
-duplicate$ -- 909
-empty$ -- 2054
-format.name$ -- 400
-if$ -- 5373
+cite$ -- 92
+duplicate$ -- 941
+empty$ -- 2111
+format.name$ -- 418
+if$ -- 5538
 int.to.chr$ -- 0
-int.to.str$ -- 80
-missing$ -- 81
-newline$ -- 395
-num.names$ -- 156
-pop$ -- 414
+int.to.str$ -- 83
+missing$ -- 85
+newline$ -- 410
+num.names$ -- 162
+pop$ -- 435
 preamble$ -- 1
-purify$ -- 359
+purify$ -- 373
 quote$ -- 0
-skip$ -- 641
+skip$ -- 665
 stack$ -- 0
-substring$ -- 1848
-swap$ -- 129
+substring$ -- 1863
+swap$ -- 131
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 304
-warning$ -- 8
-while$ -- 268
-width$ -- 82
-write$ -- 848
+type$ -- 314
+warning$ -- 9
+while$ -- 274
+width$ -- 85
+write$ -- 878
 (There were 11 warnings)

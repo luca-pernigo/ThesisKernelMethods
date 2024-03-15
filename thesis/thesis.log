@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  13 MAR 2024 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  15 MAR 2024 18:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1385,21 +1385,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] [34] (./input_files/probabilistic.tex (./input_files/qr.tex [35
 
-]
+]) (./input_files/kde.tex) (./input_files/ensemble.tex) [36]
+Overfull \hbox (77.68205pt too wide) detected at line 62
+[][][][]
+ []
 
-LaTeX Warning: Citation `' on page 36 undefined on input line 26.
+[37]) [38] (./input_files/data_exploratory.tex) [39
 
-) (./input_files/kde.tex) (./input_files/ensemble.tex)) [36] (./input_files/data_exploratory.tex) [37
+] [40
 
-] [38
+] (./input_files/implementation.tex) [41] [42
 
-] (./input_files/implementation.tex) [39] [40
+] (./input_files/analysis.tex) (./input_files/symbols.tex) [43] [44
 
-] (./input_files/analysis.tex) (./input_files/symbols.tex) [41] [42
+] [45
 
-] [43
-
-] (./appendix.tex [44] [45
+] (./appendix.tex [46] [47
 
 ]
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1419,7 +1420,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--42
 LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 42.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
-)) [46] (./thesis.bbl
+)) [48] (./thesis.bbl
 bibitemlist
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
@@ -1431,14 +1432,14 @@ Overfull \hbox (81.13945pt too wide) in paragraph at lines 4--6
 \OT1/pplx/m/n/10.95 (-20) https://resourcecenter.ieee-pes.org/education/tutorials/pes[]ed[]tut[]gm22[]0717[]pefm[]sld. 
  []
 
-[47
+[49
 
 
-] [48] [49] [50] [51] [52])
+] [50] [51] [52] [53] [54])
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- [53]
+ [55]
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
@@ -1456,18 +1457,18 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: AF1CC0DADA770FB10C6774FABF5BF605;9745.
  ) 
 Here is how much of TeX's memory you used:
- 32791 strings out of 476025
- 554760 string characters out of 5790017
+ 32812 strings out of 476025
+ 555095 string characters out of 5790017
  1874388 words of memory out of 5000000
- 51937 multiletter control sequences out of 15000+600000
+ 51946 multiletter control sequences out of 15000+600000
  567650 words of font info for 414 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,14n,125p,2312b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (61 pages, 2183614 bytes).
+Output written on thesis.pdf (63 pages, 2192210 bytes).
 PDF statistics:
- 1102 PDF objects out of 1200 (max. 8388607)
- 975 compressed objects within 10 object streams
- 293 named destinations out of 1000 (max. 500000)
+ 1131 PDF objects out of 1200 (max. 8388607)
+ 1001 compressed objects within 11 object streams
+ 305 named destinations out of 1000 (max. 500000)
  95344 words of extra memory for PDF output out of 106986 (max. 10000000)
 

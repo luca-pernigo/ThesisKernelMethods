@@ -16,4 +16,69 @@ When it comes to probabilistic forecasting, there are a couple of standard pract
 
 \section{Kernel methods}
 \subsection{Kernel quantile regression}
+The idea of quantile regression has been extended to kernel methods by Takeuchi et al. \cite{takeuchi2006nonparametric}.
+There they minimize a risk plus regularizer defined as follows.
+\begin{equation}\label{eq:kqr_min1}
+    R[f]:=\frac{1}{m}\sum\limits_i=1^{m}\rho_q(y_i-f(x_i))+\frac{\lambda}{2}\|g\|_H^2
+\end{equation}
+where $f=g+b$, $g \in H$ and $b \in R$.
+Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle+b$. Doing so we obtain a minimization problem equivalent to minimizing equation \ref{eq:kqr_min1}.
+\begin{equation}\label{eq:kqr_min2}
+    \begin{aligned}
+    \min_{w,b} \quad & C \sum \limits_{i=1}^{m}
+    (y_i-\langle w, \phi(x) \rangle-b)+ (1-q)(-y_i+\langle w, \phi(x) \rangle+b)+ \frac{1}{2}\|w\|^2\\
+    \end{aligned}
+    \end{equation}
+Note the division by $\lambda$ so that $C=\frac{1}{\lambda m}$
+We can next rephrase the optimisation in \ref{eq:kqr_min2} by introducing the slack variables $\xi_i$ and $\xi_i^*$.
+\begin{equation}\label{eq:kqr_min3}
+    \begin{aligned}
+        \min_{w,b\xi_i,\xi_i^*} \quad & C \sum \limits_{i=1}^{m}
+        q \xi_i+ (1-q)\xi_i^*+ \frac{1}{2}\|w\|^2\\
+    \textrm{s.t.} \quad & y_i-\langle w, \phi(x) \rangle+b \leq \xi_i\\
+    & -y_i+\langle w, \phi(x) \rangle+b \leq \xi_i^*\\
+      &\xi_i\geq0    \\
+      &\xi_i^*\geq0    \\
+    \end{aligned}
+    \end{equation}
+In order to make it more compact, we rewrite equation \ref{eq:kqr_min3} in matrix notation.
+\begin{equation}\label{eq:kqr_min4}
+    \begin{aligned}
+        \min_{w,b\xi,\xi^*} \quad & C q \xi^\intercal \mathbb{1}+ C q (\xi^*)^\intercal \mathbb{1}+ \frac{1}{2}w^\intercal w\\
+    \textrm{s.t.} \quad & y-\Phi^\intercal w -b \preceq \xi\\
+    & -y+\Phi^\intercal w +b \preceq \xi^*\\
+      &\xi\succeq0    \\
+      &\xi^*\succeq0    \\
+    \end{aligned}
+    \end{equation}
+Consider now the associated lagrangian $L$ to \ref{eq:kqr_min4}
+\begin{equation}\label{eq:kqr_min5}
+    \begin{aligned}
+    L(w,b,\xi,\xi^*)= & C q \xi^\intercal \mathbb{1}+ C q (\xi^*)^\intercal \mathbb{1}+ \frac{1}{2}w^\intercal w- \alpha^\intercal(\xi - y+\Phi^\intercal w +b)
+    - (\alpha^*)^\intercal(\xi^* -y+\Phi^\intercal w +b)
+    \\
+    & -\nu^\intercal \xi - (\nu^*)^\intercal \xi^*
+\end{aligned}
+\end{equation}
+The next step is deriving its dual formulation, since it is easier and more efficient to solve. This because the dual problem has the useful property of being always convex.
+
+- dual problem
+\begin{definition}
+    The dual function associated to the lagrangia $L(x,\lambda)$ is given by $g(v)=\inf_x L(x,\lambda)$
+\end{definition}
+where $\lambda$ is called the lagrange multiplier of the optimization problem. Such dual formulation has an useful property, that is \begin{equation}\label{weak_duality}
+    g(\lambda)\leq p^*
+\end{equation}
+where $p^*$ is the optimal value of your optimization problem.
+Consider a simple lagrangian $L(x,\lambda)=f(x)+\sum \lambda_i i(x) +\sum v_i h(x)$, where $i(x)$ are inequality constraints while $e(x)$ are equality constraints of the problem. What we can be noted is that the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$. Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$ we can obtain a approximate or perfect solution to the primal problem.
+\\
+To explain why we may or not be able to attain the best solution to the primal problem by maximizing its dual we have to introduce the concept of duality.
+\\
+We use $d^*$ to denote the optimal value of the lagrange dual problem; we can think of it as the best lower bound on $p^*$. The inequality \ref{weak_duality} is called weak duality. The difference $p^*-d^*$ is said the optimal duality gap; it is the gap between the optimal value of the primal problem and the best lower bound on it that can be obtained from the Lagrange dual function. Moreover, note that the optimal duality gap is always nonnegative.
+\\
+We say that strong duality holds, when the optimal duality gap is zero; in other words, the lagrange dual bound is tight.
+
+- Slater's condition
+- Apply Slater's theorem=>we have strong duality
+- calculations
 \subsection{Kernel herding}

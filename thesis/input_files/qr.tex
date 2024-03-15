@@ -19,10 +19,9 @@ It follows that the conditional linear quantile function $Q_Y(q|X=x)=x_i\beta(q)
     \hat{\beta(q)}=\argmin{\beta}\sum \rho_q   (y_i-x \beta)
 \end{equation}
 \\
-Notice that, the cost function is not differentiable, therefore there is no analytical solution to the quantile regression problem. Nevertheless, we can easily solve it by employing linear programming.
+Notice that, the cost function is not differentiable, therefore there is no analytical solution to the quantile regression problem. Nevertheless, we can easily solve it by employing linear programming and convex optimisation \cite{boyd2004convex}.
 \\
 Furthermore, can extend to non linear quantile regression by choosing a non linear model in place of $x\beta$ in the above equation.
 \\
-In order to illustrate the approach, let us consider applying quantile regression to the maximum daily temperature dataset in Melbourne \cite{hyndman1996estimating}; models considered will be linear, gradient boosting machine, quantile forest\cite{} and kernel quantile regression.
-
+In order to illustrate the approach, let us consider applying quantile regression to the maximum daily temperature dataset in Melbourne \cite{hyndman1996estimating}; models considered will be linear, gradient boosting machine, quantile forest\cite{meinshausen2006quantile} and kernel quantile regression.
 - se si puo fare plot con stessi dati ma differenti f nel quantile regression
