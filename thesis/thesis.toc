@@ -57,17 +57,18 @@
 \contentsline {section}{\numberline {7.1}Quantile regression}{35}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Kernel density estimation}{36}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Ensemble methods}{36}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Copula models}{36}{section.7.4}%
-\contentsline {section}{\numberline {7.5}DMLP}{36}{section.7.5}%
-\contentsline {section}{\numberline {7.6}DeepAR}{36}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Kernel methods}{36}{section.7.7}%
-\contentsline {subsection}{\numberline {7.7.1}Kernel quantile regression}{36}{subsection.7.7.1}%
-\contentsline {subsection}{\numberline {7.7.2}Kernel herding}{38}{subsection.7.7.2}%
-\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{39}{chapter.8}%
-\contentsline {chapter}{\chapternumberline {9}Implementation}{41}{chapter.9}%
-\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{43}{chapter.10}%
-\contentsline {chapter}{List of Symbols}{45}{section*.4}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{47}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{47}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Src code}{48}{section.A.2}%
-\contentsline {chapter}{Bibliography}{49}{appendix*.6}%
+\contentsline {section}{\numberline {7.4}Quantile forest}{37}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Quantile gradient boosting machine}{37}{section.7.5}%
+\contentsline {section}{\numberline {7.6}DMLP}{37}{section.7.6}%
+\contentsline {section}{\numberline {7.7}DeepAR}{37}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Kernel methods}{37}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Kernel quantile regression}{37}{subsection.7.8.1}%
+\contentsline {subsection}{\numberline {7.8.2}Kernel herding}{41}{subsection.7.8.2}%
+\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{43}{chapter.8}%
+\contentsline {chapter}{\chapternumberline {9}Implementation}{45}{chapter.9}%
+\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{47}{chapter.10}%
+\contentsline {chapter}{List of Symbols}{49}{section*.4}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{51}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{51}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Src code}{52}{section.A.2}%
+\contentsline {chapter}{Bibliography}{53}{appendix*.6}%

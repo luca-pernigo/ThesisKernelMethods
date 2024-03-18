@@ -8,10 +8,13 @@ When it comes to probabilistic forecasting, there are a couple of standard pract
 \section{Ensemble methods}
 \input{input_files/ensemble.tex}
 
-\section{Copula models}
+% \section{Copula models}
+\section{Quantile forest}
+\section{Quantile gradient boosting machine}
 
 \section{DMLP}
-
+%gluon nn
+% train a beta distribution to learn its parameters
 \section{DeepAR}
 
 \section{Kernel methods}
@@ -22,7 +25,8 @@ There they minimize a risk plus regularizer defined as follows.
     R[f]:=\frac{1}{m}\sum\limits_i=1^{m}\rho_q(y_i-f(x_i))+\frac{\lambda}{2}\|g\|_H^2
 \end{equation}
 where $f=g+b$, $g \in H$ and $b \in R$.
-Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle+b$. Doing so we obtain a minimization problem equivalent to minimizing equation \ref{eq:kqr_min1}.
+Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle+b$. Moreover, note that the RKHS norm is defined as follows $\|f\|_{\varphi }=\inf\{\|w\|_{F}:w\in F,f(x)=\langle w,\varphi (x)\rangle _{F},\forall x\in X\}$, where $F$ is the feature space.
+ Doing so we obtain a minimization problem equivalent to minimizing equation \ref{eq:kqr_min1}.
 \begin{equation}\label{eq:kqr_min2}
     \begin{aligned}
     \min_{w,b} \quad & C \sum \limits_{i=1}^{m}
@@ -70,15 +74,125 @@ where $\lambda$ is called the lagrange multiplier of the optimization problem. S
     g(\lambda)\leq p^*
 \end{equation}
 where $p^*$ is the optimal value of your optimization problem.
-Consider a simple lagrangian $L(x,\lambda)=f(x)+\sum \lambda_i i(x) +\sum v_i h(x)$, where $i(x)$ are inequality constraints while $e(x)$ are equality constraints of the problem. What we can be noted is that the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$. Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$ we can obtain a approximate or perfect solution to the primal problem.
+Consider a simple lagrangian $L(x,\lambda)=f(x)+\sum \lambda_i r_i(x) +\sum v_i h_i(x)$, where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. What we can be noted is that the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$. Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$ we can obtain a approximate or perfect solution to the primal problem.
 \\
 To explain why we may or not be able to attain the best solution to the primal problem by maximizing its dual we have to introduce the concept of duality.
 \\
 We use $d^*$ to denote the optimal value of the lagrange dual problem; we can think of it as the best lower bound on $p^*$. The inequality \ref{weak_duality} is called weak duality. The difference $p^*-d^*$ is said the optimal duality gap; it is the gap between the optimal value of the primal problem and the best lower bound on it that can be obtained from the Lagrange dual function. Moreover, note that the optimal duality gap is always nonnegative.
 \\
 We say that strong duality holds, when the optimal duality gap is zero; in other words, the lagrange dual bound is tight.
-
-- Slater's condition
-- Apply Slater's theorem=>we have strong duality
+\\
+Constraint qualifications are condtions under which strong duality holds; one the most popular is Slater's condition.
+\begin{equation}\label{slater_condition}
+    \begin{aligned}
+        \exists x \in \textrm{relint} \ D \ \textrm{s.t.} & \ r_i(x)<0, \quad i=1, \dots, m \\
+        & h_i(x)=b
+    \end{aligned}
+\end{equation}
+Where relint $D$ is the relative interior of $ D:=\cap _{i=0}^{m}\operatorname {dom} (r_{i})$
+\\
+Slater's theorem naturally follows.
+\begin{theorem}
+    If Slater's condtion holds and the problem is convex then strong duality holds.
+\end{theorem}
+We can now check that our optimization problem posseses strong duality by checking Slater's condition.
+\\
+In our case we don't have equlity constraint, so we do not have the $h_i(x)=0$ \ref{slater_condition} to be checked. All we have to check is the convexity of our problem and that there exist a $x$ such that $r_i(x)<0$.
+For convexity, a sufficient condition is the positive definiteness of $Q$ in the quadratic programming problem 
+\begin{equation}
+    \begin{aligned}
+        \min & x^\intercal Q x+ c^\intercal x \\        
+        s.t & Ax\preceq b
+    \end{aligned}
+\end{equation}
+In our case \ref{eq:kqr_min5}, we have $w^\intercal w$, thus $Q$ is just the identity matrix which satisfies the positive definiteness requirement. Therefore our problem is convex.
+Next we check Slater's condition holds. Considering first the non negative constraints on $\xi$ and $\xi^*$, we conclude that $\xi$  and $\xi^*$ have to be greater or equal to zero for the existence of an $x$ satisfying Slater's condition. Thus, let us suppose that $0 \leq \xi \leq \alpha$ and $0 \leq \xi^* \leq \alpha$.
+\\
+Next, let us consider the other two inequalities and make the following ansatz.
+\\
+\begin{equation}
+    \begin{aligned}
+        w=& \Phi^\intercal(\Phi \Phi^\intercal)^{-1} y\\
+        b\leq& \alpha
+    \end{aligned}
+\end{equation}
+We then have
+\begin{equation}
+    \begin{aligned}
+        -\xi + y -\Phi\Phi^\intercal(\Phi \Phi^\intercal)^{-1}y-b<&0
+        \\
+        -\xi^* - y +\Phi\Phi^\intercal(\Phi \Phi^\intercal)^{-1}y+b<&0
+    \end{aligned}
+\end{equation}
+Hence, we conclude that our problem satisfies Slater's condition. Therefore the solution of the dual and primal problem are equivalent.
+\\
+We end this section with the derivation of the dual problem; that is the convex problem we will solve in order to get the qunatiles prdeiction of our quantile kernel algorithm.
+\\
+First, derive the dual function of \ref{eq:kqr_min5}.
+\begin{equation}
+    \begin{aligned}
+        g(\alpha, \alpha^*, \nu, \nu^*)=& \inf_x L(x,\lambda)\\
+    = & \inf_{\xi, \xi^*, w, b} L(w,b,\xi,\xi^*)
+\end{aligned}
+\end{equation}
+Setting the derivates to zero
+\begin{equation}\label{eq:lagrange_derivatives}
+    \begin{cases}
+        \frac{\partial L}{\partial w}=0 \implies w=\Phi^\intercal(\alpha-\alpha^*)
+        \\
+        \frac{\partial L}{\partial b}=0 \implies \alpha-\alpha^*=0
+        \\
+        \frac{\partial L}{\partial \xi}=0 \implies Cq \mathbb{1}-\alpha- \nu=0
+        \\
+        \frac{\partial L}{\partial \xi^*}=0 \implies C(1-q)\mathbb{1} -\alpha^* -\nu^*=0
+    \end{cases}
+\end{equation}
+As pointed out previously, the lower bound resulting from the dual formulation is non trivial only when the lagrange multipliers are $\succeq 0$. Looking at the last two equations of the system \ref{eq:lagrange_derivatives}, this implies the following two constraints $\alpha \in [0, Cq\mathbb{1}]$ and $\alpha \in [0, C(1-q)\mathbb{1}]$.
+\\
+Substitute the conditions for an optimum into \ref{eq:kqr_min5} we obtain the dual formulation.
+\begin{equation}
+    \begin{aligned}
+        g(\alpha, \alpha^*)=& \xi^\intercal(Cq\mathbb{1}-\alpha -\nu)+(\xi^*)^\intercal(C(1-q)\mathbb{1}-\alpha^*-\nu^*)-(\alpha-\alpha^*)^\intercal \Phi\Phi^\intercal(\alpha-\alpha^*)
+        \\
+        & +(\alpha-\alpha^*)^\intercal y-(\alpha-\alpha^*)^\intercal b+\frac{1}{2}(\alpha-\alpha^*)^\intercal \Phi\Phi^\intercal(\alpha-\alpha^*)
+        \\
+        \\
+        g(\alpha, \alpha^*)=& 0+0-\frac{1}{2}(\alpha-\alpha^*)^\intercal \Phi\Phi^\intercal(\alpha-\alpha^*)+(\alpha-\alpha^*)^\intercal y-0
+        \\
+        g(\alpha, \alpha^*)=& -\frac{1}{2}(\alpha-\alpha^*)^\intercal \Phi\Phi^\intercal(\alpha-\alpha^*)+(\alpha-\alpha^*)^\intercal y
+    \end{aligned}
+\end{equation}
+Defining $\alpha=(\alpha-\alpha^*)$ and letting $K$ the kernel matrix, we have that the dual optimisation problem reads as follows
+\begin{equation}\label{eq:kqr_min6}
+    \begin{aligned}
+        \max_{\alpha} \quad & -\frac{1}{2}\alpha^\intercal K\alpha+\alpha^\intercal y\\
+    \textrm{s.t.} \quad & 
+    C(q-1)\mathbb{1}\preceq \alpha \preceq Cq\mathbb{1}\\
+    &\alpha^\intercal\mathbb{1}
+    \end{aligned}
+    \end{equation}
+Switching sign we rephrase as a minisation problem, which is the common practice in convex optimisation.
+\begin{equation}\label{eq:kqr_min7}
+    \begin{aligned}
+        \min_{\alpha} \quad & +\frac{1}{2}\alpha^\intercal K\alpha-\alpha^\intercal y\\
+    \textrm{s.t.} \quad & 
+    C(q-1)\mathbb{1}\preceq \alpha \preceq Cq\mathbb{1}\\
+    &\alpha^\intercal\mathbb{1}
+    \end{aligned}
+    \end{equation}
+The kernel quantile regression estimator is then given by
+\begin{equation}
+    f(x)=\sum\limits_i \alpha_i k(x_i, x)+b
+\end{equation}
+Where an unbiased estimator for $b$ is given by
+\begin{equation}
+    \begin{aligned}
+    b=&\frac{1}{I_q}\sum\limits_{i\in I_q} b_i, \\ 
+    \textrm{with} \ b_i=& y_i-\sum\limits_i \alpha_i k(x_i, x_i) \\
+     \textrm{and} \ I_q=& \{i=1,\dots,n|0<\alpha_i<Cq, 0<\alpha_i<C(1-q)\}
+    \end{aligned}
+\end{equation}
+%contribution is implementation kernel quantile regression for pythos users since there exists only r version
 - calculations
 \subsection{Kernel herding}
+Select the best point forecasting method and create a probabilistic forecast by modelling its model errors with kernel herding (do something like the residual bootstrap ensembles if it is meaningful and possible to implement).
