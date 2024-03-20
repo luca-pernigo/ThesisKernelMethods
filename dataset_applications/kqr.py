@@ -3,7 +3,7 @@ import cvxopt as opt
 from cvxopt.solvers import qp, options
 from cvxopt import matrix, spmatrix, sparse
 from cvxopt import blas
-
+ 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
