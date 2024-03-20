@@ -114,11 +114,19 @@ class KQR(RegressorMixin, BaseEstimator):
         # print("coefficients sum up to 1:", np.sum(self.a))
         
         # condition, index set of support vectors
-        idx_arr=[i for i, ai in enumerate(self.a) if (ai>self.C*(self.alpha-1)) and (ai<self.C*(self.alpha))]
+        squared_diff = (np.round(self.a, 3) - (self.C * self.alpha))**2 + (np.round(self.a, 3) - (self.C * (self.alpha - 1)))**2
+
+        # Find the index corresponding to the smallest squared difference
+        offshift = int(np.argmin(squared_diff))
+
+        # Compute the bias term b
+        print(offshift)
+        self.b = y[offshift] - self.a.T@K[:,offshift]
+        # idx_arr=[i for i, ai in enumerate(self.a) if (ai>self.C*(self.alpha-1)) and (ai<self.C*(self.alpha))]
         # # beta of the model
-        self.b_i=[y[i]- self.a.T@K[:,idx_arr] for i in idx_arr]
+        # self.b_i=[y[i]- self.a.T@K[:,idx_arr] for i in idx_arr]
         # print("beta i: ", y[idx_arr]-self.a.T@K[:,idx_arr])
-        self.b=np.mean(self.b_i)
+        # self.b=np.mean(self.b_i)
         # print("beta mean: ", self.b)
         
         # Return the regressor
@@ -165,7 +173,7 @@ if __name__=="__main__":
     # train, test split
     X_train, X_test, y_train, y_test = train_test_split(df["Yt-1"], df["Yt"], test_size=None, random_state=4)
 
-    eval_set=np.linspace(df["Yt-1"].min()+0.2*np.std(df["Yt-1"]), df["Yt-1"].max()-0.2*np.std(df["Yt-1"]), 500).T
+    eval_set=np.linspace(df["Yt-1"].min(), df["Yt-1"].max(), 100).T
     eval_set=eval_set.reshape(-1,1)
 
     X_train= X_train.values.reshape(-1, 1)
@@ -188,7 +196,7 @@ if __name__=="__main__":
     # plot
     plt.plot(X_train,y_train,"o", alpha=0.2)
 
-    for q in tqdm([0.3]):
+    for q in tqdm(quantiles):
     #     neg_mean_pinball_loss_scorer = make_scorer(
     #     mean_pinball_loss,
     #     alpha=q,
@@ -208,7 +216,7 @@ if __name__=="__main__":
         #         n_jobs=None
             # ).fit(X_train_robust, y_train.ravel())
         # print("best tuned hyperparameters: ", kqr.best_params_)
-        kqr=KQR(alpha=q, gamma=1, C=1e4).fit(X_train_robust, y_train.ravel())
+        kqr=KQR(alpha=q, gamma=1, C=1e3).fit(X_train_robust, y_train.ravel())
 
         # best model prediction
         y_train_predr=kqr.predict(X_train_robust)
