@@ -10,7 +10,14 @@ When it comes to probabilistic forecasting, there are a couple of standard pract
 
 % \section{Copula models}
 \section{Quantile forest}
+Meinshausen \cite{meinshausen2006quantile} extends the idea of random forest \cite{breiman2001random} generalising it, the result is the quantile forest algorithm. Quantile forest allows us to estimate conditional quantiles in a non parametric fashion.
+\\
+In order to understand this algorithm it is necessary to first cover the theory of decision trees and random forests.
+- decision trees
+- random forest
+- quantile forest
 \section{Quantile gradient boosting machine}
+
 
 \section{DMLP}
 %gluon nn
@@ -20,26 +27,27 @@ When it comes to probabilistic forecasting, there are a couple of standard pract
 \section{Kernel methods}
 \subsection{Kernel quantile regression}
 The idea of quantile regression has been extended to kernel methods by Takeuchi et al. \cite{takeuchi2006nonparametric}.
-There they minimize a risk plus regularizer defined as follows.
+There, they minimize a risk plus regularizer defined as follows.
 \begin{equation}\label{eq:kqr_min1}
-    R[f]:=\frac{1}{m}\sum\limits_i=1^{m}\rho_q(y_i-f(x_i))+\frac{\lambda}{2}\|g\|_H^2
+    R[f]:=\frac{1}{m}\sum\limits_{i=1}^{m}\rho_q(y_i-f(x_i))+\frac{\lambda}{2}\|g\|_H^2
 \end{equation}
 where $f=g+b$, $g \in H$ and $b \in R$.
-Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle+b$. Moreover, note that the RKHS norm is defined as follows $\|f\|_{\varphi }=\inf\{\|w\|_{F}:w\in F,f(x)=\langle w,\varphi (x)\rangle _{F},\forall x\in X\}$, where $F$ is the feature space.
+Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle+b$. Moreover, note that the RKHS norm is defined as follows $\|f\|_{H}=\inf\{\|w\|_{F}:w\in F,f(x)=\langle w,\varphi (x)\rangle _{F},\forall x\in X\}$, where $F$ is the feature space.
  Doing so we obtain a minimization problem equivalent to minimizing equation \ref{eq:kqr_min1}.
 \begin{equation}\label{eq:kqr_min2}
     \begin{aligned}
     \min_{w,b} \quad & C \sum \limits_{i=1}^{m}
-    (y_i-\langle w, \phi(x) \rangle-b)+ (1-q)(-y_i+\langle w, \phi(x) \rangle+b)+ \frac{1}{2}\|w\|^2\\
+    q(y_i-\langle w, \phi(x) \rangle-b)+ (1-q)(-y_i+\langle w, \phi(x) \rangle+b)+ \frac{1}{2}\|w\|^2\\
     \end{aligned}
     \end{equation}
-Note the division by $\lambda$ so that $C=\frac{1}{\lambda m}$
+Note the division by $\lambda$ so that $C=\frac{1}{\lambda m}$.
+\\
 We can next rephrase the optimisation in \ref{eq:kqr_min2} by introducing the slack variables $\xi_i$ and $\xi_i^*$.
 \begin{equation}\label{eq:kqr_min3}
     \begin{aligned}
-        \min_{w,b\xi_i,\xi_i^*} \quad & C \sum \limits_{i=1}^{m}
+        \min_{w,b,\xi_i,\xi_i^*} \quad & C \sum \limits_{i=1}^{m}
         q \xi_i+ (1-q)\xi_i^*+ \frac{1}{2}\|w\|^2\\
-    \textrm{s.t.} \quad & y_i-\langle w, \phi(x) \rangle+b \leq \xi_i\\
+    \textrm{s.t.} \quad & y_i-\langle w, \phi(x) \rangle-b \leq \xi_i\\
     & -y_i+\langle w, \phi(x) \rangle+b \leq \xi_i^*\\
       &\xi_i\geq0    \\
       &\xi_i^*\geq0    \\
@@ -55,18 +63,17 @@ In order to make it more compact, we rewrite equation \ref{eq:kqr_min3} in matri
       &\xi^*\succeq0    \\
     \end{aligned}
     \end{equation}
-Consider now the associated lagrangian $L$ to \ref{eq:kqr_min4}
+Consider now, the lagrangian $L$ associated to \ref{eq:kqr_min4}
 \begin{equation}\label{eq:kqr_min5}
     \begin{aligned}
     L(w,b,\xi,\xi^*)= & C q \xi^\intercal \mathbb{1}+ C q (\xi^*)^\intercal \mathbb{1}+ \frac{1}{2}w^\intercal w- \alpha^\intercal(\xi - y+\Phi^\intercal w +b)
-    - (\alpha^*)^\intercal(\xi^* -y+\Phi^\intercal w +b)
+    - (\alpha^*)^\intercal(\xi^* +y-\Phi^\intercal w -b)
     \\
     & -\nu^\intercal \xi - (\nu^*)^\intercal \xi^*
 \end{aligned}
 \end{equation}
 The next step is deriving its dual formulation, since it is easier and more efficient to solve. This because the dual problem has the useful property of being always convex.
 
-- dual problem
 \begin{definition}
     The dual function associated to the lagrangia $L(x,\lambda)$ is given by $g(v)=\inf_x L(x,\lambda)$
 \end{definition}
@@ -74,15 +81,17 @@ where $\lambda$ is called the lagrange multiplier of the optimization problem. S
     g(\lambda)\leq p^*
 \end{equation}
 where $p^*$ is the optimal value of your optimization problem.
-Consider a simple lagrangian $L(x,\lambda)=f(x)+\sum \lambda_i r_i(x) +\sum v_i h_i(x)$, where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. What we can be noted is that the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$. Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$ we can obtain a approximate or perfect solution to the primal problem.
+Consider a simple lagrangian $L(x,\lambda)=f(x)+\sum \lambda_i r_i(x) +\sum v_i h_i(x)$, where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. Then it can be noted that the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$. Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$, we can obtain an approximate or perfect solution to the primal problem.
 \\
 To explain why we may or not be able to attain the best solution to the primal problem by maximizing its dual we have to introduce the concept of duality.
 \\
-We use $d^*$ to denote the optimal value of the lagrange dual problem; we can think of it as the best lower bound on $p^*$. The inequality \ref{weak_duality} is called weak duality. The difference $p^*-d^*$ is said the optimal duality gap; it is the gap between the optimal value of the primal problem and the best lower bound on it that can be obtained from the Lagrange dual function. Moreover, note that the optimal duality gap is always nonnegative.
+We use $d^*$ to denote the optimal value of the lagrange dual problem; we can think of it as the best lower bound on $p^*$. 
+\\
+The inequality \ref{weak_duality} is called weak duality. The difference $p^*-d^*$ is said the optimal duality gap; it is the gap between the optimal value of the primal problem and the best lower bound on it that can be obtained from the Lagrange dual function. Moreover, note that the optimal duality gap is always nonnegative.
 \\
 We say that strong duality holds, when the optimal duality gap is zero; in other words, the lagrange dual bound is tight.
 \\
-Constraint qualifications are condtions under which strong duality holds; one the most popular is Slater's condition.
+Constraint qualifications are condtions under which strong duality holds; one of the most popular is Slater's condition.
 \begin{equation}\label{slater_condition}
     \begin{aligned}
         \exists x \in \textrm{relint} \ D \ \textrm{s.t.} & \ r_i(x)<0, \quad i=1, \dots, m \\
@@ -97,23 +106,23 @@ Slater's theorem naturally follows.
 \end{theorem}
 We can now check that our optimization problem posseses strong duality by checking Slater's condition.
 \\
-In our case we don't have equlity constraint, so we do not have the $h_i(x)=0$ \ref{slater_condition} to be checked. All we have to check is the convexity of our problem and that there exist a $x$ such that $r_i(x)<0$.
+In our case we don't have any equality constraint, so we do not have to worry about the $h_i(x)=0$ term in \ref{slater_condition}. All we have to check is the convexity of our problem and that there exist a $x$ such that $r_i(x)<0$.
 For convexity, a sufficient condition is the positive definiteness of $Q$ in the quadratic programming problem 
 \begin{equation}
     \begin{aligned}
-        \min & x^\intercal Q x+ c^\intercal x \\        
-        s.t & Ax\preceq b
+        \min \quad & x^\intercal Q x+ c^\intercal x \\        
+        s.t \quad& Ax\preceq b
     \end{aligned}
 \end{equation}
-In our case \ref{eq:kqr_min5}, we have $w^\intercal w$, thus $Q$ is just the identity matrix which satisfies the positive definiteness requirement. Therefore our problem is convex.
-Next we check Slater's condition holds. Considering first the non negative constraints on $\xi$ and $\xi^*$, we conclude that $\xi$  and $\xi^*$ have to be greater or equal to zero for the existence of an $x$ satisfying Slater's condition. Thus, let us suppose that $0 \leq \xi \leq \alpha$ and $0 \leq \xi^* \leq \alpha$.
+In our case \ref{eq:kqr_min5}, we have $w^\intercal w$, thus $Q$ is just the identity matrix which satisfies the positive definiteness requirement. Therefore, our problem is convex.
+Next we check that Slater's condition holds. Considering first the two non negative constraints on $\xi$ and $\xi^*$, we conclude that $\xi$  and $\xi^*$ have to be greater or equal to zero for the existence of an $x$ satisfying Slater's condition. Thus, let us suppose that $0 \leq \xi \leq \alpha$ and $0 \leq \xi^* \leq \alpha$.
 \\
 Next, let us consider the other two inequalities and make the following ansatz.
 \\
 \begin{equation}
     \begin{aligned}
         w=& \Phi^\intercal(\Phi \Phi^\intercal)^{-1} y\\
-        b\leq& \alpha
+        b<& \alpha
     \end{aligned}
 \end{equation}
 We then have
@@ -135,7 +144,7 @@ First, derive the dual function of \ref{eq:kqr_min5}.
     = & \inf_{\xi, \xi^*, w, b} L(w,b,\xi,\xi^*)
 \end{aligned}
 \end{equation}
-Setting the derivates to zero
+Setting its derivates to zero
 \begin{equation}\label{eq:lagrange_derivatives}
     \begin{cases}
         \frac{\partial L}{\partial w}=0 \implies w=\Phi^\intercal(\alpha-\alpha^*)
@@ -168,16 +177,16 @@ Defining $\alpha=(\alpha-\alpha^*)$ and letting $K$ the kernel matrix, we have t
         \max_{\alpha} \quad & -\frac{1}{2}\alpha^\intercal K\alpha+\alpha^\intercal y\\
     \textrm{s.t.} \quad & 
     C(q-1)\mathbb{1}\preceq \alpha \preceq Cq\mathbb{1}\\
-    &\alpha^\intercal\mathbb{1}
+    &\alpha^\intercal\mathbb{1}=1
     \end{aligned}
     \end{equation}
-Switching sign we rephrase as a minisation problem, which is the common practice in convex optimisation.
+Switching sign, we rephrase it as a minisation problem, which is the common practice in convex optimisation.
 \begin{equation}\label{eq:kqr_min7}
     \begin{aligned}
         \min_{\alpha} \quad & +\frac{1}{2}\alpha^\intercal K\alpha-\alpha^\intercal y\\
     \textrm{s.t.} \quad & 
     C(q-1)\mathbb{1}\preceq \alpha \preceq Cq\mathbb{1}\\
-    &\alpha^\intercal\mathbb{1}
+    &\alpha^\intercal\mathbb{1}=1
     \end{aligned}
     \end{equation}
 The kernel quantile regression estimator is then given by
@@ -188,11 +197,10 @@ Where an unbiased estimator for $b$ is given by
 \begin{equation}
     \begin{aligned}
     b=&\frac{1}{I_q}\sum\limits_{i\in I_q} b_i, \\ 
-    \textrm{with} \ b_i=& y_i-\sum\limits_i \alpha_i k(x_i, x_i) \\
+    \textrm{with} \ b_i=& y_i-\sum\limits_k \alpha_k k(x_k, x_i) \\
      \textrm{and} \ I_q=& \{i=1,\dots,n|0<\alpha_i<Cq, 0<\alpha_i<C(1-q)\}
     \end{aligned}
 \end{equation}
 %contribution is implementation kernel quantile regression for pythos users since there exists only r version
-- calculations
 \subsection{Kernel herding}
 Select the best point forecasting method and create a probabilistic forecast by modelling its model errors with kernel herding (do something like the residual bootstrap ensembles if it is meaningful and possible to implement).

@@ -43,6 +43,11 @@ Stephen~P Boyd and Lieven Vandenberghe.
 \newblock {\em Convex optimization}.
 \newblock Cambridge university press, 2004.
 
+\bibitem{breiman2001random}
+Leo Breiman.
+\newblock Random forests.
+\newblock {\em Machine learning}, 45:5--32, 2001.
+
 \bibitem{bringhurst1996ets}
 Robert Bringhurst.
 \newblock {\em {The Elements of Typographic Style}}.

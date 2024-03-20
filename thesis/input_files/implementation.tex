@@ -1,5 +1,9 @@
-Section documenting code
+This section is inteneded to explain and aid for reproducibilty studies. Hereafter the specific libraries used and the custom implementatios are thoroughly documented.
+\\
+For the list of python packages needed see the requirement.txt file.
 
+
+Section documenting code
 - indicate computer specifics
 
 % - see whether something can be parallelized
@@ -12,3 +16,27 @@ its rationale and how to use it.
 
 - As I explain code scripts go over the test, to 
 explain better my ideas.
+\section{Linear quantile regression}
+The implementation of statsmodels.regression.quantile\_regression.QuantReg has been used.
+The model is fitted through iterative reweighted least squares.
+\section{Quantile gradient boosting machine}
+The implementation of sklearn.ensemble.GradientBoostingRegressor as been used.
+\section{Quantile forest}
+The implementation of quantile\_forest.RandomForestQuantileRegressor as been used. This estimator is compatible with scikit-learn.
+\section{Kernel quantile regression}
+Kernel quantile regression had no previously implemented open source library, thus the need of implementing our own version.
+\\
+The scikit-learn team provides a project template for the creation of estimators compatible with scikit-learn functionalities. Therefore, the KQR class is derived from the scikit-learn BaseEstimator and the mixin class RegressorMixin.
+Our KQR class is initialized by providing a quantile, the regularization term C and the rbf kernel bandwidth gamma; the latter are the two hyperparameters of our custom estimator.
+\\
+In the fit method, we set up and solve the convex optimisation problem by using the cvxopt library. 
+When using this library, it is important to keep two things in mind. First this library assumes the quadratic term of the optimisation problem to be multiplied by the 0.5 factor, thus we just have to provide the Q matrix with no 0.5 in front.
+Secondly, in order to specify multiple inequalities we have to stack them an provide as a unique matrix.
+\\
+Once a solution to the convex problem has been found, we create a mask for the support vectors of the estimator in order to estimate the constant term of our kernel quantile regressor.
+\\
+In the predict method, we pass a matrix X\_eval of independent variables, next we compute the kernel matrix between X\_train and X\_eval and obtain y\_eval with the formula $y=\alpha^\intercal K+b$.
+\\
+This estimator is compatible with useful scikit-learn in built methods like gridsearch, crossvalidation and scoring rules.
+\\
+Up to now, there are only two open source implementation of the quantile kernel regression. Nevertheless they are both in R, that is there exists no python, matlab or julia open source implementation. Following are reported the results of a comparative study between our own implementation and the one of the R library kernlab(i guess it is in C or C++ and then binded to R).
