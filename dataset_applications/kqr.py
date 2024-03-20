@@ -186,10 +186,10 @@ if __name__=="__main__":
 
     eval_set_robust = robust_scaler.transform(eval_set.reshape(-1, 1))
     
-    # ones_column = np.ones((X_train_robust.shape[0], 1))
-    # X_train_robust = np.hstack((ones_column, X_train_robust))
-    # ones_column_eval = np.ones((eval_set_robust.shape[0],1))
-    # eval_set_robust = np.hstack((ones_column_eval, eval_set_robust))
+    ones_column = np.ones((X_train_robust.shape[0], 1))
+    X_train_robust = np.hstack((ones_column, X_train_robust))
+    ones_column_eval = np.ones((eval_set_robust.shape[0],1))
+    eval_set_robust = np.hstack((ones_column_eval, eval_set_robust))
     # q=0.1
 
     avg_pinball=0
@@ -244,9 +244,9 @@ if __name__=="__main__":
     # plt.title("Kernel quantile regression")
     # plt.show()
 
-    
-        L = sorted(zip(eval_set_robust,kqr.predict(eval_set_robust)), key=itemgetter(0))
-        eval_set_robust, y_eval_predr = zip(*L)
+        print(eval_set_robust[:,1])
+        L = sorted(zip(eval_set_robust[:,1],kqr.predict(eval_set_robust)), key=itemgetter(0))
+        eval_set_robust[:,1], y_eval_predr = zip(*L)
 
         plt.plot(eval_set,y_eval_predr, alpha=0.4,label=f"q={q}",color="black", linestyle="dashed")
     
