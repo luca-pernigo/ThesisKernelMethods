@@ -2,27 +2,64 @@ When it comes to probabilistic forecasting, there are a couple of standard pract
 \section{Quantile regression}
 \input{input_files/qr.tex}
 
-\section{Kernel density estimation}
-\input{input_files/kde.tex}
-
-\section{Ensemble methods}
-\input{input_files/ensemble.tex}
-
 % \section{Copula models}
 \section{Quantile forest}
 Meinshausen \cite{meinshausen2006quantile} extends the idea of random forest \cite{breiman2001random} generalising it, the result is the quantile forest algorithm. Quantile forest allows us to estimate conditional quantiles in a non parametric fashion.
 \\
 In order to understand this algorithm it is necessary to first cover the theory of decision trees and random forests.
-- decision trees
-- random forest
+\subsection{Decision trees}
+Decision trees methods partition recursively the feature space in a set of binary rectangles and then fit a simple model in each of those partitions (the most straightforward is fitting just a constant).
+To get started, we first split the space into two disjoint regions, then we model the response variable by the mean of the observed predicted variables with associated features falling in that specific region. Our goal is selecting the best features and best split point such that to achieve the best generalizing fit.
+For an example/visualisation consider the pictures \ref{fig:elements_statistical_learning1} and \ref{fig:elements_statistical_learning2} taken from \cite{hastie2009elements}, where the decision tree algorithm is visualised for a regression problem with two independent variables X2 and X1.
+\begin{figure}
+    \includegraphics[width=0.5\textwidth]{images/elsii1.png}
+    \caption{two-dimensional feature space partitioned by recursive binary splittin}
+    \label{fig:elements_statistical_learning1}
+  \end{figure}
+\\
+\begin{figure}
+\includegraphics[width=1\textwidth]{images/elsii2.png}
+\caption{partition tree and regression model}
+\label{fig:elements_statistical_learning2}
+\end{figure}
+\\
+Suppose to partition the feature space into M regions $R_1,\dots,R_M$, then the model reads as follows.
+\begin{equation}
+    f(x)=\sum\limits_{m=1}^{M}c_m\mathbb{1}(x \in R_m)
+\end{equation}
+\\
+It follows that the function minimising the sum of squares is the one with $\hat{c}_m=mean(y_i|x_i \in R_m)$
+Finding the best split in terms of minimum sum of squares is computationally infeasible in practice. Therefore we approximate a solution by approaching the problem in a greedy fashion.
+Let $j$ denote the splitting variable, $s$ be the the split point we define the two half planes
+\begin{equation}
+    R_1(j,s)=\{X|X_j\leq s\} \quad R_2(j,s)=\{X|X_j\>s\}
+\end{equation}
+Then we search for the $s$ and $j$ that solve
+\begin{equation}
+    \min_{j,s}\left[\min_{c_1} \sum\limits_{x_i \in R_1(j,s)}(y_i-c_1)^2+\min_{c_2} \sum\limits_{x_i \in R_2(j,s)}(y_i-c_2)^2\right]
+\end{equation}
+The inner problem is easy, as already pointed out we will have 
+\begin{equation}
+    \hat{c}_1=mean(y_i|x_i \in R_1) \quad \hat{c}_2=mean(y_i|x_i \in R_2)
+\end{equation}
+For the outer problem, we scan through all the (j,s) tuples and pick the best pair. 
+Next, one or both of these regions from the previous step are split into two more regions; we recurse this process until some stopping condition is triggered (max number of branches, max deth of tree, threshold on the MSE, minimum number of observation in each leaf node).
+Notice, this being a greedy algorithm implies that our final solution is guaranteed to be just a local optimum not a global one.
+Even though their simplicity, these models have proved themselves to be really powerful, see figure \ref{fig:decision_tree} for a visualisaiton . The most popular among these model is the CART \cite{breiman2017classification} tree, its name comes from the fact that it can handle both classification and regression problems.
+\begin{figure}
+    \includegraphics[width=\textwidth]{images/decision_tree.png}
+    \caption{decision tree regression}
+    \label{fig:decision_tree}
+    % image generated on coolab to be quick
+\end{figure}
+    
+
+\subsection{Random forest}
 - quantile forest
+
+
 \section{Quantile gradient boosting machine}
 
-
-\section{DMLP}
-%gluon nn
-% train a beta distribution to learn its parameters
-\section{DeepAR}
 
 \section{Kernel methods}
 \subsection{Kernel quantile regression}
@@ -202,5 +239,28 @@ Where an unbiased estimator for $b$ is given by
     \end{aligned}
 \end{equation}
 %contribution is implementation kernel quantile regression for pythos users since there exists only r version
+\subsection{Weather quantiles}
+In order to get acquainted with the inner working of the presented methods, this section covers an application explaining practical details and comparing results.
+\\
+The dataset used is the Melbourne Daily Maximum Temperatures \cite{hdrcde}. It contains the daily maximum temperatures in Melbourne, Australia, from 1981-1990, excluding leap days.
+Due to the bimodality of the data, such dataset is commonly used to give a difficult quantile regression problem \cite{hyndman1996estimating}, thus why we chose it. The observed bimodality is that a hot day is likely to be followed by either an equally hot day or one much cooler.
+\\
+
+- metrics pinball, picw plot, mae error
+
+
+
+\section{Kernel density estimation}
+\input{input_files/kde.tex}
+
+\section{Ensemble methods}
+\input{input_files/ensemble.tex}
+
+\section{DMLP}
+%gluon nn
+% train a beta distribution to learn its parameters
+\section{DeepAR}
+
+
 \subsection{Kernel herding}
 Select the best point forecasting method and create a probabilistic forecast by modelling its model errors with kernel herding (do something like the residual bootstrap ensembles if it is meaningful and possible to implement).

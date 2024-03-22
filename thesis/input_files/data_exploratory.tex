@@ -19,3 +19,20 @@ In sample test involves look ahead bias because we are
 fitting the model on the data we want to predict,
 thus it overfits on the data considered but it does
 not generalize well.
+
+
+This section covers the datasets used in our experiments, attributes and features will be thoroughly described.
+Next, we will explain the ETL pipeline that we set up in order ease the workflow of our comparison studies.
+Finally, in order to to bettern understand patters within the data, detect outliers and discover interesting patterns we carry out an exploratory data analysis.
+
+\section{GEFCom2014}
+The chosen dataset for probabilistic load forecasting, was the data from the GEFCom 2014 competition. The data is freely hosted on Dr. Hong blog \cite{hong2016probabilistic}.
+Contestant were asked to provide one month ahead hourly probabilistic forecasts on a rolling basis for 15 consecutive round. To get started, in the first round, organizers provided 69 months of hourly load data and 117 months of hourly temperature data. As the competition task went on, the real observed data of the previous tasks was made available.
+The GEFCom2014 Data contains five zip files. We are interested in the probabilistic load forecasting data, which is contained in the GEFCom2014-L\_V2 zip file. Within this subfolder, we a txt with the competition instructions and 15 folders one for each of the consecutive tasks. For each of those we have the prediction of the competition benchmark model and the train file upon which we will fit our model.
+\\
+Each data from the various task folders are shifted by one months between others.
+\\
+In order to compare our model performance with the winning entries of the GEFCom2014 competition we will refer to the Provisional\_Leaderboard\_V2 file contained also in the GEFCom2014 Data directory. Notice a quick premise, within this xsls file the authors opted for various scores to compare the entries performance. This choice was motivated by the need 
+to give a proportial weight to each task when averaging between them; that is in order to not penalise too much the tasks with higher point spreads. Furthermore, additional factors such as frequency of benchmark outperformance, and robustness and clarity in methodology explaination.
+\\
+Since we are only interested in the load forecasting track, we can directly compare between models by comparing their pinball scores. Such scores are stored inside the subtab L-score-0/L-score-2 of Provisional\_Leaderboard\_V2.

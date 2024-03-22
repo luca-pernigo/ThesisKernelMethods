@@ -4,9 +4,9 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
 Warning--entry type for "un_sdgs" isn't style-file defined
---line 839 of file refs.bib
+--line 860 of file refs.bib
 Warning--entry type for "gm_22" isn't style-file defined
---line 844 of file refs.bib
+--line 865 of file refs.bib
 Warning--to sort, need author or key in un_sdgs
 Warning--to sort, need author or key in gm_22
 Warning--empty journal in supersamples
@@ -16,45 +16,45 @@ Warning--empty booktitle in jebara
 Warning--can't use both author and editor fields in pmlr
 Warning--empty journal in nystrom
 Warning--empty journal in takeuchi2006nonparametric
-You've used 84 entries,
+You've used 87 entries,
             2118 wiz_defined-function locations,
-            976 strings with 17404 characters,
-and the built_in function-call counts, 27307 in all, are:
-= -- 2702
-> -- 1275
-< -- 9
-+ -- 511
-- -- 420
-* -- 1992
-:= -- 4584
-add.period$ -- 247
-call.type$ -- 84
-change.case$ -- 452
+            986 strings with 17791 characters,
+and the built_in function-call counts, 28112 in all, are:
+= -- 2772
+> -- 1323
+< -- 10
++ -- 531
+- -- 436
+* -- 2041
+:= -- 4726
+add.period$ -- 256
+call.type$ -- 87
+change.case$ -- 466
 chr.to.int$ -- 0
-cite$ -- 93
-duplicate$ -- 952
-empty$ -- 2134
-format.name$ -- 420
-if$ -- 5592
+cite$ -- 96
+duplicate$ -- 985
+empty$ -- 2196
+format.name$ -- 436
+if$ -- 5755
 int.to.chr$ -- 0
-int.to.str$ -- 84
-missing$ -- 86
-newline$ -- 415
-num.names$ -- 164
-pop$ -- 437
+int.to.str$ -- 87
+missing$ -- 90
+newline$ -- 430
+num.names$ -- 170
+pop$ -- 461
 preamble$ -- 1
-purify$ -- 376
+purify$ -- 390
 quote$ -- 0
-skip$ -- 672
+skip$ -- 692
 stack$ -- 0
-substring$ -- 1884
-swap$ -- 132
-text.length$ -- 9
+substring$ -- 1900
+swap$ -- 137
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 318
+type$ -- 326
 warning$ -- 9
-while$ -- 278
-width$ -- 86
-write$ -- 889
+while$ -- 284
+width$ -- 89
+write$ -- 920
 (There were 11 warnings)

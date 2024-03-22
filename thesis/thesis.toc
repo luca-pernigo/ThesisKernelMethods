@@ -55,25 +55,29 @@
 \contentsline {subsection}{\numberline {6.8.2}Kernel support vector regression}{34}{subsection.6.8.2}%
 \contentsline {chapter}{\chapternumberline {7}Probabilistic forecasting}{35}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Quantile regression}{35}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Kernel density estimation}{36}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Ensemble methods}{36}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Quantile forest}{36}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Quantile gradient boosting machine}{37}{section.7.5}%
-\contentsline {section}{\numberline {7.6}DMLP}{37}{section.7.6}%
-\contentsline {section}{\numberline {7.7}DeepAR}{37}{section.7.7}%
-\contentsline {section}{\numberline {7.8}Kernel methods}{37}{section.7.8}%
-\contentsline {subsection}{\numberline {7.8.1}Kernel quantile regression}{37}{subsection.7.8.1}%
-\contentsline {subsection}{\numberline {7.8.2}Kernel herding}{40}{subsection.7.8.2}%
-\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{41}{chapter.8}%
-\contentsline {chapter}{\chapternumberline {9}Implementation}{43}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Linear quantile regression}{43}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Quantile gradient boosting machine}{43}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Quantile forest}{43}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Kernel quantile regression}{44}{section.9.4}%
-\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{45}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Quantile forecasting}{45}{section.10.1}%
-\contentsline {chapter}{List of Symbols}{47}{section*.4}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{49}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{49}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Src code}{50}{section.A.2}%
-\contentsline {chapter}{Bibliography}{51}{appendix*.6}%
+\contentsline {section}{\numberline {7.2}Quantile forest}{36}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Decision trees}{36}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Random forest}{38}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Quantile gradient boosting machine}{39}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Kernel methods}{39}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{39}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{42}{subsection.7.4.2}%
+\contentsline {section}{\numberline {7.5}Kernel density estimation}{43}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Ensemble methods}{43}{section.7.6}%
+\contentsline {section}{\numberline {7.7}DMLP}{43}{section.7.7}%
+\contentsline {section}{\numberline {7.8}DeepAR}{43}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Kernel herding}{43}{subsection.7.8.1}%
+\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{45}{chapter.8}%
+\contentsline {section}{\numberline {8.1}GEFCom2014}{45}{section.8.1}%
+\contentsline {chapter}{\chapternumberline {9}Implementation}{47}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Linear quantile regression}{47}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Quantile gradient boosting machine}{47}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Quantile forest}{47}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Kernel quantile regression}{48}{section.9.4}%
+\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{49}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Quantile forecasting}{49}{section.10.1}%
+\contentsline {chapter}{List of Symbols}{51}{section*.4}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{53}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{53}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Src code}{54}{section.A.2}%
+\contentsline {chapter}{Bibliography}{55}{appendix*.6}%

@@ -48,6 +48,11 @@ Leo Breiman.
 \newblock Random forests.
 \newblock {\em Machine learning}, 45:5--32, 2001.
 
+\bibitem{breiman2017classification}
+Leo Breiman.
+\newblock {\em Classification and regression trees}.
+\newblock Routledge, 2017.
+
 \bibitem{bringhurst1996ets}
 Robert Bringhurst.
 \newblock {\em {The Elements of Typographic Style}}.
@@ -126,6 +131,11 @@ Stephen Haben, Marcus Voss, and William Holderbaum.
 \newblock {\em Core Concepts and Methods in Load Forecasting: With Applications in Distribution Networks}.
 \newblock Springer Nature, 2023.
 
+\bibitem{hastie2009elements}
+Trevor Hastie, Robert Tibshirani, Jerome~H Friedman, and Jerome~H Friedman.
+\newblock {\em The elements of statistical learning: data mining, inference, and prediction}, volume~2.
+\newblock Springer, 2009.
+
 \bibitem{hastie2017generalized}
 Trevor~J Hastie.
 \newblock Generalized additive models.
@@ -178,6 +188,11 @@ Christian Huurman, Francesco Ravazzolo, and Chen Zhou.
 Rob~J Hyndman, David~M Bashtannyk, and Gary~K Grunwald.
 \newblock Estimating and visualizing conditional densities.
 \newblock {\em Journal of Computational and Graphical Statistics}, 5(4):315--336, 1996.
+
+\bibitem{hdrcde}
+Rob~J Hyndman, Jochen Einbeck, and Matthew~P Wand.
+\newblock {\em {hdrcde}: Highest Density Regions and Conditional Density Estimation}, 2023.
+\newblock R package version 3.4.
 
 \bibitem{jebara}
 Tony Jebara and Risi Kondor.

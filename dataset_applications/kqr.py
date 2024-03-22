@@ -106,7 +106,6 @@ class KQR(RegressorMixin, BaseEstimator):
         sol = qp(P=K,q=-r,G=G,h=h,A=A,b=b)
         # alpha solution
         self.a=np.array(sol["x"]).flatten()
-        
         # see coefficients
         # print("coefficients a: ",self.a)
 
@@ -114,19 +113,14 @@ class KQR(RegressorMixin, BaseEstimator):
         # print("coefficients sum up to 1:", np.sum(self.a))
         
         # condition, index set of support vectors
-        squared_diff = (np.round(self.a, 3) - (self.C * self.alpha))**2 + (np.round(self.a, 3) - (self.C * (self.alpha - 1)))**2
+        squared_diff = (self.a - (self.C * self.alpha))**2 + (self.a - (self.C * (self.alpha - 1)))**2
 
-        # Find the index corresponding to the smallest squared difference
+        # get the smallest squared difference
         offshift = int(np.argmin(squared_diff))
-
-        # Compute the bias term b
-        print(offshift)
+        # print(offshift)
+        
+        # calculate bias term b
         self.b = y[offshift] - self.a.T@K[:,offshift]
-        # idx_arr=[i for i, ai in enumerate(self.a) if (ai>self.C*(self.alpha-1)) and (ai<self.C*(self.alpha))]
-        # # beta of the model
-        # self.b_i=[y[i]- self.a.T@K[:,idx_arr] for i in idx_arr]
-        # print("beta i: ", y[idx_arr]-self.a.T@K[:,idx_arr])
-        # self.b=np.mean(self.b_i)
         # print("beta mean: ", self.b)
         
         # Return the regressor

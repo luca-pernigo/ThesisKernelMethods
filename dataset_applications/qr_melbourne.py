@@ -34,7 +34,7 @@ if __name__=="__main__":
     # train, test split
     X_train, X_test, y_train, y_test = train_test_split(df["Yt-1"], df["Yt"], test_size=0.20, random_state=4)
 
-    eval_set=np.linspace(df["Yt"].min(), df["Yt"].max(), 100).T
+    eval_set=np.linspace(df["Yt-1"].min(), df["Yt-1"].max(), 100).T
     eval_set=eval_set.reshape(-1,1)
     X_train= X_train.values.reshape(-1, 1)
     X_test = X_test.values.reshape(-1, 1)
