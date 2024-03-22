@@ -53,10 +53,50 @@ Even though their simplicity, these models have proved themselves to be really p
     % image generated on coolab to be quick
 \end{figure}
     
+\subsection{Bootstrap}
+The idea behind boostrapping is to randomly sample from the training set with replacement B times and then fitting B models to each of the "artificial" datasets. Boostrapping can serve different tasks; we can use it to assess the accuracy of a parameter estimate or of a prediction but also to improve their estimates.
+
+\subsection{Bagging}
+Bagging stands for boostrap aggregation. 
+The bagging estimate is dafined by $\mathbb{E}_P\hat{f}^*$ where $P$ is the empirical distribution putting equal probability on each data point of the training set.
+Basically, for each bootstrap fitted model $\hat{f}^{*b}(x)$, we compute the bagging estimate by
+\begin{equation}
+    \hat{f}_{bag}(x)=\frac{1}{B}\sum\limits_{b=1}^{B}\hat{f}^{*b}(x)
+\end{equation}
+Bagging is particularly useful in reducing the variance of decision trees, resulting in an improved prediction(tradeoff bias variance).
+Note, this improvement comes from the fact that averaging reduces variance and leaves biases unchanged.
 
 \subsection{Random forest}
-- quantile forest
+Decision trees are characterised by high variance and low bias, thus, they can benefit extremely from bagging. Furthermore, every decision tree generated through bagging will be identically distributed (i.d.), thus the expectation of an average of B trees is probabilistically equivalent to the expectation of any such trees. As a consequence, the bias will stay fixed since the bias of the bagged estimator is the same as that of each individual tree. 
+\\
+Consider positively correlated i.d. random variables, then the variance of their average is 
+\begin{equation}
+    \rho \sigma^2+\frac{1-\rho}{B}\sigma^2
+\end{equation}
+The second term disappears as B increases, while the first term depends heavily on the correlation between bagged trees. Random forest consists in is reducing the correlation between the trees by randomly selecting m of the p features as candidates for splitting; m tipically takes value of the order $\sqrt{p}$ or even 1 with default value $m=\left\lfloor \frac{p}{3} \right\rfloor$ while a good minimum node size is around five. 
+\\
+Letting $T(x;\Theta_b)$ be the bth bagged tree where $\Theta_b$ denotes the randomness characterizing its splits, cutpoints and terminal node values, we have that the random forest regressor is given by
+\begin{equation}
+    \hat{f}_{rf}^{B}=\frac{1}{B}\sum\limits_{b=1}^{B}T(x;\Theta_b)
+\end{equation}
+For a simple visualisation compare figure \ref{fig:random_forest} with \ref{fig:decision_tree}
+\begin{figure}
+    \includegraphics[width=\textwidth]{images/random_forest.png}
+    \caption{random forest regression}
+    \label{fig:random_forest}
+    % image generated on coolab to be quick
+\end{figure}
 
+
+\subsection{Quantile forest}
+The key observation here is noting that random forests approximates the conditional mean $\mathbb{E}(Y|X=x)$ by a weighted average over the observed $Y$. Hence, we can extend this idea to the full conditional distribution by
+\begin{equation}
+    F(y|X=x)=P(Y\leq y|X=x)=\mathbb{E}(\mathbb{1}_{\{Y\leq y\}}|X=x)
+\end{equation}
+All we have to do is approximating $\mathbb{E}(\mathbb{1}_{\{Y\leq y\}}|X=x)$ by a weighted mean over the random variable $\mathbb{1}_{Y\leq y}$
+\begin{equation}
+    \hat{F}(y|X=x)=\sum\limits_{i=1}^{n}\omega_i(x)\mathbb{1}_{\{Y_i\leq y\}}
+\end{equation}
 
 \section{Quantile gradient boosting machine}
 

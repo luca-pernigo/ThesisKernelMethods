@@ -1743,6 +1743,11 @@ INPUT ./images/decision_tree.png
 INPUT images/decision_tree.png
 INPUT ./images/decision_tree.png
 INPUT ./images/decision_tree.png
+INPUT ./images/random_forest.png
+INPUT ./images/random_forest.png
+INPUT images/random_forest.png
+INPUT ./images/random_forest.png
+INPUT ./images/random_forest.png
 INPUT ./input_files/kde.tex
 INPUT input_files/kde.tex
 INPUT ./input_files/kde.tex
