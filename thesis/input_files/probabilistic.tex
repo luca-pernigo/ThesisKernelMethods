@@ -326,12 +326,90 @@ Where an unbiased estimator for $b$ is given by
 \subsection{Weather quantiles}
 In order to get acquainted with the inner workings of the presented methods, this section covers an application explaining practical details and comparing results.
 \\
-The dataset used is the Melbourne Daily Maximum Temperatures \cite{hdrcde}. It contains the daily maximum temperatures in Melbourne, Australia, from 1981-1990, excluding leap days.
+The dataset used is the Melbourne Daily Maximum Temperatures \cite{hdrcde}. It contains the daily maximum temperatures in Melbourne, Australia, from 1981-1990, excluding leap days, see figure \ref{fig:melbourne_temperature_data}.
 Due to the bimodality of the data, such dataset is commonly used to give a difficult quantile regression problem \cite{hyndman1996estimating}, thus why we chose it. The observed bimodality is that a hot day is likely to be followed by either an equally hot day or one much cooler.
-\\
+\begin{figure}
+    \includegraphics[width=\textwidth]{images/melbourne_temperature.png}
+    \caption{Melbourne temperatures dataset}
+    \label{fig:melbourne_temperature_data}
+\end{figure}
+Hereafter, the results of the four presented methods on the Melbourne dataset are reported, see figure \ref{fig:melbourne_quantiles_comparison} for a visualisation. Hyperparameter tuning have been optimised through cross validation, see \ref{appendix:cross_validation}.
+\begin{figure}
+    \begin{subfigure}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.1\textwidth]{images/melbourne_linear_quantile_regression.png} 
+      \caption{Linear quantile regression} 
+      \label{fig:melbourne_linear_quantile_regression} 
+      \vspace{4ex}
+    \end{subfigure}%% 
+    \begin{subfigure}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.1\textwidth]{images/melbourne_gradient_boosting_quantile_regression.png} 
+      \caption{Gradient boosting quantile regression} 
+      \label{fig:melbourne_gradient_boosting_quantile_regression} 
+      \vspace{4ex}
+    \end{subfigure} 
+    \begin{subfigure}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.1\textwidth]{images/melbourne_quantile_forest.png} 
+      \caption{Quantile forest} 
+      \label{fig:melbourne_quantile_forest} 
+    \end{subfigure}%%
+    \begin{subfigure}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.1\textwidth]{images/melborune_kernel_quantile_regression.png} 
+      \caption{Kernel quantile regression} 
+      \label{fig:melborune_kernel_quantile_regression} 
+    \end{subfigure} 
+    \caption{Quantile regressors}
+    \label{fig:melbourne_quantiles_comparison} 
+  \end{figure}
 
-- metrics pinball, picw plot, mae error on test data
+% tables
+\begin{table}
+\caption{Pinball loss Melbourne data}
+\begin{tabular}{lllll}
+    \toprule
+     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    Pinball loss & 11.278895 & 10.317612 & 10.340842 & 10.031708 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
 
+\begin{table}
+    \caption{Pinball loss quantile-wise Melbourne data}
+    \begin{tabular}{lllll}
+    \toprule
+    Quantiles & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    0.100000 & 0.710644 & 0.549232 & 0.562888 & 0.540235 \\
+    0.200000 & 1.155014 & 0.938561 & 0.946712 & 0.903213 \\
+    0.300000 & 1.417805 & 1.212671 & 1.222407 & 1.173803 \\
+    0.400000 & 1.540108 & 1.399925 & 1.409293 & 1.367943 \\
+    0.500000 & 1.574957 & 1.517281 & 1.484589 & 1.455849 \\
+    0.600000 & 1.525114 & 1.498608 & 1.495474 & 1.447470 \\
+    0.700000 & 1.397918 & 1.372183 & 1.362173 & 1.331503 \\
+    0.800000 & 1.170140 & 1.115077 & 1.123195 & 1.096606 \\
+    0.900000 & 0.787195 & 0.714075 & 0.734112 & 0.715085 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+As already pointed out, the quantile regression with q=0.5 corresponds to the standard regression problem, hence we can compare the proposed methods also in terms of the mean absolute error.
+
+\begin{table}
+\caption{MAE Melbourne data}
+\begin{tabular}{lllll}
+    \toprule
+     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    MAE & 3.253882 & 3.134805 & 3.095041 & 3.024336 \\
+    \bottomrule
+    \end{tabular}
+\end{table}  
+From these tables, we can see that kernel quantile regression outperformed the simple quantile regressor as well as the more complex models like quantile forest and gradient boosting quantile regression for the Melbourne temperatures dataset. Not only kernel quantile regression was the best in terms of total pinball loss but also the best in terms of each quantile pinball loss and mean absolute error.
+Comparison has been carried out on further dataset, yielding similar conclusion as the one of above, to know more see \ref{appendix:quantile_regressor_extensive_comparison}.
 
 
 \section{Kernel density estimation}

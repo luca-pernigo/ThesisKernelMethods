@@ -33,6 +33,183 @@
 \end{align*}
 \end{proof}
 
+\section{Cross validation}\label{appendix:cross_validation}
+
+
+
+\section{Quantile regressor extensive comparison}\label{appendix:quantile_regressor_extensive_comparison}
+\subsection{Boston housing dataset}
+The Boston housing dataset \href{https://www.kaggle.com/datasets/altavish/boston-housing-dataset}{https://www.kaggle.com/datasets/altavish/boston-housing-dataset} contains information about various attributes for suburbs in Boston.
+There are 13 indipendent variables:
+\begin{itemize}
+\item CRIM per capita crime rate by town
+\item ZN proportion of residential land zoned for lots over 25,000 sq.ft.
+\item INDUS proportion of non-retail business acres per town.
+\item CHAS Charles River dummy variable (1 if tract bounds river; 0 otherwise)
+\item NOX nitric oxides concentration (parts per 10 million)
+\item RM average number of rooms per dwelling
+\item AGE proportion of owner-occupied units built prior to 1940
+\item DIS weighted distances to five Boston employment centres
+\item RAD index of accessibility to radial highways
+\item TAX full-value property-tax rate per 10,000
+\item PTRATIO pupil-teacher ratio by town
+\item B $1000(Bk - 0.63)^2$ where Bk is the proportion of afroamericans by town
+\item LSTAT lower status of the population
+\end{itemize}
+The dependent variable is MEDV, that is the median value of owner occupied homes in \$1000's
+
+\begin{table}
+\caption{Pinball loss Boston housing data}
+\begin{tabular}{lllll}
+\toprule
+    & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+\midrule
+0 & 13.785678 & 11.418540 & 10.587686 & 10.297572 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+    \caption{Pinball loss quantile-wise Boston data}
+\begin{tabular}{lllll}
+\toprule
+    & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+\midrule
+0.100000 & 0.729749 & 0.771714 & 0.588441 & 0.578898 \\
+0.200000 & 1.122582 & 1.033442 & 0.932824 & 0.869145 \\
+0.300000 & 1.479486 & 1.170642 & 1.153765 & 1.142783 \\
+0.400000 & 1.712577 & 1.436263 & 1.352667 & 1.331955 \\
+0.500000 & 1.911385 & 1.344361 & 1.408333 & 1.396300 \\
+0.600000 & 1.989514 & 1.448885 & 1.464902 & 1.431705 \\
+0.700000 & 1.938362 & 1.508741 & 1.427912 & 1.382772 \\
+0.800000 & 1.658058 & 1.497901 & 1.275059 & 1.245288 \\
+0.900000 & 1.243965 & 1.206591 & 0.983784 & 0.918725 \\
+\bottomrule
+\end{tabular}
+\end{table}
+        
+\begin{table}
+\caption{MAE Boston data}    
+\begin{tabular}{lllll}
+\toprule
+    & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+\midrule
+0 & 3.826326 & 2.845989 & 2.965490 & 2.810494 \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\subsection{Abalone dataset}
+The abalone data \href{https://archive.ics.uci.edu/dataset/1/abalone}{https://archive.ics.uci.edu/dataset/1/abalone} consist of measurements of abalone molluscs, the goal is predicting their age by building a model for estimating its number of rings; age is the number of rings plus 1.5
+The data has 8 attributes:
+\begin{itemize}
+    \item Sex Categorical variable either male, female or infant
+    \item Length
+    \item Diameter
+    \item Height
+    \item Whole height
+    \item Shucked height
+    \item Viscera weight
+    \item Shell weight
+\end{itemize}
+
+\begin{table}
+    \caption{Pinball loss Abalone data}
+\begin{tabular}{lllll}
+    \toprule
+     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    0 & 5.613975 & 5.531938 & 5.212990 & 5.252491 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+    
+\begin{table}
+    \caption{Pinball loss quantile-wise Abalone data}
+    \begin{tabular}{lllll}
+    \toprule
+     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    0.100000 & 0.277903 & 0.290531 & 0.274079 & 0.269287 \\
+    0.200000 & 0.469361 & 0.488079 & 0.453110 & 0.457286 \\
+    0.300000 & 0.621961 & 0.625633 & 0.580766 & 0.596791 \\
+    0.400000 & 0.729757 & 0.715875 & 0.689904 & 0.691310 \\
+    0.500000 & 0.794695 & 0.766185 & 0.735945 & 0.740834 \\
+    0.600000 & 0.810691 & 0.785769 & 0.744928 & 0.746636 \\
+    0.700000 & 0.769587 & 0.730318 & 0.700287 & 0.710392 \\
+    0.800000 & 0.667776 & 0.656913 & 0.609378 & 0.608334 \\
+    0.900000 & 0.472244 & 0.472635 & 0.424593 & 0.431621 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+    
+\begin{table}
+    \caption{MAE Abalone data}
+    \begin{tabular}{lllll}
+    \toprule
+     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    0 & 1.627627 & 1.574179 & 1.499522 & 1.498583 \\
+    \bottomrule
+    \end{tabular}
+\end{table} 
+
+\subsection{Vehicle dataset}
+This data contains info about used cars \href{https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho}{https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho}, the predictors are:
+\begin{itemize}
+    \item Year
+    \item Present\_price ex showroom price
+    \item Kms Driven
+    \item Fuel type
+    \item Seller type
+    \item Transmission
+    \item Owner number of previous owners
+\end{itemize}
+The dependent variable is the selling price.
+
+\begin{table}
+\caption{Pinball loss Vehicle data}
+\begin{tabular}{lllll}
+    \toprule
+     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    0 & 4.054449 & 2.289554 & 2.844410 & 2.204343 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \caption{Pinball loss quantile-wise Vehicle data}
+    \begin{tabular}{lllll}
+    \toprule
+     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    0.100000 & 0.254649 & 0.139849 & 0.170489 & 0.182490 \\
+    0.200000 & 0.403772 & 0.236339 & 0.285875 & 0.223165 \\
+    0.300000 & 0.548820 & 0.244086 & 0.357375 & 0.242963 \\
+    0.400000 & 0.576918 & 0.263169 & 0.389305 & 0.262835 \\
+    0.500000 & 0.554367 & 0.306123 & 0.410738 & 0.295878 \\
+    0.600000 & 0.563046 & 0.335363 & 0.398125 & 0.306062 \\
+    0.700000 & 0.516019 & 0.287490 & 0.326572 & 0.283716 \\
+    0.800000 & 0.407742 & 0.261882 & 0.313698 & 0.235793 \\
+    0.900000 & 0.229115 & 0.215253 & 0.192233 & 0.171440 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \caption{MAE Vehicle data}
+    \begin{tabular}{lllll}
+    \toprule
+     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    \midrule
+    0 & 1.117714 & 0.606971 & 0.752197 & 0.594292 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+    
+
 \newpage
 \section{Src code}\label{src_code}
 The whole code for the project is hosted on

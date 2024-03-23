@@ -1,25 +1,27 @@
 \babel@toc {english}{}\relax 
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Time classsification \cite {prob_elf}}}{8}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces EF publications}}{9}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Point vs probabilistic pubblications}}{10}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Pubblications by method}}{10}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Pubblications by subject area}}{11}{figure.2.5}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Most popolar sources/outlets}}{11}{figure.2.6}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Time classsification \cite {prob_elf}\relax }}{8}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces EF publications\relax }}{9}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Point vs probabilistic pubblications\relax }}{10}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Pubblications by method\relax }}{10}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Pubblications by subject area\relax }}{11}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Most popolar sources/outlets\relax }}{11}{figure.caption.9}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Pinball loss with q=0.2 \cite {haben2023core}}}{27}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces CRPS integral \cite {haben2023core}}}{28}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces PIT types \cite {haben2023core}}}{29}{figure.4.3}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Pinball loss with q=0.2 \cite {haben2023core}\relax }}{27}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces CRPS integral \cite {haben2023core}\relax }}{28}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces PIT types \cite {haben2023core}\relax }}{29}{figure.caption.12}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces two-dimensional feature space partitioned by recursive binary splittin}}{37}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces partition tree and regression model}}{37}{figure.7.2}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces decision tree regression}}{38}{figure.7.3}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces random forest regression}}{40}{figure.7.4}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces gradient boosting regression}}{42}{figure.7.5}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces two-dimensional feature space partitioned by recursive binary splittin\relax }}{37}{figure.caption.13}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces partition tree and regression model\relax }}{37}{figure.caption.14}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces decision tree regression\relax }}{38}{figure.caption.15}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces random forest regression\relax }}{40}{figure.caption.16}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces gradient boosting regression\relax }}{42}{figure.caption.17}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{47}{figure.caption.18}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors\relax }}{48}{figure.caption.19}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

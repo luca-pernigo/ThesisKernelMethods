@@ -6,6 +6,7 @@ from cvxopt import blas
  
 import matplotlib.pyplot as plt
 import numpy as np
+from numpy import asarray
 import pandas as pd
 from pprint import pprint
 from operator import itemgetter
@@ -14,15 +15,15 @@ from scipy.stats import uniform
 from sklearn.base import BaseEstimator, RegressorMixin
 
 from sklearn.experimental import enable_halving_search_cv
-from sklearn.model_selection import HalvingRandomSearchCV
-from sklearn.model_selection import GridSearchCV
 
-from sklearn.metrics.pairwise import rbf_kernel
 from sklearn.metrics import make_scorer
 from sklearn.metrics import mean_pinball_loss
+from sklearn.metrics.pairwise import rbf_kernel
 
+from sklearn.model_selection import HalvingRandomSearchCV
+from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
-from numpy import asarray
+
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import RobustScaler
@@ -65,7 +66,7 @@ class KQR(RegressorMixin, BaseEstimator):
         self.alpha=alpha
 
     def fit(self, X, y):
-        """Implementation of a fitting function.
+        """Implementation of fitting function.
 
         Parameters
         ----------
@@ -87,9 +88,10 @@ class KQR(RegressorMixin, BaseEstimator):
         self.y_ = y
         # build convex optimisation problem
         K=rbf_kernel(self.X_, gamma=self.gamma)
-        # the 0.5 in front is taken into account by cvxopt library
+        # the 0.5 in front in the optimisation probelm is taken into account by cvxopt library
         K = matrix(K)
-        r=matrix(y)
+        # multiply by one to convert matrix items to float https://stackoverflow.com/questions/36510859/cvxopt-qp-solver-typeerror-a-must-be-a-d-matrix-with-1000-columns
+        r=matrix(y)* 1.0
         # equality constraint
         A = matrix(np.ones(y.size)).T
         b = matrix(1.0)
@@ -101,18 +103,18 @@ class KQR(RegressorMixin, BaseEstimator):
         # concatenate
         G = matrix([G1,G2])
         h = matrix([h1,-h2])
-
         # Solve
         sol = qp(P=K,q=-r,G=G,h=h,A=A,b=b)
         # alpha solution
         self.a=np.array(sol["x"]).flatten()
+        
         # see coefficients
         # print("coefficients a: ",self.a)
 
         # check that summation equality to one holds
         # print("coefficients sum up to 1:", np.sum(self.a))
         
-        # condition, index set of support vectors
+        # condition, index set of support vector
         squared_diff = (self.a - (self.C * self.alpha))**2 + (self.a - (self.C * (self.alpha - 1)))**2
 
         # get the smallest squared difference
@@ -132,13 +134,12 @@ class KQR(RegressorMixin, BaseEstimator):
         Parameters
         ----------
         X : array-like, shape (n_samples, n_features)
-            The input samples.
+            The test input samples.
 
         Returns
         -------
         y : ndarray, shape (n_samples,)
-            The label for each sample is the label of the closest sample
-            seen during fit.
+            The model prediction for test data.
         """
         # Check is fit had been called
         check_is_fitted(self, ['X_', 'y_'])
@@ -165,25 +166,27 @@ if __name__=="__main__":
     quantiles = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
     # train, test split
-    X_train, X_test, y_train, y_test = train_test_split(df["Yt-1"], df["Yt"], test_size=None, random_state=4)
+    X_train, X_test, y_train, y_test = train_test_split(df["Yt-1"], df["Yt"], test_size=0.2, random_state=4)
 
+    # equally space dataset for plotting
     eval_set=np.linspace(df["Yt-1"].min(), df["Yt-1"].max(), 100).T
-    eval_set=eval_set.reshape(-1,1)
 
+    # reshape data
     X_train= X_train.values.reshape(-1, 1)
     X_test = X_test.values.reshape(-1, 1)
+    eval_set=eval_set.reshape(-1,1)
 
     # scale data because kernel methods need it to work better
-    robust_scaler = StandardScaler()
-    X_train_robust = robust_scaler.fit_transform(X_train)
-    X_test_robust = robust_scaler.transform(X_test)
-
-    eval_set_robust = robust_scaler.transform(eval_set.reshape(-1, 1))
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+    eval_set_scaled = scaler.transform(eval_set.reshape(-1, 1))
     
-    ones_column = np.ones((X_train_robust.shape[0], 1))
-    X_train_robust = np.hstack((ones_column, X_train_robust))
-    ones_column_eval = np.ones((eval_set_robust.shape[0],1))
-    eval_set_robust = np.hstack((ones_column_eval, eval_set_robust))
+    # add column of ones
+    # ones_column = np.ones((X_train_robust.shape[0], 1))
+    # # X_train_robust = np.hstack((ones_column, X_train_robust))
+    # ones_column_eval = np.ones((eval_set_robust.shape[0],1))
+    # eval_set_robust = np.hstack((ones_column_eval, eval_set_robust))
     # q=0.1
 
     avg_pinball=0
@@ -210,13 +213,14 @@ if __name__=="__main__":
         #         n_jobs=None
             # ).fit(X_train_robust, y_train.ravel())
         # print("best tuned hyperparameters: ", kqr.best_params_)
-        kqr=KQR(alpha=q, gamma=1, C=1e3).fit(X_train_robust, y_train.ravel())
+        kqr=KQR(alpha=q, gamma=1, C=1e3).fit(X_train_scaled, y_train.ravel())
 
         # best model prediction
-        y_train_predr=kqr.predict(X_train_robust)
+        y_train_predr=kqr.predict(X_train_scaled)
+        y_test_predr=kqr.predict(X_test_scaled)
         # pinball loss
-        print("pinball loss" ,mean_pinball_loss(y_train,y_train_predr, alpha=q))
-        avg_pinball+=mean_pinball_loss(y_train,y_train_predr, alpha=q)
+        print("pinball loss" ,mean_pinball_loss(y_test,y_test_predr, alpha=q))
+        avg_pinball+=mean_pinball_loss(y_test,y_test_predr, alpha=q)
 
     # plot
         
@@ -238,9 +242,9 @@ if __name__=="__main__":
     # plt.title("Kernel quantile regression")
     # plt.show()
 
-        print(eval_set_robust[:,1])
-        L = sorted(zip(eval_set_robust[:,1],kqr.predict(eval_set_robust)), key=itemgetter(0))
-        eval_set_robust[:,1], y_eval_predr = zip(*L)
+        # print(eval_set_robust)
+        L = sorted(zip(eval_set_scaled,kqr.predict(eval_set_scaled)), key=itemgetter(0))
+        eval_set_scaled, y_eval_predr = zip(*L)
 
         plt.plot(eval_set,y_eval_predr, alpha=0.4,label=f"q={q}",color="black", linestyle="dashed")
     

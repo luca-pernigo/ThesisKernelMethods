@@ -1,0 +1,32 @@
+\begin{tabular}{lllll}
+\toprule
+ & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+\midrule
+0 & 5.613975 & 5.531938 & 5.212990 & 5.252491 \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{lllll}
+\toprule
+ & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+\midrule
+0.100000 & 0.277903 & 0.290531 & 0.274079 & 0.269287 \\
+0.200000 & 0.469361 & 0.488079 & 0.453110 & 0.457286 \\
+0.300000 & 0.621961 & 0.625633 & 0.580766 & 0.596791 \\
+0.400000 & 0.729757 & 0.715875 & 0.689904 & 0.691310 \\
+0.500000 & 0.794695 & 0.766185 & 0.735945 & 0.740834 \\
+0.600000 & 0.810691 & 0.785769 & 0.744928 & 0.746636 \\
+0.700000 & 0.769587 & 0.730318 & 0.700287 & 0.710392 \\
+0.800000 & 0.667776 & 0.656913 & 0.609378 & 0.608334 \\
+0.900000 & 0.472244 & 0.472635 & 0.424593 & 0.431621 \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{lllll}
+\toprule
+ & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+\midrule
+0 & 1.627627 & 1.574179 & 1.499522 & 1.498583 \\
+\bottomrule
+\end{tabular}
+

@@ -15,41 +15,26 @@ from sklearn.metrics import make_scorer
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_pinball_loss
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 import statsmodels.regression.quantile_regression as qr 
 import sys
 
 from tqdm import tqdm
 
-
-
-if __name__=="__main__":
-    # load data
-    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/dataset_applications/temperatures_melbourne.csv", sep=";", decimal=".")
-
+from cvxopt import matrix, spmatrix, sparse
+def qr_tests(X,y,write_to_path):
     # quantiles
     quantiles = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
     # table for output results
     pinball_scores=pd.DataFrame(columns=["Linear qr", "Gbm qr", "Quantile forest", "Kernel qr"],index=quantiles)
     mae_scores=pd.DataFrame(columns=["Linear qr", "Gbm qr", "Quantile forest", "Kernel qr"])
 
-    # plot data
-    plt.plot(df["Yt-1"],df["Yt"],"o", alpha=0.2)
-    plt.show()
-
     # train, test split
-    X_train, X_test, y_train, y_test = train_test_split(df["Yt-1"], df["Yt"], test_size=0.20, random_state=0)
-
-    # equally space dataset for plotting
-    eval_set=np.linspace(df["Yt-1"].min(), df["Yt-1"].max(), 100).T
-
-    # reshape data to be predicted
-    X_train= X_train.values.reshape(-1, 1)
-    X_test = X_test.values.reshape(-1, 1)
-    eval_set=eval_set.reshape(-1,1)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=0)
 
 
-    # quantile regression: linear, random forest, gbm
+    # # quantile regression: linear, random forest, gbm
 
     # linear quantile regression
     qr_models = [qr.QuantReg(y_train, X_train).fit(q=q) for q in quantiles]
@@ -60,14 +45,6 @@ if __name__=="__main__":
     for i, q in enumerate(quantiles):
         pinball_scores.loc[q,"Linear qr"]=mean_pinball_loss(y_test,qr_models[i].predict(X_test), alpha=q)
 
-    # plot model fit
-    # linear quantile regression
-    plt.plot(X_train,y_train,"o", alpha=0.2)
-    for i,q in enumerate(quantiles):
-        plt.plot(X_test,y_test_pred_qr[i], alpha=0.4, label=f"q={quantiles[i]}",color="black", linestyle="dashed")
-    plt.legend()
-    plt.title("Linear quantile regression")
-    plt.show()
     
     # gbm quantile regressor
     # set grid parameters for hypertuning
@@ -110,15 +87,7 @@ if __name__=="__main__":
 
         pinball_scores.loc[q,"Gbm qr"]=mean_pinball_loss(y_test,qr_gbr_models[i].predict(X_test), alpha=q)
 
-    # gradient boosting quantile regression
-    plt.plot(X_train,y_train,"o", alpha=0.2)
-    for i,q in enumerate(quantiles):
-        plt.plot(eval_set,qr_gbr_models[i].predict(eval_set), alpha=0.4, label=f"q={quantiles[i]}",color="black", linestyle="dashed")
-    plt.legend()
-    plt.title("Gradient boosting quantile regression")
-    plt.show()
-
-
+    
     # ranform forest quantile regression
     qr_rfr_models=[]
     y_test_pred_qr_rfr=[]
@@ -151,23 +120,19 @@ if __name__=="__main__":
         pinball_scores.loc[q,"Quantile forest"]=mean_pinball_loss(y_test,qr_rfr_models[i].predict(X_test), alpha=q)
 
 
-    plt.plot(X_train,y_train,"o", alpha=0.2)
-
-    for i,q in enumerate(quantiles):
-        plt.plot(eval_set,qr_rfr_models[i].predict(eval_set), alpha=0.4, label=f"q={quantiles[i]}",color="black", linestyle="dashed")
-    plt.legend()
-    plt.title("Quantile forest")
-    plt.show()
-
-
     # kernel quantile regression
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+
     qr_krn_models=[]
     y_test_pred_qr_krn=[]
 
     param_grid_krn = dict(
-    C=[0.1,1, 5, 10],
-    gamma=[1e-1,1e-2,1, 5, 10, 20]   
+    C=[1e-1,1e-2,1, 5, 10,1e2,1e4],
+    gamma=[1e-1,1e-2,0.5,1, 5, 10, 20]   
     )
+    
     krn_blueprint=KQR(alpha=0.5)
     best_hyperparameters_krn=HalvingRandomSearchCV(
             krn_blueprint,
@@ -175,26 +140,17 @@ if __name__=="__main__":
             scoring=neg_mean_pinball_loss_scorer_05,
             n_jobs=2,
             random_state=0,
-        ).fit(X_train, y_train).best_params_
+        ).fit(X_train_scaled, y_train).best_params_
     
     for i,q in enumerate(tqdm(quantiles)):
 
         # fit data for specific quantile
-        qr_krn_models+=[KQR(alpha=q, **best_hyperparameters_krn).fit(X_train, y_train)]
+        qr_krn_models+=[KQR(alpha=q, **best_hyperparameters_krn).fit(X_train_scaled, y_train)]
         
         # list of prediction for each quantile
-        y_test_pred_qr_krn+=[qr_krn_models[i].predict(X_test)]
+        y_test_pred_qr_krn+=[qr_krn_models[i].predict(X_test_scaled)]
       
-        pinball_scores.loc[q,"Kernel qr"]=mean_pinball_loss(y_test,qr_krn_models[i].predict(X_test), alpha=q)
-
-
-    plt.plot(X_train,y_train,"o", alpha=0.2)
-
-    for i,q in enumerate(quantiles):
-        plt.plot(eval_set,qr_krn_models[i].predict(eval_set), alpha=0.4, label=f"q={quantiles[i]}",color="black", linestyle="dashed")
-    plt.legend()
-    plt.title("Kernel qr")
-    plt.show()
+        pinball_scores.loc[q,"Kernel qr"]=mean_pinball_loss(y_test,qr_krn_models[i].predict(X_test_scaled), alpha=q)
 
 
     # create table with pinball loss    
@@ -209,7 +165,7 @@ if __name__=="__main__":
 
     
     original_stdout=sys.stdout
-    with open("/Users/luca/Desktop/ThesisKernelMethods/thesis/tables/qr_tables.txt", "w") as f:
+    with open(f"/Users/luca/Desktop/ThesisKernelMethods/thesis/tables/{write_to_path}.txt", "w") as f:
         sys.stdout=f
         print(avg_pinball_scores.to_latex(index=True,
                   formatters={"name": str.upper},

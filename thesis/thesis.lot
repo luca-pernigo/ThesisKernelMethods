@@ -6,7 +6,19 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Pinball loss Melbourne data\relax }}{47}{table.caption.20}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Pinball loss quantile-wise Melbourne data\relax }}{47}{table.caption.21}%
+\contentsline {table}{\numberline {7.3}{\ignorespaces MAE Melbourne data\relax }}{48}{table.caption.22}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
+\contentsline {table}{\numberline {A.1}{\ignorespaces Pinball loss Boston housing data\relax }}{60}{table.caption.25}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Pinball loss quantile-wise Boston data\relax }}{60}{table.caption.26}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces MAE Boston data\relax }}{60}{table.caption.27}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces Pinball loss Abalone data\relax }}{61}{table.caption.28}%
+\contentsline {table}{\numberline {A.5}{\ignorespaces Pinball loss quantile-wise Abalone data\relax }}{61}{table.caption.29}%
+\contentsline {table}{\numberline {A.6}{\ignorespaces MAE Abalone data\relax }}{61}{table.caption.30}%
+\contentsline {table}{\numberline {A.7}{\ignorespaces Pinball loss Vehicle data\relax }}{62}{table.caption.31}%
+\contentsline {table}{\numberline {A.8}{\ignorespaces Pinball loss quantile-wise Vehicle data\relax }}{62}{table.caption.32}%
+\contentsline {table}{\numberline {A.9}{\ignorespaces MAE Vehicle data\relax }}{62}{table.caption.33}%
