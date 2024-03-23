@@ -1748,6 +1748,11 @@ INPUT ./images/random_forest.png
 INPUT images/random_forest.png
 INPUT ./images/random_forest.png
 INPUT ./images/random_forest.png
+INPUT ./images/gradient_boosting.png
+INPUT ./images/gradient_boosting.png
+INPUT images/gradient_boosting.png
+INPUT ./images/gradient_boosting.png
+INPUT ./images/gradient_boosting.png
 INPUT ./input_files/kde.tex
 INPUT input_files/kde.tex
 INPUT ./input_files/kde.tex

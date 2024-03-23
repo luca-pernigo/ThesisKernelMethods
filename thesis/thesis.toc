@@ -60,27 +60,30 @@
 \contentsline {subsection}{\numberline {7.2.2}Bootstrap}{38}{subsection.7.2.2}%
 \contentsline {subsection}{\numberline {7.2.3}Bagging}{39}{subsection.7.2.3}%
 \contentsline {subsection}{\numberline {7.2.4}Random forest}{39}{subsection.7.2.4}%
-\contentsline {subsection}{\numberline {7.2.5}Quantile forest}{39}{subsection.7.2.5}%
-\contentsline {section}{\numberline {7.3}Quantile gradient boosting machine}{40}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Kernel methods}{40}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{40}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{44}{subsection.7.4.2}%
-\contentsline {section}{\numberline {7.5}Kernel density estimation}{45}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Ensemble methods}{45}{section.7.6}%
-\contentsline {section}{\numberline {7.7}DMLP}{45}{section.7.7}%
-\contentsline {section}{\numberline {7.8}DeepAR}{45}{section.7.8}%
-\contentsline {subsection}{\numberline {7.8.1}Kernel herding}{45}{subsection.7.8.1}%
-\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{47}{chapter.8}%
-\contentsline {section}{\numberline {8.1}GEFCom2014}{47}{section.8.1}%
-\contentsline {chapter}{\chapternumberline {9}Implementation}{49}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Linear quantile regression}{49}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Quantile gradient boosting machine}{49}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Quantile forest}{49}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Kernel quantile regression}{50}{section.9.4}%
-\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{51}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Quantile forecasting}{51}{section.10.1}%
-\contentsline {chapter}{List of Symbols}{53}{section*.4}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{55}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{55}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Src code}{56}{section.A.2}%
-\contentsline {chapter}{Bibliography}{57}{appendix*.6}%
+\contentsline {subsection}{\numberline {7.2.5}Quantile forest}{40}{subsection.7.2.5}%
+\contentsline {section}{\numberline {7.3}Quantile gradient boosting machine}{41}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Boosting}{41}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Boosted trees}{41}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Gradient boosting}{41}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}Kernel methods}{42}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{42}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{46}{subsection.7.4.2}%
+\contentsline {section}{\numberline {7.5}Kernel density estimation}{47}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Ensemble methods}{47}{section.7.6}%
+\contentsline {section}{\numberline {7.7}DMLP}{47}{section.7.7}%
+\contentsline {section}{\numberline {7.8}DeepAR}{47}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Kernel herding}{47}{subsection.7.8.1}%
+\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{49}{chapter.8}%
+\contentsline {section}{\numberline {8.1}GEFCom2014}{49}{section.8.1}%
+\contentsline {chapter}{\chapternumberline {9}Implementation}{51}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Linear quantile regression}{51}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Quantile gradient boosting machine}{51}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Quantile forest}{51}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Kernel quantile regression}{52}{section.9.4}%
+\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{53}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Quantile forecasting}{53}{section.10.1}%
+\contentsline {chapter}{List of Symbols}{55}{section*.4}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{57}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{57}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Src code}{58}{section.A.2}%
+\contentsline {chapter}{Bibliography}{59}{appendix*.6}%

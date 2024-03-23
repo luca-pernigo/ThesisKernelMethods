@@ -45,7 +45,7 @@ The inner problem is easy, as already pointed out we will have
 For the outer problem, we scan through all the (j,s) tuples and pick the best pair. 
 Next, one or both of these regions from the previous step are split into two more regions; we recurse this process until some stopping condition is triggered (max number of branches, max deth of tree, threshold on the MSE, minimum number of observation in each leaf node).
 Notice, this being a greedy algorithm implies that our final solution is guaranteed to be just a local optimum not a global one.
-Even though their simplicity, these models have proved themselves to be really powerful, see figure \ref{fig:decision_tree} for a visualisaiton . The most popular among these model is the CART \cite{breiman2017classification} tree, its name comes from the fact that it can handle both classification and regression problems.
+Even though their simplicity, these models have proved themselves to be really powerful. See figure \ref{fig:decision_tree} for a example where decision tree with different hyperparameters are fitted to a sine wave plus noise. The most popular among these model is the CART \cite{breiman2017classification} tree, its name comes from the fact that it can handle both classification and regression problems.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/decision_tree.png}
     \caption{decision tree regression}
@@ -93,12 +93,56 @@ The key observation here is noting that random forests approximates the conditio
 \begin{equation}
     F(y|X=x)=P(Y\leq y|X=x)=\mathbb{E}(\mathbb{1}_{\{Y\leq y\}}|X=x)
 \end{equation}
-All we have to do is approximating $\mathbb{E}(\mathbb{1}_{\{Y\leq y\}}|X=x)$ by a weighted mean over the random variable $\mathbb{1}_{Y\leq y}$
+All we have to do is approximating $\mathbb{E}(\mathbb{1}_{\{Y\leq y\}}|X=x)$ by a weighted mean over the random variable $\mathbb{1}_{\{Y\leq y\}}$
 \begin{equation}
     \hat{F}(y|X=x)=\sum\limits_{i=1}^{n}\omega_i(x)\mathbb{1}_{\{Y_i\leq y\}}
 \end{equation}
+By swapping $F(y|X=x)$ with $\hat{F}(y|X=x)$ in the defintion of conditional quantiles we obtain their respective random forest estimator
+\begin{equation}
+    \hat{Q}_\alpha=\inf\{y:\hat{F}(y|X=x)\geq \alpha\}
+\end{equation}
+
 
 \section{Quantile gradient boosting machine}
+\subsection{Boosting}
+With boosting we fit an additive expansion of elementary basis functions; with M basis functions we have 
+\begin{equation}
+    f(x)=\sum\limits_{m=1}^{M}\beta_m b(x;\gamma_m)
+\end{equation}
+where $b(x;\gamma)$ are the basis functions while $\beta_m$ are the coefficients of the expansion.
+Boosted models are fitted by minimizing a loss function over the training data
+\begin{equation}
+    \min_{\beta_m, \gamma_m}\sum\limits_{i=1}^{N}L\left(y_i, \sum\limits_{m=1}^M \beta_m b(x_i;\gamma_m)\right)
+\end{equation}
+However, such problem is highly intensive in terms of computation. Therefore, what is done in the literature is approximating its solution by iteratively adding new basis function to the current expansion. That is, we construct $f_m$ by solving for the optimal basis function and coefficients to add to $f_{m-1}$. Considering the square loss, we would have
+\begin{equation}
+    L(y_i, f_{m-1}(x_i)+\beta_m b(x_i;\gamma))=(e_{im}-\beta_m b(x_i;\gamma))^2
+\end{equation}
+
+\subsection{Boosted trees}
+We combine several trees obtaining the boosted tree model
+\begin{equation}
+    f_M(x)=\sum\limits_{m=1}^M T(x;\Theta_m)
+\end{equation}
+Thus, at each step of the iterative optimisation procedure we have to solve
+\begin{equation}\label{boosting_minimisation_problem}
+    \hat{\Theta}_m=\argmin{\Theta_m}\sum\limits_{i=1}^{N}L(y_i, f_{m-1}(x_i)+T(x_i;\Theta_m))
+\end{equation}
+Remember, $\Theta_m$ referes to the parameters of the mth tree, $\Theta_m=\{R_{jm}, \gamma_{jm}\}_1^{J_m}$
+\subsection{Gradient boosting}
+In order to robustly solve \ref{boosting_minimisation_problem}, gradient boosting considers the following problem
+\begin{equation}
+    \tilde{\Theta_m}=\argmin{\Theta}\sum\limits_{i=1}^{N}\left(-g_{im}-T(x_i;\Theta)\right)^2
+\end{equation}
+where $g_{im}$ is the gradient of $L(f)=\sum\limits_{i=1}^N L(y_i, f(x_i))$ evaluated at $f_{m-1}$. Put simply, we are fitting the mth tree to the negative of the gradient values of f through least squares.
+In order to solve our quantile regression tasks through gradient boosting, all we need to do is specifying the pinball loss as our criterion to guide the minimisation algorithm. See figure \ref{fig:gradient_boosting} for a visualisation
+\begin{figure}
+    \includegraphics[width=\textwidth]{images/gradient_boosting.png}
+    \caption{gradient boosting regression}
+    \label{fig:gradient_boosting}
+    % image generated on coolab to be quick
+\end{figure}
+
 
 
 \section{Kernel methods}
@@ -212,7 +256,7 @@ We then have
 \end{equation}
 Hence, we conclude that our problem satisfies Slater's condition. Therefore the solution of the dual and primal problem are equivalent.
 \\
-We end this section with the derivation of the dual problem; that is the convex problem we will solve in order to get the qunatiles prdeiction of our quantile kernel algorithm.
+We end this section with the derivation of the dual problem; that is the convex problem we will solve in order to get the quantiles prdeiction of our quantile kernel algorithm.
 \\
 First, derive the dual function of \ref{eq:kqr_min5}.
 \begin{equation}
@@ -257,7 +301,7 @@ Defining $\alpha=(\alpha-\alpha^*)$ and letting $K$ the kernel matrix, we have t
     &\alpha^\intercal\mathbb{1}=1
     \end{aligned}
     \end{equation}
-Switching sign, we rephrase it as a minisation problem, which is the common practice in convex optimisation.
+Switching sign, we rephrase it as a minimisation problem, which is the common practice in convex optimisation.
 \begin{equation}\label{eq:kqr_min7}
     \begin{aligned}
         \min_{\alpha} \quad & +\frac{1}{2}\alpha^\intercal K\alpha-\alpha^\intercal y\\
@@ -280,13 +324,13 @@ Where an unbiased estimator for $b$ is given by
 \end{equation}
 %contribution is implementation kernel quantile regression for pythos users since there exists only r version
 \subsection{Weather quantiles}
-In order to get acquainted with the inner working of the presented methods, this section covers an application explaining practical details and comparing results.
+In order to get acquainted with the inner workings of the presented methods, this section covers an application explaining practical details and comparing results.
 \\
 The dataset used is the Melbourne Daily Maximum Temperatures \cite{hdrcde}. It contains the daily maximum temperatures in Melbourne, Australia, from 1981-1990, excluding leap days.
 Due to the bimodality of the data, such dataset is commonly used to give a difficult quantile regression problem \cite{hyndman1996estimating}, thus why we chose it. The observed bimodality is that a hot day is likely to be followed by either an equally hot day or one much cooler.
 \\
 
-- metrics pinball, picw plot, mae error
+- metrics pinball, picw plot, mae error on test data
 
 
 
