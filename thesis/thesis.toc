@@ -91,5 +91,14 @@
 \contentsline {subsection}{\numberline {A.3.1}Boston housing dataset}{59}{subsection.A.3.1}%
 \contentsline {subsection}{\numberline {A.3.2}Abalone dataset}{61}{subsection.A.3.2}%
 \contentsline {subsection}{\numberline {A.3.3}Vehicle dataset}{62}{subsection.A.3.3}%
-\contentsline {section}{\numberline {A.4}Src code}{63}{section.A.4}%
-\contentsline {chapter}{Bibliography}{65}{appendix*.34}%
+\contentsline {section}{\numberline {A.4}Cross validation}{63}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}K-fold cross validation}{63}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Gridsearch}{63}{subsection.A.4.2}%
+\contentsline {subsection}{\numberline {A.4.3}Randomized search}{63}{subsection.A.4.3}%
+\contentsline {subsection}{\numberline {A.4.4}Halving gridsearch}{64}{subsection.A.4.4}%
+\contentsline {subsection}{\numberline {A.4.5}Cross validation for time series data}{64}{subsection.A.4.5}%
+\contentsline {section}{\numberline {A.5}Kernel methods best practices}{64}{section.A.5}%
+\contentsline {subsection}{\numberline {A.5.1}Data scaling}{65}{subsection.A.5.1}%
+\contentsline {subsection}{\numberline {A.5.2}Data compression}{65}{subsection.A.5.2}%
+\contentsline {section}{\numberline {A.6}Src code}{66}{section.A.6}%
+\contentsline {chapter}{Bibliography}{67}{appendix*.35}%

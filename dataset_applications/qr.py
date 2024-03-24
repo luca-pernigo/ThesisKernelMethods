@@ -23,7 +23,7 @@ import sys
 from tqdm import tqdm
 
 from cvxopt import matrix, spmatrix, sparse
-def qr_tests(X,y,write_to_path):
+def qr_tests(X,y,write_to_path=None):
     # quantiles
     quantiles = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
     # table for output results
@@ -158,25 +158,26 @@ def qr_tests(X,y,write_to_path):
     avg_pinball_scores=pinball_scores.sum(axis=0).to_frame().T
     print(avg_pinball_scores)
     # mae score
-    mae_scores.loc[0,"Linear qr"]=mean_absolute_error(y_test, y_test_pred_qr[5])
-    mae_scores.loc[0,"Gbm qr"]=mean_absolute_error(y_test, y_test_pred_qr_gbr[5])
-    mae_scores.loc[0,"Quantile forest"]=mean_absolute_error(y_test, y_test_pred_qr_rfr[5])
-    mae_scores.loc[0,"Kernel qr"]=mean_absolute_error(y_test, y_test_pred_qr_krn[5])
+    mae_scores.loc[0,"Linear qr"]=mean_absolute_error(y_test, y_test_pred_qr[4])
+    mae_scores.loc[0,"Gbm qr"]=mean_absolute_error(y_test, y_test_pred_qr_gbr[4])
+    mae_scores.loc[0,"Quantile forest"]=mean_absolute_error(y_test, y_test_pred_qr_rfr[4])
+    mae_scores.loc[0,"Kernel qr"]=mean_absolute_error(y_test, y_test_pred_qr_krn[4])
 
     
-    original_stdout=sys.stdout
-    with open(f"/Users/luca/Desktop/ThesisKernelMethods/thesis/tables/{write_to_path}.txt", "w") as f:
-        sys.stdout=f
-        print(avg_pinball_scores.to_latex(index=True,
-                  formatters={"name": str.upper},
-                  float_format="{:.4f}".format))
-    
-        print(pinball_scores.to_latex(index=True,
-                  formatters={"name": str.upper},
-                  float_format="{:.4f}".format))
+    if write_to_path!=None:
+        original_stdout=sys.stdout
+        with open(f"/Users/luca/Desktop/ThesisKernelMethods/thesis/tables/{write_to_path}.txt", "w") as f:
+            sys.stdout=f
+            print(avg_pinball_scores.to_latex(index=True,
+                    formatters={"name": str.upper},
+                    float_format="{:.4f}".format))
         
-        print(mae_scores.to_latex(index=True,
-                  formatters={"name": str.upper},
-                  float_format="{:.4f}".format))
+            print(pinball_scores.to_latex(index=True,
+                    formatters={"name": str.upper},
+                    float_format="{:.4f}".format))
             
-        sys.stdout=original_stdout
+            print(mae_scores.to_latex(index=True,
+                    formatters={"name": str.upper},
+                    float_format="{:.4f}".format))
+                
+            sys.stdout=original_stdout

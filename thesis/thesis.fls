@@ -1869,6 +1869,11 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr9c.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9c.vf
+INPUT ./images/crossvalidationtimeseries.png
+INPUT ./images/crossvalidationtimeseries.png
+INPUT images/crossvalidationtimeseries.png
+INPUT ./images/crossvalidationtimeseries.png
+INPUT ./images/crossvalidationtimeseries.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT ./thesis.bbl
 INPUT thesis.bbl

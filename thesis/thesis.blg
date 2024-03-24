@@ -7,8 +7,11 @@ Warning--entry type for "un_sdgs" isn't style-file defined
 --line 860 of file refs.bib
 Warning--entry type for "gm_22" isn't style-file defined
 --line 865 of file refs.bib
+Warning--entry type for "scikithalvinggridsearch" isn't style-file defined
+--line 870 of file refs.bib
 Warning--to sort, need author or key in un_sdgs
 Warning--to sort, need author or key in gm_22
+Warning--to sort, need author or key in scikithalvinggridsearch
 Warning--empty journal in supersamples
 Warning--empty journal in gaillardasemi
 Warning--empty year in gaillardasemi
@@ -16,45 +19,45 @@ Warning--empty booktitle in jebara
 Warning--can't use both author and editor fields in pmlr
 Warning--empty journal in nystrom
 Warning--empty journal in takeuchi2006nonparametric
-You've used 87 entries,
+You've used 88 entries,
             2118 wiz_defined-function locations,
-            986 strings with 17791 characters,
-and the built_in function-call counts, 28112 in all, are:
-= -- 2772
-> -- 1323
+            989 strings with 17930 characters,
+and the built_in function-call counts, 28269 in all, are:
+= -- 2786
+> -- 1324
 < -- 10
-+ -- 531
++ -- 532
 - -- 436
-* -- 2041
-:= -- 4726
-add.period$ -- 256
-call.type$ -- 87
-change.case$ -- 466
+* -- 2046
+:= -- 4742
+add.period$ -- 258
+call.type$ -- 88
+change.case$ -- 469
 chr.to.int$ -- 0
-cite$ -- 96
-duplicate$ -- 985
-empty$ -- 2196
+cite$ -- 98
+duplicate$ -- 992
+empty$ -- 2219
 format.name$ -- 436
-if$ -- 5755
+if$ -- 5794
 int.to.chr$ -- 0
-int.to.str$ -- 87
+int.to.str$ -- 88
 missing$ -- 90
-newline$ -- 430
+newline$ -- 434
 num.names$ -- 170
-pop$ -- 461
+pop$ -- 472
 preamble$ -- 1
-purify$ -- 390
+purify$ -- 392
 quote$ -- 0
-skip$ -- 692
+skip$ -- 698
 stack$ -- 0
-substring$ -- 1900
-swap$ -- 137
+substring$ -- 1905
+swap$ -- 138
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 326
-warning$ -- 9
+type$ -- 330
+warning$ -- 10
 while$ -- 284
-width$ -- 89
-write$ -- 920
-(There were 11 warnings)
+width$ -- 90
+write$ -- 927
+(There were 13 warnings)

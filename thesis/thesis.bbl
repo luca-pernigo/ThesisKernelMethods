@@ -4,6 +4,10 @@
 {GM22TutorialProbabilisticEnergyForecasting}.
 \newblock https://resourcecenter.ieee-pes.org/education/tutorials/pes\_ed\_tut\_gm22\_0717\_pefm\_sld.
 
+\bibitem{scikithalvinggridsearch}
+{Scikit HalvingGridSearchCV}.
+\newblock https://scikit-learn.org/stable/modules/grid\_search.html\#successive-halving-user-guide.
+
 \bibitem{un_sdgs}
 {THE 17 GOALS Sustainable Development - the United Nations}.
 \newblock https://sdgs.un.org/goals.
