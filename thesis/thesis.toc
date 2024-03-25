@@ -101,4 +101,4 @@
 \contentsline {subsection}{\numberline {A.5.1}Data scaling}{65}{subsection.A.5.1}%
 \contentsline {subsection}{\numberline {A.5.2}Data compression}{65}{subsection.A.5.2}%
 \contentsline {section}{\numberline {A.6}Src code}{66}{section.A.6}%
-\contentsline {chapter}{Bibliography}{67}{appendix*.35}%
+\contentsline {chapter}{Bibliography}{67}{appendix*.36}%

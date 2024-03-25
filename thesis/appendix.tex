@@ -213,42 +213,52 @@ The dependent variable is the selling price.
 \section{Cross validation}
 Cross validation directly estimates the expected test error
 \begin{equation}
-    Err=\mathbb{E}\left[L(Y,\hat{f}(X))\right]=\mathbb{E}\left[Err_{\tau}\right]
+    Err=\mathbb{E}\left[L\left(Y,\hat{f}(X)\right)\right]=\mathbb{E}\left[Err_{\Tau}\right]
 \end{equation}
-$Err_{\tau}$ is the prediction error over an independent test sample
+$Err_{\Tau}$ is the prediction error over an independent test sample
 \begin{equation}
-    \mathbb{E}_{\tau}=\mathbb{E}\left[L(Y,\hat{f}(X))| \tau \right]
+    \mathbb{E}_{\Tau}=\mathbb{E}\left[L\left(Y,\hat{f}(X)\right)| \Tau \right]
 \end{equation}
-That is $Err$ is the average over everything that is random: X,Y and the training set $\tau$ used to generate $\hat{f}$. Hence, our interest lies in estimating the $Err$ quantity in order to guide model selection.
+That is $Err$ is the average over everything that is random: X,Y and the training set $\Tau$ used to learn $\hat{f}$. Hence, our interest lies in estimating the $Err$ quantity in order to guide model selection.
 \subsection{K-fold cross validation}
-K-fold cross validation splits the data into K roughly equal sized parts, then K models are trained. For k from 1 to K we train the kth model on the whole data except the kth partition. Next,  the prediction error of the kth fitted model when predicting the kth partition is computed. Finally averaging all the k prediction erros we obtain an estimate for its true value. We select the model which performs best in terms of expected prediction error.
+K-fold cross validation splits the data into K roughly equally sized parts, then K models are trained. For k from 1 to K we train the kth model on the whole dataset except the kth partition. Next,  the prediction error of the kth fitted model is computed. Finally averaging all the k prediction erros we obtain an estimate for the expected test error. We select the model which performs best in terms of expected prediction error.
 \\
 Usually, K is set equal to 5 or 10. Leave-one-out cross validation is the case when K is set equal to the size of the data.
 % REMEMBER: Parameters allow the model to learn the rules from the data while hyperparameters control how the model is training. Parameters learn their own values from data. In contrast, hyperparameters do not learn their values from data. We need to manually specify them before training the model
 \subsection{Gridsearch}
 Model performance depends higly on the choice of hyperparameters. Notice, there is no way to get to know them in advance, therefore, all we can do is trying a lot of combinations until we fit a good enough set of hyperparameters. Essentially, gridsearch carries out hyperparameter tuning by performing a search over a predefined hyperparemeters grid. During its search, it tries all possible combination and evaluates the different models %(different hyperparameters define different models)
-using cross validation. For example, supposing the grid contains 100 possible candidates and we are doing 5-fold cross-validation then we will be doing 500 iterations.
-Therefore, we get an estimate of prediction error for each considered model and this guides us in hyperparameters(model) selection.
+using cross validation. For example, suppose that the grid contains 100 possible candidates and that we are doing 5-fold cross-validation, then the gridsearch algorithm will carry out 500 iterations.
+Therefore, we get an estimate of prediction error for each considered model and this guides us in hyperparameters (model) selection.
 
 \subsection{Randomized search}
-Randomizedsearch controls the number of step by choosing smartly the hyperparameter to try in each iterations.
-Let us say there are 100 candidates and we set the number of iterations to 20 then the search will stop after the 20th iteration and return the best set among the hyperparameters observed.
-The advantage is that it is much quicker than gridsearch, but on the other hand its performance is worse than gridsearch.
+Randomized search controls the number of steps by choosing smartly the hyperparameters to try in each iterations.
+Let us say, there are 100 candidates and we set the number of iterations to 20 then the search will stop after the 20th iteration and return the best set among the hyperparameters observed.
+The advantage is that it is much more quicker than gridsearch, but on the other hand its performance is worse than gridsearch.
 
 \subsection{Halving gridsearch}
-Gridsearch has been the to go choice for hyperparameter tuning for the past years. However, such method is brute forcing all possible combinations, hence it is highly computationally intensive, especially when it comes to large datasets.
+Gridsearch has been the to go choice for hyperparameters tuning for the past years. However, such method is brute forcing all possible combinations, hence it is highly computationally intensive, especially when it comes to large datasets.
 \\
-The scikit-learn team addresses this disadvantage of gridsearch by introducing the halving gridsearch method \cite{scikithalvinggridsearch} (2020). Such technique has proved itself to greatly speed up hyperparameter tuning.
-The ground concept underlying this method is successive halving. During the first iteration of halving gridsearch, all candidates are trained on a small subset of the training set. Next, we keep only the candidates which performed best and compare  them again on a bigger subset of the training set. As the iterations pass, the surviving candidates will be given more and more training samples until when we are left with only the best set of hyperparameters.
+The scikit-learn team addressed this disadvantage of gridsearch by introducing the halving gridsearch method \cite{scikithalvinggridsearch} (2020). Such technique has proved itself to greatly speed up hyperparameter tuning.
+The ground concept underlying this method is successive halving. During the first iteration of halving gridsearch, all candidates are trained on a small subset of the training set. Next, we keep only the candidates which performed best and compare  them again on a bigger subset of the training set. As the iterations pass, the surviving candidates will be given more and more training samples. The algorithm stops when we are left with only the best set of hyperparameters.
 
 \subsection{Cross validation for time series data}
-When data points are dependent on preceding values we cannot use standard K-fold cross validation. The rationale is that k-fold will randomize the order of the data, thus i might happen to use future data to predict the past; we want to avoid such behaviour in a time series setting. What we to have to keep in mind is that we must test our models during selection in the same way we will run them on the test dataset. Hence, for time series crossvalidation we have the TimeSeriesSplit procedure, see figure \ref{fig:crossvalidationtimeseries} for a visualisation.
+When data points are dependent on preceding values, we cannot use standard K-fold cross validation. The rationale is that K-fold will randomize the order of the data, thus it might happen to use future data to predict the past; we want to avoid such behaviour in a time series setting. 
+When carryout out any kind of cross validation, we must keep consistency in the way we evaluate our predictors during model selection and in the way we perform evaluation of the test data.
+Hence, for time series crossvalidation we have the timeseries split procedure, see figure \ref{fig:crossvalidationtimeseries} for a visualisation; the blue observations make up the training sets while the orange observations form the test sets.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/crossvalidationtimeseries.png}
-    \caption{K-fold cross validation for timeseries data}
+    \caption{Cross validation for one step ahead timeseries data \cite{hyndman2018forecasting}}
     \label{fig:crossvalidationtimeseries}
 \end{figure}
-
+We then average all the observed losses in order to get an estimate for $Err$.
+Notice, in the literature this procedure is sometimes also referred to evaluation on a rolling forecasting origin. This comes from the fact that at each iteration we push forward the origin of our forecast.
+The same concept applies for multi step ahead forecasting, see picture \ref{fig:crossvalidationtimeseries2}.
+That is in predicting $\hat{L}_{N+m}$ we use as inputs $L_1, L_2, \dots, \hat{L}_{N},\hat{L}_{N+1},\dots, \hat{L}_{N+m-1}$; where $\hat{L}_{N},\hat{L}_{N+1},\dots, \hat{L}_{N+m-1}$ are one step ahead forecasts.
+\begin{figure}
+    \includegraphics[width=\textwidth]{images/crossvalidationtimeseries2.png}
+    \caption{Cross validation for m step ahead timeseries data \cite{hyndman2018forecasting}}
+    \label{fig:crossvalidationtimeseries2}
+\end{figure}
 
 \section{Kernel methods best practices}
 Following, are reported a couple of considerations important to keep in mind when working with kernel methods.

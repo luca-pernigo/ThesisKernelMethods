@@ -188,6 +188,11 @@ Christian Huurman, Francesco Ravazzolo, and Chen Zhou.
 \newblock The power of weather.
 \newblock {\em Computational Statistics \& Data Analysis}, 56(11):3793--3807, 2012.
 
+\bibitem{hyndman2018forecasting}
+Rob~J Hyndman and George Athanasopoulos.
+\newblock {\em Forecasting: principles and practice}.
+\newblock OTexts, 2018.
+
 \bibitem{hyndman1996estimating}
 Rob~J Hyndman, David~M Bashtannyk, and Gary~K Grunwald.
 \newblock Estimating and visualizing conditional densities.

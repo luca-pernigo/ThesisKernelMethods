@@ -4,11 +4,11 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
 Warning--entry type for "un_sdgs" isn't style-file defined
---line 860 of file refs.bib
+--line 866 of file refs.bib
 Warning--entry type for "gm_22" isn't style-file defined
---line 865 of file refs.bib
+--line 871 of file refs.bib
 Warning--entry type for "scikithalvinggridsearch" isn't style-file defined
---line 870 of file refs.bib
+--line 876 of file refs.bib
 Warning--to sort, need author or key in un_sdgs
 Warning--to sort, need author or key in gm_22
 Warning--to sort, need author or key in scikithalvinggridsearch
@@ -19,45 +19,45 @@ Warning--empty booktitle in jebara
 Warning--can't use both author and editor fields in pmlr
 Warning--empty journal in nystrom
 Warning--empty journal in takeuchi2006nonparametric
-You've used 88 entries,
+You've used 89 entries,
             2118 wiz_defined-function locations,
-            989 strings with 17930 characters,
-and the built_in function-call counts, 28269 in all, are:
-= -- 2786
-> -- 1324
+            993 strings with 18035 characters,
+and the built_in function-call counts, 28520 in all, are:
+= -- 2808
+> -- 1337
 < -- 10
-+ -- 532
-- -- 436
-* -- 2046
-:= -- 4742
-add.period$ -- 258
-call.type$ -- 88
-change.case$ -- 469
++ -- 537
+- -- 440
+* -- 2058
+:= -- 4786
+add.period$ -- 261
+call.type$ -- 89
+change.case$ -- 473
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 992
-empty$ -- 2219
-format.name$ -- 436
-if$ -- 5794
+cite$ -- 99
+duplicate$ -- 1004
+empty$ -- 2241
+format.name$ -- 440
+if$ -- 5847
 int.to.chr$ -- 0
-int.to.str$ -- 88
-missing$ -- 90
-newline$ -- 434
-num.names$ -- 170
-pop$ -- 472
+int.to.str$ -- 89
+missing$ -- 92
+newline$ -- 439
+num.names$ -- 172
+pop$ -- 481
 preamble$ -- 1
-purify$ -- 392
+purify$ -- 396
 quote$ -- 0
-skip$ -- 698
+skip$ -- 705
 stack$ -- 0
-substring$ -- 1905
-swap$ -- 138
+substring$ -- 1910
+swap$ -- 139
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 330
+type$ -- 332
 warning$ -- 10
-while$ -- 284
-width$ -- 90
-write$ -- 927
+while$ -- 286
+width$ -- 91
+write$ -- 937
 (There were 13 warnings)

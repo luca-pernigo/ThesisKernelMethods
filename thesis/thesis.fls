@@ -1874,6 +1874,11 @@ INPUT ./images/crossvalidationtimeseries.png
 INPUT images/crossvalidationtimeseries.png
 INPUT ./images/crossvalidationtimeseries.png
 INPUT ./images/crossvalidationtimeseries.png
+INPUT ./images/crossvalidationtimeseries2.png
+INPUT ./images/crossvalidationtimeseries2.png
+INPUT images/crossvalidationtimeseries2.png
+INPUT ./images/crossvalidationtimeseries2.png
+INPUT ./images/crossvalidationtimeseries2.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT ./thesis.bbl
 INPUT thesis.bbl
