@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  25 MAR 2024 10:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  26 MAR 2024 09:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1470,54 +1470,59 @@ Overfull \hbox (21.85905pt too wide) detected at line 294
  []
 
 [45]
-<images/melbourne_temperature.png, id=1144, 462.528pt x 346.896pt>
+Overfull \hbox (101.4473pt too wide) detected at line 362
+[][] []
+ []
+
+[46]
+<images/melbourne_temperature.png, id=1157, 462.528pt x 346.896pt>
 File: images/melbourne_temperature.png Graphic file (type png)
 <use images/melbourne_temperature.png>
-Package pdftex.def Info: images/melbourne_temperature.png  used on input line 332.
+Package pdftex.def Info: images/melbourne_temperature.png  used on input line 381.
 (pdftex.def)             Requested size: 369.0pt x 276.76553pt.
-<images/melbourne_linear_quantile_regression.png, id=1147, 462.528pt x 346.896pt>
+<images/melbourne_linear_quantile_regression.png, id=1160, 462.528pt x 346.896pt>
 File: images/melbourne_linear_quantile_regression.png Graphic file (type png)
 <use images/melbourne_linear_quantile_regression.png>
-Package pdftex.def Info: images/melbourne_linear_quantile_regression.png  used on input line 340.
+Package pdftex.def Info: images/melbourne_linear_quantile_regression.png  used on input line 389.
 (pdftex.def)             Requested size: 202.95113pt x 152.21654pt.
 
-Overfull \hbox (18.45113pt too wide) in paragraph at lines 340--341
+Overfull \hbox (18.45113pt too wide) in paragraph at lines 389--390
  [][] 
  []
 
-<images/melbourne_gradient_boosting_quantile_regression.png, id=1148, 462.528pt x 346.896pt>
+<images/melbourne_gradient_boosting_quantile_regression.png, id=1161, 462.528pt x 346.896pt>
 File: images/melbourne_gradient_boosting_quantile_regression.png Graphic file (type png)
 <use images/melbourne_gradient_boosting_quantile_regression.png>
-Package pdftex.def Info: images/melbourne_gradient_boosting_quantile_regression.png  used on input line 347.
+Package pdftex.def Info: images/melbourne_gradient_boosting_quantile_regression.png  used on input line 396.
 (pdftex.def)             Requested size: 202.95113pt x 152.21654pt.
 
-Overfull \hbox (18.45113pt too wide) in paragraph at lines 347--348
+Overfull \hbox (18.45113pt too wide) in paragraph at lines 396--397
  [][] 
  []
 
-<images/melbourne_quantile_forest.png, id=1149, 462.528pt x 346.896pt>
+<images/melbourne_quantile_forest.png, id=1162, 462.528pt x 346.896pt>
 File: images/melbourne_quantile_forest.png Graphic file (type png)
 <use images/melbourne_quantile_forest.png>
-Package pdftex.def Info: images/melbourne_quantile_forest.png  used on input line 354.
+Package pdftex.def Info: images/melbourne_quantile_forest.png  used on input line 403.
 (pdftex.def)             Requested size: 202.95113pt x 152.21654pt.
 
-Overfull \hbox (18.45113pt too wide) in paragraph at lines 354--355
+Overfull \hbox (18.45113pt too wide) in paragraph at lines 403--404
  [][] 
  []
 
-<images/melborune_kernel_quantile_regression.png, id=1150, 462.528pt x 346.896pt>
+<images/melborune_kernel_quantile_regression.png, id=1163, 462.528pt x 346.896pt>
 File: images/melborune_kernel_quantile_regression.png Graphic file (type png)
 <use images/melborune_kernel_quantile_regression.png>
-Package pdftex.def Info: images/melborune_kernel_quantile_regression.png  used on input line 360.
+Package pdftex.def Info: images/melborune_kernel_quantile_regression.png  used on input line 409.
 (pdftex.def)             Requested size: 202.95113pt x 152.21654pt.
 
-Overfull \hbox (18.45113pt too wide) in paragraph at lines 360--361
+Overfull \hbox (18.45113pt too wide) in paragraph at lines 409--410
  [][] 
  []
 
-[46] [47 <./images/melbourne_temperature.png>] [48 <./images/melbourne_linear_quantile_regression.png> <./images/melbourne_gradient_boosting_quantile_regression.png> <./images/melbourne_quantile_forest.png> <./images/melborune_kernel_quantile_regression.png>] (./input_files/kde.tex) (./input_files/ensemble.tex)) [49] [50
+(./input_files/kde.tex [47] [48 <./images/melbourne_temperature.png>]) (./input_files/ensemble.tex [49 <./images/melbourne_linear_quantile_regression.png> <./images/melbourne_gradient_boosting_quantile_regression.png> <./images/melbourne_quantile_forest.png> <./images/melborune_kernel_quantile_regression.png>])) [50] (./input_files/data_exploratory.tex) [51
 
-] (./input_files/data_exploratory.tex) [51] [52] (./input_files/implementation.tex [53
+] [52] (./input_files/implementation.tex [53
 
 ]) [54] (./input_files/analysis.tex) (./input_files/symbols.tex) [55
 
@@ -1544,12 +1549,12 @@ Overfull \hbox (79.69267pt too wide) in paragraph at lines 159--161
 Underfull \vbox (badness 4391) has occurred while \output is active []
 
  [62] [63]
-<images/crossvalidationtimeseries.png, id=1313, 505.89pt x 237.51234pt>
+<images/crossvalidationtimeseries.png, id=1319, 505.89pt x 237.51234pt>
 File: images/crossvalidationtimeseries.png Graphic file (type png)
 <use images/crossvalidationtimeseries.png>
 Package pdftex.def Info: images/crossvalidationtimeseries.png  used on input line 249.
 (pdftex.def)             Requested size: 369.0pt x 173.24484pt.
-<images/crossvalidationtimeseries2.png, id=1317, 614.295pt x 289.08pt>
+<images/crossvalidationtimeseries2.png, id=1323, 614.295pt x 289.08pt>
 File: images/crossvalidationtimeseries2.png Graphic file (type png)
 <use images/crossvalidationtimeseries2.png>
 Package pdftex.def Info: images/crossvalidationtimeseries2.png  used on input line 258.
@@ -1616,18 +1621,18 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: EB9EC8BFF076BE1825E58A05B707158B;14688.
  ) 
 Here is how much of TeX's memory you used:
- 34952 strings out of 476025
- 596867 string characters out of 5790017
+ 34956 strings out of 476025
+ 596927 string characters out of 5790017
  1875388 words of memory out of 5000000
  53932 multiletter control sequences out of 15000+600000
  568493 words of font info for 420 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,14n,131p,2312b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (82 pages, 3221885 bytes).
+Output written on thesis.pdf (82 pages, 3224148 bytes).
 PDF statistics:
- 1544 PDF objects out of 1728 (max. 8388607)
- 1368 compressed objects within 14 object streams
- 424 named destinations out of 1000 (max. 500000)
+ 1551 PDF objects out of 1728 (max. 8388607)
+ 1375 compressed objects within 14 object streams
+ 428 named destinations out of 1000 (max. 500000)
  99748 words of extra memory for PDF output out of 106986 (max. 10000000)
 

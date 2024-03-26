@@ -67,12 +67,12 @@
 \contentsline {subsection}{\numberline {7.3.3}Gradient boosting}{41}{subsection.7.3.3}%
 \contentsline {section}{\numberline {7.4}Kernel methods}{42}{section.7.4}%
 \contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{42}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{46}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{47}{subsection.7.4.2}%
 \contentsline {section}{\numberline {7.5}Kernel density estimation}{49}{section.7.5}%
 \contentsline {section}{\numberline {7.6}Ensemble methods}{49}{section.7.6}%
-\contentsline {section}{\numberline {7.7}DMLP}{49}{section.7.7}%
-\contentsline {section}{\numberline {7.8}DeepAR}{49}{section.7.8}%
-\contentsline {subsection}{\numberline {7.8.1}Kernel herding}{49}{subsection.7.8.1}%
+\contentsline {section}{\numberline {7.7}DMLP}{50}{section.7.7}%
+\contentsline {section}{\numberline {7.8}DeepAR}{50}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Kernel herding}{50}{subsection.7.8.1}%
 \contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{51}{chapter.8}%
 \contentsline {section}{\numberline {8.1}GEFCom2014}{51}{section.8.1}%
 \contentsline {chapter}{\chapternumberline {9}Implementation}{53}{chapter.9}%

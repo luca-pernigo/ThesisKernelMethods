@@ -270,7 +270,7 @@ Setting its derivates to zero
     \begin{cases}
         \frac{\partial L}{\partial w}=0 \implies w=\Phi^\intercal(\alpha-\alpha^*)
         \\
-        \frac{\partial L}{\partial b}=0 \implies \alpha-\alpha^*=0
+        \frac{\partial L}{\partial b}=0 \implies (\alpha-\alpha^*)\mathbb{1}=0
         \\
         \frac{\partial L}{\partial \xi}=0 \implies Cq \mathbb{1}-\alpha- \nu=0
         \\
@@ -314,14 +314,63 @@ The kernel quantile regression estimator is then given by
 \begin{equation}
     f(x)=\sum\limits_i \alpha_i k(x_i, x)+b
 \end{equation}
-Where an unbiased estimator for $b$ is given by
+Since our optimisation problem possesses strong duality and it is differentiable in both the objective and the constraint, we have that it must satisfy the Karush Kuhn Tucker conditions, see section 5.5.3 \cite{boyd2004convex}.
+Thanks the KKT conditions on the primal optimisation problem we have that $f(x_i)=y_i \ \mathrm{for} \ \alpha_i \not \in \{C(q-1), Cq\}$. 
+To see this, we have to consider the KKT conditions.
 \begin{equation}
     \begin{aligned}
-    b=&\frac{1}{I_q}\sum\limits_{i\in I_q} b_i, \\ 
-    \textrm{with} \ b_i=& y_i-\sum\limits_k \alpha_k k(x_k, x_i) \\
-     \textrm{and} \ I_q=& \{i=1,\dots,n|0<\alpha_i<Cq, 0<\alpha_i<C(1-q)\}
+    \lambda^* r_i(x^*)=&0, \quad i=1,\dots,m
+    \\
+    \nabla L(x^*)=&0
+\end{aligned}
+\end{equation}
+In our setting we have
+\begin{equation}
+    \begin{aligned}
+        \alpha_i(\xi_i-y_i+r_i)=&0
+        \\
+        \alpha_i^*(\xi_i^*+y_i-r_i)=&0
+        \\
+        \nu_i \xi_i=&0
+        \\
+        \nu_i^* \xi_i^*=&0
+        \\
+        \nabla L =&0
     \end{aligned}
 \end{equation}
+Using the gradient of the lagrangian of equation \ref{eq:lagrange_derivatives} we end up with
+\begin{equation}
+    \begin{aligned}
+        \alpha_i(\xi_i-y_i+r_i)=&0
+        \\
+        \alpha_i^*(\xi_i^*+y_i-r_i)=&0
+        \\
+        (Cq-\alpha_i) \xi_i=&0
+        \\
+        (C(1-q)-\alpha_i) \xi_i^*=&0
+    \end{aligned}
+\end{equation}
+
+Now, let us break into cases
+
+\begin{equation}
+\begin{cases}
+    \alpha_i=Cq, \ \alpha_i^*=0 & \implies \alpha_i-\alpha_i^*=Cq, \xi_i\leq 0, \xi^*=0\implies \xi_i-y_i+f_i=0 \\
+    \alpha_i=0, \ \alpha_i^*=C(1-q) & \implies \alpha_i-\alpha_i^*=C(q-1), \xi_i= 0, \xi^*\leq 0 \implies \xi_i^*+y_i-f_i=0 \\
+    0\leq \alpha_i\leq Cq, \ 0\leq \alpha_i^*\leq C(1-q) & \implies \xi_i=0,  \xi^*_i= 0 \implies -y_i+f_i=0 \ y_i-f_i=0 \\
+\end{cases}
+\end{equation}
+
+Therefore in order to retrieve b we simply have to choose an index $i$ such that bold $\alpha_i \not \in \{C(q-1), Cq\}$
+and let
+\begin{equation}
+    \begin{aligned}
+    b=&y_i-\sum_i \alpha_i k(x_i,x)
+    \end{aligned}
+\end{equation}
+
+
+% In our implementatiton we take the point that minsimizes the distance between the boundary of domain of alpha, in this way we are guaranteed we do not take ith index of alpha_i for retrieving b, because it that case it would not work.
 %contribution is implementation kernel quantile regression for pythos users since there exists only r version
 \subsection{Weather quantiles}
 In order to get acquainted with the inner workings of the presented methods, this section covers an application explaining practical details and comparing results.
