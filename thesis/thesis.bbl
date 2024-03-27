@@ -4,6 +4,10 @@
 {GM22TutorialProbabilisticEnergyForecasting}.
 \newblock https://resourcecenter.ieee-pes.org/education/tutorials/pes\_ed\_tut\_gm22\_0717\_pefm\_sld.
 
+\bibitem{scikitscale_example}
+{Importance of feature scaling}.
+\newblock https://scikit-learn.org/stable/auto\_examples/preprocessing/plot\_scaling\_importance.html.
+
 \bibitem{scikithalvinggridsearch}
 {Scikit HalvingGridSearchCV}.
 \newblock https://scikit-learn.org/stable/modules/grid\_search.html\#successive-halving-user-guide.
@@ -11,6 +15,10 @@
 \bibitem{un_sdgs}
 {THE 17 GOALS Sustainable Development - the United Nations}.
 \newblock https://sdgs.un.org/goals.
+
+\bibitem{scikitscalers}
+{The effect of different scalers on data}.
+\newblock https://scikit-learn.org/stable/auto\_examples/preprocessing/plot\_all\_scaling.html\#plot-all-scaling-robust-scaler-section.
 
 \bibitem{probablistic_electricity_forecast}
 Ilyas Agakishiev, Wolfgang~Karl Härdle, Karel Kozmik, Milos Kopa, and Alla Petukhina.
@@ -71,6 +79,11 @@ Yutian Chen, Max Welling, and Alex Smola.
 \newblock Super-samples from kernel herding.
 \newblock 2012.
 
+\bibitem{cortes1995support}
+Corinna Cortes and Vladimir Vapnik.
+\newblock Support-vector networks.
+\newblock {\em Machine learning}, 20:273--297, 1995.
+
 \bibitem{david2016probabilistic}
 Mathieu David, F~Ramahatana, Pierre-Julien Trombe, and Philippe Lauret.
 \newblock Probabilistic forecasting of the solar irradiance with recursive arma and garch models.
@@ -90,6 +103,11 @@ Grzegorz Dudek.
 Israt Fatema, Gang Lei, and Xiaoying Kong.
 \newblock Probabilistic forecasting of electricity demand incorporating mobility data.
 \newblock {\em Applied Sciences}, 13(11):6520, 2023.
+
+\bibitem{friedman2001greedy}
+Jerome~H Friedman.
+\newblock Greedy function approximation: a gradient boosting machine.
+\newblock {\em Annals of statistics}, pages 1189--1232, 2001.
 
 \bibitem{gaillard2016additive}
 Pierre Gaillard, Yannig Goude, and Rapha{\"e}l Nedellec.
@@ -342,6 +360,11 @@ Alex~J Smola and Bernhard Sch{\"o}lkopf.
 \newblock {\em Learning with kernels}, volume~4.
 \newblock Citeseer, 1998.
 
+\bibitem{smola2004tutorial}
+Alex~J Smola and Bernhard Sch{\"o}lkopf.
+\newblock A tutorial on support vector regression.
+\newblock {\em Statistics and computing}, 14:199--222, 2004.
+
 \bibitem{new_multi_tes1}
 G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
 \newblock A new test for multivariate normality.
@@ -375,6 +398,11 @@ Vladimir Vapnik.
 \bibitem{vapnik1}
 Vladimir Vapnik and Alexey Chervonenkis.
 \newblock Theory of pattern recognition, 1974.
+
+\bibitem{vapnik1997support}
+Vladimir~N Vapnik.
+\newblock The support vector method.
+\newblock In {\em International conference on artificial neural networks}, pages 261--271. Springer, 1997.
 
 \bibitem{wahba}
 Grace Wahba.

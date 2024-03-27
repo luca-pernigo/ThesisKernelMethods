@@ -208,7 +208,9 @@ The dependent variable is the selling price.
     \bottomrule
     \end{tabular}
 \end{table}
-    
+What can be concluded from these numerical examples is that, on average kernel quantile regression yields better results than quantile forest \cite{meinshausen2006quantile} and gradient boosting machine quantile regression \cite {friedman2001greedy} in terms of the pinball loss as well as in terms of the mean absolute error.
+
+
 
 \section{Cross validation}
 Cross validation directly estimates the expected test error
@@ -262,9 +264,50 @@ That is in predicting $\hat{L}_{N+m}$ we use as inputs $L_1, L_2, \dots, \hat{L}
 
 \section{Kernel methods best practices}
 Following, are reported a couple of considerations important to keep in mind when working with kernel methods.
-\subsection{Data scaling}
+
+\subsection{Data normalization}
+With data normalization we transform the range of the feautures to a standard scale.
+Such preprocessing step is essential when employing distance based algorithms like svm or k-nearest neighbors. The rationale behind it is that by normalizing data we give an uniform weight to each feature in the learning process; in this way we do not favour larger scale features.
+Examples of the most popular features scaling are:
+\begin{itemize}
+    \item Standard scaler= it computes the standard score z of a sample x
+    \\
+    z=$\frac{x-\mu}{\sigma}$.
+    \item MinMax scaler= it maps every data sample to the range 0, 1.
+    \\
+    $\frac{x-\min(X)}{\max(X)-\min(X)}$
+    \item Robust scaler= it scales features using statistics that are robust to outliers.
+    Essentially, it subtracts the median and then scales the data according to the interquantile range.
+\end{itemize}
+Many other data scaling algorithms exists, we refer the reader to a thorough comparison \cite{scikitscalers}.
+\\
+We conclude this subsection with a custom example that motivates the need of feature scaling \cite{scikitscale_example}. The idea is to compare the results of modelling the data with k nearest neighbors on the unscaled data against the scaled data. The considered data is the wine recognition dataset \href{https://archive.ics.uci.edu/dataset/109/wine}{https://archive.ics.uci.edu/dataset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
+The unscaled and scaled version are compared in figure \ref{fig:feature_scaler_example}
+\begin{figure}[!h]
+    \includegraphics[width=\textwidth]{images/feature_scaler_example.png}
+    \caption{importance of feature scaling}
+    \label{fig:feature_scaler_example}
+\end{figure}
+What we can conclude from the image is that, the model trained on scaled data is greatly better than the other.
+On the left, we can see that distances between categories are impacted solely by the larger scale feature. Conversely, on the right, we have that the two features contributing equally in determining the neighbors.
+
 \subsection{Data compression}
-Nystrom, Cholesky
+When the number of points n is large, kernel methods suffer from high computational costs. 
+Using kernel methods, we have that the storage cost is of the order of $O(n^2)$ while the computational cost for finding the solution is of the order $O(n^3)$.
+A significant speed up can be obtained thanks to low rank approximation.
+
+
+\subsubsection{Nystrom decomposition}
+The Nyström approximation involves storing a submatrix of the whole kernel matrix. Thus, storage and computational cost are reduced to $O(nm)$ and $O(nm^2)$ respectively.
+Nyström works by selecting $m<n$ points, callled representative points; it approximates K as
+\begin{equation}
+    \tilde {K}=K_{n,m} K_{m,m}^{-1}K_{n,m}^\intercal
+\end{equation}
+
+
+\subsubsection{Pivoted Cholesky decomposition}
+Pivoted Cholesky approximate the Cholesky decomposition of a matrix. Since kernel matrices are positive definite, they can decomposed in terms of the Cholesky decomposition. Hence, we have that pivoted Cholesky can be used to approximate the full kernel matrix.
+
 
 \newpage
 \section{Src code}\label{src_code}

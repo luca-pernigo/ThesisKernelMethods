@@ -1,4 +1,5 @@
 #!/bin/bash
+# script to apply pickled model to each task
 
 # clean
 rm /Users/luca/Desktop/ThesisKernelMethods/thesis/tables/qr_gefcom2014.txt
