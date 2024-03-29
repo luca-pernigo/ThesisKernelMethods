@@ -13,23 +13,28 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces CRPS integral \cite {haben2023core}\relax }}{28}{figure.caption.12}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces PIT types \cite {haben2023core}\relax }}{29}{figure.caption.13}%
 \addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Electricity grid \cite {haben2021review}\relax }}{31}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pool market vs power echange \cite {weron2006modeling}\relax }}{33}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Zonal pricing EU \cite {eu_zonal}\relax }}{35}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Local pricing US \cite {us_local}\relax }}{36}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Electricity production by source\relax }}{36}{figure.caption.18}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Support vector regression,\cite {learning_with_kernels}\relax }}{35}{figure.caption.14}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces support vector regression\relax }}{36}{figure.caption.15}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces polynomial support vector regression\relax }}{38}{figure.caption.16}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces rbf support vector regression\relax }}{39}{figure.caption.17}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Support vector regression,\cite {learning_with_kernels}\relax }}{39}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces support vector regression\relax }}{40}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces polynomial support vector regression\relax }}{41}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces rbf support vector regression\relax }}{42}{figure.caption.22}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces two-dimensional feature space partitioned by recursive binary splitting\relax }}{43}{figure.caption.18}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces partition tree and regression model\relax }}{43}{figure.caption.19}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces decision tree regression\relax }}{44}{figure.caption.20}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces random forest regression\relax }}{46}{figure.caption.21}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces gradient boosting regression\relax }}{48}{figure.caption.22}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{54}{figure.caption.23}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors\relax }}{55}{figure.caption.24}%
-\addvspace {10pt}
-\addvspace {10pt}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces two-dimensional feature space partitioned by recursive binary splitting\relax }}{45}{figure.caption.23}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces partition tree and regression model\relax }}{45}{figure.caption.24}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces decision tree regression\relax }}{46}{figure.caption.25}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces random forest regression\relax }}{48}{figure.caption.26}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces gradient boosting regression\relax }}{50}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{56}{figure.caption.28}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors\relax }}{57}{figure.caption.29}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{71}{figure.caption.39}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{71}{figure.caption.40}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{72}{figure.caption.41}%
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{73}{figure.caption.44}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{73}{figure.caption.45}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{74}{figure.caption.46}%

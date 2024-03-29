@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  27 MAR 2024 21:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  29 MAR 2024 22:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1134,7 +1134,7 @@ Package hyperref Info: Link coloring ON on input line 96.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<USIlogo.pdf, id=418, 1204.5pt x 1204.5pt>
+<USIlogo.pdf, id=454, 1204.5pt x 1204.5pt>
 File: USIlogo.pdf Graphic file (type pdf)
 <use USIlogo.pdf>
 Package pdftex.def Info: USIlogo.pdf  used on input line 106.
@@ -1210,12 +1210,9 @@ File: uesvect.fd
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [4]) [5] [6
+ [4] [5]) [6] (./thesis.lof [1
 
-] (./thesis.lof)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1] (./thesis.lot) [2] (./input_files/problemdescription.tex
+]) (./thesis.lot) [2] (./input_files/problemdescription.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--14
 
  []
@@ -1234,33 +1231,33 @@ LaTeX Warning: Reference `state_of_the_art' on page 4 undefined on input line 45
 ) [4] [5] [6
 
 ] (./input_files/literaturereview.tex
-<images/time.jpg, id=700, 358.79176pt x 231.51982pt>
+<images/time.jpg, id=763, 358.79176pt x 231.51982pt>
 File: images/time.jpg Graphic file (type jpg)
 <use images/time.jpg>
 Package pdftex.def Info: images/time.jpg  used on input line 22.
 (pdftex.def)             Requested size: 369.0pt x 238.11125pt.
  [7]
-<images/epf_evolution1.jpg, id=712, 1084.05pt x 722.7pt>
+<images/epf_evolution1.jpg, id=775, 1084.05pt x 722.7pt>
 File: images/epf_evolution1.jpg Graphic file (type jpg)
 <use images/epf_evolution1.jpg>
 Package pdftex.def Info: images/epf_evolution1.jpg  used on input line 38.
 (pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-<images/point_vs_prob.jpg, id=714, 1084.05pt x 722.7pt>
+<images/point_vs_prob.jpg, id=777, 1084.05pt x 722.7pt>
 File: images/point_vs_prob.jpg Graphic file (type jpg)
 <use images/point_vs_prob.jpg>
 Package pdftex.def Info: images/point_vs_prob.jpg  used on input line 46.
 (pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-<images/cs_stat_both.jpg, id=716, 1084.05pt x 722.7pt>
+<images/cs_stat_both.jpg, id=779, 1084.05pt x 722.7pt>
 File: images/cs_stat_both.jpg Graphic file (type jpg)
 <use images/cs_stat_both.jpg>
 Package pdftex.def Info: images/cs_stat_both.jpg  used on input line 53.
 (pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-<images/subject_area.jpg, id=718, 1084.05pt x 722.7pt>
+<images/subject_area.jpg, id=781, 1084.05pt x 722.7pt>
 File: images/subject_area.jpg Graphic file (type jpg)
 <use images/subject_area.jpg>
 Package pdftex.def Info: images/subject_area.jpg  used on input line 60.
 (pdftex.def)             Requested size: 369.0pt x 246.00146pt.
-<images/src_title.jpg, id=720, 722.7pt x 361.35pt>
+<images/src_title.jpg, id=783, 722.7pt x 361.35pt>
 File: images/src_title.jpg Graphic file (type jpg)
 <use images/src_title.jpg>
 Package pdftex.def Info: images/src_title.jpg  used on input line 67.
@@ -1386,13 +1383,13 @@ Overfull \hbox (3.42987pt too wide) in paragraph at lines 3--5
 [25
 
 ]
-<images/pinball_loos.png, id=967, 687.56876pt x 557.08125pt>
+<images/pinball_loos.png, id=1030, 687.56876pt x 557.08125pt>
 File: images/pinball_loos.png Graphic file (type png)
 <use images/pinball_loos.png>
 Package pdftex.def Info: images/pinball_loos.png  used on input line 52.
 (pdftex.def)             Requested size: 369.0pt x 298.96631pt.
  [26]
-<images/crps.png, id=980, 693.59125pt x 549.05125pt>
+<images/crps.png, id=1043, 693.59125pt x 549.05125pt>
 File: images/crps.png Graphic file (type png)
 <use images/crps.png>
 Package pdftex.def Info: images/crps.png  used on input line 82.
@@ -1404,7 +1401,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
-<images/pit.png, id=1005, 1164.35pt x 433.62pt>
+<images/pit.png, id=1068, 1164.35pt x 433.62pt>
 File: images/pit.png Graphic file (type png)
 <use images/pit.png>
 Package pdftex.def Info: images/pit.png  used on input line 109.
@@ -1417,109 +1414,147 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--116
 ) [29 <./images/pit.png>] [30
 
 ] (./input_files/energymarket.tex
-Overfull \hbox (101.07289pt too wide) in paragraph at lines 1--3
-\OT1/pplx/m/n/10.95 (-20) Chapter ex-plain-ing the en-ergy mar-ket Chap-ter 9 of https://pubs.naruc.org/pub.cfm?id=536E10A7-
- []
+<images/electricity_network.png, id=1083, 606.265pt x 210.7875pt>
+File: images/electricity_network.png Graphic file (type png)
+<use images/electricity_network.png>
+Package pdftex.def Info: images/electricity_network.png  used on input line 11.
+(pdftex.def)             Requested size: 369.0pt x 128.29715pt.
 
-<images/electricity-production-by-source.png, id=1019, 3412.75pt x 2775.36874pt>
+Underfull \vbox (badness 7116) has occurred while \output is active []
+
+ [31 <./images/electricity_network.png>]
+LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 23.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
+File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
+)
+<images/pool_vs_echange.png, id=1094, 592.2125pt x 248.93pt>
+File: images/pool_vs_echange.png Graphic file (type png)
+<use images/pool_vs_echange.png>
+Package pdftex.def Info: images/pool_vs_echange.png  used on input line 42.
+(pdftex.def)             Requested size: 369.0pt x 155.10986pt.
+ [32] [33 <./images/pool_vs_echange.png>]
+<images/eu_zonal.png, id=1108, 720.6925pt x 693.59125pt>
+File: images/eu_zonal.png Graphic file (type png)
+<use images/eu_zonal.png>
+Package pdftex.def Info: images/eu_zonal.png  used on input line 73.
+(pdftex.def)             Requested size: 369.0pt x 355.12386pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/us_local.png, id=1111, 1035.87pt x 693.59125pt>
+File: images/us_local.png Graphic file (type png)
+<use images/us_local.png>
+Package pdftex.def Info: images/us_local.png  used on input line 79.
+(pdftex.def)             Requested size: 369.0pt x 247.068pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[34]
+<images/electricity-production-by-source.png, id=1119, 3412.75pt x 2775.36874pt>
 File: images/electricity-production-by-source.png Graphic file (type png)
 <use images/electricity-production-by-source.png>
-Package pdftex.def Info: images/electricity-production-by-source.png  used on input line 10.
+Package pdftex.def Info: images/electricity-production-by-source.png  used on input line 99.
 (pdftex.def)             Requested size: 369.0pt x 300.08263pt.
-[31 <./images/electricity-production-by-source.png>]) [32] (./input_files/point.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33
 
-] [34]
-<images/svm_simple.png, id=1045, 382.42876pt x 182.6825pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [35 <./images/eu_zonal.png>] [36 <./images/us_local.png> <./images/electricity-production-by-source.png>] (./input_files/point.tex [37
+
+]
+<images/svm_simple.png, id=1141, 382.42876pt x 182.6825pt>
 File: images/svm_simple.png Graphic file (type png)
 <use images/svm_simple.png>
-Package pdftex.def Info: images/svm_simple.png  used on input line 66.
+Package pdftex.def Info: images/svm_simple.png  used on input line 84.
 (pdftex.def)             Requested size: 369.0pt x 176.27634pt.
-<images/svr1.png, id=1051, 417.7206pt x 328.8285pt>
+ [38]
+<images/svr1.png, id=1157, 417.7206pt x 328.8285pt>
 File: images/svr1.png Graphic file (type png)
 <use images/svr1.png>
-Package pdftex.def Info: images/svr1.png  used on input line 95.
+Package pdftex.def Info: images/svr1.png  used on input line 113.
 (pdftex.def)             Requested size: 369.0pt x 290.47383pt.
- [35 <./images/svm_simple.png>]
+
+Underfull \vbox (badness 8094) has occurred while \output is active []
+
+ [39 <./images/svm_simple.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36 <./images/svr1.png>]
-<images/svr2.png, id=1071, 417.7206pt x 328.8285pt>
+ [40 <./images/svr1.png>]
+<images/svr2.png, id=1172, 417.7206pt x 328.8285pt>
 File: images/svr2.png Graphic file (type png)
 <use images/svr2.png>
-Package pdftex.def Info: images/svr2.png  used on input line 128.
+Package pdftex.def Info: images/svr2.png  used on input line 146.
 (pdftex.def)             Requested size: 369.0pt x 290.47383pt.
-<images/svr3.png, id=1072, 417.7206pt x 328.8285pt>
+<images/svr3.png, id=1173, 417.7206pt x 328.8285pt>
 File: images/svr3.png Graphic file (type png)
 <use images/svr3.png>
-Package pdftex.def Info: images/svr3.png  used on input line 134.
+Package pdftex.def Info: images/svr3.png  used on input line 152.
 (pdftex.def)             Requested size: 369.0pt x 290.47383pt.
-) [37] [38 <./images/svr2.png>] [39 <./images/svr3.png>] [40
+) [41 <./images/svr2.png>] [42 <./images/svr3.png>] (./input_files/probabilistic.tex (./input_files/qr.tex [43
 
-] (./input_files/probabilistic.tex (./input_files/qr.tex [41])
-<images/elsii1.png, id=1109, 326.21875pt x 296.10625pt>
+])
+<images/elsii1.png, id=1203, 326.21875pt x 296.10625pt>
 File: images/elsii1.png Graphic file (type png)
 <use images/elsii1.png>
 Package pdftex.def Info: images/elsii1.png  used on input line 15.
 (pdftex.def)             Requested size: 184.5pt x 167.47655pt.
-<images/elsii2.png, id=1110, 580.1675pt x 286.06876pt>
+<images/elsii2.png, id=1204, 580.1675pt x 286.06876pt>
 File: images/elsii2.png Graphic file (type png)
 <use images/elsii2.png>
 Package pdftex.def Info: images/elsii2.png  used on input line 21.
 (pdftex.def)             Requested size: 369.0pt x 181.94846pt.
- [42]
-<images/decision_tree.png, id=1124, 408.3255pt x 328.8285pt>
+ [44]
+<images/decision_tree.png, id=1218, 408.3255pt x 328.8285pt>
 File: images/decision_tree.png Graphic file (type png)
 <use images/decision_tree.png>
 Package pdftex.def Info: images/decision_tree.png  used on input line 50.
 (pdftex.def)             Requested size: 369.0pt x 297.16719pt.
- [43 <./images/elsii1.png> <./images/elsii2.png>]
+ [45 <./images/elsii1.png> <./images/elsii2.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44 <./images/decision_tree.png>]
-<images/random_forest.png, id=1141, 408.3255pt x 328.8285pt>
+ [46 <./images/decision_tree.png>]
+<images/random_forest.png, id=1235, 408.3255pt x 328.8285pt>
 File: images/random_forest.png Graphic file (type png)
 <use images/random_forest.png>
 Package pdftex.def Info: images/random_forest.png  used on input line 84.
 (pdftex.def)             Requested size: 369.0pt x 297.16719pt.
- [45]
+ [47]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./images/random_forest.png>]
-<images/gradient_boosting.png, id=1159, 408.3255pt x 328.8285pt>
+ [48 <./images/random_forest.png>]
+<images/gradient_boosting.png, id=1254, 408.3255pt x 328.8285pt>
 File: images/gradient_boosting.png Graphic file (type png)
 <use images/gradient_boosting.png>
 Package pdftex.def Info: images/gradient_boosting.png  used on input line 140.
 (pdftex.def)             Requested size: 369.0pt x 297.16719pt.
- [47] [48 <./images/gradient_boosting.png>]
+ [49] [50 <./images/gradient_boosting.png>]
 Overfull \hbox (77.68205pt too wide) detected at line 195
 [][][][]
  []
 
-[49]
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 237--243
 
  []
 
-[50]
+[52]
 Overfull \hbox (21.85905pt too wide) detected at line 294
 [][][][]
  []
 
-[51]
+[53]
 Overfull \hbox (101.4473pt too wide) detected at line 362
 [][] []
  []
 
-[52]
-<images/melbourne_temperature.png, id=1231, 462.528pt x 346.896pt>
+[54]
+<images/melbourne_temperature.png, id=1326, 462.528pt x 346.896pt>
 File: images/melbourne_temperature.png Graphic file (type png)
 <use images/melbourne_temperature.png>
 Package pdftex.def Info: images/melbourne_temperature.png  used on input line 381.
 (pdftex.def)             Requested size: 369.0pt x 276.76553pt.
-<images/melbourne_linear_quantile_regression.png, id=1234, 462.528pt x 346.896pt>
+<images/melbourne_linear_quantile_regression.png, id=1329, 462.528pt x 346.896pt>
 File: images/melbourne_linear_quantile_regression.png Graphic file (type png)
 <use images/melbourne_linear_quantile_regression.png>
 Package pdftex.def Info: images/melbourne_linear_quantile_regression.png  used on input line 389.
@@ -1529,7 +1564,7 @@ Overfull \hbox (18.45113pt too wide) in paragraph at lines 389--390
  [][] 
  []
 
-<images/melbourne_gradient_boosting_quantile_regression.png, id=1235, 462.528pt x 346.896pt>
+<images/melbourne_gradient_boosting_quantile_regression.png, id=1330, 462.528pt x 346.896pt>
 File: images/melbourne_gradient_boosting_quantile_regression.png Graphic file (type png)
 <use images/melbourne_gradient_boosting_quantile_regression.png>
 Package pdftex.def Info: images/melbourne_gradient_boosting_quantile_regression.png  used on input line 396.
@@ -1539,7 +1574,7 @@ Overfull \hbox (18.45113pt too wide) in paragraph at lines 396--397
  [][] 
  []
 
-<images/melbourne_quantile_forest.png, id=1236, 462.528pt x 346.896pt>
+<images/melbourne_quantile_forest.png, id=1331, 462.528pt x 346.896pt>
 File: images/melbourne_quantile_forest.png Graphic file (type png)
 <use images/melbourne_quantile_forest.png>
 Package pdftex.def Info: images/melbourne_quantile_forest.png  used on input line 403.
@@ -1549,7 +1584,7 @@ Overfull \hbox (18.45113pt too wide) in paragraph at lines 403--404
  [][] 
  []
 
-<images/melborune_kernel_quantile_regression.png, id=1237, 462.528pt x 346.896pt>
+<images/melborune_kernel_quantile_regression.png, id=1332, 462.528pt x 346.896pt>
 File: images/melborune_kernel_quantile_regression.png Graphic file (type png)
 <use images/melborune_kernel_quantile_regression.png>
 Package pdftex.def Info: images/melborune_kernel_quantile_regression.png  used on input line 409.
@@ -1571,47 +1606,44 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./input_files/kde.tex [53]
+(./input_files/kde.tex [55]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54 <./images/melbourne_temperature.png>]) (./input_files/ensemble.tex [55 <./images/melbourne_linear_quantile_regression.png> <./images/melbourne_gradient_boosting_quantile_regression.png> <./images/melbourne_quantile_forest.png> <./images/melborune_kernel_quantile_regression.png>])) [56] (./input_files/data_exploratory.tex) [57
+ [56 <./images/melbourne_temperature.png>]) (./input_files/ensemble.tex [57 <./images/melbourne_linear_quantile_regression.png> <./images/melbourne_gradient_boosting_quantile_regression.png> <./images/melbourne_quantile_forest.png> <./images/melborune_kernel_quantile_regression.png>])) [58] (./input_files/data_exploratory.tex) [59
 
-] [58] (./input_files/implementation.tex [59
+] [60] (./input_files/implementation.tex [61
 
-]) [60] (./input_files/analysis.tex) (./input_files/symbols.tex) [61
+]) [62] (./input_files/analysis.tex) (./input_files/symbols.tex) [63
 
-] [62
+] [64
 
-] [63
+] [65
 
-] (./appendix.tex [64]
+] (./appendix.tex [66]
 Overfull \hbox (14.74428pt too wide) in paragraph at lines 42--45
 \OT1/pplx/m/n/10.95 (-20) The Boston hous-ing dataset [][]https://www.kaggle.com/datasets/altavish/boston-
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 45.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
-File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
-) [65
+[67
 
-] [66]
+] [68]
 Overfull \hbox (79.69267pt too wide) in paragraph at lines 159--161
 \OT1/pplx/m/n/10.95 (-20) This data con-tains info about used cars [][]https://www.kaggle.com/datasets/nehalbirla/vehicle-
  []
 
-[67] [68] [69]
-<images/crossvalidationtimeseries.png, id=1398, 505.89pt x 237.51234pt>
+[69] [70] [71]
+<images/crossvalidationtimeseries.png, id=1499, 505.89pt x 237.51234pt>
 File: images/crossvalidationtimeseries.png Graphic file (type png)
 <use images/crossvalidationtimeseries.png>
 Package pdftex.def Info: images/crossvalidationtimeseries.png  used on input line 251.
 (pdftex.def)             Requested size: 369.0pt x 173.24484pt.
-<images/crossvalidationtimeseries2.png, id=1402, 614.295pt x 289.08pt>
+<images/crossvalidationtimeseries2.png, id=1503, 614.295pt x 289.08pt>
 File: images/crossvalidationtimeseries2.png Graphic file (type png)
 <use images/crossvalidationtimeseries2.png>
 Package pdftex.def Info: images/crossvalidationtimeseries2.png  used on input line 260.
 (pdftex.def)             Requested size: 369.0pt x 173.64783pt.
- [70] [71 <./images/crossvalidationtimeseries.png> <./images/crossvalidationtimeseries2.png>]
-<images/feature_scaler_example.png, id=1419, 782.925pt x 427.5975pt>
+ [72] [73 <./images/crossvalidationtimeseries.png> <./images/crossvalidationtimeseries2.png>]
+<images/feature_scaler_example.png, id=1519, 782.925pt x 427.5975pt>
 File: images/feature_scaler_example.png Graphic file (type png)
 <use images/feature_scaler_example.png>
 Package pdftex.def Info: images/feature_scaler_example.png  used on input line 287.
@@ -1621,7 +1653,7 @@ Overfull \hbox (75.95738pt too wide) in paragraph at lines 282--293
 \OT1/pplx/m/n/10.95 (-20) con-sid-ered data is the wine recog-ni-tion dataset [][]https://archive.ics.uci.edu/dataset/109/wine[][].
  []
 
-[72 <./images/feature_scaler_example.png>] [73]
+[74 <./images/feature_scaler_example.png>] [75]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1636,56 +1668,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 314--318
 
  []
 
-) [74] (./thesis.bbl
+) [76] (./thesis.bbl
 bibitemlist
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--6
-[]\OT1/pplx/m/n/10.95 (+20) GM22TutorialProbabilisticEnergyForecasting.
+[]\OT1/pplx/m/n/10.95 (+20) Active par-tic-i-pa-tion in the de-vel-op-ment of the elec-tric-ity
  []
 
 
-Overfull \hbox (81.13945pt too wide) in paragraph at lines 4--6
-\OT1/pplx/m/n/10.95 (-20) https://resourcecenter.ieee-pes.org/education/tutorials/pes[]ed[]tut[]gm22[]0717[]pefm[]sld. 
+Underfull \hbox (badness 3547) in paragraph at lines 4--6
+\OT1/pplx/m/n/10.95 (+20) marke.  https://raport2016.pse.pl/en/active-participation-in-the-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
+[]\OT1/pplx/m/n/10.95 (+20) GM22TutorialProbabilisticEnergyForecasting.
+ []
+
+
+Overfull \hbox (86.61444pt too wide) in paragraph at lines 8--10
+\OT1/pplx/m/n/10.95 (-20) https://resourcecenter.ieee-pes.org/education/tutorials/pes[]ed[]tut[]gm22[]0717[]pefm[]sld. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
 []\OT1/pplx/m/n/10.95 (+20) Importance of fea-ture scal-ing.  https://scikit-
  []
 
 
-Overfull \hbox (27.633pt too wide) in paragraph at lines 8--10
+Overfull \hbox (33.10799pt too wide) in paragraph at lines 12--14
 \OT1/pplx/m/n/10.95 (-20) learn.org/stable/auto[]examples/preprocessing/plot[]scaling[]importance.html. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
-[]\OT1/pplx/m/n/10.95 (+20) Scikit Halv-ing-Grid-SearchCV.  https://scikit-
+Underfull \hbox (badness 4819) in paragraph at lines 16--18
+[]\OT1/pplx/m/n/10.95 (+20) Roberts, B. Elec-tric-ity Price Map in the US, NREL, 2021.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
-\OT1/pplx/m/n/10.95 (+20) learn.org/stable/modules/grid[]search.html#successive-halving-
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+\OT1/pplx/m/n/10.95 (+20) https://geocurrents.info/wp-content/uploads/2012/06/electricity-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--22
+[]\OT1/pplx/m/n/10.95 (+20) Scikit Halv-ing-Grid-SearchCV.  https://scikit-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+\OT1/pplx/m/n/10.95 (+20) learn.org/stable/modules/grid[]search.html#successive-halving-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
 []\OT1/pplx/m/n/10.95 (+20) The ef-fect of dif-fer-ent scalers on data.  https://scikit-
  []
 
 
-Overfull \hbox (10.36879pt too wide) in paragraph at lines 20--22
+Overfull \hbox (15.84378pt too wide) in paragraph at lines 28--30
 \OT1/pplx/m/n/10.95 (-20) learn.org/stable/auto[]examples/preprocessing/plot[]all[]scaling.html#plot-
  []
 
-[75
+[77
 
 
-] [76] [77] [78] [79] [80] [81])
+] [78] [79] [80] [81] [82] [83] [84])
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- [82]
+ [85]
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
@@ -1700,21 +1752,21 @@ Overfull \hbox (10.36879pt too wide) in paragraph at lines 20--22
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: ADA819A3DA6C8522FB5A5DCDDA029AB4;14859.
+(rerunfilecheck)             Checksum: 50CC747F485D3425B9F711A80206A28F;16113.
  ) 
 Here is how much of TeX's memory you used:
- 35078 strings out of 476025
- 599006 string characters out of 5790017
- 1875388 words of memory out of 5000000
- 54011 multiletter control sequences out of 15000+600000
- 568687 words of font info for 423 fonts, out of 8000000 for 9000
+ 35364 strings out of 476025
+ 603465 string characters out of 5790017
+ 1877388 words of memory out of 5000000
+ 54255 multiletter control sequences out of 15000+600000
+ 569075 words of font info for 429 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,14n,131p,2312b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (90 pages, 3619473 bytes).
+Output written on thesis.pdf (93 pages, 7141278 bytes).
 PDF statistics:
- 1656 PDF objects out of 1728 (max. 8388607)
- 1460 compressed objects within 15 object streams
- 462 named destinations out of 1000 (max. 500000)
- 99781 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1770 PDF objects out of 2073 (max. 8388607)
+ 1558 compressed objects within 16 object streams
+ 492 named destinations out of 1000 (max. 500000)
+ 99873 words of extra memory for PDF output out of 106986 (max. 10000000)
 

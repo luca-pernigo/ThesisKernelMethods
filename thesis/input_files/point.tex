@@ -1,5 +1,23 @@
 This chapter covers the theory of the most widely used method for point forecasting in the EF literature. Besides discussing the theory underlying these models, this and the following chapter include also a couple of worked examples in order to get acquainted with the practical applications of models.
-\section{Exponential smoothing}
+
+
+% \section{Exponential smoothing}
+% Exponential smoothing was developed by Brown \cite{brown1959statistical}, Holt \cite{holt1957forecasting}, Winters \cite{winters1960forecasting}.
+% The idea is to forecast future values by taking a weighted average of past observations, where weights decay exponentially in time.
+% \begin{equation}
+%     \begin{aligned}
+%         \hat{y}_{t+h|t}=& l_{t}+hb_{t}+s_{t+h-m(k+1)}
+%         \\
+%         l_t=&\alpha (y_t-s_{t-m})+(1-\alpha)(l_{t-1}+b_{t-1})
+%         \\
+%         b_t=& \beta(l_t-l_{t-1})+(1-\beta)b_{t-1}
+%         \\
+%         s_t=&\gamma(y_t-l_{t-1}-b_{t-1})+(1-\gamma)s_{t-m}
+%     \end{aligned}
+% \end{equation}
+% where $0\leq \alpha \leq 1$ is the smoothing parameter and k is the integer part of $\frac{(h-1)}{m}$.%that is k encodes seasonalities
+% Optimal parameters are obtained by minimising the sum of squared errors.
+
 
 \section{Multiple linear regression}
 
