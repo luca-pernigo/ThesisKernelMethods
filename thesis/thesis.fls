@@ -1805,6 +1805,11 @@ INPUT ./images/svr1.png
 INPUT images/svr1.png
 INPUT ./images/svr1.png
 INPUT ./images/svr1.png
+INPUT ./images/lstm_cell.png
+INPUT ./images/lstm_cell.png
+INPUT images/lstm_cell.png
+INPUT ./images/lstm_cell.png
+INPUT ./images/lstm_cell.png
 INPUT ./images/svr2.png
 INPUT ./images/svr2.png
 INPUT images/svr2.png

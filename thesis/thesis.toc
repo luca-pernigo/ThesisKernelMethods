@@ -49,68 +49,66 @@
 \contentsline {chapter}{\chapternumberline {6}Point forecasting}{37}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Multiple linear regression}{37}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Autoregressive models}{37}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}ARIMA}{37}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}ARIMAX}{37}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}SARIMA}{37}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}SARIMAX}{37}{subsection.6.2.4}%
-\contentsline {section}{\numberline {6.3}Generalized additive model}{37}{section.6.3}%
-\contentsline {section}{\numberline {6.4}K-nearest neighbors}{37}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Support vector regression}{37}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Artificial neural networks}{40}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}DNN}{40}{subsection.6.6.1}%
-\contentsline {subsection}{\numberline {6.6.2}LSTM}{40}{subsection.6.6.2}%
-\contentsline {subsection}{\numberline {6.6.3}DeepAr}{40}{subsection.6.6.3}%
-\contentsline {subsection}{\numberline {6.6.4}AR Net}{40}{subsection.6.6.4}%
-\contentsline {section}{\numberline {6.7}Kernel methods}{40}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Kernel regression}{40}{subsection.6.7.1}%
-\contentsline {subsection}{\numberline {6.7.2}Kernel support vector regression}{40}{subsection.6.7.2}%
-\contentsline {chapter}{\chapternumberline {7}Probabilistic forecasting}{43}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Quantile regression}{43}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Quantile forest}{44}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Decision trees}{44}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Bootstrap}{46}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Bagging}{47}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}Random forest}{47}{subsection.7.2.4}%
-\contentsline {subsection}{\numberline {7.2.5}Quantile forest}{47}{subsection.7.2.5}%
-\contentsline {section}{\numberline {7.3}Quantile gradient boosting machine}{49}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Boosting}{49}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Boosted trees}{49}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Gradient boosting}{49}{subsection.7.3.3}%
-\contentsline {section}{\numberline {7.4}Kernel methods}{50}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{50}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{55}{subsection.7.4.2}%
-\contentsline {section}{\numberline {7.5}Kernel density estimation}{57}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Ensemble methods}{57}{section.7.6}%
-\contentsline {section}{\numberline {7.7}DMLP}{58}{section.7.7}%
-\contentsline {section}{\numberline {7.8}DeepAR}{58}{section.7.8}%
-\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{59}{chapter.8}%
-\contentsline {section}{\numberline {8.1}GEFCom2014}{59}{section.8.1}%
-\contentsline {chapter}{\chapternumberline {9}Implementation}{61}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Linear quantile regression}{61}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Quantile gradient boosting machine}{61}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Quantile forest}{61}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Kernel quantile regression}{62}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Python vs R implementation}{62}{subsection.9.4.1}%
-\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{63}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Quantile forecasting}{63}{section.10.1}%
-\contentsline {chapter}{List of Symbols}{65}{section*.33}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{67}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{67}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Cross validation}{67}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Quantile regressor extensive comparison}{67}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Boston housing dataset}{67}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Abalone dataset}{69}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Vehicle dataset}{70}{subsection.A.3.3}%
-\contentsline {section}{\numberline {A.4}Cross validation}{71}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}K-fold cross validation}{71}{subsection.A.4.1}%
-\contentsline {subsection}{\numberline {A.4.2}Gridsearch}{71}{subsection.A.4.2}%
-\contentsline {subsection}{\numberline {A.4.3}Randomized search}{71}{subsection.A.4.3}%
-\contentsline {subsection}{\numberline {A.4.4}Halving gridsearch}{72}{subsection.A.4.4}%
-\contentsline {subsection}{\numberline {A.4.5}Cross validation for time series data}{72}{subsection.A.4.5}%
-\contentsline {section}{\numberline {A.5}Kernel methods best practices}{72}{section.A.5}%
-\contentsline {subsection}{\numberline {A.5.1}Data normalization}{73}{subsection.A.5.1}%
-\contentsline {subsection}{\numberline {A.5.2}Data compression}{74}{subsection.A.5.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{75}{section*.47}%
-\contentsline {subsubsection}{Pivoted Cholesky decomposition}{75}{section*.48}%
-\contentsline {section}{\numberline {A.6}Src code}{76}{section.A.6}%
-\contentsline {chapter}{Bibliography}{77}{appendix*.49}%
+\contentsline {subsection}{\numberline {6.2.1}ARIMA}{38}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}ARIMAX}{38}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}SARIMA and SARIMAX}{38}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Generalized additive model}{39}{section.6.3}%
+\contentsline {section}{\numberline {6.4}K-nearest neighbours regression}{39}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Support vector regression}{39}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Artificial neural networks}{41}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}MLP}{41}{subsection.6.6.1}%
+\contentsline {subsubsection}{NARX}{42}{section*.21}%
+\contentsline {subsection}{\numberline {6.6.2}LSTM}{42}{subsection.6.6.2}%
+\contentsline {section}{\numberline {6.7}Kernel methods}{43}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Kernel ridge regression}{43}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Kernel support vector regression}{45}{subsection.6.7.2}%
+\contentsline {chapter}{\chapternumberline {7}Probabilistic forecasting}{49}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Quantile regression}{49}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Quantile forest}{50}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Decision trees}{50}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Bootstrap}{52}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Bagging}{53}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Random forest}{53}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}Quantile forest}{53}{subsection.7.2.5}%
+\contentsline {section}{\numberline {7.3}Quantile gradient boosting machine}{55}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Boosting}{55}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Boosted trees}{55}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Gradient boosting}{55}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}Kernel methods}{56}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{56}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{61}{subsection.7.4.2}%
+\contentsline {section}{\numberline {7.5}Kernel density estimation}{63}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Ensemble methods}{63}{section.7.6}%
+\contentsline {section}{\numberline {7.7}DMLP}{64}{section.7.7}%
+\contentsline {section}{\numberline {7.8}DeepAR}{64}{section.7.8}%
+\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{65}{chapter.8}%
+\contentsline {section}{\numberline {8.1}GEFCom2014}{65}{section.8.1}%
+\contentsline {chapter}{\chapternumberline {9}Implementation}{67}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Linear quantile regression}{67}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Quantile gradient boosting machine}{67}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Quantile forest}{67}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Kernel quantile regression}{68}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Python vs R implementation}{68}{subsection.9.4.1}%
+\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{69}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Quantile forecasting}{69}{section.10.1}%
+\contentsline {chapter}{List of Symbols}{71}{section*.35}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{75}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{75}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Cross validation}{75}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Quantile regressor extensive comparison}{75}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Boston housing dataset}{75}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Abalone dataset}{77}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Vehicle dataset}{78}{subsection.A.3.3}%
+\contentsline {section}{\numberline {A.4}Cross validation}{79}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}K-fold cross validation}{79}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Gridsearch}{79}{subsection.A.4.2}%
+\contentsline {subsection}{\numberline {A.4.3}Randomized search}{79}{subsection.A.4.3}%
+\contentsline {subsection}{\numberline {A.4.4}Halving gridsearch}{80}{subsection.A.4.4}%
+\contentsline {subsection}{\numberline {A.4.5}Cross validation for time series data}{80}{subsection.A.4.5}%
+\contentsline {section}{\numberline {A.5}Kernel methods best practices}{80}{section.A.5}%
+\contentsline {subsection}{\numberline {A.5.1}Data normalization}{81}{subsection.A.5.1}%
+\contentsline {subsection}{\numberline {A.5.2}Data compression}{82}{subsection.A.5.2}%
+\contentsline {subsubsection}{Nystrom decomposition}{83}{section*.49}%
+\contentsline {subsubsection}{Pivoted Cholesky decomposition}{83}{section*.50}%
+\contentsline {section}{\numberline {A.6}Src code}{84}{section.A.6}%
+\contentsline {chapter}{Bibliography}{85}{appendix*.51}%

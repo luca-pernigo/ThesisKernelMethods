@@ -20,19 +20,67 @@ This chapter covers the theory of the most widely used method for point forecast
 
 
 \section{Multiple linear regression}
+Notwithstanding, its simplicity, multiple linear regression models are still popular among the EPF literature. Notice, they are no used per se but combined with other more advanced models.
+\begin{equation}
+    L_t=\beta X_t + \epsilon_t
+\end{equation}
 
 \section{Autoregressive models}
-explain their theory
-and how the procedure how they are used
-IMPORTANT: load series is not a stationary series so before applying AR we have to perform stationary tests or differencing steps
+% explain their theory
+% and how the procedure how they are used
+% IMPORTANT: load series is not a stationary series so before applying AR we have to perform stationary tests or differencing steps
+Autoregressive models are a standard approach for modelling time series data.
+Before introducing the popular model in EPF, it is important to remember that autoregressive models assume the time series to be stationary. On the other hand, load and price have been observed to be a non stationary time series. 
+Basically, stationarity means that the distribution of any subsequence of random variables of the stochatic process is invariant to shift along the time dimension.
+\\
+Therefore, it is essential to check stationary through unit root tests. Moreover, should the time series be non stationary, we have to convert it to a stationary one by a combination of either differencing, detrending and log transforming.
 \subsection{ARIMA}
+ARIMA(p,d,q) models are of the form
+\begin{equation}
+    \hat{L}_N=\sum\limits_{i=1}^{p}\phi_i L_{N-i}^{(d)}+\sum\limits_{j=1}^{q}\theta_j \epsilon_{N-j}+\epsilon_N
+\end{equation}
+where parameters p is the order of the AR part, d is the degree of integrated differencing and q is the order of the MA model. $\epsilon_{N-j}$ are the observed errors in the past while the differencing degree $(d)$ is defined recursively as $L_N^{(d)}=L_N^{(d-1)}-L_{N-1}^{(d-1)}$.
+ARIMA model are usually written as
+\begin{equation}
+    \phi(B)\nabla^d y_t=\theta(B)\epsilon_t
+\end{equation}
+where $B$ is the backward shift operator, $B^h y_t=y_{t-h}$ and $\phi(B)$ is shorthand for $\phi(B)=1-\phi_1B-\dots-\phi_p B^p$.
+Similarly $theta(B)=1+\theta_1B+\dots+\theta_q B^q$ and $\nabla_h$ is the lag h differencing operator $\nabla_h y_t=(1-B^h)y_t=y_t-y_{t-h}$
+\\
+Box-Jenkins is the method for estimating such models \cite{box2015time}.
+The order p is identified by taking the lags at which the sample partial autocorrelation function (PACF) falls outside its 95\% confidence interval.
+In the same way, the order q is estimated by consider the sample autocorrelation function of the observed time series. Finally, we compare ARIMA models with different p,d,q (in a neighbourhood of the identified orders) and choose the ones minimising either AIC or BIC. Notice, models are obtained through the maximum likelihood estimation framework.
+
 \subsection{ARIMAX}
-\subsection{SARIMA}
-\subsection{SARIMAX}
+ARIMAX model add explanatory variables to our ARIMA model, we have
+\begin{equation}
+    \hat{L}_N=\sum\limits_{k=1}^{h} \mu_i X_{N-k}+\sum\limits_{i=1}^{p}\phi_i L_{N-i}^{(d)}+\sum\limits_{j=1}^{q}\theta_j \epsilon_{N-j}+ \epsilon_{N}
+\end{equation}
+\subsection{SARIMA and SARIMAX}
+SARIMA and SARIMAX incorporate seasonalities into our time series models. The notation for these models is ARIMA$(p,d,q)(P,D,Q)_m$, the second terms represents the autoregressive structure of the seasonal patter.
+\\
+\begin{equation}
+    \phi(B)\Phi(B^s)\nabla^d\nabla_m^Dy_t=\theta(B)\Theta(B^s)\epsilon_t
+\end{equation}
+\\
+For instance, in modelling series of hourly data with daily periodicity, we set m=24.
 
 \section{Generalized additive model}
+% in standard regression the predicted y are normal since error are normal. But if we want to model say a y bernoulli which is the rate of success we can link the domain of bernoulli to that of gaussian with a link function
+Generalized additive models take the form
+\begin{equation}
+    g[\mathbb{E}(Y_i)]=\alpha+f_1(X_1)+\dots+f_p(X_p)
+\end{equation}
+$f_i$ are smooth functions which are fitted using cubic smoothing splines.
+g is called link function and characterizes the specific GAM model \cite{hastie2017generalized}. Approximations for $f_i$ are obtained through an iterative procedure, the backfitting algorithm.
+
 %prophet meta
-\section{K-nearest neighbors}
+Particularly successful in time series forecasting is the Prophet model \cite{taylor2018forecasting}. This additive model is capable of handling non linear trends, holiday effects and yearly weekly and daily seasonality.
+\section{K-nearest neighbours regression}
+K-nearest neighbours regression forecasts by averaging the most similar k instances in the training set \cite{macqueen1967some}. K is the algorithm hyperparameter, a small k leads to overfitting while a big k leads to underfitting. 
+Since it is a metric based algorithm it is important to normalize it in order to give equal weights to features with different scales \ref{appendix:normalization}.
+The algorithm is made up of two decision: first, the choice of the metric and second, the method for combining targets.
+
 
 \section{Support vector regression}
 Developed at the AT\&T Bell Laboratories by Vapnik et al. \cite{cortes1995support}, \cite{vapnik1997support}, support vector machines SVMs are one of the most popular techniques within the field of statistical learning.
@@ -116,13 +164,131 @@ To get an idea, see figure \ref{fig:svr1} for a how support vector regression ha
 \end{figure}
 
 \section{Artificial neural networks}
-\subsection{DNN}
+Artificial neural networks (ANN) have been successfully applied in the context of electricity markets forecasting. The basic building block of this class of methods is the perceptron \cite{rosenblatt1958perceptron}.
+\begin{equation}
+    y=\psi(wx+b)
+\end{equation}
+where $\psi$ is an activation function and w,b are the parameters of the neuron; such parameters are typically optimized through gradient descent.
+
+\subsection{MLP}
+In order to cover a richer space of models we can stack neurons, doing so we obtain the so called multi layer perceptrons (MLPs). Hyperparameters of these models are the number of hidden layers, the number of neurons in each of those layers and the kind of activation function.
+Notice, depending on the numbers of layers, MLPs are sometimes referred to as deep neural networks.
+
+\subsubsection{NARX}
+Neural networks that have as inputs past values of the target variable and other independent variables are called nonlinear autoregressive exogenous models.
+
 \subsection{LSTM}
-\subsection{DeepAr}
-\subsection{AR Net}
+% https://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
+% https://rtavenar.github.io/deep_book/book_en.pdf
+LSTM extend RNN by introducing a cell state in its layers. In this way, the current state of a cell depndes on the current value $X_t$, on the previous activation and on the previous cell state $C_{t-1}$, see figure \ref{fig:lstm_cell} for a visual representation. 
+\begin{figure}[!h]
+    \includegraphics[width=\textwidth]{images/lstm_cell.png}
+    \caption{LSTM cell}
+    \label{fig:lstm_cell}
+\end{figure}
+The cell is responsible for deciding whether to store/forget long and short term values. To do so, each cell is made of a forget gate, an input gate and an output gate.
+This forget gate layer takes $h_{t-1}$ and $x_t$, and outputs a number between 0 and 1, this corresponds to ratio of information retention for each element of the cell state $C_{t-1}$.
+\begin{equation}
+    f_t=\sigma(W_f\dot[h_{t-1},x_t]+b_f)
+\end{equation}
+The input gate layer is made up of two parts. First, a sigmoid layer decides which values of the cell state will be updated. Second, a tahn layer creates a vector of candidates $\tilde{C}_t$ to add to the current state.
+\begin{equation}
+    \begin{aligned}
+        i_t=&\sigma(W_i\dot[h_{t-1},x_t]+i_f)
+        \\
+        \tilde{C}_t=&tahn(W_c\dot[h_{t-1},x_t]+b_C)
+    \end{aligned}
+\end{equation}
+The cell state is then updated by
+\begin{equation}
+    C_t=f_t\odot C_{t-1}+i_t\odot \tilde{C}_t
+    % odot is elementwise product
+\end{equation}
+Finally we output the current cell state and the tanh activated cell state filtered by the sigmoid layer on the current input and the previous hidden state.
+\begin{equation}
+    \begin{aligned}
+    o_t=& sigma(W_o[h_{t-1},x_t]+b_o)
+    \\
+    h_t=& o_t \odot tahn(C_t)
+\end{aligned}
+\end{equation}
+% \subsection{DeepAr} deepar é probabilistic
+
+% \subsection{AR Net} no é un framework non é un metodo
 
 \section{Kernel methods}
-\subsection{Kernel regression}
+\subsection{Kernel ridge regression}
+In the setting of kernel ridge regression, we aim at estimating $f$ such that $y=f(x)+\epsilon$. Given a RKHS $\mathcal{H}$, we can estimate$\hat{f}$ by solving the optmisation problem
+\begin{equation}\label{eq:kernel ridge}
+    \hat{f}=\argmin{f\in \mathcal{H}}\frac{1}{2}\sum\limits_{i=1}^n(y_i-f(x_i))^2+\frac{\lambda}{2}\|f\|_{\mathcal{H}}^2
+\end{equation}
+Before proceeding, we need to introduce the representer theorem.
+\begin{theorem}
+    Let $k:X \times X \mapsto R$ on a non empty set $X$ with corresponding RKHS $\mathcal{H}$ and consider the regularized risk functional $Risk[f]:f \mapsto  E\left((x_{1},y_{1},f(x_{1})),\ldots ,(x_{n},y_{n},f(x_{n}))\right)+g\left(\| f\| \right)$. Then any minimizer of the empirical risk $Risk[f]$ can be represented as $ f^{*}(\cdot )=\sum _{i=1}^{n}\alpha _{i}k(\cdot ,x_{i})$
+\end{theorem}
+
+\begin{proof}
+    By orthogonal projection, any $f \in \mathcal{H}$ can be decomposed as the sum of two functions, with the first lying in the $\textrm{span}\{\phi(x_1),\dots, \phi(x_n)\}$ and the second staying in the orthogonal complement.
+    \begin{equation}
+        f=\sum\limits_{i=1}^{n}\alpha_i \phi(x_i)+\nu
+    \end{equation}
+    Applying $f$ to any point, by the reproducing property we have
+    \begin{equation}
+        \begin{aligned}
+            f(x_j)=&\langle \phi(x_j), \sum\limits_{i=1}^{n}\alpha_i \phi(x_i)+\nu\rangle
+            \\
+            =&\sum\limits_{i=1}^{n}\alpha_i\langle \phi(x_j), \phi(x_i)\rangle
+        \end{aligned}
+    \end{equation}
+    This means that setting $\nu=0$ does not affect $f$.
+    Next consider the regularization term; notice, the functional $g$ has to be strictly monotonic in order to penalize more complex functions $f$.
+    \begin{equation}
+        \begin{aligned}
+            g(\|f\|)=&g(\|\sum\limits_{i=1}^n \alpha_i \phi(x_i)+v\|_\mathcal{H})
+            \\
+            =&g\left(\sqrt{\|\sum\limits_{i=1}^n \alpha_i \phi(x_i)+v\|_\mathcal{H}^2}\right)
+            \\
+            =&g\left(\sqrt{\|\sum\limits_{i=1}^n \alpha_i \phi(x_i)\|_{\mathcal{H}}^2+\|v\|_\mathcal{H}^2+2\langle\sum\limits_{i=1}^n \alpha_i \phi(x_i),\nu \rangle_{\mathcal{H}}}\right)
+            \\
+            =&g\left(\sqrt{\|\sum\limits_{i=1}^n \alpha_i \phi(x_i)\|_{\mathcal{H}}^2+\|v\|_\mathcal{H}^2}\right)
+            \\
+            \geq &g\left(\sqrt{\|\sum\limits_{i=1}^n \alpha_i \phi(x_i)\|_{\mathcal{H}}^2}\right)
+        \end{aligned}
+    \end{equation}
+    We can conclude setting $\nu=0$ decreases the second terms while the first is not affected. Thus it follows that any minimizer of the risk functional \ref{eq:kernel ridge} must be of the following form
+    \begin{equation}
+        f^*(\cdot)=\sum\limits_{i=1}^n \alpha_i \phi(x_i)=\sum\limits_{i=1}^n \alpha_i k(\cdot, x_i)
+    \end{equation}
+\end{proof}
+
+Employing the representer theorem, we can rewrite \ref{eq:kernel ridge} in matrix notation as
+\begin{equation}
+    \begin{aligned}
+    \hat{\alpha}=&\argmin{\alpha \in R^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2}\left\|\sum _{i=1}^{n}\alpha _{i}k(\cdot ,x_{i})\right\|_{\mathcal{H}}^2
+    \\
+    \hat{\alpha}=&\argmin{\alpha \in R^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \langle \sum _{i}^{n}\alpha _{i}k(\cdot ,x_{i}),\sum _{j=1}^{n}\alpha _{j}k(\cdot ,x_{j})\rangle_{\mathcal{H}}^2
+    \\
+    \hat{\alpha}=&\argmin{\alpha \in R^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \sum _{i,j=1}^{n}\alpha _{i}\alpha _{j}\langle k(\cdot ,x_{i}),k(\cdot ,x_{j})\rangle_{\mathcal{H}}^2
+    \\
+    \hat{\alpha}=&\argmin{\alpha \in R^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \sum _{i,j=1}^{n}\alpha _{i}\alpha _{j}K_{ij}
+    \\
+    \hat{\alpha}=&\argmin{\alpha \in R^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \alpha^\intercal K \alpha
+    \\
+    \hat{\alpha}=&\argmin{\alpha \in R^n}\frac{1}{2}(y-K\alpha)^\intercal (y-K\alpha)+\frac{\lambda}{2} \alpha^\intercal K \alpha
+\end{aligned}
+\end{equation}
+
+Setting the gradient to zero, we have
+\begin{equation}
+    -Ky+K^2\alpha+\lambda K \alpha\overset{!}{=}0
+\end{equation}
+
+We have then, that $\hat{\alpha}=(K+\lambda I)^{-1}y$. It follows the solution takes the form
+\begin{equation}
+    \hat{f}(\cdot)=\hat{\alpha}K(\cdot,:)
+\end{equation}
+
 \subsection{Kernel support vector regression}
 Support vector regression can be kernelized by swapping the R2 euclidean dot product of data x with the dot product in the higher feature space F. Doing so, the optimisation problem can be restated as
 \begin{equation}

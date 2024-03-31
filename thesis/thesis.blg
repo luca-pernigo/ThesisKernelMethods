@@ -4,19 +4,19 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
 Warning--entry type for "un_sdgs" isn't style-file defined
---line 941 of file refs.bib
+--line 983 of file refs.bib
 Warning--entry type for "gm_22" isn't style-file defined
---line 946 of file refs.bib
+--line 988 of file refs.bib
 Warning--entry type for "scikithalvinggridsearch" isn't style-file defined
---line 951 of file refs.bib
+--line 993 of file refs.bib
 Warning--entry type for "scikitscalers" isn't style-file defined
---line 956 of file refs.bib
+--line 998 of file refs.bib
 Warning--entry type for "scikitscale_example" isn't style-file defined
---line 961 of file refs.bib
+--line 1003 of file refs.bib
 Warning--entry type for "eu_zonal" isn't style-file defined
---line 967 of file refs.bib
+--line 1009 of file refs.bib
 Warning--entry type for "us_local" isn't style-file defined
---line 972 of file refs.bib
+--line 1014 of file refs.bib
 Warning--to sort, need author or key in eu_zonal
 Warning--to sort, need author or key in us_local
 Warning--to sort, need author or key in un_sdgs
@@ -30,47 +30,48 @@ Warning--empty journal in gaillardasemi
 Warning--empty year in gaillardasemi
 Warning--empty booktitle in jebara
 Warning--can't use both author and editor fields in pmlr
+Warning--can't use both volume and number fields in macqueen1967some
 Warning--empty journal in nystrom
 Warning--empty journal in takeuchi2006nonparametric
-You've used 102 entries,
+You've used 106 entries,
             2118 wiz_defined-function locations,
-            1049 strings with 19833 characters,
-and the built_in function-call counts, 31998 in all, are:
-= -- 3160
-> -- 1437
-< -- 13
-+ -- 582
-- -- 470
-* -- 2250
-:= -- 5315
-add.period$ -- 297
-call.type$ -- 102
-change.case$ -- 526
+            1073 strings with 20501 characters,
+and the built_in function-call counts, 33354 in all, are:
+= -- 3296
+> -- 1493
+< -- 15
++ -- 605
+- -- 488
+* -- 2342
+:= -- 5533
+add.period$ -- 310
+call.type$ -- 106
+change.case$ -- 545
 chr.to.int$ -- 0
-cite$ -- 117
-duplicate$ -- 1153
-empty$ -- 2569
-format.name$ -- 470
-if$ -- 6610
+cite$ -- 122
+duplicate$ -- 1210
+empty$ -- 2680
+format.name$ -- 488
+if$ -- 6901
 int.to.chr$ -- 0
-int.to.str$ -- 102
-missing$ -- 102
-newline$ -- 500
-num.names$ -- 190
-pop$ -- 565
+int.to.str$ -- 106
+missing$ -- 107
+newline$ -- 520
+num.names$ -- 198
+pop$ -- 586
 preamble$ -- 1
-purify$ -- 437
+purify$ -- 453
 quote$ -- 0
-skip$ -- 820
+skip$ -- 862
 stack$ -- 0
-substring$ -- 2142
-swap$ -- 173
-text.length$ -- 13
+substring$ -- 2223
+swap$ -- 189
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 382
-warning$ -- 15
-while$ -- 317
-width$ -- 105
-write$ -- 1063
-(There were 22 warnings)
+type$ -- 396
+warning$ -- 16
+while$ -- 331
+width$ -- 109
+write$ -- 1108
+(There were 23 warnings)
