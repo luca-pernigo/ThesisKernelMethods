@@ -1666,7 +1666,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri9t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
@@ -1678,6 +1677,7 @@ INPUT input_files/paper2.tex
 INPUT ./input_files/paper2.tex
 INPUT ./input_files/paper2.tex
 INPUT input_files/paper2.tex
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
@@ -1770,12 +1770,12 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr9c.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9c.vf
 INPUT ./images/pool_vs_echange.png
 INPUT ./images/pool_vs_echange.png
 INPUT images/pool_vs_echange.png
 INPUT ./images/pool_vs_echange.png
 INPUT ./images/pool_vs_echange.png
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9c.vf
 INPUT ./images/eu_zonal.png
 INPUT ./images/eu_zonal.png
 INPUT images/eu_zonal.png
@@ -1880,14 +1880,6 @@ INPUT ./images/melborune_kernel_quantile_regression.png
 INPUT images/melborune_kernel_quantile_regression.png
 INPUT ./images/melborune_kernel_quantile_regression.png
 INPUT ./images/melborune_kernel_quantile_regression.png
-INPUT ./input_files/kde.tex
-INPUT input_files/kde.tex
-INPUT ./input_files/kde.tex
-INPUT input_files/kde.tex
-INPUT ./input_files/ensemble.tex
-INPUT input_files/ensemble.tex
-INPUT ./input_files/ensemble.tex
-INPUT input_files/ensemble.tex
 INPUT ./input_files/data_exploratory.tex
 INPUT input_files/data_exploratory.tex
 INPUT ./input_files/data_exploratory.tex

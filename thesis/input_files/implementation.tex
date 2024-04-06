@@ -20,9 +20,9 @@ explain better my ideas.
 The implementation of statsmodels.regression.quantile\_regression.QuantReg has been used.
 The model is fitted through iterative reweighted least squares.
 \section{Quantile gradient boosting machine}
-The implementation of sklearn.ensemble.GradientBoostingRegressor as been used.
+The implementation of sklearn.ensemble.GradientBoostingRegressor has been used.
 \section{Quantile forest}
-The implementation of quantile\_forest.RandomForestQuantileRegressor as been used. This estimator is compatible with scikit-learn.
+The implementation of quantile\_forest.RandomForestQuantileRegressor has been used. This estimator is compatible with scikit-learn.
 \section{Kernel quantile regression}
 Kernel quantile regression had no previously implemented open source library, thus the need of implementing our own version.
 \\
@@ -39,6 +39,7 @@ In the predict method, we pass a matrix X\_eval of independent variables, next w
 \\
 This estimator is compatible with useful scikit-learn in built methods like gridsearch, crossvalidation and scoring rules.
 \\
-Up to now, there are only two open source implementation of the quantile kernel regression. Nevertheless they are both in R, that is there exists no python, matlab or julia open source implementation. Following are reported the results of a comparative study between our own implementation and the one of the R library kernlab(i guess it is in C or C++ and then binded to R).
+Up to now, there are only two open source implementation of the quantile kernel regression. Nevertheless they are both in R, that is there exists no python, matlab or julia open source implementation. Following are reported the results of a comparative study between our own implementation and the one of the R library kernlab
+% (i guess it is in C or C++ and then binded to R).
 \subsection{Python vs R implementation}
 In this section, a comparison study has been carried out in order to inspect the competitiveness of our implementation with the existing one for the R programming language.

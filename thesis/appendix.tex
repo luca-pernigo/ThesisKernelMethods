@@ -3,14 +3,14 @@
 \begin{proof}
 \begin{align*}
     \|
-    \phi^{new}(x)\|_{\mathcal{H}}^{2} &= \|\frac{\phi(x)}{\|\phi(x)\|_{\mathcal{H}}}
-    \|_{\mathcal{H}}^{2}
+    \phi^{new}(x)\|_{\mathcal{H}}^{2} &= \left\|\frac{\phi(x)}{\|\phi(x)\|_{\mathcal{H}}}
+    \right\|_{\mathcal{H}}^{2}
     \\
     &=
-    \|
+    \left\|
     \frac{\phi(x)}
     {\sqrt{k(x,x)}}
-    \|_{\mathcal{H}}^{2}
+    \right\|_{\mathcal{H}}^{2}
     \\
     &=
     \langle
@@ -33,11 +33,10 @@
 \end{align*}
 \end{proof}
 
-\section{Cross validation}\label{appendix:cross_validation}
-
 
 
 \section{Quantile regressor extensive comparison}\label{appendix:quantile_regressor_extensive_comparison}
+This section contains extensive comparison between our kernel quantile regression and other state of the art quantile regressors. We benchmark it on popular machine learning datasets.
 \subsection{Boston housing dataset}
 The Boston housing dataset \href{https://www.kaggle.com/datasets/altavish/boston-housing-dataset}{https://www.kaggle.com/datasets/altavish/boston-housing-dataset} contains information about various attributes for suburbs in Boston.
 There are 13 indipendent variables:
@@ -212,7 +211,7 @@ What can be concluded from these numerical examples is that, on average kernel q
 
 
 
-\section{Cross validation}
+\section{Cross validation}\label{appendix:cross_validation}
 Cross validation directly estimates the expected test error
 \begin{equation}
     Err=\mathbb{E}\left[L\left(Y,\hat{f}(X)\right)\right]=\mathbb{E}\left[Err_{\Tau}\right]

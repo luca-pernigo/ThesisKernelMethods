@@ -18,11 +18,11 @@
 \contentsline {section}{\numberline {2.3}EF literature review}{12}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Kernel methods literature review}{15}{section.2.4}%
 \contentsline {chapter}{\chapternumberline {3}Kernel Theory}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}\href {https://arxiv.org/abs/1605.09522}{Kernel Mean Embedding of Distributions: A Review and Beyond}}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Kernel Mean Embedding of Distributions: A Review and Beyond}{17}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}RKHS}{18}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Kernel families}{18}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}\href {http://proceedings.mlr.press/v33/kanagawa14.pdf}{Recovering Distributions from Gaussian RKHS Embeddings}}{18}{section.3.2}%
-\contentsline {section}{\numberline {3.3}\href {https://arxiv.org/pdf/1203.3472.pdf}{Super-Samples from Kernel Herding}}{20}{section.3.3}%
+\contentsline {section}{\numberline {3.2}Recovering Distributions from Gaussian RKHS Embeddings}{19}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Super-Samples from Kernel Herding}{20}{section.3.3}%
 \contentsline {chapter}{\chapternumberline {4}Evaluation metrics}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}MAE}{25}{section.4.1}%
 \contentsline {section}{\numberline {4.2}RMSE}{25}{section.4.2}%
@@ -77,10 +77,6 @@
 \contentsline {section}{\numberline {7.4}Kernel methods}{56}{section.7.4}%
 \contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{56}{subsection.7.4.1}%
 \contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{61}{subsection.7.4.2}%
-\contentsline {section}{\numberline {7.5}Kernel density estimation}{63}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Ensemble methods}{63}{section.7.6}%
-\contentsline {section}{\numberline {7.7}DMLP}{64}{section.7.7}%
-\contentsline {section}{\numberline {7.8}DeepAR}{64}{section.7.8}%
 \contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{65}{chapter.8}%
 \contentsline {section}{\numberline {8.1}GEFCom2014}{65}{section.8.1}%
 \contentsline {chapter}{\chapternumberline {9}Implementation}{67}{chapter.9}%
@@ -94,21 +90,20 @@
 \contentsline {chapter}{List of Symbols}{71}{section*.35}%
 \contentsline {appendix}{\chapternumberline {A}Appendix}{75}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Feature Map Normalization}{75}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Cross validation}{75}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Quantile regressor extensive comparison}{75}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Boston housing dataset}{75}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Abalone dataset}{77}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Vehicle dataset}{78}{subsection.A.3.3}%
-\contentsline {section}{\numberline {A.4}Cross validation}{79}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}K-fold cross validation}{79}{subsection.A.4.1}%
-\contentsline {subsection}{\numberline {A.4.2}Gridsearch}{79}{subsection.A.4.2}%
-\contentsline {subsection}{\numberline {A.4.3}Randomized search}{79}{subsection.A.4.3}%
-\contentsline {subsection}{\numberline {A.4.4}Halving gridsearch}{80}{subsection.A.4.4}%
-\contentsline {subsection}{\numberline {A.4.5}Cross validation for time series data}{80}{subsection.A.4.5}%
-\contentsline {section}{\numberline {A.5}Kernel methods best practices}{80}{section.A.5}%
-\contentsline {subsection}{\numberline {A.5.1}Data normalization}{81}{subsection.A.5.1}%
-\contentsline {subsection}{\numberline {A.5.2}Data compression}{82}{subsection.A.5.2}%
+\contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{75}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Boston housing dataset}{75}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Abalone dataset}{77}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}Vehicle dataset}{78}{subsection.A.2.3}%
+\contentsline {section}{\numberline {A.3}Cross validation}{79}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}K-fold cross validation}{79}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Gridsearch}{79}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Randomized search}{79}{subsection.A.3.3}%
+\contentsline {subsection}{\numberline {A.3.4}Halving gridsearch}{80}{subsection.A.3.4}%
+\contentsline {subsection}{\numberline {A.3.5}Cross validation for time series data}{80}{subsection.A.3.5}%
+\contentsline {section}{\numberline {A.4}Kernel methods best practices}{80}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Data normalization}{81}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Data compression}{82}{subsection.A.4.2}%
 \contentsline {subsubsection}{Nystrom decomposition}{83}{section*.49}%
 \contentsline {subsubsection}{Pivoted Cholesky decomposition}{83}{section*.50}%
-\contentsline {section}{\numberline {A.6}Src code}{84}{section.A.6}%
+\contentsline {section}{\numberline {A.5}Src code}{84}{section.A.5}%
 \contentsline {chapter}{Bibliography}{85}{appendix*.51}%
