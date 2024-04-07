@@ -33,9 +33,20 @@
 \contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{62}{figure.caption.30}%
 \contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors\relax }}{63}{figure.caption.31}%
 \addvspace {10pt}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Price track\relax }}{66}{figure.caption.35}%
 \addvspace {10pt}
 \addvspace {10pt}
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Multiple linear regression prediction\relax }}{74}{figure.caption.37}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Tbats prediction\relax }}{75}{figure.caption.38}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Prophet prediction\relax }}{75}{figure.caption.39}%
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Prophet v2 prediction\relax }}{76}{figure.caption.40}%
+\contentsline {figure}{\numberline {10.5}{\ignorespaces Seasonalities breakdown\relax }}{76}{figure.caption.41}%
+\contentsline {figure}{\numberline {10.6}{\ignorespaces Prices trend\relax }}{77}{figure.caption.42}%
+\contentsline {figure}{\numberline {10.7}{\ignorespaces K-nearest neighbour regression\relax }}{78}{figure.caption.43}%
+\contentsline {figure}{\numberline {10.8}{\ignorespaces Support vector regression prediction\relax }}{78}{figure.caption.44}%
+\contentsline {figure}{\numberline {10.9}{\ignorespaces Kernel ridge prediction\relax }}{79}{figure.caption.45}%
+\contentsline {figure}{\numberline {10.10}{\ignorespaces Kernel support vector prediction\relax }}{79}{figure.caption.46}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{81}{figure.caption.46}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{81}{figure.caption.47}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{82}{figure.caption.48}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{91}{figure.caption.58}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{91}{figure.caption.59}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{92}{figure.caption.60}%

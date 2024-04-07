@@ -16,14 +16,44 @@ its rationale and how to use it.
 
 - As I explain code scripts go over the test, to 
 explain better my ideas.
-\section{Linear quantile regression}
+
+- Indicate also hyperparameters maybe in each subsection
+
+\section{Point forecasting}
+\subsection{Multiple linear regression}
+For multiple linear regression the one from the \href{https://scikit-learn.org/stable/}{sklearn} library has been used.
+
+\subsection{Tbats}
+Tbats implementation is available at \url{https://github.com/intive-DataScience/tbatsx}.
+In our application we specified as hyperparameters the lenght of seasons; 24 for the daily seasonality and 168 for the weekly seasonality.
+
+\subsection{Prophet}
+The prophet models has been applied by employing the python API provided by Meta \href{https://facebook.github.io/prophet/docs/quick_start.html}{prophet}.
+
+\subsection{K-nearest neighbours}
+The object KNeighborsRegressor of the sklearn module neighbors has been used.
+
+\subsection{Support vector regression}
+The object SVR of the sklearn module svm has been used by specifying the liner kernel.
+
+\subsection{LSTM}
+
+
+\subsection{Kernel ridge regression}
+The object KernelRidge of the sklearn module kernel\_ridge has been used.
+
+\subsection{Kernel support vector regression}
+The object SVR of the sklearn module svm has been used by specifying rbf as the kernel parameter.
+
+\section{Probabilistic forecasting}
+\subsection{Linear quantile regression}
 The implementation of statsmodels.regression.quantile\_regression.QuantReg has been used.
 The model is fitted through iterative reweighted least squares.
-\section{Quantile gradient boosting machine}
+\subsection{Quantile gradient boosting machine}
 The implementation of sklearn.ensemble.GradientBoostingRegressor has been used.
-\section{Quantile forest}
+\subsection{Quantile forest}
 The implementation of quantile\_forest.RandomForestQuantileRegressor has been used. This estimator is compatible with scikit-learn.
-\section{Kernel quantile regression}
+\subsection{Kernel quantile regression}
 Kernel quantile regression had no previously implemented open source library, thus the need of implementing our own version.
 \\
 The scikit-learn team provides a project template for the creation of estimators compatible with scikit-learn functionalities. Therefore, the KQR class is derived from the scikit-learn BaseEstimator and the mixin class RegressorMixin.
@@ -41,5 +71,5 @@ This estimator is compatible with useful scikit-learn in built methods like grid
 \\
 Up to now, there are only two open source implementation of the quantile kernel regression. Nevertheless they are both in R, that is there exists no python, matlab or julia open source implementation. Following are reported the results of a comparative study between our own implementation and the one of the R library kernlab
 % (i guess it is in C or C++ and then binded to R).
-\subsection{Python vs R implementation}
+\subsubsection{Python vs R implementation}
 In this section, a comparison study has been carried out in order to inspect the competitiveness of our implementation with the existing one for the R programming language.
