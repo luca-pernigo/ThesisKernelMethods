@@ -112,6 +112,11 @@ Jan~G De~Gooijer and Rob~J Hyndman.
 \newblock 25 years of time series forecasting.
 \newblock {\em International journal of forecasting}, 22(3):443--473, 2006.
 
+\bibitem{de2011forecasting}
+Alysha~M De~Livera, Rob~J Hyndman, and Ralph~D Snyder.
+\newblock Forecasting time series with complex seasonal patterns using exponential smoothing.
+\newblock {\em Journal of the American statistical association}, 106(496):1513--1527, 2011.
+
 \bibitem{dudek2018probabilistic}
 Grzegorz Dudek.
 \newblock Probabilistic forecasting of electricity prices using kernel regression.

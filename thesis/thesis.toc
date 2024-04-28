@@ -3,131 +3,131 @@
 \contentsline {chapter}{Contents}{iii}{section*.1}%
 \contentsline {chapter}{List of Figures}{1}{section*.2}%
 \contentsline {chapter}{List of Tables}{2}{section*.3}%
-\contentsline {chapter}{\chapternumberline {1}Problem Description}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Motivation}{3}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Point vs probabilistic forecast}{4}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Aims and objectives}{4}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Outline}{4}{section.1.4}%
-\contentsline {chapter}{\chapternumberline {2}Literature Review}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Electricity forecasting classification}{7}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Types}{7}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Forecasting horizons}{8}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Size}{8}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Point vs Probabilistic}{8}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Bibliographic analysis}{9}{section.2.2}%
-\contentsline {section}{\numberline {2.3}EF literature review}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Kernel methods literature review}{15}{section.2.4}%
-\contentsline {chapter}{\chapternumberline {3}Kernel Theory}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Kernel Mean Embedding of Distributions: A Review and Beyond}{17}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}RKHS}{18}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Kernel families}{18}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Recovering Distributions from Gaussian RKHS Embeddings}{19}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Super-Samples from Kernel Herding}{20}{section.3.3}%
-\contentsline {chapter}{\chapternumberline {4}Evaluation metrics}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}MAE}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}RMSE}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}MAPE}{26}{section.4.3}%
-\contentsline {section}{\numberline {4.4}RMSPE}{26}{section.4.4}%
-\contentsline {section}{\numberline {4.5}MASE}{26}{section.4.5}%
-\contentsline {section}{\numberline {4.6}RMSSE}{26}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Pinball}{26}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Winkler}{27}{section.4.8}%
-\contentsline {section}{\numberline {4.9}CRPS}{27}{section.4.9}%
-\contentsline {section}{\numberline {4.10}PIT}{29}{section.4.10}%
-\contentsline {chapter}{\chapternumberline {5}The Energy Market}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Electricity distribution network}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Electricity markets}{32}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}The marketplace}{32}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}How auctions work}{33}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Day ahead}{33}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Intraday}{33}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Price peaks}{33}{subsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.2.6}Negative prices}{34}{subsection.5.2.6}%
-\contentsline {subsection}{\numberline {5.2.7}Nodal and Zonal Pricing}{34}{subsection.5.2.7}%
-\contentsline {section}{\numberline {5.3}Smart grids}{34}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Renewables}{34}{section.5.4}%
-\contentsline {chapter}{\chapternumberline {6}Point forecasting}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Multiple linear regression}{37}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Autoregressive models}{37}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}ARIMA}{38}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}ARIMAX}{38}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}SARIMA and SARIMAX}{38}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Generalized additive model}{39}{section.6.3}%
-\contentsline {section}{\numberline {6.4}K-nearest neighbours regression}{39}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Support vector regression}{39}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Artificial neural networks}{41}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}MLP}{41}{subsection.6.6.1}%
-\contentsline {subsubsection}{NARX}{42}{section*.21}%
-\contentsline {subsection}{\numberline {6.6.2}LSTM}{42}{subsection.6.6.2}%
-\contentsline {section}{\numberline {6.7}Kernel methods}{43}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Kernel ridge regression}{43}{subsection.6.7.1}%
-\contentsline {subsection}{\numberline {6.7.2}Kernel support vector regression}{45}{subsection.6.7.2}%
-\contentsline {chapter}{\chapternumberline {7}Probabilistic forecasting}{49}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Quantile regression}{49}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Quantile forest}{50}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Decision trees}{50}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Bootstrap}{52}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Bagging}{53}{subsection.7.2.3}%
-\contentsline {subsection}{\numberline {7.2.4}Random forest}{53}{subsection.7.2.4}%
-\contentsline {subsection}{\numberline {7.2.5}Quantile forest}{53}{subsection.7.2.5}%
-\contentsline {section}{\numberline {7.3}Quantile gradient boosting machine}{55}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Boosting}{55}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Boosted trees}{55}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Gradient boosting}{55}{subsection.7.3.3}%
-\contentsline {section}{\numberline {7.4}Kernel methods}{56}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{56}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{61}{subsection.7.4.2}%
-\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{65}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Dataset}{65}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Price track}{66}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Load track}{66}{subsection.8.1.2}%
-\contentsline {section}{\numberline {8.2}ETL}{67}{section.8.2}%
-\contentsline {section}{\numberline {8.3}EDA}{67}{section.8.3}%
-\contentsline {chapter}{\chapternumberline {9}Implementation}{69}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Point forecasting}{69}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Multiple linear regression}{69}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Tbats}{69}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}Prophet}{69}{subsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.1.4}K-nearest neighbours}{70}{subsection.9.1.4}%
-\contentsline {subsection}{\numberline {9.1.5}Support vector regression}{70}{subsection.9.1.5}%
-\contentsline {subsection}{\numberline {9.1.6}LSTM}{70}{subsection.9.1.6}%
-\contentsline {subsection}{\numberline {9.1.7}Kernel ridge regression}{70}{subsection.9.1.7}%
-\contentsline {subsection}{\numberline {9.1.8}Kernel support vector regression}{70}{subsection.9.1.8}%
-\contentsline {section}{\numberline {9.2}Probabilistic forecasting}{70}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Linear quantile regression}{70}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Quantile gradient boosting machine}{70}{subsection.9.2.2}%
-\contentsline {subsection}{\numberline {9.2.3}Quantile forest}{70}{subsection.9.2.3}%
-\contentsline {subsection}{\numberline {9.2.4}Kernel quantile regression}{70}{subsection.9.2.4}%
-\contentsline {subsubsection}{Python vs R implementation}{71}{section*.36}%
-\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{73}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Point forecasting}{73}{section.10.1}%
-\contentsline {subsection}{\numberline {10.1.1}Multiple linear regression}{74}{subsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.1.2}Tbats}{74}{subsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.1.3}Prophet}{74}{subsection.10.1.3}%
-\contentsline {subsection}{\numberline {10.1.4}K-nearest neighbours}{76}{subsection.10.1.4}%
-\contentsline {subsection}{\numberline {10.1.5}Support vector regression}{76}{subsection.10.1.5}%
-\contentsline {subsection}{\numberline {10.1.6}LSTM}{77}{subsection.10.1.6}%
-\contentsline {subsection}{\numberline {10.1.7}Kernel ridge regression}{77}{subsection.10.1.7}%
-\contentsline {subsection}{\numberline {10.1.8}Kernel support vector regression}{77}{subsection.10.1.8}%
-\contentsline {subsection}{\numberline {10.1.9}Results}{78}{subsection.10.1.9}%
-\contentsline {section}{\numberline {10.2}Quantile forecasting}{79}{section.10.2}%
-\contentsline {chapter}{List of Symbols}{81}{section*.47}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{85}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{85}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{85}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Boston housing dataset}{85}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Abalone dataset}{87}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}Vehicle dataset}{88}{subsection.A.2.3}%
-\contentsline {section}{\numberline {A.3}Cross validation}{89}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}K-fold cross validation}{89}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Gridsearch}{89}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Randomized search}{89}{subsection.A.3.3}%
-\contentsline {subsection}{\numberline {A.3.4}Halving gridsearch}{90}{subsection.A.3.4}%
-\contentsline {subsection}{\numberline {A.3.5}Cross validation for time series data}{90}{subsection.A.3.5}%
-\contentsline {section}{\numberline {A.4}Kernel methods best practices}{90}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}Data normalization}{91}{subsection.A.4.1}%
-\contentsline {subsection}{\numberline {A.4.2}Data compression}{92}{subsection.A.4.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{93}{section*.61}%
-\contentsline {subsubsection}{Pivoted Cholesky decomposition}{93}{section*.62}%
-\contentsline {section}{\numberline {A.5}Src code}{94}{section.A.5}%
-\contentsline {chapter}{Bibliography}{95}{appendix*.63}%
+\contentsline {chapter}{\chapternumberline {1}Problem Description}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Point vs probabilistic forecast}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Aims and objectives}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Outline}{6}{section.1.4}%
+\contentsline {chapter}{\chapternumberline {2}Literature Review}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Electricity forecasting classification}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Types}{9}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Forecasting horizons}{10}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Size}{10}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Point vs Probabilistic}{10}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Bibliographic analysis}{11}{section.2.2}%
+\contentsline {section}{\numberline {2.3}EF literature review}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Kernel methods literature review}{17}{section.2.4}%
+\contentsline {chapter}{\chapternumberline {3}Kernel Theory}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Kernel Mean Embedding of Distributions: A Review and Beyond}{19}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}RKHS}{20}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Kernel families}{20}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Recovering Distributions from Gaussian RKHS Embeddings}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Super-Samples from Kernel Herding}{22}{section.3.3}%
+\contentsline {chapter}{\chapternumberline {4}Evaluation metrics}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}MAE}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}RMSE}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}MAPE}{28}{section.4.3}%
+\contentsline {section}{\numberline {4.4}RMSPE}{28}{section.4.4}%
+\contentsline {section}{\numberline {4.5}MASE}{28}{section.4.5}%
+\contentsline {section}{\numberline {4.6}RMSSE}{28}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Pinball}{28}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Winkler}{29}{section.4.8}%
+\contentsline {section}{\numberline {4.9}CRPS}{29}{section.4.9}%
+\contentsline {section}{\numberline {4.10}PIT}{31}{section.4.10}%
+\contentsline {chapter}{\chapternumberline {5}The Energy Market}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Electricity distribution network}{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Electricity markets}{34}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}The marketplace}{34}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}How auctions work}{35}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Day ahead}{35}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Intraday}{35}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Price peaks}{35}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Negative prices}{36}{subsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.2.7}Nodal and Zonal Pricing}{36}{subsection.5.2.7}%
+\contentsline {section}{\numberline {5.3}Smart grids}{36}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Renewables}{36}{section.5.4}%
+\contentsline {chapter}{\chapternumberline {6}Point forecasting}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Multiple linear regression}{39}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Autoregressive models}{39}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}ARIMA}{40}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}ARIMAX}{40}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}SARIMA and SARIMAX}{40}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}Generalized additive model}{41}{section.6.3}%
+\contentsline {section}{\numberline {6.4}K-nearest neighbours regression}{41}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Support vector regression}{41}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Artificial neural networks}{43}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}MLP}{43}{subsection.6.6.1}%
+\contentsline {subsubsection}{NARX}{44}{section*.21}%
+\contentsline {subsection}{\numberline {6.6.2}LSTM}{44}{subsection.6.6.2}%
+\contentsline {section}{\numberline {6.7}Kernel methods}{45}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Kernel ridge regression}{45}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Kernel support vector regression}{47}{subsection.6.7.2}%
+\contentsline {chapter}{\chapternumberline {7}Probabilistic forecasting}{51}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Quantile regression}{51}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Quantile forest}{52}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Decision trees}{52}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Bootstrap}{54}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Bagging}{55}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Random forest}{55}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}Quantile forest}{55}{subsection.7.2.5}%
+\contentsline {section}{\numberline {7.3}Quantile gradient boosting machine}{57}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Boosting}{57}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Boosted trees}{57}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Gradient boosting}{57}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}Kernel methods}{58}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Kernel quantile regression}{58}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Weather quantiles}{63}{subsection.7.4.2}%
+\contentsline {chapter}{\chapternumberline {8}Exploratory Analysis and Data ETL}{67}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Dataset}{67}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Price track}{68}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Load track}{68}{subsection.8.1.2}%
+\contentsline {section}{\numberline {8.2}ETL}{69}{section.8.2}%
+\contentsline {section}{\numberline {8.3}EDA}{69}{section.8.3}%
+\contentsline {chapter}{\chapternumberline {9}Implementation}{71}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Point forecasting}{71}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Multiple linear regression}{71}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Tbats}{71}{subsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.1.3}Prophet}{71}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}K-nearest neighbours}{72}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}Support vector regression}{72}{subsection.9.1.5}%
+\contentsline {subsection}{\numberline {9.1.6}LSTM}{72}{subsection.9.1.6}%
+\contentsline {subsection}{\numberline {9.1.7}Kernel ridge regression}{72}{subsection.9.1.7}%
+\contentsline {subsection}{\numberline {9.1.8}Kernel support vector regression}{72}{subsection.9.1.8}%
+\contentsline {section}{\numberline {9.2}Probabilistic forecasting}{72}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Linear quantile regression}{72}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Quantile gradient boosting machine}{72}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Quantile forest}{72}{subsection.9.2.3}%
+\contentsline {subsection}{\numberline {9.2.4}Kernel quantile regression}{72}{subsection.9.2.4}%
+\contentsline {subsubsection}{Python vs R implementation}{73}{section*.36}%
+\contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{75}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Point forecasting}{75}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Multiple linear regression}{75}{subsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.1.2}Tbats}{76}{subsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.1.3}Prophet}{77}{subsection.10.1.3}%
+\contentsline {subsection}{\numberline {10.1.4}K-nearest neighbours}{77}{subsection.10.1.4}%
+\contentsline {subsection}{\numberline {10.1.5}Support vector regression}{78}{subsection.10.1.5}%
+\contentsline {subsection}{\numberline {10.1.6}LSTM}{78}{subsection.10.1.6}%
+\contentsline {subsection}{\numberline {10.1.7}Kernel ridge regression}{79}{subsection.10.1.7}%
+\contentsline {subsection}{\numberline {10.1.8}Kernel support vector regression}{80}{subsection.10.1.8}%
+\contentsline {subsection}{\numberline {10.1.9}Results}{81}{subsection.10.1.9}%
+\contentsline {section}{\numberline {10.2}Probabilistic forecasting}{83}{section.10.2}%
+\contentsline {chapter}{List of Symbols}{85}{section*.51}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{89}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature Map Normalization}{89}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{89}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Boston housing dataset}{89}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Abalone dataset}{91}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}Vehicle dataset}{92}{subsection.A.2.3}%
+\contentsline {section}{\numberline {A.3}Cross validation}{93}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}K-fold cross validation}{93}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Gridsearch}{93}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Randomized search}{93}{subsection.A.3.3}%
+\contentsline {subsection}{\numberline {A.3.4}Halving gridsearch}{94}{subsection.A.3.4}%
+\contentsline {subsection}{\numberline {A.3.5}Cross validation for time series data}{94}{subsection.A.3.5}%
+\contentsline {section}{\numberline {A.4}Kernel methods best practices}{94}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Data normalization}{95}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Data compression}{96}{subsection.A.4.2}%
+\contentsline {subsubsection}{Nystrom decomposition}{97}{section*.65}%
+\contentsline {subsubsection}{Pivoted Cholesky decomposition}{97}{section*.66}%
+\contentsline {section}{\numberline {A.5}Src code}{98}{section.A.5}%
+\contentsline {chapter}{Bibliography}{99}{appendix*.67}%
