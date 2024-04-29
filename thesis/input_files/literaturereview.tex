@@ -67,58 +67,58 @@ In order to refer to the most relevant source in the field, EF outlets have been
 \\
 \section{Electricity forecasting literature review}
 To get started a few review articles were collected in order to understand conventions, best practicies and terminology of the EF community.
-Weron \cite{EPF_review} reviews the state of the art for electricity price forecasting; beside analysing complexity of available solutions, strenghts and weaknesses it also stresses the need for objective comparative EPF studies. Specifically, it advocates for studies using similar datasets, using the same error evaluation metric and statistical testing model's outperformance.
-Hong et al. \cite{prob_elf} discusses the state of the art in probabilistic electric load forecasting; it differentiates between techniques and methodologies. With techniques they refer to a family of models, like multiple linear regression or artificial neural networks. On the other hand, methodologies consist of general frameworks that can be incorporated into any method, for example variable selection mechanisms. Also this paper stresses the need for some guidelines to standardize research in the field.
-Nowotarski et al. \cite{nowotarski} also carried out a thorough review of probabilistic forecasting.
+Weron \cite{EPF_review} reviews the state of the art for electricity price forecasting. Besides analysing complexity of available solutions, strenghts and weaknesses it also stresses the need for objective comparative EPF studies. Specifically, it advocates for studies using similar datasets, using the same error evaluation metric and statistical testing model's outperformance.
+Hong et al. \cite{prob_elf} discusses the state of the art in probabilistic electric load forecasting. It differentiates between techniques and methodologies. With techniques they refer to a family of models, like multiple linear regression or artificial neural networks. On the other hand, methodologies consist of general frameworks that can be incorporated into any method, for example variable selection mechanisms. Also this paper stresses the need for some guidelines to standardize research in the field.
+Nowotarski et al. \cite{nowotarski} carried out a review of probabilistic forecasting.
 Weron et al. \cite{lago} offer a set of best practices when forecasting electricity prices in order to have a common framework to evaluate and compare future research.
 Zhang et al. \cite{zhang2014review} considers state of the art methods in wind power probabilistic forecasting and describes current challenges and possible future developments.
-Ziel et al. \cite{ziel2018probabilistic} provides detailed tables, grouping research papers by the time dimension \ref{cls_time} and objective \ref{cls_pp} and reporting dataset, model and accuracy 
+Ziel et al. \cite{ziel2018probabilistic} provides detailed tables, groups research papers by the time dimension and objective and reports dataset, model and accuracy 
 measures adopted.
-David et al. \cite{david2016probabilistic} adopt a combination of ARMA and GARCH in probabilistic forecasts of solar irradiance. Furthermore, they propose a recursive framework for parameter estimation.
+David et al. \cite{david2016probabilistic} adopt a combination of autoregressive moving average (ARMA) and generalized autoregressive conditional heteroskedasticity (GARCH) in probabilistic forecasts of solar irradiance. Furthermore, they propose a recursive framework for parameter estimation.
 De Gooijer \cite{de200625} reviews 25 years of time series forecasting for the period 1990-2005, highlighting the most influential works.
-He et al. \cite{he2022cooperative} models  multistep wind speed probabilistic forecasting by mixing CEEDMAN, LASSO and QRNN. In this work, CEEMDAN is used to decompose the wind speed time series, LASSO compresses high dimensional features, QR is used for obtaining quantile forecasts, finally KDE converts quantile forecasts into density estimates.
-Wan et al. \cite{wan2016direct} proposes a combination of QR and ELM to generate non parametric probabilistic forecasts of wind generation.
+He et al. \cite{he2022cooperative} models  multistep wind speed probabilistic forecasting by mixing complementary ensemble empirical mode decomposition(CEEDMAN), least absolute shrinkage and selection operator (LASSO) and quantile regression (QR). In this work, CEEMDAN is used to decompose the wind speed time series, LASSO compresses high dimensional features, QR is used for obtaining quantile forecasts, finally kernel density estimation (KDE) converts quantile forecasts into density estimates.
+Wan et al. \cite{wan2016direct} proposes a combination of QR and extreme learning machine (ELM) to generate non parametric probabilistic forecasts of wind generation.
 Zhang et al. \cite{zhang2019wind} forecasts wind speed by adopting QRMGM, which is a combination of QR with a minimal gated memory network.
 Hyndman et al. \cite{hyndman1996estimating} explains kernel estimator of conditional density, analyses its asymptotic behaviour and covers an application for the daily temperatures of Melbourne.
 Kaur et al. \cite{kaur2022energy} carries out a comparative study of techniques spanning ideas from statistic and artificial intelligence.
 Van der Meer et al. \cite{van2018review} provides another thorough anlysis of the probabilistic forecasting realm by covering recent advances and identifying research gaps.
 The IEEE Power and Energy Society provides also insightful lecture notes on probabilistic energy forecasting methodologies,
 implementations, and applications \cite{gm_22}.
-Marcjasz et al. \cite{probablistic_electricity_forecast2} uses distributional neural networks to create probabilistic forecasts for the day ahead electricity prices in the german market.
-Nowotarski et al. \cite{nowotarski2015computing} introduce a method for constructing PI and call it quantile regression averaging. Their idea is weighting a set of models' prediction such that the pinball loss of the weighted model is minimized. The observed results is that QRA performed better compared to twelve individual models.
-Arora et al. \cite{arora2016forecasting} focus on modelling electricity smart meter data by proposing a non parametric probabilistic technique based on kernel density estimation and conditional kernel density estimation \cite{rosenblatt1969conditional} \cite{hyndman1996estimating}. Their conclusion is that kernel density methods are competitive against exponential smoothing when forecasting residential data. Conversely, exponential smoothing has still an edge in predicting SME data.
-Zhang et al. \cite{zhang2020probability} introduce a framework based on quantile regression and kernel density estimation in the context of short term wind forecasting. The proposed methods behave well compared to an ARMA(1,1).
-Haben et al. \cite{haben2018short} analyses a variety of techniques in terms of both probabilistic and point forecasting, within this study they focus on load forecasting at the low voltage level.
+Marcjasz et al. \cite{probablistic_electricity_forecast2} uses distributional neural networks to create probabilistic forecasts for the day ahead electricity prices in the German market.
+Nowotarski et al. \cite{nowotarski2015computing} introduce a method for constructing prediction intervals (PI) and call it quantile regression averaging. Their idea is weighting a set of model predictions such that the pinball loss of the weighted model is minimized. The observed result is that QRA performed better compared to twelve individual models.
+Arora et al. \cite{arora2016forecasting} focus on modelling electricity smart meter data by proposing a non parametric probabilistic technique based on kernel density estimation and conditional kernel density estimation \cite{rosenblatt1969conditional, hyndman1996estimating}. Their conclusion is that kernel density methods are competitive against exponential smoothing when forecasting residential data. Conversely, exponential smoothing has still an edge in predicting small to medium-sized enterprises data (SMEs).
+Zhang et al. \cite{zhang2020probability} introduce a framework based on quantile regression and kernel density estimation in the context of short term wind forecasting. The proposed methods behave well compared to an autoregressive ARMA(1,1) model.
+Haben et al. \cite{haben2018short} analyses a variety of techniques in terms of both probabilistic and point forecasting. Within this study, they focus on load forecasting at the low voltage level.
 %Metrics Start
 Koochali et al. \cite{koochali2022random} reviews various existing methods for assessing probabilistic forecast models and discusses their advantages and disadvantages.
 Matheson et al. \cite{matheson1976scoring} develops classes of scoring rules for continuous probability distributions.
 Gneiting et al. \cite{gneiting2007strictly}
-provides a thorough overview of the theory of proper scoring rules for interval and density forecasts.
+provides a thorough overview of the theory of scoring rules for interval and density forecasts.
 Gneiting et al. \cite{gneiting2014probabilistic}
-covers theory and techniques state of the art in probabilistic forecasting.
+covers theory and state of the art techniques in probabilistic forecasting.
 %Metrics End
-Zhang et al \cite{zhang2020two} proposes a two stage bootstrap sampling framework for probabilistic load forecasting. They test it for different regression models such as RF, GBRT, linear regression, and LSSVM regression.
+Zhang et al \cite{zhang2020two} proposes a two stage bootstrap sampling framework for probabilistic load forecasting. They test it for different regression models such as random forest (RF), gradient boosting regression tree (GBRT), linear regression, and least squares support vector regression (LSSVM).
 Jónsson et al. \cite{jonsson2014predictive}
 introduces a density model for the day ahead market extending the adaptive QR framework of \cite{moller2008time} by modelling the tails of the predicted density with an exponential distribution.
-Fatema et al. \cite{fatema2023probabilistic} considers gaussian process regression for point forecasting and prediction intervals prediction. Then, it inputs PI to KDE in order to estimate a probability distribution.
-Dudek \cite{dudek2018probabilistic} proposes a probabilistic forecasting model based on the Nadaraya Watson estimator \cite{nadaraya1964estimating} \cite{watson1964smooth}.
-Huurman et al. \cite{huurman2012power} surveys the predictive power of weather variables for electricity prices in the danish market. Their empirical results suggest that weather is central for point forecasting day ahead prices. The opposite conclusion are drawn for density forecasting.
+Fatema et al. \cite{fatema2023probabilistic} considers Gaussian process regression for point forecasting and prediction intervals prediction. Then, it inputs prediction intervals to kernel density estimation in order to estimate a probability distribution.
+Dudek \cite{dudek2018probabilistic} proposes a probabilistic forecasting model based on the Nadaraya Watson estimator \cite{nadaraya1964estimating,watson1964smooth}.
+Huurman et al. \cite{huurman2012power} surveys the predictive power of weather variables for electricity prices in the Danish market. Their empirical results suggest that weather is central for point forecasting day ahead prices. The opposite conclusion are drawn for density forecasting.
 \\
-Lately, the idea of combining forecasts has gained popularity in the forecasting community \cite{forecasting_big}; in the literature, combined forecasts are called ensemble \cite{gneiting_weather_ensemble}.
+Lately, the idea of combining forecasts has gained popularity in the forecasting community \cite{forecasting_big}. In the literature, combined forecasts are called ensemble \cite{gneiting_weather_ensemble}.
 Experimental results have shown ensemble methods to outperform their component forecasts.
-Note that, the more the errors of the combined models are not correlated the more we can benefit from ensembles.
-It is also worth noting that older and simpler methods are still valuable (in combination with other models or on their own); these being less subject to overfitting than complex models.
+Note that, the more the errors of the combined models are not correlated, the more we can benefit from ensembles.
+It is also worth noting that older and simpler methods are still valuable (in combination with other models or on their own). These being less subject to overfitting than complex models.
 \\
 %GEFCom2012
-A major step forward in EF was the creation of the global energy forecasting competition (GEFCom) in 2012. Until then, no formal benchmarking process or data pool was established and new publications rarely reproduced the results from work done by others. Addressing these issues was the motivation behind the creation of GEFCom by the IEEE working group on energy forecasting. The EF field was positively affected by this competition; a number of ideas were tested on the same setting with only the best ones being published and it also contributed bridging the gap between industry practice and academic research. GEFCom 2012 had two tracks; the former about hierarchical load forecasting, the latter about wind power forecasting, see \cite{hong2014global} for a comprehensive review. 
+A major step forward in EF was the creation of the global energy forecasting competition (GEFCom) in 2012. Until then, no formal benchmarking process or data pool was established and new publications rarely reproduced the results from work done by others. Addressing these issues was the motivation behind the creation of GEFCom by the IEEE working group on energy forecasting. The EF field was positively affected by this competition. A number of ideas were tested on the same setting with only the best ones being published and it also contributed bridging the gap between industry practice and academic research. GEFCom 2012 had two tracks; the former about hierarchical load forecasting, the latter about wind power forecasting, see \cite{hong2014global} for a comprehensive review. 
 \\
 %GEFCom 2014
 The focus of GEFCom 2014 was on probabilistic forecasting, Hong et al. \cite{hong2016probabilistic} discusses the problem tracks, the data and the winning methods.
 In this paragraph some of the winning entries of the 2014 GEFCom edition are discussed.
-Xie et al. \cite{xie2016gefcom2014} propose a two stage approach; in the first stage they use MLR to build a point forecast, then in the second stage they try different approaches for modelling the MLR residuals, among other they tried ESM, ANN and ARIMA. 
-Maciejowska et al. \cite{maciejowska2016hybrid} proposes a new probabilistic model extending the idea of QRA \cite{nowotarski2015computing}.
-Haben et al. \cite{haben2016hybrid} mixes CKD and QR in their competition entry.
-Gaillard et al. \cite{gaillard2016additive} \cite{gaillardasemi} combines quantile regression with generalized additive models \cite{hastie2017generalized}.
+Xie et al. \cite{xie2016gefcom2014} propose a two stage approach; in the first stage they use multiple linear regression (MLR) to build a point forecast, then in the second stage they try different approaches for modelling the MLR residuals, among other they tried exponential smoothing (ESM), artificial neural networks (ANN) and autoregressive integrated moving average (ARIMA). 
+Maciejowska et al. \cite{maciejowska2016hybrid} proposes a new probabilistic model extending the idea of quantile regression averaging (QRA) \cite{nowotarski2015computing}.
+Haben et al. \cite{haben2016hybrid} mixes conditional kernel density (CKD) and quantile regression in their competition entry.
+Gaillard et al. \cite{gaillard2016additive,gaillardasemi} combines quantile regression with generalized additive models \cite{hastie2017generalized}.
 Ziel et al. \cite{ziel2016lasso} estimates an AR model through the LASSO \cite{tibshirani1996regression} instead of the standard OLS.
 \\
 %GEFCom 2017
@@ -126,10 +126,10 @@ The last GEFCom was held in 2017, its focus was providing probabilistic load for
 \\
 \\
 A couple of considerations can be drawn from the above literature review.
-As already pointed out, the EF field is characterized by heterogeneity in its forecasting techniques; methods come from statisitics, mathematics, econometrics, electrical engineering and the artificial intelligence communities.
+The EF field is characterized by heterogeneity in its forecasting techniques; methods come from statisitics, mathematics, econometrics, electrical engineering and the artificial intelligence communities.
 \\
 Every paper uses different datasets.
-Therefore, it is not possible to compare directly results from one paper to another without implementing the paper specific algorithms and then applying them to your dataset. An additional hurdle is that some datasets are not freely accessible.
+Therefore, it is not possible to compare directly results from one paper to another without implementing the paper specific algorithms and then applying them to the respective dataset. An additional hurdle is that some datasets are not freely accessible.
 \\
 Thus, a good understanding of state of the art methods in EF is required to carry out a rigorous comparison between methods.
 That is why the following chapters are devoted to summarising the mathematical theory underlying such techniques.

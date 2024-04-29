@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  29 APR 2024 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  29 APR 2024 13:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1312,13 +1312,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--68
  []
 
 [10 <./images/time_2.png>] [11 <./images/epf_evolution1.jpg> <./images/point_vs_prob.jpg>]
-
-LaTeX Warning: Reference `cls_time' on page 12 undefined on input line 75.
-
-
-LaTeX Warning: Reference `cls_pp' on page 12 undefined on input line 75.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 69--136
 
  []
@@ -1937,22 +1930,19 @@ Overfull \hbox (15.84378pt too wide) in paragraph at lines 28--30
 \openout8 = `thesis.lot'.
 
  (./thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7B2637B63C366D0CE6614BB1E8F05343;21153.
  ) 
 Here is how much of TeX's memory you used:
- 36843 strings out of 476025
- 630215 string characters out of 5790017
+ 36841 strings out of 476025
+ 630197 string characters out of 5790017
  1888388 words of memory out of 5000000
- 55586 multiletter control sequences out of 15000+600000
+ 55584 multiletter control sequences out of 15000+600000
  578694 words of font info for 468 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,14n,131p,2312b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (115 pages, 9032680 bytes).
+Output written on thesis.pdf (115 pages, 9032904 bytes).
 PDF statistics:
  2062 PDF objects out of 2073 (max. 8388607)
  1797 compressed objects within 18 object streams
