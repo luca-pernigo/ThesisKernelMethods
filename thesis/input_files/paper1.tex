@@ -9,36 +9,36 @@ Many algorithms use the inner product as similarity measure between data instanc
 The idea behind kernel methods is to apply a non-linear transformation $\phi$ to the data $x$ 
 in order to get a more powerful non linear similarity measure.
 \begin{align*}
-\phi(x):\mathcal{X} &\longrightarrow \mathcal{F}
+\phi(x)\colon \mathcal{X} &\to \mathcal{F}
     \\
-    x&\mapsto \phi(x)
+    x&\to \phi(x)
 \end{align*}
 
 
-Then we take the inner product in the high dimensional space $\mathcal{F}$ mapped by $\phi(x)$.
+We take the inner product in the high dimensional space $\mathcal{F}$ mapped by $\phi(x)$, i.e.\
 \\
 \begin{align*}
 k(x,x'):=&\langle \phi(x), \phi(x') \rangle_{\mathcal{F}}
 \end{align*}
 \\
-$\phi(x)$ is referred as feature map while $k$ as kernel function.
+where $\phi(x)$ is referred to as feature map while $k$ is the kernel function.
 \\
 Therefore, we can kernelize any algorithm involving a dot product by substituting $\langle x, x' \rangle_{\mathcal{X}}$ with $\langle \phi(x), \phi(x') \rangle_{\mathcal{F}}$
 \\
-One would expect constructing the feature maps explicitly and then evaluate their inner product in $\mathcal{F}$ to be computationally expensive, and indeed it is. However, we do not have to explicitly perform such calculations. This is because of the existence of the kernel trick.
+One would expect constructing the feature maps explicitly and then evaluating their inner product in $\mathcal{F}$ to be computationally expensive, and indeed it is. However, we do not have to explicitly perform such calculations. This is because of the kernel trick.
 To illustrate the idea behind the kernel trick consider the following example. 
 \\
-Suppose $x \in \mathbb{R}^2$ and assume to select $\phi(x)=(x_{1}^{2},x_{2}^{2},\sqrt{2}x_{1}x_{2})$, then the inner product in the feature space is $x_{1}^{2}x_{1}^{'2},x_{2}^{2}x_{2}^{'2}+2x_{1}x_{2}x'_{1}x'_{2}$.
+Suppose $x \in \mathbb{R}^2$ and assume $\phi(x)=(x_{1}^{2},x_{2}^{2},\sqrt{2}x_{1}x_{2})$, then the inner product in the feature space is $x_{1}^{2}x_{1}^{'2},x_{2}^{2}x_{2}^{'2}+2x_{1}x_{2}x'_{1}x'_{2}$.
 Notice that this is the same of $\langle \phi(x), \phi(x') \rangle$; thus the kernel trick consists of just using $k(x,x')=:(x^Tx')^2$.
 
 
 
-\subsection{RKHS}
-Following are the definitions that make up the basis for the theory of kernel methods.
+\subsection{Reproducing kernel hilbert space}
+Subsequently we introduce the definitions that make up the basis for the theory of kernel methods.
 
 
 \begin{definition}
-    A sequence $\{v_n\}_{n=1}^{\infty}$ of elements of a normed space $\mathcal{V}$ is a Cauchy sequence if for every $\epsilon>0$, there exist $N=N(\epsilon) \in \mathbf{N}$ such that $\|v_n-v_m\|_{\mathcal{V}}<\epsilon \ \ \forall m,n\geq N$  
+    A sequence $\{v_n\}_{n=1}^{\infty}$ of elements of a normed space $\mathcal{V}$ is a Cauchy sequence if for every $\epsilon>0$, there exist $N=N(\epsilon) \in \mathbb{N}$ such that $\|v_n-v_m\|_{\mathcal{V}}<\epsilon \ \ \forall m,n\geq N$  
 \end{definition}
 
 
@@ -48,31 +48,40 @@ Following are the definitions that make up the basis for the theory of kernel me
 
 
 \begin{definition}
-    A Hilbert space is a vector space $\mathcal{H}$ with an inner product $\langle f, g \rangle$ such that the norm defined by $\|f\|=\sqrt{\langle f, f \rangle}$
+    A Hilbert space is a vector space $\mathcal{H}$ with an inner product $\langle \cdot, \cdot \rangle$ such that the norm defined by $\|f\|=\sqrt{\langle f, f \rangle}$
 turns $\mathcal{H}$ into a complete metric space.
 \end{definition}
 
+
 \begin{definition}
-    RKHS.
-    A Reproducing Kernel Hilbert Space is an Hilbert space with the evaluation functionals $\mathcal{F}_{x}(f):=f(x)$ bounded, i.e. $\forall x \in \mathcal{X}$ there exists some $C>0$ such that $\| \mathcal{F}_{x}(f)\|=\|f(x)\| \leq C \|f\|_{\mathcal{H}} \ \forall f \in \mathcal{H}$
+    Let $(\mathcal{H}, \langle \cdot, \cdot \rangle_\mathcal{H})$ be a Hilbert space of real-valued functions on $\mathcal{X}$. A function $k: \mathcal{X} \times \mathcal{X} \to \mathbb{R}$ is called a reproducing kernel of $\mathcal{H}$ if and only if 
+     \begin{align}
+        k(x, \cdot) \in \mathcal{H} &\quad \text{for all   } x \in \mathcal{X}    \\
+        \langle  h, k(x, \cdot) \rangle_\mathcal{H} = h(x) &\quad \text{for all   } h \in \mathcal{H}, x \in \mathcal{X}
+    \end{align}
 \end{definition}
+   
+% \begin{definition}
+%     RKHS.
+%     A Reproducing Kernel Hilbert Space is a Hilbert space with the evaluation functionals $\mathcal{F}_{x}(f):=f(x)$ bounded, i.e. $\forall x \in \mathcal{X}$ there exists some $C>0$ such that $\| \mathcal{F}_{x}(f)\|=\|f(x)\| \leq C \|f\|_{\mathcal{H}} \ \forall f \in \mathcal{H}$
+% \end{definition}
 
 
 \begin{theorem}
-    Riesz Representation. If $A : \mathcal{H} \rightarrow \mathbf{R}$ is a bounded linear operator in a Hilbert space $\mathcal{H}$ , there exists some $g_{A} \in \mathcal{H}$ such that $A(f) = \langle f,g_A\rangle_\mathcal{H}, \ \forall f \in \mathcal{H}$.
+    [Riesz Representation]. If $A : \mathcal{H} \rightarrow \mathbb{R}$ is a bounded linear operator on a Hilbert space $\mathcal{H}$ , there exists some $g_{A} \in \mathcal{H}$ such that $A(f) = \langle f,g_A\rangle_\mathcal{H}, \ \forall f \in \mathcal{H}$.
 \end{theorem}
 
 
-The Riesz representation theorem results in the following proposition for RKHS.
+The Riesz representation theorem results in the following proposition for reproducing kernel hilbert spaces.
 \begin{proposition}
 For each $x \in \mathcal{X}$ there exists a function $k_{x} \in \mathcal{H}$ such that $\mathcal{F}_{x}(f)=\langle k_{x}, f\rangle_{\mathcal{H}}=f(x)$    
 \end{proposition}
 
-The function $k_{x}$ is the reproducing kernel for the point $x$.
-Furthermore, note that $k_{x}$ is itself a function lying on $\mathcal{X}$
+The function $k_{x}$ is the reproducing kernel evaluated at point $x$.
+Furthermore, note that $k_{x}$ is itself a function lying in it.
 
 \begin{align*}
-    k_{x}(y)=\mathcal{F}_{y}(k_{x})=\langle k_{x}, k_{y}\rangle_{\mathcal{H}=\langle \phi(x), \phi(x)\rangle_{\mathcal{H}}}
+    k_{x}(y)=\mathcal{F}_{y}(k_{x})=\langle k_{x}, k_{y}\rangle_{\mathcal{H}=\langle \phi(x), \phi(y)\rangle_{\mathcal{H}}}
 \end{align*}
 
 
@@ -92,6 +101,13 @@ Table \ref{tab:kernel types} contains popular kernel families in literature and 
        Exponential RBF/Laplacian& $k(x_1,x_2)=e^{-\frac{|x_1-x_2|}{\gamma}}$ &   $\gamma$\\
        Hyperbolic/Sigmoid Kernel &  $k(x_1,x_2)=\tanh(\gamma x_1^\intercal x_2+r)$ &  $\gamma$, r \\
        Periodic &  $k(x_1,x_2)=e^{\frac{-2 sin^2\left(\frac{\pi}{p}|x_1-x_2| \right)}{l^2}} $ &   p, l\\
+       Chi-squared kernel &  $k(x_1,x_2)=e^{-\gamma \sum\limits_i \frac{(x_i - y_i)^2}{x_i+y_i}} $ &   $\gamma$\\
+        Cosine  &  $k(x_1,x_2)=\frac{xy^\intercal}{\|x\|_{L_2}\|y\|_{L_2}}$ &   \\
+       Matern  &  $k(x_1, x_2) =  \frac{1}{\gamma(\nu)2^{\nu-1}}\Bigg(
+        \frac{\sqrt{2\nu}}{l} d(x_1 , x_2 )
+        \Bigg)^\nu K_\nu\Bigg(
+        \frac{\sqrt{2\nu}}{l} d(x_1 , x_2 )\Bigg)$ &  $\gamma, \nu$ \\
+
         \bottomrule
     \end{tabular}
     \label{tab:kernel types}
