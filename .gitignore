@@ -4,7 +4,7 @@ literature\ articles/
 # ignore python packages
 summercode/
 
-# raw data
+# not used data
 data_2/
 
 
