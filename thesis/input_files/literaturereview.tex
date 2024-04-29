@@ -3,40 +3,36 @@
 During the past 25 years %because paper of 2014 says 15, so now it is 25
 a wide range of new ideas have been proposed for electricity point forecasting and for probabilistic forecasting.
 \\
-The field benefitted greatly from the increse of computing power, the greater availability of dataset and the interest in data science.
+The field benefitted greatly from the increse of computing power, the greater availability of data and the interest in data science.
 As a consequence, the forecaster's toolbox has grown in size and complexity.
 \\
-Before delving into the literature review, it is important to make clear that at this point in time there is no superior method. Different solutions may outperform or underperform compared to other techniques depending on the problem settings. Thus, understanding the complexity, strenghts and weaknesses of each method is crucial for fitting the right model to the right setting.
+Before delving into the literature review, we stress that at this point in time there is no superior method. Different solutions may outperform or underperform compared to other techniques depending on the problem settings. Thus, understanding the complexity, strenghts and weaknesses of each method is crucial for fitting the right model to the right setting.
 \\
-Finally, within this research community, it emerged the need of more homogeneity in the choice of the error valuation metrics (section \ref{metrics}), data quality and in the way of comparing model performances \cite{EPF_review}; as a solution, \cite{lago} proposes a checklist to aid evaluating the meaningfulness of new research. Hence, throughout this thesis work, we will stick to the proposed principles and best practices peculiar of the EF field.
+Within this research community, it emerged the need for more homogeneity in the choice of the error valuation metrics (Section \ref{metrics}), data quality and in the way of comparing model performances \cite{EPF_review}. As a solution, \cite{lago} proposes a checklist to aid evaluating the meaningfulness of new research. Throughout this thesis work, we will stick to the proposed principles and best practices peculiar of the EF field.
 %literature review
 
 \section{Electricity forecasting classification}
 Electricity forecasting is a vague term and it is used in the literature to refer to the whole field. Thus, in order to introduce some clarity it is useful to classify the range of EF articles in terms of their core attributes.
-\subsection{Types}
-In the context of energy forecasting, the quantities of most interest are prices (EPF), loads (ELF) and renewables generation (mostly wind and solar).
-
-\subsection{Forecasting horizons}\label{cls_time}
-In terms of forecasting horizons, we can group EF into four major categories: very short term forcasting (VSTF), short term load forecasting (STF), medum term forecasting (MTF) and long term forecasting (LTF). Consensus in the literature is to use as cut off horizons one day, two weeks and three years respectilvely \cite{hong_phd}; see \ref{fig:time} for a visualisation. 
+\\
+In the context of energy forecasting, the quantities of most interest are electricity prices (EPF), electricity loads (ELF) and renewables generation (mostly wind and solar).
+\\
+In terms of forecasting horizons, we can group EF into four major categories: very short term forcasting (VSTF), short term load forecasting (STF), medium term forecasting (MTF) and long term forecasting (LTF). Consensus in the literature is to use one day, two weeks and three years respectilvely \cite{hong_phd} as cut off horizons; see \ref{fig:time} for a visualisation. 
 \begin{figure}
-  \includegraphics[width=\textwidth]{images/time.jpg}
+  \includegraphics[width=\textwidth]{images/time_2.png}
   \caption{Time classsification \cite{prob_elf}}
   \label{fig:time}
 \end{figure}
-
-
-\subsection{Size}
+\\
 Forecasts can either be for the whole target electricity network (system) or for a subset of it (zonal).
-
-\subsection{Point versus Probabilistic}\label{cls_pp}
-Finally, EF literature distinguishes between point and probabilistic forecasts. Each of the two has its advantages and disadvantages; point forecasts are easier to generate and less computationally intensive while probabilistic forecast are more informative. Industry and research efforts have focused primarily on point forcasting. Nevertheless, interest in probabilistic forecasting has risen considerably over the last years due to renewable integration requirements, introduction of smart grids and increased market competitivness.
+\\
+EF literature distinguishes between point and probabilistic forecasts. Each of the two has its advantages and disadvantages. Point forecasts are easier to generate and less computationally intensive while probabilistic forecast are more informative. Industry and research efforts have focused primarily on point forcasting. Nevertheless, interest in probabilistic forecasting has risen considerably over the last years due to renewable integration requirements, introduction of smart grids and increased market competitivness.
 \section{Bibliographic analysis}
 This section presents the results of the bibliometric analysis we performed on March 6th 2024. This survey has been carried out by using the Scopus citation database. For details on the specific queries entered in Scopus, refer to \ref{src_code}.
 \\
 To get started, let us consider the evolution of the EF field over the years. This is visualized in figure \ref{fig:epf_evolution}, with results grouped by category; note, articles prior to the 2000 have been aggregated together due to their small number. Figure \ref{fig:epf_evolution} shows the trend of an increasing interest in EF.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/epf_evolution1.jpg}
-    \caption{Electricity forecasting publications}
+    \caption{Electricity forecasting publications over the past years}
     \label{fig:epf_evolution}
   \end{figure}
 \\
