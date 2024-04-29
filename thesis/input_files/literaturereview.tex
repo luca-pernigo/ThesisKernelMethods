@@ -136,26 +136,26 @@ That is why the following chapters are devoted to summarising the mathematical t
 
 \section{Kernel methods literature review}
 %INTRO KERNEL METHODS E ENERGY PRICE MODELLING
-Kernel methods are a class of algorithms for patter analysis.
+Kernel methods are a class of algorithms for pattern analysis.
 With kernel methods we are able to apply linear methods with predictors in a high dimensional space, without having to explicitly evaluate the involved dot products of the features.
 Throughout this thesis work, we will address the performance of kernel methods in the context of EF.
 \\
 %- Kernel history evolution.
-Their name comes from the german word kern, which translates to core in english. Such term was first used by David Hilbert in his paper on integral equations \cite{hilbert} where he introduced the term of definite kernels. Following, Hilbert's and Schmidt's \cite{schmidt} work lead to the introduction of a new space, the Hilbert space.
+Their name comes from the German word kern, which translates to core in english. Such term was first used by David Hilbert in his paper on integral equations \cite{hilbert} where he introduced the term "definite kernels". Following, Hilbert's and Schmidt's work \cite{schmidt} lead to the introduction of a new space, the Hilbert space.
 In 1909, James Mercer improved Hilbert's work by proposing his theorem \cite{mercer}. This theorem underlies the power of kernel methods, that is the kernel trick.
 In 1938, Schoenberg \cite{schoenberg} developed the mathematical results that allow us to find the kernel associated to a specific feature space metric.
 In 1941, Kolmogorov \cite{kolmogorov} carried out stuides on representing kernel in linear spaces.
-In 1950, Aronszajn \cite{aronszajn} published the first work on RKHS; developing the general method for representing kernels in linear spaces.
+In 1950, Aronszajn \cite{aronszajn} published the first work on reproducing kernel hilbert spaces (RKHS); developing the general method for representing kernels in linear spaces.
 In 1964, Aizerman \cite{aizerman} further improved the theory of RKHS.
 It was in the nineties that theory of kernel methods got popular, particularly in the field of machine learning. Kernels have been used in various different tasks such as SVM \cite{vapnik1} \cite{vapnik2}, Gaussian process classifiers \cite{williams}, spline methods \cite{wahba}, neural networks \cite{poggio} and principal component analysis \cite{pca_scholkopf}.
 Nevertheless kernel methods received very little attention in the specific setting of EF literature.
 \\
-The kernel theory needed for this thesis work is covered in section \ref{kernel_theory}. 
-For an introduction to kernel methods, we referred to \cite{learning_with_kernels} \cite{hofmann2006review}.
+The kernel theory needed for this thesis work is covered in Section \ref{kernel_theory}. 
+For an introduction to kernel methods, we refer to \cite{learning_with_kernels, hofmann2006review}.
 \\
 Kanagawa et Fukumizu introduces to the concept of kernel mean embedding \cite{pmlr}. Muandet et al. \cite{Muandet_2017} surveys established results and new advances in the theory of Hilbert space distribution embeddings. 
 It has to be said that, computing and storing such embeddings becomes prohibitive for large scale settings. Rudi et al. \cite{2022nystrom} proposes an efficient approximation procedure based on the Nyström method \cite{nystrom}, providing also an upper bound for the approximation error.
-Article \cite{supersamples} presents kernel herding; basically, Smola et al. used the kernel trick to extend the herding algorithm to continous spaces. The result is an infinite memory deterministic process that takes in a collection of samples and learns to approximate a pdf.
+Smola et al. \cite{supersamples} presents kernel herding; basically, the authores used the kernel trick to extend the herding algorithm to continous spaces. The result is an infinite memory deterministic process that takes in a collection of samples and learns to approximate a probability density function (PDF).
 \\
 %QUESTO DA VEDERE
 % Particularly extending the idea of \cite{2022nystrom}, where the Nyström approximation is employed in computing the kernel mean embedding, experiments with the Pivoted Cholesky decomposition will be performed.
