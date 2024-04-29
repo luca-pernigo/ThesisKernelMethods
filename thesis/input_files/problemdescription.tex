@@ -11,19 +11,17 @@ Finally, the electricity market has a set of features that make it unique: elect
 \\
 \section{Motivation}
 There are mutliple reasons why the energy sector needs robust forecasting techniques.
-For power market companies, being able to predict prices with a low mean absolute percentage error (MAPE) \ref{mape} results in increased savings \cite{savings}. Furthermore, the adoption of smart meters provides power market companies with a ton of consumer data; this can enable them to better model consumer preferences.
+For power market companies, being able to predict prices with a low mean absolute percentage error (MAPE) \ref{mape} results in increased savings \cite{savings}. Furthermore, the adoption of smart meters provides power market companies with a huge amount of consumer data. This can enable them to better model consumer preferences.
 \\
-Transmission system operators' main goal is to match supply and deman, generally TSO do so by increasing or decreasing the generation supplied. Thus, from their view point forecasting is critical for balancing the electricity netwrok.
-\\
-Probabilistic forecasting may be useful to power producers, traders and consumers in order to improve their decision making process and managing risk(VaR). This holds in particular for traders, because probabilistic forecast enables them to simulate scenarios and carry out stress tests.
-\\
-Other possible applications are: control of storage, demand side response, anomaly detection, network design and planning, simulating inputs and handling missing data.
+Transmission system operators' (TSO) main goal is to match supply and demand, generally TSO do so by increasing or decreasing the generation. Thus, from their point of view forecasting is critical for balancing the electricity netwrok.
+Probabilistic forecasting may be useful to power producers, traders and consumers in order to improve their decision making process and managing risk. This holds in particular for traders, because probabilistic forecasts enables them to simulate scenarios and carry out stress tests.
+Other possible applications include: control of storage, demand side response, anomaly detection, network design and planning, simulating inputs and handling missing data.
 \\
 \section{Point versus probabilistic forecast}
 A distinction has to be made between two types of forecasting approaches: point forecasts and probabilistic forecasts.
-Point prediction, also called deterministic forecasting in the literature, is all about predicting a particular value in time.
-On the other hand, with probabilistic forecasting we aim at predicting either a prediction interval, quantiles or a probability distribution for each point in time. For this reason, probabilistic forecasts are more informative than point forecasts; and this is why the interest of the research community is shifting towards them.
-Note that a probabilistic forecast can be turned into a point forecast by simply taking its expecatation.
+Point prediction, also called deterministic forecasting in the literature \cite{EPF_review}, is all about predicting a particular value in time.
+On the other hand, with probabilistic forecasting we aim at predicting either a prediction interval, quantiles or a probability distribution for each point in time \cite{nowotarski}. For this reason, probabilistic forecasts are more informative than point forecasts. This is why the interest of the research community is shifting towards them.
+A probabilistic forecast can be turned into a point forecast by simply taking its expecatation.
 Alternatively, a probabilistic forecast can be derived from a point one by modeling the residuals of the point prediction.
 
 
