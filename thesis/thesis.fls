@@ -1986,11 +1986,11 @@ INPUT ./images/melbourne_quantile_forest.png
 INPUT images/melbourne_quantile_forest.png
 INPUT ./images/melbourne_quantile_forest.png
 INPUT ./images/melbourne_quantile_forest.png
-INPUT ./images/melborune_kernel_quantile_regression.png
-INPUT ./images/melborune_kernel_quantile_regression.png
-INPUT images/melborune_kernel_quantile_regression.png
-INPUT ./images/melborune_kernel_quantile_regression.png
-INPUT ./images/melborune_kernel_quantile_regression.png
+INPUT ./images/melbourne_kernel_quantile_regression.png
+INPUT ./images/melbourne_kernel_quantile_regression.png
+INPUT images/melbourne_kernel_quantile_regression.png
+INPUT ./images/melbourne_kernel_quantile_regression.png
+INPUT ./images/melbourne_kernel_quantile_regression.png
 INPUT ./input_files/data_exploratory.tex
 INPUT input_files/data_exploratory.tex
 INPUT ./input_files/data_exploratory.tex
