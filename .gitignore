@@ -4,6 +4,7 @@ literature\ articles/
 # ignore python packages
 summercode/
 
-# dataset_applications/
+# raw data
+data_2/
 
 
