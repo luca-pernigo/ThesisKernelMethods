@@ -106,6 +106,7 @@
 \contentsline {subsection}{\numberline {10.1.8}Kernel support vector regression}{80}{subsection.10.1.8}%
 \contentsline {subsection}{\numberline {10.1.9}Results}{81}{subsection.10.1.9}%
 \contentsline {section}{\numberline {10.2}Probabilistic forecasting}{83}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Conclusions}{83}{section.10.3}%
 \contentsline {chapter}{List of Symbols}{85}{section*.50}%
 \contentsline {appendix}{\chapternumberline {A}Appendix}{89}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Feature map normalization}{89}{section.A.1}%
