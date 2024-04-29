@@ -5,7 +5,7 @@
 \contentsline {chapter}{List of Tables}{2}{section*.3}%
 \contentsline {chapter}{\chapternumberline {1}Problem Description}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Point vs probabilistic forecast}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Point versus probabilistic forecast}{6}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Aims and objectives}{6}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Outline}{6}{section.1.4}%
 \contentsline {chapter}{\chapternumberline {2}Literature Review}{9}{chapter.2}%
@@ -13,27 +13,27 @@
 \contentsline {subsection}{\numberline {2.1.1}Types}{9}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Forecasting horizons}{10}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Size}{10}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Point vs Probabilistic}{10}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.4}Point versus Probabilistic}{10}{subsection.2.1.4}%
 \contentsline {section}{\numberline {2.2}Bibliographic analysis}{11}{section.2.2}%
-\contentsline {section}{\numberline {2.3}EF literature review}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Electricity forecasting literature review}{14}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Kernel methods literature review}{17}{section.2.4}%
 \contentsline {chapter}{\chapternumberline {3}Kernel Theory}{19}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Kernel Mean Embedding of Distributions: A Review and Beyond}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Kernel mean embedding of distributions: A review and beyond}{19}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}RKHS}{20}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Kernel families}{20}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Recovering Distributions from Gaussian RKHS Embeddings}{21}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Super-Samples from Kernel Herding}{22}{section.3.3}%
+\contentsline {section}{\numberline {3.2}Recovering distributions from Gaussian RKHS embeddings}{21}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Super samples from kernel herding}{22}{section.3.3}%
 \contentsline {chapter}{\chapternumberline {4}Evaluation metrics}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}MAE}{27}{section.4.1}%
-\contentsline {section}{\numberline {4.2}RMSE}{27}{section.4.2}%
-\contentsline {section}{\numberline {4.3}MAPE}{28}{section.4.3}%
-\contentsline {section}{\numberline {4.4}RMSPE}{28}{section.4.4}%
-\contentsline {section}{\numberline {4.5}MASE}{28}{section.4.5}%
-\contentsline {section}{\numberline {4.6}RMSSE}{28}{section.4.6}%
+\contentsline {section}{\numberline {4.1}Mean absolute error}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Root mean squared error}{27}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Mean absolute percentage error}{28}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Root mean squared percentage error}{28}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Mean absolute scaled error}{28}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Root mean squared scaled error}{28}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Pinball}{28}{section.4.7}%
 \contentsline {section}{\numberline {4.8}Winkler}{29}{section.4.8}%
-\contentsline {section}{\numberline {4.9}CRPS}{29}{section.4.9}%
-\contentsline {section}{\numberline {4.10}PIT}{31}{section.4.10}%
+\contentsline {section}{\numberline {4.9}Continous ranked probability score}{29}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Probability integral transform}{31}{section.4.10}%
 \contentsline {chapter}{\chapternumberline {5}The Energy Market}{33}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Electricity distribution network}{33}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Electricity markets}{34}{section.5.2}%
@@ -43,22 +43,21 @@
 \contentsline {subsection}{\numberline {5.2.4}Intraday}{35}{subsection.5.2.4}%
 \contentsline {subsection}{\numberline {5.2.5}Price peaks}{35}{subsection.5.2.5}%
 \contentsline {subsection}{\numberline {5.2.6}Negative prices}{36}{subsection.5.2.6}%
-\contentsline {subsection}{\numberline {5.2.7}Nodal and Zonal Pricing}{36}{subsection.5.2.7}%
+\contentsline {subsection}{\numberline {5.2.7}Nodal and zonal pricing}{36}{subsection.5.2.7}%
 \contentsline {section}{\numberline {5.3}Smart grids}{36}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Renewables}{36}{section.5.4}%
 \contentsline {chapter}{\chapternumberline {6}Point forecasting}{39}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Multiple linear regression}{39}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Autoregressive models}{39}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}ARIMA}{40}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}ARIMAX}{40}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}SARIMA and SARIMAX}{40}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.1}Autoregressive integrated moving average}{40}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Autoregressive integrated moving average with exogenous variables}{40}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Seasonal autoregressive integrated moving average and Seasonal autoregressive integrated moving average with exogenous variables}{40}{subsection.6.2.3}%
 \contentsline {section}{\numberline {6.3}Generalized additive model}{41}{section.6.3}%
 \contentsline {section}{\numberline {6.4}K-nearest neighbours regression}{41}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Support vector regression}{41}{section.6.5}%
 \contentsline {section}{\numberline {6.6}Artificial neural networks}{43}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}MLP}{43}{subsection.6.6.1}%
-\contentsline {subsubsection}{NARX}{44}{section*.21}%
-\contentsline {subsection}{\numberline {6.6.2}LSTM}{44}{subsection.6.6.2}%
+\contentsline {subsection}{\numberline {6.6.1}Multilayer perceptrons}{43}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Long short term memory}{44}{subsection.6.6.2}%
 \contentsline {section}{\numberline {6.7}Kernel methods}{45}{section.6.7}%
 \contentsline {subsection}{\numberline {6.7.1}Kernel ridge regression}{45}{subsection.6.7.1}%
 \contentsline {subsection}{\numberline {6.7.2}Kernel support vector regression}{47}{subsection.6.7.2}%
@@ -98,22 +97,22 @@
 \contentsline {subsection}{\numberline {9.2.2}Quantile gradient boosting machine}{72}{subsection.9.2.2}%
 \contentsline {subsection}{\numberline {9.2.3}Quantile forest}{72}{subsection.9.2.3}%
 \contentsline {subsection}{\numberline {9.2.4}Kernel quantile regression}{72}{subsection.9.2.4}%
-\contentsline {subsubsection}{Python vs R implementation}{73}{section*.36}%
+\contentsline {subsubsection}{Python versus R implementation}{73}{section*.35}%
 \contentsline {chapter}{\chapternumberline {10}Experiments Analysis}{75}{chapter.10}%
 \contentsline {section}{\numberline {10.1}Point forecasting}{75}{section.10.1}%
 \contentsline {subsection}{\numberline {10.1.1}Multiple linear regression}{75}{subsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.1.2}Tbats}{76}{subsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.1.3}Prophet}{77}{subsection.10.1.3}%
+\contentsline {subsection}{\numberline {10.1.2}Trigonometric seasonality Box-Cox transformation ARMA errors trend and seasonal components}{76}{subsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.1.3}Prophet}{76}{subsection.10.1.3}%
 \contentsline {subsection}{\numberline {10.1.4}K-nearest neighbours}{77}{subsection.10.1.4}%
 \contentsline {subsection}{\numberline {10.1.5}Support vector regression}{78}{subsection.10.1.5}%
-\contentsline {subsection}{\numberline {10.1.6}LSTM}{78}{subsection.10.1.6}%
+\contentsline {subsection}{\numberline {10.1.6}Long short term memory}{78}{subsection.10.1.6}%
 \contentsline {subsection}{\numberline {10.1.7}Kernel ridge regression}{79}{subsection.10.1.7}%
 \contentsline {subsection}{\numberline {10.1.8}Kernel support vector regression}{80}{subsection.10.1.8}%
 \contentsline {subsection}{\numberline {10.1.9}Results}{81}{subsection.10.1.9}%
 \contentsline {section}{\numberline {10.2}Probabilistic forecasting}{83}{section.10.2}%
-\contentsline {chapter}{List of Symbols}{85}{section*.51}%
+\contentsline {chapter}{List of Symbols}{85}{section*.50}%
 \contentsline {appendix}{\chapternumberline {A}Appendix}{89}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature Map Normalization}{89}{section.A.1}%
+\contentsline {section}{\numberline {A.1}Feature map normalization}{89}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{89}{section.A.2}%
 \contentsline {subsection}{\numberline {A.2.1}Boston housing dataset}{89}{subsection.A.2.1}%
 \contentsline {subsection}{\numberline {A.2.2}Abalone dataset}{91}{subsection.A.2.2}%
@@ -127,7 +126,7 @@
 \contentsline {section}{\numberline {A.4}Kernel methods best practices}{94}{section.A.4}%
 \contentsline {subsection}{\numberline {A.4.1}Data normalization}{95}{subsection.A.4.1}%
 \contentsline {subsection}{\numberline {A.4.2}Data compression}{96}{subsection.A.4.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{97}{section*.65}%
-\contentsline {subsubsection}{Pivoted Cholesky decomposition}{97}{section*.66}%
-\contentsline {section}{\numberline {A.5}Src code}{98}{section.A.5}%
-\contentsline {chapter}{Bibliography}{99}{appendix*.67}%
+\contentsline {subsubsection}{Nystrom decomposition}{97}{section*.64}%
+\contentsline {subsubsection}{Pivoted Cholesky decomposition}{97}{section*.65}%
+\contentsline {section}{\numberline {A.5}Source code}{98}{section.A.5}%
+\contentsline {chapter}{Bibliography}{99}{appendix*.66}%

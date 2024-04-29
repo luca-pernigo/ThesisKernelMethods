@@ -7,22 +7,22 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {7.1}{\ignorespaces Pinball loss Melbourne data\relax }}{63}{table.caption.32}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Pinball loss quantile-wise Melbourne data\relax }}{64}{table.caption.33}%
-\contentsline {table}{\numberline {7.3}{\ignorespaces MAE Melbourne data\relax }}{64}{table.caption.34}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Pinball loss Melbourne data\relax }}{63}{table.caption.31}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Pinball loss quantile-wise Melbourne data\relax }}{64}{table.caption.32}%
+\contentsline {table}{\numberline {7.3}{\ignorespaces Mean absolute error Melbourne data\relax }}{64}{table.caption.33}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {10.1}{\ignorespaces RMSE scores\relax }}{82}{table.caption.48}%
-\contentsline {table}{\numberline {10.2}{\ignorespaces MAE scores\relax }}{82}{table.caption.49}%
-\contentsline {table}{\numberline {10.3}{\ignorespaces MAPE scores\relax }}{83}{table.caption.50}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Root mean squared errors\relax }}{82}{table.caption.47}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Mean absolute errors\relax }}{82}{table.caption.48}%
+\contentsline {table}{\numberline {10.3}{\ignorespaces Mean absolute percentage errors\relax }}{83}{table.caption.49}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {A.1}{\ignorespaces Pinball loss Boston housing data\relax }}{90}{table.caption.53}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Pinball loss quantile-wise Boston data\relax }}{90}{table.caption.54}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces MAE Boston data\relax }}{90}{table.caption.55}%
-\contentsline {table}{\numberline {A.4}{\ignorespaces Pinball loss Abalone data\relax }}{91}{table.caption.56}%
-\contentsline {table}{\numberline {A.5}{\ignorespaces Pinball loss quantile-wise Abalone data\relax }}{91}{table.caption.57}%
-\contentsline {table}{\numberline {A.6}{\ignorespaces MAE Abalone data\relax }}{91}{table.caption.58}%
-\contentsline {table}{\numberline {A.7}{\ignorespaces Pinball loss Vehicle data\relax }}{92}{table.caption.59}%
-\contentsline {table}{\numberline {A.8}{\ignorespaces Pinball loss quantile-wise Vehicle data\relax }}{92}{table.caption.60}%
-\contentsline {table}{\numberline {A.9}{\ignorespaces MAE Vehicle data\relax }}{92}{table.caption.61}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Pinball loss Boston housing data\relax }}{90}{table.caption.52}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Pinball loss quantile-wise Boston data\relax }}{90}{table.caption.53}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Mean absolute error Boston data\relax }}{90}{table.caption.54}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces Pinball loss Abalone data\relax }}{91}{table.caption.55}%
+\contentsline {table}{\numberline {A.5}{\ignorespaces Pinball loss quantile-wise Abalone data\relax }}{91}{table.caption.56}%
+\contentsline {table}{\numberline {A.6}{\ignorespaces Mean absolute error Abalone data\relax }}{91}{table.caption.57}%
+\contentsline {table}{\numberline {A.7}{\ignorespaces Pinball loss Vehicle data\relax }}{92}{table.caption.58}%
+\contentsline {table}{\numberline {A.8}{\ignorespaces Pinball loss quantile-wise Vehicle data\relax }}{92}{table.caption.59}%
+\contentsline {table}{\numberline {A.9}{\ignorespaces Mean absolute error Vehicle data\relax }}{92}{table.caption.60}%

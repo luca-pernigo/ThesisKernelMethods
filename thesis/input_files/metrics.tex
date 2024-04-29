@@ -1,38 +1,38 @@
 Proper evaluation methods guide researchers in choosing the model that best fits their needs; thus, this chapter is dedicated to the most common evaluation metrics adopted by academics in the field of EF. Error metrics and measures vary depending on wethter we are concerned with point or probabilistic forecasts. Additionally, note that the latter can take different forms which therefore requires different measures.
-\section{MAE}\label{mae}
+\section{Mean absolute error}\label{mae}
 Consider the time series with actual values given by $\mathrm{L}=(L_{n+1}, L_{n+2},\dots, L_{n+h})$
-and its h step ahead point forecast $\mathrm{\hat{L}}=(\hat{L}_{n+1}, \hat{L}_{n+2},\dots, \hat{L}_{n+h})$ the mean absolute error is defined as
+and its h step ahead point forecast $\mathrm{\hat{L}}=(\hat{L}_{n+1}, \hat{L}_{n+2},\dots, \hat{L}_{n+h})$ the mean absolute error (MAE) is defined as
 \begin{definition}
     $\mathrm{MAE}(\mathrm{L},\mathrm{\hat{L}})=\frac{1}{h}\|\mathrm{L}-\mathrm{\hat{L}}\|_{1}=\frac{1}{h}\sum\limits_{k=1}^{h}|L_{n+k}-\hat{L}_{n+k}|$
 \end{definition}
 
-\section{RMSE}\label{rmse}
+\section{Root mean squared error}\label{rmse}
 \begin{definition}
     $\mathrm{RMSE(\mathrm{L}, \mathrm{\hat{L}})}=\frac{1}{\sqrt{h}}\|\mathrm{L}-\mathrm{\hat{L}}\|_{2}=\sqrt{\frac{\sum\limits_{k=1}^{h}(L_{n+k}- \hat{L}_{n+k})^2}{h}}$
 \end{definition}
 
-MAE and RMSE posses the useful property of being expressed in the same units of the data thus enabling meaningful comparisons.
-However, a drawback of such measures is that we cannot use them to compare accuracy between time series wich have different magnitudes. For instance, a day ahead error of 1kWh is negligible when considering a daily demand of 100kWn while the same error is considerably big when daily demand is 2kWh. This consideration leads to relative accuracy scores, between those the MAPE is by far the most popular.
+MAE and root mean squared error (RMSE) posses the useful property of being expressed in the same units of the data thus enabling meaningful comparisons.
+However, a drawback of such measures is that we cannot use them to compare accuracy between time series wich have different magnitudes. For instance, a day ahead error of 1kWh is negligible when considering a daily demand of 100kWn while the same error is considerably big when daily demand is 2kWh. This consideration leads to relative accuracy scores, between those the mean absolute percentage error (MAPE) is by far the most popular.
 
 
-\section{MAPE}\label{mape}. 
+\section{Mean absolute percentage error}\label{mape}. 
 \begin{definition}
     $\mathrm{MAPE}(\mathrm{L},\mathrm{\hat{L}})=\frac{100}{h}\sum\limits_{k=1}^{h}\frac{|L_{n+k}-\hat{L}_{n+k}|}{|L_{n+k}|}$
 \end{definition}
 
-\section{RMSPE}\label{rmspe}
+\section{Root mean squared percentage error}\label{rmspe}
 \begin{definition}
     $\mathrm{RMSPE}(\mathrm{L},\mathrm{\hat{L}})=100\cdot\sqrt{\frac{1}{h}\sum\limits_{k=1}^{h} \left(\frac{|L_{n+k}-\hat{L}_{n+k}|}{|L_{n+k}|}\right)^2}$
 \end{definition}
-Note, MAPE and RMSPE may not be appropriate for series which have zero or very small values, for example, electricity demand at the household level; the result is a large score regardless of the absolute errors.
+Note, MAPE and root mean squared percentage error (RMSPE) may not be appropriate for series which have zero or very small values, for example, electricity demand at the household level; the result is a large score regardless of the absolute errors.
 Scaled errors constitute a robust family of scores.
-\section{MASE}\label{mase}
+\section{Mean absolute scaled error}\label{mase}
 \begin{definition}
     $\mathrm{MASE}(\mathrm{L},\mathrm{\hat{L}})=\frac{1}{h}\sum\limits_{k=1}^N\frac{|L_{n+k}-\hat{L}_{n+k}|}{\frac{1}{h-1}\sum\limits_{k=2}^{h}|L_{k}-L_{k-1}|}$
 \end{definition}
 In the denominator we have the error of the naïve/persistence model. 
 In this model, the current demand makes up the prediction for the next time step; that is $\mathrm{\hat{L}^{\mathrm{naive}}}_{n+1}=\mathrm{L}_{n}$.
-\section{RMSSE}\label{rmsse}
+\section{Root mean squared scaled error}\label{rmsse}
 \begin{definition}
     $\mathrm{RMSSE}(\mathrm{L},\mathrm{\hat{L}})=\sqrt{\frac{1}{h}\sum\limits_{k=1}^N\left(\frac{|L_{n+k}-\hat{L}_{n+k}|}{\frac{1}{h-1}\sum\limits_{k=2}^{h}|L_{k}-L_{k-1}|}\right)^2}$
 \end{definition}
@@ -50,7 +50,7 @@ q(L_t-\hat{L}_t,q) & L_t \geq \hat{L}_{t,q}
 The pinball loss is an asymmetric function, it weights its score differently depending on the error sign and on the quantile considered, see \ref{fig:pinball}.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/pinball_loos.png}
-    \caption{Pinball loss with q=0.2 \cite{haben2023core}}
+    \caption{Pinball loss with $q=0.2$ \cite{haben2023core}}
     \label{fig:pinball}
   \end{figure}
 By averaging all the pinball losses over all quantiles and over the whole forecast horizon, we obtain the pinball loss of the probabilistic forecast.
@@ -62,9 +62,9 @@ By averaging all the pinball losses over all quantiles and over the whole foreca
         \delta+2(L{t}-Upp_{t})/\alpha & L_{t} \geq Upp_{t}
     \end{cases}$
 \end{definition}
-Where delta is the PI width, that is $\delta=Upp_t-Low_t$. This score penalizes observations falling outside the PI and rewards narrow PI.
-\section{CRPS}
-The continous ranked probability score measures the differece between the estimated cumulative distribution $\hat{F}$ and the empirical Cdf.
+Where delta is the prediction interval (PI) width, that is $\delta=Upp_t-Low_t$. This score penalizes observations falling outside the PI and rewards narrow PI.
+\section{Continous ranked probability score}
+The continous ranked probability score (CRPS) measures the differece between the estimated cumulative distribution $\hat{F}$ and the empirical Cdf.
 \begin{definition}\label{def_crps}
     $\mathrm{CRPS}(L, \hat{F})=\int\limits_{-\infty}^{\infty}\left(\hat{F}(x)-\mathbb{1}(x-L) \right)^2 dx$
 \end{definition}
@@ -103,8 +103,8 @@ Putting everything together we have obtained an alternative way of computing the
     \int\limits_{-\infty}^{\infty}\left(\hat{F}(x)-\mathbb{1}(x-L) \right)^2 dx=\mathbb{E}(|X_1-L|)-\frac{1}{2}\mathbb{E}(|X_1-X_2|)
 \end{equation}
 \\
-\section{PIT}
-The probability integral transform is a method to assess visually the quality of probabilistic forecasts. PIT is obtained by applying a cdf $F$ to your data; if applying such cdf to the data results in a uniform distributed PIT then $F$ is a valid prediction. If not, $F$ is not the suited cdf for the considered data. Figure \ref{fig:pit} provides an example, applying the true cdf results in a well calibrated PIT (left). Alternatively, applying a bad cdf results in either a overdispersed (middle) or underdispersed (right) PIT.
+\section{Probability integral transform}
+The probability integral transform (PIT) is a method to assess visually the quality of probabilistic forecasts. PIT is obtained by applying a cdf $F$ to your data; if applying such cdf to the data results in a uniform distributed PIT then $F$ is a valid prediction. If not, $F$ is not the suited cdf for the considered data. Figure \ref{fig:pit} provides an example, applying the true cdf results in a well calibrated PIT (left). Alternatively, applying a bad cdf results in either a overdispersed (middle) or underdispersed (right) PIT.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/pit.png}
     \caption{PIT types \cite{haben2023core}}

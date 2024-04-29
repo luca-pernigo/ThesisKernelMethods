@@ -35,7 +35,7 @@ Basically, stationarity means that the distribution of any subsequence of random
 \\
 Therefore, checking stationarity is a crucial step in applying this class of models. %(unit root tests)
 Furthermore, should the time series be non stationary, we have to convert it to a stationary one by a combination of either differencing, detrending and/or log transforming it.
-\subsection{ARIMA}
+\subsection{Autoregressive integrated moving average}
 ARIMA(p,d,q) models are of the form
 \begin{equation}
     \hat{L}_N=\sum\limits_{i=1}^{p}\phi_i L_{N-i}^{(d)}+\sum\limits_{j=1}^{q}\theta_j \epsilon_{N-j}+\epsilon_N
@@ -53,12 +53,12 @@ The order p is identified by taking the lags at which the sample partial autocor
 In the same way, the order q is estimated by considering the sample autocorrelation function of the observed time series. Finally, we compare ARIMA models with different p,d,q (in a neighbourhood of the identified orders) and choose the ones minimising either AIC or BIC criteria. 
 % Notice, models are obtained through the maximum likelihood estimation framework.
 
-\subsection{ARIMAX}
+\subsection{Autoregressive integrated moving average with exogenous variables}
 ARIMAX model adds explanatory variables to our ARIMA, hence, we have
 \begin{equation}
     \hat{L}_N=\sum\limits_{k=1}^{h} \mu_i X_{N-k}+\sum\limits_{i=1}^{p}\phi_i L_{N-i}^{(d)}+\sum\limits_{j=1}^{q}\theta_j \epsilon_{N-j}+ \epsilon_{N}
 \end{equation}
-\subsection{SARIMA and SARIMAX}
+\subsection{Seasonal autoregressive integrated moving average and Seasonal autoregressive integrated moving average with exogenous variables}
 SARIMA and SARIMAX incorporate seasonalities into our time series models. The notation for these models is ARIMA$(p,d,q)(P,D,Q)_m$. The second term $(P,D,Q)_m$ represents the autoregressive structure of the seasonal patter, where $m$ indicates the number of seasonalities of our time series.
 For instance, in modelling series of hourly data with daily periodicity, we would set m=24.
 Writing SARIMA in compact notation we have
@@ -69,7 +69,7 @@ Writing SARIMA in compact notation we have
 
 \section{Generalized additive model}
 % in standard regression the predicted y are normal since error are normal. But if we want to model say a y bernoulli which is the rate of success we can link the domain of bernoulli to that of gaussian with a link function
-Generalized additive models take the form
+Generalized additive models (GAMs) take the form
 \begin{equation}
     g[\mathbb{E}(Y_i)]=\alpha+f_1(X_1)+\dots+f_p(X_p)
 \end{equation}
@@ -173,21 +173,21 @@ Artificial neural networks (ANN) have been successfully applied in the context o
 \end{equation}
 where $\psi$ is an activation function and $w,b$ are the parameters of the neuron; such parameters are typically optimized through gradient descent.
 
-\subsection{MLP}
+\subsection{Multilayer perceptrons}
 In order to cover a richer space of models we can stack neurons, doing so we obtain the so called multi layer perceptrons (MLPs). Hyperparameters of these models are the number of hidden layers, the number of neurons in each of those layers and the kind of activation function.
 Notice, depending on the numbers of layers, MLPs are sometimes referred to as deep neural networks.
 
-\subsubsection{NARX}
-Neural networks that have as inputs past values of the target variable and other independent variables are called nonlinear autoregressive exogenous models.
+% \subsubsection{NARX}
+% Neural networks that have as inputs past values of the target variable and other independent variables are called nonlinear autoregressive exogenous models.
 
-\subsection{LSTM}
+\subsection{Long short term memory}
 % https://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 % https://rtavenar.github.io/deep_book/book_en.pdf
 LSTM extends RNN by introducing a cell state in its layers. In this way, the current state of a cell depndes on the current value $X_t$, on the previous cell activation and on the previous cell state $C_{t-1}$, see figure \ref{fig:lstm_cell} for a visual representation. 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/lstm_cell.png}
-    \caption{LSTM cell}
+    \caption{Long short term memory cell}
     \label{fig:lstm_cell}
 \end{figure}
 The cell is responsible for deciding whether to store/forget long and short term information. To do so, each cell is made of a forget gate, an input gate and an output gate.
