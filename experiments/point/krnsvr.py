@@ -15,7 +15,7 @@ df_train, X_train, y_train=load_train()
 scaler = preprocessing.StandardScaler().fit(X_train)
 X_train_scaled = scaler.transform(X_train)
 
-krnsvr=pickle.load(open('/Users/luca/Desktop/ThesisKernelMethods/gefcom2012_load/krnsvr_load.pkl', 'rb'))
+krnsvr=pickle.load(open('/Users/luca/Desktop/ThesisKernelMethods/experiments/point/models/krnsvr_load.pkl', 'rb'))
 
 for i in range(1,16):
     df_test, X_test, y_test=load_test(i)

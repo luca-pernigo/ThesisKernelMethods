@@ -10,7 +10,7 @@ from point_utility import load_train, load_test, df_fill
 
 df_train, X_train, y_train=load_train()
 
-knn=pickle.load(open("/Users/luca/Desktop/ThesisKernelMethods/dataset_applications/knn.pkl", "rb"))
+knn=pickle.load(open("/Users/luca/Desktop/ThesisKernelMethods/experiments/point/models/knn.pkl", "rb"))
 
 for i in range(1,16):
     df_test, X_test, y_test=load_test(i)

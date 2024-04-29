@@ -11,7 +11,7 @@ from point_utility import load_train, load_test, df_fill
 
 df_train, X_train, y_train=load_train()
 
-tbats=pickle.load(open("/Users/luca/Desktop/ThesisKernelMethods/gefcom2012_load/tbats_load.pkl", "rb"))
+tbats=pickle.load(open("/Users/luca/Desktop/ThesisKernelMethods/experiments/point/models/tbats_load.pkl", "rb"))
 
 for i in range(1,16):
     df_test, X_test, y_test=load_test(i)

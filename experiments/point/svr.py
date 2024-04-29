@@ -19,7 +19,7 @@ X_train_scaled = scaler.transform(X_train)
 
 
 
-svr=pickle.load(open('/Users/luca/Desktop/ThesisKernelMethods/gefcom2012_load/svr_load.pkl', 'rb'))
+svr=pickle.load(open('/Users/luca/Desktop/ThesisKernelMethods/experiments/point/models/svr_load.pkl', 'rb'))
 
 
 for i in range(1,16):

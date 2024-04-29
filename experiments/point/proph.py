@@ -20,7 +20,7 @@ df_train["y"]=np.log(df_train["y"])
 df_train["w_avg2"]=df_train["w_avg"]**2
 
 
-proph=pickle.load(open("/Users/luca/Desktop/ThesisKernelMethods/gefcom2012_load/prophet_v2_load.pkl", "rb"))
+proph=pickle.load(open("/Users/luca/Desktop/ThesisKernelMethods/experiments/point/models/prophet_v2_load.pkl", "rb"))
 
 
 

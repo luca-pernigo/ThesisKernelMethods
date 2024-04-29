@@ -36,10 +36,10 @@ krn_ridge.fit(X_train_scaled, y_train)
 y_hat=krn_ridge.predict(X_test_scaled)
 
 
-pickle.dump(krn_ridge, open('/Users/luca/Desktop/ThesisKernelMethods/gefcom2012_load/krn_ridge_load.pkl', 'wb'))
+pickle.dump(krn_ridge, open('/Users/luca/Desktop/ThesisKernelMethods/experiments/point/models/krn_ridge_load.pkl', 'wb'))
 
 
-krn_ridge=pickle.load(open('/Users/luca/Desktop/ThesisKernelMethods/gefcom2012_load/krn_ridge_load.pkl', 'rb'))
+krn_ridge=pickle.load(open('/Users/luca/Desktop/ThesisKernelMethods/experiments/point/models/krn_ridge_load.pkl', 'rb'))
 
 
 plt.figure(figsize=(15,5))

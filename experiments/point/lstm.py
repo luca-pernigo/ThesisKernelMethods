@@ -34,7 +34,7 @@ X_scaled = scaler_X.fit_transform(X.reshape(-1, X.shape[-1])).reshape(X.shape)
 y_scaled = scaler_y.fit_transform(y.reshape(-1, 1)).reshape(-1)
 
 
-lstm=pickle.load(open('/Users/luca/Desktop/ThesisKernelMethods/dataset_applications/lstm_load.pkl', 'rb'))
+lstm=pickle.load(open('/Users/luca/Desktop/ThesisKernelMethods/experiments/point/models/lstm_load.pkl', 'rb'))
 
 for i in range(1,16):
     df_test,X_test, y_test=load_test(i)
