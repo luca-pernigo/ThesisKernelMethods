@@ -11,7 +11,7 @@
 \contentsline {chapter}{\chapternumberline {2}Literature Review}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Electricity forecasting classification}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Bibliographic analysis}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Electricity forecasting literature review}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Electricity forecasting literature review}{13}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Kernel methods literature review}{16}{section.2.4}%
 \contentsline {chapter}{\chapternumberline {3}Kernel Theory}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Kernel mean embedding of distributions: A review and beyond}{19}{section.3.1}%
