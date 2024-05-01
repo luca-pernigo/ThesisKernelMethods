@@ -32,22 +32,23 @@
 \contentsline {figure}{\numberline {7.5}{\ignorespaces gradient boosting regression\relax }}{58}{figure.caption.28}%
 \contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{64}{figure.caption.29}%
 \contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors\relax }}{65}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Kernel quantile regressors comparison\relax }}{68}{figure.caption.38}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Price track\relax }}{68}{figure.caption.34}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Price track\relax }}{70}{figure.caption.39}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Multiple linear regression prediction\relax }}{76}{figure.caption.36}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Tbats prediction\relax }}{77}{figure.caption.37}%
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Prophet prediction\relax }}{77}{figure.caption.38}%
-\contentsline {figure}{\numberline {10.4}{\ignorespaces Prophet v2 prediction\relax }}{78}{figure.caption.39}%
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Seasonalities breakdown\relax }}{78}{figure.caption.40}%
-\contentsline {figure}{\numberline {10.6}{\ignorespaces Prices trend\relax }}{79}{figure.caption.41}%
-\contentsline {figure}{\numberline {10.7}{\ignorespaces K-nearest neighbour regression\relax }}{80}{figure.caption.42}%
-\contentsline {figure}{\numberline {10.8}{\ignorespaces Support vector regression prediction\relax }}{80}{figure.caption.43}%
-\contentsline {figure}{\numberline {10.9}{\ignorespaces Long short term memory prediction\relax }}{81}{figure.caption.44}%
-\contentsline {figure}{\numberline {10.10}{\ignorespaces Kernel ridge prediction\relax }}{81}{figure.caption.45}%
-\contentsline {figure}{\numberline {10.11}{\ignorespaces Kernel support vector prediction\relax }}{82}{figure.caption.46}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Multiple linear regression prediction\relax }}{78}{figure.caption.41}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Tbats prediction\relax }}{79}{figure.caption.42}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Prophet prediction\relax }}{79}{figure.caption.43}%
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Prophet v2 prediction\relax }}{80}{figure.caption.44}%
+\contentsline {figure}{\numberline {10.5}{\ignorespaces Seasonalities breakdown\relax }}{80}{figure.caption.45}%
+\contentsline {figure}{\numberline {10.6}{\ignorespaces Prices trend\relax }}{81}{figure.caption.46}%
+\contentsline {figure}{\numberline {10.7}{\ignorespaces K-nearest neighbour regression\relax }}{82}{figure.caption.47}%
+\contentsline {figure}{\numberline {10.8}{\ignorespaces Support vector regression prediction\relax }}{82}{figure.caption.48}%
+\contentsline {figure}{\numberline {10.9}{\ignorespaces Long short term memory prediction\relax }}{83}{figure.caption.49}%
+\contentsline {figure}{\numberline {10.10}{\ignorespaces Kernel ridge prediction\relax }}{83}{figure.caption.50}%
+\contentsline {figure}{\numberline {10.11}{\ignorespaces Kernel support vector prediction\relax }}{84}{figure.caption.51}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{95}{figure.caption.61}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{95}{figure.caption.62}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{96}{figure.caption.63}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{97}{figure.caption.66}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{97}{figure.caption.67}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{98}{figure.caption.68}%
