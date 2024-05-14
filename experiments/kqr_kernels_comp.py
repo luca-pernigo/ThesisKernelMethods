@@ -1,4 +1,5 @@
 from kernel_quantile_regression.kqr import KQR
+import math
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -52,7 +53,7 @@ if __name__=="__main__":
     # kernel quantile regression
     qr_krn_models=[]
     y_test_pred_qr_krn=[]
-    ktype="periodic"
+    ktype="matern_2.5"
 
     # gamma=[1e-1,1e-2,1,5,10,20]
     # sigma=[1e-1,1e-2,1,5,10,20]
@@ -73,7 +74,7 @@ if __name__=="__main__":
 
     param_grid_krn = dict(
     C=[0.1,1, 5, 10],
-    p=[0,1,10,0.5]
+    gamma=[1/(1e-1),1/(1e-2),1/(1),1/(5),1/(10),1/(20)]
     )
     krn_blueprint=KQR(alpha=0.5, kernel_type=ktype)
     best_hyperparameters_krn=HalvingRandomSearchCV(
@@ -97,9 +98,13 @@ if __name__=="__main__":
     # mae score
     print("mae", f"{mean_absolute_error(y_test, y_test_pred_qr_krn[5]):.6f}")
 
+    pinball=0
     for i,q in enumerate(quantiles):
         print(f"{mean_pinball_loss(y_test,qr_krn_models[i].predict(X_test), alpha=q):.6f}", "&")
+        pinball+=mean_pinball_loss(y_test,qr_krn_models[i].predict(X_test), alpha=q)
 
+print("total pinball loss: ", pinball)
+print("best hyperparameters: ", best_hyperparameters_krn)
 #    Linear qr     Gbm qr      Quantile forest  Kernel qr rbf gaussian   Laplacian   Rbf gaussian x laplacian
 #    11.278895     10.317612   10.370558        10.031708                10.056884   10.150826       
 
