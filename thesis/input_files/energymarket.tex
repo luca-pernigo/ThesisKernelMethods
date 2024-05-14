@@ -31,7 +31,7 @@ Notice, these functions are not mutually exclusive; that is an entity can provid
 
 
 \subsection{The marketplace}
-We can differential between two kinds of electricity markets: power pools and power exchanges. In power pools, generators bid the prices at which they are willing to produce at different volumes. Then, the market clearing price MCP is determined by intersecting the aggregated supply curve and the estimated demand, left panel figure \ref{fig:pool_vs_echange}. Power pools are created on public initiatives of governments. Conversely, power exchanges are created through private agreements between generators, distributors and traders. This is the model followed by most of european countries.
+We can differentiate between two kinds of electricity markets: power pools and power exchanges. In power pools, generators bid the prices at which they are willing to produce at different volumes. Then, the market clearing price (MCP) is determined by intersecting the aggregated supply curve and the estimated demand, left panel figure \ref{fig:pool_vs_echange}. Power pools are created on public initiatives of governments. Conversely, power exchanges are created through private agreements between generators, distributors and traders. This is the model followed by most of european countries.
 The MCP in power exchanges is determined by the intersection of the aggregate supply curve and the aggregate demand curve, right panel figure \ref{fig:pool_vs_echange}.
 \\
 It is worth to mention the two biggest power exchanges: Epex and NordPool. Epex operates throughout continental europe. NordPool covers the nordinc and baltic contries.
@@ -48,12 +48,13 @@ Moreover, we can differentiate between two popular types of auctions: uniform-pr
 \subsection{How auctions work}
 We can drill down on the auction types, the two most popular forms are day ahead and intraday auctions.
 % https://medium.com/@brandonvar/day-ahead-and-intraday-electricity-markets-1eb121dcab47
-\subsection{Day ahead}
+
+% \subsection{Day ahead}
 The day ahead market is based on a blind auction taking place every day of the year.
 During these auctions, the prices of all hours for the next day are traded.
-Market participants can enter their buy sell orders until order book closure, which takes place at 12.00 PM. After that, the market establishes hourly prices by intersecting the demand and supply curves for each hour of the following day.
+Market participants can enter their buy and sell orders until order book closure, which takes place at 12.00 PM. After that, the market establishes hourly prices by intersecting the demand and supply curves for each hour of the following day.
 
-\subsection{Intraday}
+% \subsection{Intraday}
 The intraday market consists of continous trading 24/7. A trade is executed as soon as a buy and a sell order mathch. Electricity can be traded an hour, half-hour, quarter or also 5 minutes before delivery. This enables market participants to balance their positions in real time, should they need to do so.
 
 \subsection{Price peaks}
@@ -68,8 +69,8 @@ Thus, producers are faced with the decision of either stopping and restarting th
 
 \subsection{Nodal and zonal pricing}
 Grid configuration and physical limits on electricity lines may lead to congestion. Local marginal price (LMP) and zonal market clearing pricing (ZMCP) are two types of pricing schemes utilized to handle it. The former is adopted in EU contries while the latter is used in the US, figure \ref{fig:eu_zonal} and figure \ref{fig:us_local}.
-With ZMCP, prices may differ between zones but are the same within the same area.
-On the other hand, LMP is made up by summing the transmission congestion cost, generation marginal cost and the cost of marginal losses at different buses; buses is where a electicity line or several lines are connected.
+With zonal market clearing pricing, prices may differ between zones but are the same within the same area.
+On the other hand, local marginal price is made up by summing the transmission congestion cost, generation marginal cost and the cost of marginal losses at different buses; buses is where a electicity line or several lines are connected.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/eu_zonal.png}
     \caption{Zonal pricing EU \cite{eu_zonal}}

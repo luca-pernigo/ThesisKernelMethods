@@ -1,4 +1,4 @@
-This chapter covers the theory of the most widely used method for point forecasting in the EF literature. Besides discussing the theory underlying such models, this and the following chapter include also a couple of worked examples in order to get acquainted with the practical applications of these models.
+This chapter covers the theory of the most widely used method for point prediction in the electricity forecasting literature. Besides discussing the theory underlying such models, this and the following chapter include also a couple of worked examples in order to get acquainted with the practical applications of these models.
 
 
 % \section{Exponential smoothing}
@@ -20,9 +20,9 @@ This chapter covers the theory of the most widely used method for point forecast
 
 
 \section{Multiple linear regression}
-Notwithstanding its simplicity, multiple linear regression models are still popular among the EPF literature. Notice, they are not used per se but usually combined with other more advanced models.
+Notwithstanding its simplicity, multiple linear regression models are still popular among the electricity point forecasting literature. Notice, they are not used per se but usually combined with other more advanced models.
 \begin{equation}
-    L_t=\beta X_t + \epsilon_t
+    y_t=\beta X_t + \epsilon_t
 \end{equation}
 
 \section{Autoregressive models}
@@ -30,22 +30,22 @@ Notwithstanding its simplicity, multiple linear regression models are still popu
 % and how the procedure how they are used
 % IMPORTANT: load series is not a stationary series so before applying AR we have to perform stationary tests or differencing steps
 Autoregressive models are a standard approach for modelling time series data.
-Before introducing the popular model in EPF, it is important to remember that autoregressive models assume the time series to be stationary. On the other hand, load and price have been observed to be a non stationary time series. 
+Before introducing the popular model in electricity point forecasting, it is important to remember that autoregressive models assume the time series to be stationary. On the other hand, load and price have been observed to be a non stationary time series. 
 Basically, stationarity means that the distribution of any subsequence of random variables of the stochatic process is invariant to shifts along the time dimension.
-\\
 Therefore, checking stationarity is a crucial step in applying this class of models. %(unit root tests)
 Furthermore, should the time series be non stationary, we have to convert it to a stationary one by a combination of either differencing, detrending and/or log transforming it.
 \subsection{Autoregressive integrated moving average}
 ARIMA(p,d,q) models are of the form
 \begin{equation}
-    \hat{L}_N=\sum\limits_{i=1}^{p}\phi_i L_{N-i}^{(d)}+\sum\limits_{j=1}^{q}\theta_j \epsilon_{N-j}+\epsilon_N
+    \hat{y}_n=\sum\limits_{i=1}^{p}\psi_i y_{n-i}^{(d)}+\sum\limits_{j=1}^{q}\theta_j \epsilon_{n-j}+\epsilon_n
 \end{equation}
-where the parameter p is the order of the AR part, d is the degree of integrated differencing and q is the order of the MA model. $\epsilon_{N-j}$ are the observed errors in the past while the differenced term $L_N^{(d)}$ is defined recursively as $L_N^{(d)}=L_N^{(d-1)}-L_{N-1}^{(d-1)}$.
+where the parameter p is the order of the autoregressive (AR) part, d is the degree of integrated differencing and q is the order of the moving average (MA) model. $\epsilon_{n-j}$ are the observed errors in the past while the differenced term $y_n^{(d)}$ is defined recursively as $y_n^{(d)}=y_n^{(d-1)}-y_{n-1}^{(d-1)}$.
+\\
 ARIMA model are compactly written as
 \begin{equation}
-    \phi(B)\nabla^d y_t=\theta(B)\epsilon_t
+    \psi(B)\nabla^d y_t=\theta(B)\epsilon_t
 \end{equation}
-where $B$ is the backward shift operator, $B^h y_t=y_{t-h}$ and $\phi(B)$ is shorthand for $\phi(B)=1-\phi_1B-\dots-\phi_p B^p$.
+where $B$ is the backward shift operator, $B^h y_t=y_{t-h}$ and $\psi(B)$ is shorthand for $\psi(B)=1-\psi_1B-\dots-\psi_p B^p$.
 Similarly, $\theta(B)=1+\theta_1B+\dots+\theta_q B^q$ and $\nabla_h$ is the lag h differencing operator $\nabla_h y_t=(1-B^h)y_t=y_t-y_{t-h}$
 \\
 The most popular procedure for estimating this class of models is the Box-Jenkins method \cite{box2015time}.
@@ -56,7 +56,7 @@ In the same way, the order q is estimated by considering the sample autocorrelat
 \subsection{Autoregressive integrated moving average with exogenous variables}
 ARIMAX model adds explanatory variables to our ARIMA, hence, we have
 \begin{equation}
-    \hat{L}_N=\sum\limits_{k=1}^{h} \mu_i X_{N-k}+\sum\limits_{i=1}^{p}\phi_i L_{N-i}^{(d)}+\sum\limits_{j=1}^{q}\theta_j \epsilon_{N-j}+ \epsilon_{N}
+    \hat{y}_n=\sum\limits_{k=1}^{h} \mu_i X_{n-k}+\sum\limits_{i=1}^{p}\psi_i y_{n-i}^{(d)}+\sum\limits_{j=1}^{q}\theta_j \epsilon_{n-j}+ \epsilon_{n}
 \end{equation}
 \subsection{Seasonal autoregressive integrated moving average and Seasonal autoregressive integrated moving average with exogenous variables}
 SARIMA and SARIMAX incorporate seasonalities into our time series models. The notation for these models is ARIMA$(p,d,q)(P,D,Q)_m$. The second term $(P,D,Q)_m$ represents the autoregressive structure of the seasonal patter, where $m$ indicates the number of seasonalities of our time series.
@@ -64,9 +64,9 @@ For instance, in modelling series of hourly data with daily periodicity, we woul
 Writing SARIMA in compact notation we have
 \\
 \begin{equation}
-    \phi(B)\Phi(B^s)\nabla^d\nabla_m^Dy_t=\theta(B)\Theta(B^s)\epsilon_t
+    \psi(B)\Psi(B^s)\nabla^d\nabla_m^Dy_t=\theta(B)\Theta(B^s)\epsilon_t
 \end{equation}
-
+where $\Psi$ and $\Theta$ account for the $P$ and $Q$ of the seasonal patter $m$ respectively.
 \section{Generalized additive model}
 % in standard regression the predicted y are normal since error are normal. But if we want to model say a y bernoulli which is the rate of success we can link the domain of bernoulli to that of gaussian with a link function
 Generalized additive models (GAMs) take the form
@@ -87,7 +87,7 @@ This algorithm is made up of two decisions: first, the choice of the metric and 
 \section{Support vector regression}
 Developed at the AT\&T Bell Laboratories by Vapnik et al. \cite{cortes1995support} \cite{vapnik1997support}, support vector machines SVMs are one of the most popular techniques within the field of statistical learning.
 \\
-The goal of support vector regression is finding a function $f(x)$ with at most $\epsilon$ deviation from the actual observed data $y_i$ for every i and as flat as possible. 
+The goal of support vector regression is finding a function $f(x)$ with at most $\epsilon$ deviation from the actual observed data $y_i$ for every $i$ and as flat as possible. 
 Put differently, we would like a model to keep error less than the $\epsilon$ threshold,  
 %https://stats.stackexchange.com/questions/5945/understanding-svm-regression-objective-function-and-flatness
 In standard SVR we have
@@ -124,9 +124,9 @@ The C constant trades off between $\epsilon$ deviation tolerance and flatness of
 We seek to minimise the epsilon insensitive loss function, defined as follows
 \begin{equation}
     \|\xi\|_\epsilon:=\begin{cases}
-        0 \quad& \textrm{if} \ \|\xi\|\leq \epsilon
+        0 \quad& \textrm{if} \ |\xi|\leq \epsilon
         \\
-        \|\xi\|-\epsilon \quad& \textrm{if} \ \|\xi\| > \epsilon
+        |\xi|-\epsilon \quad& \textrm{if} \ |\xi| > \epsilon
     \end{cases}
 \end{equation}
 The model is depicted in figure \ref{fig:svm_simple}. The grey band is called the epsilon insensitive tube, only the points outside it are accounted by the loss function.
@@ -135,7 +135,7 @@ The model is depicted in figure \ref{fig:svm_simple}. The grey band is called th
     \caption{Support vector regression,\cite{learning_with_kernels}}
     \label{fig:svm_simple}
 \end{figure}
-Smola et al. \cite{smola2004tutorial} point out that considering the dual formulation makes our optimisation problem easier to solve. Doing so we have
+Smola et al. \cite{smola2004tutorial} point out that considering the dual formulation makes our optimisation problem easier to solve. Doing so we have the equivalent optimisation problem
 \begin{equation}
     \begin{aligned}
         \max_{\alpha_i, \alpha_i^*} \quad& -\frac{1}{2}\sum\limits_{i,j=1}^n(\alpha_i-\alpha_i^*)(\alpha_j-\alpha_j^*)\langle x_i,x_j\rangle +\sum\limits_{i=1}^n(\alpha_i-\alpha_i^*)(y_i-\epsilon)
@@ -150,7 +150,7 @@ Rearranging the gradient of the lagrangian with respect to $w$, we obtain the so
     w=\sum\limits_{i=1}^n(\alpha_i-\alpha_i^*)x_i
 \end{equation}
 This means that $w$ can be completely described as a linear combination of the training features $x_i$.
-Notice, the complexity of the function representation is independent of the feature space dimensionaly, but depends only on the number of support vectors; that is those point $i$ for which $(\alpha_i-\alpha_i^*)\neq 0$
+Notice, the complexity of the function representation is independent of the feature space dimensionality, but depends only on the number of support vectors; that is those point $i$ for which $(\alpha_i-\alpha_i^*)\neq 0$
 Moreover, we do not needd to compute $w$ explicitly in order to evaluate $f(x)$.
 Furthermore, equation \ref{eq:support vector expansion} implies
 \begin{equation}
@@ -184,7 +184,7 @@ Notice, depending on the numbers of layers, MLPs are sometimes referred to as de
 % https://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 % https://rtavenar.github.io/deep_book/book_en.pdf
-LSTM extends RNN by introducing a cell state in its layers. In this way, the current state of a cell depndes on the current value $X_t$, on the previous cell activation and on the previous cell state $C_{t-1}$, see figure \ref{fig:lstm_cell} for a visual representation. 
+Long short term memory network (LSTM) extends MLP by introducing a cell state in its layers. In this way, the current state of a cell depends on the current value $X_t$, on the previous cell activation and on the previous cell state $C_{t-1}$, see figure \ref{fig:lstm_cell} for a visual representation. 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/lstm_cell.png}
     \caption{Long short term memory cell}
@@ -224,17 +224,19 @@ Finally, we output the current cell state and the tanh activated cell state filt
 
 \section{Kernel methods}
 \subsection{Kernel ridge regression}
-In the setting of kernel ridge regression, we aim at estimating $f$ such that $y=f(x)+\epsilon$. Given a RKHS $\mathcal{H}$, we can estimate$\hat{f}$ by solving the optmisation problem
+In the setting of kernel ridge regression, we aim at estimating $f$ such that $y=f(x)+\epsilon$. Given a RKHS $\mathcal{H}$, we can estimate $\hat{f}$ by solving the optmisation problem
 \begin{equation}\label{eq:kernel ridge}
     \hat{f}=\argmin{f\in \mathcal{H}}\frac{1}{2}\sum\limits_{i=1}^n(y_i-f(x_i))^2+\frac{\lambda}{2}\|f\|_{\mathcal{H}}^2
 \end{equation}
 Before proceeding, we need to introduce the representer theorem.
 \begin{theorem}
-    Let $k:\mathcal{X} \times \mathcal{X} \mapsto R$ on a non empty set $\mathcal{X}$ with corresponding RKHS $\mathcal{H}$ and consider the regularized risk functional $Risk[f]:f \mapsto  E\left((x_{1},y_{1},f(x_{1})),\ldots ,(x_{n},y_{n},f(x_{n}))\right)+g\left(\| f\| \right)$. Then any minimizer of the empirical risk $Risk[f]$ can be represented as $ f^{*}(\cdot )=\sum\limits_{i=1}^{n}\alpha _{i}k(\cdot ,x_{i})$
+    Let $k:\mathcal{X} \times \mathcal{X} \mapsto R$ on a non empty set $\mathcal{X}$ with corresponding RKHS $\mathcal{H}$,
+    a strictly increasing real valued function $g:[0,\infty) \to \mathbb{R}$, and $E:(\mathcal{X}\times \mathbb{R}^2)^n \to \mathbb{R} \cup \{\infty\}$.
+    Consider the regularized risk functional $Risk[f]:f \mapsto  E\left((x_{1},y_{1},f(x_{1})),\ldots, (x_{n},y_{n},f(x_{n}))\right)+g\left(\| f\| \right)$. Then any minimizer of the empirical risk $Risk[f]$ can be represented as $ f^{*}(\cdot )=\sum\limits_{i=1}^{n}\alpha _{i}k(\cdot ,x_{i})$
 \end{theorem}
 
 \begin{proof}
-    By orthogonal projection, any $f \in \mathcal{H}$ can be decomposed as the sum of two functions, with the first lying in the $\textrm{span}\{\phi(x_1),\dots, \phi(x_n)\}$ and the second staying in the orthogonal complement of the former. Letting $\nu$ denote the function from the orthogonal complement, we have
+    By orthogonal projection, any $f \in \mathcal{H}$ can be decomposed as the sum of two functions, with the first lying in the $\textrm{span}\{\phi(x_1),\dots, \phi(x_n)\}$ and the second staying in the orthogonal complement of the former. Letting $\nu$ denote a function from the orthogonal complement, we have
     \begin{equation}
         f=\sum\limits_{i=1}^{n}\alpha_i \phi(x_i)+\nu
     \end{equation}
@@ -247,7 +249,7 @@ Before proceeding, we need to introduce the representer theorem.
         \end{aligned}
     \end{equation}
     This means that setting $\nu=0$ does not affect the evaluation of $f$.
-    Next consider the regularization term; notice, the functional $g$ has to be strictly monotonic in order to penalize more complex functions $f$.
+    Next consider the regularization term; notice, the functional $g$ is defined to be strictly monotonic in order to penalize more complex functions $f$.
     \begin{equation}
         \begin{aligned}
             g(\|f\|)=&g\left(\left\|\sum\limits_{i=1}^n \alpha_i \phi(x_i)+v\right\|_\mathcal{H}\right)
@@ -261,7 +263,7 @@ Before proceeding, we need to introduce the representer theorem.
             \geq &g\left(\sqrt{\left\|\sum\limits_{i=1}^n \alpha_i \phi(x_i)\right\|_{\mathcal{H}}^2}\right)
         \end{aligned}
     \end{equation}
-    Hence, we can conclude that setting $\nu=0$ decreases the second term while the first term is not affected. Thus it follows that any minimizer of the risk functional \ref{eq:kernel ridge} must be of the following form
+    Hence, we can conclude that setting $\nu=0$ decreases the second term while the first term is not affected. Thus it follows that any minimizer of the risk functional of equation \ref{eq:kernel ridge} must be of the following form
     \begin{equation}
         f^*(\cdot)=\sum\limits_{i=1}^n \alpha_i \phi(x_i)=\sum\limits_{i=1}^n \alpha_i k(\cdot, x_i)
     \end{equation}
@@ -272,15 +274,15 @@ Employing the representer theorem, we can rewrite \ref{eq:kernel ridge} in matri
     \begin{aligned}
     \hat{\alpha}=&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2}\left\|\sum _{i=1}^{n}\alpha _{i}k(\cdot ,x_{i})\right\|_{\mathcal{H}}^2
     \\
-    \hat{\alpha}=&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \langle \sum _{i=1}^{n}\alpha _{i}k(\cdot ,x_{i}),\sum _{j=1}^{n}\alpha _{j}k(\cdot ,x_{j})\rangle_{\mathcal{H}}^2
+    =&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \left\langle \sum _{i=1}^{n}\alpha _{i}k(\cdot ,x_{i}),\sum _{j=1}^{n}\alpha _{j}k(\cdot ,x_{j})\right\rangle_{\mathcal{H}}^2
     \\
-    \hat{\alpha}=&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \sum _{i,j=1}^{n}\alpha _{i}\alpha _{j}\langle k(\cdot ,x_{i}),k(\cdot ,x_{j})\rangle_{\mathcal{H}}^2
+    =&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \sum _{i,j=1}^{n}\alpha _{i}\alpha _{j}\langle k(\cdot ,x_{i}),k(\cdot ,x_{j})\rangle_{\mathcal{H}}^2
     \\
-    \hat{\alpha}=&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \sum _{i,j=1}^{n}\alpha _{i}\alpha _{j}K_{ij}
+    =&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \sum _{i,j=1}^{n}\alpha _{i}\alpha _{j}K_{ij}
     \\
-    \hat{\alpha}=&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \alpha^\intercal K \alpha
+    =&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}\|y-K\alpha\|_2^2+\frac{\lambda}{2} \alpha^\intercal K \alpha
     \\
-    \hat{\alpha}=&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}(y-K\alpha)^\intercal (y-K\alpha)+\frac{\lambda}{2} \alpha^\intercal K \alpha
+    =&\argmin{\alpha \in \mathbb{R}^n}\frac{1}{2}(y-K\alpha)^\intercal (y-K\alpha)+\frac{\lambda}{2} \alpha^\intercal K \alpha
 \end{aligned}
 \end{equation}
 
@@ -289,13 +291,13 @@ Setting the gradient to zero
     -Ky+K^2\alpha+\lambda K \alpha\overset{!}{=}0
 \end{equation}
 
-We have then, that $\hat{\alpha}=(K+\lambda I)^{-1}y$. It follows the solution takes the form
+We have then, that $\hat{\alpha}=(K+\lambda I)^{-1}y$. It follows that the solution takes the form
 \begin{equation}
     \hat{f}(\cdot)=\hat{\alpha}K(\cdot,:)
 \end{equation}
 
 \subsection{Kernel support vector regression}
-Support vector regression can be kernelized by swapping the $\mathbb{R}^2$ euclidean dot product of data x with the dot product in the higher feature space F. Doing so, the optimisation problem can be restated as
+Support vector regression (SVR) can be kernelized by swapping the $\mathbb{R}^n$ euclidean dot product of data $x$ with the dot product in the higher feature space $\mathcal{F}$. Doing so, the optimisation problem can be restated as
 \begin{equation}
     \begin{aligned}
         \max_{\alpha_i, \alpha_i^*} \quad& -\frac{1}{2}\sum\limits_{i,j=1}^n(\alpha_i-\alpha_i^*)(\alpha_i-\alpha_i^*)k(x_i, x_j)+\sum\limits_{i=1}^n(y_i-\epsilon)(\alpha_i-\alpha_i^*)
@@ -311,17 +313,17 @@ Our regressor $f$ is then given by
         f(x)=\sum\limits_{i=1}^n(\alpha_i-\alpha_i^*)k(x_i, x)+b
     \end{aligned}
 \end{equation}
-Notice, in this setting $w$ is no longer given explicitly. Additionally, with kernel SVR we seek for the flattest function in the feature space not the input space.
+Notice, in this setting $w$ is no longer given explicitly. Additionally, with kernel support vector regression we seek for the flattest function in the feature space not the input space.
 See figure \ref{fig:svr2} and figure \ref{fig:svr3} for two examples. In the former, we have used a polynomial kernel while in the latter the standard radial basis function kernel.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/svr2.png}
-    \caption{polynomial support vector regression}
+    \caption{Polynomial support vector regression}
     \label{fig:svr2}
 \end{figure}
 
 \begin{figure}
     \includegraphics[width=\textwidth]{images/svr3.png}
-    \caption{rbf support vector regression}
+    \caption{Gaussian RBF support vector regression}
     \label{fig:svr3}
 \end{figure}
 Comparing theese pictures with figure \ref{fig:svr1}, it can be concluded that introducing kernels allows support vector regression to handle the non linearities in the data.
