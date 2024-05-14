@@ -1,9 +1,11 @@
 % Some commands used in this file
+The following section covers the theory of kernel methods and introduces the building blocks of kernel theory.
+% \section{Kernel mean embedding of distributions: A review and beyond}
 
-\section{Kernel mean embedding of distributions: A review and beyond}
 % \href{https://arxiv.org/abs/1605.09522}{
-From this first paper \cite{Muandet_2017}, the notation and terms used in the theory of Reproducing Kernel Hilbert Spaces are summarized.
-\\
+% From this first paper \cite{Muandet_2017}, the notation and terms used in the theory of Reproducing Kernel Hilbert Spaces are summarized.
+% \\
+
 Many algorithms use the inner product as similarity measure between data instances $x, x' \in \mathcal{X}$. However, this inner product spans only the class of linear similarity measures. 
 \\
 The idea behind kernel methods is to apply a non-linear transformation $\phi$ to the data $x$ 
@@ -30,10 +32,31 @@ To illustrate the idea behind the kernel trick consider the following example.
 \\
 Suppose $x \in \mathbb{R}^2$ and assume $\phi(x)=(x_{1}^{2},x_{2}^{2},\sqrt{2}x_{1}x_{2})$, then the inner product in the feature space is $x_{1}^{2}x_{1}^{'2},x_{2}^{2}x_{2}^{'2}+2x_{1}x_{2}x'_{1}x'_{2}$.
 Notice that this is the same of $\langle \phi(x), \phi(x') \rangle$; thus the kernel trick consists of just using $k(x,x')=:(x^Tx')^2$.
+For example
+\\
+$\langle \phi([2,4]),\phi([8,9]) \rangle=  \left[ {\begin{array}{cccc}
+    4 & 16 &     \sqrt{2}\cdot 2 \cdot 4\\
+  \end{array} } \right]
+  \left[ {\begin{array}{cccc}
+    64\\
+    81\\
+    \sqrt{2}\cdot8 \cdot 9
+    \\
+  \end{array} } \right]\\=4\cdot 64 +16\cdot 81 +2 \cdot 2 \cdot 4 \cdot 8 \cdot 9=2704
+$
+\\
+\\
+While $k([2,4], [8,9])=(16+36)^2=2704$
+
+This gives a taste of how powerful kernels are thanks to the kernel trick.
+Indeed, the idea of the the kernel trick can be extended to feature maps
+$\phi$ involving an infinite feature space. In these cases, calculating the
+respective kernel is equal to calculating the inner product between an infinite
+number of features of the data points.
 
 
 
-\subsection{Reproducing kernel hilbert space}
+\section{Theory of kernels}
 Subsequently we introduce the definitions that make up the basis for the theory of kernel methods.
 
 
@@ -53,13 +76,71 @@ turns $\mathcal{H}$ into a complete metric space.
 \end{definition}
 
 
+
+\begin{definition}
+    A function $k: \mathcal{X} \times \mathcal{X} \to \mathbb{R}$ is said to be finitely positive semi definite if it is a symmetric function for which the matrices formed with it are positive semi definite.
+\end{definition}
+
+\begin{theorem}[Characterisation of kernels]    
+    A function 
+    \\
+    $k:\mathcal{X} \times \mathcal{X} \to \mathbb{R}$
+    \\
+    which is either continous or has finite domain can be decomposed as
+    \\
+    $k(x,y)=\langle \phi(x), \phi(y) \rangle_{\mathcal{H}}$
+    \\
+    that is the inner product in the Hilbert space $\mathcal{H}$ in which the features of the arguments $\phi(x)$ lie if and only if $k$ satisfy the positive semi definite property.
+\end{theorem}
+
+Next, we make this characterisation explicit by showing how to construct a feature mapping $\phi$ of a kernel $k$ satisfying the finitely positive semi definite property.
+Let the feature space be the set of functions 
+\\
+$\mathcal{F} =\{ \sum\limits_{i=1}^n a_i k(x_i, \cdot): n \in \mathbb{N}, x_i \in \mathcal{X}, a_i \in \mathbb{R}, i=1,\cdots, n\}$
+This space is clearly closed under addition of functions and scalar multiplication, therefore it is a vector space.
+Letting $f(x)=\sum\limits_{i=1}^n a_i k_i(x_i,x)$ and $g(x)=\sum\limits_{i=1}^m \beta_i k_i(z_i,x)$,  we can introduce an inner product on $\mathcal{F}$ as 
+\\
+$\langle f,g \rangle_{\mathcal{F}}=:\sum\limits_{i=1}^n\sum\limits_{j=1}^m a_i \beta_j k_i(x_i,z_j)=\sum\limits_{i=1}^n a_i g(x_i)= \sum\limits_{j=1}^m \beta_j f(z_j)$
+\\
+Notice, $\langle f, f \rangle= a^\intercal K a \geq 0 \forall f \in \mathcal{F}$, where $K$ is the kernel matrix.
+Moreover, $\langle f, g \rangle$ is real valued, symmetric and bilinear. All these facts implies that the just introduced inner product is a valid metric.
+\\
+Additionally, letting $g(x)=k(\cdot, x)$, we have that $\langle f, k(\cdot, x)\rangle=\sum\limits_{i=1}^n a_i k(x_i,x)=f(x)$. This is known as the reproducing property.
+\\
+Finally, to show the characterisation of kernels we have to check that the inner product makes $\mathcal{F}$ a complete metric space.
+Consider a fixed input $x$ and a Cauchy sequence $(f_n)_{n=1}^{\infty}$ we then have by means of the Cauchy-Schwarz inequality that 
+\\
+$(f_n(x)- f_m(x))^2=\langle f_n-f_m, k(\cdot, x)\rangle^2 \leq \| f_n - f_m \|^2 k(x,x)$
+\\
+We have that $f_n(x)$ is a Cauchy sequence of real numbers. Thus, we can let $g(x)=\lim_{n\to \infty} f_n(x)$ and include all such limits functions in $\mathcal{F}$, doing so we obtain the Hilbert space $\mathcal{H}$ associated to the kernel $k$.
+Having constructed the feature space $\mathcal{H}$, the mapping $\phi(x)$ is defined as follows
+\\
+$\phi: x \in \mathcal{X} \to \phi(x)=k(\cdot, x) \in \mathcal{H}$
+\\
+Notice, that by the reproducing property, $f$ can be represented as the inner product with itself in the feature space, that is $f(x)=\langle f, \phi(x)\rangle=\langle f, k(\cdot, x)\rangle=f(x)$
+
 \begin{definition}
     Let $(\mathcal{H}, \langle \cdot, \cdot \rangle_\mathcal{H})$ be a Hilbert space of real-valued functions on $\mathcal{X}$. A function $k: \mathcal{X} \times \mathcal{X} \to \mathbb{R}$ is called a reproducing kernel of $\mathcal{H}$ if and only if 
      \begin{align}
         k(x, \cdot) \in \mathcal{H} &\quad \text{for all   } x \in \mathcal{X}    \\
         \langle  h, k(x, \cdot) \rangle_\mathcal{H} = h(x) &\quad \text{for all   } h \in \mathcal{H}, x \in \mathcal{X}
     \end{align}
+    Notice, the finitely positive semi definite property is a sufficient condition for $\mathcal{H}$ to be an RKHS
 \end{definition}
+
+The analysis of above applies to any kernel, that is given a kernel function we can always construct the RKHS associated to it.
+\begin{theorem}
+    If a symmetric function $k(\cdot, \cdot)$ satisfies the reproducing property in a Hilbert space $\mathcal{H}$, then $k$ satisfies the finitely positive semi definite property.
+\end{theorem}
+
+\begin{proof}
+    \begin{align}
+        \sum\limits_{i,j=1}^n a_i a_j k(x_i, x_j)=& \sum\limits_{i,j=1}^n a_i a_j \langle k(\cdot, x_i), k(\cdot, x_j)\rangle_{\mathcal{H}}
+        \\
+        =& \langle \sum\limits_{i=1}^n a_i k(\cdot, x_i), \sum\limits_{j=1}^n a_j k(\cdot, x_j) \rangle \\
+        =& \| \sum\limits_{i=1}^n a_i k(\cdot, x_i)\|_{\mathcal{H}}^2 \geq 0
+    \end{align}
+\end{proof}
    
 % \begin{definition}
 %     RKHS.
@@ -71,6 +152,39 @@ turns $\mathcal{H}$ into a complete metric space.
     [Riesz Representation]. If $A : \mathcal{H} \rightarrow \mathbb{R}$ is a bounded linear operator on a Hilbert space $\mathcal{H}$ , there exists some $g_{A} \in \mathcal{H}$ such that $A(f) = \langle f,g_A\rangle_\mathcal{H}, \ \forall f \in \mathcal{H}$.
 \end{theorem}
 
+\begin{proof}
+    It is known that null space of $L$, call it $M$, is a closed linear subspace in $\mathcal{H}$. This implies that the Hilbert space direct sum $M \bigoplus M^\bot$ is an isomorphism of $\mathcal{H}$. Letting $L$ be different that the zero operator we have that $M^\bot \neq {0}$.
+    \\
+    Choose now a $z \in M^\bot$ with norm 1. By linearity of $L$, for any $h \in \mathcal{H}$ we have $L(zLh- hLz)=LzLh- LhLz=0$. This means that $zLh- hLz$ belongs to the null space of $L$, that is  $zLh- hLz \in M$. 
+    \\
+    Consider now 
+    \begin{align}
+        Lh=& Lh \cdot 1
+        \\
+        =& Lh \langle z,z\rangle
+        \\
+        =& \langle zLh, z\rangle \\
+        =& \langle zLh -hLz+hLz, z\rangle
+        \\
+        =& \langle zLh -hLz, z\rangle +\langle hLz, z\rangle \\
+        =& \langle hLz, z\rangle \\
+        =& \langle h, z\overline{(Lz)}\rangle \\
+    \end{align}
+    Therefore, $Lh=\langle h, h_0\rangle$  with  $h_0=z\overline{(Lz)}$
+    \\
+    Finally, notice that $h_0$ is unique.
+    Assuming $h_0$ and $h_1$ to both satisfy the above equation for all $h \in \mathcal{H}$ we have that
+    \begin{align}
+        \langle h_0,h \rangle=&\langle h_1, h \rangle \\
+        \langle h_0,h \rangle-\langle h_1, h \rangle=& 0 \\
+        \langle h_0 -h_1,h \rangle=& 0
+    \end{align}
+    Setting $h=h_0 -h_1$, we have the uniqueness of $h_0$.
+    % because inner product is zero, inner product has to satisfy positive definitness property to be such >=0, if it is zero it means that h_0=h_1
+    
+\end{proof}
+%conjugate simmetry is because in complex analysis when you swap in the inner product, you have to take the conjugate
+
 
 The Riesz representation theorem results in the following proposition for reproducing kernel hilbert spaces.
 \begin{proposition}
@@ -81,35 +195,128 @@ The function $k_{x}$ is the reproducing kernel evaluated at point $x$.
 Furthermore, note that $k_{x}$ is itself a function lying in it.
 
 \begin{align*}
-    k_{x}(y)=\mathcal{F}_{y}(k_{x})=\langle k_{x}, k_{y}\rangle_{\mathcal{H}=\langle \phi(x), \phi(y)\rangle_{\mathcal{H}}}
+    k_{x}(y)=\mathcal{F}_{y}(k_{x})=\langle k_{x}, k_{y}\rangle_{\mathcal{H}}=\langle \phi(x), \phi(y)\rangle_{\mathcal{H}}
 \end{align*}
 
 
 
+\begin{definition}
+    Considering a set of vectors $x_1, \cdots, x_n$, the Gram matrix is defined as the $n\times n$ matrix whose entries are $\langle x_i, x_j \rangle$.    
+\end{definition}
 
-\subsection{Kernel families}
+Notice, it follows from the definition that Gram matrix is symmetric.
+In the kernel setting we evaluate the inner products in the feature space generated by the feature map $\phi$, therefore the Gram matrix will have entris $\langle \phi(x_i), \phi(x_j) \rangle_{\mathcal{H}}= k(x_i, x_j)$. Such matrix is also referred to the kernel matrix $K$.
+
+\[
+K_{n\times n}=
+\begin{bmatrix}
+    k(x_1,x_1)       &  \dots & k(x_1,x_n) \\
+    \vdots       & \ddots & \vdots \\
+    k(x_n, x_1)       & \dots & k(x_n, x_n)
+\end{bmatrix}
+\]
+All kernel methods take as input the kernel matrix, it is the central data type for all 
+kernel methods.
+
+\begin{proposition}
+    In addition to being symmetric, $K$ possesses also the property of being positive semi definite.    
+\end{proposition}
+
+\begin{proof}
+    \begin{align}
+        z^\intercal K z =& \sum_{i=1,j=1}^n z_i z_j K_{i,j}
+        \\
+        =& \sum_{i=1,j=1}^n z_i z_j \langle \phi(x_i), \phi(x_j) \rangle_{\mathcal{H}}
+        \\
+        =& \langle \sum_{i=1}^n z_i \phi(x_i), \sum_{j=1}^n z_j \phi(x_j)\rangle_{\mathcal{H}}
+        \\
+        =& \|\sum_{i=1}^n z_i \phi(x_i) \|_{\mathcal{H}}^2 \geq 0
+    \end{align}
+\end{proof}
+We know that positive semidefinite matrices form a cone in the vector space $n\times n$. Because of this we have that such matrices are convex, this implies that all the nice theory of convex analysis can be used when optimising over them.
+
+
+Kernel functions are characterized by a couple of properties that make them a closure. Thus, there exists ways of combining known kernels in order to obtain new kernels.
+
+\begin{proposition}
+    Let $k_1$ and $k_2$ be kernels over $\mathcal{X} \times \mathcal{X}, \mathcal{X} \subset \mathbb{R}^n$, $a \in \mathbb{R}^+ and \phi: \mathcal{X} \to \mathbb{R}^N$ with $k_3$ a kernel over $\mathbb{R}^N \times \mathbb{R}^N$. Then the following functions are kernels:
+    \begin{align}
+        k(x,z)=&k_1(x,z)+k_2(x,Y)
+        \\
+        k(x,z)=& ak_1(x,z)
+        \\
+        k(x,z)=& k_1(x,z)k_2(x,z)
+        \\
+        k(x,z)=& k_3(\phi(x),\phi(z))
+    \end{align}.
+\end{proposition}
+
+\begin{proof}
+    Consider a finite set of points $x_1, \cdots, x_n$, a vector $z \in \mathbb{R}^n$ and let $K_1$ and $K_2$ be the kernel matrices associated to $k_1$ and $k_2$ evaluted on these points.
+    \\
+    We have:
+    \\
+    \begin{align}
+    z^\intercal (K_1+K_2) z= z^\intercal K_1 z + z^\intercal K_1 z \geq 0
+    \\
+    z^\intercal aK z= a z^\intercal K z \geq 0
+    \end{align}
+    Let $K=K_1 \otimes K_2$, we have that the eigenvalues of $K$ are made up by the product pairs of the eigenvalues of $K_1$ and $K_2$. Thus, $K$ is positive semidefinite. Next, matrix corresponding to the kernel $k_1 \cdot k_2$ corresponds to the Schur product $H$ of $K_1$ and $K_2$. Notice, $H$ is a principal submatrix of $K$, hence for any $z in \mathbb{R}^n$ there exist a $t \in \mathbb{R}^{n^2}$ such that $z^\intercal H z= t^\intercal K t$. Using the fact that K is positive semidefinite we have that for any $z$, it holds 
+    \begin{align}
+        z^\intercal H z= t^\intercal K t\geq 0
+    \end{align}
+\end{proof}
+
+\section{Kernel families}
+The selection of kernel determines the class of functions that will be searcehd by the learning algorithm. Prior knowledge of the problem domain can help restricting the candidate families of kernel functions. 
 Table \ref{tab:kernel types} contains popular kernel families in literature and applications.
 \begin{table}
     \caption{Kernel types}
+    \resizebox{\textwidth}{!}{
     \begin{tabular}{lll}
         \toprule
        Kernel function & Equation & Hyperparameters \\
        \midrule
        Linear &  $k(x_1,x_2)=x_1x_2$ &   \\
        Polynomial &  $k(x_1,x_2)=(x_1^\intercal x_2+c)^d$ &   c, d\\
-       Gaussian RBF &  $k(x_1,x_2)=e^{-\frac{\|x_1-x_2|\|^2}{2\sigma^2}}$ &   $\sigma$\\
-       Exponential RBF/Laplacian& $k(x_1,x_2)=e^{-\frac{|x_1-x_2|}{\gamma}}$ &   $\gamma$\\
+       Gaussian RBF &  $k(x_1,x_2)=e^{-\frac{\|x_1-x_2|\|_{2}^2}{2\sigma^2}}$ &   $\sigma$\\
+       Exponential RBF/Laplacian& $k(x_1,x_2)=e^{-\frac{\|x_1-x_2\|_{1}}{\gamma}}$ &   $\gamma$\\
        Hyperbolic/Sigmoid Kernel &  $k(x_1,x_2)=\tanh(\gamma x_1^\intercal x_2+r)$ &  $\gamma$, r \\
-       Periodic &  $k(x_1,x_2)=e^{\frac{-2 sin^2\left(\frac{\pi}{p}|x_1-x_2| \right)}{l^2}} $ &   p, l\\
+       Periodic &  $k(x_1,x_2)=e^{\frac{-2 sin^2\left(\frac{\pi}{p}\|x_1-x_2\|_{2} \right)}{l^2}} $ &   p, l\\
        Chi-squared kernel &  $k(x_1,x_2)=e^{-\gamma \sum\limits_i \frac{(x_i - y_i)^2}{x_i+y_i}} $ &   $\gamma$\\
-        Cosine  &  $k(x_1,x_2)=\frac{xy^\intercal}{\|x\|_{L_2}\|y\|_{L_2}}$ &   \\
-       Matern  &  $k(x_1, x_2) =  \frac{1}{\gamma(\nu)2^{\nu-1}}\Bigg(
+        Cosine  &  $k(x_1,x_2)=\frac{xy^\intercal}{\|x\|_{2}\|y\|_{2}}$ &   \\
+       Matern  &  $k(x_1, x_2) =  \frac{1}{\Gamma(\nu)2^{\nu-1}}\Bigg(
         \frac{\sqrt{2\nu}}{l} d(x_1 , x_2 )
         \Bigg)^\nu K_\nu\Bigg(
-        \frac{\sqrt{2\nu}}{l} d(x_1 , x_2 )\Bigg)$ &  $\gamma, \nu$ \\
+        \frac{\sqrt{2\nu}}{l} d(x_1 , x_2 )\Bigg)$ &  $l, \nu$ \\
 
         \bottomrule
-    \end{tabular}
+    \end{tabular}}
     \label{tab:kernel types}
 \end{table}
 
+When $nu=p+\frac{1}{2}$, $p \in \mathbb{N}^+$, the Matern kernel can be rewritten as a product of an exponential and a polynomial of degree $p$. 
+$k(x_1,x_2)=\exp \left(-{\frac {{\sqrt {2p+1}}d(x_1,x_2)}{l }}\right){\frac {p!}{(2p)!}}\sum _{i=0}^{p}{\frac {(p+i)!}{i!(p-i)!}}\left({\frac {2{\sqrt {2p+1}}d(x_1,x_2)}{l }}\right)^{p-i}$
+For example:
+\begin{itemize}
+    \item $p=0,nu=\frac{1}{2} \implies k(x_1,x_2)=\exp\left(\frac{-d(x_1,x_2)}{l}\right)$
+    \item $p=1,\nu=\frac{3}{2} \implies 
+    k(x_1,x_2)=\left(1+{\frac {{\sqrt {3}}d(x_1,x_2)}{l }}\right)\exp \left(-{\frac {{\sqrt {3}}d(x_1,x_2)}{l }}\right)$
+    \item $p=2,\nu=\frac{5}{2} \implies k(x_1,x_2)=\left(1+{\frac {{\sqrt {5}}d}{l }}+{\frac {5d(x_1,x_2)^{2}}{3 l ^{2}}}\right)\exp \left(-{\frac {{\sqrt {5}}d(x_1, x_2)}{l }}\right)$
+\end{itemize}
+
+Furthermore, as $\nu \to \infty$ we have that the Matern kernel converges to the Gaussian RBF kernel.
+$k(x_1,x_2)=\exp\left(\frac{-d^2(x_1,x_2)}{2l^2}\right)$
+
+% CONDITIONS upon matern is equivalent to rbf
+% KERNEL THEORY FROM BOOKS AND KERNEL COOKBOOK
+
+
+
+Any algorithm involving inner products between inputs can be combined with a kernel methods. The chosen kernel function will calculate the inner product between the images of two inputs in the feature space. This makes the orginal algorithm operate in a high dimesional space. Kernel methods show good modularity because they work the same for any kernel and any data type. This concept is illustrated in figure \ref{fig:workflow_kernels}, where an abstract kernel methods workflow is visualized. First we build the kernel matrix by using a kernel function to process the input data. Next, the kernel matrix is passed to the pattern analysis algorithm, which returns the learned function.
+
+\begin{figure}[!ht]
+    \includegraphics[width=\textwidth]{images/workflow_kernels.png}
+    \caption{Workflow for the application of kernel methods \cite{shawe2004kernel}}
+    \label{fig:workflow_kernels}
+\end{figure}

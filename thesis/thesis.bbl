@@ -398,6 +398,11 @@ David~W. Scott.
 \newblock {\em Multivariate Density Estimation: Theory, Practice, and Visualization}.
 \newblock Wiley Series in Probability and Statistics. Wiley, 2 edition, 2015.
 
+\bibitem{shawe2004kernel}
+John Shawe-Taylor and Nello Cristianini.
+\newblock {\em Kernel methods for pattern analysis}.
+\newblock Cambridge university press, 2004.
+
 \bibitem{learning_with_kernels}
 Alex~J Smola and Bernhard Sch{\"o}lkopf.
 \newblock {\em Learning with kernels}, volume~4.

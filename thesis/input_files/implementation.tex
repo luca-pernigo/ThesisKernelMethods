@@ -65,9 +65,10 @@ Once a solution to the convex problem has been found, we create a mask for the s
 \\
 In the predict method, we pass a matrix X\_eval of independent variables, next we compute the kernel matrix between X\_train and X\_eval and obtain y\_eval with the formula $y=\alpha^\intercal K+b$.
 \\
-This estimator is compatible with useful scikit-learn in built methods like gridsearch, crossvalidation and scoring rules.
+This estimator is compatible with useful scikit-learn in built methods like gridsearch, crossvalidation and scoring rules. Moreover, this code is compatible with sklearn in built kernel functions \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process.kernels}{sklearn.gaussian\_process.kernels}, functions supported by our kernel quantile regression include: gaussian rbf, laplacian, mater 1/2, matern 3/2, matern 5/2, linear, cosine, sigmoid, periodic, polynomial and custom composition of kernels.
+% NOTICE, these kernel implementations differ in the form of passed parameters in the former we pass in the numerator gamma while in the latter we pass l, which stands for length scale in the denominator. To cross validate overt the same range of parameter across the different kernels we made sura that gamma=1/l.
 \\
 Up to now, there are only two open source implementation of the quantile kernel regression. Nevertheless they are both in R, that is there exists no python, matlab or julia open source implementation. Following are reported the results of a comparative study between our own implementation and the one of the R library kernlab
 % (i guess it is in C or C++ and then binded to R).
-\subsubsection{Python versus R implementation}
-In this section, a comparison study has been carried out in order to inspect the competitiveness of our implementation with the existing one for the R programming language.
+% \subsubsection{Python versus R implementation}
+% In this section, a comparison study has been carried out in order to inspect the competitiveness of our implementation with the existing one for the R programming language.

@@ -8,47 +8,59 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Pubblications by subject area\relax }}{12}{figure.caption.8}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Most popolar sources/outlets\relax }}{13}{figure.caption.9}%
 \addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Workflow for the application of kernel methods \cite {shawe2004kernel}\relax }}{25}{figure.caption.11}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Pinball loss with $q=0.2$ \cite {haben2023core}\relax }}{29}{figure.caption.11}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces CRPS integral \cite {haben2023core}\relax }}{30}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces PIT types \cite {haben2023core}\relax }}{31}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Pinball loss with $q=0.2$ \cite {haben2023core}\relax }}{29}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces CRPS integral \cite {haben2023core}\relax }}{30}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces PIT types \cite {haben2023core}\relax }}{31}{figure.caption.14}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Electricity grid \cite {haben2021review}\relax }}{33}{figure.caption.14}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Pool market versus power echange \cite {weron2006modeling}\relax }}{35}{figure.caption.15}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Zonal pricing EU \cite {eu_zonal}\relax }}{37}{figure.caption.16}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Local pricing US \cite {us_local}\relax }}{38}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Electricity production by source\relax }}{38}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Electricity grid \cite {haben2021review}\relax }}{33}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pool market versus power echange \cite {weron2006modeling}\relax }}{35}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Zonal pricing EU \cite {eu_zonal}\relax }}{37}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Local pricing US \cite {us_local}\relax }}{38}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Electricity production by source\relax }}{38}{figure.caption.19}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Support vector regression,\cite {learning_with_kernels}\relax }}{42}{figure.caption.19}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces support vector regression\relax }}{44}{figure.caption.20}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Long short term memory cell\relax }}{44}{figure.caption.21}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces polynomial support vector regression\relax }}{48}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces rbf support vector regression\relax }}{49}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Support vector regression,\cite {learning_with_kernels}\relax }}{42}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces support vector regression\relax }}{44}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Long short term memory cell\relax }}{44}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces polynomial support vector regression\relax }}{48}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces rbf support vector regression\relax }}{49}{figure.caption.24}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces two-dimensional feature space partitioned by recursive binary splitting\relax }}{53}{figure.caption.24}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces partition tree and regression model\relax }}{53}{figure.caption.25}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces decision tree regression\relax }}{54}{figure.caption.26}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces random forest regression\relax }}{56}{figure.caption.27}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces gradient boosting regression\relax }}{58}{figure.caption.28}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{64}{figure.caption.29}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors\relax }}{65}{figure.caption.30}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Kernel quantile regressors comparison\relax }}{68}{figure.caption.38}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces two-dimensional feature space partitioned by recursive binary splitting\relax }}{53}{figure.caption.25}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces partition tree and regression model\relax }}{53}{figure.caption.26}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces decision tree regression\relax }}{54}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces random forest regression\relax }}{56}{figure.caption.28}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces gradient boosting regression\relax }}{58}{figure.caption.29}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{64}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors\relax }}{65}{figure.caption.31}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Kernel quantile regressors comparison\relax }}{69}{figure.caption.39}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Price track\relax }}{70}{figure.caption.39}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Price track\relax }}{72}{figure.caption.40}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Zonal price versus zonal load\relax }}{73}{figure.caption.42}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Zonal price versus total load\relax }}{74}{figure.caption.43}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Historical load\relax }}{74}{figure.caption.45}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Historical weather\relax }}{75}{figure.caption.46}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Load versus weather\relax }}{75}{figure.caption.47}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Switzerland historical load\relax }}{77}{figure.caption.50}%
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Load vs temperature Switzerland 2021\relax }}{77}{figure.caption.51}%
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Load vs wind speed Switzerland 2021\relax }}{78}{figure.caption.52}%
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Load versus day of week boxplot\relax }}{79}{figure.caption.53}%
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Load versus day type boxplot\relax }}{80}{figure.caption.54}%
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Switzerland load heatmap (2021)\relax }}{80}{figure.caption.55}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Multiple linear regression prediction\relax }}{78}{figure.caption.41}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Tbats prediction\relax }}{79}{figure.caption.42}%
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Prophet prediction\relax }}{79}{figure.caption.43}%
-\contentsline {figure}{\numberline {10.4}{\ignorespaces Prophet v2 prediction\relax }}{80}{figure.caption.44}%
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Seasonalities breakdown\relax }}{80}{figure.caption.45}%
-\contentsline {figure}{\numberline {10.6}{\ignorespaces Prices trend\relax }}{81}{figure.caption.46}%
-\contentsline {figure}{\numberline {10.7}{\ignorespaces K-nearest neighbour regression\relax }}{82}{figure.caption.47}%
-\contentsline {figure}{\numberline {10.8}{\ignorespaces Support vector regression prediction\relax }}{82}{figure.caption.48}%
-\contentsline {figure}{\numberline {10.9}{\ignorespaces Long short term memory prediction\relax }}{83}{figure.caption.49}%
-\contentsline {figure}{\numberline {10.10}{\ignorespaces Kernel ridge prediction\relax }}{83}{figure.caption.50}%
-\contentsline {figure}{\numberline {10.11}{\ignorespaces Kernel support vector prediction\relax }}{84}{figure.caption.51}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Multiple linear regression prediction\relax }}{86}{figure.caption.56}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Tbats prediction\relax }}{87}{figure.caption.57}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Prophet prediction\relax }}{87}{figure.caption.58}%
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Prophet v2 prediction\relax }}{88}{figure.caption.59}%
+\contentsline {figure}{\numberline {10.5}{\ignorespaces Seasonalities breakdown\relax }}{88}{figure.caption.60}%
+\contentsline {figure}{\numberline {10.6}{\ignorespaces Prices trend\relax }}{89}{figure.caption.61}%
+\contentsline {figure}{\numberline {10.7}{\ignorespaces K-nearest neighbour regression\relax }}{90}{figure.caption.62}%
+\contentsline {figure}{\numberline {10.8}{\ignorespaces Support vector regression prediction\relax }}{90}{figure.caption.63}%
+\contentsline {figure}{\numberline {10.9}{\ignorespaces Long short term memory prediction\relax }}{91}{figure.caption.64}%
+\contentsline {figure}{\numberline {10.10}{\ignorespaces Kernel ridge prediction\relax }}{91}{figure.caption.65}%
+\contentsline {figure}{\numberline {10.11}{\ignorespaces Kernel support vector prediction\relax }}{92}{figure.caption.66}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{97}{figure.caption.66}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{97}{figure.caption.67}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{98}{figure.caption.68}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{105}{figure.caption.81}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{105}{figure.caption.82}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{106}{figure.caption.83}%
