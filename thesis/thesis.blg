@@ -4,19 +4,19 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
 Warning--entry type for "un_sdgs" isn't style-file defined
---line 1000 of file refs.bib
+--line 1038 of file refs.bib
 Warning--entry type for "gm_22" isn't style-file defined
---line 1005 of file refs.bib
+--line 1043 of file refs.bib
 Warning--entry type for "scikithalvinggridsearch" isn't style-file defined
---line 1010 of file refs.bib
+--line 1048 of file refs.bib
 Warning--entry type for "scikitscalers" isn't style-file defined
---line 1015 of file refs.bib
+--line 1053 of file refs.bib
 Warning--entry type for "scikitscale_example" isn't style-file defined
---line 1020 of file refs.bib
+--line 1058 of file refs.bib
 Warning--entry type for "eu_zonal" isn't style-file defined
---line 1026 of file refs.bib
+--line 1064 of file refs.bib
 Warning--entry type for "us_local" isn't style-file defined
---line 1031 of file refs.bib
+--line 1069 of file refs.bib
 Warning--to sort, need author or key in eu_zonal
 Warning--to sort, need author or key in us_local
 Warning--to sort, need author or key in un_sdgs
@@ -26,6 +26,8 @@ Warning--to sort, need author or key in scikitscalers
 Warning--to sort, need author or key in scikitscale_example
 Warning--empty journal in brown1959statistical
 Warning--empty journal in supersamples
+Warning--empty journal in declean
+Warning--empty year in declean
 Warning--empty journal in gaillardasemi
 Warning--empty year in gaillardasemi
 Warning--empty booktitle in jebara
@@ -33,45 +35,45 @@ Warning--can't use both author and editor fields in pmlr
 Warning--can't use both volume and number fields in macqueen1967some
 Warning--empty journal in nystrom
 Warning--empty journal in takeuchi2006nonparametric
-You've used 108 entries,
+You've used 112 entries,
             2118 wiz_defined-function locations,
-            1084 strings with 20816 characters,
-and the built_in function-call counts, 33987 in all, are:
-= -- 3357
-> -- 1524
+            1103 strings with 21501 characters,
+and the built_in function-call counts, 35050 in all, are:
+= -- 3452
+> -- 1579
 < -- 15
-+ -- 617
-- -- 498
-* -- 2387
-:= -- 5640
-add.period$ -- 316
-call.type$ -- 108
-change.case$ -- 555
++ -- 639
+- -- 516
+* -- 2460
+:= -- 5827
+add.period$ -- 326
+call.type$ -- 112
+change.case$ -- 575
 chr.to.int$ -- 0
-cite$ -- 124
-duplicate$ -- 1233
-empty$ -- 2731
-format.name$ -- 498
-if$ -- 7031
+cite$ -- 130
+duplicate$ -- 1272
+empty$ -- 2817
+format.name$ -- 516
+if$ -- 7245
 int.to.chr$ -- 0
-int.to.str$ -- 108
-missing$ -- 110
-newline$ -- 530
-num.names$ -- 202
-pop$ -- 599
+int.to.str$ -- 112
+missing$ -- 113
+newline$ -- 548
+num.names$ -- 210
+pop$ -- 624
 preamble$ -- 1
-purify$ -- 462
+purify$ -- 478
 quote$ -- 0
-skip$ -- 876
+skip$ -- 905
 stack$ -- 0
-substring$ -- 2264
-swap$ -- 191
+substring$ -- 2305
+swap$ -- 194
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 402
-warning$ -- 16
-while$ -- 337
-width$ -- 111
-write$ -- 1129
-(There were 23 warnings)
+type$ -- 418
+warning$ -- 18
+while$ -- 347
+width$ -- 115
+write$ -- 1166
+(There were 25 warnings)

@@ -1,14 +1,14 @@
 Proper evaluation methods guide researchers in choosing the model that best fits their needs; thus, this chapter is dedicated to the most common evaluation metrics adopted by academics in the field of electricity forecasting. Error metrics and measures vary depending on whethter we are concerned with point or probabilistic forecasts. Additionally, note that the latter can take different forms which therefore requires different measures.
 \section{Mean absolute error}\label{mae}
 Consider the time series with actual values given by $y=(y_{n+1}, y_{n+2},\dots, y_{n+h})$
-and its h step ahead point forecast $\hat{y}=(\hat{y}_{n+1}, \hat{y}_{n+2},\dots, \hat{y}_{n+h})$ the mean absolute error (MAE) is defined as
+and its $h$ step ahead point forecast $\hat{y}=(\hat{y}_{n+1}, \hat{y}_{n+2},\dots, \hat{y}_{n+h})$ the mean absolute error (MAE) is defined as
 \begin{definition}
     $\mathrm{MAE}(y,\hat{y})=\frac{1}{h}\| y- \hat{y}\|_{1}=\frac{1}{h}\sum\limits_{k=1}^{h}|y_{n+k}-\hat{y}_{n+k}|$
 \end{definition}
 
 \section{Root mean squared error}\label{rmse}
 \begin{definition}
-    $\mathrm{RMSE(y, \hat{y})}=\frac{1}{\sqrt{h}}\|y-\hat{y}\|_{2}=\sqrt{\frac{\sum\limits_{k=1}^{h}(y_{n+k}- \hat{y}_{n+k})^2}{h}}$
+    $\mathrm{RMSE}(y, \hat{y})=\frac{1}{\sqrt{h}}\|y-\hat{y}\|_{2}=\sqrt{\frac{\sum\limits_{k=1}^{h}(y_{n+k}- \hat{y}_{n+k})^2}{h}}$
 \end{definition}
 
 Mean absolute error and root mean squared error posses the useful property of being expressed in the same units of the data, thus enabling meaningful comparisons.
@@ -28,7 +28,7 @@ Note, mean absolute percentage error and root mean squared percentage error may 
 Scaled errors constitute a robust family of scores.
 \section{Mean absolute scaled error}\label{mase}
 \begin{definition}
-    $\mathrm{MASE}(y,\hat{L})=\frac{1}{h}\sum\limits_{k=1}^N\frac{|y_{n+k}-\hat{y}_{n+k}|}{\frac{1}{h-1}\sum\limits_{k=2}^{h}|y_{k}-y_{k-1}|}$
+    $\mathrm{MASE}(y,\hat{y})=\frac{1}{h}\sum\limits_{k=1}^N\frac{|y_{n+k}-\hat{y}_{n+k}|}{\frac{1}{h-1}\sum\limits_{k=2}^{h}|y_{k}-y_{k-1}|}$
 \end{definition}
 In the denominator we have the error of the naïve/persistence model. 
 In this model, the current demand makes up the prediction for the next time step; that is $\hat{y}^{\mathrm{naive}}_{n+1}=y_{n}$.
@@ -43,7 +43,7 @@ The pinball score or quantile score is used to measure the accuracy of a quantil
 \begin{definition}
     $\mathrm{Pinball}(y_{t},\hat{y}_{t,q},q)=
 \begin{cases}
-(q-1)(y_{t}-\hat{y}_{t,q}) & y_t > \hat{y}_{t,q} \\
+(q-1)(\hat{y}_{t,q}-y_{t}) & y_t > \hat{y}_{t,q} \\
 q(\hat{y}_{t,q}-y_t) & y_t \leq \hat{y}_{t,q}
 \end{cases}$
 \end{definition}
@@ -62,15 +62,15 @@ By averaging all the pinball losses over all quantiles and over the whole foreca
         \delta+2(l_{t}-u_{t})/\alpha & y_{t} \geq u_{t}
     \end{cases}$
 \end{definition}
-Where delta is the prediction interval (PI) width, that is $\delta=b_t-a_t$ where $u$ is the prediction interval upper threshold and $l$ is the prediction interval lower threshold. This score penalizes observations falling outside the prediction interval and rewards narrow prediction intervals.
+Where delta is the prediction interval (PI) width, that is $\delta=u_t-l_t$ where $u_t$ is the prediction interval upper threshold and $l_t$ is the prediction interval lower threshold at time step $t$. This score penalizes observations falling outside the prediction interval and rewards narrow prediction intervals.
 \section{Continous ranked probability score}
 The continous ranked probability score (CRPS) measures the differece between the estimated cumulative distribution $\hat{F}$ and the empirical cumulative density function (CDF).
 \begin{definition}\label{def_crps}
-    $\mathrm{CRPS}(y, \hat{F})=\int\limits_{-\infty}^{\infty}\left(\hat{F}(x)-\mathbb{1}(x-y) \right)^2 dx$
+    $\mathrm{CRPS}(y, \hat{F})=\int\limits_{-\infty}^{\infty}\left(\hat{F}(x)-\mathbb{I}_{\{x-y\}} \right)^2 dx$
 \end{definition}
 % Nevertheless, we can evaluate the integral in closed form. 
 Where the indicator function is defined as 
-    $\mathbb{1}(z)=
+    $\mathbb{I}_{\{z\}}=
 \begin{cases}
 0 & z<0\\
 1 & z \geq 0
@@ -92,7 +92,7 @@ It is worth noting, that the CRPS integral can be rewritten in terms of expectat
     \mathbb{E}(|X_1-Y_1|)-\frac{1}{2}\mathbb{E}(|X_1-X_2|)-\frac{1}{2}\mathbb{E}(|Y_1-Y_2|)=\int\limits_{-\infty}^{\infty}\left(F(x)-G(x)\right)^2dx
 \end{equation}
 \end{lemma}
-Notice that, in our case, equation \ref{def_crps}, the distribution $G$ of $Y_1$ and $Y_2$ is degenerate, with all probability mass on a single point.
+Notice that, in our case, equation \ref{def_crps}, the distribution $G$ of $Y_1$ and $Y_2$ is degenerate, with all probability mass on a single point $y$.
 %  (x notation will need to be cleaned here). Since $G(t)=:$
 It follows that, the third addend in the summation is zero. That is because the fact of $Y_1$ and $Y_2$ both following distribution $G$ implies that $\mathbb{E}(|Y_1-Y_2|)$ corresponds to the difference of two equal constant numbers.
 \\
@@ -100,14 +100,14 @@ Additionally, since $Y_1$ is just a constant, we have $Y_1=y$.
 \\
 Putting everything together we have obtained an alternative way of computing the CRPS score.
 \begin{equation}
-    \int\limits_{-\infty}^{\infty}\left(\hat{F}(x)-\mathbb{1}(x-L) \right)^2 dx=\mathbb{E}(|X_1-y|)-\frac{1}{2}\mathbb{E}(|X_1-X_2|)
+    \int\limits_{-\infty}^{\infty}\left(\hat{F}(x)-\mathbb{I}_{\{x-y\}} \right)^2 dx=\mathbb{E}(|X_1-y|)-\frac{1}{2}\mathbb{E}(|X_1-X_2|)
 \end{equation}
 \\
 \section{Probability integral transform}
-The probability integral transform (PIT) is a method to assess visually the quality of probabilistic a forecasts. PIT is obtained by applying the predicted cumulative density function $\hat{F}$ to your data; if applying such CDF to the data results in a uniform distributed PIT, then $\hat{F}$ is a valid prediction. If not, $\hat{F}$ is not the suited CDF for the considered data. Figure \ref{fig:pit} provides an example, applying the true CDF results in a well calibrated PIT (left). Alternatively, applying a bad CDF results in either a overdispersed (middle) or underdispersed (right) PIT.
+The probability integral transform (PIT) is a method to assess visually the quality of a probabilistic forecast. PIT is obtained by applying the predicted cumulative density function $\hat{F}$ to your data; if applying such CDF to the data results in a uniform distributed PIT, then $\hat{F}$ is a valid prediction. If not, $\hat{F}$ is not the suited CDF for the considered data. Figure \ref{fig:pit} provides an example, applying the true CDF results in a well calibrated PIT (left). Alternatively, applying a bad CDF results in either a overdispersed (middle) or underdispersed (right) PIT.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/pit.png}
-    \caption{PIT types \cite{haben2023core}}
+    \caption{Probability integral transform types \cite{haben2023core}}
     \label{fig:pit}
   \end{figure}
 \\

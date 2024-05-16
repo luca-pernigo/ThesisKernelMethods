@@ -38,6 +38,11 @@ A~Aizerman.
 \newblock Theoretical foundations of the potential function method in pattern recognition learning.
 \newblock {\em Automation and remote control}, 25:821--837, 1964.
 
+\bibitem{andreadou2016telecommunication}
+Nikoleta Andreadou, Miguel~Olariaga Guardiola, and Gianluca Fulli.
+\newblock Telecommunication technologies for smart grid projects with focus on smart metering applications.
+\newblock {\em Energies}, 9(5):375, 2016.
+
 \bibitem{aronszajn}
 Nachman Aronszajn.
 \newblock Theory of reproducing kernels.
@@ -106,6 +111,10 @@ Corinna Cortes and Vladimir Vapnik.
 Mathieu David, F~Ramahatana, Pierre-Julien Trombe, and Philippe Lauret.
 \newblock Probabilistic forecasting of the solar irradiance with recursive arma and garch models.
 \newblock {\em Solar Energy}, 133:55--72, 2016.
+
+\bibitem{declean}
+PAOLA~Antonio DE, Nikoleta ANDREADOU, Evangelos KOTSAKIS, et~al.
+\newblock Clean energy technology observatory: Smart grids in the european union-2023 status report on technology development trends, value chains and markets.
 
 \bibitem{de200625}
 Jan~G De~Gooijer and Rob~J Hyndman.
@@ -254,10 +263,19 @@ Rob~J Hyndman, Jochen Einbeck, and Matthew~P Wand.
 \newblock {\em {hdrcde}: Highest Density Regions and Conditional Density Estimation}, 2023.
 \newblock R package version 3.4.
 
+\bibitem{energy2023statistical}
+Energy Institute.
+\newblock Statistical review of world energy, 2023.
+
 \bibitem{jebara}
 Tony Jebara and Risi Kondor.
 \newblock Bhattacharyya expected likelihood kernels.
 \newblock volume 2777, pages 57--71, 01 2003.
+
+\bibitem{Johnson2024}
+Reid~A. Johnson.
+\newblock quantile-forest: A python package for quantile regression forests.
+\newblock {\em Journal of Open Source Software}, 9(93):5976, 2024.
 
 \bibitem{jonsson2014predictive}
 Tryggvi J{\'o}nsson, Pierre Pinson, Henrik Madsen, and Henrik~Aalborg Nielsen.

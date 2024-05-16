@@ -3,20 +3,20 @@ Therefore, with quantile regression we are able to study the impact of covariate
 \begin{definition}
     For any real valued random variable Y, we define its associated quantile function.
     \begin{equation}
-        Q(q)=\inf\{y:F(y)\geq q\}
+        Q_q=\inf\{y:F(y)\geq q\}
     \end{equation}
 \end{definition}
-Alternatively, in order  to ease the posing of the quantile regression problem, we can formulate quantiles as the solutions to simple optimization problems.
+Alternatively, in order  to ease the posing of the quantile regression problem, we can formulate quantiles as the solutions to the following optimization problems.
 \\
-For any $0<q<1$ consider the pinball loss function from section \ref{pinball}, $\rho_q(u)=u(q-\mathbb{1}_{\{u<0\}})$. 
+For any $0<q<1$ consider the pinball loss function from section \ref{pinball}, $\rho_q(u)=u(q-\mathbb{I}_{\{u<0\}})$. 
 Such loss is minimized by the quantile $Q(q)$.
-Thus,we can estimate quantiles by minimizing the expectation of $\rho_q(Y-g(x,\beta))$ with respect to the parameter $\beta$.
+Thus,we can estimate quantiles by minimizing the expectation of $\rho_q(y-g(x,\beta))$ with respect to the parameter $\beta$.
 \\
 Note, that in the special case $q=\frac{1}{2}$,  quantile regression corresponds exactly to standard regression with an absolute value loss function.
 \\
-It follows that the conditional linear quantile function $Q_Y(q|X=x)=x_i\beta(q)$, can be estimated by solving
+It follows that the conditional linear quantile function $\hat{Q}_q=x_i\beta(q)$, can be estimated by solving
 \begin{equation}\label{eq:linear_quantile_regression_minimisation_problem}
-    \hat{\beta}(q)=\argmin{\beta}\sum \rho_q   (y_i-x \beta)
+    \hat{\beta}(q)=\argmin{\beta}\sum\limits_{i=1}^n \rho_q   (y_i-x_i \beta)
 \end{equation}
 \\
 Notice that, this cost function is not differentiable, therefore there is no analytical solution to the quantile regression problem. Nevertheless, we can easily solve it by employing linear programming and convex optimisation \cite{boyd2004convex}.

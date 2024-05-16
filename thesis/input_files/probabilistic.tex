@@ -1,29 +1,30 @@
-When it comes to probabilistic forecasting, there are a couple of standard practical approaches; conceptually they can be grouped into two main categories. The former class of approaches tries modelling the distribution of the observed data directly. The latter family of approaches constructs first a point forecast and then learns the distribution of the model's errors.
+We saw in the previous chapter how point forecasting relates to predicting the expected value of the target variable.
+Conversely, in probabilistic forecasting we are interested in modelling a probability distribution over the target variable.
+This approach enables us to account for prediction uncertainty and to make more informed decision.
 \section{Quantile regression}
 \input{input_files/qr.tex}
 
-% \section{Copula models}
 \section{Quantile forest}
 Meinshausen \cite{meinshausen2006quantile} extends the idea of random forest \cite{breiman2001random} generalising it, the result is the quantile forest algorithm. Quantile forest allows us to estimate conditional quantiles in a non parametric fashion.
 \\
-In order to understand this algorithm, it is first necessary to first cover the theory of decision trees and random forests.
+In order to understand this algorithm, it is first necessary to cover the theory of decision trees and random forests.
 \subsection{Decision trees}
 Decision trees methods partition recursively the feature space in a set of binary rectangles and then fit a simple model in each of those partitions (the most straightforward is fitting just a constant).
 To get started, we first split the space into two disjoint regions, then we model the response variable by the mean of the observed predicted variables with associated features falling in that specific region. Our goal is selecting the best features and best split point such that to achieve the best generalizing fit.
-For an example/visualisation consider the pictures \ref{fig:elements_statistical_learning1} and \ref{fig:elements_statistical_learning2} taken from \cite{hastie2009elements}, where the decision tree algorithm is visualised for a regression problem with two independent variables $X_2$ and $X_1$.
+For a visualisation consider the pictures \ref{fig:elements_statistical_learning1} and \ref{fig:elements_statistical_learning2} taken from \cite{hastie2009elements}, where the decision tree algorithm is visualised for a regression problem with two independent variables $X_2$ and $X_1$.
 \begin{figure}
     \includegraphics[width=0.5\textwidth]{images/elsii1.png}
-    \caption{two-dimensional feature space partitioned by recursive binary splitting}
+    \caption{two-dimensional feature space partitioned by recursive binary splitting \cite{hastie2009elements}}
     \label{fig:elements_statistical_learning1}
   \end{figure}
 \\
 \begin{figure}
 \includegraphics[width=1\textwidth]{images/elsii2.png}
-\caption{partition tree and regression model}
+\caption{partition tree and regression model \cite{hastie2009elements}}
 \label{fig:elements_statistical_learning2}
 \end{figure}
 \\
-Suppose to partition the feature space into M regions $R_1,\dots,R_M$, then the model reads as follows.
+Suppose now to partition the feature space into M regions $R_1,\dots,R_M$, then the model reads as follows.
 \begin{equation}
     f(x)=\sum\limits_{m=1}^{M}c_m\mathbb{I}_{\{x \in R_m\}}
 \end{equation}
@@ -32,13 +33,13 @@ It follows that the function minimising the sum of squares is the one with $\hat
 Finding the best split in terms of minimum sum of squares is computationally infeasible in practice. Therefore we approximate a solution by approaching the problem in a greedy fashion.
 Let $j$ denote the splitting variable and $s$ be the the split point we define the two half planes
 \begin{equation}
-    R_1(j,s)=\{X|X_j\leq s\} \quad R_2(j,s)=\{X|X_j\>s\}
+    R_1(j,s)=\{X|X_j\leq s\} \quad R_2(j,s)=\{X|X_j >s\}
 \end{equation}
 Then we search for the $s$ and $j$ that solve
 \begin{equation}
     \min_{j,s}\left[\min_{c_1} \sum\limits_{x_i \in R_1(j,s)}(y_i-c_1)^2+\min_{c_2} \sum\limits_{x_i \in R_2(j,s)}(y_i-c_2)^2\right]
 \end{equation}
-The inner problem is easy, as already pointed out we will have 
+The inner problem is easy, as already pointed out, we will have 
 \begin{equation}
     \hat{c}_1=mean(y_i|x_i \in R_1) \quad \hat{c}_2=mean(y_i|x_i \in R_2)
 \end{equation}
@@ -54,16 +55,17 @@ Even though their simplicity, these models have proved themselves to be really p
 \end{figure}
     
 \subsection{Bootstrap}
-The idea behind boostrapping is to randomly sample from the training set with replacement B times and then fitting B models to each of the "artificial" datasets. Boostrapping can serve different tasks; we can use it to assess the accuracy of a parameter estimate or of a prediction but also to improve their estimates.
+The idea behind boostrapping is to randomly sample from the training set with replacement B times and then fitting B models to each of the "artificial" datasets. Boostrapping can serve different tasks; we can use it to assess the accuracy of a parameter %estimate
+or of a prediction but also to improve their estimates.
 
 \subsection{Bagging}
 Bagging stands for boostrap aggregation. 
-The bagging estimate is dafined by $\mathbb{E}_P[\hat{f}^*]$ where $P$ is the empirical distribution putting equal probability on each data point of the training set.
+The bagging estimate is defined by $\mathbb{E}_P[\hat{f}^*]$ where $P$ is the empirical distribution putting equal probability on each data point of the training set.
 Basically, for each bootstrap fitted model $\hat{f}^{*b}(x)$, we compute the bagging estimate by
 \begin{equation}
     \hat{f}_{bag}(x)=\frac{1}{B}\sum\limits_{b=1}^{B}\hat{f}^{*b}(x)
 \end{equation}
-Bagging is particularly useful in reducing the variance of decision trees, resulting in an improved prediction(tradeoff bias variance).
+Bagging is particularly useful in reducing the variance of decision trees, resulting in an improved prediction (bias-variance tradeoff).
 Note, this improvement comes from the fact that averaging reduces variance and leaves biases unchanged.
 
 \subsection{Random forest}
@@ -73,7 +75,7 @@ Consider positively correlated i.d. random variables, then the variance of their
 \begin{equation}
     \rho \sigma^2+\frac{1-\rho}{B}\sigma^2
 \end{equation}
-The second term disappears as B increases, while the first term depends heavily on the correlation between bagged trees. Random forest consists in is reducing the correlation between the trees by randomly selecting m of the p features as candidates for splitting; m tipically takes a value in the order of $\sqrt{p}$ or even 1 with default value $m=\left\lfloor \frac{p}{3} \right\rfloor$, while a good minimum node size is around five. 
+The second term disappears as B increases, while the first term depends heavily on the correlation between bagged trees. Random forest consists in reducing the correlation between the trees by randomly selecting m of the p features as candidates for splitting; m tipically takes a value in the order of $\sqrt{p}$ or even 1 with default value $m=\left\lfloor \frac{p}{3} \right\rfloor$, while a good minimum node size is around five. 
 \\
 Letting $T(x;\Theta_b)$ be the bth bagged tree where $\Theta_b$ denotes the randomness characterizing its splits, cutpoints and terminal node values, we have that the random forest regressor is given by
 \begin{equation}
@@ -89,7 +91,9 @@ For a simple visualisation compare figure \ref{fig:random_forest} with \ref{fig:
 
 
 \subsection{Quantile forest}
-The key observation here is noting that random forests approximates the conditional mean $\mathbb{E}(Y|X=x)$ by a weighted average over the observed $Y$. Hence, we can extend this idea to the full conditional distribution by
+The key observation here is noting that random forests approximates the conditional mean $\mathbb{E}(Y|X=x)$ by a weighted average over the observed $y$.
+% expected value is the weighted averaged of realizations with weights their respective probabilities.
+Hence, we can extend this idea to the full conditional distribution by
 \begin{equation}
     F(y|X=x)=P(Y\leq y|X=x)=\mathbb{E}(\mathbb{I}_{\{Y\leq y\}}|X=x)
 \end{equation}
@@ -120,21 +124,21 @@ However, such problem is highly intensive in terms of computation. Therefore, wh
 \end{equation}
 
 \subsection{Boosted trees}
-We combine several trees obtaining the boosted tree model
+Combining several trees $T(\cdot, \Theta_m)$, we obtain the boosted tree model
 \begin{equation}
     f_M(x)=\sum\limits_{m=1}^M T(x;\Theta_m)
 \end{equation}
 Thus, at each step of the iterative optimisation procedure, we have to solve
 \begin{equation}\label{boosting_minimisation_problem}
-    \hat{\Theta}_m=\argmin{\Theta_m}\sum\limits_{i=1}^{N}L(y_i, f_{m-1}(x_i)+T(x_i;\Theta_m))
+    \hat{\Theta}_m=\argmin{\Theta_m}\sum\limits_{i=1}^{n}L(y_i, f_{m-1}(x_i)+T(x_i;\Theta_m))
 \end{equation}
 Remember, $\Theta_m$ referes to the parameters of the mth tree, $\Theta_m=\{R_{jm}, \gamma_{jm}\}_1^{J_m}$
 \subsection{Gradient boosting}
 In order to robustly solve \ref{boosting_minimisation_problem}, gradient boosting considers the following problem
 \begin{equation}
-    \tilde{\Theta}_m=\argmin{\Theta}\sum\limits_{i=1}^{N}\left(-g_{im}-T(x_i;\Theta)\right)^2
+    \hat{\Theta}_m=\argmin{\Theta_m}\sum\limits_{i=1}^{N}\left(-g_{im}-T(x_i;\Theta)\right)^2
 \end{equation}
-where $g_{im}$ is the gradient of $L(f)=\sum\limits_{i=1}^N L(y_i, f(x_i))$ evaluated at $f_{m-1}$. Put simply, we are fitting the m-th tree to the negative of the gradient values of f through least squares.
+where $g_{im}$ is the gradient of $L(f)=\sum\limits_{i=1}^n L(y_i, f(x_i))$ evaluated at $f_{m-1}$. Put simply, we are fitting the m-th tree to the negative of the gradient values of f through least squares.
 In order to solve our quantile regression tasks through gradient boosting, all we need to do is specifying the pinball loss as our criterion to guide the minimisation algorithm. See figure \ref{fig:gradient_boosting} for a visualisation
 \begin{figure}
     \includegraphics[width=\textwidth]{images/gradient_boosting.png}
@@ -145,20 +149,20 @@ In order to solve our quantile regression tasks through gradient boosting, all w
 
 
 
-\section{Kernel methods}
-\subsection{Kernel quantile regression}
+% \section{Kernel methods}
+\section{Kernel quantile regression}
 The idea of quantile regression has been extended to kernel methods by Takeuchi et al. \cite{takeuchi2006nonparametric}.
-There, they minimize a risk plus regularizer defined as follows.
+There, they minimize a risk functional plus regularizer defined as follows.
 \begin{equation}\label{eq:kqr_min1}
     R[f]:=\frac{1}{m}\sum\limits_{i=1}^{m}\rho_q(y_i-f(x_i))+\frac{\lambda}{2}\|g\|_\mathcal{H}^2
 \end{equation}
-where $f=g+b$, $g \in \mathcal{H}$ and $b \in R$.
-Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle+b$. Moreover, note that the RKHS norm is defined as follows $\|f\|_{\mathcal{H}}=\inf\{\|w\|_{F}:w\in F,f(x)=\langle w,\varphi (x)\rangle _{F},\forall x\in X\}$, where $F$ is the feature space.
+where $f=g+b$, $g \in \mathcal{H}$ and $b \in \mathbb{R}$.
+Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle_{\mathcal{H}}+b$. Moreover, note that the RKHS norm is defined as follows $\|f\|_{\mathcal{H}}=\inf\{\|w\|_{\mathcal{F}}:w\in \mathcal{F},f(x)=\langle w,\varphi (x)\rangle _{\mathcal{F}},\forall x\in X\}$, where $\mathcal{F}$ is the feature space.
  Doing so we obtain a minimization problem equivalent to minimizing equation \ref{eq:kqr_min1}.
 \begin{equation}\label{eq:kqr_min2}
     \begin{aligned}
     \min_{w,b} \quad & C \sum \limits_{i=1}^{m}
-    q(y_i-\langle w, \phi(x) \rangle-b)+ (1-q)(-y_i+\langle w, \phi(x) \rangle+b)+ \frac{1}{2}\|w\|^2\\
+    q(y_i-\langle w, \phi(x) \rangle_{\mathcal{H}}-b)+ (1-q)(-y_i+\langle w, \phi(x) \rangle_{\mathcal{H}}+b)+ \frac{1}{2}\|w\|_{\mathcal{H}}^2\\
     \end{aligned}
     \end{equation}
 Note the division by $\lambda$ so that $C=\frac{1}{\lambda m}$.
@@ -167,9 +171,9 @@ We can next rephrase the optimisation in \ref{eq:kqr_min2} by introducing the sl
 \begin{equation}\label{eq:kqr_min3}
     \begin{aligned}
         \min_{w,b,\xi_i,\xi_i^*} \quad & C \sum \limits_{i=1}^{m}
-        q \xi_i+ (1-q)\xi_i^*+ \frac{1}{2}\|w\|^2\\
-    \textrm{s.t.} \quad & y_i-\langle w, \phi(x) \rangle-b \leq \xi_i\\
-    & -y_i+\langle w, \phi(x) \rangle+b \leq \xi_i^*\\
+        q \xi_i+ (1-q)\xi_i^*+ \frac{1}{2}\|w\|_{\mathcal{H}}^2\\
+    \textrm{s.t.} \quad & y_i-\langle w, \phi(x) \rangle_{\mathcal{H}}-b \leq \xi_i\\
+    & -y_i+\langle w, \phi(x) \rangle_{\mathcal{H}}+b \leq \xi_i^*\\
       &\xi_i\geq0    \\
       &\xi_i^*\geq0    \\
     \end{aligned}
@@ -184,7 +188,7 @@ In order to make it more compact, we rewrite equation \ref{eq:kqr_min3} in matri
       &\xi^*\succeq0    \\
     \end{aligned}
     \end{equation}
-Consider now, the lagrangian $L$ associated to \ref{eq:kqr_min4}
+Consider now, the lagrangian $\mathcal{L}$ associated to \ref{eq:kqr_min4}
 \begin{equation}\label{eq:kqr_min5}
     \begin{aligned}
     L(w,b,\xi,\xi^*)= & C q \xi^\intercal \mathbb{1}+ C q (\xi^*)^\intercal \mathbb{1}+ \frac{1}{2}w^\intercal w- \alpha^\intercal(\xi - y+\Phi^\intercal w +b)
@@ -196,13 +200,13 @@ Consider now, the lagrangian $L$ associated to \ref{eq:kqr_min4}
 The next step is deriving its dual formulation, since it is easier and more efficient to solve. This because the dual problem has the useful property of being always convex.
 
 \begin{definition}
-    The dual function associated to the lagrangian $L(x,\lambda)$ is given by $g(v)=\inf_x L(x,\lambda)$
+    The dual function associated to the lagrangian $\mathcal{L}(x,\lambda)$ is given by $g(v)=\inf_x \mathcal{L}(x,\lambda)$
 \end{definition}
 where $\lambda$ is called the lagrange multiplier of the optimization problem. Such dual formulation has an useful property, that is \begin{equation}\label{weak_duality}
     g(\lambda)\leq p^*
 \end{equation}
 where $p^*$ is the optimal value of your optimization problem.
-Consider a simple lagrangian $L(x,\lambda)=f(x)+\sum \lambda_i r_i(x) +\sum v_i h_i(x)$, where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. Then it can be noted that, the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$. Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$, we can obtain an approximate or perfect solution to the primal problem.
+Consider a simple lagrangian $\mathcal{L}(x,\lambda)=f(x)+\sum\limits_{i=1}^n \lambda_i r_i(x) +\sum\limits_{i=1}^{n} v_i h_i(x)$, where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. Then it can be noted that, the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$. Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$, we can obtain an approximate or perfect solution to the primal problem.
 \\
 To explain why we may or not be able to attain the best solution to the primal problem by maximizing its dual, we have to introduce the concept of duality.
 \\
@@ -235,7 +239,10 @@ For convexity, a sufficient condition is the positive definiteness of $Q$ in the
         s.t \quad& Ax\preceq b
     \end{aligned}
 \end{equation}
-In our case, equation \ref{eq:kqr_min5}, we have $w^\intercal w$, thus $Q$ is just the identity matrix which satisfies the positive definiteness requirement. Therefore, our problem is convex.
+% In our case, equation \ref{eq:kqr_min5}, we have $w^\intercal w$, thus $Q$ is just the identity matrix which satisfies the positive definiteness requirement. 
+This fact is easily checked by the fact that kernel matrices are by definition positive semidefinite.
+% $\|w\|_{\mathcal{H}}^2= w^\intercal w= \alpha^\intercal K \alpha$, the last element is positive semidefinitive which in turn implies also $w^\intercal w$ is also positive semidefinite.
+Therefore, our problem is convex.
 Next we check that Slater's condition holds. Considering first the two non negative constraints on $\xi$ and $\xi^*$, we conclude that $\xi$  and $\xi^*$ have to be greater or equal to zero for the existence of an $x$ satisfying Slater's condition. Thus, let us suppose that $0 \leq \xi \leq \alpha$ and $0 \leq \xi^* \leq \alpha$.
 \\
 Next, let us consider the other two inequalities and make the following ansatz.
@@ -261,8 +268,8 @@ We end this section with the derivation of the dual problem; that is the convex 
 First, derive the dual function of \ref{eq:kqr_min5}.
 \begin{equation}
     \begin{aligned}
-        g(\alpha, \alpha^*, \nu, \nu^*)=& \inf_x L(x,\lambda)\\
-    = & \inf_{\xi, \xi^*, w, b} L(w,b,\xi,\xi^*)
+        g(\alpha, \alpha^*, \nu, \nu^*)=& \inf_x \mathcal{L}(x,\lambda)\\
+    = & \inf_{\xi, \xi^*, w, b} \mathcal{L}(w,b,\xi,\xi^*)
 \end{aligned}
 \end{equation}
 Setting its derivates to zero
@@ -312,14 +319,14 @@ Switching sign, we rephrase it as a minimisation problem, which is the common pr
     \end{equation}
 The kernel quantile regression estimator is then given by
 \begin{equation}
-    f(x)=\sum\limits_i \textrm{a}_i k(x_i, x)+b
+    f(x)=\sum\limits_{i=1}^{n} \textrm{a}_i k(x_i, x)+b
 \end{equation}
 Since our optimisation problem possesses strong duality and it is differentiable in both the objective and the constraint, we have that it must satisfy the Karush Kuhn Tucker conditions, see section 5.5.3 \cite{boyd2004convex}.
 Thanks to the KKT conditions on the primal optimisation problem we have that $f(x_i)=y_i \ \mathrm{for} \ \textrm{a}_i \not \in \{C(q-1), Cq\}$. 
 To see this, we have to consider the KKT conditions.
 \begin{equation}
     \begin{aligned}
-    \lambda^* r_i(x^*)=&0, \quad i=1,\dots,m
+    \lambda^* r_i(x^*)=&0, \quad i=1,\dots,n
     \\
     \nabla L(x^*)=&0
 \end{aligned}
@@ -365,7 +372,7 @@ Therefore in order to retrieve b we simply have to choose an index $i$ such that
 and let
 \begin{equation}
     \begin{aligned}
-    b=&y_i-\sum_i \textrm{a}_i k(x_i,x)
+    b=&y_i-\sum\limits_{i=1}^n \textrm{a}_i k(x_i,x)
     \end{aligned}
 \end{equation}
 
@@ -382,7 +389,7 @@ Due to the bimodality of the data, such dataset is commonly used to give a diffi
     \caption{Melbourne temperatures dataset}
     \label{fig:melbourne_temperature_data}
 \end{figure}
-Hereafter, the results of the four presented methods on the Melbourne dataset are reported, see figure \ref{fig:melbourne_quantiles_comparison} for a visualisation. Notice, the kernel considered here is the gaussian rbf. Hyperparameter tuning have been optimised through cross validation, see \ref{appendix:cross_validation}.
+Hereafter, the results of the four presented methods on the Melbourne dataset are reported, see figure \ref{fig:melbourne_quantiles_comparison} for a visualisation. Notice, the kernel considered here is the Gaussian RBF. Hyperparameters have been tuned through cross validation, see \ref{appendix:cross_validation}.
 \begin{figure}[!h]
     \begin{subfigure}[b]{0.5\linewidth}
       \centering
@@ -407,10 +414,10 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \begin{subfigure}[b]{0.5\linewidth}
       \centering
       \includegraphics[width=1.1\textwidth]{images/melbourne_kernel_quantile_regression.png}
-      \caption{Kernel quantile regression} 
+      \caption{Kernel quantile regression, Gaussian RBF} 
       \label{fig:melborune_kernel_quantile_regression} 
     \end{subfigure} 
-    \caption{Quantile regressors}
+    \caption{Quantile regressors comparison Melbourne weather data}
     \label{fig:melbourne_quantiles_comparison} 
   \end{figure}
 
@@ -421,7 +428,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \toprule
      & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
     \midrule
-    Pinball loss & 11.278895 & 10.317612 & 10.340842 & 10.031708 \\
+    Pinball loss & 11.278895 & 10.317612 & 10.340842 & \textbf{10.031708} \\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -470,9 +477,9 @@ We conclude this chapter with reporting the same kind of tables \ref{tab:kernel 
         & Kernel & Pinball loss
         \\
         \midrule
-        & Gauss RBF &  10.031708 \\
-        & Laplacian &  10.056884 \\
-        & Gauss RBFxLaplacian & 10.150826 \\
+        & Gaussian RBF &  10.031708 \\
+        & Absolute Laplacian &  10.056884 \\
+        & Gauss RBFx Absolute Laplacian & 10.150826 \\
         & Cosine & 16.253973    \\
         & Linear & 10.463867    \\
         & Polynomial & 11.238393     \\
@@ -726,7 +733,7 @@ We conclude this chapter with reporting the same kind of tables \ref{tab:kernel 
         \caption{Periodic} 
         \label{} 
     \end{subfigure} 
-    \caption{Kernel quantile regressors comparison}
+    \caption{Kernel quantile regressors comparison Melbourne data}
     \label{fig:kernel quantile regressors comparison} 
 \end{figure}
 
