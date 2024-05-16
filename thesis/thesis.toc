@@ -72,10 +72,10 @@
 \contentsline {subsubsection}{EDA}{72}{section*.41}%
 \contentsline {subsection}{\numberline {8.1.2}Load track}{72}{subsection.8.1.2}%
 \contentsline {subsubsection}{EDA}{73}{section*.44}%
-\contentsline {subsection}{\numberline {8.1.3}GEFCom ETL}{73}{subsection.8.1.3}%
+\contentsline {subsubsection}{GEFCom ETL}{73}{section*.48}%
 \contentsline {section}{\numberline {8.2}Germany Switzerland Austria data}{75}{section.8.2}%
-\contentsline {subsubsection}{ETL}{76}{section*.48}%
-\contentsline {subsubsection}{EDA}{76}{section*.49}%
+\contentsline {subsubsection}{ETL}{76}{section*.49}%
+\contentsline {subsubsection}{EDA}{76}{section*.50}%
 \contentsline {chapter}{\chapternumberline {9}Implementation}{81}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Point forecasting}{81}{section.9.1}%
 \contentsline {subsection}{\numberline {9.1.1}Multiple linear regression}{81}{subsection.9.1.1}%
@@ -104,7 +104,7 @@
 \contentsline {subsection}{\numberline {10.1.9}Results}{91}{subsection.10.1.9}%
 \contentsline {section}{\numberline {10.2}Probabilistic forecasting}{92}{section.10.2}%
 \contentsline {section}{\numberline {10.3}Conclusions}{92}{section.10.3}%
-\contentsline {chapter}{List of Symbols}{93}{section*.70}%
+\contentsline {chapter}{List of Symbols}{93}{section*.71}%
 \contentsline {appendix}{\chapternumberline {A}Appendix}{97}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Feature map normalization}{97}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{97}{section.A.2}%
@@ -120,7 +120,7 @@
 \contentsline {section}{\numberline {A.4}Kernel methods best practices}{102}{section.A.4}%
 \contentsline {subsection}{\numberline {A.4.1}Data normalization}{103}{subsection.A.4.1}%
 \contentsline {subsection}{\numberline {A.4.2}Data compression}{104}{subsection.A.4.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{105}{section*.84}%
-\contentsline {subsubsection}{Pivoted Cholesky decomposition}{105}{section*.85}%
+\contentsline {subsubsection}{Nystrom decomposition}{105}{section*.85}%
+\contentsline {subsubsection}{Pivoted Cholesky decomposition}{105}{section*.86}%
 \contentsline {section}{\numberline {A.5}Source code}{106}{section.A.5}%
-\contentsline {chapter}{Bibliography}{107}{appendix*.86}%
+\contentsline {chapter}{Bibliography}{107}{appendix*.87}%

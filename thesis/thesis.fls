@@ -1897,6 +1897,8 @@ INPUT ./images/gradient_boosting.png
 INPUT images/gradient_boosting.png
 INPUT ./images/gradient_boosting.png
 INPUT ./images/gradient_boosting.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri9t.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri9t.tfm
 INPUT ./images/melbourne_temperature.png
 INPUT ./images/melbourne_temperature.png
 INPUT images/melbourne_temperature.png

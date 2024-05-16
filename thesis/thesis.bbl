@@ -136,6 +136,11 @@ Israt Fatema, Gang Lei, and Xiaoying Kong.
 \newblock Probabilistic forecasting of electricity demand incorporating mobility data.
 \newblock {\em Applied Sciences}, 13(11):6520, 2023.
 
+\bibitem{Formayer2023}
+Herbert Formayer, Imran Nadeem, David Leidinger, Philipp Maier, Franziska Sch\"{o}niger, Demet Suna, Gustav Resch, Gerhard Totschnig, and Fabian Lehner.
+\newblock Secures-met: A european meteorological data set suitable for electricity modelling applications.
+\newblock {\em Scientific Data}, 10(1), 2023.
+
 \bibitem{friedman2001greedy}
 Jerome~H Friedman.
 \newblock Greedy function approximation: a gradient boosting machine.
@@ -460,6 +465,10 @@ Robert Tibshirani.
 Dennis~W Van~der Meer, Joakim Wid{\'e}n, and Joakim Munkhammar.
 \newblock Review on probabilistic forecasting of photovoltaic power production and electricity consumption.
 \newblock {\em Renewable and Sustainable Energy Reviews}, 81:1484--1512, 2018.
+
+\bibitem{vandenberghe2010cvxopt}
+Lieven Vandenberghe.
+\newblock The cvxopt linear and quadratic cone program solvers, 2010.
 
 \bibitem{vapnik2}
 Vladimir Vapnik.

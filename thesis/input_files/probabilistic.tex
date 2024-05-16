@@ -1,6 +1,6 @@
 We saw in the previous chapter how point forecasting relates to predicting the expected value of the target variable.
 Conversely, in probabilistic forecasting we are interested in modelling a probability distribution over the target variable.
-This approach enables us to account for prediction uncertainty and to make more informed decision.
+This approach enables us to account for prediction uncertainty and to make more informed decisions.
 \section{Quantile regression}
 \input{input_files/qr.tex}
 
@@ -44,7 +44,7 @@ The inner problem is easy, as already pointed out, we will have
     \hat{c}_1=mean(y_i|x_i \in R_1) \quad \hat{c}_2=mean(y_i|x_i \in R_2)
 \end{equation}
 For the outer problem, we scan through all the (j,s) tuples and pick the best pair. 
-Next, one or both of these regions from the previous step are split into two more regions; we recurse this process until some stopping condition is triggered (max number of branches, max deth of tree, threshold on the MSE, minimum number of observation in each leaf node).
+Next, one or both of these regions from the previous step are split into two more regions; we recurse this process until some stopping condition is triggered (max number of branches, max deth of tree, threshold on the mean squared error (MSE), minimum number of observations in each leaf node).
 Notice, this being a greedy algorithm implies that our final solution is guaranteed to be just a local optimum not a global one.
 Even though their simplicity, these models have proved themselves to be really powerful. See figure \ref{fig:decision_tree} for a example where decision tree with different hyperparameters are fitted to a sine wave plus noise. The most popular among these model is the CART \cite{breiman2017classification} tree, its name comes from the fact that it can handle both classification and regression problems.
 \begin{figure}
@@ -154,26 +154,27 @@ In order to solve our quantile regression tasks through gradient boosting, all w
 The idea of quantile regression has been extended to kernel methods by Takeuchi et al. \cite{takeuchi2006nonparametric}.
 There, they minimize a risk functional plus regularizer defined as follows.
 \begin{equation}\label{eq:kqr_min1}
-    R[f]:=\frac{1}{m}\sum\limits_{i=1}^{m}\rho_q(y_i-f(x_i))+\frac{\lambda}{2}\|g\|_\mathcal{H}^2
+    R[f]:=\frac{1}{m}\sum\limits_{i=1}^{m}\rho_q(y_i-f(x_i))+\frac{\lambda}{2}\|w\|_\mathcal{H}^2
 \end{equation}
-where $f=g+b$, $g \in \mathcal{H}$ and $b \in \mathbb{R}$.
-Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle_{\mathcal{H}}+b$. Moreover, note that the RKHS norm is defined as follows $\|f\|_{\mathcal{H}}=\inf\{\|w\|_{\mathcal{F}}:w\in \mathcal{F},f(x)=\langle w,\varphi (x)\rangle _{\mathcal{F}},\forall x\in X\}$, where $\mathcal{F}$ is the feature space.
+where $f=w+b$, $w \in \mathcal{H}$ and $b \in \mathbb{R}$.
+Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle_{\mathcal{H}}+b$. 
+% Moreover, note that the RKHS norm is defined as follows $\|f\|_{\mathcal{H}}=\inf\{\|w\|_{\mathcal{F}}:w\in \mathcal{F},f(x)=\langle w,\varphi (x)\rangle _{\mathcal{F}},\forall x\in X\}$, where $\mathcal{F}$ is the feature space.
  Doing so we obtain a minimization problem equivalent to minimizing equation \ref{eq:kqr_min1}.
 \begin{equation}\label{eq:kqr_min2}
     \begin{aligned}
     \min_{w,b} \quad & C \sum \limits_{i=1}^{m}
-    q(y_i-\langle w, \phi(x) \rangle_{\mathcal{H}}-b)+ (1-q)(-y_i+\langle w, \phi(x) \rangle_{\mathcal{H}}+b)+ \frac{1}{2}\|w\|_{\mathcal{H}}^2\\
+    q(y_i-\langle w, \phi(x_i) \rangle_{\mathcal{H}}-b)+ (1-q)(-y_i+\langle w, \phi(x_i) \rangle_{\mathcal{H}}+b)+ \frac{1}{2}\|w\|_{\mathcal{H}}^2\\
     \end{aligned}
     \end{equation}
-Note the division by $\lambda$ so that $C=\frac{1}{\lambda m}$.
+Note the division by $\lambda$ so that $C:=\frac{1}{\lambda m}$.
 \\
 We can next rephrase the optimisation in \ref{eq:kqr_min2} by introducing the slack variables $\xi_i$ and $\xi_i^*$.
 \begin{equation}\label{eq:kqr_min3}
     \begin{aligned}
         \min_{w,b,\xi_i,\xi_i^*} \quad & C \sum \limits_{i=1}^{m}
         q \xi_i+ (1-q)\xi_i^*+ \frac{1}{2}\|w\|_{\mathcal{H}}^2\\
-    \textrm{s.t.} \quad & y_i-\langle w, \phi(x) \rangle_{\mathcal{H}}-b \leq \xi_i\\
-    & -y_i+\langle w, \phi(x) \rangle_{\mathcal{H}}+b \leq \xi_i^*\\
+    \textrm{s.t.} \quad & y_i-\langle w, \phi(x_i) \rangle_{\mathcal{H}}-b \leq \xi_i\\
+    & -y_i+\langle w, \phi(x_i) \rangle_{\mathcal{H}}+b \leq \xi_i^*\\
       &\xi_i\geq0    \\
       &\xi_i^*\geq0    \\
     \end{aligned}
@@ -191,8 +192,8 @@ In order to make it more compact, we rewrite equation \ref{eq:kqr_min3} in matri
 Consider now, the lagrangian $\mathcal{L}$ associated to \ref{eq:kqr_min4}
 \begin{equation}\label{eq:kqr_min5}
     \begin{aligned}
-    L(w,b,\xi,\xi^*)= & C q \xi^\intercal \mathbb{1}+ C q (\xi^*)^\intercal \mathbb{1}+ \frac{1}{2}w^\intercal w- \alpha^\intercal(\xi - y+\Phi^\intercal w +b)
-    - (\alpha^*)^\intercal(\xi^* +y-\Phi^\intercal w -b)
+    L(w,b,\xi,\xi^*)= & C q \xi^\intercal \mathbb{1}+ C q (\xi^*)^\intercal \mathbb{1}+ \frac{1}{2}w^\intercal w- \lambda^\intercal(\xi - y+\Phi^\intercal w +b)
+    - (\lambda^*)^\intercal(\xi^* +y-\Phi^\intercal w -b)
     \\
     & -\nu^\intercal \xi - (\nu^*)^\intercal \xi^*
 \end{aligned}
@@ -200,38 +201,41 @@ Consider now, the lagrangian $\mathcal{L}$ associated to \ref{eq:kqr_min4}
 The next step is deriving its dual formulation, since it is easier and more efficient to solve. This because the dual problem has the useful property of being always convex.
 
 \begin{definition}
-    The dual function associated to the lagrangian $\mathcal{L}(x,\lambda)$ is given by $g(v)=\inf_x \mathcal{L}(x,\lambda)$
+    The dual function associated to the lagrangian $\mathcal{L}(x,\lambda, \nu)$ is given by $g(\lambda, \nu)=\underset{x}\inf \ \mathcal{L}(x,\lambda, \nu)$
 \end{definition}
-where $\lambda$ is called the lagrange multiplier of the optimization problem. Such dual formulation has an useful property, that is \begin{equation}\label{weak_duality}
-    g(\lambda)\leq p^*
+where $\lambda$ is called the lagrange multiplier of the optimization problem. Such dual formulation has an useful property, which is \begin{equation}\label{weak_duality}
+    g(\lambda, \nu)\leq p^*
 \end{equation}
-where $p^*$ is the optimal value of your optimization problem.
-Consider a simple lagrangian $\mathcal{L}(x,\lambda)=f(x)+\sum\limits_{i=1}^n \lambda_i r_i(x) +\sum\limits_{i=1}^{n} v_i h_i(x)$, where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. Then it can be noted that, the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$. Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$, we can obtain an approximate or perfect solution to the primal problem.
+where $p^*$ is the optimal value of your optimization problem. In other words $g(\lambda, \nu)$ is a lower bound for the optimal $p^*$.
+Consider now a simple lagrangian $\mathcal{L}(x,\lambda, \nu)=f(x)+\sum\limits_{i=1}^n \lambda_i r_i(x) +\sum\limits_{i=1}^{n} \nu_i h_i(x)$, where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. Then it can be noted that, the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$.
+% when lagrange multiplier is negative, we have that g > p
+Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$, we can obtain an approximate or perfect solution to the primal problem.
 \\
 To explain why we may or not be able to attain the best solution to the primal problem by maximizing its dual, we have to introduce the concept of duality.
 \\
 We use $d^*$ to denote the optimal value of the lagrange dual problem; we can think of it as the best lower bound on $p^*$. 
 \\
 The inequality \ref{weak_duality} is called weak duality. The difference $p^*-d^*$ is said the optimal duality gap; it is the gap between the optimal value of the primal problem and the best lower bound on it that can be obtained from the Lagrange dual function. Moreover, note that the optimal duality gap is always nonnegative.
-\\
 We say that strong duality holds, when the optimal duality gap is zero; in other words, the lagrange dual bound is tight.
 \\
 Constraint qualifications are condtions under which strong duality holds; one of the most popular is Slater's condition.
-\begin{equation}\label{slater_condition}
-    \begin{aligned}
-        \exists x \in \textrm{relint} \ D \ \textrm{s.t.} & \ r_i(x)<0, \quad i=1, \dots, m \\
-        & h_i(x)=0
-    \end{aligned}
-\end{equation}
-Where relint $D$ is the relative interior of $ D:=\cap _{i=0}^{m}\operatorname {dom} (r_{i})$
-\\
+\begin{proposition}
+    Slater's condition reads as
+    \begin{equation}\label{slater_condition}
+        \begin{aligned}
+            \exists x \in \textrm{relint} \ D \ \textrm{s.t.} & \ r_i(x)<0, \quad i=1, \dots, m \\
+            & h_i(x)=0
+        \end{aligned}
+    \end{equation}
+    Where relint $D$ is the relative interior of $ D:=\underset{i=0}{\overset{m}{\cap}} \operatorname {dom} (r_{i})$
+\end{proposition}
 Slater's theorem naturally follows.
 \begin{theorem}
     If Slater's condtion holds and the problem is convex then strong duality holds.
 \end{theorem}
 We can now check that our optimization problem posseses strong duality by checking Slater's condition.
 \\
-In our case we don't have any equality constraint, so we do not have to worry about the $h_i(x)=0$ term in \ref{slater_condition}. All we have to check is the convexity of our problem and that there exist a $x$ such that $r_i(x)<0$.
+In our case we don't have any equality constraint, so we do not have to worry about the $h_i(x)=0$ term in \ref{slater_condition}. All we have to check is the convexity of our problem and that there exist an $x$ such that $r_i(x)<0$.
 For convexity, a sufficient condition is the positive definiteness of $Q$ in the quadratic programming problem 
 \begin{equation}
     \begin{aligned}
@@ -240,121 +244,121 @@ For convexity, a sufficient condition is the positive definiteness of $Q$ in the
     \end{aligned}
 \end{equation}
 % In our case, equation \ref{eq:kqr_min5}, we have $w^\intercal w$, thus $Q$ is just the identity matrix which satisfies the positive definiteness requirement. 
-This fact is easily checked by the fact that kernel matrices are by definition positive semidefinite.
+This condition is easily checked by the fact that kernel matrices are by definition positive semidefinite.
 % $\|w\|_{\mathcal{H}}^2= w^\intercal w= \alpha^\intercal K \alpha$, the last element is positive semidefinitive which in turn implies also $w^\intercal w$ is also positive semidefinite.
 Therefore, our problem is convex.
-Next we check that Slater's condition holds. Considering first the two non negative constraints on $\xi$ and $\xi^*$, we conclude that $\xi$  and $\xi^*$ have to be greater or equal to zero for the existence of an $x$ satisfying Slater's condition. Thus, let us suppose that $0 \leq \xi \leq \alpha$ and $0 \leq \xi^* \leq \alpha$.
+Next we check that Slater's condition holds. Considering first the two non negative constraints on $\xi$ and $\xi^*$, we conclude that $\xi$  and $\xi^*$ have to be greater or equal to zero for the existence of an $x$ satisfying Slater's condition. Thus, let us suppose that $0 \leq \xi \leq \mu$ and $0 \leq \xi^* \leq \mu$.
 \\
 Next, let us consider the other two inequalities and make the following ansatz.
 \\
 \begin{equation}
     \begin{aligned}
-        w=& \Phi^\intercal(\Phi \Phi^\intercal)^{-1} y\\
-        b<& \alpha
+        w=& \Phi^\intercal(\Phi \Phi^\intercal)^{-1} (y-b)
     \end{aligned}
 \end{equation}
-We then have
+We then have for any $\xi > 0$ and $\xi^* > 0$  that
 \begin{equation}
     \begin{aligned}
-        -\xi + y -\Phi\Phi^\intercal(\Phi \Phi^\intercal)^{-1}y-b<&0
+        -\xi + y -\Phi\Phi^\intercal(\Phi \Phi^\intercal)^{-1}(y-b)-b<&0
         \\
-        -\xi^* - y +\Phi\Phi^\intercal(\Phi \Phi^\intercal)^{-1}y+b<&0
+        -\xi^* - y +\Phi\Phi^\intercal(\Phi \Phi^\intercal)^{-1}(y-b)+b<&0
     \end{aligned}
 \end{equation}
 Hence, we conclude that our problem satisfies Slater's condition. Therefore the solution of the dual and primal problem are equivalent.
 \\
-We end this section with the derivation of the dual problem; that is the convex problem, we will solve in order to get the quantiles prdeiction of our quantile kernel algorithm.
+We end this section with the derivation of the dual problem; that is the convex problem, which we will solve in order to get the quantiles prediction of our quantile kernel algorithm.
 \\
 First, derive the dual function of \ref{eq:kqr_min5}.
 \begin{equation}
     \begin{aligned}
-        g(\alpha, \alpha^*, \nu, \nu^*)=& \inf_x \mathcal{L}(x,\lambda)\\
-    = & \inf_{\xi, \xi^*, w, b} \mathcal{L}(w,b,\xi,\xi^*)
+        g(\lambda, \lambda^*, \nu, \nu^*)= & \inf_{\xi, \xi^*, w, b} \mathcal{L}(w,b,\xi,\xi^*,\lambda, \lambda^*, \nu, \nu^*)
 \end{aligned}
 \end{equation}
 Setting its derivates to zero
 \begin{equation}\label{eq:lagrange_derivatives}
     \begin{cases}
-        \frac{\partial L}{\partial w}=0 \implies w=\Phi^\intercal(\alpha-\alpha^*)
+        \frac{\partial \mathcal{L}}{\partial w}=0 \implies w=\Phi^\intercal(\lambda-\lambda^*)
         \\
-        \frac{\partial L}{\partial b}=0 \implies (\alpha-\alpha^*)^\intercal\mathbb{1}=0
+        \frac{\partial \mathcal{L}}{\partial b}=0 \implies (\lambda-\lambda^*)^\intercal\mathbb{1}=0
         \\
-        \frac{\partial L}{\partial \xi}=0 \implies Cq \mathbb{1}-\alpha- \nu=0
+        \frac{\partial \mathcal{L}}{\partial \xi}=0 \implies Cq \mathbb{1}-\lambda- \nu=0
         \\
-        \frac{\partial L}{\partial \xi^*}=0 \implies C(1-q)\mathbb{1} -\alpha^* -\nu^*=0
+        \frac{\partial \mathcal{L}}{\partial \xi^*}=0 \implies C(1-q)\mathbb{1} -\lambda^* -\nu^*=0
     \end{cases}
 \end{equation}
-As pointed out previously, the lower bound resulting from the dual formulation is non trivial only when the lagrange multipliers are $\succeq 0$. Looking at the last two equations of the system \ref{eq:lagrange_derivatives}, this implies the following two constraints $\alpha \in [0, Cq\mathbb{1}]$ and $\alpha^*\in [0, C(1-q)\mathbb{1}]$.
+As pointed out previously, the lower bound resulting from the dual formulation is non trivial only when the lagrange multipliers $\lambda$ are $\succeq 0$. Looking at the last two equations of the system \ref{eq:lagrange_derivatives}, this implies the following two constraints $\lambda \in [0, Cq\mathbb{1}]$ and $\lambda^*\in [0, C(1-q)\mathbb{1}]$.
 \\
 Substitute the conditions for an optimum into \ref{eq:kqr_min5}, we obtain the dual formulation.
+% nu and nu^* go away because they are multipliers accounting for equality constraint, which in the optimum have to be satisfied hence are zero => h_i \times \nu=0
 \begin{equation}
     \begin{aligned}
-        g(\alpha, \alpha^*)=& \xi^\intercal(Cq\mathbb{1}-\alpha -\nu)+(\xi^*)^\intercal(C(1-q)\mathbb{1}-\alpha^*-\nu^*)-(\alpha-\alpha^*)^\intercal \Phi\Phi^\intercal(\alpha-\alpha^*)
+        g(\lambda, \lambda^*)=& \xi^\intercal(Cq\mathbb{1}-\lambda -\nu)+(\xi^*)^\intercal(C(1-q)\mathbb{1}-\lambda^*-\nu^*)-(\lambda-\lambda^*)^\intercal \Phi\Phi^\intercal(\lambda-\lambda^*)
         \\
-        & +(\alpha-\alpha^*)^\intercal y-(\alpha-\alpha^*)^\intercal b+\frac{1}{2}(\alpha-\alpha^*)^\intercal \Phi\Phi^\intercal(\alpha-\alpha^*)
+        & +(\lambda-\lambda^*)^\intercal y-(\lambda-\lambda^*)^\intercal b+\frac{1}{2}(\lambda-\lambda^*)^\intercal \Phi\Phi^\intercal(\lambda-\lambda^*)
         \\
         \\
-        g(\alpha, \alpha^*)=& 0+0-\frac{1}{2}(\alpha-\alpha^*)^\intercal \Phi\Phi^\intercal(\alpha-\alpha^*)+(\alpha-\alpha^*)^\intercal y-0
+        g(\lambda, \lambda^*)=& 0+0-\frac{1}{2}(\lambda-\lambda^*)^\intercal \Phi\Phi^\intercal(\lambda-\lambda^*)+(\lambda-\lambda^*)^\intercal y-0
         \\
-        g(\alpha, \alpha^*)=& -\frac{1}{2}(\alpha-\alpha^*)^\intercal \Phi\Phi^\intercal(\alpha-\alpha^*)+(\alpha-\alpha^*)^\intercal y
+        g(\lambda, \lambda^*)=& -\frac{1}{2}(\lambda-\lambda^*)^\intercal \Phi\Phi^\intercal(\lambda-\lambda^*)+(\lambda-\lambda^*)^\intercal y
     \end{aligned}
 \end{equation}
-Defining $\textrm{a}=(\alpha-\alpha^*)$ and letting $K$ the kernel matrix, we have that the dual optimisation problem reads as follows
+Defining $\alpha=(\lambda-\lambda^*)$ and letting $K$ the kernel matrix, we have that the dual optimisation problem reads as follows
 \begin{equation}\label{eq:kqr_min6}
     \begin{aligned}
-        \max_{\textrm{a}} \quad & -\frac{1}{2}\textrm{a}^\intercal K\textrm{a}+\textrm{a}^\intercal y\\
+        \max_{\alpha} \quad & -\frac{1}{2}\alpha^\intercal K\alpha+\alpha^\intercal y\\
     \textrm{s.t.} \quad & 
-    C(q-1)\mathbb{1}\preceq \textrm{a}\preceq Cq\mathbb{1}\\
-    &\textrm{a}^\intercal\mathbb{1}=1
+    C(q-1)\mathbb{1}\preceq \alpha \preceq Cq\mathbb{1}\\
+    &\alpha^\intercal\mathbb{1}=1
     \end{aligned}
     \end{equation}
 Switching sign, we rephrase it as a minimisation problem, which is the common practice in convex optimisation.
 \begin{equation}\label{eq:kqr_min7}
     \begin{aligned}
-        \min_{\textrm{a}} \quad & +\frac{1}{2}\textrm{a}^\intercal K\textrm{a}-\textrm{a}^\intercal y\\
+        \min_{\alpha} \quad & +\frac{1}{2}\alpha^\intercal K \alpha-\alpha^\intercal y\\
     \textrm{s.t.} \quad & 
-    C(q-1)\mathbb{1}\preceq \textrm{a} \preceq Cq\mathbb{1}\\
-    &\textrm{a}^\intercal\mathbb{1}=1
+    C(q-1)\mathbb{1}\preceq \alpha \preceq Cq\mathbb{1}\\
+    &\alpha^\intercal\mathbb{1}=1
     \end{aligned}
     \end{equation}
 The kernel quantile regression estimator is then given by
 \begin{equation}
-    f(x)=\sum\limits_{i=1}^{n} \textrm{a}_i k(x_i, x)+b
+    f(x)=\sum\limits_{i=1}^{n} \alpha_i k(x_i, x)+b
 \end{equation}
-Since our optimisation problem possesses strong duality and it is differentiable in both the objective and the constraint, we have that it must satisfy the Karush Kuhn Tucker conditions, see section 5.5.3 \cite{boyd2004convex}.
-Thanks to the KKT conditions on the primal optimisation problem we have that $f(x_i)=y_i \ \mathrm{for} \ \textrm{a}_i \not \in \{C(q-1), Cq\}$. 
+Since our optimisation problem possesses strong duality and it is differentiable in both the objective and the constraint, we have that it must satisfy the Karush Kuhn Tucker conditions (KKT), see section 5.5.3 \cite{boyd2004convex}.
+Thanks to the KKT conditions on the primal optimisation problem we have that $f(x_i)=y_i \ \mathrm{for} \ \alpha_i \not \in \{C(q-1), Cq\}$. 
 To see this, we have to consider the KKT conditions.
+% optimal lambda times optimal x
 \begin{equation}
     \begin{aligned}
-    \lambda^* r_i(x^*)=&0, \quad i=1,\dots,n
+    \lambda r_i(x)=&0, \quad i=1,\dots,n
     \\
-    \nabla L(x^*)=&0
+    \nabla \mathcal{L}(x)=&0
 \end{aligned}
 \end{equation}
 In our setting we have
 \begin{equation}
     \begin{aligned}
-        \alpha_i(\xi_i-y_i+r_i)=&0
+        \lambda_i(\xi_i-y_i+r_i)=&0
         \\
-        \alpha_i^*(\xi_i^*+y_i-r_i)=&0
+        \lambda_i^*(\xi_i^*+y_i-r_i)=&0
         \\
         \nu_i \xi_i=&0
         \\
         \nu_i^* \xi_i^*=&0
         \\
-        \nabla L =&0
+        \nabla \mathcal{L} =&0
     \end{aligned}
 \end{equation}
 Using the gradient of the lagrangian of equation \ref{eq:lagrange_derivatives} we end up with
 \begin{equation}
     \begin{aligned}
-        \alpha_i(\xi_i-y_i+r_i)=&0
+        \lambda_i(\xi_i-y_i+r_i)=&0
         \\
-        \alpha_i^*(\xi_i^*+y_i-r_i)=&0
+        \lambda_i^*(\xi_i^*+y_i-r_i)=&0
         \\
-        (Cq-\alpha_i) \xi_i=&0
+        (Cq-\lambda_i) \xi_i=&0
         \\
-        (C(1-q)-\alpha_i) \xi_i^*=&0
+        (C(1-q)-\lambda_i) \xi_i^*=&0
     \end{aligned}
 \end{equation}
 
@@ -362,17 +366,17 @@ Now, let us break into cases
 
 \begin{equation}
 \begin{cases}
-    \alpha_i=Cq, \ \alpha_i^*=0 & \implies \alpha_i-\alpha_i^*=Cq, \xi_i\leq 0, \xi^*=0\implies \xi_i-y_i+f_i=0 \\
-    \alpha_i=0, \ \alpha_i^*=C(1-q) & \implies \alpha_i-\alpha_i^*=C(q-1), \xi_i= 0, \xi^*\leq 0 \implies \xi_i^*+y_i-f_i=0 \\
-    0\leq \alpha_i\leq Cq, \ 0\leq \alpha_i^*\leq C(1-q) & \implies \xi_i=0,  \xi^*_i= 0 \implies -y_i+f_i=0, \ y_i-f_i=0 \\
+    \lambda_i=Cq, \ \lambda_i^*=0 & \implies \lambda_i-\lambda_i^*=Cq, \xi_i\leq 0, \xi^*=0\implies \xi_i-y_i+f_i+b=0 \\
+    \lambda_i=0, \ \lambda_i^*=C(1-q) & \implies \lambda_i-\lambda_i^*=C(q-1), \xi_i= 0, \xi^*\leq 0 \implies \xi_i^*+y_i-f_i-b=0 \\
+    0\leq \lambda_i< Cq, \ 0\leq \lambda_i^*< C(1-q) & \implies \xi_i=0,  \xi^*_i= 0 \implies -y_i+f_i+b=0, \ y_i-f_i-b=0 \\
 \end{cases}
 \end{equation}
 
-Therefore in order to retrieve b we simply have to choose an index $i$ such that  $\textrm{a}_i \not \in \{C(q-1), Cq\}$
+Therefore in order to retrieve b we simply have to choose an index $i$ such that  $\alpha_i \not \in \{C(q-1), Cq\}$
 and let
 \begin{equation}
     \begin{aligned}
-    b=&y_i-\sum\limits_{i=1}^n \textrm{a}_i k(x_i,x)
+    b=&y_i-\sum\limits_{i=1}^n \alpha_i k(x_i,x)
     \end{aligned}
 \end{equation}
 
@@ -426,7 +430,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
 \caption{Pinball loss Melbourne data}
 \begin{tabular}{lllll}
     \toprule
-     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+     & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
     Pinball loss & 11.278895 & 10.317612 & 10.340842 & \textbf{10.031708} \\
     \bottomrule
@@ -437,7 +441,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \caption{Pinball loss quantile-wise Melbourne data}
     \begin{tabular}{lllll}
     \toprule
-    Quantiles & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+    Quantiles & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
     0.100000 & 0.710644 & 0.549232 & 0.562888 & \textbf{0.540235} \\
     0.200000 & 1.155014 & 0.938561 & 0.946712 & \textbf{0.903213} \\
@@ -456,16 +460,16 @@ As already pointed out, the quantile regression with q=0.5 corresponds to the st
 \caption{Mean absolute error Melbourne data}
 \begin{tabular}{lllll}
     \toprule
-     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
+     & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
     MAE & 3.253882 & 3.134805 & 3.095041 & \textbf{3.024336} \\
     \bottomrule
     \end{tabular}
 \end{table}  
 From these tables, we can see that kernel quantile regression outperformed the simple quantile regressor as well as the more complex models like quantile forest and gradient boosting quantile regression for the Melbourne temperatures dataset. Not only kernel quantile regression was the best in terms of total pinball loss but also the best in terms of each quantile pinball loss and mean absolute error.
-Comparison has been carried out on further datasets, yielding similar conclusion as the one of above, to know more see \ref{appendix:quantile_regressor_extensive_comparison}.
+Comparison has been carried out on further datasets, yielding similar conclusions as the one of above, to know more see \ref{appendix:quantile_regressor_extensive_comparison}.
 
-We conclude this chapter with reporting the same kind of tables \ref{tab:kernel pinball comparison}, \ref{tab:kernel pinball comparison quantile-wise}, \ref{tab:kernel mae comparison} and figures \ref{fig:kernel quantile regressors comparison} comparing various kernel functions.
+We conclude this chapter with reporting the same kind of tables \ref{tab:kernel pinball comparison}, \ref{tab:kernel pinball comparison quantile-wise}, \ref{tab:kernel mae comparison} and figure \ref{fig:kernel quantile regressors comparison} comparing various kernel functions.
 
 % tables
 \begin{table}[!h]
@@ -482,7 +486,7 @@ We conclude this chapter with reporting the same kind of tables \ref{tab:kernel 
         & Gauss RBFx Absolute Laplacian & 10.150826 \\
         & Cosine & 16.253973    \\
         & Linear & 10.463867    \\
-        & Polynomial & 11.238393     \\
+        & Polynomial & 10.089147     \\
         & Sigmoid & 16.253973            \\
         & Chi squared & \textbf{10.023732}       \\
         & Matern 0.5 & 10.056883  \\
@@ -648,7 +652,7 @@ We conclude this chapter with reporting the same kind of tables \ref{tab:kernel 
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
         \includegraphics[width=1.1\textwidth]{images/melborune_gaussian_rbf_kernel_quantile_regression.png} 
-        \caption{Gauss RBF} 
+        \caption{Gaussian RBF} 
         \label{} 
         \vspace{4ex}
     \end{subfigure}%% 
