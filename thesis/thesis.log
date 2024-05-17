@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  16 MAY 2024 14:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  17 MAY 2024 17:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1313,14 +1313,10 @@ LaTeX Font Info:    Trying to load font information for U+esvect on input line 3
  (/usr/local/texlive/2023/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 ) [3]
-Overfull \hbox (1.4526pt too wide) in paragraph at lines 45--45
- \OT1/pplx/m/n/10.95 (-20) Sea-sonal au-tore-gres-sive in-te-grated mov-ing av-er-age with 
- []
-
 Package microtype Info: Character `013' is missing
 (microtype)             in font `OT1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-[4]
+ [4]
 Overfull \hbox (10.26575pt too wide) in paragraph at lines 97--97
  [][] [][][]\OT1/pplx/m/n/10.95 (-20) Trigonometric sea-son-al-ity Box-Cox trans-for-ma-tion ARMA 
  []
@@ -1530,10 +1526,7 @@ Package pdftex.def Info: images/electricity-production-by-source.png  used on in
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [37 <./images/eu_zonal.png>] [38 <./images/us_local.png> <./images/electricity-production-by-source.png>] (./input_files/point.tex
-Underfull \vbox (badness 2573) has occurred while \output is active []
-
- [39
+) [37 <./images/eu_zonal.png>] [38 <./images/us_local.png> <./images/electricity-production-by-source.png>] (./input_files/point.tex [39
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 62--66
@@ -1550,13 +1543,13 @@ Package pdftex.def Info: images/svm_simple.png  used on input line 134.
 <images/svr1.png, id=1329, 417.7206pt x 328.8285pt>
 File: images/svr1.png Graphic file (type png)
 <use images/svr1.png>
-Package pdftex.def Info: images/svr1.png  used on input line 164.
+Package pdftex.def Info: images/svr1.png  used on input line 167.
 (pdftex.def)             Requested size: 369.0pt x 290.47383pt.
  [43 <./images/svm_simple.png>]
 <images/lstm_cell.png, id=1340, 702.625pt x 278.03876pt>
 File: images/lstm_cell.png Graphic file (type png)
 <use images/lstm_cell.png>
-Package pdftex.def Info: images/lstm_cell.png  used on input line 189.
+Package pdftex.def Info: images/lstm_cell.png  used on input line 192.
 (pdftex.def)             Requested size: 369.0pt x 146.02344pt.
 
 
@@ -1566,12 +1559,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <images/svr2.png, id=1380, 417.7206pt x 328.8285pt>
 File: images/svr2.png Graphic file (type png)
 <use images/svr2.png>
-Package pdftex.def Info: images/svr2.png  used on input line 319.
+Package pdftex.def Info: images/svr2.png  used on input line 322.
 (pdftex.def)             Requested size: 369.0pt x 290.47383pt.
 <images/svr3.png, id=1381, 417.7206pt x 328.8285pt>
 File: images/svr3.png Graphic file (type png)
 <use images/svr3.png>
-Package pdftex.def Info: images/svr3.png  used on input line 325.
+Package pdftex.def Info: images/svr3.png  used on input line 328.
 (pdftex.def)             Requested size: 369.0pt x 290.47383pt.
 ) [48 <./images/svr2.png>] [49 <./images/svr3.png>] [50
 
@@ -2213,18 +2206,18 @@ Overfull \hbox (15.84378pt too wide) in paragraph at lines 28--30
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CB9BF324DD33D6228B428081C6D08199;20329.
+(rerunfilecheck)             Checksum: C099AACD84ED05B32B046792D2B72F9F;20329.
  ) 
 Here is how much of TeX's memory you used:
- 37230 strings out of 476025
- 642068 string characters out of 5790017
+ 37234 strings out of 476025
+ 642103 string characters out of 5790017
  1894388 words of memory out of 5000000
  55906 multiletter control sequences out of 15000+600000
- 565680 words of font info for 422 fonts, out of 8000000 for 9000
+ 565874 words of font info for 425 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  109i,16n,131p,2312b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (124 pages, 11300442 bytes).
+Output written on thesis.pdf (124 pages, 11301269 bytes).
 PDF statistics:
  2271 PDF objects out of 2487 (max. 8388607)
  1943 compressed objects within 20 object streams

@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex thesis"] 1715861216 "thesis.aux" "thesis.bbl" "thesis" 1715861531 0
+["bibtex thesis"] 1715953078 "thesis.aux" "thesis.bbl" "thesis" 1715959376 0
   "./refs.bib" 1715848276 32390 f195f6f5153f33d4055857dbec0bfee8 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thesis.aux" 1715861531 60489 cfb7c0c6791ed14bdd18ec14d11e2d99 "pdflatex"
+  "thesis.aux" 1715959376 60510 0ff5b008202179555c2691b8d991d5fc "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1715861523 "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" "thesis.pdf" "thesis" 1715861531 0
+["pdflatex"] 1715959368 "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" "thesis.pdf" "thesis" 1715959376 0
   "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" 1715771083 5048 a488a2399d44cdc0b9493f49f6a4876f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -311,27 +311,27 @@
   "images/us_local.png" 1711721130 2706297 3d3751956f82fa495e6af2ec7a89eae4 ""
   "images/workflow_kernels.png" 1715588021 132694 cfdd66128950453d5290c5974cfac276 ""
   "input_files/analysis.tex" 1715706937 14330 593f5c43a947d9e2e8f5793d703864b2 ""
-  "input_files/data_exploratory.tex" 1715847632 13142 fbaabc56bee291eee6f83963f5e5b276 ""
+  "input_files/data_exploratory.tex" 1715959367 13158 9110e4f6f28372e3d64b9dbf1d420285 ""
   "input_files/energymarket.tex" 1715766470 9533 b16abb95ba43330c2248e15187b91d2a ""
   "input_files/implementation.tex" 1715848501 6053 4a022be15623dc636c69165ae1f77e4a ""
   "input_files/literaturereview.tex" 1715583890 19675 be4d92d8b81c2aeacf8565fba805945e ""
   "input_files/metrics.tex" 1715764632 8345 9d4e07aaa49933302c0adcd8dc7f5ad4 ""
   "input_files/paper1.tex" 1715763676 18915 077330b3012727506bd138d3877f310a ""
-  "input_files/point.tex" 1715706878 20985 9cacb77a69ca7a30ec7430835067859c ""
-  "input_files/probabilistic.tex" 1715861303 36248 ad400e1b64f8d46b73a094567706f0d6 ""
+  "input_files/point.tex" 1715956480 21342 513777539a1f476fde4cb95639c5f86e ""
+  "input_files/probabilistic.tex" 1715958431 36254 b5b046086d74dca9d747aff0dfb35221 ""
   "input_files/problemdescription.tex" 1714382880 4861 12f1c8b738364cbe1b93e7cb1d96eef5 ""
   "input_files/qr.tex" 1715758654 2424 98ff7db9ea502d8f869bab6eb51348ab ""
   "input_files/symbols.tex" 1715772432 6190 912c62591ea17a6b29bdbc6af8409620 ""
   "layoutsetup.tex" 1706858978 3119 261415572db05494e99be3e6afe6b46a ""
   "macrosetup.tex" 1711356844 939 3c2391595198bdd92e5e1219240e7d78 ""
   "theoremsetup.tex" 1706858978 969 26f7d8ce3897fd4b39189a2363dadee4 ""
-  "thesis.aux" 1715861531 60489 cfb7c0c6791ed14bdd18ec14d11e2d99 "pdflatex"
-  "thesis.bbl" 1715861216 23394 e284411f2f6b0e1f49a8e89cfffee7da "bibtex thesis"
-  "thesis.lof" 1715861531 7149 2214de7ca43af18fdbd6f0a7f3bb2524 "pdflatex"
-  "thesis.lot" 1715861531 2528 0a48a96706b72cc1191118bd239fcf77 "pdflatex"
-  "thesis.out" 1715861531 20329 cb9bf324dd33d6228b428081c6d08199 "pdflatex"
+  "thesis.aux" 1715959376 60510 0ff5b008202179555c2691b8d991d5fc "pdflatex"
+  "thesis.bbl" 1715953078 23394 e284411f2f6b0e1f49a8e89cfffee7da "bibtex thesis"
+  "thesis.lof" 1715959376 7156 7773f4a66619454778cbdf7c0982d924 "pdflatex"
+  "thesis.lot" 1715959376 2528 0a48a96706b72cc1191118bd239fcf77 "pdflatex"
+  "thesis.out" 1715959376 20329 c099aacd84ed05b32b046792d2b72f9f "pdflatex"
   "thesis.tex" 1715771083 5048 a488a2399d44cdc0b9493f49f6a4876f ""
-  "thesis.toc" 1715861531 10737 ddc8f1cf22358d59f79ab61665a80804 "pdflatex"
+  "thesis.toc" 1715959376 10737 3e6e61322dafa7c9269e6fd2c4b0c833 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.lof"

@@ -42,7 +42,7 @@
 \contentsline {section}{\numberline {6.2}Autoregressive models}{39}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Autoregressive integrated moving average}{40}{subsection.6.2.1}%
 \contentsline {subsection}{\numberline {6.2.2}Autoregressive integrated moving average with exogenous variables}{40}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Seasonal autoregressive integrated moving average and Seasonal autoregressive integrated moving average with exogenous variables}{40}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.3}Seasonal autoregressive integrated moving average and seasonal autoregressive integrated moving average with exogenous variables}{40}{subsection.6.2.3}%
 \contentsline {section}{\numberline {6.3}Generalized additive model}{41}{section.6.3}%
 \contentsline {section}{\numberline {6.4}K-nearest neighbours regression}{41}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Support vector regression}{41}{section.6.5}%

@@ -44,9 +44,9 @@ The inner problem is easy, as already pointed out, we will have
     \hat{c}_1=mean(y_i|x_i \in R_1) \quad \hat{c}_2=mean(y_i|x_i \in R_2)
 \end{equation}
 For the outer problem, we scan through all the (j,s) tuples and pick the best pair. 
-Next, one or both of these regions from the previous step are split into two more regions; we recurse this process until some stopping condition is triggered (max number of branches, max deth of tree, threshold on the mean squared error (MSE), minimum number of observations in each leaf node).
+Next, one or both of these regions from the previous step are split into two more regions; we recurse this process until some stopping condition is triggered (max number of branches, max depth of tree, threshold on the mean squared error (MSE), minimum number of observations in each leaf node).
 Notice, this being a greedy algorithm implies that our final solution is guaranteed to be just a local optimum not a global one.
-Even though their simplicity, these models have proved themselves to be really powerful. See figure \ref{fig:decision_tree} for a example where decision tree with different hyperparameters are fitted to a sine wave plus noise. The most popular among these model is the CART \cite{breiman2017classification} tree, its name comes from the fact that it can handle both classification and regression problems.
+Even though their simplicity, these models have proved themselves to be really powerful. See figure \ref{fig:decision_tree} for an example where decision trees with different hyperparameters are fitted to a sine wave plus noise. The most popular among these model is the CART \cite{breiman2017classification} tree, its name comes from the fact that it can handle both classification and regression problems.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/decision_tree.png}
     \caption{decision tree regression}
@@ -109,12 +109,12 @@ By swapping $F(y|X=x)$ with $\hat{F}(y|X=x)$ in the defintion of conditional qua
 
 \section{Quantile gradient boosting machine}
 \subsection{Boosting}
-With boosting we fit an additive expansion of elementary basis functions; with M basis functions we have 
+With boosting we fit an additive expansion of elementary basis functions; with $M$ basis functions we have 
 \begin{equation}
     f(x)=\sum\limits_{m=1}^{M}\beta_m b(x;\gamma_m)
 \end{equation}
 where $b(x;\gamma)$ are the basis functions while $\beta_m$ are the coefficients of the expansion.
-Boosted models are fitted by minimizing a loss function over the training data
+Boosted models are fitted by minimizing a loss function $L$ over the training data
 \begin{equation}
     \min_{\beta_m, \gamma_m}\sum\limits_{i=1}^{N}L\left(y_i, \sum\limits_{m=1}^M \beta_m b(x_i;\gamma_m)\right)
 \end{equation}
@@ -154,7 +154,7 @@ In order to solve our quantile regression tasks through gradient boosting, all w
 The idea of quantile regression has been extended to kernel methods by Takeuchi et al. \cite{takeuchi2006nonparametric}.
 There, they minimize a risk functional plus regularizer defined as follows.
 \begin{equation}\label{eq:kqr_min1}
-    R[f]:=\frac{1}{m}\sum\limits_{i=1}^{m}\rho_q(y_i-f(x_i))+\frac{\lambda}{2}\|w\|_\mathcal{H}^2
+    Risk[f]:=\frac{1}{m}\sum\limits_{i=1}^{m}\rho_q(y_i-f(x_i))+\frac{\tau}{2}\|w\|_\mathcal{H}^2
 \end{equation}
 where $f=w+b$, $w \in \mathcal{H}$ and $b \in \mathbb{R}$.
 Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, \phi(x) \rangle_{\mathcal{H}}+b$. 
@@ -166,7 +166,7 @@ Using the link between RKHS and feature spaces, we can rewrite $f(x)=\langle w, 
     q(y_i-\langle w, \phi(x_i) \rangle_{\mathcal{H}}-b)+ (1-q)(-y_i+\langle w, \phi(x_i) \rangle_{\mathcal{H}}+b)+ \frac{1}{2}\|w\|_{\mathcal{H}}^2\\
     \end{aligned}
     \end{equation}
-Note the division by $\lambda$ so that $C:=\frac{1}{\lambda m}$.
+Note the division by $\tau$ so that $C:=\frac{1}{\tau m}$.
 \\
 We can next rephrase the optimisation in \ref{eq:kqr_min2} by introducing the slack variables $\xi_i$ and $\xi_i^*$.
 \begin{equation}\label{eq:kqr_min3}
@@ -209,7 +209,7 @@ where $\lambda$ is called the lagrange multiplier of the optimization problem. S
 where $p^*$ is the optimal value of your optimization problem. In other words $g(\lambda, \nu)$ is a lower bound for the optimal $p^*$.
 Consider now a simple lagrangian $\mathcal{L}(x,\lambda, \nu)=f(x)+\sum\limits_{i=1}^n \lambda_i r_i(x) +\sum\limits_{i=1}^{n} \nu_i h_i(x)$, where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. Then it can be noted that, the lower bound on $p^*$ is non trivial only when the lagrange multiplier $\lambda \succeq 0$.
 % when lagrange multiplier is negative, we have that g > p
-Therefore, the idea is that by maximizing the dual function subject to the contraint $\lambda \succeq 0$, we can obtain an approximate or perfect solution to the primal problem.
+Therefore, the idea is that by maximizing the dual function subject to the constraint $\lambda \succeq 0$, we can obtain an approximate or perfect solution to the primal problem.
 \\
 To explain why we may or not be able to attain the best solution to the primal problem by maximizing its dual, we have to introduce the concept of duality.
 \\
@@ -372,7 +372,7 @@ Now, let us break into cases
 \end{cases}
 \end{equation}
 
-Therefore in order to retrieve b we simply have to choose an index $i$ such that  $\alpha_i \not \in \{C(q-1), Cq\}$
+Therefore in order to retrieve $b$ we simply have to choose an index $i$ such that  $\alpha_i \not \in \{C(q-1), Cq\}$
 and let
 \begin{equation}
     \begin{aligned}
