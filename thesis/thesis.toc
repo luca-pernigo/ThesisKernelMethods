@@ -2,7 +2,7 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Contents}{iii}{section*.1}%
 \contentsline {chapter}{List of Figures}{1}{section*.2}%
-\contentsline {chapter}{List of Tables}{2}{section*.3}%
+\contentsline {chapter}{List of Tables}{3}{section*.3}%
 \contentsline {chapter}{\chapternumberline {1}Problem Description}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{5}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Point versus probabilistic forecast}{6}{section.1.2}%
@@ -68,9 +68,9 @@
 \contentsline {subsection}{\numberline {7.4.1}Weather quantiles}{63}{subsection.7.4.1}%
 \contentsline {chapter}{\chapternumberline {8}Exploratory analysis and data extract transform load pipeline}{71}{chapter.8}%
 \contentsline {section}{\numberline {8.1}GEFCom2014}{71}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}GEFCom2014 Price track}{71}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.1}GEFCom2014 price track}{71}{subsection.8.1.1}%
 \contentsline {subsubsection}{EDA}{72}{section*.41}%
-\contentsline {subsection}{\numberline {8.1.2}Load track}{72}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.2}GEFCom2014 load track}{72}{subsection.8.1.2}%
 \contentsline {subsubsection}{EDA}{73}{section*.44}%
 \contentsline {subsubsection}{GEFCom ETL}{73}{section*.48}%
 \contentsline {section}{\numberline {8.2}Germany Switzerland Austria data}{75}{section.8.2}%
@@ -103,24 +103,29 @@
 \contentsline {subsection}{\numberline {10.1.8}Kernel support vector regression}{90}{subsection.10.1.8}%
 \contentsline {subsection}{\numberline {10.1.9}Results}{91}{subsection.10.1.9}%
 \contentsline {section}{\numberline {10.2}Probabilistic forecasting}{92}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Conclusions}{92}{section.10.3}%
-\contentsline {chapter}{List of Symbols}{93}{section*.69}%
-\contentsline {appendix}{\chapternumberline {A}Appendix}{97}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Feature map normalization}{97}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{97}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Boston housing dataset}{97}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Abalone dataset}{99}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}Vehicle dataset}{100}{subsection.A.2.3}%
-\contentsline {section}{\numberline {A.3}Cross validation}{101}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}K-fold cross validation}{101}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Gridsearch}{101}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Randomized search}{101}{subsection.A.3.3}%
-\contentsline {subsection}{\numberline {A.3.4}Halving gridsearch}{102}{subsection.A.3.4}%
-\contentsline {subsection}{\numberline {A.3.5}Cross validation for time series data}{102}{subsection.A.3.5}%
-\contentsline {section}{\numberline {A.4}Kernel methods best practices}{102}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}Data normalization}{103}{subsection.A.4.1}%
-\contentsline {subsection}{\numberline {A.4.2}Data compression}{104}{subsection.A.4.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{105}{section*.83}%
-\contentsline {subsubsection}{Pivoted Cholesky decomposition}{105}{section*.84}%
-\contentsline {section}{\numberline {A.5}Source code}{106}{section.A.5}%
-\contentsline {chapter}{Bibliography}{107}{appendix*.85}%
+\contentsline {subsection}{\numberline {10.2.1}Quantile regressors comparison}{92}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}Kernel function choice}{93}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}GEFCom2014}{96}{subsection.10.2.3}%
+\contentsline {subsubsection}{GEFCom2014 price track}{96}{section*.78}%
+\contentsline {subsubsection}{GEFCom2014 load track}{98}{section*.81}%
+\contentsline {section}{\numberline {10.3}Conclusions}{99}{section.10.3}%
+\contentsline {chapter}{List of Symbols}{103}{section*.85}%
+\contentsline {appendix}{\chapternumberline {A}Appendix}{107}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Feature map normalization}{107}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{107}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Boston housing dataset}{107}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Abalone dataset}{109}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}Vehicle dataset}{110}{subsection.A.2.3}%
+\contentsline {section}{\numberline {A.3}Cross validation}{111}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}K-fold cross validation}{111}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Gridsearch}{111}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Randomized search}{111}{subsection.A.3.3}%
+\contentsline {subsection}{\numberline {A.3.4}Halving gridsearch}{112}{subsection.A.3.4}%
+\contentsline {subsection}{\numberline {A.3.5}Cross validation for time series data}{112}{subsection.A.3.5}%
+\contentsline {section}{\numberline {A.4}Kernel methods best practices}{112}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Data normalization}{113}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Data compression}{114}{subsection.A.4.2}%
+\contentsline {subsubsection}{Nystrom decomposition}{115}{section*.99}%
+\contentsline {subsubsection}{Pivoted Cholesky decomposition}{115}{section*.100}%
+\contentsline {section}{\numberline {A.5}Source code}{116}{section.A.5}%
+\contentsline {chapter}{Bibliography}{117}{appendix*.101}%

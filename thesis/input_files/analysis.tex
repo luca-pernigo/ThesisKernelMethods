@@ -1,6 +1,6 @@
-Analysis of experiments and results
-\\
-Building on the theory introduced in \ref{ch:point} and \ref{ch:prob}, this section covers the experiments carried out and the results obtained.
+% Analysis of experiments and results
+% \\
+Building on the theory introduced in \ref{ch:point} and \ref{ch:prob}, this section covers the experiments carried out and the results obtained respectively.
 
 % - Comments
 % \\
@@ -216,9 +216,520 @@ Finally table \ref{tab:point_MAPE} reports the MAPE score for each method. What 
 \end{table}
 
 \section{Probabilistic forecasting}
+We continue our experimental analysis by considering the probabilistic framework. The goal of this section is comparing between different quantile regressors and study the choiche of the kernel function.
+
+% quantile regressors
+\subsection{Quantile regressors comparison}
+Using the load data from \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts} for Germany and Switzerland, we proceeded to compare between quantile regression algorithms. In this study, we trained our models on the entire 2021 data and then we tested them and measured their score on the 2022 data.
+Notice, for kernel quantile regression (KQR), the kernel of choice in this setting is the absolute Laplacian. Finally notice, the loss function utilized in this section is the normalized pinball loss. 
+% normalized by the magnitude of the average load of each country.
+Here, we built two models. In the first, the national load is forecasted by taking as predictor the following variables
+\begin{itemize}
+    \item Weather temperature
+    \item Wind speed
+\end{itemize}
+Results for Germany are reported in table \ref{tab:energy_chart_de} and figure \ref{fig:DE_load_CI} while results for Switzerland can be found in table \ref{tab:energy_chart_ch} and figure \ref{fig:CH_load_CI}.
+
+\begin{table}[!ht]
+    \centering
+    \caption{Pinball loss for load in Germany (2022)}
+    \label{tab:energy_chart_de}
+    \begin{tabular}{lrrrr}
+    \toprule
+    Quantile & LQR & GBMQR & QF & KQR \\
+    \midrule
+    0.1 & 0.04517 & 0.02890 & 0.02891 & \textbf{0.02767} \\
+    0.2 & 0.08086 & 0.04745 & 0.04906 & \textbf{0.04670} \\
+    0.3 & 0.10820 & 0.06130 & 0.06254 & \textbf{0.05981} \\
+    0.4 & 0.12722 & 0.07031 & 0.07136 & \textbf{0.06834} \\
+    0.5 & 0.13886 & 0.07371 & 0.07428 & \textbf{0.07247} \\
+    0.6 & 0.14182 & 0.07129 & 0.07381 & \textbf{0.07054} \\
+    0.7 & 0.13591 & 0.06227 & 0.06237 & \textbf{0.06215} \\
+    0.8 & 0.11869 & 0.04741 & \textbf{0.04723} & 0.04730 \\
+    0.9 & 0.08458 & 0.02687 & \textbf{0.02668} & 0.02698 \\
+    \midrule
+    CRPS & 0.10904 & 0.05439 & 0.05514 & \textbf{0.05355} \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+    
+
+
+\begin{table}[!ht]
+\centering
+    \caption{Pinball loss for load in Switzerland (2022)}
+    \label{tab:energy_chart_ch}
+    \begin{tabular}{lrrrr}
+    \toprule
+    Quantile & LQR & GBMQR & QF & KQR\\
+    \midrule
+    0.1 & 0.04258 & 0.01909 & 0.01899 & \textbf{0.01896} \\
+    0.2 & 0.07460 & 0.03076 & 0.03046 & \textbf{0.03041} \\
+    0.3 & 0.10012 & 0.03838 & 0.03903 & \textbf{0.03814} \\
+    0.4 & 0.11910 & 0.04311 & 0.04378 & \textbf{0.04294} \\
+    0.5 & 0.13095 & 0.04499 & 0.04489 & \textbf{0.04466} \\
+    0.6 & 0.13426 & 0.04387 & 0.04397 & \textbf{0.04347} \\
+    0.7 & 0.12855 & 0.03928 & 0.03948 & \textbf{0.03894} \\
+    0.8 & 0.11201 & 0.03083 & 0.03166 & \textbf{0.03066} \\
+    0.9 & 0.07884 & 0.01878 & 0.01878 & \textbf{0.01841} \\
+    \midrule
+    CRPS & 0.10233 & 0.03434 & 0.03456 & \textbf{0.03407} \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+    \begin{figure}[!ht]
+        \makebox[\linewidth]{\includegraphics[width = 1.5\textwidth]{images/DE_load_CI.png}}
+        \caption[Probabilistic forecast for load in Germany]{Load 90\% confidence interval for Germany Energy charts data using KQR Laplacian: \small \textmd{Electric load probabilistic forecast Germany 2022. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively.}}
+        \label{fig:DE_load_CI}
+    \end{figure}
+    
+
+    \begin{figure}[!ht]
+        \makebox[\linewidth]{\includegraphics[width = 1.5\textwidth]{images/CH_load_CI.png}}
+        \caption[Probabilistic forecast for load in Switzerland]{Load 90\% confidence interval for Switzerland Energy charts data using KQR Laplacian: \small \textmd{Electric load probabilistic forecast for Switzerland 2022. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively.}}
+        \label{fig:CH_load_CI}
+    \end{figure}
+    
+Next, we extended the models to take into account the impact of two additional categorical variables
+\begin{itemize}
+    \item Is holiday: a binary variable for holidays where holiday$=1$ and working day$=0$
+    \item Day of week: an ordinal categorical variable corresponding to the day of the week , e.i.\ Monday$=0$,$\dots$, Sunday$=6$
+\end{itemize}
+Table \ref{tab:energy_chart_de_additional_predictors} reports the model score on the German data while table \ref{tab:energy_chart_ch_additional_predictors} is the one corresponding to the Suisse data.
+
+\begin{table}[!ht]
+    \centering
+    \caption{PF pinball loss for load in Germany (2022) model\_2}
+    \label{tab:energy_chart_de_additional_predictors}
+    \begin{tabular}{lrrrr}
+    \toprule
+    Quantile & LQR & GBMQR & QF & KQR \\
+    \midrule
+    0.1 & 0.04522 & 0.02580 & 0.02796 & \textbf{0.02491} \\
+    0.2 & 0.08048 & 0.04326 & 0.04625 & \textbf{0.04209} \\
+    0.3 & 0.10677 & 0.05570 & 0.05706 & \textbf{0.05424} \\
+    0.4 & 0.12610 & 0.06182 & 0.06346 & \textbf{0.06071}\\
+    0.5 & 0.13767 & 0.06214 & 0.06544 & \textbf{0.06150} \\
+    0.6 & 0.14077 & 0.05752 & 0.06001 & \textbf{0.05726} \\
+    0.7 & 0.13409 & 0.04893 & 0.05122 & \textbf{0.04869} \\
+    0.8 & 0.11628 & 0.03687 & 0.03822 & \textbf{0.03665} \\
+    0.9 & 0.08204 & 0.02114 & 0.02324 & \textbf{0.02108} \\
+    \midrule
+    CRPS & 0.10771 & 0.04591 & 0.04810 & \textbf{0.04524} \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+    
+
+
+\begin{table}[!ht]
+    \centering
+    \caption{Pinball loss for load in Switzerland (2022) model\_2}
+    \label{tab:energy_chart_ch_additional_predictors}
+    \begin{tabular}{lrrrr}
+    \toprule
+    Quantile & LQR & GBMQR & QF & KQR \\
+    \midrule
+    0.1 & 0.04118 & 0.01881 & 0.01909 & \textbf{0.01876} \\
+    0.2 & 0.07215 & 0.03004 & 0.03040 & \textbf{0.02979} \\
+    0.3 & 0.09603 & 0.03749 & 0.03819 & \textbf{0.03693} \\
+    0.4 & 0.11329 & 0.04230 & 0.04311 & \textbf{0.04165} \\
+    0.5 & 0.12403 & 0.04404 & 0.04465 & \textbf{0.04358} \\
+    0.6 & 0.12748 & 0.04282 & 0.04363 & \textbf{0.04249} \\
+    0.7 & 0.12223 & 0.03789 & 0.03891 & \textbf{0.03779} \\
+    0.8 & 0.10639 & \textbf{0.02961} & 0.03097 & 0.02972 \\
+    0.9 & 0.07531 & \textbf{0.01847} & 0.01957 & 0.01862 \\
+    \midrule
+    CRPS & 0.09756 & 0.03350 & 0.03428 & \textbf{0.03326} \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+    
+% now comment tables
+What can be concluded from this first study is that kernel quantile regression equipped with the absolute laplacian kernel outperformed almost always its contenders.
+
+% kernel comparison
+\subsection{Kernel function choice}
+This section analyzes which kernel function best fits to the characteristics of the load data.
+The kernel functions considered are: Gaussian RBF, absolute Laplacian, Matern 1.5, Matern 2.5,Linear, Periodic, Polynomial, Sigmoid, and Cosine. 
+Details concerning the hyperparameter selection for the different kernels can be found in \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process}{sklearn.gaussian\_process}.
+The pool of data for this study has been create by combining \href{https://zenodo.org/records/7907883}{SECURES-Met} data (predictors) \cite{Formayer2023} and the load data from \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts}.
+SECURES-Met data consists of historical data up to the end of $2020$ while from 2021 onward, the data consists of forecasts modeled by the the European Centre for Medium-Range Weather Forecasts (ECMWF).
+Therefore, in this experimental study, we used the whole data of $2020$ as the training set and then tested our kernels on the $2021$ data.
+Note that there are two kinds of predictions for data from $2021$ onward, one for each of the emission scenarios RCP$4.5$ and RCP$8.5$. In this study, we considered the more conservative RCP$4.5$ scenario data.
+
+The predictors making up the dataset follow:
+\begin{itemize}
+    \item Direct irradiation: direct normal irradiation
+    \item Global radiation: mean global radiation
+    \item Hydro reservoir: daily mean power from reservoir plants in MW
+    \item Hydro river: daily mean power from run of river plants in MW
+    \item Temperature: air temperature
+    \item Wind potential: potential wind power production
+\end{itemize}
+Table \ref{tab:secures_met_de} shows results for Germany, table \ref{tab:secures_met_ch} is the one for Switzerland and table corresponds to Austria \ref{tab:secures_met_at}.
+
+
+\begin{table}[!ht]
+    \centering
+    \caption{Pinball loss kernel comparison for load in Switzerland (2021)}
+    \label{tab:secures_met_ch}
+    \begin{adjustbox}{width=\textwidth}
+        \begin{tabular}{llllllllll}
+    \toprule
+    Quantile & Gaussian RBF & Laplacian & Matern 1.5 & Matern 2.5 & Linear & Periodic & Polynomial & Sigmoid & Cosine \\
+    \midrule
+    0.1 & 0.018861 & \textbf{0.018798} & 0.019285 & 0.019510 & 0.019128 & 0.024474 & 0.021105 & 0.024299 & 0.018996 \\
+    0.2 & 0.030924 & \textbf{0.030430} & 0.031038 & 0.031438 & 0.031223 & 0.040274 & 0.033892 & 0.039774 & 0.031008 \\
+    0.3 & 0.039107 & \textbf{0.038510} & 0.039295 & 0.039751 & 0.039637 & 0.051023 & 0.042683 & 0.050242 & 0.039363 \\
+    0.4 & 0.044285 & \textbf{0.043718} & 0.044763 & 0.045143 & 0.045130 & 0.057785 & 0.048232 & 0.056815 & 0.044896 \\
+    0.5 & 0.046840 & \textbf{0.046261} & 0.047502 & 0.047957 & 0.047739 & 0.060671 & 0.051024 & 0.059697 & 0.047302 \\
+    0.6 & 0.046138 & \textbf{0.045582} & 0.047239 & 0.047686 & 0.047416 & 0.059627 & 0.050456 & 0.058824 & 0.046834 \\
+    0.7 & 0.041910 & \textbf{0.041615} & 0.043404 & 0.043964 & 0.043735 & 0.054688 & 0.046437 & 0.054037 & 0.042897 \\
+    0.8 & 0.034032 & \textbf{0.033852} & 0.035332 & 0.035997 & 0.035518 & 0.044591 & 0.037918 & 0.044112 & 0.034557 \\
+    0.9 & \textbf{0.021817} & 0.021923 & 0.022712 & 0.023082 & 0.022721 & 0.028070 & 0.024161 & 0.027920 & 0.022606 \\
+    \midrule
+    CRPS & 0.035990 & \textbf{0.035632} & 0.036730 & 0.037170 & 0.036916 & 0.046800 & 0.039545 & 0.046191 & 0.036495 \\
+    \bottomrule
+    \end{tabular}
+\end{adjustbox}
+    \end{table}
+    
+
+
+\begin{table}[!ht]
+    \centering
+\caption{Pinball loss kernel comparison for load in German (2021)}
+\label{tab:secures_met_de}
+\begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{llllllllll}
+\toprule
+Quantile & Gaussian RBF & Laplacian & Matern 1.5 & Matern 2.5 & Linear & Periodic & Polynomial & Sigmoid & Cosine \\
+\midrule
+0.1 & 0.028057 & \textbf{0.027483} & 0.028236 & 0.028257 & 0.028261 & 0.028277 & 0.028276 & 0.028146 & 0.028004 \\
+0.2 & 0.047118 & \textbf{0.046051} & 0.047531 & 0.047544 & 0.047569 & 0.047595 & 0.047596 & 0.047353 & 0.047025 \\
+0.3 & 0.060366 & \textbf{0.058739} & 0.060892 & 0.060940 & 0.060962 & 0.060988 & 0.060984 & 0.060654 & 0.060209 \\
+0.4 & 0.068344 & \textbf{0.066347} & 0.068952 & 0.069022 & 0.069054 & 0.069104 & 0.069101 & 0.068634 & 0.068202 \\
+0.5 & 0.071450 & \textbf{0.069118} & 0.072188 & 0.072250 & 0.072285 & 0.072331 & 0.072330 & 0.071807 & 0.071359 \\
+0.6 & 0.068821 & \textbf{0.067098} & 0.069454 & 0.069526 & 0.069571 & 0.069615 & 0.069613 & 0.069157 & 0.068780 \\
+0.7 & 0.061150 & \textbf{0.059972} & 0.061382 & 0.061410 & 0.061427 & 0.061442 & 0.061442 & 0.061281 & 0.060990 \\
+0.8 & 0.047147 & \textbf{0.046457} & 0.047325 & 0.047331 & 0.047340 & 0.047348 & 0.047349 & 0.047247 & 0.047056 \\
+0.9 & 0.026646 & 0.026343 & 0.026749 & 0.026757 & 0.026763 & 0.026772 & 0.026772 & \textbf{0.026282} & 0.026628 \\ 
+\midrule
+CRPS & 0.053233 & \textbf{0.051956} & 0.053634 & 0.053671 & 0.053693 & 0.053719 & 0.053718 & 0.053395 & 0.053139 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+
+
+
+
+\begin{table}[!ht]
+    \centering
+\caption{Pinball loss kernel comparison for load in Austria (2021)}
+\label{tab:secures_met_at}
+\begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{llllllllll}
+\toprule
+Quantile & Gaussian RBF & Laplacian & Matern 1.5 & Matern 2.5 & Linear & Periodic & Polynomial & Sigmoid & Cosine \\
+\midrule
+0.1 & 0.024309 & \textbf{0.023882} & 0.024316 & 0.024611 & 0.029367 & 0.029462 & 0.027319 & 0.029459 & 0.027816 \\
+0.2 & 0.041028 & \textbf{0.040318} & 0.040987 & 0.041487 & 0.048510 & 0.048716 & 0.046164 & 0.048714 & 0.045879 \\
+0.3 & 0.052597 & \textbf{0.051643} & 0.052548 & 0.052972 & 0.062242 & 0.062561 & 0.059133 & 0.062548 & 0.058454 \\
+0.4 & 0.058803 & \textbf{0.057676} & 0.058841 & 0.059078 & 0.070210 & 0.070577 & 0.067914 & 0.070567 & 0.066335 \\
+0.5 & 0.060846 & \textbf{0.059441} & 0.060912 & 0.061541 & 0.073399 & 0.073782 & 0.071616 & 0.073764 & 0.069574 \\
+0.6 & 0.059336 & \textbf{0.057820} & 0.059237 & 0.059930 & 0.070817 & 0.071157 & 0.070249 & 0.071134 & 0.066970 \\
+0.7 & 0.053937 & \textbf{0.052402} & 0.053949 & 0.054372 & 0.062453 & 0.062688 & 0.062970 & 0.062675 & 0.059419 \\
+0.8 & 0.043366 & \textbf{0.042427} & 0.043364 & 0.043510 & 0.049024 & 0.049150 & 0.049737 & 0.049147 & 0.046662 \\
+0.9 & 0.026727 & \textbf{0.026227} & 0.026645 & 0.026817 & 0.029516 & 0.029601 & 0.030097 & 0.029598 & 0.027986 \\
+\midrule
+CRPS & 0.046772 & \textbf{0.045760} & 0.046755 & 0.047146 & 0.055060 & 0.055299 & 0.053911 & 0.055290 & 0.052122 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+From our tables, it can be concluded that the absolute Laplacian kernel is the one fitting best to the characteristics of loda data.
+Additionally, we can conclude that our results are in line with the ones published in \cite{he2017short}. In that study, similarly to what we did in this subsection, the authors carried out a comparitive study concerning the choice of kernels in KQR. Nevertheless notice, that the set of kernel we considered in our study is larger than the one presented in \cite{he2017short}.
+Their paper showed evidence of the superiority of the Gaussian RBF among their set of kernel functions. Analogously, we can see from tables \ref{tab:secures_met_de}, \ref{tab:secures_met_ch} and \ref{tab:secures_met_at} that the Gaussian RBF is the second best in terms of pinball loss.
+
+% gefcom final case
+\subsection{GEFCom2014}
+The follwing subsection compares our kernel quantile regression against the price and load track entries of the GEFCom2014 competiton.
+Error measure of the competition was the pinball loss, see section \ref{metrics}, averaged over the $99$ quantiles, $q \in \{i/100\}_{i=1}^{n=99}$. Backed by the conclusion from the previous subsection we selected the absolute Laplacian and the Gaussian RBF as kernels in our application of KQR.
+
+
+\subsubsection{GEFCom2014 price track}
+In this setting, the predictors fed to our KQR models are
+\begin{itemize}
+    \item Day
+    \item Hour
+    \item Forecasted total load
+    \item Forecasted zonal load
+\end{itemize}
+Since target days vary all over the year, we trained a model for any month associated to them.
+
+Our results for this track are reported in table \ref{tab:pinball loss gefcom2014 price data}. In this track, the top entries came from the teams: Tololo, Team Poland, GMD, and C3 Green Team; for a breakdown of each method's attributes, see \cite[Table 8]{hong2016probabilistic}. Finally, the Gaussian RBF probabilistic prediction for the $13$th July $2013$ zonal price at the $90\%$ confidence interval is visualized in Figure \ref{fig:price_task_6_gaussian_rbf}.
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\linewidth]{images/price_task_6_gaussian_rbf.png}
+    \caption[[Prediction price track task 6, Gaussian RBF kernel]]{Price 90\% confidence interval task 6: \small \textmd{Electricity price probabilistic forecast for the $13^{\text{th}}$ July $2013$. The black line is the observed path for the price. The $90\%$ confidence interval bands are plotted in green. Lower and upper red lines denote the $95\%$ and $5\%$ quantile forecast respectively.}}
+    % \Description{}
+    \label{fig:price_task_6_gaussian_rbf}
+\end{figure}
+
+
+
+\begin{table}[!ht]
+    \centering
+    \caption{Pinball loss GEFCom2014 price data}
+    \label{tab:pinball loss gefcom2014 price data}
+    \begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{lllllllllllll}
+      \toprule
+      \midrule
+      Team name\textbackslash Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12               \\
+  KQR laplacian
+  &
+  \textbf{1.3249}
+  &
+  2.9497
+  &
+  0.8868
+  &
+  7.3780
+  &
+  5.4314
+  &
+  8.2166
+  &
+  4.9091
+  &
+  1.5245
+  &
+  1.9601
+  &
+  2.7324
+  &
+  2.4733
+  &
+  17.5371
+  \\
+  KQR gaussian rbf
+  &
+  2.0614
+  &
+  3.2247
+  &
+  \textbf{0.7050}
+  &
+  6.1407
+  &
+  6.1134
+  &
+  8.5969
+  &
+  2.9360
+  &
+  1.5731
+  &
+  1.8830
+  &
+  2.6419
+  &
+  2.4814
+  &
+  16.1921
+  \\
+  \\
+  
+  Arkadiy Strelnikov         & 1,92899          & 3,46853          & 4,35373          & 7,16274          & 7,42959          & 6,32601          & 5,03883          & 2,02658          & \textbf{0,66422} & 2,35183          & 2,08614          & 7,23447          \\
+  Benchmark - Price          & 4,02875          & 7,97208          & 5,70395          & 12,15104         & 38,33541         & 44,22979         & 18,22395         & 31,56729         & 42,94958         & 2,85583          & 3,20395          & 22,38333         \\
+  C3 Green Team              & 1,85897          & 3,27786          & 1,2593           & 5,08886          & 6,87674          & 6,1505           & 4,42379          & 1,32639          & 1,25915          & 3,08224          & 1,55811          & 6,58123          \\
+  E.S. Mangalova             & 2,05693          & 7,97208          & 0,87971          & 7,04219          & 11,0464          & 6,57565          & 6,02388          & \textbf{0,69721} & 2,77446          & 2,78586          & 2,14229          & 7,35955          \\
+  EPSteam                    & 4,02875          & 7,97208          & 5,70395          & 3,46235          & 29,5226          & 27,73186         & 17,0324          & 2,49354          & 1,25639          & \textbf{1,79504} & 1,63482          & 10,357           \\
+  Florencio Gonzalez         & 4,02875          & 4,32597          & 4,35373          & 9,72491          & 10,51628         & 44,17405         & 4,00812          & 4,6924           & 7,36395          & 1,79865          & 2,1575           & 4,42008          \\
+  GMD                        & 3,7271           & 1,783            & 0,92191          & 5,08886          & 6,21331          & \textbf{3,82599} & 4,9342           & 1,47858          & 1,65933          & 2,06134          & 2,1235           & 6,84571          \\
+  Manuel Oviedo de la Fuente & 1,62605 & 3,27786          & 13,73529         & 6,68756          & 23,55608         & 10,01475         & 6,61296          & 2,2259           & 1,48028          & 3,65169          & 3,20396          & 4,7237           \\
+  NimNid                     & 3,44735          & 10,59679         & 2,76634          & 24,32776         & 23,55608         & 7,96082          & 3,33627          & 1,8191           & 1,60593          & 2,5711           & 2,32578          & 8,41167          \\
+  San/Saini                  & 2,47163          & 1,95533          & 0,84071 & 5,31786          & 9,61338          & 8,28547          & 3,0475           & 2,86903          & 3,60395          & 4,37704          & 1,82957          & 16,81896         \\
+  Team Poland                & 1,97477          & 1,81898          & 1,19162          & 2,82318          & 7,55914          & 4,20773          & 2,59715          & 1,04693          & 1,24193          & 4,06012          & \textbf{1,08458} & \textbf{3,06512} \\
+  Tololo                     & 1,70734          & \textbf{1,45173} & 1,10384          & \textbf{2,01694} & 9,15596          & 4,6821           & \textbf{1,59517} & 0,75352          & 2,45935          & 2,9614           & 1,34614          & 3,55819          \\
+  Xiaorong (Iris) Sun        & 1,45661          & 1,59212          & 0,98985          & 3,0349           & 4,73309          & 4,52459          & 3,63208          & 2,30481          & 0,90781          & 5,00935          & 1,18223          & 4,5302           \\
+  Yanghai Cong               & 1,69815          & 5,84             & 4,83261          & 3,17957          & 10,21729         & 6,44717          & 5,55374          & 3,80812          & 4,38485          & 1,45195          & 1,51106          & 14,61798         \\
+  dmlab                      & 2,30162          & 1,92804          & 1,2593           & 2,58646          & 14,09957         & 7,5589           & 4,13365          & 0,80748          & 1,5149           & 3,71509          & 3,43097          & 10,22129         \\
+  pat1                       & 2,36615          & 1,98567          & 1,07248          & 2,79465          & \textbf{4,23269} & 4,70614          & 8,40506          & 1,25376          & 2,23991          & 3,67952          & 1,06139          & 6,27517         
+  
+  \end{tabular}
+    \end{adjustbox}
+  \end{table}
+
+What can be concluded from table \ref{tab:pinball loss gefcom2014 price data} is that KQR performed consistently among the top algorithms. Furthermore, It ranked first in two out of the thirteen tasks of the price track.
+\subsubsection{GEFCom2014 load track}
+The GEFCom2014 load track constitutes a good setting for analyzing the performance of KQR in the context of medium term load forecasting.
+In this track we were faced with the challenge of predicting the load for the next month without the availability of weather temperature forecasts. 
+Therefore, the primary task was to first accurately predict the weather and temperatures, and then model the load accordingly. Since there were no attributes available for humidity or wind speed, we chose to predict weather temperatures by aggregating historical temperature data across different dimensions such as day, month, and hour. Then we proceeded with building KQR models for the load; we chose the following predictors
+\begin{itemize}
+    \item Day: the number of the day
+    \item Hour
+    \item Day of week: an ordinal categorical variable for the day of the week
+    \item Is holiday: a dummy variable for holidays
+    \item w avg: average of weather temperatures across all the $25$ stations
+\end{itemize}
+We built $12$ models, one for each month, with each task model trained on the historical data of the month associated with it.
+
+Table \ref{tab:pinball loss gefcom2014 load data} reports our results for the load track. The top teams for the load forecasting track were Tololo, Adada, Jingrui(Rain) Xie, OxMAth, E.S. Managalova, Ziel Florian, and Bidong Liu; for a breakdown of the attributes of each method, see \cite[Table 6]{hong2016probabilistic}.
+Finally, the $90\%$ confidence interval forecast by our model equipped with the absolute Laplacian kernel for task number $9$, that is the prediction for June, is reported in Figure \ref{fig:load_task_9}.
+Similarly to the price track, we have that KQR was among the best algorithms also in the load forecasting track.
+
+\begin{figure*}[!ht]
+    \centering
+    \makebox[\linewidth]{\includegraphics[width = 1.5\textwidth]{images/load_task_9_laplacian.png}}
+    \caption[Prediction load track task 9, Laplacian kernel]{Load 90\% confidence interval task 9 using KQR laplacian: \small \textmd{Electric load probabilistic forecast for June 2011. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively.}}
+    \label{fig:load_task_9}
+\end{figure*}
+
+
+\begin{figure*}[!ht]
+    \centering
+    \makebox[\linewidth]{\includegraphics[width = 1.5\textwidth]{images/sub_boxplot_task_9_laplacian_.png}}
+    \caption{Boxplot for first two days of probabilistic forecast task 9 using KQR laplacian}
+    \label{fig:load_task_9}
+\end{figure*}
+
+
+
+\begin{table}[!ht]
+    \caption{Pinball loss GEFCom2014 load data}
+    \label{tab:pinball loss gefcom2014 load data}
+    \begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{lllllllllllll}
+      \toprule
+      \midrule
+      Team name\textbackslash Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12                              \\
+  
+  KQR laplacian
+  & 
+  12.0552
+  &
+  12.0573
+  &
+  8.8213
+  &
+  5.1721
+  &
+  6.9133
+  &
+  7.8080
+  &
+  11.5559
+  &
+  11.8250
+  &
+  6.8941
+  &
+  3.9680
+  &
+  7.4931
+  &
+  10.8869
+  \\
+  KQR gaussian rbf
+  & 
+  12.4665
+  &
+  12.1780
+  &
+  9.3326
+  &
+  5.1713
+  &
+  6.8703
+  &
+  6.7482
+  &
+  11.02473
+  &
+  11.93156
+  &
+  6.6019
+  &
+  4.3111
+  &
+  7.2207
+  &
+  10.8840
+  \\
+  \\
+  ACE                        & 12.1330                         & 14.4846                         & \textbf{7.3933}                          & 4.8213                         & 6.8048                         & 7.0566  & 9.5921                          & 11.6316 & 5.9859  & 5.0730 & \textbf{5.6028}                         & 8.9699                          \\
+  Adada                      & 10.5093                         & 10.0801                         & 7.6238                          & 4.7289                         & \textbf{5.3936}                         & 6.6242  & 8.0144                          & 11.1366 & 5.7779  & 3.6379                         & 7.0096                         & 8.9109                          \\
+  Alastair Muir              & 13.6118                         & 16.6750                         & 10.0759                         & 7.7078 & 9.5386 & 8.3615  & 9.8152                          & 13.1363 & 8.9715  & 5.4082                         & 8.5881 & 17.5325                         \\
+  Andrew Landgraf            & 14.3650                         & 10.1090                         & 8.4180                          & 6.2522                         & 7.2248                         & 11.1638 & 9.9403                          & 11.0204 & 5.6920  & 6.1176                         & 11.0677                        & 13.3985                         \\
+  Benchmark - Load           & 18.7384                         & 22.7585                         & 13.2163                         & 8.3626                         & 10.9162                        & 16.9937 & 13.4038                         & 17.3151 & 13.8374 & 6.4237                         & 10.9380                        & 34.0685                         \\
+  Bidong Liu                 & 16.4215                         & 11.8655                         & 9.3733                          & 5.6212                         & 7.7387                         & 6.5536  & 9.1406                          & 11.3485 & 6.5096  & 4.8031                         & 6.9697                         & 10.8935                         \\
+  C3 Green Team              & 18.7384 & 19.2208 & 7.9637                          & 4.6370                         & 6.4543                         & 8.3799  & 10.5546                         & 10.6609 & 5.8867  & 4.4866                         & 5.9396                         & 10.3917                         \\
+  Christopher Benfield       & 18.7384 & 11.1324                         & 9.4377                          & 4.9097                         & 7.4184                         & 19.7325 & 9.2215                          & 11.4385 & 6.6395  & 4.5966                         & 6.5002                         & 10.8633                         \\
+  Dao Vu                     & 33.3711                         & 13.3340                         & 10.4300                         & 6.0815                         & 9.0706                         & 8.7098  & 11.2808 & 18.4869 & 7.4065  & 5.7414                         & 10.3431                        & 23.5659                         \\
+  E.S. Mangalova             & 18.7384 & 13.3340 & 7.8025                          & \textbf{4.4096}                         & 6.6330                         & 6.2306  & 10.1511                         & 10.9294 & 6.2224  & 4.2382                         & 6.5464                         & 8.8080                          \\
+  Jingrui (Rain) Xie         & 11.8700                         & 10.9250                         & 8.4938                          & 4.9611                         & 7.4442                         & 6.9921  & 9.0523                          & 11.2600 & 5.4864  & \textbf{3.3602}                         & 5.9011                         & 9.7316                          \\
+  Manuel Oviedo de la Fuente & 12.5502                         & 21.4591                         & 10.1593                         & 5.4647                         & 9.3072                         & 7.6102  & 8.8361                          & 12.6340 & 12.3969 & 15.5225                        & 6.5221                         & 18.7754                         \\
+  OxMath                     & 14.4091 & \textbf{8.9136}                          & 7.6059                          & 4.4548                         & 7.2944                         & 7.4551  & 7.9527                          & \textbf{10.2444} & 5.4551  & 4.2111                         & 6.4054                         & 9.5520                          \\
+  Rasmus Paivarinta          & 18.7384 & 11.7474                         & 9.7230                          & 7.7078                         & 8.3074 & 7.1793  & 8.4391                          & 10.9357 & 6.3855  & 4.3796                         & 6.3794                         & 11.7871                         \\
+  SAOR                       & 18.7384 & 21.4591 & 10.4300 & 6.8512                         & 8.6899                         & 6.7653  & 12.1427                         & 11.6261 & 6.7310  & 6.2850 & 5.9699                         & 21.2711                         \\
+  Sniper                     & 18.7384 & 10.3056                         & 8.3493                          & 5.6639                         & 8.3074                         & 6.9599  & 10.8848                         & 13.4937 & 7.8877  & 5.3514                         & 6.4770                         & 11.1951                         \\
+  Tololo                     & \textbf{10.4369}                         & 12.5232                         & 8.2695                          & 4.4220                         & 5.8976                         & \textbf{6.1878}  & \textbf{7.3182}                          & 10.8032 & \textbf{5.4469}  & 3.9613                         & 6.3173                         & \textbf{8.4787}                          \\
+  Trevor Maynor              & 18.6934                         & 19.4422                         & 12.6071                         & 5.5631                         & 10.9298                        & 13.9594 & 10.8657                         & 14.4647 & 7.2859  & 6.2850                         & 8.5881                         & 17.4703                         \\
+  Xiaorong (Iris) Sun        & 13.8779                         & 12.3979                         & 10.3672                         & 8.3626 & 8.1979                         & 20.5364 & 11.2808                         & 12.6316 & 6.6821  & 4.4907                         & 6.2363                         & 10.1624                         \\
+  dmlab                      & 14.4091                         & 14.0059                         & 9.2128                          & 5.9099                         & 6.6675                         & 6.9046  & 10.0130                         & 11.0201 & 7.8508  & 3.8128                         & 6.6474                         & 26.6655                         \\
+  nikolina                   & 18.7384 & 19.2208                         & 10.6214                         & 5.8257                         & 9.5386                         & 7.1234  & 10.0948                         & 12.5375 & 5.8139  & 4.8060                         & 8.4956                         & 21.2711 \\
+  pat1                       & 19.3898                         & 10.5097                         & 9.1477                          & 9.7023                         & 7.0428                         & 7.8794  & 8.8610                          & 12.8179 & 5.5443  & 5.0730                         & 6.5846                         & 11.2142                       
+  \end{tabular}
+  \end{adjustbox}
+  \end{table}
+
+
+
+
+
 % In this subsection we compare performance of quantile regressors.
 % \\
 % - experiment for quantile estimator on gefcom2014 and we are good
 
 
 \section{Conclusions}
+% repeat the problem description  and motivation quickly
+This section concludes this thesis work with some final remarks.
+This thesis was concerned with electricity forecsating, in particular we focused on the probabilistic framework.
+Probabilistic forecasting is still a relatively new research area, lately research efforts are shifting towards this setting. This is due to the fact that probabilistic forecasts are more informative than point ones and better suited for the current and future electricity landscape; think for example about the higher uncertainty resulting from market liberalization or renewables integration requirements.
+
+Among the contributions of this thesis work we can list
+% list contributions:
+% - study of kernel methods in EF, both point and probabilistic
+% - contribution to less developed area of EF, which is probabilistic forecasting
+% - provide open source python package for KQR PyPi, github repo, reproducibility purposes
+% - study case for DACH region, along with cleaned dataset for easing collaboration and replication in research
+% - extensive comparison among kernel types
+% - comparison against state of the art algorithms from GEFCom2014, particularly KQR in medium term load forecasting which has not been deeply analyzed in the literature.
+\begin{itemize}
+    \item Study of kernel methods in electricity forecasting both in the point and probabilistic framework.
+    \item Provided Python open source implementation for kernel quantile regression compatible with the sklearn API. The code has been packaged and uploaded to the Python Package Index (PyPI) with the name \href{https://pypi.org/project/kernel-quantile-regression/#2}{kernel-quantile-regression}. The \href{https://github.com/luca-pernigo/kernel_quantile_regression}{github repo} hosting the source code includes also the script implementing the experiments along with the cleaned datasets; this contribution is intended to forster reproducibility in research.
+    \item Achieved superior performance of kernel quantile regression compared to standard quantile regressor algorithm. 
+    \item Created and made available datasets suitable for algorithms benchmarking considering data from the DACH region (Germany, Switzerland and Austria). The format of these data takes inspiration from the popular GEFCom competitions.
+    \item Kernel quantile regression extensive comparison between kernel function types.
+    \item Compared kernel quantile regression against state of the art probabilistic algorithms in the literature by means of the GEFCom2014 competition.
+\end{itemize}
+
+
+% results achieved:
+% - KQR beats other quantile regressor algorithms
+% - Laplacian is the best kernel
+% - our KQR implementations demostrated good performance compared to the top entries of the GEFCom2014 competition, this suggests it is a valid method. We observe that KQR shows favorably and can forecast both the short and medium-term horizon.
+To conclude, we proceed with summarizing the conclusion we drew from our experimental analysis.
+Kernel methods showed good performance both in the context of point and probabilistic forecasting.
+Specifically, kernel quantile regression resulted almost always in superior performance compared to standard quantile regressors. The absolute Laplacian kernel turned out to be the most suitable kernel according to the characteristic of load. Finally, we proved the validity of our kernel quantile regression implementation. We achieved this by showing how it compared favourably to the top entries of the GEFCom2014 competition. 
+In particular, up to nowx research work focused on the short term horizon capabilities of kernel quantile regression. In this thesis work, we were also able to show its suitability on the medium term horizon. 

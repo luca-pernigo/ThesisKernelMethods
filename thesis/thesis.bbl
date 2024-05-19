@@ -205,6 +205,11 @@ Trevor~J Hastie.
 \newblock Generalized additive models.
 \newblock In {\em Statistical models in S}, pages 249--307. Routledge, 2017.
 
+\bibitem{he2017short}
+Yaoyao He, Rui Liu, Haiyan Li, Shuo Wang, and Xiaofen Lu.
+\newblock Short-term power load probability density forecasting method using kernel-based support vector quantile regression and copula theory.
+\newblock {\em Applied energy}, 185:254--266, 2017.
+
 \bibitem{he2022cooperative}
 Yaoyao He, Yun Wang, Shuo Wang, and Xin Yao.
 \newblock A cooperative ensemble method for multistep wind speed probabilistic forecasting.
