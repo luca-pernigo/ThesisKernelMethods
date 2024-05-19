@@ -99,12 +99,12 @@
 \contentsline {subsection}{\numberline {10.1.4}K-nearest neighbours}{87}{subsection.10.1.4}%
 \contentsline {subsection}{\numberline {10.1.5}Support vector regression}{88}{subsection.10.1.5}%
 \contentsline {subsection}{\numberline {10.1.6}Long short term memory}{88}{subsection.10.1.6}%
-\contentsline {subsection}{\numberline {10.1.7}Kernel ridge regression}{89}{subsection.10.1.7}%
+\contentsline {subsection}{\numberline {10.1.7}Kernel ridge regression}{90}{subsection.10.1.7}%
 \contentsline {subsection}{\numberline {10.1.8}Kernel support vector regression}{90}{subsection.10.1.8}%
 \contentsline {subsection}{\numberline {10.1.9}Results}{91}{subsection.10.1.9}%
 \contentsline {section}{\numberline {10.2}Probabilistic forecasting}{92}{section.10.2}%
 \contentsline {section}{\numberline {10.3}Conclusions}{92}{section.10.3}%
-\contentsline {chapter}{List of Symbols}{93}{section*.71}%
+\contentsline {chapter}{List of Symbols}{93}{section*.69}%
 \contentsline {appendix}{\chapternumberline {A}Appendix}{97}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Feature map normalization}{97}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{97}{section.A.2}%
@@ -120,7 +120,7 @@
 \contentsline {section}{\numberline {A.4}Kernel methods best practices}{102}{section.A.4}%
 \contentsline {subsection}{\numberline {A.4.1}Data normalization}{103}{subsection.A.4.1}%
 \contentsline {subsection}{\numberline {A.4.2}Data compression}{104}{subsection.A.4.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{105}{section*.85}%
-\contentsline {subsubsection}{Pivoted Cholesky decomposition}{105}{section*.86}%
+\contentsline {subsubsection}{Nystrom decomposition}{105}{section*.83}%
+\contentsline {subsubsection}{Pivoted Cholesky decomposition}{105}{section*.84}%
 \contentsline {section}{\numberline {A.5}Source code}{106}{section.A.5}%
-\contentsline {chapter}{Bibliography}{107}{appendix*.87}%
+\contentsline {chapter}{Bibliography}{107}{appendix*.85}%

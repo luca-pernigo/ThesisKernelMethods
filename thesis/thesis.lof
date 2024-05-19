@@ -53,14 +53,12 @@
 \contentsline {figure}{\numberline {10.2}{\ignorespaces Tbats prediction\relax }}{87}{figure.caption.58}%
 \contentsline {figure}{\numberline {10.3}{\ignorespaces Prophet prediction\relax }}{87}{figure.caption.59}%
 \contentsline {figure}{\numberline {10.4}{\ignorespaces Prophet v2 prediction\relax }}{88}{figure.caption.60}%
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Seasonalities breakdown\relax }}{88}{figure.caption.61}%
-\contentsline {figure}{\numberline {10.6}{\ignorespaces Prices trend\relax }}{89}{figure.caption.62}%
-\contentsline {figure}{\numberline {10.7}{\ignorespaces K-nearest neighbour regression\relax }}{90}{figure.caption.63}%
-\contentsline {figure}{\numberline {10.8}{\ignorespaces Support vector regression prediction\relax }}{90}{figure.caption.64}%
-\contentsline {figure}{\numberline {10.9}{\ignorespaces Long short term memory prediction\relax }}{91}{figure.caption.65}%
-\contentsline {figure}{\numberline {10.10}{\ignorespaces Kernel ridge prediction\relax }}{91}{figure.caption.66}%
-\contentsline {figure}{\numberline {10.11}{\ignorespaces Kernel support vector prediction\relax }}{92}{figure.caption.67}%
+\contentsline {figure}{\numberline {10.5}{\ignorespaces K-nearest neighbour regression\relax }}{88}{figure.caption.61}%
+\contentsline {figure}{\numberline {10.6}{\ignorespaces Support vector regression prediction\relax }}{89}{figure.caption.62}%
+\contentsline {figure}{\numberline {10.7}{\ignorespaces Long short term memory prediction\relax }}{89}{figure.caption.63}%
+\contentsline {figure}{\numberline {10.8}{\ignorespaces Kernel ridge prediction\relax }}{90}{figure.caption.64}%
+\contentsline {figure}{\numberline {10.9}{\ignorespaces Kernel support vector prediction\relax }}{90}{figure.caption.65}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{103}{figure.caption.82}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{103}{figure.caption.83}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{104}{figure.caption.84}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{103}{figure.caption.80}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{103}{figure.caption.81}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{104}{figure.caption.82}%

@@ -57,24 +57,25 @@ This method achieves a RMSE of 23.96, its prediction is visualized in figure \re
     \label{fig:prophet_price_1}
 \end{figure}
 What can be seen is that, prophet models correctly the average trend but does not model peaks and lows precisely. 
-Next, a more complex model was trained. We added the weather temperature, the square of it and the categorical variable for holidays effect as regressors. Furthermore, we also applied a log transformation to the dependet variable. Doing so, RMSE went down to 10.29. Forecast is visualized in \ref{fig:prophet_price2}, moreover, figure \ref{fig:prophet_price2.1} and figure \ref{fig:prophet_price2.2} break down the trend and the seasonalities respectively.
+Next, a more complex model was trained. We added the weather temperature, the square of it and the categorical variable for holidays effect as regressors. Furthermore, we also applied a log transformation to the dependet variable. Doing so, RMSE went down to 10.29. Forecast is visualized in \ref{fig:prophet_price2}, moreover.
+% figure \ref{fig:prophet_price2.1} and figure \ref{fig:prophet_price2.2} break down the trend and the seasonalities respectively.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/prophet_price2.png}
     \caption{Prophet v2 prediction}
     \label{fig:prophet_price2}
 \end{figure}
 
-\begin{figure}[!h]
-    \includegraphics[width=\textwidth]{images/prophet_price2.1.png}
-    \caption{Seasonalities breakdown}
-    \label{fig:prophet_price2.1}
-\end{figure}
+% \begin{figure}[!h]
+%     \includegraphics[width=\textwidth]{images/prophet_price2.1.png}
+%     \caption{Seasonalities breakdown}
+%     \label{fig:prophet_price2.1}
+% \end{figure}
 
-\begin{figure}[!h]
-    \includegraphics[width=\textwidth]{images/prophet_price2.2.png}
-    \caption{Prices trend}
-    \label{fig:prophet_price2.2}
-\end{figure}
+% \begin{figure}[!h]
+%     \includegraphics[width=\textwidth]{images/prophet_price2.2.png}
+%     \caption{Prices trend}
+%     \label{fig:prophet_price2.2}
+% \end{figure}
 Prophet alongside with the right features is a good model in the context of electricity price forecasting, it is capcable of catching the trend, the peak and the lows. 
 
 \subsection{K-nearest neighbours}
