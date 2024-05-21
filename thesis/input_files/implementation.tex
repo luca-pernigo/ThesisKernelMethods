@@ -1,28 +1,28 @@
-This section is inteneded to explain and aid for reproducibilty studies. Hereafter the specific libraries used and the custom implementatios are thoroughly documented.
+This section is inteneded to explain and aid for reproducibilty studies. Hereafter, the specific libraries used and the custom implementatios are thoroughly documented.
 \\
 For the list of python packages needed see the requirement.txt file on \url{https://github.com/luca-pernigo/ThesisKernelMethods}\label{github_repo}.
 % - indicate computer specifics
 All experiments have been carried out on a 3.2 GHz 16GB Apple M1 Pro.
 
 
-Section documenting code
+% Section documenting code
 
-- Explain how methods' implementation has been
-adapted to my specific setting.
+% - Explain how methods' implementation has been
+% adapted to my specific setting.
 
-- Explain in detail how to my src code has been implemented
-its rationale and how to use it.
+% - Explain in detail how to my src code has been implemented
+% its rationale and how to use it.
 
-- As I explain code scripts go over the test, to 
-explain better my ideas.
+% - As I explain code scripts go over the test, to 
+% explain better my ideas.
 
-- Indicate also hyperparameters maybe in each subsection
+% - Indicate also hyperparameters maybe in each subsection
 
 \section{Point forecasting}
 \subsection{Multiple linear regression}
 For multiple linear regression the one from the \href{https://scikit-learn.org/stable/}{sklearn} library has been used.
 
-\subsection{Tbats}
+\subsection{Trigonometric seasonality Box-Cox transformation ARMA errors trend and seasonal components}
 Tbats implementation is available at \url{https://github.com/intive-DataScience/tbatsx}.
 In our application we specified as hyperparameters the lenght of seasons; 24 for the daily seasonality and 168 for the weekly seasonality.
 
@@ -35,14 +35,15 @@ The object KNeighborsRegressor of the \href{https://scikit-learn.org/stable/}{sk
 \subsection{Support vector regression}
 The object SVR of the \href{https://scikit-learn.org/stable/}{sklearn} module svm has been used by specifying the liner kernel.
 
-\subsection{LSTM}
+\subsection{Long short term memory}
 The LSTM predictor has been built using the \href{https://pytorch.org}{torch} library.
 
 \subsection{Kernel ridge regression}
 The object KernelRidge of the \href{https://scikit-learn.org/stable/}{sklearn} module kernel\_ridge has been used.
 
 \subsection{Kernel support vector regression}
-The object SVR of the \href{https://scikit-learn.org/stable/}{sklearn} module svm has been used by specifying rbf as the kernel parameter.
+The object SVR of the \href{https://scikit-learn.org/stable/}{sklearn} module svm has been used.
+% by specifying rbf as the kernel parameter.
 
 \section{Probabilistic forecasting}
 \subsection{Linear quantile regression}

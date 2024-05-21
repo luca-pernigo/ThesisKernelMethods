@@ -57,11 +57,11 @@ This method achieves a RMSE of 23.96, its prediction is visualized in figure \re
     \label{fig:prophet_price_1}
 \end{figure}
 What can be seen is that, prophet models correctly the average trend but does not model peaks and lows precisely. 
-Next, a more complex model was trained. We added the weather temperature, the square of it and the categorical variable for holidays effect as regressors. Furthermore, we also applied a log transformation to the dependet variable. Doing so, RMSE went down to 10.29. Forecast is visualized in \ref{fig:prophet_price2}, moreover.
-% figure \ref{fig:prophet_price2.1} and figure \ref{fig:prophet_price2.2} break down the trend and the seasonalities respectively.
+Next, a more complex model was trained. We added the weather temperature, the square of it and the categorical variable for holidays effect as regressors. Furthermore, we also applied a log transformation to the dependent variable. Doing so, RMSE went down to 10.29. Forecast is visualized in \ref{fig:prophet_price2}.
+% , moreover figure \ref{fig:prophet_price2.1} and figure \ref{fig:prophet_price2.2} break down the trend and the seasonalities respectively.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/prophet_price2.png}
-    \caption{Prophet v2 prediction}
+    \caption{Prophet model\_2 prediction}
     \label{fig:prophet_price2}
 \end{figure}
 
@@ -99,7 +99,7 @@ Visually, we see that the SVR performs similar to multiple linear regression, as
 
 \subsection{Long short term memory}
 We used the torch library in order to code our LSTM regressor.
-Various hyperparameters combinations were tried during hyperparameter tuning. The final hyperparameters we set on follows.
+Various hyperparameters combinations were tried during the tuning phase. The final architecture we set on follows
 \begin{itemize}
     \item hidden\_size= 64
     \item num\_layers= 2
@@ -109,7 +109,7 @@ Various hyperparameters combinations were tried during hyperparameter tuning. Th
     \item batch\_size= 32
     \item window\_size= 24
 \end{itemize}
-LSTM forecast is reported in table \ref{fig:lstm_price}, it achieves a RMSE of 9.1782
+LSTM forecast is reported in figure \ref{fig:lstm_price}, it achieves a RMSE of 9.1782
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/lstm_price.png}
     \caption{Long short term memory prediction}
