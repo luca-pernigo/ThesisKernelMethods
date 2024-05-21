@@ -7,4 +7,12 @@ summercode/
 # not used data
 data_2/
 
+# ignore all DS_Store files
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+
+old/
 
