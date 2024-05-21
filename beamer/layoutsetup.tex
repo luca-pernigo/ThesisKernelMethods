@@ -1,0 +1,40 @@
+% first page settings
+\setbeamerfont{title}{size=\large}
+\setbeamerfont{subtitle}{size=\small}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{date}{size=\footnotesize}
+\setbeamerfont{institute}{size=\footnotesize}
+\setbeamerfont{page}{size=\footnotesize}
+
+%set colors
+\definecolor{myNewColorA}{RGB}{0, 0,0}
+\definecolor{myNewColorB}{RGB}{0, 0,0}
+\definecolor{myNewColorC}{RGB}{0, 0,0} % {130,138,143}
+
+\defbeamertemplate{headline}{my header}{%
+\vskip1pt%
+\makebox[0pt][l]{\,\insertsection}%
+\hspace*{\fill}%
+\llap{\insertpagenumber\,/\,\insertpresentationendpage\,}
+}
+\setbeamertemplate{headline}[my header]
+
+
+\setbeamercolor*{palette primary}{bg=myNewColorC}
+\setbeamercolor*{palette secondary}{bg=myNewColorB, fg = white}
+\setbeamercolor*{palette tertiary}{bg=myNewColorA, fg = white}
+\setbeamercolor*{titlelike}{fg=myNewColorA}
+\setbeamercolor*{title}{bg=myNewColorA, fg = white}
+\setbeamercolor*{item}{fg=myNewColorA}
+\setbeamercolor*{caption name}{fg=myNewColorA}
+\usefonttheme{professionalfonts}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
