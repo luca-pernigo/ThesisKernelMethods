@@ -5,7 +5,7 @@ from qr import qr_tests
 
 if __name__=="__main__":
     # load data
-    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/dataset_applications/car_data.csv", sep=",", decimal=".")
+    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/extradata/car_data.csv", sep=",", decimal=".")
 
     # map categorical regressor to integer form
     key6 = {"Petrol":0, "Diesel":1, "CNG":2}

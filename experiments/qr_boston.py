@@ -5,7 +5,7 @@ from qr import qr_tests
 
 if __name__=="__main__":
     # load data
-    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/dataset_applications/BostonHousing.csv", sep=",", decimal=".")
+    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/extradata/BostonHousing.csv", sep=",", decimal=".")
 
     X=df.iloc[:,0:-1]
     y=df.iloc[:,-1]

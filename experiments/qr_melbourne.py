@@ -25,7 +25,7 @@ from tqdm import tqdm
 
 if __name__=="__main__":
     # load data
-    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/dataset_applications/temperatures_melbourne.csv", sep=";", decimal=".")
+    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/extradata/temperatures_melbourne.csv", sep=";", decimal=".")
 
     # quantiles
     quantiles = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]

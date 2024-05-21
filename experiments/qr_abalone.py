@@ -5,7 +5,7 @@ from qr import qr_tests
 
 if __name__=="__main__":
     # load data
-    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/dataset_applications/abalone.csv", sep=",", decimal=".")
+    df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/extradata/abalone.csv", sep=",", decimal=".")
 
     # map categorical regressor to integer form
     key = {"I":0, "M":1, "F":2}
