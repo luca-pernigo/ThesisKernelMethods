@@ -8,24 +8,24 @@ As a consequence, the forecaster's toolbox has grown in size and complexity.
 \\
 Before delving into the literature review, we stress that at this point in time there is no superior method. Different solutions may outperform or underperform compared to other techniques depending on the problem settings. Thus, understanding the complexity, strenghts and weaknesses of each method is crucial for fitting the right model to the right setting.
 \\
-Within this research community, it emerged the need for more homogeneity in the choice of the error valuation metrics (Section \ref{metrics}), data quality and in the way of comparing model performances \cite{EPF_review}. As a solution, \cite{lago} proposes a checklist to aid evaluating the meaningfulness of new research. Throughout this thesis work, we will stick to the proposed principles and best practices peculiar of the EF field.
+Within this research community, the need for more homogeneity in the choice of the error valuation metrics emerged (Section \ref{metrics}), data quality and in the way of comparing model performances \cite{EPF_review}. As a solution, \cite{lago} proposes a checklist to aid evaluating the meaningfulness of new research. Throughout this thesis work, we will stick to the proposed principles and best practices peculiar of the EF field.
 %literature review
 
 \section{Electricity forecasting classification}
-Electricity forecasting is a vague term and it is used in the literature to refer to the whole field. Thus, in order to introduce some clarity it is useful to classify the range of EF articles in terms of their core attributes.
+Electricity forecasting is a vague term and is used in the literature to refer to the whole field. Thus, in order to introduce some clarity, it is useful to classify the range of EF articles in terms of their core attributes.
 \\
 In the context of energy forecasting, the quantities of most interest are electricity prices (EPF), electricity loads (ELF) and renewables generation (mostly wind and solar).
 \\
-In terms of forecasting horizons, we can group EF into four major categories: very short term forcasting (VSTF), short term load forecasting (STF), medium term forecasting (MTF) and long term forecasting (LTF). Consensus in the literature is to use one day, two weeks and three years respectilvely \cite{hong_phd} as cut off horizons; see \ref{fig:time} for a visualisation. 
+In terms of forecasting horizons, we can group EF into four major categories: very short term forcasting (VSTF), short term load forecasting (STF), medium term forecasting (MTF) and long term forecasting (LTF). Consensus in the literature is to use one day, two weeks and three years respectilvely \cite{hong_phd} as cut off horizons; see figure \ref{fig:time} for a visualisation. 
 \begin{figure}
   \includegraphics[width=\textwidth]{images/time_2.png}
-  \caption{Time classsification \cite{prob_elf}}
+  \caption{Time classification \cite{prob_elf}}
   \label{fig:time}
 \end{figure}
 \\
 Forecasts can either be for the whole target electricity network (system) or for a subset of it (zonal).
 \\
-EF literature distinguishes between point and probabilistic forecasts. Each of the two has its advantages and disadvantages. Point forecasts are easier to generate and less computationally intensive while probabilistic forecast are more informative. Industry and research efforts have focused primarily on point forcasting. Nevertheless, interest in probabilistic forecasting has risen considerably over the last years due to renewable integration requirements, introduction of smart grids and increased market competitivness.
+EF literature distinguishes between point and probabilistic forecasts. Each of the two has its advantages and disadvantages. Point forecasts are easier to generate and less computationally intensive while probabilistic forecasts are more informative. Industry and research efforts have focused primarily on point forcasting. Nevertheless, interest in probabilistic forecasting has risen considerably over the last years due to renewable integration requirements, introduction of smart grids and increased market competitiveness.
 \section{Bibliographic analysis}
 This section presents the results of the bibliometric analysis we performed on March 6th 2024. This survey has been carried out by using the Scopus citation database. For details on the specific queries entered in Scopus, refer to Subsection 5 of the Appendix \ref{src_code}.
 \\
@@ -40,21 +40,21 @@ The next question is to compare the state of point versus probabilistic forecast
 Nevertheless, we can see a trend that suggests researchers are making an effort to fill this gap.
 \begin{figure}
   \includegraphics[width=\textwidth]{images/point_vs_prob.jpg}
-  \caption{Point versus probabilistic pubblications over the past years}
+  \caption{Point versus probabilistic publications over the past years}
   \label{fig:point_vs_prob}
 \end{figure}
 \\
 The EF literature is dominated by statistical and computational intelligence (CI) methods as can be seen from Figure \ref{fig:cs_stat_both}, with CI methods being slightly preferred. 
 \begin{figure}
   \includegraphics[width=\textwidth]{images/cs_stat_both.jpg}
-  \caption{Pubblications by method over the past years}
+  \caption{Publications by method over the past years}
   \label{fig:cs_stat_both}
 \end{figure}
 \\
-EF is a heterogenous field of research, its researchers come from a wide array of backgrounds, with electrical engineers and statisticians making up the top contributors; their different educational training may explain why the split between statistical and computational intelligence methods is so marked. Figure \ref{fig:subject_area} depitcs the EF publications by subject area. What can be concluded, is that the bulk of pubblication come from engineering, computer science, mathematics and econometrics.
+EF is a heterogenous field of research, its researchers come from a wide array of backgrounds, with electrical engineers and statisticians making up the top contributors; their different educational training may explain why the split between statistical and computational intelligence methods is so marked. Figure \ref{fig:subject_area} depitcs the EF publications by subject area. What can be concluded, is that the bulk of publication come from engineering, computer science, mathematics and econometrics.
 \begin{figure}
   \includegraphics[width=\textwidth]{images/subject_area.png}
-  \caption{Pubblications by subject area}
+  \caption{Publications by subject area}
   \label{fig:subject_area}
 \end{figure}
 \\
