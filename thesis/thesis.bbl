@@ -34,9 +34,9 @@ Ilyas Agakishiev, Wolfgang~Karl Härdle, Karel Kozmik, Milos Kopa, and Alla Petu
 \newblock {\em SSRN Electronic Journal}, 01 2023.
 
 \bibitem{aizerman}
-A~Aizerman.
+Mark~Aronovich Aizerman.
 \newblock Theoretical foundations of the potential function method in pattern recognition learning.
-\newblock {\em Automation and remote control}, 25:821--837, 1964.
+\newblock {\em Automation and Remote Control}, 25:821--837, 1964.
 
 \bibitem{andreadou2016telecommunication}
 Nikoleta Andreadou, Miguel~Olariaga Guardiola, and Gianluca Fulli.
@@ -46,7 +46,7 @@ Nikoleta Andreadou, Miguel~Olariaga Guardiola, and Gianluca Fulli.
 \bibitem{aronszajn}
 Nachman Aronszajn.
 \newblock Theory of reproducing kernels.
-\newblock {\em Transactions of the American mathematical society}, 68(3):337--404, 1950.
+\newblock {\em Transactions of the American Mathematical Society}, 68(3):337--404, 1950.
 
 \bibitem{arora2016forecasting}
 Siddharth Arora and James~W Taylor.
@@ -56,7 +56,7 @@ Siddharth Arora and James~W Taylor.
 \bibitem{new_multi_test2}
 Ludwig Baringhaus and Carsten Franz.
 \newblock On a new multivariate two-sample test.
-\newblock {\em Journal of multivariate analysis}, 88(1):190--206, 2004.
+\newblock {\em Journal of Multivariate Analysis}, 88(1):190--206, 2004.
 
 \bibitem{california}
 Ashutosh Bhagwat.
@@ -70,61 +70,57 @@ George~EP Box, Gwilym~M Jenkins, Gregory~C Reinsel, and Greta~M Ljung.
 
 \bibitem{boyd2004convex}
 Stephen~P Boyd and Lieven Vandenberghe.
-\newblock {\em Convex optimization}.
-\newblock Cambridge university press, 2004.
+\newblock {\em Convex Optimization}.
+\newblock Cambridge University Press, Cambridge, UK, 2004.
 
 \bibitem{breiman2001random}
 Leo Breiman.
 \newblock Random forests.
-\newblock {\em Machine learning}, 45:5--32, 2001.
+\newblock {\em Machine Learning}, 45:5--32, 2001.
 
 \bibitem{breiman2017classification}
-Leo Breiman.
+Leo Breiman and Jerome~H. Friedman.
 \newblock {\em Classification and regression trees}.
-\newblock Routledge, 2017.
-
-\bibitem{bringhurst1996ets}
-Robert Bringhurst.
-\newblock {\em {The Elements of Typographic Style}}.
-\newblock Hartley \& Marks, 1996.
+\newblock Chapman and Hall/CRC, Boca Raton, USA, 1984.
 
 \bibitem{brown1959statistical}
 Robert~Goodell Brown.
-\newblock Statistical forecasting for inventory control.
-\newblock 1959.
+\newblock {\em Statistical forecasting for inventory control}.
+\newblock McGraw\-Hill, New York, USA, 1959.
 
 \bibitem{2022nystrom}
 Antoine Chatalic, Nicolas Schreuder, Alessandro Rudi, and Lorenzo Rosasco.
-\newblock Nystr\"om kernel mean embeddings, 2022.
+\newblock Nystr\"om kernel mean embeddings.
+\newblock {\em Proceedings of Machine Learning Research}, 162:3006--3024, 2022.
 
 \bibitem{supersamples}
 Yutian Chen, Max Welling, and Alex Smola.
-\newblock Super-samples from kernel herding.
-\newblock 2012.
+\newblock {\em Super-Samples from Kernel Herding}.
+\newblock AUAI Press, Arlington, USA, 2012.
 
 \bibitem{cortes1995support}
 Corinna Cortes and Vladimir Vapnik.
 \newblock Support-vector networks.
-\newblock {\em Machine learning}, 20:273--297, 1995.
+\newblock {\em Machine Learning}, 20:273--297, 1995.
 
 \bibitem{david2016probabilistic}
 Mathieu David, F~Ramahatana, Pierre-Julien Trombe, and Philippe Lauret.
 \newblock Probabilistic forecasting of the solar irradiance with recursive arma and garch models.
 \newblock {\em Solar Energy}, 133:55--72, 2016.
 
-\bibitem{declean}
-PAOLA~Antonio DE, Nikoleta ANDREADOU, Evangelos KOTSAKIS, et~al.
-\newblock Clean energy technology observatory: Smart grids in the european union-2023 status report on technology development trends, value chains and markets.
-
 \bibitem{de200625}
 Jan~G De~Gooijer and Rob~J Hyndman.
 \newblock 25 years of time series forecasting.
-\newblock {\em International journal of forecasting}, 22(3):443--473, 2006.
+\newblock {\em International Journal of Forecasting}, 22(3):443--473, 2006.
 
 \bibitem{de2011forecasting}
 Alysha~M De~Livera, Rob~J Hyndman, and Ralph~D Snyder.
 \newblock Forecasting time series with complex seasonal patterns using exponential smoothing.
-\newblock {\em Journal of the American statistical association}, 106(496):1513--1527, 2011.
+\newblock {\em Journal of the American Statistical Association}, 106(496):1513--1527, 2011.
+
+\bibitem{declean}
+Antonio De~Paola, Nikoleta Andreadou, Evangelos Kotsakis, et~al.
+\newblock Clean energy technology observatory: Smart grids in the european union-2023. status report on technology development trends, value chains and markets.
 
 \bibitem{dudek2018probabilistic}
 Grzegorz Dudek.
@@ -144,16 +140,16 @@ Herbert Formayer, Imran Nadeem, David Leidinger, Philipp Maier, Franziska Sch\"{
 \bibitem{friedman2001greedy}
 Jerome~H Friedman.
 \newblock Greedy function approximation: a gradient boosting machine.
-\newblock {\em Annals of statistics}, pages 1189--1232, 2001.
+\newblock {\em Annals of Statistics}, pages 1189--1232, 2001.
 
 \bibitem{gaillard2016additive}
 Pierre Gaillard, Yannig Goude, and Rapha{\"e}l Nedellec.
-\newblock Additive models and robust aggregation for gefcom2014 probabilistic electric load and electricity price forecasting.
-\newblock {\em International Journal of forecasting}, 32(3):1038--1050, 2016.
+\newblock Additive models and robust aggregation for {GEFCom2014} probabilistic electric load and electricity price forecasting.
+\newblock {\em International Journal of Forecasting}, 32(3):1038--1050, 2016.
 
 \bibitem{gaillardasemi}
 Pierre Gaillarda, Yannig Goudea, and Rapha{\"e}l Nedelleca.
-\newblock Semi-parametric models and robust aggregation for gefcom2014 probabilistic electric load and electricity price forecasting.
+\newblock Semi-parametric models and robust aggregation for {GEFCom2014} probabilistic electric load and electricity price forecasting.
 
 \bibitem{gneiting2014probabilistic}
 Tilmann Gneiting and Matthias Katzfuss.
@@ -168,7 +164,7 @@ Tilmann Gneiting and Adrian~E Raftery.
 \bibitem{gneiting2007strictly}
 Tilmann Gneiting and Adrian~E Raftery.
 \newblock Strictly proper scoring rules, prediction, and estimation.
-\newblock {\em Journal of the American statistical Association}, 102(477):359--378, 2007.
+\newblock {\em Journal of the American Statistical Association}, 102(477):359--378, 2007.
 
 \bibitem{proper_scores}
 Tilmann Gneiting and Adrian~E Raftery.
@@ -182,7 +178,7 @@ Stephen Haben, Siddharth Arora, Georgios Giasemidis, Marcus Voss, and Danica~Vuk
 
 \bibitem{haben2016hybrid}
 Stephen Haben and Georgios Giasemidis.
-\newblock A hybrid model of kernel density estimation and quantile regression for gefcom2014 probabilistic load forecasting.
+\newblock A hybrid model of kernel density estimation and quantile regression for {GEFCom2014} probabilistic load forecasting.
 \newblock {\em International Journal of Forecasting}, 32(3):1017--1022, 2016.
 
 \bibitem{haben2018short}
@@ -196,19 +192,19 @@ Stephen Haben, Marcus Voss, and William Holderbaum.
 \newblock Springer Nature, 2023.
 
 \bibitem{hastie2009elements}
-Trevor Hastie, Robert Tibshirani, Jerome~H Friedman, and Jerome~H Friedman.
-\newblock {\em The elements of statistical learning: data mining, inference, and prediction}, volume~2.
-\newblock Springer, 2009.
+Trevor Hastie, Robert Tibshirani, Jerome~H Friedman, Jerome~H. Friedman, Richard~A. Olshen, and Charles~J. Stone.
+\newblock {\em The Elements of Statistical Learning: Data Mining, Inference, and Prediction}, volume~2.
+\newblock Springer, New York, USA, 2009.
 
 \bibitem{hastie2017generalized}
-Trevor~J Hastie.
-\newblock Generalized additive models.
-\newblock In {\em Statistical models in S}, pages 249--307. Routledge, 2017.
+Trevor~J. Hastie and Robert~J. Tibshirani.
+\newblock {\em Generalized additive models}.
+\newblock Chapman and Hall/CRC, Boca Raton, USA, 1990.
 
 \bibitem{he2017short}
 Yaoyao He, Rui Liu, Haiyan Li, Shuo Wang, and Xiaofen Lu.
 \newblock Short-term power load probability density forecasting method using kernel-based support vector quantile regression and copula theory.
-\newblock {\em Applied energy}, 185:254--266, 2017.
+\newblock {\em Applied Energy}, 185:254--266, 2017.
 
 \bibitem{he2022cooperative}
 Yaoyao He, Yun Wang, Shuo Wang, and Xin Yao.
@@ -217,7 +213,7 @@ Yaoyao He, Yun Wang, Shuo Wang, and Xin Yao.
 
 \bibitem{hilbert}
 David Hilbert.
-\newblock Grundzuge einer allgemeinen theorie der linearen integralgleichungen.
+\newblock {Grundzuge einer Allgemeinen Theorie der Linearen Integralgleichungen}.
 \newblock {\em Gott. Nachr.}, pages 307--338, 1904.
 
 \bibitem{hofmann2006review}
@@ -233,7 +229,7 @@ CE~Holt.
 \bibitem{hong_phd}
 Tao Hong.
 \newblock {\em Short term electric load forecasting}.
-\newblock North Carolina State University, 2010.
+\newblock North Carolina State University Library, Chapel Hill, USA, 2010.
 
 \bibitem{prob_elf}
 Tao Hong and Shu Fan.
@@ -324,7 +320,7 @@ Jesus Lago, Grzegorz Marcjasz, Bart De~Schutter, and Rafa{\l} Weron.
 
 \bibitem{maciejowska2016hybrid}
 Katarzyna Maciejowska and Jakub Nowotarski.
-\newblock A hybrid model for gefcom2014 probabilistic electricity price forecasting.
+\newblock A hybrid model for {GEFCom2014} probabilistic electricity price forecasting.
 \newblock {\em International Journal of Forecasting}, 32(3):1051--1056, 2016.
 
 \bibitem{macqueen1967some}
@@ -526,7 +522,7 @@ Peter~R Winters.
 
 \bibitem{xie2016gefcom2014}
 Jingrui Xie and Tao Hong.
-\newblock Gefcom2014 probabilistic electric load forecasting: An integrated solution with forecast combination and residual simulation.
+\newblock {GEFCom2014} probabilistic electric load forecasting: An integrated solution with forecast combination and residual simulation.
 \newblock {\em International Journal of Forecasting}, 32(3):1012--1016, 2016.
 
 \bibitem{zhang2020two}
@@ -551,7 +547,7 @@ Zhendong Zhang, Hui Qin, Yongqi Liu, Liqiang Yao, Xiang Yu, Jiantao Lu, Zhiqiang
 
 \bibitem{ziel2016lasso}
 Florian Ziel and Bidong Liu.
-\newblock Lasso estimation for gefcom2014 probabilistic electric load forecasting.
+\newblock Lasso estimation for {GEFCom2014} probabilistic electric load forecasting.
 \newblock {\em International Journal of Forecasting}, 32(3):1029--1037, 2016.
 
 \bibitem{ziel2018probabilistic}

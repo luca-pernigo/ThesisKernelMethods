@@ -4,19 +4,19 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
 Warning--entry type for "un_sdgs" isn't style-file defined
---line 1069 of file refs.bib
+--line 1066 of file refs.bib
 Warning--entry type for "gm_22" isn't style-file defined
---line 1074 of file refs.bib
+--line 1071 of file refs.bib
 Warning--entry type for "scikithalvinggridsearch" isn't style-file defined
---line 1079 of file refs.bib
+--line 1076 of file refs.bib
 Warning--entry type for "scikitscalers" isn't style-file defined
---line 1084 of file refs.bib
+--line 1081 of file refs.bib
 Warning--entry type for "scikitscale_example" isn't style-file defined
---line 1089 of file refs.bib
+--line 1086 of file refs.bib
 Warning--entry type for "eu_zonal" isn't style-file defined
---line 1095 of file refs.bib
+--line 1092 of file refs.bib
 Warning--entry type for "us_local" isn't style-file defined
---line 1100 of file refs.bib
+--line 1097 of file refs.bib
 Warning--to sort, need author or key in eu_zonal
 Warning--to sort, need author or key in us_local
 Warning--to sort, need author or key in un_sdgs
@@ -24,8 +24,6 @@ Warning--to sort, need author or key in gm_22
 Warning--to sort, need author or key in scikithalvinggridsearch
 Warning--to sort, need author or key in scikitscalers
 Warning--to sort, need author or key in scikitscale_example
-Warning--empty journal in brown1959statistical
-Warning--empty journal in supersamples
 Warning--empty journal in declean
 Warning--empty year in declean
 Warning--empty journal in gaillardasemi
@@ -35,45 +33,45 @@ Warning--can't use both author and editor fields in pmlr
 Warning--can't use both volume and number fields in macqueen1967some
 Warning--empty journal in nystrom
 Warning--empty journal in takeuchi2006nonparametric
-You've used 115 entries,
+You've used 114 entries,
             2118 wiz_defined-function locations,
-            1119 strings with 22239 characters,
-and the built_in function-call counts, 36136 in all, are:
-= -- 3548
-> -- 1662
-< -- 15
-+ -- 673
-- -- 546
-* -- 2547
-:= -- 6020
-add.period$ -- 334
-call.type$ -- 115
-change.case$ -- 599
+            1120 strings with 22280 characters,
+and the built_in function-call counts, 36005 in all, are:
+= -- 3533
+> -- 1677
+< -- 14
++ -- 678
+- -- 552
+* -- 2564
+:= -- 6011
+add.period$ -- 331
+call.type$ -- 114
+change.case$ -- 597
 chr.to.int$ -- 0
-cite$ -- 133
-duplicate$ -- 1300
-empty$ -- 2883
-format.name$ -- 546
-if$ -- 7455
+cite$ -- 130
+duplicate$ -- 1284
+empty$ -- 2858
+format.name$ -- 552
+if$ -- 7415
 int.to.chr$ -- 0
-int.to.str$ -- 115
-missing$ -- 115
-newline$ -- 562
-num.names$ -- 216
-pop$ -- 649
+int.to.str$ -- 114
+missing$ -- 117
+newline$ -- 558
+num.names$ -- 214
+pop$ -- 636
 preamble$ -- 1
-purify$ -- 499
+purify$ -- 500
 quote$ -- 0
-skip$ -- 928
+skip$ -- 909
 stack$ -- 0
-substring$ -- 2346
-swap$ -- 197
-text.length$ -- 15
+substring$ -- 2340
+swap$ -- 189
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 430
-warning$ -- 18
-while$ -- 355
-width$ -- 118
+type$ -- 422
+warning$ -- 16
+while$ -- 352
+width$ -- 117
 write$ -- 1196
-(There were 25 warnings)
+(There were 23 warnings)
