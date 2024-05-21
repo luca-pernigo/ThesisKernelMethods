@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thesis"] 1716289629 "thesis.aux" "thesis.bbl" "thesis" 1716290662 0
+["bibtex thesis"] 1716299881 "thesis.aux" "thesis.bbl" "thesis" 1716299890 0
   "./refs.bib" 1716111499 32743 65320fcbc6159db074edbf4472b285df ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thesis.aux" 1716290662 66276 c79791fc503637e96821edb1205bb2c1 "pdflatex"
+  "thesis.aux" 1716299889 66279 68f4244f6c067e25ffed5f89548d670b "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1716290653 "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" "thesis.pdf" "thesis" 1716290662 0
-  "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" 1716277539 5090 564012c65095feb1ef116aacf65dbeba ""
+["pdflatex"] 1716299881 "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" "thesis.pdf" "thesis" 1716299890 0
+  "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" 1716299872 5134 da9bf52c59eb69c6c74d397a44098b2d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136768653 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -245,8 +245,7 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "USIlogo.pdf" 1706858978 27525 778ce3d614c5e4d40c08e5c7ef398f26 ""
   "USIlogo.sty" 1706858978 278 b05f7bd66c74ebe5088b163217438908 ""
-  "abstract.tex" 1716196072 1460 fbfc69b212c7f15f42a75397b6e72819 ""
-  "appendix.tex" 1716290653 18728 e8532e37051ceacc0c3aa3806cedcf87 ""
+  "appendix.tex" 1716291812 18729 64a13c3e8a4e0588393ee7516ff769d0 ""
   "extrapackages.tex" 1706858978 1809 988e97ffad704312dec91311c09cf6a5 ""
   "images/CH_day_of_week_boxplot_2021.png" 1715002149 27489 2464712d896db5cd7f1d5a913cd87494 ""
   "images/CH_heatmap_2021.png" 1715002149 46673 a2bd0597ff0ecc9fefc6c5d7bc25420e ""
@@ -319,6 +318,7 @@
   "images/time_2.png" 1714384139 32857 bd01af2620b51bc984bdd68992dc073f ""
   "images/us_local.png" 1711721130 2706297 3d3751956f82fa495e6af2ec7a89eae4 ""
   "images/workflow_kernels.png" 1715588021 132694 cfdd66128950453d5290c5974cfac276 ""
+  "input_files/acknowledgements.tex" 1716299794 1762 0efdd640e20fc7abc18423ed21d12e45 ""
   "input_files/analysis.tex" 1716280025 51163 b60fddaeb435409b9a42d51ab46fe3e7 ""
   "input_files/data_exploratory.tex" 1716277532 13169 67fa943c2753e12058a82c748ccb19d7 ""
   "input_files/energymarket.tex" 1715766470 9533 b16abb95ba43330c2248e15187b91d2a ""
@@ -334,13 +334,13 @@
   "layoutsetup.tex" 1706858978 3119 261415572db05494e99be3e6afe6b46a ""
   "macrosetup.tex" 1711356844 939 3c2391595198bdd92e5e1219240e7d78 ""
   "theoremsetup.tex" 1706858978 969 26f7d8ce3897fd4b39189a2363dadee4 ""
-  "thesis.aux" 1716290662 66276 c79791fc503637e96821edb1205bb2c1 "pdflatex"
-  "thesis.bbl" 1716289629 23671 b1a4fdef458df038b571abae6eec3276 "bibtex thesis"
-  "thesis.lof" 1716290662 7635 e8f05ada455e34d90bbb738958c29447 "pdflatex"
-  "thesis.lot" 1716290662 3754 df6c7260ad0eca59061f74d3484a2126 "pdflatex"
-  "thesis.out" 1716290662 21456 3ed1a3235d5b161b70ffdad41dc6ab5f "pdflatex"
-  "thesis.tex" 1716277539 5090 564012c65095feb1ef116aacf65dbeba ""
-  "thesis.toc" 1716290662 11283 c70ef1c1d683830fa34b80d0ba9c61c1 "pdflatex"
+  "thesis.aux" 1716299889 66279 68f4244f6c067e25ffed5f89548d670b "pdflatex"
+  "thesis.bbl" 1716299881 23671 b1a4fdef458df038b571abae6eec3276 "bibtex thesis"
+  "thesis.lof" 1716299889 7636 2bd7bfd39162408eca07803316517189 "pdflatex"
+  "thesis.lot" 1716299889 3754 8e70cb54841557ebfdc6872e224967c6 "pdflatex"
+  "thesis.out" 1716299889 21456 a3e57ff15ba1d6ec383d332caf912866 "pdflatex"
+  "thesis.tex" 1716299872 5134 da9bf52c59eb69c6c74d397a44098b2d ""
+  "thesis.toc" 1716299889 11284 27b29fab097d69fffcf0cd9424c715c2 "pdflatex"
   (generated)
   "thesis.aux"
   "thesis.lof"

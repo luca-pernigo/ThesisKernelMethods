@@ -1,8 +1,8 @@
 \changetocdepth {2}
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Contents}{iii}{section*.1}%
-\contentsline {chapter}{List of Figures}{1}{section*.2}%
-\contentsline {chapter}{List of Tables}{3}{section*.3}%
+\contentsline {chapter}{Contents}{iii}{section*.2}%
+\contentsline {chapter}{List of Figures}{1}{section*.3}%
+\contentsline {chapter}{List of Tables}{3}{section*.4}%
 \contentsline {chapter}{\chapternumberline {1}Problem Description}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{5}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Point versus probabilistic forecast}{6}{section.1.2}%
@@ -69,13 +69,13 @@
 \contentsline {chapter}{\chapternumberline {8}Exploratory analysis and data extract transform load pipeline}{71}{chapter.8}%
 \contentsline {section}{\numberline {8.1}GEFCom2014}{71}{section.8.1}%
 \contentsline {subsection}{\numberline {8.1.1}GEFCom2014 price track}{71}{subsection.8.1.1}%
-\contentsline {subsubsection}{EDA}{72}{section*.41}%
+\contentsline {subsubsection}{EDA}{72}{section*.42}%
 \contentsline {subsection}{\numberline {8.1.2}GEFCom2014 load track}{72}{subsection.8.1.2}%
-\contentsline {subsubsection}{EDA}{73}{section*.44}%
-\contentsline {subsubsection}{GEFCom ETL}{73}{section*.48}%
+\contentsline {subsubsection}{EDA}{73}{section*.45}%
+\contentsline {subsubsection}{GEFCom ETL}{73}{section*.49}%
 \contentsline {section}{\numberline {8.2}Germany Switzerland Austria data}{75}{section.8.2}%
-\contentsline {subsubsection}{ETL}{76}{section*.49}%
-\contentsline {subsubsection}{EDA}{76}{section*.50}%
+\contentsline {subsubsection}{ETL}{76}{section*.50}%
+\contentsline {subsubsection}{EDA}{76}{section*.51}%
 \contentsline {chapter}{\chapternumberline {9}Implementation}{81}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Point forecasting}{81}{section.9.1}%
 \contentsline {subsection}{\numberline {9.1.1}Multiple linear regression}{81}{subsection.9.1.1}%
@@ -106,10 +106,10 @@
 \contentsline {subsection}{\numberline {10.2.1}Quantile regressors comparison}{92}{subsection.10.2.1}%
 \contentsline {subsection}{\numberline {10.2.2}Kernel function choice}{93}{subsection.10.2.2}%
 \contentsline {subsection}{\numberline {10.2.3}GEFCom2014}{96}{subsection.10.2.3}%
-\contentsline {subsubsection}{GEFCom2014 price track}{96}{section*.78}%
-\contentsline {subsubsection}{GEFCom2014 load track}{97}{section*.81}%
+\contentsline {subsubsection}{GEFCom2014 price track}{96}{section*.79}%
+\contentsline {subsubsection}{GEFCom2014 load track}{97}{section*.82}%
 \contentsline {section}{\numberline {10.3}Conclusions}{98}{section.10.3}%
-\contentsline {chapter}{List of Symbols}{103}{section*.85}%
+\contentsline {chapter}{List of Symbols}{103}{section*.86}%
 \contentsline {appendix}{\chapternumberline {A}Appendix}{107}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Feature map normalization}{107}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{107}{section.A.2}%
@@ -125,7 +125,7 @@
 \contentsline {section}{\numberline {A.4}Kernel methods best practices}{113}{section.A.4}%
 \contentsline {subsection}{\numberline {A.4.1}Data normalization}{113}{subsection.A.4.1}%
 \contentsline {subsection}{\numberline {A.4.2}Data compression}{115}{subsection.A.4.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{115}{section*.99}%
-\contentsline {subsubsection}{Pivoted Cholesky decomposition}{115}{section*.100}%
+\contentsline {subsubsection}{Nystrom decomposition}{115}{section*.100}%
+\contentsline {subsubsection}{Pivoted Cholesky decomposition}{115}{section*.101}%
 \contentsline {section}{\numberline {A.5}Source code}{116}{section.A.5}%
-\contentsline {chapter}{Bibliography}{117}{appendix*.101}%
+\contentsline {chapter}{Bibliography}{117}{appendix*.102}%
