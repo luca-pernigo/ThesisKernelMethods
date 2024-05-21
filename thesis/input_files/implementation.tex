@@ -27,7 +27,7 @@ Tbats implementation is available at \url{https://github.com/intive-DataScience/
 In our application we specified as hyperparameters the lenght of seasons; 24 for the daily seasonality and 168 for the weekly seasonality.
 
 \subsection{Prophet}
-The prophet models has been applied by employing the python API provided by Meta \href{https://facebook.github.io/prophet/docs/quick_start.html}{prophet}.
+The \href{https://facebook.github.io/prophet/docs/quick_start.html}{prophet} model has been applied by employing the python API provided by Meta.
 
 \subsection{K-nearest neighbours}
 The object KNeighborsRegressor of the \href{https://scikit-learn.org/stable/}{sklearn} module neighbors has been used.
@@ -67,7 +67,7 @@ Once a solution to the convex problem has been found, we create a mask for the s
 \\
 In the predict method, we pass a matrix $X\_eval$ of independent variables, next we compute the kernel matrix between $X\_train$ and $X\_eval$ and obtain $y\_eval$ with the formula $y=\alpha^\intercal K+b$.
 \\
-This estimator is compatible with useful scikit-learn in built methods like gridsearch, crossvalidation and scoring rules. Moreover, this code is compatible with sklearn in built kernel functions \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process.kernels}{sklearn.gaussian\_process.kernels}, functions supported by our kernel quantile regression include: gaussian rbf, absolute laplacian, mater 1/2, matern 3/2, matern 5/2, linear, cosine, sigmoid, periodic, polynomial and custom composition of kernels.
+This estimator is compatible with useful scikit-learn in built methods like gridsearch, crossvalidation and scoring rules. Moreover, this code is compatible with sklearn in built kernel functions \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process.kernels}{sklearn.gaussian\_process.kernels}, functions supported by our kernel quantile regression include: gaussian rbf, absolute laplacian, matern 3/2, matern 5/2, linear, cosine, sigmoid, periodic, polynomial and custom composition of kernels.
 % NOTICE, these kernel implementations differ in the form of passed parameters in the former we pass in the numerator gamma while in the latter we pass l, which stands for length scale in the denominator. To cross validate overt the same range of parameter across the different kernels we made sura that gamma=1/l.
 
 

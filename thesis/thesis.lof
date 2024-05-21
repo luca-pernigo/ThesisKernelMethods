@@ -60,7 +60,7 @@
 \contentsline {figure}{\numberline {10.9}{\ignorespaces Kernel support vector prediction\relax }}{90}{figure.caption.65}%
 \contentsline {figure}{\numberline {10.10}{\ignorespaces Probabilistic forecast for load in Germany}}{93}{figure.caption.71}%
 \contentsline {figure}{\numberline {10.11}{\ignorespaces Probabilistic forecast for load in Switzerland}}{94}{figure.caption.72}%
-\contentsline {figure}{\numberline {10.12}{\ignorespaces [Prediction price track task 6, Gaussian RBF kernel}}{97}{figure.caption.79}%
+\contentsline {figure}{\numberline {10.12}{\ignorespaces Prediction price track task 6, Gaussian RBF kernel}}{97}{figure.caption.79}%
 \contentsline {figure}{\numberline {10.13}{\ignorespaces Prediction load track task 9, Laplacian kernel}}{99}{figure.caption.82}%
 \contentsline {figure}{\numberline {10.14}{\ignorespaces Boxplot for first two days of probabilistic forecast task 9 using KQR laplacian\relax }}{99}{figure.caption.83}%
 \addvspace {10pt}

@@ -1,6 +1,12 @@
 \chapter{Appendix}
 \section{Feature map normalization}\label{appendix:new_feature}
+
+\begin{lemma}
+    Associated to any RKHS $\mathcal{H}$, there exists a feature vector $\phi(x)$ such that $\|\phi(x)\|_{\mathcal{H}}=R \quad \forall x \in \mathcal{X}$.
+    That is the Hilbert space norm of the feature vector is equal to a constant R for all states in the set $\mathcal{X}$.
+\end{lemma}
 \begin{proof}
+    Taking the new feature vector as $\phi^{new} (x):=\frac{\phi(x)}{\|\phi(x)\|_{\mathcal{H}}}$ we have
 \begin{align*}
     \|
     \phi^{new}(x)\|_{\mathcal{H}}^{2} &= \left\|\frac{\phi(x)}{\|\phi(x)\|_{\mathcal{H}}}
@@ -13,13 +19,13 @@
     \right\|_{\mathcal{H}}^{2}
     \\
     &=
-    \langle
+    \left\langle
     \frac{\phi(x)}
     {\sqrt{k(x,x)}}
     ,
     \frac{\phi(x)}
     {\sqrt{k(x,x)}}
-    \rangle_{\mathcal{H}}
+    \right\rangle_{\mathcal{H}}
     \\
     &=
     \frac{1}{\sqrt{k(x,x)^{2}}}
@@ -244,7 +250,7 @@ The ground concept underlying this method is successive halving. During the firs
 
 \subsection{Cross validation for time series data}
 When data points are dependent on preceding values, we cannot use standard K-fold cross validation. The rationale is that K-fold will randomize the order of the data, thus it might happen to use future data to predict the past; we want to avoid such behaviour in a time series setting. 
-When carryout out any kind of cross validation, we must keep consistency in the way we evaluate our predictors during model selection and in the way we perform evaluation of the test data.
+When carrying out out any kind of cross validation, we must keep consistency in the way we evaluate our predictors during model selection and in the way we perform evaluation of the test data.
 Hence, for time series crossvalidation we have the timeseries split procedure, see figure \ref{fig:crossvalidationtimeseries} for a visualisation; the blue observations make up the training sets while the orange observations form the test sets.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/crossvalidationtimeseries.png}
@@ -254,7 +260,7 @@ Hence, for time series crossvalidation we have the timeseries split procedure, s
 We then average all the observed losses in order to get an estimate for $Err$.
 Notice, in the literature this procedure is sometimes also referred to evaluation on a rolling forecasting origin. This comes from the fact that at each iteration we push forward the origin of our forecast.
 The same concept applies for multi step ahead forecasting, see picture \ref{fig:crossvalidationtimeseries2}.
-That is in predicting $\hat{L}_{N+m}$ we use as inputs $L_1, L_2, \dots, \hat{L}_{N},\hat{L}_{N+1},\dots, \hat{L}_{N+m-1}$; where $\hat{L}_{N},\hat{L}_{N+1},\dots, \hat{L}_{N+m-1}$ are one step ahead forecasts.
+That is in predicting $\hat{y}_{N+m}$ we use as inputs $y_1, y_2, \dots, \hat{y}_{N},\hat{y}_{N+1},\dots, \hat{y}_{N+m-1}$; where $\hat{y}_{N},\hat{y}_{N+1},\dots, \hat{y}_{N+m-1}$ are one step ahead forecasts.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/crossvalidationtimeseries2.png}
     \caption{Cross validation for m step ahead timeseries data \cite{hyndman2018forecasting}}
@@ -266,7 +272,7 @@ Following, are reported a couple of considerations important to keep in mind whe
 
 \subsection{Data normalization}\label{appendix:normalization}
 With data normalization we transform the range of the feautures to a standard scale.
-Such preprocessing step is essential when employing distance based algorithms like svm or k-nearest neighbors. The rationale behind it is that by normalizing data we give an uniform weight to each feature in the learning process; in this way we do not favour larger scale features.
+Such preprocessing step is essential when employing distance based algorithms like SVM or K-nearest neighbors. The rationale behind it is that by normalizing data we give an uniform weight to each feature in the learning process; in this way we do not favour larger scale features.
 Examples of the most popular features scaling are:
 \begin{itemize}
     \item Standard scaler= it computes the standard score z of a sample x
@@ -280,15 +286,15 @@ Examples of the most popular features scaling are:
 \end{itemize}
 Many other data scaling algorithms exists, we refer the reader to a thorough comparison \cite{scikitscalers}.
 \\
-We conclude this subsection with a custom example that motivates the need of feature scaling \cite{scikitscale_example}. The idea is to compare the results of modelling the data with k nearest neighbors on the unscaled data against the scaled data. The considered data is the wine recognition dataset \href{https://archive.ics.uci.edu/dataset/109/wine}{https://archive.ics.uci.edu/dataset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
-The unscaled and scaled version are compared in figure \ref{fig:feature_scaler_example}
+We conclude this subsection with a custom example that motivates the need of feature scaling \cite{scikitscale_example}. The idea is to compare the results of modelling the data with K-nearest neighbors on the unscaled data against the scaled data. The considered data is the wine recognition dataset \href{https://archive.ics.uci.edu/dataset/109/wine}{https://archive.ics.uci.edu/dataset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
+The unscaled and scaled version are compared in figure \ref{fig:feature_scaler_example}.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/feature_scaler_example.png}
     \caption{importance of feature scaling}
     \label{fig:feature_scaler_example}
 \end{figure}
 What we can conclude from the image is that, the model trained on scaled data is greatly better than the other.
-On the left, we can see that distances between categories are impacted solely by the larger scale feature. Conversely, on the right, we have that the two features contributing equally in determining the neighbors.
+On the left, we can see that distances between categories are impacted solely by the larger scale feature. Conversely, on the right, we have that the two features contribute equally in determining the neighbors.
 
 \subsection{Data compression}
 When the number of points n is large, kernel methods suffer from high computational costs. 
@@ -297,8 +303,8 @@ A significant speed up can be obtained thanks to low rank approximation.
 
 
 \subsubsection{Nystrom decomposition}
-The Nyström approximation involves storing a submatrix of the whole kernel matrix. Thus, storage and computational cost are reduced to $O(nm)$ and $O(nm^2)$ respectively.
-Nyström works by selecting $m<n$ points, callled representative points; it approximates K as
+The Nyström approximation involves storing a submatrix of the whole kernel matrix. Thus, storage and computational costs are reduced to $O(nm)$ and $O(nm^2)$ respectively.
+Nyström works by selecting $m<n$ points, callled representative points; it approximates $K$ as
 \begin{equation}
     \tilde {K}=K_{n,m} K_{m,m}^{-1}K_{n,m}^\intercal
 \end{equation}
@@ -314,8 +320,17 @@ The whole code for the project is hosted on
 \url{https://github.com/luca-pernigo/ThesisKernelMethods}\label{github_repo}.
 \\
 \begin{itemize}
-    \item query: folder containing Scopus data and scripts to generate bibliometric survey plots in section \ref{literature_review}
-    \item kqr.py: file implementing our custom kernel quantile regression
-    \item thesis: folder containing tex files
+    \item query/: folder containing Scopus data and scripts to generate bibliometric survey plots in section \ref{literature_review}.
+    \item thesis/: folder containing tex files for thesis.
+    \item beamer/: folder containing tex files for pptx thesis defence.
     \item experiments: folder containing train, test script for each of the experiments carried out in the thesis alongside with the binary files of the pickled models.
+    \item experiments/src/kernel\_quantile\_regression/kqr.py: file implementing our custom kernel quantile regression.
+    \item experiments/Data: cleaned data used in our experimental studies.
+    \item experiment/plots: folder storing plots resulting from experiments.
+    \item experiment/eda/: scripts for exploratory data analysis.
+    \item experiments/point/: scripts for experiments point framework.
+    \item experiments/train\_test/: scripts for training, testing and generating tables for experiments probabilistic framework.
+    \item experiments/utils/: utility functions used in extracting, transforming and cleaning raw data.
+    \item extradata/: folder containing data for experiments in section \ref{appendix:quantile_regressor_extensive_comparison}.
+    \item requirements.txt: pip freeze of python packages used.
 \end{itemize}
