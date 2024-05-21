@@ -1,1 +1,0 @@
-Models trained on data 01/01/2009-01/01/2010
