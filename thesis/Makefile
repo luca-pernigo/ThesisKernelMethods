@@ -45,6 +45,9 @@ thesis.ps: thesis.dvi
 thesis.aux: $(texfiles)
 	$(Q) $(Q_LATEX) $(LATEX) -interaction=nonstopmode -file-line-error thesis.tex
 
+site.aux: $(texfiles)
+	$(Q) $(Q_LATEX) $(LATEX) -interaction=nonstopmode -file-line-error site.aux
+
 thesis.bbl: thesis.aux
 	$(Q)$(Q_OTHER) $(BIBTEX) thesis
 

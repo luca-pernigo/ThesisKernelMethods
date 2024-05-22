@@ -245,7 +245,7 @@ The advantage is that it is much more quicker than gridsearch, but on the other 
 \subsection{Halving gridsearch}
 Gridsearch has been the to go choice for hyperparameters tuning for the past years. However, such method is brute forcing all possible combinations, hence it is highly computationally intensive, especially when it comes to large datasets.
 \\
-The scikit-learn team addressed this disadvantage of gridsearch by introducing the halving gridsearch method \cite{scikithalvinggridsearch} (2020). Such technique has proved itself to greatly speed up hyperparameter tuning.
+The scikit-learn team addressed this disadvantage of gridsearch by introducing the halving gridsearch method \citeW{scikithalvinggridsearch} (2020). Such technique has proved itself to greatly speed up hyperparameter tuning.
 The ground concept underlying this method is successive halving. During the first iteration of halving gridsearch, all candidates are trained on a small subset of the training set. Next, we keep only the candidates which performed best and compare  them again on a bigger subset of the training set. As the iterations pass, the surviving candidates will be given more and more training samples. The algorithm stops when we are left with only the best set of hyperparameters.
 
 \subsection{Cross validation for time series data}
@@ -284,9 +284,9 @@ Examples of the most popular features scaling are:
     \item Robust scaler= it scales features using statistics that are robust to outliers.
     Essentially, it subtracts the median and then scales the data according to the interquantile range.
 \end{itemize}
-Many other data scaling algorithms exists, we refer the reader to a thorough comparison \cite{scikitscalers}.
+Many other data scaling algorithms exists, we refer the reader to a thorough comparison \citeW{scikitscalers}.
 \\
-We conclude this subsection with a custom example that motivates the need of feature scaling \cite{scikitscale_example}. The idea is to compare the results of modelling the data with K-nearest neighbors on the unscaled data against the scaled data. The considered data is the wine recognition dataset \href{https://archive.ics.uci.edu/dataset/109/wine}{https://archive.ics.uci.edu/dataset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
+We conclude this subsection with a custom example that motivates the need of feature scaling \citeW{scikitscale_example}. The idea is to compare the results of modelling the data with K-nearest neighbors on the unscaled data against the scaled data. The considered data is the wine recognition dataset \href{https://archive.ics.uci.edu/dataset/109/wine}{https://archive.ics.uci.edu/dataset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
 The unscaled and scaled version are compared in figure \ref{fig:feature_scaler_example}.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/feature_scaler_example.png}

@@ -3,75 +3,51 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
-Warning--entry type for "un_sdgs" isn't style-file defined
---line 1066 of file refs.bib
-Warning--entry type for "gm_22" isn't style-file defined
---line 1071 of file refs.bib
-Warning--entry type for "scikithalvinggridsearch" isn't style-file defined
---line 1076 of file refs.bib
-Warning--entry type for "scikitscalers" isn't style-file defined
---line 1081 of file refs.bib
-Warning--entry type for "scikitscale_example" isn't style-file defined
---line 1086 of file refs.bib
-Warning--entry type for "eu_zonal" isn't style-file defined
---line 1092 of file refs.bib
-Warning--entry type for "us_local" isn't style-file defined
---line 1097 of file refs.bib
-Warning--to sort, need author or key in eu_zonal
-Warning--to sort, need author or key in us_local
-Warning--to sort, need author or key in un_sdgs
-Warning--to sort, need author or key in gm_22
-Warning--to sort, need author or key in scikithalvinggridsearch
-Warning--to sort, need author or key in scikitscalers
-Warning--to sort, need author or key in scikitscale_example
 Warning--empty journal in declean
 Warning--empty year in declean
 Warning--empty journal in gaillardasemi
 Warning--empty year in gaillardasemi
-Warning--empty booktitle in jebara
-Warning--can't use both author and editor fields in pmlr
 Warning--can't use both volume and number fields in macqueen1967some
 Warning--empty journal in nystrom
-Warning--empty journal in takeuchi2006nonparametric
-You've used 114 entries,
+You've used 105 entries,
             2118 wiz_defined-function locations,
-            1120 strings with 22280 characters,
-and the built_in function-call counts, 36005 in all, are:
-= -- 3533
-> -- 1677
-< -- 14
-+ -- 678
-- -- 552
-* -- 2564
-:= -- 6011
-add.period$ -- 331
-call.type$ -- 114
-change.case$ -- 597
+            1097 strings with 21062 characters,
+and the built_in function-call counts, 34559 in all, are:
+= -- 3436
+> -- 1634
+< -- 9
++ -- 656
+- -- 540
+* -- 2550
+:= -- 5875
+add.period$ -- 315
+call.type$ -- 105
+change.case$ -- 566
 chr.to.int$ -- 0
-cite$ -- 130
-duplicate$ -- 1284
-empty$ -- 2858
-format.name$ -- 552
-if$ -- 7415
+cite$ -- 111
+duplicate$ -- 1217
+empty$ -- 2643
+format.name$ -- 540
+if$ -- 7032
 int.to.chr$ -- 0
-int.to.str$ -- 114
-missing$ -- 117
-newline$ -- 558
-num.names$ -- 214
-pop$ -- 636
+int.to.str$ -- 105
+missing$ -- 123
+newline$ -- 526
+num.names$ -- 210
+pop$ -- 497
 preamble$ -- 1
-purify$ -- 500
+purify$ -- 478
 quote$ -- 0
-skip$ -- 909
+skip$ -- 824
 stack$ -- 0
-substring$ -- 2340
-swap$ -- 189
-text.length$ -- 14
+substring$ -- 2398
+swap$ -- 159
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 422
-warning$ -- 16
-while$ -- 352
-width$ -- 117
-write$ -- 1196
-(There were 23 warnings)
+type$ -- 384
+warning$ -- 6
+while$ -- 356
+width$ -- 108
+write$ -- 1146
+(There were 6 warnings)

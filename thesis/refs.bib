@@ -8,15 +8,8 @@
   publisher={Elsevier}
 }
 
-@misc{vandenberghe2010cvxopt,
-  title={The CVXOPT linear and quadratic cone program solvers},
-  author={Vandenberghe, Lieven},
-  journal={Online: http://cvxopt. org/documentation/coneprog. pdf},
-  year={2010}
-}
-
 @article{Formayer2023,
-  title = {SECURES-Met: A European meteorological data set suitable for electricity modelling applications},
+  title = {{SECURES-Me}t: A {European} meteorological data set suitable for electricity modelling applications},
   volume = {10},
   ISSN = {2052-4463},
   url = {http://dx.doi.org/10.1038/s41597-023-02494-4},
@@ -66,9 +59,11 @@ numpages=""
 @article{savings,
 author = {Hong Tao},
 year = {2015},
-pages = {35-37},
 title = {Crystal Ball Lessons in Predictive Analytics},
 journal = {EnergyBiz},
+volume={12},
+number={2},
+pages={35--37}
 }
 
 @article{EPF_review,
@@ -105,7 +100,7 @@ doi = {10.1016/j.ijforecast.2014.08.008}
   
 	author = {Yoshihito Kazashi and Fabio Nobile},
   
-	title = {Density Estimation in {RKHS} with Application to Korobov Spaces in High Dimensions},
+	title = {Density Estimation in {RKHS} with Application to {Korobov} Spaces in High Dimensions},
   
 	journal = {{SIAM} Journal on Numerical Analysis}
 }
@@ -118,26 +113,29 @@ doi = {10.1016/j.ijforecast.2014.08.008}
    isbn =      {0471697559; 9780471697558},
    year =      {2015},
    series =    {Wiley Series in Probability and Statistics},
-   edition =   {2}}
+   edition =   {2},
+   address={New York, USA}
+   }
+   
 
 
 
 
-@book{pmlr,
+@article{pmlr,
   title = 	 {{Recovering Distributions from Gaussian RKHS Embeddings}},
   author = 	 {Kanagawa, Motonobu and Fukumizu, Kenji},
-  booktitle = 	 {Proceedings of the Seventeenth International Conference on Artificial Intelligence and Statistics},
+  journal = 	 {Proceedings of the Seventeenth International Conference on Artificial Intelligence and Statistics},
   pages = 	 {457--465},
   year = 	 {2014},
-  editor = 	 {Kaski, Samuel and Corander, Jukka},
   volume = 	 {33},
   series = 	 {Proceedings of Machine Learning Research},
   address = 	 {Reykjavik, Iceland},
-  month = 	 {22--25 Apr},
   publisher =    {PMLR},
   pdf = 	 {http://proceedings.mlr.press/v33/kanagawa14.pdf},
   url = 	 {https://proceedings.mlr.press/v33/kanagawa14.html}
 }
+% month = 	 {22--25 Apr},
+% editor = 	 {Kaski, Samuel and Corander, Jukka},
 
 
 @article{2022nystrom,
@@ -150,27 +148,27 @@ doi = {10.1016/j.ijforecast.2014.08.008}
 }
 
 @article{nystrom,
-  title={{\"U}ber die praktische Aufl{\"o}sung von Integralgleichungen mit Anwendungen auf Randwertaufgaben},
-  author={Nystr{\"o}m, Evert J},
+  title={{\"U}ber die praktische Aufl{\"o}sung von {Integralgleichungen} mit {Anwendungen} auf {Randwertaufgaben}},
+  author={Nystr{\"o}m, Evert J.},
   year={1930}
 }
 
 
-@misc{multere2023fast,
-      title={Fast Empirical Scenarios}, 
-      author={Michael Multerer and Paul Schneider and Rohan Sen},
-      year={2023},
-      eprint={2307.03927},
-      archivePrefix={arXiv},
-      primaryClass={stat.ML}
+@article{multerer2023fast,
+  title={Fast Empirical Scenarios},
+  author={Multerer, Michael and Schneider, Paul and Sen, Rohan},
+  journal={arXiv preprint arXiv:2307.03927},
+  year={2023}
 }
 
+
+}
 @book{learning_with_kernels,
-  title={Learning with kernels},
-  author={Smola, Alex J and Sch{\"o}lkopf, Bernhard},
-  volume={4},
-  year={1998},
-  publisher={Citeseer}
+  title={Learning with kernels: support vector machines, regularization, optimization, and beyond},
+  author={Sch{\"o}lkopf, Bernhard and Smola, Alexander J.},
+  year={2002},
+  publisher={MIT press},
+  address={Cambridge, USA}
 }
 
 @book{supersamples,
@@ -200,22 +198,9 @@ doi = {10.1016/j.ijforecast.2014.08.008}
   
 	title = {Kernel Mean Embedding of Distributions: A Review and Beyond},
   
-	journal = {Foundations and Trends{\textregistered} in Machine Learning}
+	journal = {Foundations and Trends in Machine Learning}
 }
 
-
-
-@inproceedings{jebara,
-author = {Jebara, Tony and Kondor, Risi},
-year = {2003},
-month = {01},
-pages = {57-71},
-title = {Bhattacharyya Expected Likelihood Kernels.},
-volume = {2777},
-isbn = {978-3-540-40720-1},
-journal = {Conference on Learning Theory},
-doi = {10.1007/978-3-540-45167-9_6}
-}
 
 
 
@@ -224,13 +209,12 @@ doi = {10.1007/978-3-540-45167-9_6}
 @article{probablistic_electricity_forecast,
 author = {Agakishiev, Ilyas and Härdle, Wolfgang Karl and Kozmik, Karel and Kopa, Milos and Petukhina, Alla},
 year = {2023},
-month = {01},
 pages = {},
 title = {Multivariate Probabilistic Forecasting of Electricity Prices With Trading Applications},
 journal = {SSRN Electronic Journal},
 doi = {10.2139/ssrn.4527675}
 }
-
+% month={01}
 
 
 @article{probablistic_electricity_forecast2,
@@ -257,7 +241,7 @@ doi = {10.2139/ssrn.4527675}
 
 @article{gneiting_weather_ensemble,
   title={Weather forecasting with ensemble methods},
-  author={Gneiting, Tilmann and Raftery, Adrian E},
+  author={Gneiting, Tilmann and Raftery, Adrian E.},
   journal={Science},
   volume={310},
   number={5746},
@@ -269,7 +253,7 @@ doi = {10.2139/ssrn.4527675}
 
 @article{forecasting_big,
   title={Forecasting: theory and practice},
-  author={Petropoulos, Fotios and Apiletti, Daniele and Assimakopoulos, Vassilios and Babai, Mohamed Zied and Barrow, Devon K and Taieb, Souhaib Ben and Bergmeir, Christoph and Bessa, Ricardo J and Bijak, Jakub and Boylan, John E and others},
+  author={Petropoulos, Fotios and Apiletti, Daniele and Assimakopoulos, Vassilios and Babai, Mohamed Zied and Barrow, Devon K and Taieb, Souhaib Ben and Bergmeir, Christoph and Bessa, Ricardo J. and Bijak, Jakub and Boylan, John E. and others},
   journal={International Journal of Forecasting},
   volume={38},
   number={3},
@@ -309,7 +293,7 @@ doi = {10.2139/ssrn.4527675}
 @article{meinshausen2006quantile,
   title={Quantile regression forests},
   author={Meinshausen, Nicolai and Ridgeway, Greg},
-  journal={Journal of machine learning research},
+  journal={Journal of Machine Learning Research},
   volume={7},
   number={6},
   year={2006}
@@ -318,7 +302,7 @@ doi = {10.2139/ssrn.4527675}
 %CRPS papers
 %--------------------------------------------------@article{proper_scores,
   title={Strictly proper scoring rules, prediction, and estimation},
-  author={Gneiting, Tilmann and Raftery, Adrian E},
+  author={Gneiting, Tilmann and Raftery, Adrian E.},
   journal={Journal of the American statistical Association},
   volume={102},
   number={477},
@@ -327,9 +311,20 @@ doi = {10.2139/ssrn.4527675}
   publisher={Taylor \& Francis}
 }
 
+@article{jebara,
+author = {Jebara, Tony and Kondor, Risi},
+year = {2003},
+pages = {57--71},
+title = {Bhattacharyya Expected Likelihood Kernels},
+volume = {2777},
+isbn = {978-3-540-40720-1},
+journal = {Conference on Learning Theory},
+doi = {10.1007/978-3-540-45167-9_6}
+}
+
 @article{new_multi_tes1,
   title={A new test for multivariate normality},
-  author={Sz{\'e}kely, G{\'a}bor J and Rizzo, Maria L},
+  author={Sz{\'e}kely, G{\'a}bor J. and Rizzo, Maria L.},
   journal={Journal of Multivariate Analysis},
   volume={93},
   number={1},
@@ -362,7 +357,7 @@ doi = {10.2139/ssrn.4527675}
 
 @article{arora2016forecasting,
   title={Forecasting electricity smart meter data using conditional kernel density estimation},
-  author={Arora, Siddharth and Taylor, James W},
+  author={Arora, Siddharth and Taylor, James W.},
   journal={Omega},
   volume={59},
   pages={47--59},
@@ -372,7 +367,7 @@ doi = {10.2139/ssrn.4527675}
 @article{rosenblatt1969conditional,
   title={Conditional probability density and regression estimators},
   author={Rosenblatt, Murray},
-  journal={Multivariate analysis II},
+  journal={Multivariate Analysis II},
   volume={25},
   pages={31},
   year={1969},
@@ -380,7 +375,7 @@ doi = {10.2139/ssrn.4527675}
 }
 @article{hyndman1996estimating,
   title={Estimating and visualizing conditional densities},
-  author={Hyndman, Rob J and Bashtannyk, David M and Grunwald, Gary K},
+  author={Hyndman, Rob J. and Bashtannyk, David M. and Grunwald, Gary K.},
   journal={Journal of Computational and Graphical Statistics},
   volume={5},
   number={4},
@@ -399,7 +394,7 @@ doi = {10.2139/ssrn.4527675}
   year={2020},
   publisher={MDPI}
 }
-@misc{hong2014global,
+@article{hong2014global,
   title={Global energy forecasting competition 2012},
   author={Hong, Tao and Pinson, Pierre and Fan, Shu},
   journal={International Journal of Forecasting},
@@ -409,9 +404,9 @@ doi = {10.2139/ssrn.4527675}
   year={2014},
   publisher={Elsevier}
 }
-@misc{hong2016probabilistic,
+@article{hong2016probabilistic,
   title={Probabilistic energy forecasting: Global energy forecasting competition 2014 and beyond},
-  author={Hong, Tao and Pinson, Pierre and Fan, Shu and Zareipour, Hamidreza and Troccoli, Alberto and Hyndman, Rob J},
+  author={Hong, Tao and Pinson, Pierre and Fan, Shu and Zareipour, Hamidreza and Troccoli, Alberto and Hyndman, Rob J.},
   journal={International Journal of forecasting},
   volume={32},
   number={3},
@@ -479,7 +474,7 @@ doi = {10.2139/ssrn.4527675}
 }
 @article{van2018review,
   title={Review on probabilistic forecasting of photovoltaic power production and electricity consumption},
-  author={Van der Meer, Dennis W and Wid{\'e}n, Joakim and Munkhammar, Joakim},
+  author={Van der Meer, Dennis W. and Wid{\'e}n, Joakim and Munkhammar, Joakim},
   journal={Renewable and Sustainable Energy Reviews},
   volume={81},
   pages={1484--1512},
@@ -566,8 +561,8 @@ doi = {10.2139/ssrn.4527675}
   publisher={Elsevier}
 }
 @article{david2016probabilistic,
-  title={Probabilistic forecasting of the solar irradiance with recursive ARMA and GARCH models},
-  author={David, Mathieu and Ramahatana, F and Trombe, Pierre-Julien and Lauret, Philippe},
+  title={Probabilistic forecasting of the solar irradiance with recursive {ARMA} and {GARCH} models},
+  author={David, Mathieu and Ramahatana, F. and Trombe, Pierre-Julien and Lauret, Philippe},
   journal={Solar Energy},
   volume={133},
   pages={55--72},
@@ -576,7 +571,7 @@ doi = {10.2139/ssrn.4527675}
 }
 @article{de200625,
   title={25 years of time series forecasting},
-  author={De Gooijer, Jan G and Hyndman, Rob J},
+  author={De Gooijer, Jan G. and Hyndman, Rob J.},
   journal={International Journal of Forecasting},
   volume={22},
   number={3},
@@ -616,14 +611,14 @@ doi = {10.2139/ssrn.4527675}
 @article{zhang2019wind,
   title={Wind speed forecasting based on quantile regression minimal gated memory network and kernel density estimation},
   author={Zhang, Zhendong and Qin, Hui and Liu, Yongqi and Yao, Liqiang and Yu, Xiang and Lu, Jiantao and Jiang, Zhiqiang and Feng, Zhongkai},
-  journal={Energy conversion and management},
+  journal={Energy Conversion and Management},
   volume={196},
   pages={1395--1409},
   year={2019},
   publisher={Elsevier}
 }
 @article{koochali2022random,
-  title={Random noise vs. state-of-the-art probabilistic forecasting methods: A case study on CRPS-Sum discrimination ability},
+  title={Random noise vs. state-of-the-art probabilistic forecasting methods: A case study on {CRPS-Sum} discrimination ability},
   author={Koochali, Alireza and Schichtel, Peter and Dengel, Andreas and Ahmed, Sheraz},
   journal={Applied Sciences},
   volume={12},
@@ -635,7 +630,7 @@ doi = {10.2139/ssrn.4527675}
 @article{hofmann2006review,
   title={A review of kernel methods in machine learning},
   author={Hofmann, Thomas and Sch{\"o}lkopf, Bernhard and Smola, Alexander J},
-  journal={Mac-Planck-Institute Technical Report},
+  journal={Max-Planck-Institute Technical Report},
   volume={156},
   year={2006},
   publisher={Citeseer}
@@ -652,7 +647,7 @@ doi = {10.2139/ssrn.4527675}
 }
 @article{gneiting2007strictly,
   title={Strictly proper scoring rules, prediction, and estimation},
-  author={Gneiting, Tilmann and Raftery, Adrian E},
+  author={Gneiting, Tilmann and Raftery, Adrian E.},
   journal={Journal of the American Statistical Association},
   volume={102},
   number={477},
@@ -662,8 +657,8 @@ doi = {10.2139/ssrn.4527675}
 }
 @article{matheson1976scoring,
   title={Scoring rules for continuous probability distributions},
-  author={Matheson, James E and Winkler, Robert L},
-  journal={Management science},
+  author={Matheson, James E. and Winkler, Robert L.},
+  journal={Management Science},
   volume={22},
   number={10},
   pages={1087--1096},
@@ -679,17 +674,16 @@ doi = {10.2139/ssrn.4527675}
   year={2014},
   publisher={Annual Reviews}
 }
-@inproceedings{dudek2018probabilistic,
+@article{dudek2018probabilistic,
   title={Probabilistic forecasting of electricity prices using kernel regression},
   author={Dudek, Grzegorz},
-  booktitle={2018 15th International Conference on the European Energy Market (EEM)},
   pages={1--5},
   year={2018},
-  organization={IEEE}
+  journal={2018 15th International Conference on the European Energy Market (EEM)}
 }
 @article{nadaraya1964estimating,
   title={On estimating regression},
-  author={Nadaraya, Elizbar A},
+  author={Nadaraya, Elizbar A.},
   journal={Theory of Probability \& Its Applications},
   volume={9},
   number={1},
@@ -706,14 +700,15 @@ doi = {10.2139/ssrn.4527675}
   publisher={JSTOR}
 }
 @book{hyndman2018forecasting,
-  title={Forecasting: principles and practice},
-  author={Hyndman, Rob J and Athanasopoulos, George},
+  title={Forecasting: Principles and Practice},
+  author={Hyndman, Rob J. and Athanasopoulos, George},
   year={2018},
-  publisher={OTexts}
+  publisher={OTexts},
+  address={Melbourne, AUS}
 }
 @article{friedman2001greedy,
   title={Greedy function approximation: a gradient boosting machine},
-  author={Friedman, Jerome H},
+  author={Friedman, Jerome H.},
   journal={Annals of Statistics},
   pages={1189--1232},
   year={2001},
@@ -728,28 +723,28 @@ doi = {10.2139/ssrn.4527675}
   year={1995},
   publisher={Springer}
 }
-@inproceedings{vapnik1997support,
+@article{vapnik1997support,
   title={The support vector method},
-  author={Vapnik, Vladimir N},
-  booktitle={International conference on artificial neural networks},
+  author={Vapnik, Vladimir N.},
+  journal={International conference on artificial neural networks},
   pages={261--271},
-  year={1997},
-  organization={Springer}
+  year={1997}
 }
 % =================================================
 % KERNEL THEORY LITERATURE REVIEW
 % =================================================
 @book{shawe2004kernel,
-  title={Kernel methods for pattern analysis},
+  title={Kernel Methods for Pattern Analysis},
   author={Shawe-Taylor, John and Cristianini, Nello},
   year={2004},
-  publisher={Cambridge university press}
+  publisher={Cambridge university press},
+  address={Cambridge, UK}
 }
 
 @article{pca_scholkopf,
   title={Nonlinear component analysis as a kernel eigenvalue problem},
   author={Sch{\"o}lkopf, Bernhard and Smola, Alexander and M{\"u}ller, Klaus-Robert},
-  journal={Neural computation},
+  journal={Neural Computation},
   volume={10},
   number={5},
   pages={1299--1319},
@@ -757,11 +752,13 @@ doi = {10.2139/ssrn.4527675}
   publisher={MIT Press}
 }
 
-@misc{vapnik1,
+@book{vapnik1,
   title={Theory of pattern recognition},
   author={Vapnik, Vladimir and Chervonenkis, Alexey},
   year={1974},
-  publisher={Nauka, Moscow}
+  publisher={Nauka},
+  address={Moscow, RU}
+
 }
 
 @book{vapnik2,
@@ -774,7 +771,7 @@ doi = {10.2139/ssrn.4527675}
 @article{williams,
   title={Bayesian classification with Gaussian processes},
   author={Williams, Christopher KI and Barber, David},
-  journal={IEEE Transactions on pattern analysis and machine intelligence},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   volume={20},
   number={12},
   pages={1342--1351},
@@ -821,9 +818,9 @@ doi = {10.2139/ssrn.4527675}
 }
 
 @article{kolmogorov,
-  title={Stationary sequences in Hilbert space},
+  title={Stationary sequences in {Hilbert} space},
   author={Kolmogorov, Andrei Nikolaevitch},
-  journal={Bull. Math. Univ. Moscow},
+  journal={Bulletin Mathematic University Moscow},
   volume={2},
   number={6},
   pages={1--40},
@@ -833,7 +830,7 @@ doi = {10.2139/ssrn.4527675}
 
 @article{schoenberg,
   title={Metric spaces and positive definite functions},
-  author={Schoenberg, Isaac J},
+  author={Schoenberg, Isaac J.},
   journal={Transactions of the American Mathematical Society},
   volume={44},
   number={3},
@@ -844,18 +841,19 @@ doi = {10.2139/ssrn.4527675}
 @article{schmidt,
   title={{\"U}ber die Aufl{\"o}sung linearer Gleichungen mit Unendlich vielen unbekannten},
   author={Erhard Ing Grad Schmidt},
-  journal={Rendiconti del Circolo Matematico di Palermo (1884-1940)},
+  journal={Rendiconti del Circolo Matematico di Palermo},
   year={1908},
   volume={25},
   pages={53-77},
   url={https://api.semanticscholar.org/CorpusID:120666844}
 }
+%  Rendiconti del Circolo Matematico di Palermo (1884-1940)
 
 
 @article{mercer,
-  title={Xvi. functions of positive and negative type, and their connection the theory of integral equations},
+  title={Xvi. functions of positive and negative type, and their connection with the theory of integral equations},
   author={Mercer, James},
-  journal={Philosophical transactions of the royal society of London. Series A, containing papers of a mathematical or physical character},
+  journal={Philosophical Transactions of the Royal Society of London},
   volume={209},
   number={441-458},
   pages={415--446},
@@ -871,16 +869,20 @@ doi = {10.2139/ssrn.4527675}
   year={1904}
 }
 
+
 @article{takeuchi2006nonparametric,
-  title={Nonparametric quantile estimation},
-  author={Takeuchi, Ichiro and Le, Quoc and Sears, Timothy and Smola, Alexander and others},
-  year={2006},
-  publisher={MIT Press}
+  author  = {Ichiro Takeuchi and Quoc V. Le and Timothy D. Sears and Alexander J. Smola},
+  title   = {Nonparametric Quantile Estimation},
+  journal = {Journal of Machine Learning Research},
+  year    = {2006},
+  volume  = {7},
+  number  = {45},
+  pages   = {1231--1264}
 }
 
 @book{boyd2004convex,
   title={Convex Optimization},
-  author={Boyd, Stephen P and Vandenberghe, Lieven},
+  author={Boyd, Stephen P. and Vandenberghe, Lieven},
   year={2004},
   publisher={Cambridge University Press},
   address={Cambridge, UK}
@@ -895,13 +897,6 @@ doi = {10.2139/ssrn.4527675}
   publisher={Springer}
 }
 
-@Manual{hdrcde,
-  title = {{hdrcde}: Highest Density Regions and Conditional Density Estimation},
-  author = {Rob J Hyndman and Jochen Einbeck and Matthew P Wand},
-  year = {2023},
-  note = {R package version 3.4},
-  url = {https://pkg.robjhyndman.com/hdrcde/},
-}
 @book{breiman2017classification,
   title={Classification and regression trees},
   author={Breiman, Leo and Friedman, Jerome H. },
@@ -912,7 +907,7 @@ doi = {10.2139/ssrn.4527675}
 
 @book{hastie2009elements,
   title={The Elements of Statistical Learning: Data Mining, Inference, and Prediction},
-  author={Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome H and Friedman, Jerome H. and Olshen, Richard A. and Stone, Charles J.},
+  author={Hastie, Trevor and Tibshirani, Robert and and Friedman, Jerome H. and Olshen, Richard A. and Stone, Charles J.},
   volume={2},
   year={2009},
   publisher={Springer},
@@ -921,8 +916,8 @@ doi = {10.2139/ssrn.4527675}
 
 @article{smola2004tutorial,
   title={A tutorial on support vector regression},
-  author={Smola, Alex J and Sch{\"o}lkopf, Bernhard},
-  journal={Statistics and computing},
+  author={Smola, Alex J. and Sch{\"o}lkopf, Bernhard},
+  journal={Statistics and Computing},
   volume={14},
   pages={199--222},
   year={2004},
@@ -943,7 +938,8 @@ doi = {10.2139/ssrn.4527675}
   author={Weron, Rafal},
   volume={396},
   year={2006},
-  publisher={John Wiley \& Sons}
+  publisher={John Wiley \& Sons},
+  address={Chichester, UK}
 }
 % point forecasting
 @book{brown1959statistical,
@@ -954,16 +950,16 @@ doi = {10.2139/ssrn.4527675}
   address={New York, USA}
 }
 @article{holt1957forecasting,
-  title={Forecasting seasonals and trends by exponentially weighted averages (ONR Memorandum No. 52)},
-  author={Holt, CE},
+  title={Forecasting seasonals and trends by exponentially weighted averages ({ONR Memorandum N. 52})},
+  author={Holt, Charles C.},
   journal={Carnegie Institute of Technology, Pittsburgh USA},
   volume={10},
   year={1957}
 }
 @article{winters1960forecasting,
   title={Forecasting sales by exponentially weighted moving averages},
-  author={Winters, Peter R},
-  journal={Management science},
+  author={Winters, Peter R.},
+  journal={Management Science},
   volume={6},
   number={3},
   pages={324--342},
@@ -973,13 +969,13 @@ doi = {10.2139/ssrn.4527675}
 % Autoregressive
 @book{box2015time,
   title={Time series analysis: forecasting and control},
-  author={Box, George EP and Jenkins, Gwilym M and Reinsel, Gregory C and Ljung, Greta M},
+  author={Box, George E.P. and Jenkins, Gwilym M. and Reinsel, Gregory C. and Ljung, Greta M.},
   year={2015},
   publisher={John Wiley \& Sons}
 }
 @article{de2011forecasting,
   title={Forecasting time series with complex seasonal patterns using exponential smoothing},
-  author={De Livera, Alysha M and Hyndman, Rob J and Snyder, Ralph D},
+  author={De Livera, Alysha M. and Hyndman, Rob J. and Snyder, Ralph D.},
   journal={Journal of the American Statistical Association},
   volume={106},
   number={496},
@@ -991,7 +987,7 @@ doi = {10.2139/ssrn.4527675}
 % GAM
 @article{taylor2018forecasting,
   title={Forecasting at scale},
-  author={Taylor, Sean J and Letham, Benjamin},
+  author={Taylor, Sean J. and Letham, Benjamin},
   journal={The American Statistician},
   volume={72},
   number={1},
@@ -1002,8 +998,8 @@ doi = {10.2139/ssrn.4527675}
 % K nn
 @inproceedings{macqueen1967some,
   title={Some methods for classification and analysis of multivariate observations},
-  author={MacQueen, James and others},
-  booktitle={Proceedings of the fifth Berkeley symposium on mathematical statistics and probability},
+  author={MacQueen, James},
+  booktitle={Proceedings of the fifth Berkeley Symposium on Mathematical Statistics and Probability},
   volume={1},
   number={14},
   pages={281--297},
@@ -1015,7 +1011,7 @@ doi = {10.2139/ssrn.4527675}
 @article{rosenblatt1958perceptron,
   title={The perceptron: a probabilistic model for information storage and organization in the brain.},
   author={Rosenblatt, Frank},
-  journal={Psychological review},
+  journal={Psychological Review},
   volume={65},
   number={6},
   pages={386},
@@ -1035,11 +1031,15 @@ doi = {10.2139/ssrn.4527675}
     title = {quantile-forest: A Python Package for Quantile Regression Forests},
     journal = {Journal of Open Source Software}
 }
+
+
+
+
 % =================================================
 %Energy------------------------------------------
 % =================================================
 @article{declean,
-  title={Clean Energy Technology Observatory: Smart Grids in the European Union-2023. Status Report on Technology Development Trends, Value Chains and Markets},
+  title={Clean Energy Technology Observatory: Smart Grids in the {European Union} 2023. Status Report on Technology Development Trends, Value Chains and Markets},
   author={De Paola, Antonio and Andreadou, Nikoleta and Kotsakis, Evangelos and others}
 }
 
@@ -1054,47 +1054,11 @@ doi = {10.2139/ssrn.4527675}
   publisher={MDPI}
 }
 
-@misc{energy2023statistical,
+@book{energy2023statistical,
   title={Statistical Review of World Energy},
   author={Energy Institute},
   year={2023},
-  publisher={Energy Institute London, UK}
-}
-% =================================================
-%Websites------------------------------------------
-% =================================================
-@online{un_sdgs,
-  title        = {{THE 17 GOALS Sustainable Development - the United Nations}},
-  note          = {https://sdgs.un.org/goals}
-}
-
-@online{gm_22,
-  title        = {{GM22TutorialProbabilisticEnergyForecasting}},
-  note          = {https://resourcecenter.ieee-pes.org/education/tutorials/pes\_ed\_tut\_gm22\_0717\_pefm\_sld}
-}
-
-@online{scikithalvinggridsearch,
-  title        = {{Scikit HalvingGridSearchCV}},
-  note          = {https://scikit-learn.org/stable/modules/grid\_search.html\#successive-halving-user-guide}
-}
-
-@online{scikitscalers,
-  title        = {{The effect of different scalers on data}},
-  note          = {https://scikit-learn.org/stable/auto\_examples/preprocessing/plot\_all\_scaling.html\#plot-all-scaling-robust-scaler-section}
-}
-
-@online{scikitscale_example,
-  title        = {{Importance of feature scaling}},
-  note          = {https://scikit-learn.org/stable/auto\_examples/preprocessing/plot\_scaling\_importance.html}
-}
-
-
-@online{eu_zonal,
-  title        = {{Active participation in the development of the electricity marke}},
-  note          = {https://raport2016.pse.pl/en/active-participation-in-the-development-of-the-electricity-market\#national-electricity-market}
-}
-
-@online{us_local,
-  title        = {{Roberts, B. Electricity Price Map in the US, NREL, 2021}},
-  note          = {https://geocurrents.info/wp-content/uploads/2012/06/electricity-price-map.jpg}
+  publisher={Energy Institute},
+  address={London, UK}
+  
 }

@@ -1,4 +1,4 @@
-Proper evaluation methods guide researchers in choosing the model that best fits their needs; thus, this chapter is dedicated to the most common evaluation metrics adopted by academics in the field of electricity forecasting. Error metrics and measures vary depending on whethter we are concerned with point or probabilistic forecasts. Additionally, note that the latter can take different forms which therefore requires different measures.
+Proper evaluation methods guide researchers in choosing the model that best fits their needs; thus, this chapter is dedicated to the most common evaluation metrics adopted by academics in the field of electricity forecasting. Error metrics and measures vary depending on whether we are concerned with point or probabilistic forecasts. Additionally, note that the latter can take different forms which therefore requires different measures.
 \section{Mean absolute error}\label{mae}
 Consider the time series with actual values given by $y=(y_{n+1}, y_{n+2},\dots, y_{n+h})$
 and its $h$ step ahead point forecast $\hat{y}=(\hat{y}_{n+1}, \hat{y}_{n+2},\dots, \hat{y}_{n+h})$ the mean absolute error (MAE) is defined as
@@ -12,7 +12,7 @@ and its $h$ step ahead point forecast $\hat{y}=(\hat{y}_{n+1}, \hat{y}_{n+2},\do
 \end{definition}
 
 Mean absolute error and root mean squared error posses the useful property of being expressed in the same units of the data, thus enabling meaningful comparisons.
-However, a drawback of such measures is that we cannot use them to compare accuracy between time series which have different magnitudes. For instance, a day ahead error of 1kWh is negligible when considering a daily demand of 100kWn while the same error is considerably big when daily demand is 2kWh. This consideration leads to relative accuracy scores, between those the mean absolute percentage error (MAPE) is by far the most popular.
+However, a drawback of such measures is that we cannot use them to compare accuracy between time series which have different magnitudes. For instance, a day ahead error of 1kWh is negligible when considering a daily demand of 100h while the same error is considerably big when daily demand is 2kWh. This consideration leads to relative accuracy scores, between those the mean absolute percentage error (MAPE) is by far the most popular.
 
 
 \section{Mean absolute percentage error}\label{mape}. 
@@ -62,9 +62,9 @@ By averaging all the pinball losses over all quantiles and over the whole foreca
         \delta+2(l_{t}-u_{t})/\alpha & y_{t} \geq u_{t}
     \end{cases}$
 \end{definition}
-Where delta is the prediction interval (PI) width, that is $\delta=u_t-l_t$ where $u_t$ is the prediction interval upper threshold and $l_t$ is the prediction interval lower threshold at time step $t$. This score penalizes observations falling outside the prediction interval and rewards narrow prediction intervals.
+Where $\delta$ is the prediction interval (PI) width, that is $\delta=u_t-l_t$, $u_t$ is the prediction interval upper threshold and $l_t$ is the prediction interval lower threshold at time step $t$. This score penalizes observations falling outside the prediction interval and rewards narrow prediction intervals.
 \section{Continous ranked probability score}
-The continous ranked probability score (CRPS) measures the differece between the estimated cumulative distribution $\hat{F}$ and the empirical cumulative density function (CDF).
+The continous ranked probability score (CRPS) measures the difference between the estimated cumulative distribution $\hat{F}$ and the empirical cumulative density function (CDF).
 \begin{definition}\label{def_crps}
     $\mathrm{CRPS}(y, \hat{F})=\int\limits_{-\infty}^{\infty}\left(\hat{F}(x)-\mathbb{I}_{\{x-y\}} \right)^2 dx$
 \end{definition}

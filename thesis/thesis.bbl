@@ -1,37 +1,9 @@
 \begin{thebibliography}{100}
 
-\bibitem{eu_zonal}
-{Active participation in the development of the electricity marke}.
-\newblock https://raport2016.pse.pl/en/active-participation-in-the-development-of-the-electricity-market\#national-electricity-market.
-
-\bibitem{gm_22}
-{GM22TutorialProbabilisticEnergyForecasting}.
-\newblock https://resourcecenter.ieee-pes.org/education/tutorials/pes\_ed\_tut\_gm22\_0717\_pefm\_sld.
-
-\bibitem{scikitscale_example}
-{Importance of feature scaling}.
-\newblock https://scikit-learn.org/stable/auto\_examples/preprocessing/plot\_scaling\_importance.html.
-
-\bibitem{us_local}
-{Roberts, B. Electricity Price Map in the US, NREL, 2021}.
-\newblock https://geocurrents.info/wp-content/uploads/2012/06/electricity-price-map.jpg.
-
-\bibitem{scikithalvinggridsearch}
-{Scikit HalvingGridSearchCV}.
-\newblock https://scikit-learn.org/stable/modules/grid\_search.html\#successive-halving-user-guide.
-
-\bibitem{un_sdgs}
-{THE 17 GOALS Sustainable Development - the United Nations}.
-\newblock https://sdgs.un.org/goals.
-
-\bibitem{scikitscalers}
-{The effect of different scalers on data}.
-\newblock https://scikit-learn.org/stable/auto\_examples/preprocessing/plot\_all\_scaling.html\#plot-all-scaling-robust-scaler-section.
-
 \bibitem{probablistic_electricity_forecast}
 Ilyas Agakishiev, Wolfgang~Karl Härdle, Karel Kozmik, Milos Kopa, and Alla Petukhina.
 \newblock Multivariate probabilistic forecasting of electricity prices with trading applications.
-\newblock {\em SSRN Electronic Journal}, 01 2023.
+\newblock {\em SSRN Electronic Journal}, 2023.
 
 \bibitem{aizerman}
 Mark~Aronovich Aizerman.
@@ -49,7 +21,7 @@ Nachman Aronszajn.
 \newblock {\em Transactions of the American Mathematical Society}, 68(3):337--404, 1950.
 
 \bibitem{arora2016forecasting}
-Siddharth Arora and James~W Taylor.
+Siddharth Arora and James~W. Taylor.
 \newblock Forecasting electricity smart meter data using conditional kernel density estimation.
 \newblock {\em Omega}, 59:47--59, 2016.
 
@@ -64,12 +36,12 @@ Ashutosh Bhagwat.
 \newblock {\em Administrative Law Review}, 55(1):95--125, 2003.
 
 \bibitem{box2015time}
-George~EP Box, Gwilym~M Jenkins, Gregory~C Reinsel, and Greta~M Ljung.
+George~E.P. Box, Gwilym~M. Jenkins, Gregory~C. Reinsel, and Greta~M. Ljung.
 \newblock {\em Time series analysis: forecasting and control}.
 \newblock John Wiley \& Sons, 2015.
 
 \bibitem{boyd2004convex}
-Stephen~P Boyd and Lieven Vandenberghe.
+Stephen~P. Boyd and Lieven Vandenberghe.
 \newblock {\em Convex Optimization}.
 \newblock Cambridge University Press, Cambridge, UK, 2004.
 
@@ -104,28 +76,28 @@ Corinna Cortes and Vladimir Vapnik.
 \newblock {\em Machine Learning}, 20:273--297, 1995.
 
 \bibitem{david2016probabilistic}
-Mathieu David, F~Ramahatana, Pierre-Julien Trombe, and Philippe Lauret.
-\newblock Probabilistic forecasting of the solar irradiance with recursive arma and garch models.
+Mathieu David, F.~Ramahatana, Pierre-Julien Trombe, and Philippe Lauret.
+\newblock Probabilistic forecasting of the solar irradiance with recursive {ARMA} and {GARCH} models.
 \newblock {\em Solar Energy}, 133:55--72, 2016.
 
 \bibitem{de200625}
-Jan~G De~Gooijer and Rob~J Hyndman.
+Jan~G. De~Gooijer and Rob~J. Hyndman.
 \newblock 25 years of time series forecasting.
 \newblock {\em International Journal of Forecasting}, 22(3):443--473, 2006.
 
 \bibitem{de2011forecasting}
-Alysha~M De~Livera, Rob~J Hyndman, and Ralph~D Snyder.
+Alysha~M. De~Livera, Rob~J. Hyndman, and Ralph~D. Snyder.
 \newblock Forecasting time series with complex seasonal patterns using exponential smoothing.
 \newblock {\em Journal of the American Statistical Association}, 106(496):1513--1527, 2011.
 
 \bibitem{declean}
 Antonio De~Paola, Nikoleta Andreadou, Evangelos Kotsakis, et~al.
-\newblock Clean energy technology observatory: Smart grids in the european union-2023. status report on technology development trends, value chains and markets.
+\newblock Clean energy technology observatory: Smart grids in the {European Union} 2023. status report on technology development trends, value chains and markets.
 
 \bibitem{dudek2018probabilistic}
 Grzegorz Dudek.
 \newblock Probabilistic forecasting of electricity prices using kernel regression.
-\newblock In {\em 2018 15th International Conference on the European Energy Market (EEM)}, pages 1--5. IEEE, 2018.
+\newblock {\em 2018 15th International Conference on the European Energy Market (EEM)}, pages 1--5, 2018.
 
 \bibitem{fatema2023probabilistic}
 Israt Fatema, Gang Lei, and Xiaoying Kong.
@@ -134,11 +106,11 @@ Israt Fatema, Gang Lei, and Xiaoying Kong.
 
 \bibitem{Formayer2023}
 Herbert Formayer, Imran Nadeem, David Leidinger, Philipp Maier, Franziska Sch\"{o}niger, Demet Suna, Gustav Resch, Gerhard Totschnig, and Fabian Lehner.
-\newblock Secures-met: A european meteorological data set suitable for electricity modelling applications.
+\newblock {SECURES-Me}t: A {European} meteorological data set suitable for electricity modelling applications.
 \newblock {\em Scientific Data}, 10(1), 2023.
 
 \bibitem{friedman2001greedy}
-Jerome~H Friedman.
+Jerome~H. Friedman.
 \newblock Greedy function approximation: a gradient boosting machine.
 \newblock {\em Annals of Statistics}, pages 1189--1232, 2001.
 
@@ -157,17 +129,17 @@ Tilmann Gneiting and Matthias Katzfuss.
 \newblock {\em Annual Review of Statistics and Its Application}, 1:125--151, 2014.
 
 \bibitem{gneiting_weather_ensemble}
-Tilmann Gneiting and Adrian~E Raftery.
+Tilmann Gneiting and Adrian~E. Raftery.
 \newblock Weather forecasting with ensemble methods.
 \newblock {\em Science}, 310(5746):248--249, 2005.
 
 \bibitem{gneiting2007strictly}
-Tilmann Gneiting and Adrian~E Raftery.
+Tilmann Gneiting and Adrian~E. Raftery.
 \newblock Strictly proper scoring rules, prediction, and estimation.
 \newblock {\em Journal of the American Statistical Association}, 102(477):359--378, 2007.
 
 \bibitem{proper_scores}
-Tilmann Gneiting and Adrian~E Raftery.
+Tilmann Gneiting and Adrian~E. Raftery.
 \newblock Strictly proper scoring rules, prediction, and estimation.
 \newblock {\em Journal of the American statistical Association}, 102(477):359--378, 2007.
 
@@ -192,7 +164,7 @@ Stephen Haben, Marcus Voss, and William Holderbaum.
 \newblock Springer Nature, 2023.
 
 \bibitem{hastie2009elements}
-Trevor Hastie, Robert Tibshirani, Jerome~H Friedman, Jerome~H. Friedman, Richard~A. Olshen, and Charles~J. Stone.
+Trevor Hastie, Robert Tibshirani, , Jerome~H. Friedman, Richard~A. Olshen, and Charles~J. Stone.
 \newblock {\em The Elements of Statistical Learning: Data Mining, Inference, and Prediction}, volume~2.
 \newblock Springer, New York, USA, 2009.
 
@@ -219,11 +191,11 @@ David Hilbert.
 \bibitem{hofmann2006review}
 Thomas Hofmann, Bernhard Sch{\"o}lkopf, and Alexander~J Smola.
 \newblock A review of kernel methods in machine learning.
-\newblock {\em Mac-Planck-Institute Technical Report}, 156, 2006.
+\newblock {\em Max-Planck-Institute Technical Report}, 156, 2006.
 
 \bibitem{holt1957forecasting}
-CE~Holt.
-\newblock Forecasting seasonals and trends by exponentially weighted averages (onr memorandum no. 52).
+Charles~C. Holt.
+\newblock Forecasting seasonals and trends by exponentially weighted averages ({ONR Memorandum N. 52}).
 \newblock {\em Carnegie Institute of Technology, Pittsburgh USA}, 10, 1957.
 
 \bibitem{hong_phd}
@@ -238,11 +210,13 @@ Tao Hong and Shu Fan.
 
 \bibitem{hong2014global}
 Tao Hong, Pierre Pinson, and Shu Fan.
-\newblock Global energy forecasting competition 2012, 2014.
+\newblock Global energy forecasting competition 2012.
+\newblock {\em International Journal of Forecasting}, 30(2):357--363, 2014.
 
 \bibitem{hong2016probabilistic}
-Tao Hong, Pierre Pinson, Shu Fan, Hamidreza Zareipour, Alberto Troccoli, and Rob~J Hyndman.
-\newblock Probabilistic energy forecasting: Global energy forecasting competition 2014 and beyond, 2016.
+Tao Hong, Pierre Pinson, Shu Fan, Hamidreza Zareipour, Alberto Troccoli, and Rob~J. Hyndman.
+\newblock Probabilistic energy forecasting: Global energy forecasting competition 2014 and beyond.
+\newblock {\em International Journal of forecasting}, 32(3):896--913, 2016.
 
 \bibitem{hong2019global}
 Tao Hong, Jingrui Xie, and Jonathan Black.
@@ -255,28 +229,24 @@ Christian Huurman, Francesco Ravazzolo, and Chen Zhou.
 \newblock {\em Computational Statistics \& Data Analysis}, 56(11):3793--3807, 2012.
 
 \bibitem{hyndman2018forecasting}
-Rob~J Hyndman and George Athanasopoulos.
-\newblock {\em Forecasting: principles and practice}.
-\newblock OTexts, 2018.
+Rob~J. Hyndman and George Athanasopoulos.
+\newblock {\em Forecasting: Principles and Practice}.
+\newblock OTexts, Melbourne, AUS, 2018.
 
 \bibitem{hyndman1996estimating}
-Rob~J Hyndman, David~M Bashtannyk, and Gary~K Grunwald.
+Rob~J. Hyndman, David~M. Bashtannyk, and Gary~K. Grunwald.
 \newblock Estimating and visualizing conditional densities.
 \newblock {\em Journal of Computational and Graphical Statistics}, 5(4):315--336, 1996.
 
-\bibitem{hdrcde}
-Rob~J Hyndman, Jochen Einbeck, and Matthew~P Wand.
-\newblock {\em {hdrcde}: Highest Density Regions and Conditional Density Estimation}, 2023.
-\newblock R package version 3.4.
-
 \bibitem{energy2023statistical}
 Energy Institute.
-\newblock Statistical review of world energy, 2023.
+\newblock {\em Statistical Review of World Energy}.
+\newblock Energy Institute, London, UK, 2023.
 
 \bibitem{jebara}
 Tony Jebara and Risi Kondor.
 \newblock Bhattacharyya expected likelihood kernels.
-\newblock volume 2777, pages 57--71, 01 2003.
+\newblock {\em Conference on Learning Theory}, 2777:57--71, 2003.
 
 \bibitem{Johnson2024}
 Reid~A. Johnson.
@@ -290,8 +260,8 @@ Tryggvi J{\'o}nsson, Pierre Pinson, Henrik Madsen, and Henrik~Aalborg Nielsen.
 
 \bibitem{pmlr}
 Motonobu Kanagawa and Kenji Fukumizu.
-\newblock {\em {Recovering Distributions from Gaussian RKHS Embeddings}}, volume~33 of {\em Proceedings of Machine Learning Research}.
-\newblock PMLR, Reykjavik, Iceland, 22--25 Apr 2014.
+\newblock {Recovering Distributions from Gaussian RKHS Embeddings}.
+\newblock {\em Proceedings of the Seventeenth International Conference on Artificial Intelligence and Statistics}, 33:457--465, 2014.
 
 \bibitem{kaur2022energy}
 Devinder Kaur, Shama~Naz Islam, Md~Apel Mahmud, Md~Enamul Haque, and Zhao~Yang Dong.
@@ -300,17 +270,17 @@ Devinder Kaur, Shama~Naz Islam, Md~Apel Mahmud, Md~Enamul Haque, and Zhao~Yang D
 
 \bibitem{Kazashi_2023}
 Yoshihito Kazashi and Fabio Nobile.
-\newblock Density estimation in {RKHS} with application to korobov spaces in high dimensions.
+\newblock Density estimation in {RKHS} with application to {Korobov} spaces in high dimensions.
 \newblock {\em {SIAM} Journal on Numerical Analysis}, 61(2):1080--1102, apr 2023.
 
 \bibitem{kolmogorov}
 Andrei~Nikolaevitch Kolmogorov.
-\newblock Stationary sequences in hilbert space.
-\newblock {\em Bull. Math. Univ. Moscow}, 2(6):1--40, 1941.
+\newblock Stationary sequences in {Hilbert} space.
+\newblock {\em Bulletin Mathematic University Moscow}, 2(6):1--40, 1941.
 
 \bibitem{koochali2022random}
 Alireza Koochali, Peter Schichtel, Andreas Dengel, and Sheraz Ahmed.
-\newblock Random noise vs. state-of-the-art probabilistic forecasting methods: A case study on crps-sum discrimination ability.
+\newblock Random noise vs. state-of-the-art probabilistic forecasting methods: A case study on {CRPS-Sum} discrimination ability.
 \newblock {\em Applied Sciences}, 12(10):5104, 2022.
 
 \bibitem{lago}
@@ -324,9 +294,9 @@ Katarzyna Maciejowska and Jakub Nowotarski.
 \newblock {\em International Journal of Forecasting}, 32(3):1051--1056, 2016.
 
 \bibitem{macqueen1967some}
-James MacQueen et~al.
+James MacQueen.
 \newblock Some methods for classification and analysis of multivariate observations.
-\newblock In {\em Proceedings of the fifth Berkeley symposium on mathematical statistics and probability}, volume~1, pages 281--297. Oakland, CA, USA, 1967.
+\newblock In {\em Proceedings of the fifth Berkeley Symposium on Mathematical Statistics and Probability}, volume~1, pages 281--297. Oakland, CA, USA, 1967.
 
 \bibitem{probablistic_electricity_forecast2}
 Grzegorz Marcjasz, Michał Narajewski, Rafał Weron, and Florian Ziel.
@@ -334,19 +304,19 @@ Grzegorz Marcjasz, Michał Narajewski, Rafał Weron, and Florian Ziel.
 \newblock {\em Energy Economics}, 125:106843, September 2023.
 
 \bibitem{matheson1976scoring}
-James~E Matheson and Robert~L Winkler.
+James~E. Matheson and Robert~L. Winkler.
 \newblock Scoring rules for continuous probability distributions.
-\newblock {\em Management science}, 22(10):1087--1096, 1976.
+\newblock {\em Management Science}, 22(10):1087--1096, 1976.
 
 \bibitem{meinshausen2006quantile}
 Nicolai Meinshausen and Greg Ridgeway.
 \newblock Quantile regression forests.
-\newblock {\em Journal of machine learning research}, 7(6), 2006.
+\newblock {\em Journal of Machine Learning Research}, 7(6), 2006.
 
 \bibitem{mercer}
 James Mercer.
-\newblock Xvi. functions of positive and negative type, and their connection the theory of integral equations.
-\newblock {\em Philosophical transactions of the royal society of London. Series A, containing papers of a mathematical or physical character}, 209(441-458):415--446, 1909.
+\newblock Xvi. functions of positive and negative type, and their connection with the theory of integral equations.
+\newblock {\em Philosophical Transactions of the Royal Society of London}, 209(441-458):415--446, 1909.
 
 \bibitem{moller2008time}
 Jan~Kloppenborg M{\o}ller, Henrik~Aalborg Nielsen, and Henrik Madsen.
@@ -356,14 +326,15 @@ Jan~Kloppenborg M{\o}ller, Henrik~Aalborg Nielsen, and Henrik Madsen.
 \bibitem{Muandet_2017}
 Krikamol Muandet, Kenji Fukumizu, Bharath Sriperumbudur, and Bernhard Schölkopf.
 \newblock Kernel mean embedding of distributions: A review and beyond.
-\newblock {\em Foundations and Trends{\textregistered} in Machine Learning}, 10(1-2):1--141, 2017.
+\newblock {\em Foundations and Trends in Machine Learning}, 10(1-2):1--141, 2017.
 
-\bibitem{multere2023fast}
+\bibitem{multerer2023fast}
 Michael Multerer, Paul Schneider, and Rohan Sen.
-\newblock Fast empirical scenarios, 2023.
+\newblock Fast empirical scenarios.
+\newblock {\em arXiv preprint arXiv:2307.03927}, 2023.
 
 \bibitem{nadaraya1964estimating}
-Elizbar~A Nadaraya.
+Elizbar~A. Nadaraya.
 \newblock On estimating regression.
 \newblock {\em Theory of Probability \& Its Applications}, 9(1):141--142, 1964.
 
@@ -378,12 +349,12 @@ Jakub Nowotarski and Rafa{\l} Weron.
 \newblock {\em Renewable and Sustainable Energy Reviews}, 81:1548--1568, 2018.
 
 \bibitem{nystrom}
-Evert~J Nystr{\"o}m.
-\newblock {\"U}ber die praktische aufl{\"o}sung von integralgleichungen mit anwendungen auf randwertaufgaben.
+Evert~J. Nystr{\"o}m.
+\newblock {\"U}ber die praktische aufl{\"o}sung von {Integralgleichungen} mit {Anwendungen} auf {Randwertaufgaben}.
 \newblock 1930.
 
 \bibitem{forecasting_big}
-Fotios Petropoulos, Daniele Apiletti, Vassilios Assimakopoulos, Mohamed~Zied Babai, Devon~K Barrow, Souhaib~Ben Taieb, Christoph Bergmeir, Ricardo~J Bessa, Jakub Bijak, John~E Boylan, et~al.
+Fotios Petropoulos, Daniele Apiletti, Vassilios Assimakopoulos, Mohamed~Zied Babai, Devon~K Barrow, Souhaib~Ben Taieb, Christoph Bergmeir, Ricardo~J. Bessa, Jakub Bijak, John~E. Boylan, et~al.
 \newblock Forecasting: theory and practice.
 \newblock {\em International Journal of Forecasting}, 38(3):705--871, 2022.
 
@@ -395,65 +366,65 @@ Tomaso Poggio and Federico Girosi.
 \bibitem{rosenblatt1958perceptron}
 Frank Rosenblatt.
 \newblock The perceptron: a probabilistic model for information storage and organization in the brain.
-\newblock {\em Psychological review}, 65(6):386, 1958.
+\newblock {\em Psychological Review}, 65(6):386, 1958.
 
 \bibitem{rosenblatt1969conditional}
 Murray Rosenblatt.
 \newblock Conditional probability density and regression estimators.
-\newblock {\em Multivariate analysis II}, 25:31, 1969.
+\newblock {\em Multivariate Analysis II}, 25:31, 1969.
 
 \bibitem{schmidt}
 Erhard Ing~Grad Schmidt.
 \newblock {\"U}ber die aufl{\"o}sung linearer gleichungen mit unendlich vielen unbekannten.
-\newblock {\em Rendiconti del Circolo Matematico di Palermo (1884-1940)}, 25:53--77, 1908.
+\newblock {\em Rendiconti del Circolo Matematico di Palermo}, 25:53--77, 1908.
 
 \bibitem{schoenberg}
-Isaac~J Schoenberg.
+Isaac~J. Schoenberg.
 \newblock Metric spaces and positive definite functions.
 \newblock {\em Transactions of the American Mathematical Society}, 44(3):522--536, 1938.
 
 \bibitem{pca_scholkopf}
 Bernhard Sch{\"o}lkopf, Alexander Smola, and Klaus-Robert M{\"u}ller.
 \newblock Nonlinear component analysis as a kernel eigenvalue problem.
-\newblock {\em Neural computation}, 10(5):1299--1319, 1998.
+\newblock {\em Neural Computation}, 10(5):1299--1319, 1998.
+
+\bibitem{learning_with_kernels}
+Bernhard Sch{\"o}lkopf and Alexander~J. Smola.
+\newblock {\em Learning with kernels: support vector machines, regularization, optimization, and beyond}.
+\newblock MIT press, Cambridge, USA, 2002.
 
 \bibitem{Scott2015}
 David~W. Scott.
 \newblock {\em Multivariate Density Estimation: Theory, Practice, and Visualization}.
-\newblock Wiley Series in Probability and Statistics. Wiley, 2 edition, 2015.
+\newblock Wiley Series in Probability and Statistics. Wiley, New York, USA, 2 edition, 2015.
 
 \bibitem{shawe2004kernel}
 John Shawe-Taylor and Nello Cristianini.
-\newblock {\em Kernel methods for pattern analysis}.
-\newblock Cambridge university press, 2004.
-
-\bibitem{learning_with_kernels}
-Alex~J Smola and Bernhard Sch{\"o}lkopf.
-\newblock {\em Learning with kernels}, volume~4.
-\newblock Citeseer, 1998.
+\newblock {\em Kernel Methods for Pattern Analysis}.
+\newblock Cambridge university press, Cambridge, UK, 2004.
 
 \bibitem{smola2004tutorial}
-Alex~J Smola and Bernhard Sch{\"o}lkopf.
+Alex~J. Smola and Bernhard Sch{\"o}lkopf.
 \newblock A tutorial on support vector regression.
-\newblock {\em Statistics and computing}, 14:199--222, 2004.
+\newblock {\em Statistics and Computing}, 14:199--222, 2004.
 
 \bibitem{new_multi_tes1}
-G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
+G{\'a}bor~J. Sz{\'e}kely and Maria~L. Rizzo.
 \newblock A new test for multivariate normality.
 \newblock {\em Journal of Multivariate Analysis}, 93(1):58--80, 2005.
 
 \bibitem{takeuchi2006nonparametric}
-Ichiro Takeuchi, Quoc Le, Timothy Sears, Alexander Smola, et~al.
+Ichiro Takeuchi, Quoc~V. Le, Timothy~D. Sears, and Alexander~J. Smola.
 \newblock Nonparametric quantile estimation.
-\newblock 2006.
+\newblock {\em Journal of Machine Learning Research}, 7(45):1231--1264, 2006.
 
 \bibitem{savings}
 Hong Tao.
 \newblock Crystal ball lessons in predictive analytics.
-\newblock {\em EnergyBiz}, pages 35--37, 2015.
+\newblock {\em EnergyBiz}, 12(2):35--37, 2015.
 
 \bibitem{taylor2018forecasting}
-Sean~J Taylor and Benjamin Letham.
+Sean~J. Taylor and Benjamin Letham.
 \newblock Forecasting at scale.
 \newblock {\em The American Statistician}, 72(1):37--45, 2018.
 
@@ -463,13 +434,9 @@ Robert Tibshirani.
 \newblock {\em Journal of the Royal Statistical Society Series B: Statistical Methodology}, 58(1):267--288, 1996.
 
 \bibitem{van2018review}
-Dennis~W Van~der Meer, Joakim Wid{\'e}n, and Joakim Munkhammar.
+Dennis~W. Van~der Meer, Joakim Wid{\'e}n, and Joakim Munkhammar.
 \newblock Review on probabilistic forecasting of photovoltaic power production and electricity consumption.
 \newblock {\em Renewable and Sustainable Energy Reviews}, 81:1484--1512, 2018.
-
-\bibitem{vandenberghe2010cvxopt}
-Lieven Vandenberghe.
-\newblock The cvxopt linear and quadratic cone program solvers, 2010.
 
 \bibitem{vapnik2}
 Vladimir Vapnik.
@@ -478,12 +445,13 @@ Vladimir Vapnik.
 
 \bibitem{vapnik1}
 Vladimir Vapnik and Alexey Chervonenkis.
-\newblock Theory of pattern recognition, 1974.
+\newblock {\em Theory of pattern recognition}.
+\newblock Nauka, Moscow, RU, 1974.
 
 \bibitem{vapnik1997support}
-Vladimir~N Vapnik.
+Vladimir~N. Vapnik.
 \newblock The support vector method.
-\newblock In {\em International conference on artificial neural networks}, pages 261--271. Springer, 1997.
+\newblock {\em International conference on artificial neural networks}, pages 261--271, 1997.
 
 \bibitem{wahba}
 Grace Wahba.
@@ -503,7 +471,7 @@ Geoffrey~S Watson.
 \bibitem{weron2006modeling}
 Rafal Weron.
 \newblock {\em Modeling and forecasting electricity loads and prices: A statistical approach}, volume 396.
-\newblock John Wiley \& Sons, 2006.
+\newblock John Wiley \& Sons, Chichester, UK, 2006.
 
 \bibitem{EPF_review}
 Rafał Weron.
@@ -513,12 +481,12 @@ Rafał Weron.
 \bibitem{williams}
 Christopher~KI Williams and David Barber.
 \newblock Bayesian classification with gaussian processes.
-\newblock {\em IEEE Transactions on pattern analysis and machine intelligence}, 20(12):1342--1351, 1998.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence}, 20(12):1342--1351, 1998.
 
 \bibitem{winters1960forecasting}
-Peter~R Winters.
+Peter~R. Winters.
 \newblock Forecasting sales by exponentially weighted moving averages.
-\newblock {\em Management science}, 6(3):324--342, 1960.
+\newblock {\em Management Science}, 6(3):324--342, 1960.
 
 \bibitem{xie2016gefcom2014}
 Jingrui Xie and Tao Hong.
@@ -543,7 +511,7 @@ Yao Zhang, Jianxue Wang, and Xifan Wang.
 \bibitem{zhang2019wind}
 Zhendong Zhang, Hui Qin, Yongqi Liu, Liqiang Yao, Xiang Yu, Jiantao Lu, Zhiqiang Jiang, and Zhongkai Feng.
 \newblock Wind speed forecasting based on quantile regression minimal gated memory network and kernel density estimation.
-\newblock {\em Energy conversion and management}, 196:1395--1409, 2019.
+\newblock {\em Energy Conversion and Management}, 196:1395--1409, 2019.
 
 \bibitem{ziel2016lasso}
 Florian Ziel and Bidong Liu.

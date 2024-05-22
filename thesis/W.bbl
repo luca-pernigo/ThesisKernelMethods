@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+
+\bibitem{gm_22}
+Tao Hong.
+\newblock {GM22TutorialProbabilisticEnergyForecasting}.
+\newblock \url{https://resourcecenter.ieee-pes.org/education/tutorials}, 2022.
+
+\bibitem{hdrcde}
+Rob~J. Hyndman, Jochen Einbeck, and Matthew~P. Wand.
+\newblock {hdrcde}: Highest density regions and conditional density estimation.
+\newblock \url{https://pkg.robjhyndman.com/hdrcde/}, 2023.
+
+\bibitem{scikitscale_example}
+Tyler Lanigan, Sebastian Raschka, and Arturo Amor.
+\newblock {Importance of feature scaling}.
+\newblock \url{https://scikit-learn.org/stable/auto\_examples/preprocessing/plot\_scaling\_importance.html}, n.d.
+
+\bibitem{scikithalvinggridsearch}
+Scikit learn team.
+\newblock {Scikit HalvingGridSearchCV}.
+\newblock \url{https://scikit-learn.org/stable/modules/grid\_search.html\#successive-halving-user-guide}, 2020.
+
+\bibitem{un_sdgs}
+United Nations.
+\newblock {The 17 UN Sustainable Development Goals}.
+\newblock \url{https://sdgs.un.org/goals}, 2015.
+
+\bibitem{eu_zonal}
+{Polskie Sieci Elektroenergetyczne}.
+\newblock {Active participation in the development of the electricity market}.
+\newblock \url{https://raport2016.pse.pl/en/active-participation-in-the-development-of-the-electricity-market\#national-electricity-market}, 2016.
+
+\bibitem{us_local}
+Billy Roberts.
+\newblock {Electricity Price Map in the US, NREL}.
+\newblock \url{https://geocurrents.info/wp-content/uploads/2012/06/electricity-price-map.jpg}, 2021.
+
+\bibitem{scikitscalers}
+Raghav Rv, Guillaume Lemaitre, and Thomas Unterhiner.
+\newblock {The effect of different scalers on data}.
+\newblock \url{https://scikit-learn.org/stable/auto_examples/preprocessing/plot_all_scaling.html}, n.d.
+
+\bibitem{vandenberghe2010cvxopt}
+Lieven Vandenberghe.
+\newblock The {CVXOPT} linear and quadratic cone program solvers.
+\newblock \url{http://cvxopt.org/documentation/coneprog.pdf}, 2010.
+
+\end{thebibliography}

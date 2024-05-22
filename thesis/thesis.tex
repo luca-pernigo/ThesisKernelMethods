@@ -82,6 +82,11 @@
 % package for fitting big table to text width
 \usepackage{adjustbox}
 
+
+% package for multiple bibliographys
+\usepackage[resetlabels,labeled]{multibib}
+\newcites{W}{Sitography}
+
 %% Document information
 %% ====================
 
@@ -188,6 +193,14 @@
 
 % %Include all references
 \nocite{*}
+
+% sitography
+\begingroup
+\raggedright
+\sloppy
+\bibliographystyleW{plain}
+\bibliographyW{site}
+\endgroup
 
 
 \end{document}

@@ -30,7 +30,7 @@ Therefore, we can kernelize any algorithm involving a dot product by substitutin
 One would expect constructing the feature maps explicitly and then evaluating their inner product in $\mathcal{H}$ to be computationally expensive, and indeed it is. However, we do not have to explicitly perform such calculations. This is because of the kernel trick.
 \\
 To illustrate the idea behind the kernel trick consider the following example.
-Suppose $x, y \in \mathbb{R}^2$ and assume $\phi(x)=(x_{1}^{2},x_{2}^{2},\sqrt{2}x_{1}x_{2})$, then the inner product in the feature space is $x_{1}^{2}y_{1}^{2},x_{2}^{2}y_{2}^{2}+2x_{1}x_{2}y_{1}y_{2}$.
+Suppose $x, y \in \mathbb{R}^2$ and assume $\phi(x)=(x_{1}^{2},x_{2}^{2},\sqrt{2}x_{1}x_{2})$, then the inner product in the feature space is $x_{1}^{2}y_{1}^{2}+x_{2}^{2}y_{2}^{2}+2x_{1}x_{2}y_{1}y_{2}$.
 Notice that this is the same of $\langle \phi(x), \phi(y) \rangle_{\mathcal{H}}$; thus the kernel trick consists of just using $k(x,y):=(x^\intercal y)^2$.
 For instance:
 \\
@@ -97,10 +97,10 @@ $\mathcal{F} =\{ \sum\limits_{i=1}^n \alpha_i k(x_i, \cdot): n \in \mathbb{N}, x
 This space is clearly closed under addition of functions and scalar multiplication, therefore it is a vector space.
 Letting $f(x)=\sum\limits_{i=1}^n \alpha_i k_i(x_i,x)$ and $g(x)=\sum\limits_{i=1}^m \beta_i k_i(y_i,x)$,  we can introduce an inner product on $\mathcal{F}$ as 
 \\
-$\langle f,g \rangle_{\mathcal{F}}=:\sum\limits_{i=1}^n\sum\limits_{j=1}^m a_i \beta_j k_i(x_i,y_j)=\sum\limits_{i=1}^n a_i g(x_i)= \sum\limits_{j=1}^m \beta_j f(y_j)$
+$\langle f,g \rangle_{\mathcal{F}}:=\sum\limits_{i=1}^n\sum\limits_{j=1}^m a_i \beta_j k_i(x_i,y_j)=\sum\limits_{i=1}^n a_i g(x_i)= \sum\limits_{j=1}^m \beta_j f(y_j)$
 \\
 Notice, $\langle f, f \rangle_{\mathcal{F}}= \alpha^\intercal K \alpha \geq 0 \ \forall f \in \mathcal{F}$, where $K$ is the kernel matrix.
-Moreover, $\langle f, g \rangle_{\mathcal{F}}$ is real valued, symmetric and bilinear. All these facts implies that the just introduced inner product is a valid metric.
+Moreover, $\langle f, g \rangle_{\mathcal{F}}$ is real valued, symmetric and bilinear. All these facts imply that the just introduced inner product is a valid metric.
 \\
 Additionally, letting $g(x)=k(\cdot, x)$, we have that 
 \begin{equation}
@@ -115,7 +115,7 @@ Consider a fixed input $x$ and a Cauchy sequence $\{f_n\}_{n=1}^{\infty}$, we th
     (f_n(x)- f_m(x))^2=\langle f_n-f_m, k(\cdot, x)\rangle_{\mathcal{F}}^2 \leq \| f_n - f_m \|_{\mathcal{F}}^2 k(x,x)    
 \end{equation}
 \\
-We have then, that $f_n(x)$ is a Cauchy sequence of real numbers. Thus, we can let $g(x)=\lim_{n\to \infty} f_n(x)$ and include all such limits functions in $\mathcal{F}$, doing so we complete $\mathcal{F}$ and we obtain the Hilbert space $\mathcal{H}$ associated to the kernel $k$.
+We have then, that $f_n(x)$ is a Cauchy sequence of real numbers. Thus, we can let $g(x):=\underset{n\to \infty}\lim f_n(x)$ and include all such limits functions in $\mathcal{F}$, doing so we complete $\mathcal{F}$ and we obtain the Hilbert space $\mathcal{H}$ associated to the kernel $k$.
 Having constructed the feature space $\mathcal{H}$, the mapping $\phi(x)$ is defined as follows
 \\
 \begin{equation}
@@ -131,7 +131,7 @@ Notice, that by the reproducing property, $f$ can be represented as the inner pr
     Let $(\mathcal{H}, \langle \cdot, \cdot \rangle_\mathcal{H})$ be a Hilbert space of real-valued functions on $\mathcal{X}$. A function $k: \mathcal{X} \times \mathcal{X} \to \mathbb{R}$ is called a reproducing kernel of $\mathcal{H}$ if and only if 
      \begin{align}
         k(x, \cdot) \in \mathcal{H} &\quad \ \forall x \in \mathcal{X}    \\
-        \langle  f, k(x, \cdot) \rangle_\mathcal{H} = f(x) &\quad \ \forall f\in \mathcal{H}, x \in \mathcal{X}
+        \langle  f, k(x, \cdot) \rangle_\mathcal{H} = f(x) &\quad \ \forall f\in \mathcal{H}, \ x \in \mathcal{X}
     \end{align}
     Notice, the finitely positive semidefinite property of kernel $k$ is a sufficient condition for $\mathcal{H}$ to have an associated RKHS.
 \end{definition}
@@ -201,7 +201,7 @@ For each $x \in \mathcal{X}$ there exists a function $k(\cdot, x) \in \mathcal{H
 \end{proposition}
 
 The function $k(\cdot, x)$ is the reproducing kernel evaluated at point $x$.
-Furthermore, note that $k_{x}$ is itself a function lying in it.
+Furthermore, note that $k(\cdot, x)$ is itself a function lying in it.
 
 \begin{align*}
     k(y, x)=F_{y}(k(\cdot, x))=\langle k(\cdot, x), k(\cdot, y)\rangle_{\mathcal{H}}=\langle \phi(x), \phi(y)\rangle_{\mathcal{H}}
@@ -261,14 +261,14 @@ Kernel functions are characterized by a couple of properties that make them a cl
 \end{proposition}
 
 \begin{proof}
-    Consider a finite set of points $x_1, \cdots, x_n$, a vector $z \in \mathbb{R}^n$ and let $K_1$ and $K_2$ be the kernel matrices associated to $k_1$ and $k_2$ evaluted on these points.
+    Consider a finite set of points $x_1, \cdots, x_n$, a vector $z \in \mathbb{R}^n$ and let $K_1$ and $K_2$ be the kernel matrices associated to $k_1$ and $k_2$ evaluated on these points.
     \\
     We have:
     \\
     \begin{align}
-    z^\intercal (K_1+K_2) z= z^\intercal K_1 z + z^\intercal K_2 z \geq 0
+    z^\intercal (K_1+K_2) z&= z^\intercal K_1 z + z^\intercal K_2 z \geq 0
     \\
-    z^\intercal aK z= a z^\intercal K z \geq 0
+    z^\intercal aK z&= a z^\intercal K z \geq 0
     \end{align}
     Let $K=K_1 \otimes K_2$, we have that the eigenvalues of $K$ are made up by the product pairs of the eigenvalues of $K_1$ and $K_2$. Thus, $K$ is positive semidefinite. Next, the matrix given by $k_1 \cdot k_2$ corresponds to the Schur product of $K_1$ and $K_2$, denote it $H$. Notice, $H$ is a principal submatrix of $K$, hence for any $z \in \mathbb{R}^n$ there exist a $t \in \mathbb{R}^{n^2}$ such that $z^\intercal H z= t^\intercal K t$. Using the fact that K is positive semidefinite we have that for any $z$, it holds 
     \begin{align}
@@ -304,7 +304,7 @@ Table \ref{tab:kernel types} contains popular kernel families in literature and 
     \label{tab:kernel types}
 \end{table}
 
-Notice, in the Matern family $\Gamma(\cdot)$ is the gamma function while $Y(\cdot)$ is the Bessel function of the second kind.
+Notice, in the Matern family, $\Gamma(\cdot)$ is the gamma function while $Y(\cdot)$ is the Bessel function of the second kind.
 \\
 When $\nu=p+\frac{1}{2}$, $p \in \mathbb{N}^+$, the Matern kernel can be rewritten as a product of an exponential and a polynomial of degree $p$. 
 \\
@@ -312,7 +312,7 @@ $k(x,y)=\exp \left(-{\frac {{\sqrt {2p+1}}\|x-y|\|_{2}}{l }}\right){\frac {p!}{(
 \\
 For example:
 \begin{itemize}
-    \item $p=0,\nu=\frac{1}{2} \implies k(x,y)=\exp\left(\frac{-\|x-y|\|_{2}}{l}\right)$
+    \item $p=0,\nu=\frac{1}{2} \implies k(x,y)=\exp\left(-\frac{\|x-y|\|_{2}}{l}\right)$
     \item $p=1,\nu=\frac{3}{2} \implies 
     k(x,y)=\left(1+{\frac {{\sqrt {3}}\|x-y|\|_{2}}{l }}\right)\exp \left(-{\frac {{\sqrt {3}}\|x-y|\|_{2}}{l }}\right)$
     \item $p=2,\nu=\frac{5}{2} \implies k(x,y)=\left(1+{\frac {{\sqrt {5}}\|x-y|\|_{2}}{l }}+{\frac {5\|x-y|\|_{2}^{2}}{3 l ^{2}}}\right)\exp \left(-{\frac {{\sqrt {5}}\|x-y|\|_{2}}{l }}\right)$

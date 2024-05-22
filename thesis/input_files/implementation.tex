@@ -59,7 +59,7 @@ Kernel quantile regression had no previously implemented python open source libr
 The scikit-learn team provides a project template for the creation of estimators compatible with scikit-learn functionalities. Therefore, the KQR class is derived from the scikit-learn BaseEstimator and the mixin class RegressorMixin.
 Our KQR class is initialized by providing a quantile, the regularization term C, the kernel family and its corresponding hyperparameters.
 \\
-In the fit method, we set up and solve the convex optimisation problem through the interior point method. This algorithm is taken from the cvxopt library, see its offical manual \cite{vandenberghe2010cvxopt} for a reference.
+In the fit method, we set up and solve the convex optimisation problem through the interior point method. This algorithm is taken from the cvxopt library, see its offical manual \citeW{vandenberghe2010cvxopt} for a reference.
 When using this library, it is important to keep two things in mind. First this library assumes the quadratic term of the optimisation problem to be multiplied by the 0.5 factor, thus we just have to provide the Q matrix with no 0.5 in front.
 Secondly, in order to specify multiple inequalities we have to stack them and provide them as a unique matrix.
 \\
