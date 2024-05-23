@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  22 MAY 2024 15:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  23 MAY 2024 11:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2194,10 +2194,52 @@ Overfull \hbox (54.55606pt too wide) in paragraph at lines 29--32
  []
 
 [127])
+
+pdfTeX warning: pdflatex (file ./declaration-originality-flat.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<declaration-originality-flat.pdf, id=2218, 597.55246pt x 845.07718pt>
+File: declaration-originality-flat.pdf Graphic file (type pdf)
+<use declaration-originality-flat.pdf>
+Package pdftex.def Info: declaration-originality-flat.pdf  used on input line 206.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file ./declaration-originality-flat.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+File: declaration-originality-flat.pdf Graphic file (type pdf)
+<use declaration-originality-flat.pdf>
+Package pdftex.def Info: declaration-originality-flat.pdf  used on input line 206.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+
+
+pdfTeX warning: pdflatex (file ./declaration-originality-flat.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex (file ./declaration-originality-flat.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<declaration-originality-flat.pdf, id=2221, page=1, 597.55246pt x 845.07718pt>
+File: declaration-originality-flat.pdf Graphic file (type pdf)
+<use declaration-originality-flat.pdf, page 1>
+Package pdftex.def Info: declaration-originality-flat.pdf , page1 used on input line 206.
+(pdftex.def)             Requested size: 597.551pt x 845.07512pt.
+File: declaration-originality-flat.pdf Graphic file (type pdf)
+<use declaration-originality-flat.pdf, page 1>
+Package pdftex.def Info: declaration-originality-flat.pdf , page1 used on input line 206.
+(pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
+[128]
+File: declaration-originality-flat.pdf Graphic file (type pdf)
+<use declaration-originality-flat.pdf, page 1>
+Package pdftex.def Info: declaration-originality-flat.pdf , page1 used on input line 206.
+(pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
+File: declaration-originality-flat.pdf Graphic file (type pdf)
+<use declaration-originality-flat.pdf, page 1>
+Package pdftex.def Info: declaration-originality-flat.pdf , page1 used on input line 206.
+(pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
+File: declaration-originality-flat.pdf Graphic file (type pdf)
+<use declaration-originality-flat.pdf, page 1>
+Package pdftex.def Info: declaration-originality-flat.pdf , page1 used on input line 206.
+(pdftex.def)             Requested size: 597.57834pt x 845.1138pt.
+ [129 <./declaration-originality-flat.pdf>]
 \tf@thm=\write6
 \openout6 = `thesis.thm'.
 
- [128]
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
@@ -2218,13 +2260,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: CF53A0CB9D955CCC065F7BE2A1043B0E;21555.
  ) 
 Here is how much of TeX's memory you used:
- 37577 strings out of 476025
- 647931 string characters out of 5790017
+ 37591 strings out of 476025
+ 648482 string characters out of 5790017
  1905388 words of memory out of 5000000
- 56101 multiletter control sequences out of 15000+600000
+ 56112 multiletter control sequences out of 15000+600000
  578464 words of font info for 508 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,16n,131p,2312b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,17n,131p,2312b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{cite.scikitscale_example} has been referenced but does not exist, replaced by a fixed one
 
@@ -2253,10 +2295,10 @@ pdfTeX warning (dest): name{cite.gm_22} has been referenced but does not exist, 
 pdfTeX warning (dest): name{cite.un_sdgs} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (138 pages, 11583281 bytes).
+Output written on thesis.pdf (139 pages, 11717864 bytes).
 PDF statistics:
- 2450 PDF objects out of 2487 (max. 8388607)
- 2099 compressed objects within 21 object streams
- 698 named destinations out of 1000 (max. 500000)
- 111409 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 2522 PDF objects out of 2984 (max. 8388607)
+ 2136 compressed objects within 22 object streams
+ 699 named destinations out of 1000 (max. 500000)
+ 111429 words of extra memory for PDF output out of 128383 (max. 10000000)
 
