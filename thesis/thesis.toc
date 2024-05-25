@@ -13,20 +13,20 @@
 \contentsline {section}{\numberline {2.2}Bibliographic analysis}{10}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Electricity forecasting literature review}{13}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Kernel methods literature review}{16}{section.2.4}%
-\contentsline {chapter}{\chapternumberline {3}Kernel theory}{19}{chapter.3}%
+\contentsline {chapter}{\chapternumberline {3}Kernel methods}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Theory of kernels}{20}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Kernel families}{25}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Kernel families}{24}{section.3.2}%
 \contentsline {chapter}{\chapternumberline {4}Evaluation metrics}{27}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Mean absolute error}{27}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Root mean squared error}{27}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Mean absolute percentage error}{28}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Root mean squared percentage error}{28}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Mean absolute scaled error}{28}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Root mean squared scaled error}{28}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Pinball}{28}{section.4.7}%
+\contentsline {section}{\numberline {4.6}Root mean squared scaled error}{29}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Pinball}{29}{section.4.7}%
 \contentsline {section}{\numberline {4.8}Winkler}{29}{section.4.8}%
 \contentsline {section}{\numberline {4.9}Continous ranked probability score}{29}{section.4.9}%
-\contentsline {section}{\numberline {4.10}Probability integral transform}{31}{section.4.10}%
+\contentsline {section}{\numberline {4.10}Probability integral transform}{32}{section.4.10}%
 \contentsline {chapter}{\chapternumberline {5}The energy market}{33}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Electricity distribution network}{33}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Electricity markets}{34}{section.5.2}%

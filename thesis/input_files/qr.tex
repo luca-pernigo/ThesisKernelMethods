@@ -1,4 +1,4 @@
-Quantile regression can be interpreted as an extension of standard regression. In this setting, you basically slice the dependent variables into quantiles and then fit a regression for each quantile. With standard regression, we build a model for the conditional mean, conversely, with quantile regression we model the conditional quantile function for any desired quantile. 
+Quantile regression can be interpreted as an extension of standard regression. In this setting, one slices the dependent variables into quantiles and then fit a regression for each quantile. With standard regression, we build a model for the conditional mean, conversely, with quantile regression we model the conditional quantile function for any desired quantile. 
 Therefore, with quantile regression we are able to study the impact of covariates on quantiles directly.
 \begin{definition}
     For any real valued random variable Y, we define its associated quantile function.
@@ -21,7 +21,7 @@ It follows that the conditional linear quantile function $\hat{Q}_q=x_i\beta(q)$
 \\
 Notice that, this cost function is not differentiable, therefore there is no analytical solution to the quantile regression problem. Nevertheless, we can easily solve it by employing linear programming and convex optimisation \cite{boyd2004convex}.
 \\
-Furthermore, we can extend this framework to non linear quantile regression by choosing a non linear model in place of $x\beta$ in the above equation \ref{eq:linear_quantile_regression_minimisation_problem}.
+Furthermore, we can extend this framework to non linear quantile regression by choosing a non linear model in place of $x\beta$ in the above Equation \ref{eq:linear_quantile_regression_minimisation_problem}.
 % \\
 % In order to illustrate the approach, let us consider applying quantile regression to the maximum daily temperature dataset in Melbourne \cite{hyndman1996estimating}; models considered will be linear, gradient boosting machine, quantile forest\cite{meinshausen2006quantile} and kernel quantile regression.
 % - se si puo fare plot con stessi dati ma differenti f nel quantile regression

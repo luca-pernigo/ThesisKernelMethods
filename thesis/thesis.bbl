@@ -70,6 +70,11 @@ Yutian Chen, Max Welling, and Alex Smola.
 \newblock {\em Super-Samples from Kernel Herding}.
 \newblock AUAI Press, Arlington, USA, 2012.
 
+\bibitem{Conway1994-kh}
+John~B Conway.
+\newblock {\em A Course in Functional Analysis}.
+\newblock Graduate Texts in Mathematics. Springer, New York, NY, 2 edition, 1994.
+
 \bibitem{cortes1995support}
 Corinna Cortes and Vladimir Vapnik.
 \newblock Support-vector networks.
@@ -187,6 +192,11 @@ Yaoyao He, Yun Wang, Shuo Wang, and Xin Yao.
 David Hilbert.
 \newblock {Grundzuge einer Allgemeinen Theorie der Linearen Integralgleichungen}.
 \newblock {\em Gott. Nachr.}, pages 307--338, 1904.
+
+\bibitem{hochreiter1997long}
+Sepp Hochreiter and J{\"u}rgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780, 1997.
 
 \bibitem{hofmann2006review}
 Thomas Hofmann, Bernhard Sch{\"o}lkopf, and Alexander~J Smola.
@@ -467,6 +477,21 @@ Can Wan, Jin Lin, Jianhui Wang, Yonghua Song, and Zhao~Yang Dong.
 Geoffrey~S Watson.
 \newblock Smooth regression analysis.
 \newblock {\em Sankhy{\=a}: The Indian Journal of Statistics, Series A}, pages 359--372, 1964.
+
+\bibitem{welling2009herding}
+Max Welling.
+\newblock Herding dynamical weights to learn.
+\newblock {\em Proceedings of the 26th annual International Conference on Machine Learning}, pages 1121--1128, 2009.
+
+\bibitem{welling2012herding}
+Max Welling.
+\newblock Herding dynamic weights for partially observed random field models.
+\newblock {\em arXiv preprint arXiv:1205.2605}, 2012.
+
+\bibitem{Welling2010}
+Max Welling and Yutian Chen.
+\newblock Statistical inference using weak chaos and infinite memory.
+\newblock {\em Journal of Physics: Conference Series}, 233:012005, 2010.
 
 \bibitem{weron2006modeling}
 Rafal Weron.

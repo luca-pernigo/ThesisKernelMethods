@@ -8,16 +8,16 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Publications by subject area\relax }}{12}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Most popolar sources/outlets\relax }}{13}{figure.caption.10}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Workflow for the application of kernel methods \cite {shawe2004kernel}\relax }}{26}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Workflow for the application of kernel methods \cite {shawe2004kernel}\relax }}{25}{figure.caption.12}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Pinball loss\relax }}{29}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces CRPS integral \cite {haben2023core}\relax }}{30}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Probability integral transform types \cite {haben2023core}\relax }}{31}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Pinball loss\relax }}{30}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces CRPS integral \cite {haben2023core}\relax }}{31}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Probability integral transform types \cite {haben2023core}\relax }}{32}{figure.caption.15}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Electricity grid \cite {haben2021review}\relax }}{33}{figure.caption.16}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Pool market versus power echange \cite {weron2006modeling}\relax }}{35}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Zonal pricing EU}}{37}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Local pricing US}}{38}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Zonal pricing in the EU}}{37}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Local pricing for the US}}{38}{figure.caption.19}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Electricity production by source \cite {energy2023statistical}\relax }}{38}{figure.caption.20}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Support vector regression \cite {learning_with_kernels}\relax }}{43}{figure.caption.21}%
@@ -33,7 +33,7 @@
 \contentsline {figure}{\numberline {7.5}{\ignorespaces Gradient boosting regression\relax }}{58}{figure.caption.30}%
 \contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{64}{figure.caption.31}%
 \contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors comparison Melbourne weather data\relax }}{65}{figure.caption.32}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Kernel quantile regressors comparison Melbourne data\relax }}{69}{figure.caption.40}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Kernel quantile regressors comparison for Melbourne data\relax }}{69}{figure.caption.40}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Price track GEFCom2014\relax }}{72}{figure.caption.41}%
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Zonal price versus zonal load GEFCom2014\relax }}{73}{figure.caption.43}%

@@ -1822,8 +1822,6 @@ INPUT ./input_files/metrics.tex
 INPUT input_files/metrics.tex
 INPUT ./input_files/metrics.tex
 INPUT input_files/metrics.tex
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT ./images/pinball_loss.png
 INPUT ./images/pinball_loss.png
 INPUT images/pinball_loss.png
