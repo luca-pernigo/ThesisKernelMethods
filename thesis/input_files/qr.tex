@@ -6,11 +6,11 @@ Therefore, with quantile regression we are able to study the impact of covariate
         Q_q=\inf\{y:F(y)\geq q\}
     \end{equation}
 \end{definition}
-Alternatively, in order  to ease the posing of the quantile regression problem, we can formulate quantiles as the solutions to the following optimization problems.
+Alternatively, in order  to ease the posing of the quantile regression problem, we can formulate quantiles as the solutions to the following optimisation problems.
 \\
 For any $0<q<1$ consider the pinball loss function from section \ref{pinball}, $\rho_q(u)=u(q-\mathbb{I}_{\{u<0\}})$. 
-Such loss is minimized by the quantile $Q(q)$.
-Thus,we can estimate quantiles by minimizing the expectation of $\rho_q(y-g(x,\beta))$ with respect to the parameter $\beta$.
+Such loss is minimized by the quantile $Q_q$.
+ we can estimate quantiles by minimizing the expectation of $\rho_q(y-g(x,\beta))$ with respect to the parameter $\beta$.
 \\
 Note, that in the special case $q=\frac{1}{2}$,  quantile regression corresponds exactly to standard regression with an absolute value loss function.
 \\

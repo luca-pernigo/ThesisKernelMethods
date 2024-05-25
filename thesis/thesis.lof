@@ -26,11 +26,11 @@
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Polynomial support vector regression\relax }}{48}{figure.caption.24}%
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Gaussian RBF support vector regression\relax }}{49}{figure.caption.25}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces two-dimensional feature space partitioned by recursive binary splitting \cite {hastie2009elements}\relax }}{53}{figure.caption.26}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces partition tree and regression model \cite {hastie2009elements}\relax }}{53}{figure.caption.27}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces decision tree regression\relax }}{54}{figure.caption.28}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces random forest regression\relax }}{56}{figure.caption.29}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces gradient boosting regression\relax }}{58}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Two-dimensional feature space partitioned by recursive binary splitting \cite {hastie2009elements}\relax }}{53}{figure.caption.26}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Partition tree and regression model \cite {hastie2009elements}\relax }}{53}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Decision tree regression\relax }}{54}{figure.caption.28}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Random forest regression\relax }}{56}{figure.caption.29}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Gradient boosting regression\relax }}{58}{figure.caption.30}%
 \contentsline {figure}{\numberline {7.6}{\ignorespaces Melbourne temperatures dataset\relax }}{64}{figure.caption.31}%
 \contentsline {figure}{\numberline {7.7}{\ignorespaces Quantile regressors comparison Melbourne weather data\relax }}{65}{figure.caption.32}%
 \contentsline {figure}{\numberline {7.8}{\ignorespaces Kernel quantile regressors comparison Melbourne data\relax }}{69}{figure.caption.40}%
@@ -62,7 +62,7 @@
 \contentsline {figure}{\numberline {10.11}{\ignorespaces Probabilistic forecast for load in Switzerland}}{94}{figure.caption.73}%
 \contentsline {figure}{\numberline {10.12}{\ignorespaces Prediction price track task 6, Gaussian RBF kernel}}{97}{figure.caption.80}%
 \contentsline {figure}{\numberline {10.13}{\ignorespaces Prediction load track task 9, Laplacian kernel}}{99}{figure.caption.83}%
-\contentsline {figure}{\numberline {10.14}{\ignorespaces Boxplot for first two days of probabilistic forecast task 9 using KQR laplacian\relax }}{99}{figure.caption.84}%
+\contentsline {figure}{\numberline {10.14}{\ignorespaces Boxplot for first two days of probabilistic forecast task 9 using KQR Laplacian\relax }}{99}{figure.caption.84}%
 \addvspace {10pt}
 \contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{113}{figure.caption.97}%
 \contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{113}{figure.caption.98}%

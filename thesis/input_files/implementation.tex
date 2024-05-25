@@ -1,6 +1,6 @@
-This section is inteneded to explain and aid for reproducibilty studies. Hereafter, the specific libraries used and the custom implementatios are thoroughly documented.
+This section is intended to explain and aid for reproducibility studies. Hereafter, the specific libraries used and the custom implementatios are thoroughly documented.
 \\
-For the list of python packages needed see the requirement.txt file on \url{https://github.com/luca-pernigo/ThesisKernelMethods}\label{github_repo}.
+For the list of Python packages needed see the requirement.txt file on \url{https://github.com/luca-pernigo/ThesisKernelMethods}\label{github_repo}.
 % - indicate computer specifics
 All experiments have been carried out on a 3.2 GHz 16GB Apple M1 Pro.
 
@@ -24,16 +24,16 @@ For multiple linear regression the one from the \href{https://scikit-learn.org/s
 
 \subsection{Trigonometric seasonality Box-Cox transformation ARMA errors trend and seasonal components}
 Tbats implementation is available at \url{https://github.com/intive-DataScience/tbatsx}.
-In our application we specified as hyperparameters the lenght of seasons; 24 for the daily seasonality and 168 for the weekly seasonality.
+In our application we specified as hyperparameters the length of seasons; 24 for the daily seasonality and 168 for the weekly seasonality.
 
 \subsection{Prophet}
-The \href{https://facebook.github.io/prophet/docs/quick_start.html}{prophet} model has been applied by employing the python API provided by Meta.
+The \href{https://facebook.github.io/prophet/docs/quick_start.html}{prophet} model has been applied by employing the Python API provided by Meta.
 
 \subsection{K-nearest neighbours}
 The object KNeighborsRegressor of the \href{https://scikit-learn.org/stable/}{sklearn} module neighbors has been used.
 
 \subsection{Support vector regression}
-The object SVR of the \href{https://scikit-learn.org/stable/}{sklearn} module svm has been used by specifying the liner kernel.
+The object SVR of the \href{https://scikit-learn.org/stable/}{sklearn} module svm has been used by specifying the linear kernel.
 
 \subsection{Long short term memory}
 The LSTM predictor has been built using the \href{https://pytorch.org}{torch} library.
@@ -54,20 +54,20 @@ The implementation of \href{https://scikit-learn.org/stable/modules/generated/sk
 \subsection{Quantile forest}
 The implementation of \href{https://pypi.org/project/quantile-forest/}{quantile\_forest.RandomForestQuantileRegressor} has been used. This estimator is compatible with scikit-learn API \cite{Johnson2024}.
 \subsection{Kernel quantile regression}
-Kernel quantile regression had no previously implemented python open source library, thus the need of implementing our own version.
+Kernel quantile regression had no previously implemented Python open source library, thus the need of implementing our own version.
 \\
 The scikit-learn team provides a project template for the creation of estimators compatible with scikit-learn functionalities. Therefore, the KQR class is derived from the scikit-learn BaseEstimator and the mixin class RegressorMixin.
 Our KQR class is initialized by providing a quantile, the regularization term C, the kernel family and its corresponding hyperparameters.
 \\
-In the fit method, we set up and solve the convex optimisation problem through the interior point method. This algorithm is taken from the cvxopt library, see its offical manual \citeW{vandenberghe2010cvxopt} for a reference.
-When using this library, it is important to keep two things in mind. First this library assumes the quadratic term of the optimisation problem to be multiplied by the 0.5 factor, thus we just have to provide the Q matrix with no 0.5 in front.
+In the fit method, we set up and solve the convex optimisation problem through the interior point method. This algorithm is taken from the cvxopt library, see its official manual \citeW{vandenberghe2010cvxopt} for a reference.
+When using this library, it is important to keep two things in mind. First this library assumes the quadratic term of the optimisation problem to be multiplied by the 0.5 factor, thus we just have to provide the $Q$ matrix with no 0.5 in front.
 Secondly, in order to specify multiple inequalities we have to stack them and provide them as a unique matrix.
 \\
 Once a solution to the convex problem has been found, we create a mask for the support vectors of the estimator in order to estimate the constant term of our kernel quantile regressor.
 \\
 In the predict method, we pass a matrix $X\_eval$ of independent variables, next we compute the kernel matrix between $X\_train$ and $X\_eval$ and obtain $y\_eval$ with the formula $y=\alpha^\intercal K+b$.
 \\
-This estimator is compatible with useful scikit-learn in built methods like gridsearch, crossvalidation and scoring rules. Moreover, this code is compatible with sklearn in built kernel functions \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process.kernels}{sklearn.gaussian\_process.kernels}, functions supported by our kernel quantile regression include: gaussian rbf, absolute laplacian, matern 3/2, matern 5/2, linear, cosine, sigmoid, periodic, polynomial and custom composition of kernels.
+This estimator is compatible with useful scikit-learn in built methods like gridsearch, crossvalidation and scoring rules. Moreover, this code is compatible with sklearn in built kernel functions \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process.kernels}{sklearn.gaussian\_process.kernels}, functions supported by our kernel quantile regression include: Gaussian RBF, absolute Laplacian, Matern 3/2, Matern 5/2, Linear, Cosine, Sigmoid, Periodic, Polynomial and custom composition of kernels.
 % NOTICE, these kernel implementations differ in the form of passed parameters in the former we pass in the numerator gamma while in the latter we pass l, which stands for length scale in the denominator. To cross validate overt the same range of parameter across the different kernels we made sura that gamma=1/l.
 
 

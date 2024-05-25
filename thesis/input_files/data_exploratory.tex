@@ -21,19 +21,19 @@
 
 This section covers the datasets used in our experiments, in addition, attributes and features will be thoroughly described.
 Next, we will explain the extract transform load pipeline (ETL) that we set up in order to ease the workflow of our studies.
-Finally, in order to to better understand patterns within the data, we carry out an exploratory data analysis.
+Finally, in order to better understand patterns within the data, we carry out an exploratory data analysis.
 
 \section{GEFCom2014}
-The first class of datasets we identified were the ones from the GEFCom 2014 competition. The data is freely hosted on Dr.\ Hong blog \cite{hong2016probabilistic}.
+The first class of datasets we identified were the ones from the GEFCom2014 competition. The data is freely hosted on Dr.\ Hong blog \cite{hong2016probabilistic}.
 The main reason is that, these datasets are considered an excellent test case for comparing predictive models between the EF community. Additionally, the scores of the competing models are freely available, this enables us to carry out a clean and transparent comparative study.
-The GEFCom 2014 consisted of four tracks: price, load, wind power and solar power forecasting. 
+The GEFCom2014 consisted of four tracks: price, load, wind power and solar power forecasting. 
 The GEFCom2014 folder contains a zip file for each of the four tracks.
 This thesis work is focused on providing forecasts for the load and price quantities.
 \\
 \subsection{GEFCom2014 price track}
 In the price forecasting track, the goal was to predict the electricity price for the next 24 hours of a single zone. 
 The data can be found in the GEFCom2014-P\_V2 zip file alongside a set of instructions and the benchmark forecasts.
-This data consisted of time series for the locational marginal price, for the zonal load and for the system load. The data covers the time interval ranging from the 1st of January 2011 to the 15th of June 2013, see figure \ref{fig:price_track_fig1}. 
+This data consisted of time series for the locational marginal price, for the zonal load and for the system load. The data covers the time interval ranging from the $1^{st}$ of January 2011 to the $15^{th}$ of June 2013, see figure \ref{fig:price_track_fig1}.\ 
 Additionally, as the competition went on, the real observed data of the previous tasks were made available.
 The fifteen target days ordered by task number are: 16/06/2013, 17/06/2013, 24/06/2013, 04/07/2013, 09/07/2013, 13/07/2013, 16/07/2013, 18/07/2013, 19/07/2013, 20/07/2013, 24/07/2013, 25/07/2013, 07/12/2013, 08/12/2013. 
 \begin{figure}[!h]
@@ -59,11 +59,11 @@ After that, we plotted the scatter plot for inspecting the correlation between t
 \end{figure}
 
 \subsection{GEFCom2014 load track}
-In the load track, contestant were asked to provide one month ahead hourly probabilistic forecasts on a rolling basis for 15 consecutive rounds. To get started, in the first round, organizers provided 69 months of hourly load data (from 01/01/2005 to 30/10/2010) and 117 months of hourly temperature data (from 01/01/2001 to 30/10/2010). 
+In the load track, contestants were asked to provide one month ahead hourly probabilistic forecasts on a rolling basis for 15 consecutive rounds. To get started, in the first round, organizers provided 69 months of hourly load data (from 01/01/2005 to 30/10/2010) and 117 months of hourly temperature data (from 01/01/2001 to 30/10/2010). 
 As for the price track, the true observed data from the previous track were made available as the competition progressed.
 \\
 The data for load forecasting is contained in the GEFCom2014-L\_V2 zip file. Within this subfolder, we have a txt file with the competition instructions and 15 subfolders one for each of the consecutive tasks. For each of those we have the prediction of the competition benchmark model and the train file upon which we will fit our model.
-Any data from the various task folders are shifted by one month between eachother.
+Any data from the various task folders are shifted by one month between each other.
 \\
 In order to compare our model performance with the winning entries of the GEFCom2014 load competition, we will refer to the Provisional\_Leaderboard\_V2.csv file contained also in the GEFCom2014 Data directory.
 % Notice a quick premise, within this xsls file the authors opted for various scores to compare the entries performance. This choice was motivated by the need 
@@ -71,7 +71,7 @@ In order to compare our model performance with the winning entries of the GEFCom
 \\
 Notice, the pinball scores for the load track are stored inside the subtab L-score-0/L-score-2 of Provisional\_Leaderboard\_V2.
 \subsubsection{EDA}
-We applied the same kind of EDA to the GEFCom load data. Figure \ref{fig:gefcom_load_historical} depicts the hisorical load while figure \ref{fig:gefcom_w_avg_historical} reports the historical weather temperature. Finally, figure \ref{fig:gefcom_load_vs_w_avg} shows the scatter plot between the the load and the weather.
+We applied the same kind of EDA to the GEFCom load data. Figure \ref{fig:gefcom_load_historical} depicts the historical load while figure \ref{fig:gefcom_w_avg_historical} reports the historical weather temperature. Finally, figure \ref{fig:gefcom_load_vs_w_avg} shows the scatter plot between the load and the weather.
 These plots motivate the selection of weather temperature as one of the predictors for the load.
 
 \begin{figure}[!h]
@@ -96,43 +96,43 @@ These plots motivate the selection of weather temperature as one of the predicto
 \subsubsection{GEFCom ETL}
 The provided data is raw, hence the need for a standardized extract transform and load pipeline. 
 Firstly, we drop all Nans and zeros. Notice, the provided data for the challenge has a timestamp column not coherent to any time format. Thus, we first pass the data through a method extracting time information: hour, day, month and year. This info is then combined into a datetime object, we selected the ISO format.
-Next, since the data does not provide the location for the target utility, the best we can do is selecting the average of weather temperatures as predictor variables. This independent variable is named w\_avg.
-The same thing applies in the cleaning of the test data with the addition of an if clause for handling the different naming convention and formatting used in the last track of the challenge. The python etl pipeline has been then automated to loop every task folder through bash scripting.
+Next, since the data does not provide the location for the target utility, the best we can do is selecting the average of weather temperatures as predictor variables. This independent variable is named w avg.
+The same thing applies in the cleaning of the test data with the addition of an if clause for handling the different naming convention and formatting used in the last track of the challenge. The Python ETL pipeline has been then automated to loop every task folder through Bash scripting.
 
 
 \section{Germany Switzerland Austria data}
 Next, we identified various data sources for Germany, Switzerland and Austria in order to further
 investigate the techniques studied in this thesis work.
 Taking inspiration from the GEFCom2014 format, we firstly created a load track for Germany and Switzerland. 
-The source of data has been the \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts} website. It provides data for electricity power, electricity potential capacity, energy generation, market prices, environmental measurements and also scenario simulations. Notice, this data is retrieved from the European network of transmission system operators for electricity \href{https://www.entsoe.eu/}{ENTSOE} and made available thanks to the \href{https://ise.fraunhofer.de/en.html}{Fraunhofer Institute for Solar Energy Systems ISE}.
+The source of data has been the \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts} website. It provides data for electricity power, electricity potential capacity, energy generation, market prices, environmental measurements and also scenario simulations. Notice, this data is retrieved from the European network of transmission system operators for electricity \href{https://www.entsoe.eu/}{(ENTSOE)} and made available thanks to the \href{https://ise.fraunhofer.de/en.html}{Fraunhofer Institute for Solar Energy Systems ISE}.
 \\
 In this experiment, the goal is comparing kernel quantile regression to the other state of the art quantile regressors, see section \ref{ch:prob}.
 The target dependent variable is the national load while as predictors we took
 the weather temperature, the wind speed, the date expressed in terms of the three attributes day, month and hour, a categorical variable for the day of the week and a binary categorical variable accounting for the holiday effect.
 
 
-In the second experiment we compared various kernels in the context of load foreacsting.
-For this study we considered the data of \href{https://zenodo.org/records/7907883}{SECURES-Met}. This data consists of various metereological attributes relevant for modelling electricity demand \cite{Formayer2023}. The dataset is made up of historical data until end of 2020, while from 2021 onwards the data consists of forecasts made by a metereological model developed by the European Centre for Medium-Range Weather Forecasts (ECMWF). Notice, the forecasted data is splitted in two files according to the scenarios RCP4.5 and RCP8.5. In our experiment we considered the former. 
+In the second experiment we compared various kernels in the context of load forecasting.
+For this study we considered the data of \href{https://zenodo.org/records/7907883}{SECURES-Met}. This data consists of various metereological attributes relevant for modelling electricity demand \cite{Formayer2023}. The dataset is made up of historical data until end of 2020, while from 2021 onwards the data consists of forecasts made by a metereological model developed by the European Centre for Medium-Range Weather Forecasts (ECMWF). Notice, the forecasted data is splitted in two files according to the scenarios RCP4.5 and RCP8.5. In our experiments we considered the former. 
 In this setting the independent variables available are 
 direct irradiation, global radiation, power from reservoir plants, power from run of the river plants (ROR), weather temperature and wind potential.
 
 \subsubsection{ETL}
 From energy charts we downloaded the historical load along with the weather temperatures and wind speeds forecasts. Notice, the data request to the environmental variables at hourly frequency for a whole year is broken. Therefore, we downloaded each month separately and then transformed them into a single csv for the whole year.
 
-For what concers the data from SECURES-Met we first identified the data interesting to us. Next, we formatted all the csv to a coherent format, gave coloumns meaningful names, sliced for the years 2020 (train) and 2021 (test) and finally we merged all single csv\textsubscript{s} together.
+For what concerns the data from SECURES-Met we first identified the data interesting to us. Next, we formatted all the csv to a coherent format, gave columns meaningful names, sliced for the years 2020 (train) and 2021 (test) and finally we merged all single csv\textsubscript{s} together.
 
-All the manipulations involved in the ETL pipeline have been carried out by combining python and bash scripting. 
+All the manipulations involved in the ETL pipeline have been carried out by combining Python and Bash scripting. 
 
 \subsubsection{EDA}
 Following are reported the EDA plots alongside with insights that can be extracted from them. We choose to focus the following analysis on the Swiss data only, given that the plots for the German data are pretty similar.
-To get started we visualized the historical load data in figure \ref{fig:CH_historical_load_2021}. As expected, electricity load exhibits a seasonal patter with highs in the winter and lows during the summer season.
+To get started we visualized the historical load data in figure \ref{fig:CH_historical_load_2021}. As expected, electricity load exhibits a seasonal pattern with highs in the winter and lows during the summer season.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/CH_historical_load_2021.png}
     \caption{Switzerland historical load (2021)}
     \label{fig:CH_historical_load_2021}
 \end{figure}
-Next we built scatter plots of the independent continous variables against the load as means of visualizing correlation between them.
-Figure \ref{fig:CH_load_vs_temperature_2021} plots load against temperatures while figure \ref{fig:CH_load_vs_wind_speed_2021} depicts load against wind speed. From these plots we can clearly see there exist a relationship that ties wind speeds and temperatures to load.
+Next, we built scatter plots of the independent continous variables against the load as means of visualizing correlation between them.
+Figure \ref{fig:CH_load_vs_temperature_2021} plots load against temperatures while figure \ref{fig:CH_load_vs_wind_speed_2021} depicts load against wind speed. From these plots we can clearly see there exists a relationship that ties wind speeds and temperatures to load.
 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/CH_load_vs_temperature_2021.png}
@@ -146,7 +146,7 @@ Figure \ref{fig:CH_load_vs_temperature_2021} plots load against temperatures whi
     \label{fig:CH_load_vs_wind_speed_2021}
 \end{figure}
 
-Following, we used box plots in order to visualize the relations between categorical independent variables and the dependent one. Such visualisation are reported in figure \ref{fig:CH_day_of_week_boxplot_2021} and figure \ref{fig:CH_is_holiday_boxplot_2021}. We can see that weekdays and workdays involve a higher load and posses a wider range.
+Following, we used box plots in order to visualize the relations between categorical independent variables and the dependent one. Such visualisation are reported in figure \ref{fig:CH_day_of_week_boxplot_2021} and figure \ref{fig:CH_is_holiday_boxplot_2021}. We can see that weekdays and workdays involve a higher load and possess a wider range.
 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/CH_day_of_week_boxplot_2021.png}
