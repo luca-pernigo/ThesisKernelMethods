@@ -2236,6 +2236,8 @@ INPUT ./W.bbl
 INPUT W.bbl
 INPUT ./W.bbl
 INPUT W.bbl
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT ./declaration-originality-flat.pdf
 INPUT declaration-originality-flat.pdf
 INPUT ./declaration-originality-flat.pdf

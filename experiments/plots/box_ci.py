@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 
 
-df=pd.read_csv("Data/Load/Task 9/L9-model_prediction_laplacian.csv")
-df_test=pd.read_csv(f"Data/Load/Task 9/L9-test_clean.csv")
+df=pd.read_csv("experiments/Data/Load/Task 9/L9-model_prediction_laplacian.csv")
+df_test=pd.read_csv(f"experiments/Data/Load/Task 9/L9-test_clean.csv")
 # get subset of interesting columns
 df=df.iloc[:, np.r_[0, 2:101]]
 
@@ -35,7 +35,7 @@ fig, ax = plt.subplots(figsize=(15,5))
 df_res.boxplot(column=["LOAD"], by="TIMESTAMP", showfliers=False, ax=ax)
 
 plt.suptitle("")
-plt.title("Boxplot task 9, laplacian kernel")
+plt.title("Boxplot task 9, Laplacian kernel")
 
 plt.ylabel("Load (MW)")
 plt.xlabel("Hours")

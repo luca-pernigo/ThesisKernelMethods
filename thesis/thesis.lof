@@ -37,15 +37,15 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Price track GEFCom2014\relax }}{72}{figure.caption.41}%
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Zonal price versus zonal load GEFCom2014\relax }}{73}{figure.caption.43}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Zonal price versus total load GEFCom2014\relax }}{74}{figure.caption.44}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Historical load GEFCom2014\relax }}{74}{figure.caption.46}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Historical weather GEFCom2014\relax }}{75}{figure.caption.47}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Load versus weather GEFCom2014\relax }}{75}{figure.caption.48}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Zonal price versus total load of GEFCom2014\relax }}{74}{figure.caption.44}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Historical load of GEFCom2014\relax }}{74}{figure.caption.46}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Historical weather of GEFCom2014\relax }}{75}{figure.caption.47}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Load versus weather of GEFCom2014\relax }}{75}{figure.caption.48}%
 \contentsline {figure}{\numberline {8.7}{\ignorespaces Switzerland historical load (2021)\relax }}{77}{figure.caption.52}%
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Load vs temperature Switzerland (2021)\relax }}{77}{figure.caption.53}%
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Load vs wind speed Switzerland (2021)\relax }}{78}{figure.caption.54}%
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Load versus day of week boxplot Switzerland (2021)\relax }}{79}{figure.caption.55}%
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Load versus day type boxplot Switzerland (2021)\relax }}{80}{figure.caption.56}%
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Load versus temperature for Switzerland (2021)\relax }}{77}{figure.caption.53}%
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Load versus wind speed for Switzerland (2021)\relax }}{78}{figure.caption.54}%
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Load versus day of week boxplot for Switzerland (2021)\relax }}{79}{figure.caption.55}%
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Load versus day type boxplot for Switzerland (2021)\relax }}{80}{figure.caption.56}%
 \contentsline {figure}{\numberline {8.12}{\ignorespaces Switzerland load heatmap (2021)\relax }}{80}{figure.caption.57}%
 \addvspace {10pt}
 \addvspace {10pt}
@@ -66,4 +66,4 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{113}{figure.caption.97}%
 \contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{113}{figure.caption.98}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces importance of feature scaling\relax }}{114}{figure.caption.99}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Importance of feature scaling\relax }}{114}{figure.caption.99}%

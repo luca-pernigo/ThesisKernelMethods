@@ -1,6 +1,6 @@
 % Analysis of experiments and results
 % \\
-Building on the theory introduced in section \ref{ch:point} and \ref{ch:prob}, this section covers the experiments carried out and the results obtained respectively.
+Building on the theory introduced in Sections \ref{ch:point} and \ref{ch:prob}, this section covers the experiments carried out and the results obtained respectively.
 
 % - Comments
 % \\
@@ -23,12 +23,12 @@ In such setting we considered the following regressors
     \item Hour
     \item Month
     \item Day of the week
-    \item Is holiday: a binary variable for holidays, where holiday$=1$ and working day$=0$
+    \item Is holiday: a binary variable for holidays, where holiday=1 and working day=0
     \item Weather temperature
 \end{itemize}
-Methods will be compared by means of the RMSE, MAE and MAPE scores, see section \ref{metrics}.
+Methods will be compared by means of the RMSE, MAE and MAPE scores, see Section \ref{metrics}.
 \subsection{Multiple linear regression}
-To get started, standard multiple linear regression has been applied, see figure \ref{fig:mlr_price} for a visualisation. 
+To get started, standard multiple linear regression has been applied, see Figure \ref{fig:mlr_price} for a visualisation. 
 \begin{figure}
     \includegraphics[width=\textwidth]{images/mlr_price.png}
     \caption{Multiple linear regression prediction}
@@ -40,7 +40,7 @@ What can be concluded, is that multiple linear regression is capable of catching
 
 \subsection{Trigonometric seasonality Box-Cox transformation ARMA errors trend and seasonal components}
 Next, we tried with the autoregressive approach. Unfortunately, AR, ARIMA and SARIMA models did not perform as expected, their output was slightly better than the one of linear regression. This is probably due to the fact that, the data considered entails two kinds of seasonalities, while ARIMA models can only handle one at a time. We remind the reader, that the electricity load time series involves both daily and weekly seasonalities. Hence, the need for a more advanced time series model. The Tbats \cite{de2011forecasting} model is a forecasting method capable of handling complex patterns in the data. Its name stands for trigonometric seasonality, Box-Cox transformation, ARMA errors, trend and seasonal components. 
-Tbats forecast is visualized in figure \ref{fig:tbats_price}, meanwhile its RMSE is 15.08.
+Tbats forecast is visualized in Figure \ref{fig:tbats_price}, meanwhile its RMSE is 15.08.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/tbats_price.png}
     \caption{Tbats prediction}
@@ -49,15 +49,15 @@ Tbats forecast is visualized in figure \ref{fig:tbats_price}, meanwhile its RMSE
 From the plot we see that Tbats is capable of catching the lows and average trend, conversely it has some difficulties handling the price peaks.
 \subsection{Prophet}
 Following, the prophet model has been considered. 
-We get started by considering the base implementation. In such setting, prophet takes in as input the time series object and learns its data generating process.
-This method achieves a RMSE of 23.96, its prediction is visualized in figure \ref{fig:prophet_price_1}.
+We get started by considering the base implementation. In such setting, prophet takes as input the time series object and learns its data generating process.
+This method achieves a RMSE of 23.96, its prediction is visualized in Figure \ref{fig:prophet_price_1}.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/prophet_price_1.png}
     \caption{Prophet prediction}
     \label{fig:prophet_price_1}
 \end{figure}
-What can be seen is that, prophet models correctly the average trend but does not model peaks and lows precisely. 
-Next, a more complex model was trained. We added the weather temperature, the square of it and the categorical variable for holidays effect as regressors. Furthermore, we also applied a log transformation to the dependent variables. Doing so, RMSE went down to 10.29. Forecast is visualised in figure \ref{fig:prophet_price2}.
+What can be seen is that prophet correctly models the average trend but does not model peaks and lows precisely. 
+Next, a more complex model was trained. We added the weather temperature, the square of it and the categorical variable for holidays effect as regressors. Furthermore, we also applied a log transformation to the dependent variables. Doing so, RMSE went down to 10.29. Forecast is visualised in Figure \ref{fig:prophet_price2}.
 % , moreover figure \ref{fig:prophet_price2.1} and figure \ref{fig:prophet_price2.2} break down the trend and the seasonalities respectively.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/prophet_price2.png}
@@ -79,7 +79,7 @@ Next, a more complex model was trained. We added the weather temperature, the sq
 Prophet alongside with the right features is a good model in the context of electricity load forecasting, it is capable of catching the trend, the peak and the lows. 
 
 \subsection{K-nearest neighbours}
-Afterwards, K-nearest neighbours has been considered. In doing so, we cross validated the number of neighbours to get the best model instance. The forecast is visualised in figure \ref{fig:knn_price}, RMSE is 12.54.
+Afterwards, K-nearest neighbours has been considered. In doing so, we cross validated the number of neighbours to get the best model instance. The forecast is visualised in Figure \ref{fig:knn_price}, RMSE is 12.54.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/knn_price.png}
     \caption{K-nearest neighbour regression}
@@ -88,7 +88,7 @@ Afterwards, K-nearest neighbours has been considered. In doing so, we cross vali
 What it can be said is that, K-nearest neighbour is capable of predicting load well by averaging past data.
 
 \subsection{Support vector regression}
-Coming up we have support vector regression. In applying this model we used gridsearch crossvalidation to search for the best regularisation parameter C. Support vector regression achieves an RMSE of 23.24, for the prediction see figure \ref{fig:svr_price}.
+In applying support vector regression we used gridsearch crossvalidation to search for the best regularisation parameter $C$. Support vector regression achieves an RMSE of 23.24, for the prediction see Figure \ref{fig:svr_price}.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/svr_price.png}
     \caption{Support vector regression prediction}
@@ -109,7 +109,7 @@ Various hyperparameters combinations were tried during the tuning phase. The fin
     \item batch\_size= 32
     \item window\_size= 24
 \end{itemize}
-LSTM forecast is reported in figure \ref{fig:lstm_price}, it achieves a RMSE of 9.1782
+LSTM forecast is reported in Figure \ref{fig:lstm_price}, it achieves a RMSE of 9.1782
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/lstm_price.png}
     \caption{Long short term memory prediction}
@@ -119,24 +119,24 @@ LSTM forecast is reported in figure \ref{fig:lstm_price}, it achieves a RMSE of 
 \subsection{Kernel ridge regression}
 Subsequently, kernel ridge regression was considered. The kernel considered is the radial basis Gaussian function.
 Cross validation was carried jointly over the RBF kernel bandwith and the regularisation constant.
-The RMSE achieved is 9.86, figure \ref{fig:krnridge_price} reports the prediction.
+The RMSE achieved is 9.86, Figure \ref{fig:krnridge_price} reports the prediction.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/krnridge_price.png}
     \caption{Kernel ridge prediction}
     \label{fig:krnridge_price}
 \end{figure}
-We can observe that, kernel ridge regression models accurately the electricity time series.
+We can observe that, kernel ridge regression accurately models the electricity time series.
 
 \subsection{Kernel support vector regression}
 The last model we considered in this setting was the kernel support vector regression.
-RMSE achieved with this method is 9.10, forecast is reported in figure \ref{fig:krnsvr_price}.
+RMSE achieved with this method is 9.10, forecast is reported in Figure \ref{fig:krnsvr_price}.
 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/krnsvr_price.png}
     \caption{Kernel support vector prediction}
     \label{fig:krnsvr_price}
 \end{figure}
-We can observe that kernel support vector regression is one of the best performing techniques between the one considered.
+We can observe that kernel support vector regression is one of the best performing techniques between the ones considered.
 
 \subsection{Results}
 This section reports the tables comparing the considered methods scores.
@@ -171,7 +171,7 @@ Table \ref{tab:point_RMSE} reports the RMSE scores for each of the considered me
 \end{table}
 
 
-The MAE scores are contained in table \ref{tab:point_MAE}. Similarly to above, we can conclude that kernel methods stand out for achieving also the lowest MAE score; with KrnSVR being the top one.
+The MAE scores are contained in Table \ref{tab:point_MAE}. Similarly to above, we can conclude that kernel methods stand out for achieving also the lowest MAE score; with KrnSVR being the top one.
 \begin{table}[!ht]
     \caption{Mean absolute errors}
     \label{tab:point_MAE}
@@ -193,7 +193,7 @@ The MAE scores are contained in table \ref{tab:point_MAE}. Similarly to above, w
     \end{adjustbox}            
 \end{table}
 
-Finally table \ref{tab:point_MAPE} reports the MAPE score for each method. Its results are in line with the other tables, hence suggesting the goodness of kernel methods.
+Finally Table \ref{tab:point_MAPE} reports the MAPE score for each method. Its results are in line with the other tables, hence suggesting the goodness of kernel methods.
 % What can be concluded is that kernel regressors are also the best in terms of MAPE score; with KrnSVR being the top one.
 \begin{table}[!ht]
     \caption{Mean absolute percentage errors}
@@ -221,7 +221,7 @@ We continue our experimental analysis by considering the probabilistic framework
 
 % quantile regressors
 \subsection{Quantile regressors comparison}
-Using the load data from \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts} for Germany and Switzerland, we proceeded to compare between quantile regression algorithms. In this study, we trained our models on the entire 2021 data and then we tested them and measured their score on the 2022 data.
+Using the load data from \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts} for Germany and Switzerland, we proceeded to compare between quantile regression algorithms. In this study, we trained our models on the entire 2021 data and then tested them and measured their score on the 2022 data.
 Notice, for kernel quantile regression (KQR), the kernel of choice in this setting is the absolute Laplacian. Additionally notice, the loss function utilized in this section is the normalized pinball loss. 
 % normalized by the magnitude of the average load of each country.
 Here, we built two models. In the first, the national load is forecasted by taking as predictor the following variables
@@ -282,14 +282,14 @@ Results for Germany are reported in table \ref{tab:energy_chart_de} and figure \
 
     \begin{figure}[!ht]
         \makebox[\linewidth]{\includegraphics[width = 1.5\textwidth]{images/DE_load_CI.png}}
-        \caption[Probabilistic forecast for load in Germany]{Load 90\% confidence interval for Germany Energy charts (2022) data using KQR Laplacian. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively.}
+        \caption[Probabilistic forecast for load in Germany]{Load 90\% confidence interval for Germany Energy charts (2022) data using KQR Laplacian. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively}
         \label{fig:DE_load_CI}
     \end{figure}
     
 
     \begin{figure}[!ht]
         \makebox[\linewidth]{\includegraphics[width = 1.5\textwidth]{images/CH_load_CI.png}}
-        \caption[Probabilistic forecast for load in Switzerland]{Load 90\% confidence interval for Switzerland Energy charts data (2022) using KQR Laplacian. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively.}
+        \caption[Probabilistic forecast for load in Switzerland]{Load 90\% confidence interval for Switzerland Energy charts data (2022) using KQR Laplacian. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively}
         \label{fig:CH_load_CI}
     \end{figure}
     
@@ -298,7 +298,7 @@ Next, we extended the models to take into account the impact of two additional c
     \item Is holiday: a binary variable for holidays, where holiday$=1$ and working day$=0$
     \item Day of week: an ordinal categorical variable corresponding to the day of the week, e.i.\ Monday$=0$,$\dots$, Sunday$=6$
 \end{itemize}
-Table \ref{tab:energy_chart_de_additional_predictors} reports the model scores on the German data while table \ref{tab:energy_chart_ch_additional_predictors} is the one corresponding to the Suisse data.
+Table \ref{tab:energy_chart_de_additional_predictors} reports the model scores on the German data while Table \ref{tab:energy_chart_ch_additional_predictors} is the one corresponding to the Suisse data.
 
 \begin{table}[!ht]
     \centering
@@ -370,7 +370,7 @@ The predictors making up the datasets follow:
     \item Temperature: air temperature
     \item Wind potential: potential wind power production
 \end{itemize}
-Table \ref{tab:secures_met_de} shows results for Germany, table \ref{tab:secures_met_ch} is the one for Switzerland and table \ref{tab:secures_met_at} corresponds to Austria.
+Table \ref{tab:secures_met_de} shows results for Germany, Table \ref{tab:secures_met_ch} is the one for Switzerland and Table \ref{tab:secures_met_at} corresponds to Austria.
 
 
 \begin{table}[!ht]
@@ -453,14 +453,14 @@ CRPS & 0.046772 & \textbf{0.045760} & 0.046755 & 0.047146 & 0.055060 & 0.055299 
 \end{tabular}
 \end{adjustbox}
 \end{table}
-From our tables, it can be concluded that the absolute Laplacian kernel is the one fitting best to the characteristics of loda data.
+From our tables, it can be concluded that the absolute Laplacian kernel is the one fitting best to the characteristics of load data.
 Additionally, we can conclude that our results are in line with the ones published in \cite{he2017short}. In that study, similarly to what we did in this subsection, the authors carried out a comparitive study concerning the choice of kernels in KQR. Nevertheless notice, that the set of kernel we considered in our study is larger than the one presented in \cite{he2017short}.
-Their paper showed evidence of the superiority of the Gaussian RBF among their set of kernel functions. Analogously, we can see from tables \ref{tab:secures_met_de}, \ref{tab:secures_met_ch} and \ref{tab:secures_met_at} that the Gaussian RBF is the second best in terms of pinball loss.
+Their paper showed evidence of the superiority of the Gaussian RBF among their set of kernel functions. Analogously, we can see from Tables \ref{tab:secures_met_de}, \ref{tab:secures_met_ch} and \ref{tab:secures_met_at} that the Gaussian RBF is the second best in terms of pinball loss.
 
 % gefcom final case
 \subsection{GEFCom2014}
 The following subsection compares our kernel quantile regression against the price and load track entries of the GEFCom2014 competition.
-Error measure of the competition was the pinball loss, see section \ref{metrics}, averaged over the $99$ quantiles, $q \in \{i/100\}_{i=1}^{n=99}$. Backed by the conclusion from the previous subsection we selected the absolute Laplacian and the Gaussian RBF as kernels in our application of KQR.
+Error measure of the competition was the pinball loss, see Section \ref{metrics}, averaged over the $99$ quantiles, $q \in \{i/100\}_{i=1}^{n=99}$. Backed by the conclusion from the previous subsection we selected the absolute Laplacian and the Gaussian RBF as kernels in our application of KQR.
 
 
 \subsubsection{GEFCom2014 price track}
@@ -473,13 +473,13 @@ In this setting, the predictors fed to our KQR models are
 \end{itemize}
 Since target days vary all over the year, we trained a model for any month associated to them.
 
-Our results for this track are reported in table \ref{tab:pinball loss gefcom2014 price data}. In this track, the top entries came from the teams: Tololo, Team Poland, GMD, and C3 Green Team; for a breakdown of each method's attributes, see \cite[Table 8]{hong2016probabilistic}. Finally, the Gaussian RBF probabilistic prediction for the $13^{th}$ July $2013$ zonal price at the $90\%$ confidence interval is visualized in Figure \ref{fig:price_task_6_gaussian_rbf}.
+Our results for this track are reported in Table \ref{tab:pinball loss gefcom2014 price data}. In this track, the top entries came from the teams: Tololo, Team Poland, GMD, and C3 Green Team; for a breakdown of each method's attributes, see \cite[Table 8]{hong2016probabilistic}. Finally, the Gaussian RBF probabilistic prediction for the $13^{th}$ July $2013$ zonal price at the $90\%$ confidence interval is visualized in Figure \ref{fig:price_task_6_gaussian_rbf}.
 
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=\linewidth]{images/price_task_6_gaussian_rbf.png}
-    \caption[Prediction price track task 6, Gaussian RBF kernel]{Price 90\% confidence interval task 6. Electricity price probabilistic forecast for the $13^{\text{th}}$ July $2013$. The black line is the observed path for the price. The $90\%$ confidence interval bands are plotted in green. Lower and upper red lines denote the $95\%$ and $5\%$ quantile forecast respectively.}
+    \caption[Prediction price track task 6, Gaussian RBF kernel]{Price 90\% confidence interval task 6. Electricity price probabilistic forecast for the $13^{\text{th}}$ July $2013$. The black line is the observed path for the price. The $90\%$ confidence interval bands are plotted in green. Lower and upper red lines denote the $95\%$ and $5\%$ quantile forecast respectively}
     % \Description{}
     \label{fig:price_task_6_gaussian_rbf}
 \end{figure}
@@ -495,7 +495,7 @@ Our results for this track are reported in table \ref{tab:pinball loss gefcom201
       \toprule
       \midrule
       Team name\textbackslash Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12               \\
-  KQR laplacian
+  KQR Laplacian
   &
   \textbf{1.3249}
   &
@@ -521,7 +521,7 @@ Our results for this track are reported in table \ref{tab:pinball loss gefcom201
   &
   17.5371
   \\
-  KQR gaussian rbf
+  KQR Gaussian RBF
   &
   2.0614
   &
@@ -570,7 +570,7 @@ Our results for this track are reported in table \ref{tab:pinball loss gefcom201
     \end{adjustbox}
   \end{table}
 
-What can be concluded from table \ref{tab:pinball loss gefcom2014 price data} is that KQR performed consistently among the top algorithms. Furthermore, It ranked first in two out of the thirteen tasks of the price track.
+What can be concluded from Table \ref{tab:pinball loss gefcom2014 price data} is that KQR performs consistently among the top algorithms. Furthermore, It ranks first in two out of the thirteen tasks of the price track.
 \subsubsection{GEFCom2014 load track} 
 The GEFCom2014 load track constitutes a good setting for analysing the performance of KQR in the context of medium term load forecasting (MTLF).
 In this track we were faced with the challenge of predicting the load for the next month without the availability of weather temperature forecasts. 
@@ -579,8 +579,8 @@ Therefore, the primary task was to first accurately predict the weather temperat
     \item Day: the number of the day
     \item Hour
     \item Day of week: an ordinal categorical variable for the day of the week
-    \item Is holiday: a binary variable for holidays, where holiday$=1$ and working day$=0$
-    \item w avg: average of weather temperatures across all the $25$ stations
+    \item Is holiday: a binary variable for holidays, where holiday=1 and working day=0
+    \item w avg: average of weather temperatures across 25 stations
 \end{itemize}
 We built $12$ models, one for each month, with each task model trained on the historical data of the month associated with it.
 
@@ -591,7 +591,7 @@ Similarly to the price track, we have that KQR was among the best algorithms als
 \begin{figure*}[!ht]
     \centering
     \makebox[\linewidth]{\includegraphics[width = 1.5\textwidth]{images/load_task_9_laplacian.png}}
-    \caption[Prediction load track task 9, Laplacian kernel]{Load 90\% confidence interval task 9 using KQR Laplacian. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively.}
+    \caption[Prediction load track task 9, Laplacian kernel]{Load 90\% confidence interval task 9 using KQR Laplacian. The black line is the observed path for the load. The 90\% confidence interval bands are plotted in green. Lower and upper red lines denote the 95\% and 5\% quantile forecast respectively}
     \label{fig:load_task_9}
 \end{figure*}
 
@@ -614,7 +614,7 @@ Similarly to the price track, we have that KQR was among the best algorithms als
       \midrule
       Team name\textbackslash Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12                              \\
   
-  KQR laplacian
+  KQR Laplacian
   & 
   12.0552
   &
@@ -640,7 +640,7 @@ Similarly to the price track, we have that KQR was among the best algorithms als
   &
   10.8869
   \\
-  KQR gaussian rbf
+  KQR Gaussian RBF
   & 
   12.4665
   &
@@ -706,9 +706,9 @@ Similarly to the price track, we have that KQR was among the best algorithms als
 % repeat the problem description  and motivation quickly
 This section concludes this thesis work with some final remarks.
 This thesis was concerned with electricity forecasting, in particular we focused on the probabilistic framework.
-Probabilistic forecasting is still a relatively new research area, lately research efforts are shifting towards this setting. This is due to the fact that probabilistic forecasts are more informative than point ones and better suited for the current and future electricity landscape; think for example about the higher uncertainty resulting from market liberalisation or renewables integration requirements.
+Probabilistic forecasting is still a relatively new research area. Lately, research efforts are shifting towards this setting. This is due to the fact that probabilistic forecasts are more informative than point ones and better suited for the current and future electricity landscape; think for example about the higher uncertainty resulting from market liberalisation or renewables integration requirements.
 
-Among the contributions of this thesis work we can list
+Among the contributions of this thesis work, we can list
 % list contributions:
 % - study of kernel methods in EF, both point and probabilistic
 % - contribution to less developed area of EF, which is probabilistic forecasting
@@ -717,12 +717,12 @@ Among the contributions of this thesis work we can list
 % - extensive comparison among kernel types
 % - comparison against state of the art algorithms from GEFCom2014, particularly KQR in medium term load forecasting which has not been deeply analyzed in the literature.
 \begin{itemize}
-    \item Study of kernel methods in electricity forecasting both in the point and probabilistic framework.
-    \item Provided Python open source implementation for kernel quantile regression compatible with the sklearn API. The code has been packaged and uploaded to the Python Package Index (PyPI) with the name \href{https://pypi.org/project/kernel-quantile-regression/#2}{kernel-quantile-regression}. The \href{https://github.com/luca-pernigo/kernel_quantile_regression}{github repo} hosting the source code includes also the script implementing the experiments along with the cleaned datasets; this contribution is intended to forster reproducibility in research.
-    \item Achieved superior performance of kernel quantile regression compared to standard quantile regressor algorithms. 
-    \item Created and made available datasets suitable for algorithms benchmarking considering data from the DACH region (Germany, Switzerland and Austria). The format of these data takes inspiration from the popular GEFCom competitions.
+    \item We have studied kernel methods for electricity forecasting both in the point and probabilistic framework.
+    \item We provided a Python open source implementation for kernel quantile regression compatible with the sklearn API. The code has been packaged and uploaded to the Python Package Index (PyPI) with the name \href{https://pypi.org/project/kernel-quantile-regression/#2}{kernel-quantile-regression}. The \href{https://github.com/luca-pernigo/kernel_quantile_regression}{github repo} hosting the source code includes also the script implementing the experiments along with the cleaned datasets; this contribution is intended to forster reproducibility in research.
+    \item We achieved superior performance of kernel quantile regression compared to standard quantile regressor algorithms. 
+    \item We created and made available datasets suitable for algorithms benchmarking considering data from the DACH region (Germany, Switzerland and Austria). The format of these data takes inspiration from the popular GEFCom competitions.
     \item Kernel quantile regression extensive comparison between kernel function types.
-    \item Compared kernel quantile regression against state of the art probabilistic algorithms in the literature by means of the GEFCom2014 competition.
+    \item We compared kernel quantile regression against state of the art probabilistic algorithms in the literature by means of the GEFCom2014 competition.
 \end{itemize}
 
 
@@ -730,7 +730,7 @@ Among the contributions of this thesis work we can list
 % - KQR beats other quantile regressor algorithms
 % - Laplacian is the best kernel
 % - our KQR implementations demostrated good performance compared to the top entries of the GEFCom2014 competition, this suggests it is a valid method. We observe that KQR shows favorably and can forecast both the short and medium-term horizon.
-To finish, we proceed with summarising the conclusions we drew from our experimental analysis.
+To finish, we proceed summarising the conclusions we drew from our experimental analysis.
 Kernel methods showed good performance both in the context of point and probabilistic forecasting.
 Specifically, kernel quantile regression resulted almost always in superior performance compared to standard quantile regressors. The absolute Laplacian kernel turned out to be the most suitable kernel according to the characteristics of electricity forecasting. Finally, we proved the validity of our kernel quantile regression implementation. We achieved this by showing how it compared favourably to the top entries of the GEFCom2014 competition. 
 In particular, up to now research work focused on the short term horizon capabilities of kernel quantile regression. In this thesis work, we were also able to show its suitability on the medium term horizon. 
