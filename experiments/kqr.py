@@ -155,7 +155,7 @@ class KQR(RegressorMixin, BaseEstimator):
             return matern_kernel(X,Y)
 
         elif self.kernel_type=="chi_squared":
-            return chi2_kernel(X,Y,gamma=self.gamma)
+            return 100.0*chi2_kernel(X,Y,gamma=self.gamma)
         
         elif self.kernel_type=="periodic":
             periodic=100.0*ExpSineSquared(length_scale=self.gamma, periodicity=self.p)
