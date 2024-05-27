@@ -72,8 +72,8 @@ if __name__=="__main__":
     best_hyperparameters_krn=cv.best_params_
 
     # cv results
-    # df_cv_res=pd.DataFrame(cv.cv_results_)
-    # df_cv_res.to_csv(f"/Users/luca/Desktop/ThesisKernelMethods/experiments/train_test/SECURES-Met/{country}/{ktype}/models_{ktype}_gridsearch.csv",index=False)
+    df_cv_res=pd.DataFrame(cv.cv_results_)
+    df_cv_res.to_csv(f"/Users/luca/Desktop/ThesisKernelMethods/experiments/train_test/SECURES-Met/{country}/{ktype}/models_{ktype}_gridsearch.csv",index=False)
 
     # train
     for i,q in enumerate(tqdm(quantiles)):
