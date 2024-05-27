@@ -219,8 +219,8 @@ class KQR(RegressorMixin, BaseEstimator):
         K=self.kernel(self.X_,self.X_)
         # the 0.5 in front in the optimisation probelm is taken into account by cvxopt library
         K = matrix(K)
-        print(K)
-        print(self.C)
+        # print(K)
+        # print(self.C)
         # multiply by one to convert matrix items to float https://stackoverflow.com/questions/36510859/cvxopt-qp-solver-typeerror-a-must-be-a-d-matrix-with-1000-columns
         r=matrix(y)* 1.0
         # equality constraint
