@@ -62,7 +62,7 @@ if __name__=="__main__":
         )
 
     krn_blueprint=KQR(alpha=0.5, C=1, kernel_type=ktype)
-    cv=HalvingRandomSearchCV(
+    cv=HalvingGridSearchCV(
             krn_blueprint,
             param_grid_krn,
             scoring=neg_mean_pinball_loss_scorer_05,
