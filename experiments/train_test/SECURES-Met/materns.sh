@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # script for rerunning materns
+python experiments/train_test/SECURES-Met/secures_qr.py "DE" "a_laplacian"
+python experiments/train_test/SECURES-Met/secures_qr.py "DE" "gaussian_rbf"
+python experiments/train_test/SECURES-Met/secures_qr.py "DE" "matern_0.5"
 python experiments/train_test/SECURES-Met/secures_qr.py "DE" "matern_1.5"
 python experiments/train_test/SECURES-Met/secures_qr.py "DE" "matern_2.5"
 
