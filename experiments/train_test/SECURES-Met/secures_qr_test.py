@@ -22,8 +22,8 @@ sys.path.append(project_directory)
 from utils import miscellaneous
 
 
-country="DE"
-ktype="a_laplacian"
+country="AT"
+ktype="matern_2.5"
 
 # load train test data
 
