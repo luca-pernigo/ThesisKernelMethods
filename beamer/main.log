@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  21 MAY 2024 11:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.10)  28 MAY 2024 10:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -733,7 +733,7 @@ LaTeX Info: Redefining \cite on input line 694.
 Package hyperref Info: Option `colorlinks' set `true' on input line 40.
 )
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 43.
- (./main.aux)
+ (./main.aux (./input_files/motivation.aux) (./input_files/energymarket.aux) (./input_files/ef_research.aux) (./input_files/kerneltheory.aux) (./input_files/analysis.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
@@ -839,7 +839,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<ua_seal.png, id=30, 2890.8pt x 1626.075pt>
+<ua_seal.png, id=54, 2890.8pt x 1626.075pt>
 File: ua_seal.png Graphic file (type png)
 <use ua_seal.png>
 Package pdftex.def Info: ua_seal.png  used on input line 46.
@@ -848,7 +848,65 @@ Package pdftex.def Info: ua_seal.png  used on input line 46.
 
  <./ua_seal.png (PNG copy)>] (./main.toc) [2
 
-] [3
+]
+\openout2 = `input_files/motivation.aux'.
+
+ (./input_files/motivation.tex [3
+
+
+])
+\openout2 = `input_files/energymarket.aux'.
+
+ (./input_files/energymarket.tex [4
+
+
+
+
+])
+\openout2 = `input_files/ef_research.aux'.
+
+ (./input_files/ef_research.tex [5
+
+
+
+
+]
+<../thesis/images/pinball_loss.png, id=228, 592.2125pt x 453.695pt>
+File: ../thesis/images/pinball_loss.png Graphic file (type png)
+<use ../thesis/images/pinball_loss.png>
+Package pdftex.def Info: ../thesis/images/pinball_loss.png  used on input line 29.
+(pdftex.def)             Requested size: 167.02924pt x 127.96222pt.
+ [6
+
+ <../thesis/images/pinball_loss.png>] [7
+
+]
+<../thesis/images/crps.png, id=302, 693.59125pt x 549.05125pt>
+File: ../thesis/images/crps.png Graphic file (type png)
+<use ../thesis/images/crps.png>
+Package pdftex.def Info: ../thesis/images/crps.png  used on input line 59.
+(pdftex.def)             Requested size: 172.09766pt x 136.232pt.
+ [8
+
+ <../thesis/images/crps.png>])
+\openout2 = `input_files/kerneltheory.aux'.
+
+ (./input_files/kerneltheory.tex [9
+
+
+
+
+])
+\openout2 = `input_files/analysis.aux'.
+
+ (./input_files/analysis.tex [10
+
+
+
+
+]) [11
+
+
 
 ]
 \tf@nav=\write6
@@ -860,23 +918,23 @@ Package pdftex.def Info: ua_seal.png  used on input line 46.
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
- (./main.aux)
+ (./main.aux (./input_files/motivation.aux) (./input_files/energymarket.aux) (./input_files/ef_research.aux) (./input_files/kerneltheory.aux) (./input_files/analysis.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 22DF992FE05EE1218C8C452D65A82E88;118.
+(rerunfilecheck)             Checksum: FC5CDF48A985ED02A746F486BA971E7D;946.
  ) 
 Here is how much of TeX's memory you used:
- 32092 strings out of 476025
- 686530 string characters out of 5790017
+ 32438 strings out of 476025
+ 696755 string characters out of 5790017
  1863388 words of memory out of 5000000
- 51946 multiletter control sequences out of 15000+600000
- 518763 words of font info for 56 fonts, out of 8000000 for 9000
+ 52230 multiletter control sequences out of 15000+600000
+ 520117 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,426b,889s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb>
-Output written on main.pdf (3 pages, 90100 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (11 pages, 387646 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 8 named destinations out of 1000 (max. 500000)
- 92 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 474 PDF objects out of 1000 (max. 8388607)
+ 398 compressed objects within 4 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 240 words of extra memory for PDF output out of 10000 (max. 10000000)
 
