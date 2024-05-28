@@ -127,7 +127,7 @@ class KQR(RegressorMixin, BaseEstimator):
             return 100.0*laplacian_kernel(X,Y, gamma=1/self.gamma)
         
         if self.kernel_type=="gaussian_rbf_":
-            return 100.0*rbf_kernel(X,Y, gamma=self.gamma)
+            return 100.0*rbf_kernel(X,Y, gamma=1/self.gamma)
 
         elif self.kernel_type=="linear":
             return linear_kernel(X,Y)
@@ -136,10 +136,10 @@ class KQR(RegressorMixin, BaseEstimator):
             return cosine_similarity(X,Y)
         
         elif self.kernel_type=="polynomial":
-            return polynomial_kernel(X,Y, coef0=self.c, degree=self.d)
+            return polynomial_kernel(X,Y, coef0=self.c, degree=self.d, gamma=1/self.gamma)
         
         elif self.kernel_type=="sigmoid":
-            return sigmoid_kernel(X,Y, coef0=self.c, gamma=self.gamma)
+            return 100.0*sigmoid_kernel(X,Y, coef0=self.c, gamma=1/self.gamma)
         
         elif self.kernel_type=="matern_0.5":
             # is the same of laplacian
@@ -155,7 +155,7 @@ class KQR(RegressorMixin, BaseEstimator):
             return matern_kernel(X,Y)
 
         elif self.kernel_type=="chi_squared":
-            return 100.0*chi2_kernel(X,Y,gamma=self.gamma)
+            return 100.0*chi2_kernel(X,Y,gamma=1/self.gamma)
         
         elif self.kernel_type=="periodic":
             periodic=100.0*ExpSineSquared(length_scale=self.gamma, periodicity=self.p)
@@ -163,26 +163,26 @@ class KQR(RegressorMixin, BaseEstimator):
         
         # class of kernels functions are closed under addition and product
         elif self.kernel_type=="gaussian_rbf_x_laplacian":
-            return rbf_kernel(X,Y, gamma=self.gamma)* laplacian_kernel(X,Y, gamma=self.sigma)
+            return rbf_kernel(X,Y, gamma=1/self.gamma)* laplacian_kernel(X,Y, gamma=1/self.sigma)
         
         
         elif self.kernel_type=="se_ard":
             se_ard=1
             for i in range(X.shape[1]-1):
                 
-                se_ard*=laplacian_kernel(X[:,(i+1)].reshape(-1,1),Y[:,(i+1)].reshape(-1,1), gamma=self.gammas[i])
+                se_ard*=laplacian_kernel(X[:,(i+1)].reshape(-1,1),Y[:,(i+1)].reshape(-1,1), gamma=1/self.gammas[i])
             return se_ard
 
         elif self.kernel_type=="laplacian_x_periodic":
-            kernel=Product(ExpSineSquared(length_scale=self.gamma, periodicity=24), PairwiseKernel(metric='laplacian', gamma=self.sigma))
+            kernel=100.0*Product(ExpSineSquared(length_scale=self.gamma, periodicity=24), PairwiseKernel(metric='laplacian', gamma=1/self.sigma))
             return kernel(X,Y)
         
         elif self.kernel_type=="prod_1":
-            matern_kernel=1.0*Matern(length_scale=self.gamma, nu=2.5)
-            return matern_kernel(X[:,0].reshape(-1,1),Y[:,0].reshape(-1,1))*laplacian_kernel(X[:,0].reshape(-1,1),Y[:,0].reshape(-1,1), gamma=self.sigma)
+            matern_kernel=100.0*Matern(length_scale=self.gamma, nu=2.5)
+            return matern_kernel(X[:,0].reshape(-1,1),Y[:,0].reshape(-1,1))*laplacian_kernel(X[:,0].reshape(-1,1),Y[:,0].reshape(-1,1), gamma=1/self.sigma)
         
         elif self.kernel_type=="prod_2":
-            prod_2=Product(PairwiseKernel(metric='rbf', gamma=self.gamma), PairwiseKernel(metric='laplacian', gamma=self.sigma))
+            prod_2=100.0*Product(PairwiseKernel(metric='rbf', gamma=1/self.gamma), PairwiseKernel(metric='laplacian', gamma=1/self.sigma))
             return prod_2(X,Y)
 
          # else not implemented
@@ -219,7 +219,7 @@ class KQR(RegressorMixin, BaseEstimator):
         K=self.kernel(self.X_,self.X_)
         # the 0.5 in front in the optimisation probelm is taken into account by cvxopt library
         K = matrix(K)
-        # print(K)
+        print(K)
         # print(self.C)
         # multiply by one to convert matrix items to float https://stackoverflow.com/questions/36510859/cvxopt-qp-solver-typeerror-a-must-be-a-d-matrix-with-1000-columns
         r=matrix(y)* 1.0
