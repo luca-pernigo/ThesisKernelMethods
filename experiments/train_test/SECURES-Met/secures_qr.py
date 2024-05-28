@@ -51,36 +51,36 @@ if __name__=="__main__":
     # gamma= [1/1e-1,1/1e-2,1/0.5,1/1, 1/5, 1/10, 1/20]
     m=len(y_train)
     # C=[1/(m*1e-4),1/(m*1e-3),1/(m*1e-1),1/(m*1e-2),1/(m*1), 1/(m*5), 1/(m*10),1/(m*1e2),1/(m*1e4)],
-    param_grid_krn = dict(
-    d= [2,3],
-    gamma=[1,2,3]
-    )
+    # param_grid_krn = dict(
+    # d= [2,3],
+    # gamma=[1,2,3]
+    # )
 
-    neg_mean_pinball_loss_scorer_05 = make_scorer(
-        mean_pinball_loss,
-        alpha=0.5,
-        greater_is_better=False,
-        )
+    # neg_mean_pinball_loss_scorer_05 = make_scorer(
+    #     mean_pinball_loss,
+    #     alpha=0.5,
+    #     greater_is_better=False,
+    #     )
 
-    krn_blueprint=KQR(alpha=0.5, C=1,c=0, kernel_type=ktype)
-    cv=HalvingGridSearchCV(
-            krn_blueprint,
-            param_grid_krn,
-            scoring=neg_mean_pinball_loss_scorer_05,
-            n_jobs=2,
-            random_state=0,
-        ).fit(X_train, y_train)
-    best_hyperparameters_krn=cv.best_params_
+    # krn_blueprint=KQR(alpha=0.5, C=1,c=0, kernel_type=ktype)
+    # cv=HalvingGridSearchCV(
+    #         krn_blueprint,
+    #         param_grid_krn,
+    #         scoring=neg_mean_pinball_loss_scorer_05,
+    #         n_jobs=2,
+    #         random_state=0,
+    #     ).fit(X_train, y_train)
+    # best_hyperparameters_krn=cv.best_params_
 
     # # cv results
-    df_cv_res=pd.DataFrame(cv.cv_results_)
-    df_cv_res.to_csv(f"/Users/luca/Desktop/ThesisKernelMethods/experiments/train_test/SECURES-Met/{country}/{ktype}/models_{ktype}_gridsearch.csv",index=False)
+    # df_cv_res=pd.DataFrame(cv.cv_results_)
+    # df_cv_res.to_csv(f"/Users/luca/Desktop/ThesisKernelMethods/experiments/train_test/SECURES-Met/{country}/{ktype}/models_{ktype}_gridsearch.csv",index=False)
 
     # train
     for i,q in enumerate(tqdm(quantiles)):
         # print(best_hyperparameters_krn)
         # fit data for specific quantile
-        qr_krn_models+=[KQR(alpha=q, C=1,c=0,**best_hyperparameters_krn, kernel_type=ktype).fit(X_train_scaled, y_train)]
+        qr_krn_models+=[KQR(alpha=q, C=1,c=0,d=2,gamma=1, kernel_type=ktype).fit(X_train_scaled, y_train)]
 
         # save models to pickle
         pickle.dump(qr_krn_models[i], open(f'/Users/luca/Desktop/ThesisKernelMethods/experiments/train_test/SECURES-Met/{country}/{ktype}/krn_qr_{q}.pkl', 'wb'))
@@ -90,4 +90,5 @@ if __name__=="__main__":
 # parameters for kernel comparison with C=1
 # materns gamma= [1,2,4,8]
 # linear, cosine none
-# polynomial d= [2,3], gamma=[1,2,3]
+# polynomial d= [2,3], gamma=[1,2,3], ch crossvalidated by hand because cvxopt infeasibility makes code stop
+# sigmoid

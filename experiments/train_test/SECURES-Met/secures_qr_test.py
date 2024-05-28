@@ -22,7 +22,7 @@ sys.path.append(project_directory)
 from utils import miscellaneous
 
 
-country="CH"
+country="AT"
 ktype="polynomial"
 
 # load train test data
