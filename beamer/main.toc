@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Motivation}{3}{0}{1}
-\beamer@sectionintoc {2}{The energy market}{4}{0}{2}
-\beamer@sectionintoc {3}{Energy forecasting research}{5}{0}{3}
-\beamer@subsectionintoc {3}{1}{Probabilistic scores}{5}{0}{3}
-\beamer@sectionintoc {4}{Kernel theory}{9}{0}{4}
-\beamer@sectionintoc {5}{Experiments analysis}{10}{0}{5}
+\beamer@sectionintoc {2}{The energy market}{5}{0}{2}
+\beamer@sectionintoc {3}{Energy forecasting research}{6}{0}{3}
+\beamer@subsectionintoc {3}{1}{Probabilistic scores}{6}{0}{3}
+\beamer@sectionintoc {4}{Kernel theory}{10}{0}{4}
+\beamer@sectionintoc {5}{Experiments analysis}{11}{0}{5}

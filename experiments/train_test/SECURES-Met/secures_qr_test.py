@@ -23,7 +23,7 @@ from utils import miscellaneous
 
 
 country="AT"
-ktype="polynomial"
+ktype="linear"
 
 # load train test data
 
