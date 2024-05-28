@@ -139,7 +139,7 @@ class KQR(RegressorMixin, BaseEstimator):
             return polynomial_kernel(X,Y, coef0=self.c, degree=self.d, gamma=1/self.gamma)
         
         elif self.kernel_type=="sigmoid":
-            return 100.0*sigmoid_kernel(X,Y, coef0=self.c, gamma=1/self.gamma)
+            return 100*sigmoid_kernel(X,Y, coef0=self.c, gamma=1/self.gamma)
         
         elif self.kernel_type=="matern_0.5":
             # is the same of laplacian

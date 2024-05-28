@@ -19,4 +19,10 @@
 
 
 # sigmoid
-python experiments/train_test/SECURES-Met/secures_qr.py "CH" "sigmoid"
+# python experiments/train_test/SECURES-Met/secures_qr.py "CH" "sigmoid"
+
+
+# periodic
+python experiments/train_test/SECURES-Met/secures_qr.py "CH" "periodic"
+python experiments/train_test/SECURES-Met/secures_qr.py "DE" "periodic"
+python experiments/train_test/SECURES-Met/secures_qr.py "AT" "periodic"

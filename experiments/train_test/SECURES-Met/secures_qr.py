@@ -80,7 +80,7 @@ if __name__=="__main__":
     for i,q in enumerate(tqdm(quantiles)):
         # print(best_hyperparameters_krn)
         # fit data for specific quantile
-        qr_krn_models+=[KQR(alpha=q, C=1,c=1,gamma=1,d=2, kernel_type=ktype).fit(X_train_scaled, y_train)]
+        qr_krn_models+=[KQR(alpha=q, C=1,p=24,gamma=1, kernel_type=ktype).fit(X_train_scaled, y_train)]
 
         # save models to pickle
         pickle.dump(qr_krn_models[i], open(f'/Users/luca/Desktop/ThesisKernelMethods/experiments/train_test/SECURES-Met/{country}/{ktype}/krn_qr_{q}.pkl', 'wb'))
@@ -91,4 +91,5 @@ if __name__=="__main__":
 # materns gamma= [1,2,4,8]
 # linear, cosine none
 # polynomial d= [2,3], gamma=[1,2,3], ch crossvalidated by hand because cvxopt infeasibility makes code stop
+# periodic p=24,gamma=[1,2,4,8]
 # sigmoid
