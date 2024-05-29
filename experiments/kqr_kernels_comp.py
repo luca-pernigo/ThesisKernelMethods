@@ -55,7 +55,7 @@ if __name__=="__main__":
     # kernel quantile regression
     qr_krn_models=[]
     y_test_pred_qr_krn=[]
-    ktype="a_laplacian"
+    ktype="chi_squared"
 
     # gamma=[1e-1,1e-2,1,5,10,20]
     # sigma=[1e-1,1e-2,1,5,10,20]
@@ -74,11 +74,23 @@ if __name__=="__main__":
     # nu=[0.5, 1.5, 2.5, float('inf')]
     # gamma=[1e-1,1e-2,1,5,10,20]
 
+    # gamma=[1/np.sqrt(2*1e-5),1/np.sqrt(2*1e-4), 1/np.sqrt(2*1e-3), 1/np.sqrt(2*1e-2)]
+    
+    # polynomial
+    # d=[2,3,4],
+    # gamma=[1,2,3]
+
+    # sigmoid
+    # c=0,gamma=[1e6,1e4,1e5,1e7], var=100
+
+    # periodic
+    # gamma=1, p=30
+
     param_grid_krn = dict(
-    gamma=[1/np.sqrt(2*1e-5),1/np.sqrt(2*1e-4), 1/np.sqrt(2*1e-3), 1/np.sqrt(2*1e-2)]
+       gamma=[1/np.sqrt(2*1e-5),1/np.sqrt(2*1e-4), 1/np.sqrt(2*1e-3), 1/np.sqrt(2*1e-2)]
     )
     
-    krn_blueprint=KQR(alpha=0.5, C=10,var=1, kernel_type=ktype)
+    krn_blueprint=KQR(alpha=0.5, C=10, kernel_type=ktype)
     cv=HalvingGridSearchCV(
             krn_blueprint,
             param_grid_krn,
@@ -92,7 +104,7 @@ if __name__=="__main__":
     for i,q in enumerate(tqdm(quantiles)):
 
         # fit data for specific quantile
-        qr_krn_models+=[KQR(alpha=q,kernel_type=ktype, C=10, var=1, **best_hyperparameters_krn).fit(X_train, y_train)]
+        qr_krn_models+=[KQR(alpha=q,kernel_type=ktype, C=10, **best_hyperparameters_krn).fit(X_train, y_train)]
 
         print(f"{mean_pinball_loss(y_test,qr_krn_models[i].predict(X_test), alpha=q):.6f}", "&")
         print(best_hyperparameters_krn)
