@@ -6,7 +6,7 @@ from sklearn.metrics import mean_pinball_loss
 # script for storing scores SECURES-Met data
 
 quantiles=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
-country="CH"
+country="AT"
 
 test=pd.read_csv(f"/Users/luca/Desktop/ThesisKernelMethods/experiments/Data/SECURES-Met/{country}/clean/test/df.csv")
 y_test=test["Load"]
