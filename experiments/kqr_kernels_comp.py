@@ -1,4 +1,5 @@
-from kernel_quantile_regression.kqr import KQR
+# from kernel_quantile_regression.kqr import KQR
+from kqr import KQR
 import math
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,7 +11,7 @@ from quantile_forest import RandomForestQuantileRegressor as rfr
 from sklearn.ensemble import GradientBoostingRegressor as gbr
 
 from sklearn.experimental import enable_halving_search_cv  # noqa
-from sklearn.model_selection import HalvingRandomSearchCV
+from sklearn.model_selection import HalvingGridSearchCV,HalvingRandomSearchCV
 from sklearn.metrics import make_scorer
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_pinball_loss
@@ -25,7 +26,7 @@ from tqdm import tqdm
 
 if __name__=="__main__":
     # load data
-    df=pd.read_csv("Data/temperatures_melbourne.csv", sep=";", decimal=".")
+    df=pd.read_csv("experiments/Data/temperatures_melbourne.csv", sep=";", decimal=".")
 
     # quantiles
     quantiles = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
@@ -43,6 +44,7 @@ if __name__=="__main__":
     eval_set=eval_set.reshape(-1,1)
 
 
+    # print(len(y_train))
     # define loss to tune
     neg_mean_pinball_loss_scorer_05 = make_scorer(
     mean_pinball_loss,
@@ -53,7 +55,7 @@ if __name__=="__main__":
     # kernel quantile regression
     qr_krn_models=[]
     y_test_pred_qr_krn=[]
-    ktype="matern_2.5"
+    ktype="a_laplacian"
 
     # gamma=[1e-1,1e-2,1,5,10,20]
     # sigma=[1e-1,1e-2,1,5,10,20]
@@ -73,23 +75,28 @@ if __name__=="__main__":
     # gamma=[1e-1,1e-2,1,5,10,20]
 
     param_grid_krn = dict(
-    C=[0.1,1, 5, 10],
-    gamma=[1/(1e-1),1/(1e-2),1/(1),1/(5),1/(10),1/(20)]
+    gamma=[1/np.sqrt(2*1e-5),1/np.sqrt(2*1e-4), 1/np.sqrt(2*1e-3), 1/np.sqrt(2*1e-2)]
     )
-    krn_blueprint=KQR(alpha=0.5, kernel_type=ktype)
-    best_hyperparameters_krn=HalvingRandomSearchCV(
+    
+    krn_blueprint=KQR(alpha=0.5, C=10,var=1, kernel_type=ktype)
+    cv=HalvingGridSearchCV(
             krn_blueprint,
             param_grid_krn,
             scoring=neg_mean_pinball_loss_scorer_05,
             n_jobs=2,
             random_state=0,
-        ).fit(X_train, y_train).best_params_
+        ).fit(X_train, y_train)
     
+    best_hyperparameters_krn=cv.best_params_
+
     for i,q in enumerate(tqdm(quantiles)):
 
         # fit data for specific quantile
-        qr_krn_models+=[KQR(alpha=q, kernel_type=ktype, **best_hyperparameters_krn).fit(X_train, y_train)]
-        
+        qr_krn_models+=[KQR(alpha=q,kernel_type=ktype, C=10, var=1, **best_hyperparameters_krn).fit(X_train, y_train)]
+
+        print(f"{mean_pinball_loss(y_test,qr_krn_models[i].predict(X_test), alpha=q):.6f}", "&")
+        print(best_hyperparameters_krn)
+
         # list of prediction for each quantile
         y_test_pred_qr_krn+=[qr_krn_models[i].predict(X_test)]
       
@@ -105,6 +112,27 @@ if __name__=="__main__":
 
 print("total pinball loss: ", pinball)
 print("best hyperparameters: ", best_hyperparameters_krn)
+
+df_cv_res=pd.DataFrame(cv.cv_results_)
+df_cv_res.to_csv(f"experiments/melbourne/models_{ktype}_gridsearch.csv",index=False)
+
+
+plt.plot(X_train,y_train,"o", alpha=0.2)
+
+for i,q in enumerate(quantiles):
+    plt.plot(eval_set,qr_krn_models[i].predict(eval_set), alpha=0.84, label=f"q={quantiles[i]}", linestyle="dashed")
+plt.legend()
+plt.title("KQR")
+plt.xlabel("Yesterday temperature")
+plt.ylabel("Today temperature")
+
+plt.ylim(5, 45)
+plt.yticks(np.arange(10, 45+1, 5))
+
+plt.savefig(f"experiments/plots/melborune_{ktype}_kernel_quantile_regression.png")
+plt.show()
+
+
 #    Linear qr     Gbm qr      Quantile forest  Kernel qr rbf gaussian   Laplacian   Rbf gaussian x laplacian
 #    11.278895     10.317612   10.370558        10.031708                10.056884   10.150826       
 
