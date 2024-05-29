@@ -23,7 +23,7 @@ from utils import miscellaneous
 
 
 country="AT"
-ktype="linear"
+ktype="sigmoid"
 
 # load train test data
 
