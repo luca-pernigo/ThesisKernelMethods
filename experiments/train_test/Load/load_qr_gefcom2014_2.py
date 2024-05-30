@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 from pprint import pprint
 from sklearn.experimental import enable_halving_search_cv  # noqa
-from sklearn.model_selection import HalvingRandomSearchCV
+from sklearn.model_selection import GridSearchCV,HalvingGridSearchCV,HalvingRandomSearchCV
 from sklearn.metrics import make_scorer
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_pinball_loss
@@ -21,13 +21,19 @@ from kqr import KQR
 
 if __name__=="__main__":
     ith=int(sys.argv[1])
+    
+    ktype="a_laplacian"
     # load data
     df=pd.read_csv("experiments/Data/Load/L-train.csv")
+    print("tot_data", len(df))
     # in the load track each task predicts the month=task number -3
-    df=df[df["MONTH"]==(ith-3)][-1440:]
+    df=df[df["MONTH"]==(ith-3)][-1400:]
+    print(len(df))
+
     X_train=df[["DAY",  "HOUR",  "DAY_OF_WEEK",  "IS_HOLIDAY",  "w_avg"]]
     y_train=df["LOAD"]
 
+    m=len(y_train)
     # 99 quantiles
     quantiles = [i/100 for i in range(1,100)]
 
@@ -39,42 +45,40 @@ if __name__=="__main__":
     qr_krn_models=[]
     y_test_pred_qr_krn=[]
 
-    m=len(y_train)
-    
-    param_grid_krn = dict(
-        C=[1e-1,1e-2,1, 5, 10,1e2,1e4],
-        gamma=[1e-1,1e-2,0.5,1, 5, 10, 20]
-    )
+    # C=[1e-1,1e-2,1, 5, 10,1e2,1e4],
+    # gamma=[1e-1,1e-2,0.5,1, 5, 10, 20]
+
+    # param_grid_krn = dict(
     # C=[1/(m*10e-6),1/(m*10e-5),1/(m*10e-4),1/(m*10e-3),1/(m*10e-2),1/(m*10e-1),1/(m*10e-0),1/(m*10e1)],
     # gamma=[2**-6,2**-5,2**-4, 2**-3,2**-2,2**-1,1, 2, 2**2, 2**3,2**4,2**5,2**6]   
-    
-    # nu=[0.5, 1.5, 2.5] 
+    # )    
 
-    ktype="a_laplacian"
-    # folder per kernel type
+    # define loss to tune
+    # neg_mean_pinball_loss_scorer = make_scorer(
+    # mean_pinball_loss,
+    # alpha=0.5,
+    # greater_is_better=False,
+    # )
+
+    # krn_blueprint=KQR(alpha=0.5, kernel_type=ktype)
+    # cv=GridSearchCV(
+    #         krn_blueprint,
+    #         param_grid_krn,
+    #         scoring=neg_mean_pinball_loss_scorer,
+    #         n_jobs=2
+    #     ).fit(X_train_scaled, y_train)
     
+    # best_hyperparameters_krn=cv.best_params_
     
     for i,q in enumerate(tqdm(quantiles)):
-        
-        # define loss to tune
-        neg_mean_pinball_loss_scorer = make_scorer(
-        mean_pinball_loss,
-        alpha=q,
-        greater_is_better=False,
-        )
-
-        krn_blueprint=KQR(alpha=q, kernel_type=ktype)
-        best_hyperparameters_krn=HalvingRandomSearchCV(
-                krn_blueprint,
-                param_grid_krn,
-                scoring=neg_mean_pinball_loss_scorer,
-                n_jobs=2,
-                random_state=0,
-            ).fit(X_train_scaled, y_train).best_params_
+        # print(best_hyperparameters_krn)
 
         # fit data for specific quantile
-        qr_krn_models+=[KQR(alpha=q, **best_hyperparameters_krn, kernel_type=ktype).fit(X_train_scaled, y_train)]
+        qr_krn_models+=[KQR(alpha=q, C=1/(m*10e-4),gamma=8, kernel_type=ktype).fit(X_train_scaled, y_train)]
 
         # save models to pickle
         pickle.dump(qr_krn_models[i], open(f'experiments/train_test/Load/{ktype}/task {ith}/krn_qr_{i}.pkl', 'wb'))
         
+# cv results
+# df_cv_res=pd.DataFrame(cv.cv_results_)
+# df_cv_res.to_csv(f"experiments/train_test/Load/{ktype}/task {ith}/models_{ktype}_gridsearch.csv",index=False)
