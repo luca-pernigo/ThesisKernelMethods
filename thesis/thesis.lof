@@ -60,10 +60,11 @@
 \contentsline {figure}{\numberline {10.9}{\ignorespaces Kernel support vector prediction\relax }}{90}{figure.caption.66}%
 \contentsline {figure}{\numberline {10.10}{\ignorespaces Probabilistic forecast for load in Germany}}{93}{figure.caption.72}%
 \contentsline {figure}{\numberline {10.11}{\ignorespaces Probabilistic forecast for load in Switzerland}}{94}{figure.caption.73}%
-\contentsline {figure}{\numberline {10.12}{\ignorespaces Prediction price track task 4, Gaussian RBF kernel}}{97}{figure.caption.80}%
-\contentsline {figure}{\numberline {10.13}{\ignorespaces Prediction load track task 9, Laplacian kernel}}{99}{figure.caption.83}%
-\contentsline {figure}{\numberline {10.14}{\ignorespaces Boxplot for first two days of probabilistic forecast task 9 using KQR Laplacian\relax }}{99}{figure.caption.84}%
+\contentsline {figure}{\numberline {10.12}{\ignorespaces Absolute Laplacian versus Matern 0.5 kernel matrix comparison\relax }}{97}{figure.caption.79}%
+\contentsline {figure}{\numberline {10.13}{\ignorespaces Prediction price track task 4, Gaussian RBF kernel}}{98}{figure.caption.81}%
+\contentsline {figure}{\numberline {10.14}{\ignorespaces Prediction load track task 9, Laplacian kernel}}{99}{figure.caption.84}%
+\contentsline {figure}{\numberline {10.15}{\ignorespaces Boxplot for first two days of probabilistic forecast task 9 using KQR Laplacian\relax }}{100}{figure.caption.85}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{113}{figure.caption.97}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{113}{figure.caption.98}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Importance of feature scaling\relax }}{114}{figure.caption.99}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Cross validation for one step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{113}{figure.caption.98}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Cross validation for m step ahead timeseries data \cite {hyndman2018forecasting}\relax }}{113}{figure.caption.99}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Importance of feature scaling\relax }}{114}{figure.caption.100}%

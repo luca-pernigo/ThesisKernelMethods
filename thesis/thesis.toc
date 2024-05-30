@@ -106,10 +106,10 @@
 \contentsline {subsection}{\numberline {10.2.1}Quantile regressors comparison}{92}{subsection.10.2.1}%
 \contentsline {subsection}{\numberline {10.2.2}Kernel function choice}{93}{subsection.10.2.2}%
 \contentsline {subsection}{\numberline {10.2.3}GEFCom2014}{96}{subsection.10.2.3}%
-\contentsline {subsubsection}{GEFCom2014 price track}{96}{section*.79}%
-\contentsline {subsubsection}{GEFCom2014 load track}{97}{section*.82}%
-\contentsline {section}{\numberline {10.3}Conclusions}{98}{section.10.3}%
-\contentsline {chapter}{List of Symbols}{103}{section*.86}%
+\contentsline {subsubsection}{GEFCom2014 price track}{96}{section*.80}%
+\contentsline {subsubsection}{GEFCom2014 load track}{97}{section*.83}%
+\contentsline {section}{\numberline {10.3}Conclusions}{99}{section.10.3}%
+\contentsline {chapter}{List of Symbols}{103}{section*.87}%
 \contentsline {appendix}{\chapternumberline {A}Appendix}{107}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Feature map normalization}{107}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Quantile regressor extensive comparison}{107}{section.A.2}%
@@ -125,8 +125,8 @@
 \contentsline {section}{\numberline {A.4}Kernel methods best practices}{113}{section.A.4}%
 \contentsline {subsection}{\numberline {A.4.1}Data normalization}{113}{subsection.A.4.1}%
 \contentsline {subsection}{\numberline {A.4.2}Data compression}{115}{subsection.A.4.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{115}{section*.100}%
-\contentsline {subsubsection}{Pivoted Cholesky decomposition}{115}{section*.101}%
+\contentsline {subsubsection}{Nystrom decomposition}{115}{section*.101}%
+\contentsline {subsubsection}{Pivoted Cholesky decomposition}{115}{section*.102}%
 \contentsline {section}{\numberline {A.5}Source code}{116}{section.A.5}%
-\contentsline {chapter}{Bibliography}{117}{appendix*.102}%
-\contentsline {chapter}{Sitography}{127}{appendix*.103}%
+\contentsline {chapter}{Bibliography}{117}{appendix*.103}%
+\contentsline {chapter}{Sitography}{127}{appendix*.104}%

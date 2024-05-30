@@ -1,21 +1,21 @@
 # Fdb version 4
-["bibtex W"] 1716654679 "W.aux" "W.bbl" "W" 1717074857 0
+["bibtex W"] 1716654679 "W.aux" "W.bbl" "W" 1717087228 0
   "./site.bib" 1716375992 2815 2d2a4148b0360c3e83eb02300916f2e2 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "W.aux" 1717074857 537 4aef78ada96475b22f42a97b4072e0a2 "pdflatex"
+  "W.aux" 1717087227 537 4aef78ada96475b22f42a97b4072e0a2 "pdflatex"
   (generated)
   "W.bbl"
   "W.blg"
   (rewritten before read)
-["bibtex thesis"] 1717074848 "thesis.aux" "thesis.bbl" "thesis" 1717074857 0
-  "./refs.bib" 1716651476 32402 109bcde2e292befd56bd90f52d28a457 ""
+["bibtex thesis"] 1717087166 "thesis.aux" "thesis.bbl" "thesis" 1717087228 0
+  "./refs.bib" 1717087156 32865 3d0f7de50caf0e39ea99e4704bf85b84 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thesis.aux" 1717074857 66058 a7f1c16cf81905a8b5069d6c7f6036aa "pdflatex"
+  "thesis.aux" 1717087227 66548 7865f9820841e974de89f2e50658e105 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1717074848 "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" "thesis.pdf" "thesis" 1717074857 0
+["pdflatex"] 1717087219 "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" "thesis.pdf" "thesis" 1717087228 0
   "/Users/luca/Desktop/ThesisKernelMethods/thesis/thesis.tex" 1716713579 5508 1502b58ab5911e43f69e24bce8572700 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -253,7 +253,7 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "USIlogo.pdf" 1706858978 27525 778ce3d614c5e4d40c08e5c7ef398f26 ""
   "USIlogo.sty" 1706858978 278 b05f7bd66c74ebe5088b163217438908 ""
-  "W.aux" 1717074857 537 4aef78ada96475b22f42a97b4072e0a2 "pdflatex"
+  "W.aux" 1717087227 537 4aef78ada96475b22f42a97b4072e0a2 "pdflatex"
   "W.bbl" 1716654679 1899 78d07f6263fe11fa9a9c234874012deb "bibtex W"
   "abstract.tex" 1716301086 1451 feccb7872ef1e497ba630f6d5d78a188 ""
   "appendix.tex" 1716715279 18614 66ad548c255cbe2c392d53f5aa4a9fc0 ""
@@ -285,6 +285,7 @@
   "images/gefcom_zonal_price_vs_total_load.png" 1715011954 71306 a2fe6234cfeb6308a2813c2918bc8d26 ""
   "images/gefcom_zonal_price_vs_zonal_load.png" 1715011954 73697 e881fb9ed4346d377c12784cb65ff765 ""
   "images/gradient_boosting.png" 1711184682 36719 7f08e6ee3bc20a3b162b5dfd703f59bf ""
+  "images/k_matrix_laplacian_comp.png" 1717086860 852934 35dcf24d5572581aff50e375140db78c ""
   "images/knn_price.png" 1712506440 155664 baaf212ff4d0224a64f74bd2f93b123f ""
   "images/krnridge_price.png" 1712507996 168149 ab81c3facd94dceb660b470308bb1217 ""
   "images/krnsvr_price.png" 1712508209 168106 f4d607f3b265a58c2b72b9e9b98cb6a3 ""
@@ -329,7 +330,7 @@
   "images/us_local.png" 1711721130 2706297 3d3751956f82fa495e6af2ec7a89eae4 ""
   "images/workflow_kernels.png" 1715588021 132694 cfdd66128950453d5290c5974cfac276 ""
   "input_files/acknowledgements.tex" 1716300077 1752 092be35630164d80d47960d23b643d70 ""
-  "input_files/analysis.tex" 1717074842 52965 76b31492150085bb70d858d7cabea0e8 ""
+  "input_files/analysis.tex" 1717087218 53779 2c7d59bc120a2e5b952fe7f6a174ef13 ""
   "input_files/data_exploratory.tex" 1717057843 13150 b70b2d0843e64017d1421971cddc538a ""
   "input_files/energymarket.tex" 1716648100 9527 c48ae349936dfe4939ec80e60412a15c ""
   "input_files/implementation.tex" 1716710742 6276 56995a3d9921dfad02989eec6e9ac1ce ""
@@ -344,13 +345,13 @@
   "layoutsetup.tex" 1706858978 3119 261415572db05494e99be3e6afe6b46a ""
   "macrosetup.tex" 1711356844 939 3c2391595198bdd92e5e1219240e7d78 ""
   "theoremsetup.tex" 1706858978 969 26f7d8ce3897fd4b39189a2363dadee4 ""
-  "thesis.aux" 1717074857 66058 a7f1c16cf81905a8b5069d6c7f6036aa "pdflatex"
-  "thesis.bbl" 1717074848 23701 d5cdaf9b1bfe0073fabb4f14363f7418 "bibtex thesis"
-  "thesis.lof" 1717074857 7639 068318213916e1c7ab9ded8af726d5b7 "pdflatex"
-  "thesis.lot" 1717074857 3807 d1b5ce430c445d7d18df130cdaa51c72 "pdflatex"
-  "thesis.out" 1717074857 21560 096c1c2cfa5c6ef5bdb2d7193cec720d "pdflatex"
+  "thesis.aux" 1717087227 66548 7865f9820841e974de89f2e50658e105 "pdflatex"
+  "thesis.bbl" 1717087166 23942 df41dd3c27a276778dd0bd8aa846606e "bibtex thesis"
+  "thesis.lof" 1717087227 7793 840e08d53d06a35e49205e7c8b932646 "pdflatex"
+  "thesis.lot" 1717087227 3807 9323e24bb42e5db27b4cabfc26c59dc6 "pdflatex"
+  "thesis.out" 1717087227 21560 11660d0364a705babf61b3d7b110aae5 "pdflatex"
   "thesis.tex" 1716713579 5508 1502b58ab5911e43f69e24bce8572700 ""
-  "thesis.toc" 1717074857 11340 863a2ae3d45c55e5224c407a80d57448 "pdflatex"
+  "thesis.toc" 1717087227 11340 c9dac4055e2249de47575d65a7bbdf24 "pdflatex"
   (generated)
   "W.aux"
   "thesis.aux"

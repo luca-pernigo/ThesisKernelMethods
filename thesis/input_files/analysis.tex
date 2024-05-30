@@ -455,7 +455,15 @@ Table \ref{tab:secures_met_de} shows results for Germany, Table \ref{tab:secures
 \end{table}
 From our tables, it can be concluded that the absolute Laplacian kernel is the one fitting best to the characteristics of load data.
 Additionally, we can conclude that our results are in line with the ones published in \cite{he2017short}. In that study, similarly to what we did in this subsection, the authors carried out a comparitive study concerning the choice of kernels in KQR. Nevertheless notice, that the set of kernel we considered in our study is larger than the one presented in \cite{he2017short}.
-Their paper showed evidence of the superiority of the Gaussian RBF among their set of kernel functions. Analogously, we can see from Tables \ref{tab:secures_met_de}, \ref{tab:secures_met_ch} and \ref{tab:secures_met_at} that the Gaussian RBF is the second best in terms of pinball loss.
+Their paper showed evidence of the superiority of the Gaussian RBF among their set of kernel functions. Analogously, we can see from Tables \ref{tab:secures_met_de}, \ref{tab:secures_met_ch} and \ref{tab:secures_met_at} that the Matern kernels are the best in terms of pinball loss.
+Finally, given that the features dimension is greater than one we have that the Absolute Laplacian and the Matern 0.5 kernels differ. The former kernel is better than the latter and this comes from their distance function. This is because the Manhattan distance is more robust than the Euclidean distance in terms of measuring similarity between objects as data grows in dimensionality \cite{Aggarwal2001}. %(curse of dimensionality)
+Those kernel matrices for the Swiss data are compared in Figure \ref{fig:k_matrix_laplacian_comp}.
+
+\begin{figure}[!ht]
+    \includegraphics[width=\textwidth]{images/k_matrix_laplacian_comp.png}
+    \caption{Absolute Laplacian versus Matern 0.5 kernel matrix comparison}
+    \label{fig:k_matrix_laplacian_comp}
+\end{figure}
 
 % gefcom final case
 \subsection{GEFCom2014}
@@ -591,7 +599,7 @@ Therefore, the primary task was to first accurately predict the weather temperat
 We built $12$ models, one for each month, with each task model trained on the historical data of the month associated with it.
 
 Table \ref{tab:pinball loss gefcom2014 load data} reports our results for the load track. The top teams for the load forecasting track were Tololo, Adada, Jingrui(Rain) Xie, OxMAth, E.S. Managalova, Ziel Florian, and Bidong Liu; for a breakdown of the attributes of each method, see \cite[Table 6]{hong2016probabilistic}.
-Finally, the $90\%$ confidence interval forecast by our model equipped with the absolute Laplacian kernel for task number $9$, that is the prediction for June, is reported in Figure \ref{fig:load_task_9}.
+Finally, the $90\%$ confidence interval forecast by our model equipped with the Absolute Laplacian kernel for task number $9$, that is the prediction for June, are reported in Figure \ref{fig:load_task_9} and Figuree \ref{fig:boxplot_load_task_9}.
 Similarly to the price track, we have that KQR was among the best algorithms also in the load forecasting track.
 
 \begin{figure*}[!ht]
@@ -606,7 +614,7 @@ Similarly to the price track, we have that KQR was among the best algorithms als
     \centering
     \makebox[\linewidth]{\includegraphics[width = 1.5\textwidth]{images/sub_boxplot_task_9_laplacian_.png}}
     \caption{Boxplot for first two days of probabilistic forecast task 9 using KQR Laplacian}
-    \label{fig:load_task_9}
+    \label{fig:boxplot_load_task_9}
 \end{figure*}
 
 
@@ -620,7 +628,7 @@ Similarly to the price track, we have that KQR was among the best algorithms als
       \midrule
       Team name\textbackslash Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12                              \\
   
-  KQR Laplacian
+  KQR Absolute Laplacian
   & 
   12.0552
   &

@@ -5,6 +5,11 @@ Ilyas Agakishiev, Wolfgang~Karl Härdle, Karel Kozmik, Milos Kopa, and Alla Petu
 \newblock Multivariate probabilistic forecasting of electricity prices with trading applications.
 \newblock {\em SSRN Electronic Journal}, 2023.
 
+\bibitem{Aggarwal2001}
+Charu~C. Aggarwal, Alexander Hinneburg, and Daniel~A. Keim.
+\newblock On the surprising behavior of distance metrics in high dimensional space.
+\newblock {\em Lecture Notes in Computer Science}, page 420–434, 2001.
+
 \bibitem{aizerman}
 Mark~Aronovich Aizerman.
 \newblock Theoretical foundations of the potential function method in pattern recognition learning.

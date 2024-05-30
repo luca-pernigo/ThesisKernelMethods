@@ -2179,6 +2179,11 @@ INPUT ./images/CH_load_CI.png
 INPUT images/CH_load_CI.png
 INPUT ./images/CH_load_CI.png
 INPUT ./images/CH_load_CI.png
+INPUT ./images/k_matrix_laplacian_comp.png
+INPUT ./images/k_matrix_laplacian_comp.png
+INPUT images/k_matrix_laplacian_comp.png
+INPUT ./images/k_matrix_laplacian_comp.png
+INPUT ./images/k_matrix_laplacian_comp.png
 INPUT ./images/price_task_4_gaussian_rbf.png
 INPUT ./images/price_task_4_gaussian_rbf.png
 INPUT images/price_task_4_gaussian_rbf.png
