@@ -55,9 +55,9 @@ if __name__=="__main__":
     # kernel quantile regression
     qr_krn_models=[]
     y_test_pred_qr_krn=[]
-    ktype="chi_squared"
+    ktype="gaussian_rbf"
 
-    # gamma=[1e-1,1e-2,1,5,10,20]
+    # gamma=[1e-1,1e-2,1,5,10,20], var=1
     # sigma=[1e-1,1e-2,1,5,10,20]
 
     # polynomial c=[0, 1, 10, 100],
@@ -104,7 +104,7 @@ if __name__=="__main__":
     for i,q in enumerate(tqdm(quantiles)):
 
         # fit data for specific quantile
-        qr_krn_models+=[KQR(alpha=q,kernel_type=ktype, C=10, **best_hyperparameters_krn).fit(X_train, y_train)]
+        qr_krn_models+=[KQR(alpha=q,kernel_type=ktype, C=10,**best_hyperparameters_krn).fit(X_train, y_train)]
 
         print(f"{mean_pinball_loss(y_test,qr_krn_models[i].predict(X_test), alpha=q):.6f}", "&")
         print(best_hyperparameters_krn)
@@ -141,7 +141,7 @@ plt.ylabel("Today temperature")
 plt.ylim(5, 45)
 plt.yticks(np.arange(10, 45+1, 5))
 
-plt.savefig(f"experiments/plots/melborune_{ktype}_kernel_quantile_regression.png")
+plt.savefig(f"experiments/plots/melbourne_{ktype}_kernel_quantile_regression.png")
 plt.show()
 
 

@@ -12,7 +12,8 @@ from sklearn.preprocessing import StandardScaler
 import sys
 from tqdm import tqdm
 
-from kernel_quantile_regression.kqr import KQR
+# from kernel_quantile_regression.kqr import KQR
+from kqr import KQR
 
 
 
