@@ -2179,11 +2179,11 @@ INPUT ./images/CH_load_CI.png
 INPUT images/CH_load_CI.png
 INPUT ./images/CH_load_CI.png
 INPUT ./images/CH_load_CI.png
-INPUT ./images/price_task_6_gaussian_rbf.png
-INPUT ./images/price_task_6_gaussian_rbf.png
-INPUT images/price_task_6_gaussian_rbf.png
-INPUT ./images/price_task_6_gaussian_rbf.png
-INPUT ./images/price_task_6_gaussian_rbf.png
+INPUT ./images/price_task_4_gaussian_rbf.png
+INPUT ./images/price_task_4_gaussian_rbf.png
+INPUT images/price_task_4_gaussian_rbf.png
+INPUT ./images/price_task_4_gaussian_rbf.png
+INPUT ./images/price_task_4_gaussian_rbf.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm

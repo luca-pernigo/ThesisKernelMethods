@@ -42,7 +42,7 @@ def test(ith):
 
     pinball_tot=0
 
-    ktype="laplacian"
+    ktype="gaussian_rbf"
 
     # predict
     df_template_submission=pd.read_csv(f"experiments/Data/Price/Task {ith}/Benchmark{ith}_P.csv")
@@ -71,15 +71,18 @@ def test(ith):
 
     # plot
     price_plot_ci(reo, y_test)
-    plt.title(f"Task {ith}, {ktype} kernel")
-    # plt.savefig(f"plots/Price/price_task_{ith}_{ktype}.png")
+    plt.title(f"Task {ith}, {title_label[ktype]} kernel")
+    plt.savefig(f"experiments/plots/Price/price_task_{ith}_{ktype}.png")
     plt.legend()
     plt.show()
 
     ans=pinball_tot/len(quantiles)
-    print("total quantile: ", ans)
+    print("total quantile: ", f"{ans:.5f}")
     
     return ans
+
+title_label={"gaussian_rbf": "Gaussian RBF",
+             "a_laplacian": "Absolute Laplacian"}
 
 if __name__=="__main__":
     i=int(sys.argv[1])

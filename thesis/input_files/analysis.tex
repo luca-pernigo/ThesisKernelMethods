@@ -473,18 +473,24 @@ In this setting, the predictors fed to our KQR models are
 \end{itemize}
 Since target days vary all over the year, we trained a model for any month associated to them.
 
-Our results for this track are reported in Table \ref{tab:pinball loss gefcom2014 price data}. In this track, the top entries came from the teams: Tololo, Team Poland, GMD, and C3 Green Team; for a breakdown of each method's attributes, see \cite[Table 8]{hong2016probabilistic}. Finally, the Gaussian RBF probabilistic prediction for the $13^{th}$ July $2013$ zonal price at the $90\%$ confidence interval is visualized in Figure \ref{fig:price_task_6_gaussian_rbf}.
+Our results for this track are reported in Table \ref{tab:pinball loss gefcom2014 price data}. In this track, the top entries came from the teams: Tololo, Team Poland, GMD, and C3 Green Team; for a breakdown of each method's attributes, see \cite[Table 8]{hong2016probabilistic}. Finally, the Gaussian RBF probabilistic prediction for the $4^{th}$ July $2013$ zonal price at the $90\%$ confidence interval is visualized in Figure \ref{fig:price_task_4_gaussian_rbf}.
 
+
+% \begin{figure}[!ht]
+%     \centering
+%     \includegraphics[width=\linewidth]{images/price_task_6_gaussian_rbf.png}
+%     \caption[Prediction price track task 6, Gaussian RBF kernel]{Price 90\% confidence interval task 6. Electricity price probabilistic forecast for the $13^{\text{th}}$ July $2013$. The black line is the observed path for the price. The $90\%$ confidence interval bands are plotted in green. Lower and upper red lines denote the $95\%$ and $5\%$ quantile forecast respectively}
+%     % \Description{}
+%     \label{fig:price_task_6_gaussian_rbf}
+% \end{figure}
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=\linewidth]{images/price_task_6_gaussian_rbf.png}
-    \caption[Prediction price track task 6, Gaussian RBF kernel]{Price 90\% confidence interval task 6. Electricity price probabilistic forecast for the $13^{\text{th}}$ July $2013$. The black line is the observed path for the price. The $90\%$ confidence interval bands are plotted in green. Lower and upper red lines denote the $95\%$ and $5\%$ quantile forecast respectively}
+    \includegraphics[width=\linewidth]{images/price_task_4_gaussian_rbf.png}
+    \caption[Prediction price track task 4, Gaussian RBF kernel]{Price 90\% confidence interval task 4. Electricity price probabilistic forecast for the $4^{\text{th}}$ July $2013$. The black line is the observed path for the price. The $90\%$ confidence interval bands are plotted in green. Lower and upper red lines denote the $95\%$ and $5\%$ quantile forecast respectively}
     % \Description{}
-    \label{fig:price_task_6_gaussian_rbf}
+    \label{fig:price_task_4_gaussian_rbf}
 \end{figure}
-
-
 
 \begin{table}[!ht]
     \centering
@@ -495,57 +501,57 @@ Our results for this track are reported in Table \ref{tab:pinball loss gefcom201
       \toprule
       \midrule
       Team name\textbackslash Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12               \\
-  KQR Laplacian
+  KQR Absolute Laplacian
   &
-  \textbf{1.3249}
+  \textbf{1.02492}
   &
-  2.9497
+  3.35057
   &
-  0.8868
+  4.21374
   &
-  7.3780
+  7.33987
   &
-  5.4314
+  5.00981
   &
-  8.2166
+  6.96522
   &
-  4.9091
+  3.57168
   &
-  1.5245
+  1.77610
   &
-  1.9601
+  1.28765
   &
-  2.7324
+  2.73863
   &
-  2.4733
+  2.39831
   &
-  17.5371
+  23.30234
   \\
   KQR Gaussian RBF
   &
-  2.0614
+  1.84673
   &
-  3.2247
+  2.81882
   &
-  \textbf{0.7050}
+  1.54608
   &
-  6.1407
+  8.31636
   &
-  6.1134
+  4.05988
   &
-  8.5969
+  6.60456
   &
-  2.9360
+  3.57818
   &
-  1.5731
+  2.02177
   &
-  1.8830
+  1.45779
   &
-  2.6419
+  2.20701
   &
-  2.4814
+  1.98184
   &
-  16.1921
+  21.41033
   \\
   \\
   
