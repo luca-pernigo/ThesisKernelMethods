@@ -8,12 +8,12 @@ import holidays
 import miscellaneous
 
 # bash script
-# for ((i=1;i<=15;i++)); do python utils/price_create_test.py "Data/Price/Task $i/Task${i}_P.csv"; done
+# for ((i=1;i<=15;i++)); do python experiments/utils/price_create_test.py "experiments/Data/Price/Task $i/Task${i}_P.csv"; done
 
 
 
 def create_test(file):
-    df=miscellaneous.clean_time(file, 2011, 2014)
+    df=miscellaneous.clean_time(file, 2011, 2014,0)
 
     df_test=df[-24:]
     # print(df_test)
@@ -30,7 +30,7 @@ def create_test(file):
     
     
     # order columns
-    df_merged=miscellaneous.order_columns(df_merged,["ZONEID","timestamp","MONTH","DAY","HOUR","Forecasted Total Load","Forecasted Zonal Load","Zonal Price"])
+    df_merged=miscellaneous.order_columns(df_merged,["ZONEID","timestamp","MONTH","DAY","HOUR","Forecasted Total Load","Forecasted Zonal Load","Zonal Price","IS_HOLIDAY"])
     # save
     n=miscellaneous.get_task_number(file)
     
@@ -39,7 +39,7 @@ def create_test(file):
         df_merged["ZONEID"]=df_new["ZONEID"]
         df_merged["Zonal Price"]=df_new["Zonal Price"]
         
-    df_merged.to_csv(f"Data/Price/Task {n}/Task{n}_P_test.csv", index=False)
+    df_merged.to_csv(f"experiments/Data/Price/Task {n}/Task{n}_P_test.csv", index=False)
 
 
 if __name__=="__main__":
