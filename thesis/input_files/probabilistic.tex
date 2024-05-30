@@ -432,7 +432,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \end{subfigure}%%
     \begin{subfigure}[b]{0.5\linewidth}
       \centering
-      \includegraphics[width=1.1\textwidth]{images/melbourne_kernel_quantile_regression.png}
+      \includegraphics[width=1.1\textwidth]{images/melbourne_gaussian_rbf_kernel_quantile_regression.png}
       \caption{Kernel quantile regression, Gaussian RBF} 
       \label{fig:melborune_kernel_quantile_regression} 
     \end{subfigure} 
@@ -447,7 +447,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \toprule
      & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
-    Pinball loss & 11.278895 & 10.317612 & 10.340842 & \textbf{10.031708} \\
+    Pinball loss & 11.278895 & 10.317612 & 10.340842 & \textbf{10.031546} \\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -458,15 +458,15 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \toprule
     Quantiles & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
-    0.100000 & 0.710644 & 0.549232 & 0.562888 & \textbf{0.540235} \\
-    0.200000 & 1.155014 & 0.938561 & 0.946712 & \textbf{0.903213} \\
-    0.300000 & 1.417805 & 1.212671 & 1.222407 & \textbf{1.173803} \\
-    0.400000 & 1.540108 & 1.399925 & 1.409293 & \textbf{1.367943} \\
-    0.500000 & 1.574957 & 1.517281 & 1.484589 & \textbf{1.455849} \\
-    0.600000 & 1.525114 & 1.498608 & 1.495474 & 1.\textbf{447470} \\
-    0.700000 & 1.397918 & 1.372183 & 1.362173 & \textbf{1.331503} \\
-    0.800000 & 1.170140 & 1.115077 & 1.123195 & \textbf{1.096606} \\
-    0.900000 & 0.787195 & \textbf{0.714075} & 0.734112 & 0.715085 \\
+    0.100000 & 0.710644 & 0.549232 & 0.562888 & \textbf{0.540145} \\
+    0.200000 & 1.155014 & 0.938561 & 0.946712 & \textbf{0.903193} \\
+    0.300000 & 1.417805 & 1.212671 & 1.222407 & \textbf{1.173627} \\
+    0.400000 & 1.540108 & 1.399925 & 1.409293 & \textbf{1.368022} \\
+    0.500000 & 1.574957 & 1.517281 & 1.484589 & \textbf{1.456053} \\
+    0.600000 & 1.525114 & 1.498608 & 1.495474 & \textbf{1.447470} \\
+    0.700000 & 1.397918 & 1.372183 & 1.362173 & \textbf{1.331375} \\
+    0.800000 & 1.170140 & 1.115077 & 1.123195 & \textbf{1.096649} \\
+    0.900000 & 0.787195 & \textbf{0.714075} & 0.734112 & 0.715013 \\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -477,7 +477,7 @@ As already pointed out, the quantile regression with $q=0.5$ corresponds to the 
     \toprule
      & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
-    MAE & 3.253882 & 3.134805 & 3.095041 & \textbf{3.024336} \\
+    MAE & 3.253882 & 3.134805 & 3.095041 & \textbf{3.024305} \\
     \bottomrule
     \end{tabular}
 \end{table}  
@@ -496,18 +496,21 @@ We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel 
         & Kernel & Pinball loss
         \\
         \midrule
-        & Gaussian RBF &  10.031708 \\
-        & Absolute Laplacian &  10.056884 \\
-        & Gauss RBFx Absolute Laplacian & 10.150826 \\
-        & Cosine & 16.253973    \\
-        & Linear & 10.463867    \\
-        & Polynomial & 10.089147     \\
-        & Sigmoid & 16.253973            \\
-        & Chi squared & \textbf{10.023732}       \\
-        & Matern 0.5 & 10.056883  \\
-        & Matern 1.5 & 10.040288  \\
-        & Matern 2.5 & 10.024495    \\
-        & Periodic  & 15.946272\\
+        & Absolute Laplacian &  10.136551 \\
+        & Matern 0.5/Laplacian & 10.136551  \\
+        & Matern 1.5 & 10.082668  \\
+        & Matern 2.5 & 10.0494190    \\
+
+        & Matern $\infty$/Gaussian RBF &  10.031546 \\
+
+        & Chi squared & \textbf{10.018701}       \\
+        
+        & Linear & 10.463752    \\
+        & Periodic  & 10.493333\\
+        & Polynomial & 10.073935     \\
+        & Sigmoid & 10.496149            \\
+        % & Gauss RBFx Absolute Laplacian & 10.150826 \\
+        & Cosine & 16.254383    \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -521,33 +524,106 @@ We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel 
     \toprule
     Kernel/Quantiles & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 \\
     \midrule
-    Gauss RBF &  \textbf{0.540145} &
-    0.903193 &
+    Absolute Laplacian & 0.545490 &
+    0.913866 &
+    1.189372 &
+    1.386753 &
+    1.477606 &
+    1.468567 &
+    1.348241 &
+    1.101059 &
+    \textbf{0.705598} &
+    \\
+    Matern 0.5/Laplacian & 0.545490 &
+    0.913866 &
+    1.189372 &
+    1.386753 &
+    1.477606 &
+    1.468567 &
+    1.348241 &
+    1.101059 &
+    \textbf{0.705598} &
+\\
+    Matern 1.5 & 0.542709 &
+    0.904605 &
+    1.184761 &
+    1.382041 &
+    1.468031 &
+    1.459695 &
+    1.338982 &
+    1.096042 &
+    0.705803 &
+  \\  
+    Matern 2.5 & 0.541228 &
+    0.902478 &
+    1.175042 &
+    1.374289 &
+    1.465790 &
+    1.453434 &
+    1.334173 &
+    \textbf{1.093902} &
+    0.709083 &
+    \\
+    Matern $\infty$/Gaussian RBF & \textbf{0.540145} &
+    \textbf{0.903193} &
     1.173627 &
     1.368022 &
     1.456053 &
     1.447470 &
     1.331375 &
     1.096649 &
-    0.715013 \\
-    Laplacian &  0.542499 &
-    0.906517 &
-    1.177309 &
-    1.371198 &
-    1.462111 &
-    1.453119 &
-    1.340193 &
-    1.095991 &
-    0.707947 \\
-    Gauss RBFxLaplacian &0.545787 &
-    0.915559 &
-    1.189965 &
-    1.387109 &
-    1.479901 &
-    1.475541 &
-    1.350803 &
-    1.101151 &
-    \textbf{0.704922} \\
+    0.715013 &    
+    \\
+    Chi squared & 0.540200 &
+    0.904170 &
+    \textbf{1.170647} &
+    \textbf{1.360472} &
+    \textbf{1.449636} &
+    1.446009 &
+    \textbf{1.333024} &
+    1.096450 &
+    0.718095 &
+    \\
+    Linear & 0.565663 &
+    0.947889 &
+    1.250009 &
+    1.437863 &
+    1.506723 &
+    1.478379 &
+    1.358865 &
+    1.135702 &
+    0.782660 &
+    \\
+    Periodic & 0.554232 &
+    0.930133 &
+    1.222068 &
+    1.422040 &
+    1.518273 &
+    1.509894 &
+    1.398269 &
+    1.160021 &
+    0.778402 &
+    \\
+    Polynomial & 0.542649 &
+    0.908764 &
+    1.183810 &
+    1.370962 &
+    1.452645 &
+    \textbf{1.442749} &
+    1.331137 &
+    1.103014 &
+    0.738205 &
+    \\
+    Sigmoid & 0.572588 &
+    0.948625 &
+    1.244226 &
+    1.433785 &
+    1.506071 &
+    1.480981 &
+    1.359103 &
+    1.140366 &
+    0.810406 &
+    \\
     Cosine & 0.755479 &
     1.343973 &
     1.802603 &
@@ -557,78 +633,6 @@ We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel 
     2.262603 &
     1.971644 &
     1.320411 \\
-    Linear &  0.565663 &
-    0.947889 &
-    1.250009 &
-    1.437863 &
-    1.506723 &
-    1.478379 &
-    1.358865 &
-    1.135702 &
-    0.782660   \\
-    Polynomial &   0.542573 &
-    0.908681 &
-    1.178357 &
-    1.362351 &
-    1.450249 &
-    1.455228 &
-    1.339822 &
-    1.107768 &
-    0.744118  \\
-    Sigmoid &   0.755479 &
-    1.343973 &
-    1.802603 &
-    2.123425 &
-    2.307123 &
-    2.367123 &
-    2.262603 &
-    1.971644 &
-    1.320411          \\
-    Chi squared &   0.541430 &
-    0.906352 &
-    1.173164 &
-    \textbf{1.358862} &
-    \textbf{1.444130} &
-    \textbf{1.440915} &
-    1.332140 &
-    1.100262 &
-    0.726625     \\
-    Matern 0.5 &  0.542499 &
-    0.906517 &
-    1.177309 &
-    1.371198 &
-    1.462111 &
-    1.453119 &
-    1.340193 &
-    1.095991 &
-    0.707947 \\
-    Matern 1.5 &  0.541410 &
-    0.902901 &
-    1.173943 &
-    1.371218 &
-    1.462212 &
-    1.449296 &
-    1.333655 &
-    \textbf{1.095092} &
-    0.710560 \\
-    Matern 2.5 &  0.541233 &
-    \textbf{0.902231} &
-    \textbf{1.172001} &
-    1.366449 &
-    1.456505 &
-    1.444124 &
-    \textbf{1.331251} &
-    1.095674 &
-    0.715029 \\
-    Periodic  & 0.759452 &
-    1.352747 &
-    1.809921 &
-    2.125765 &
-    2.314718 &
-    2.379657 &
-    2.274711 &
-    1.976768 &
-    1.328630 \\
     \bottomrule
     \end{tabular}
     \end{adjustbox}
@@ -643,18 +647,17 @@ We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel 
         \toprule
          & Kernel & MAE \\
         \midrule
-        & Gauss RBF &  3.024336 \\
-        & Laplacian &  3.038633 \\
-        & Gauss RBFxLaplacian &  3.070812\\
-        & Cosine &    4.849589 \\
+        & Absolute Laplacian &  3.061553 \\
+        & Matern 0.5/Laplacian &  3.061553 \\
+        & Matern 1.5 &  3.046474 \\
+        & Matern 2.5 &  3.034608 \\
+        & Matern $\infty$/Gauss RBF &  3.024305 \\
+        & Chi squared &    3.027183    \\
         & Linear &     3.142352\\
-        & Polynomial &     3.064472 \\
-        & Sigmoid &      4.849589       \\
-        & Chi squared &    3.022778    \\
-        & Matern 0.5 &  3.038633 \\
-        & Matern 1.5 &  3.023060 \\
-        & Matern 2.5 &  \textbf{3.021949} \\
-        & Periodic  & 4.880673 \\
+        & Periodic  & 3.118420 \\
+        & Polynomial &     \textbf{3.022743} \\
+        & Sigmoid &      3.108107       \\
+        & Cosine &    4.849589 \\
         \bottomrule
         \end{tabular}
     \end{center}
@@ -666,90 +669,80 @@ We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel 
 \begin{figure}[!h]
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_gaussian_rbf_kernel_quantile_regression.png} 
-        \caption{Gaussian RBF} 
+        \includegraphics[width=1.1\textwidth]{images/melbourne_a_laplacian_kernel_quantile_regression.png} 
+        \caption{Absolute Laplacian} 
         \label{} 
         \vspace{4ex}
     \end{subfigure}%% 
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_laplacian_kernel_quantile_regression.png} 
-        \caption{Laplacian} 
+        \includegraphics[width=1.1\textwidth]{images/melbourne_matern_0.5_kernel_quantile_regression.png} 
+        \caption{Matern 0.5/Laplacian} 
         \label{} 
         \vspace{4ex}
     \end{subfigure} 
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_gaussian_rbf_x_laplacian_kernel_quantile_regression.png} 
-        \caption{Gauss RBFxLaplacian} 
+        \includegraphics[width=1.1\textwidth]{images/melbourne_matern_1.5_kernel_quantile_regression.png} 
+        \caption{Matern 1.5} 
         \label{} 
         \vspace{4ex}
     \end{subfigure}%%
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_cosine_kernel_quantile_regression.png}
-        \caption{Cosine} 
+        \includegraphics[width=1.1\textwidth]{images/melbourne_matern_2.5_kernel_quantile_regression.png}
+        \caption{Matern 2.5} 
         \label{} 
         \vspace{4ex}
     \end{subfigure} 
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_linear_kernel_quantile_regression.png}
+        \includegraphics[width=1.1\textwidth]{images/melbourne_gaussian_rbf_kernel_quantile_regression.png}
+        \caption{Matern $\infty$/Gaussian RBF} 
+        \label{} 
+        \vspace{4ex}
+    \end{subfigure} 
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \includegraphics[width=1.1\textwidth]{images/melbourne_chi_squared_kernel_quantile_regression.png}
+        \caption{Chi squared} 
+        \label{} 
+        \vspace{4ex}
+    \end{subfigure} 
+    \end{figure}
+\begin{figure}[!h]\ContinuedFloat
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \includegraphics[width=1.1\textwidth]{images/melbourne_linear_kernel_quantile_regression.png}
         \caption{Linear} 
         \label{} 
         \vspace{4ex}
     \end{subfigure} 
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_polynomial_kernel_quantile_regression.png}
+        \includegraphics[width=1.1\textwidth]{images/melbourne_periodic_kernel_quantile_regression.png}
+        \caption{Periodic} 
+        \label{} 
+        \vspace{4ex}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.5\linewidth}
+        \centering
+        \includegraphics[width=1.1\textwidth]{images/melbourne_polynomial_kernel_quantile_regression.png}
         \caption{Polynomial} 
         \label{} 
         \vspace{4ex}
     \end{subfigure} 
-    \end{figure}
-
-
-\begin{figure}[!h]\ContinuedFloat
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_sigmoid_kernel_quantile_regression.png}
+        \includegraphics[width=1.1\textwidth]{images/melbourne_sigmoid_kernel_quantile_regression.png}
         \caption{Sigmoid} 
         \label{} 
         \vspace{4ex}
-    \end{subfigure} 
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_chi_squared_kernel_quantile_regression.png}
-        \caption{Chi squared} 
-        \label{} 
-        \vspace{4ex}
     \end{subfigure}
-
     \begin{subfigure}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_matern_0.5_kernel_quantile_regression.png}
-        \caption{Matern 0.5} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure} 
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_matern_1.5_kernel_quantile_regression.png}
-        \caption{Matern 1.5} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_matern_2.5_kernel_quantile_regression.png}
-        \caption{Matern 2.5} 
-        \label{} 
-    \end{subfigure} 
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melborune_periodic_kernel_quantile_regression.png}
-        \caption{Periodic} 
+        \includegraphics[width=1.1\textwidth]{images/melbourne_cosine_kernel_quantile_regression.png}
+        \caption{Cosine} 
         \label{} 
     \end{subfigure} 
     \caption{Kernel quantile regressors comparison for Melbourne data}
