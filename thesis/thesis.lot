@@ -26,15 +26,15 @@
 \contentsline {table}{\numberline {10.8}{\ignorespaces Pinball loss kernel comparison for load in Switzerland (2021)\relax }}{95}{table.caption.76}%
 \contentsline {table}{\numberline {10.9}{\ignorespaces Pinball loss kernel comparison for load in Germany (2021)\relax }}{96}{table.caption.77}%
 \contentsline {table}{\numberline {10.10}{\ignorespaces Pinball loss kernel comparison for load in Austria (2021)\relax }}{96}{table.caption.78}%
-\contentsline {table}{\numberline {10.11}{\ignorespaces Pinball loss GEFCom2014 price data\relax }}{98}{table.caption.82}%
-\contentsline {table}{\numberline {10.12}{\ignorespaces Pinball loss GEFCom2014 load data\relax }}{100}{table.caption.86}%
+\contentsline {table}{\numberline {10.11}{\ignorespaces Pinball loss GEFCom2014 price data\relax }}{98}{table.caption.83}%
+\contentsline {table}{\numberline {10.12}{\ignorespaces Pinball loss GEFCom2014 load data\relax }}{101}{table.caption.87}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {A.1}{\ignorespaces Pinball loss for Boston housing data\relax }}{108}{table.caption.89}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Pinball loss quantile-wise for Boston data\relax }}{108}{table.caption.90}%
-\contentsline {table}{\numberline {A.3}{\ignorespaces Mean absolute error for Boston data\relax }}{109}{table.caption.91}%
-\contentsline {table}{\numberline {A.4}{\ignorespaces Pinball loss for Abalone data\relax }}{109}{table.caption.92}%
-\contentsline {table}{\numberline {A.5}{\ignorespaces Pinball loss quantile-wise for Abalone data\relax }}{109}{table.caption.93}%
-\contentsline {table}{\numberline {A.6}{\ignorespaces Mean absolute error for Abalone data\relax }}{110}{table.caption.94}%
-\contentsline {table}{\numberline {A.7}{\ignorespaces Pinball loss for Vehicle data\relax }}{110}{table.caption.95}%
-\contentsline {table}{\numberline {A.8}{\ignorespaces Pinball loss quantile-wise for Vehicle data\relax }}{110}{table.caption.96}%
-\contentsline {table}{\numberline {A.9}{\ignorespaces Mean absolute error for Vehicle data\relax }}{111}{table.caption.97}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Continous ranked probability score for Boston housing data\relax }}{108}{table.caption.90}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Pinball loss quantile-wise for Boston data\relax }}{108}{table.caption.91}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Mean absolute error for Boston data\relax }}{109}{table.caption.92}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces Continous ranked probability score for Abalone data\relax }}{109}{table.caption.93}%
+\contentsline {table}{\numberline {A.5}{\ignorespaces Pinball loss quantile-wise for Abalone data\relax }}{109}{table.caption.94}%
+\contentsline {table}{\numberline {A.6}{\ignorespaces Mean absolute error for Abalone data\relax }}{110}{table.caption.95}%
+\contentsline {table}{\numberline {A.7}{\ignorespaces Continous ranked probability score for Vehicle data\relax }}{110}{table.caption.96}%
+\contentsline {table}{\numberline {A.8}{\ignorespaces Pinball loss quantile-wise for Vehicle data\relax }}{110}{table.caption.97}%
+\contentsline {table}{\numberline {A.9}{\ignorespaces Mean absolute error for Vehicle data\relax }}{111}{table.caption.98}%

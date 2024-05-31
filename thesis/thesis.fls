@@ -2184,6 +2184,11 @@ INPUT ./images/k_matrix_laplacian_comp.png
 INPUT images/k_matrix_laplacian_comp.png
 INPUT ./images/k_matrix_laplacian_comp.png
 INPUT ./images/k_matrix_laplacian_comp.png
+INPUT ./images/cv_scatter.png
+INPUT ./images/cv_scatter.png
+INPUT images/cv_scatter.png
+INPUT ./images/cv_scatter.png
+INPUT ./images/cv_scatter.png
 INPUT ./images/price_task_4_gaussian_rbf.png
 INPUT ./images/price_task_4_gaussian_rbf.png
 INPUT images/price_task_4_gaussian_rbf.png

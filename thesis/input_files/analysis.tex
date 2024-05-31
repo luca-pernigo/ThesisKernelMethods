@@ -456,6 +456,10 @@ Table \ref{tab:secures_met_de} shows results for Germany, Table \ref{tab:secures
 From our tables, it can be concluded that the absolute Laplacian kernel is the one fitting best to the characteristics of load data.
 Additionally, we can conclude that our results are in line with the ones published in \cite{he2017short}. In that study, similarly to what we did in this subsection, the authors carried out a comparitive study concerning the choice of kernels in KQR. Nevertheless notice, that the set of kernel we considered in our study is larger than the one presented in \cite{he2017short}.
 Their paper showed evidence of the superiority of the Gaussian RBF among their set of kernel functions. Analogously, we can see from Tables \ref{tab:secures_met_de}, \ref{tab:secures_met_ch} and \ref{tab:secures_met_at} that the Matern kernels are the best in terms of pinball loss.
+The Periodic equipped with period $p=24$ shows good performance. 
+After those kernels, we have the Linear and Polynomial kernel.
+The worst among all kernels considered are the Cosine and the Sigmoid.
+% , which is better suited for binary classification tasks. 
 Finally, given that the features dimension is greater than one we have that the Absolute Laplacian and the Matern 0.5 kernels differ. The former kernel is better than the latter and this comes from their distance function. This is because the Manhattan distance is more robust than the Euclidean distance in terms of measuring similarity between objects as data grows in dimensionality \cite{Aggarwal2001}. %(curse of dimensionality)
 Those kernel matrices for the Swiss data are compared in Figure \ref{fig:k_matrix_laplacian_comp}.
 
@@ -481,7 +485,16 @@ In this setting, the predictors fed to our KQR models are
 \end{itemize}
 Since target days vary all over the year, we trained a model for any month associated to them.
 
-Our results for this track are reported in Table \ref{tab:pinball loss gefcom2014 price data}. In this track, the top entries came from the teams: Tololo, Team Poland, GMD, and C3 Green Team; for a breakdown of each method's attributes, see \cite[Table 8]{hong2016probabilistic}. Finally, the Gaussian RBF probabilistic prediction for the $4^{th}$ July $2013$ zonal price at the $90\%$ confidence interval is visualized in Figure \ref{fig:price_task_4_gaussian_rbf}.
+Our results for this track are reported in Table \ref{tab:pinball loss gefcom2014 price data}. In this track, the top entries came from the teams: Tololo, Team Poland, GMD, and C3 Green Team; for a breakdown of each method's attributes, see \cite[Table 8]{hong2016probabilistic}. 
+The Gaussian RBF probabilistic prediction for the $4^{th}$ July $2013$ zonal price at the $90\%$ confidence interval is visualized in Figure \ref{fig:price_task_4_gaussian_rbf}.
+Cross validation results are visualised in Figure.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{images/cv_scatter.png}
+    \label{fig:cv_scatter}
+    \caption{Cross validation Gaussian RBF kernel task 4 GEFCom2014 price}
+\end{figure}
+
 
 
 % \begin{figure}[!ht]

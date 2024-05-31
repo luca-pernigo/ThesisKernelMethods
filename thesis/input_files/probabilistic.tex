@@ -484,8 +484,9 @@ As already pointed out, the quantile regression with $q=0.5$ corresponds to the 
 From these tables, we can see that kernel quantile regression outperformes the simple quantile regressor as well as the more complex models like quantile forest and gradient boosting quantile regression for the Melbourne temperatures dataset. Not only kernel quantile regression was the best in terms of total pinball loss but also the best in terms of each quantile pinball loss and mean absolute error.
 Comparison has been carried out on further datasets, yielding similar conclusions as the one of above, to know more see Appendix \ref{appendix:quantile_regressor_extensive_comparison}.
 
-We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel pinball comparison}, \ref{tab:kernel pinball comparison quantile-wise}, \ref{tab:kernel mae comparison} and Figure \ref{fig:kernel quantile regressors comparison} comparing various kernel functions.
+We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel pinball comparison}, \ref{tab:kernel pinball comparison quantile-wise}, \ref{tab:kernel mae comparison} and Figure \ref{fig:kernel quantile regressors comparison} comparing various kernel functions, see Section \ref{kernel families}.
 
+From these tables, we can conclude that the Matern and the Chi squared kernels are the top performers on the Melbourne weather data. Finally, the equaility in the scores of the Absolute Laplacian and the Matern 0.5 follows from the fact that regressors are one dimensional for the Melbourne weather data.
 % tables
 \begin{table}[!h]
     \caption{Kernels comparison pinball loss for Melbourne data}

@@ -295,7 +295,7 @@ Furthermore, note that $k(\cdot, x)$ is itself a function lying in it
     $$
 \end{proof}
 
-\section{Kernel families}
+\section{Kernel families}\label{kernel families}
 The selection of the kernel determines the class of functions that will be searched by the learning algorithm. Prior knowledge of the problem domain can help restricting the candidate families of kernel functions. 
 Table \ref{tab:kernel types} contains popular kernel families in literature and applications.
 \begin{table}
@@ -338,7 +338,7 @@ For example:
     \item $p=2,\nu=\frac{5}{2} \implies k(x,y)=\left(1+{\frac {{\sqrt {5}}\|x-y\|_{2}}{l }}+{\frac {5\|x-y\|_{2}^{2}}{3 l ^{2}}}\right)\exp \left(-{\frac {{\sqrt {5}}\|x-y\|_{2}}{l }}\right)$
 \end{itemize}
 
-When $\nu=\frac{1}{2}$ the Matérn kernel corresponds to the Laplacian kernel.
+When $\nu=\frac{1}{2}$ the Matérn kernel corresponds to the Laplacian kernel. If the predictors are one dimensional, then the Absolute Laplacian and the Matern 0.5 are equivalent. %L2 norm=L1 norm
 Furthermore, as $\nu \to \infty$ we have that the Matérn kernel converges to the Gaussian RBF kernel.
 $k(x,y)=\exp\left(\frac{-\|x-y\|_{2}^2}{2l^2}\right)$
 

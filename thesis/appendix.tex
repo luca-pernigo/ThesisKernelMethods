@@ -64,7 +64,7 @@ There are 13 indipendent variables:
 The dependent variable is MEDV, that is the median value of owner occupied homes in \$1000's
 
 \begin{table}
-\caption{Pinball loss for Boston housing data}
+\caption{Continous ranked probability score for Boston housing data}
 \begin{tabular}{lllll}
 \toprule
     & Linear qr & Gbm qr & Quantile forest & KQR \\
@@ -78,7 +78,7 @@ CRPS & 1.3785678 & 1.1418540 & 1.0587686 & \textbf{1.0297572} \\
     \caption{Pinball loss quantile-wise for Boston data}
 \begin{tabular}{lllll}
 \toprule
-    & Linear qr & Gbm qr & Quantile forest & KQR \\
+  Quantile  & Linear qr & Gbm qr & Quantile forest & KQR \\
 \midrule
 0.1 & 0.729749 & 0.771714 & 0.588441 & \textbf{0.578898} \\
 0.2 & 1.122582 & 1.033442 & 0.932824 & \textbf{0.869145} \\
@@ -120,10 +120,10 @@ The data has 8 attributes:
 \end{itemize}
 
 \begin{table}
-    \caption{Pinball loss for Abalone data}
+    \caption{Continous ranked probability score for Abalone data}
 \begin{tabular}{lllll}
     \toprule
-     & Linear qr & Gbm qr & Quantile forest & KQR \\
+  & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
     CRPS & 0.5613975 & 0.5531938 & \textbf{0.5212990} & 0.5252491 \\
     \bottomrule
@@ -134,7 +134,7 @@ The data has 8 attributes:
     \caption{Pinball loss quantile-wise for Abalone data}
     \begin{tabular}{lllll}
     \toprule
-     & Linear qr & Gbm qr & Quantile forest & KQR \\
+    Quantile & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
     0.1 & 0.277903 & 0.290531 & 0.274079 & \textbf{0.269287} \\
     0.2 & 0.469361 & 0.488079 & \textbf{0.453110} & 0.457286 \\
@@ -174,7 +174,7 @@ This data contains info about used cars \href{https://www.kaggle.com/datasets/ne
 The dependent variable is the selling price.
 
 \begin{table}
-\caption{Pinball loss for Vehicle data}
+\caption{Continous ranked probability score for Vehicle data}
 \begin{tabular}{lllll}
     \toprule
      & Linear qr & Gbm qr & Quantile forest & KQR \\
@@ -188,7 +188,7 @@ The dependent variable is the selling price.
     \caption{Pinball loss quantile-wise for Vehicle data}
     \begin{tabular}{lllll}
     \toprule
-     & Linear qr & Gbm qr & Quantile forest & KQR \\
+    Quantile & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
     0.1 & 0.254649 & \textbf{0.139849} & 0.170489 & 0.182490 \\
     0.2 & 0.403772 & 0.236339 & 0.285875 & \textbf{0.223165} \\
