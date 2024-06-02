@@ -55,7 +55,7 @@ In this model, the current demand makes up the prediction for the next time step
 \end{definition}
 
 
-\section{Pinball}\label{pinball}
+\section{Pinball score}\label{pinball}
 The pinball score or quantile score is used to measure the accuracy of a quantile forecast.
 \begin{definition}
     The pinball loss is defined as
@@ -74,11 +74,11 @@ The pinball loss is an asymmetric function, it weights its score differently dep
     \label{fig:pinball}
   \end{figure}
 By averaging all the pinball losses over all quantiles and over the whole forecast horizon, we obtain the pinball loss of the probabilistic forecast.
-\section{Winkler}
+\section{Winkler score}
 \begin{definition}
     The Winkler score is defined as
     $$
-    \mathrm{Winkler}(y_t, \hat{y}_t,q)=\begin{cases}
+    \mathrm{Winkler}(y_t,  u_{t},l_{t},q)=\begin{cases}
         \delta & l_{t}\leq y_{t}\leq u_{t}\\
         \delta+2(l_{t}-y_{t})/\alpha & y_{t}< l_{t}\\
         \delta+2(l_{t}-u_{t})/\alpha & y_{t} \geq u_{t}
@@ -130,7 +130,7 @@ Putting everything together we have obtained an alternative way of computing the
 \end{equation}
 \\
 \section{Probability integral transform}
-The probability integral transform (PIT) is a method to assess visually the quality of a probabilistic forecast. PIT is obtained by applying the predicted cumulative density function $\hat{F}$ to the data. If applying such CDF to the data results in a uniform distributed PIT, then $\hat{F}$ is a valid prediction. If not, $\hat{F}$ is not a good estimate of the CDF for the considered data. Figure \ref{fig:pit} provides an example, applying the true CDF results in a well calibrated PIT (left). Alternatively, applying a bad CDF results in either a overdispersed (middle) or underdispersed (right) PIT.
+The probability integral transform (PIT) is a method to assess visually the quality of a probabilistic forecast. PIT is obtained by applying the predicted cumulative density function $\hat{F}$ to the data. If applying such CDF to the data results in a uniform distributed PIT, then $\hat{F}$ is a valid prediction. If not, $\hat{F}$ is not a good estimate of the CDF for the considered data. Figure \ref{fig:pit} provides an example, applying the true CDF results in a well calibrated PIT (left). Alternatively, applying a bad CDF results in either an overdispersed (middle) or underdispersed (right) PIT.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/pit.png}
     \caption{Probability integral transform types \cite{haben2023core}}

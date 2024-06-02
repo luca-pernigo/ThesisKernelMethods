@@ -1,4 +1,4 @@
-Quantile regression can be interpreted as an extension of standard regression. In this setting, one slices the dependent variables into quantiles and then fit a regression for each quantile. With standard regression, we build a model for the conditional mean, conversely, with quantile regression we model the conditional quantile function for any desired quantile. 
+Quantile regression can be interpreted as an extension of standard regression. In this setting, one slices the dependent variables into quantiles and then fits a regression for each quantile. With standard regression, we build a model for the conditional mean, conversely, with quantile regression we model the conditional quantile function for any desired quantile. 
 Therefore, with quantile regression we are able to study the impact of covariates on quantiles directly.
 \begin{definition}
     For any real valued random variable Y, we define its associated quantile function.
@@ -8,7 +8,7 @@ Therefore, with quantile regression we are able to study the impact of covariate
 \end{definition}
 Alternatively, in order  to ease the posing of the quantile regression problem, we can formulate quantiles as the solutions to the following optimisation problems.
 \\
-For any $0<q<1$ consider the pinball loss function from section \ref{pinball}, $\rho_q(u)=u(q-\mathbb{I}_{\{u<0\}})$. 
+For any $0<q<1$ consider the pinball loss function from Section \ref{pinball}, $\rho_q(u)=u(q-\mathbb{I}_{\{u<0\}})$. 
 Such loss is minimized by the quantile $Q_q$.
  we can estimate quantiles by minimizing the expectation of $\rho_q(y-g(x,\beta))$ with respect to the parameter $\beta$.
 \\

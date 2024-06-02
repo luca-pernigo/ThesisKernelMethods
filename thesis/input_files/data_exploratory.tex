@@ -35,7 +35,8 @@ In the price forecasting track, the goal was to predict the electricity price fo
 The data can be found in the GEFCom2014-P\_V2 zip file alongside a set of instructions and the benchmark forecasts.
 This data consists of time series for the locational marginal price, for the zonal load and for the system load. The data covers the time interval ranging from the $1^{st}$ of January 2011 to the $15^{th}$ of June 2013, see Figure \ref{fig:price_track_fig1}.\ 
 Additionally, as the competition went on, the real observed data of the previous tasks were made available.
-The fifteen target days ordered by task number are: 16/06/2013, 17/06/2013, 24/06/2013, 04/07/2013, 09/07/2013, 13/07/2013, 16/07/2013, 18/07/2013, 19/07/2013, 20/07/2013, 24/07/2013, 25/07/2013, 07/12/2013, 08/12/2013, 17/12/2013. 
+The 15 target days ordered by task number are: 16/06/2013, 17/06/2013, 24/06/2013, 04/07/2013, 09/07/2013, 13/07/2013, 16/07/2013, 18/07/2013, 19/07/2013, 20/07/2013, 24/07/2013, 25/07/2013, 07/12/2013, 08/12/2013, 17/12/2013. 
+The first three tasks were designed for testing, they did not count for the competition.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/price_track_fig1.png}
     \caption{Price track GEFCom2014}
@@ -47,7 +48,7 @@ After that, we plotted the scatter plot for inspecting the correlation between t
 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/gefcom_zonal_price_vs_zonal_load.png}
-    \caption{Zonal price versus zonal load GEFCom2014}
+    \caption{Zonal price versus zonal load of GEFCom2014}
     \label{fig:gefcom_zonal_price_vs_zonal_load}
 \end{figure}
 
@@ -64,6 +65,7 @@ As for the price track, the true observed data from the previous track were made
 \\
 The data for load forecasting is contained in the GEFCom2014-L\_V2 zip file. Within this subfolder, we have a txt file with the competition instructions and 15 subfolders one for each of the consecutive tasks. For each of those we have the prediction of the competition benchmark model and the train file upon which we will fit our model.
 Any data from the various task folders are shifted by one month between each other.
+Also in this track, the first three tasks do not count towards the ranking of the various algorithms.
 \\
 In order to compare our model performance with the winning entries of the GEFCom2014 load competition, we will refer to the Provisional\_Leaderboard\_\-V2.csv file contained also in the GEFCom2014 Data directory.
 % Notice a quick premise, within this xsls file the authors opted for various scores to compare the entries performance. This choice was motivated by the need 
@@ -146,7 +148,7 @@ Figure \ref{fig:CH_load_vs_temperature_2021} plots load against temperatures whi
     \label{fig:CH_load_vs_wind_speed_2021}
 \end{figure}
 
-Following, we use box plots in order to visualize the relations between categorical independent variables and the dependent one. Such visualisation are reported in Figure \ref{fig:CH_day_of_week_boxplot_2021} and Figure \ref{fig:CH_is_holiday_boxplot_2021}. We can see that weekdays and workdays involve a higher load and possess a wider range.
+Following, we use box plots in order to visualize the relations between categorical independent variables and the dependent one. Such visualisation are reported in Figure \ref{fig:CH_day_of_week_boxplot_2021} and Figure \ref{fig:CH_is_holiday_boxplot_2021}. We can see that workdays involve a higher load and possess a wider range than weekdays and holidays.
 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/CH_day_of_week_boxplot_2021.png}

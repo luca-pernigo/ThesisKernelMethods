@@ -151,7 +151,7 @@ In order to solve our quantile regression tasks through gradient boosting, all w
 
 % \section{Kernel methods}
 \section{Kernel quantile regression}
-The idea of quantile regression has been extended to kernel methods by Takeuchi et al. \cite{takeuchi2006nonparametric}.
+The idea of quantile regression has been extended to kernel methods by Takeuchi et al.\ \cite{takeuchi2006nonparametric}.
 There, they minimise a risk functional plus regulariser defined as follows.
 \begin{equation}\label{eq:kqr_min1}
     Risk[f]:=\frac{1}{m}\sum\limits_{i=1}^{m}\rho_q(y_i-f(x_i))+\frac{\tau}{2}\|w\|_\mathcal{H}^2
@@ -436,13 +436,13 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
       \caption{Kernel quantile regression, Gaussian RBF} 
       \label{fig:melborune_kernel_quantile_regression} 
     \end{subfigure} 
-    \caption{Quantile regressors comparison Melbourne weather data}
+    \caption{Quantile regressors comparison for Melbourne weather data}
     \label{fig:melbourne_quantiles_comparison} 
   \end{figure}
 
 % tables
 \begin{table}[!h]
-\caption{Pinball loss of Melbourne data}
+\caption{Pinball loss for Melbourne data}
 \begin{tabular}{lllll}
     \toprule
      & Linear qr & Gbm qr & Quantile forest & KQR \\
@@ -453,7 +453,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
 \end{table}
 
 \begin{table}[!h]
-    \caption{Pinball loss quantile-wise of Melbourne data}
+    \caption{Pinball loss quantile-wise for Melbourne data}
     \begin{tabular}{lllll}
     \toprule
     Quantiles & Linear qr & Gbm qr & Quantile forest & KQR \\
@@ -472,7 +472,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
 \end{table}
 As already pointed out, the quantile regression with $q=0.5$ corresponds to the standard regression problem, hence we can compare the proposed methods also in terms of the mean absolute error.
 \begin{table}[!h]
-\caption{Mean absolute error of Melbourne data}
+\caption{Mean absolute error for Melbourne data}
 \begin{tabular}{lllll}
     \toprule
      & Linear qr & Gbm qr & Quantile forest & KQR \\
@@ -641,7 +641,7 @@ From these tables, we can conclude that the Matern and the Chi squared kernels a
 
 
 \begin{table}[!h]
-    \caption{Kernels comparison mean absolute error Melbourne data}
+    \caption{Kernels comparison mean absolute error for Melbourne data}
     \label{tab:kernel mae comparison}
     \begin{center}
     \begin{tabular}{lll}

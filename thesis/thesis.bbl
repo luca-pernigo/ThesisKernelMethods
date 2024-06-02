@@ -173,6 +173,11 @@ Stephen Haben, Marcus Voss, and William Holderbaum.
 \newblock {\em Core Concepts and Methods in Load Forecasting: With Applications in Distribution Networks}.
 \newblock Springer Nature, 2023.
 
+\bibitem{Han2024}
+Lijia Han, Xiaohong Wang, Yin Yu, and Duan Wang.
+\newblock Power load forecast based on cs-lstm neural network.
+\newblock {\em Mathematics}, 12(9):1402, 2024.
+
 \bibitem{hastie2009elements}
 Trevor Hastie, Robert Tibshirani, , Jerome~H. Friedman, Richard~A. Olshen, and Charles~J. Stone.
 \newblock {\em The Elements of Statistical Learning: Data Mining, Inference, and Prediction}, volume~2.

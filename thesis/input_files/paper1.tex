@@ -13,7 +13,7 @@ in order to get a more powerful non linear similarity measure.
 \begin{align*}
 \phi(x)\colon \mathcal{X} &\to \mathcal{H}
     \\
-    x&\to \phi(x)
+    x&\mapsto \phi(x)
 \end{align*}
 
 
@@ -60,7 +60,7 @@ number of features of the data points.
 
 
 \section{Theory of kernels}
-Subsequently we introduce the definitions that make up the basis for the theory of kernel methods.
+Subsequently, we introduce the definitions that make up the basis for the theory of kernel methods.
 
 
 \begin{definition}
@@ -183,7 +183,7 @@ Notice, that by the reproducing property, $f$ can be represented as the inner pr
         k(x, \cdot) \in \mathcal{H} &\quad \ \forall x \in \mathcal{X}    \\
         \langle  f, k(x, \cdot) \rangle_\mathcal{H} = f(x) &\quad \ \forall f\in \mathcal{H}, \ x \in \mathcal{X}
     \end{align}
-    Notice, positive semidefinitenees property of kernel $k$ is a sufficient condition for $\mathcal{H}$ to have an associated RKHS.
+    Notice, positive semidefiniteness property of kernel $k$ is a sufficient condition for $\mathcal{H}$ to have an associated RKHS.
 \end{definition}
 
 The analysis above applies to any kernel, that is, given a valid kernel function we can always construct its RKHS in the way we just illustrated.
@@ -261,7 +261,7 @@ Furthermore, note that $k(\cdot, x)$ is itself a function lying in it
 % Kernel functions are characterised by a couple of properties that make them a closure. Thus, there exists ways of combining known kernels in order to obtain new kernels.
 
 \begin{proposition}
-    Let $k_1$ and $k_2$ be kernels over $\mathcal{X} \times \mathcal{X}, \mathcal{X} \subset \mathbb{R}^n$, $a \in \mathbb{R}^+$ and $\phi: \mathcal{X} \to \mathbb{R}^N$ with $k_3$ a kernel over $\mathbb{R}^N \times \mathbb{R}^N$. Then the following functions are valid kernels:
+    Let $k_1$ and $k_2$ be kernels over $\mathcal{X} \times \mathcal{X}, \mathcal{X} \subseteq \mathbb{R}^n$, $a \in \mathbb{R}^+$ and $\phi: \mathcal{X} \to \mathbb{R}^N$ with $k_3$ a kernel over $\mathbb{R}^N \times \mathbb{R}^N$. Then the following functions are valid kernels:
     $$
     \begin{aligned}
         k(x,y)=&k_1(x,y)+k_2(x,y)
@@ -305,7 +305,7 @@ Table \ref{tab:kernel types} contains popular kernel families in literature and 
         \toprule
        Kernel function & Equation & Hyperparameters \\
        \midrule
-       Linear &  $k(x,y)=xy$ &   \\
+       Linear &  $k(x,y)=x^\intercal y$ &   \\
        Polynomial &  $k(x,y)=(x^\intercal y+c)^d$ &   c, d\\
        Gaussian RBF &  $k(x,y)=\exp\left(-\frac{\|x-y\|_{2}^2}{2\l^2}\right)$ &   $l$\\
        Exponential RBF/Laplacian& $k(x,y)=\exp\left(-\frac{\|x-y\|_{2}}{l}\right)$ &   $l$\\
@@ -313,7 +313,7 @@ Table \ref{tab:kernel types} contains popular kernel families in literature and 
        Hyperbolic/Sigmoid Kernel &  $k(x,y2)=\tanh(\gamma x^\intercal y+r)$ &  $\gamma$, r \\
        Periodic &  $k(x,y)=\exp\left(\frac{-2 sin^2\left(\frac{\pi}{p}\|x-y\|_{2} \right)}{l^2}\right) $ &   $p, l$\\
        Chi-squared kernel &  $k(x,y)=\exp\left(-\gamma \sum\limits_i \frac{(x_i - y_i)^2}{x_i+y_i}\right) $ &   $\gamma$\\
-        Cosine  &  $k(x,y)=\frac{xy^\intercal}{\|x\|_{2}\|y\|_{2}}$ &   \\
+        Cosine  &  $k(x,y)=\frac{x^\intercal y}{\|x\|_{2}\|y\|_{2}}$ &   \\
        Matérn  &  $k(x, y) =  \frac{1}{\Gamma(\nu)2^{\nu-1}}\Bigg(
         \frac{\sqrt{2\nu}}{l} \|x-y|\|_{2}
         \Bigg)^\nu Y_\nu\Bigg(

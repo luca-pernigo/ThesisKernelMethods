@@ -30,19 +30,19 @@ In our application we specified as hyperparameters the length of seasons, that i
 The \href{https://facebook.github.io/prophet/docs/quick_start.html}{prophet} model has been applied by employing the Python API provided by Meta.
 
 \subsection{K-nearest neighbours}
-The object KNeighborsRegressor of the \href{https://scikit-learn.org/stable/}{sklearn} module neighbors has been used.
+The object KNeighborsRegressor of the \href{https://scikit-learn.org/stable/}{sklearn} module neighbors has been used with 12 neighbours and the Euclidean distance.
 
 \subsection{Support vector regression}
 The object SVR of the \href{https://scikit-learn.org/stable/}{sklearn} module svm has been used by specifying the linear kernel.
 
 \subsection{Long short term memory}
-The LSTM predictor has been built using the \href{https://pytorch.org}{torch} library.
+The LSTM predictor has been built using the \href{https://pytorch.org}{torch} library, see Section \ref{sec:lstm point} for architecture details.
 
 \subsection{Kernel ridge regression}
-The object KernelRidge of the \href{https://scikit-learn.org/stable/}{sklearn} module kernel\_ridge has been used.
+The object KernelRidge of the \href{https://scikit-learn.org/stable/}{sklearn} module kernel\_ridge has been used with the Gaussian RBF kernel.
 
 \subsection{Kernel support vector regression}
-The object SVR of the \href{https://scikit-learn.org/stable/}{sklearn} module svm has been used.
+The object SVR of the \href{https://scikit-learn.org/stable/}{sklearn} module svm has been used with the Gaussian RBF kernel.
 % by specifying rbf as the kernel parameter.
 
 \section{Probabilistic forecasting}

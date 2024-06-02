@@ -1,5 +1,5 @@
 \chapter{Appendix}
-\section{Feature map normalization}\label{appendix:new_feature}
+\section{Feature map normalisation}\label{appendix:new_feature}
 
 \begin{lemma}
     Associated to any RKHS $\mathcal{H}$, there exists a feature vector $\phi(x)$ such that $\|\phi(x)\|_{\mathcal{H}}=R \quad \forall x \in \mathcal{X}$.
@@ -47,19 +47,19 @@ This section contains extensive comparison between our kernel quantile regressio
 The Boston housing dataset \href{https://www.kaggle.com/datasets/altavish/boston-housing-dataset}{https://www.kaggle.com/datasets/altavish/boston-housing-dataset} contains information about various attributes for suburbs in Boston.
 There are 13 indipendent variables:
 \begin{itemize}
-\item CRIM per capita crime rate by town
-\item ZN proportion of residential land zoned for lots over 25,000 sq.ft.\
-\item INDUS proportion of non-retail business acres per town
-\item CHAS Charles River dummy variable (1 if tract bounds river; 0 otherwise)
-\item NOX nitric oxides concentration (parts per 10 million)
-\item RM average number of rooms per dwelling
-\item AGE proportion of owner-occupied units built prior to 1940
-\item DIS weighted distances to five Boston employment centres
-\item RAD index of accessibility to radial highways
-\item TAX full-value property-tax rate per 10,000
-\item PTRATIO pupil-teacher ratio by town
-\item B $1000(Bk - 0.63)^2$ where Bk is the proportion of afroamericans by town
-\item LSTAT lower status of the population
+\item CRIM: per capita crime rate by town
+\item ZN: proportion of residential land zoned for lots over 25,000 sq.ft.\
+\item INDUS: proportion of non-retail business acres per town
+\item CHAS: Charles River dummy variable (1 if tract bounds river, 0 otherwise)
+\item NOX: nitric oxides concentration (parts per 10 million)
+\item RM: average number of rooms per dwelling
+\item AGE: proportion of owner-occupied units built prior to 1940
+\item DIS: weighted distances to five Boston employment centres
+\item RAD: index of accessibility to radial highways
+\item TAX: full-value property-tax rate per 10,000
+\item PTRATIO: pupil-teacher ratio by town
+\item B: $1000(Bk - 0.63)^2$ where Bk is the proportion of afroamericans by town
+\item LSTAT: lower status of the population
 \end{itemize}
 The dependent variable is MEDV, that is the median value of owner occupied homes in \$1000's
 
@@ -99,17 +99,17 @@ CRPS & 1.3785678 & 1.1418540 & 1.0587686 & \textbf{1.0297572} \\
 \toprule
     & Linear qr & Gbm qr & Quantile forest & Kernel qr \\
 \midrule
- & 3.826326 & 2.845989 & 2.965490 & \textbf{2.810494} \\
+MAE & 3.826326 & 2.845989 & 2.965490 & \textbf{2.810494} \\
 \bottomrule
 \end{tabular}
 
 \end{table}
 
 \subsection{Abalone dataset}
-The abalone data \href{https://archive.ics.uci.edu/dataset/1/abalone}{https://archive.ics.uci.edu/dataset/1/abalone} consist of measurements of abalone molluscs, the goal is predicting their age by building a model for estimating its number of rings; age is the number of rings plus 1.5
+The abalone data \href{https://archive.ics.uci.edu/dataset/1/abalone}{https://archive.ics.uci.edu/dataset/1/abalone} consistst of measurements of abalone molluscs, the goal is predicting their age by building a model for estimating its number of rings; age is the number of rings plus 1.5.
 The data has 8 attributes:
 \begin{itemize}
-    \item Sex Categorical variable either male, female or infant
+    \item Sex: categorical variable either male, female or infant
     \item Length
     \item Diameter
     \item Height
@@ -155,7 +155,7 @@ The data has 8 attributes:
     \toprule
      & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
-     & 1.627627 & 1.574179 & 1.499522 & \textbf{1.498583} \\
+    MAE & 1.627627 & 1.574179 & 1.499522 & \textbf{1.498583} \\
     \bottomrule
     \end{tabular}
 \end{table} 
@@ -164,12 +164,12 @@ The data has 8 attributes:
 This data contains info about used cars \href{https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho}{https://www.kaggle.com/datasets/ne-halbirla/vehicle-dataset-from-cardekho}, the predictors are:
 \begin{itemize}
     \item Year
-    \item Present\_price ex showroom price
+    \item Present\_price: ex showroom price
     \item Kms Driven
     \item Fuel type
     \item Seller type
     \item Transmission
-    \item Owner number of previous owners
+    \item Owner: number of previous owners
 \end{itemize}
 The dependent variable is the selling price.
 
@@ -209,7 +209,7 @@ The dependent variable is the selling price.
     \toprule
      & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
-     & 1.117714 & 0.606971 & 0.752197 & \textbf{0.594292} \\
+   MAE  & 1.117714 & 0.606971 & 0.752197 & \textbf{0.594292} \\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -224,11 +224,11 @@ Cross validation directly estimates the expected test error
 \end{equation}
 $Err_{\Tau}$ is the prediction error over an independent test sample
 \begin{equation}
-    \mathbb{E}_{\Tau}=\mathbb{E}\left[L\left(Y,\hat{f}(X)\right)| \Tau \right]
+    Err_{\Tau}=\mathbb{E}\left[L\left(Y,\hat{f}(X)\right)| \Tau \right]
 \end{equation}
-that is, $Err$ is the average over everything that is random: X,Y and the training set $\Tau$ used to learn $\hat{f}$. Hence, our interest lies in estimating the $Err$ quantity in order to guide model selection.
+that is, $Err$ is the average over everything that is random: $X,Y$ and the training set $\Tau$ used to learn $\hat{f}$. Hence, our interest lies in estimating the $Err$ quantity in order to guide model selection.
 \subsection{K-fold cross validation}
-K-fold cross validation splits the data into $K$ roughly equally sized parts, then $K$ models are trained. For $k$ from 1 to $K$ we train the kth model on the whole dataset except the kth partition. Next,  the prediction error of the kth fitted model is computed. Finally averaging all the $k$ prediction erros we obtain an estimate for the expected test error. We select the model which performs best in terms of expected prediction error.
+K-fold cross validation splits the data into $K$ roughly equally sized parts, then $K$ models are trained. For $k$ from 1 to $K$ we train the $k^{th}$ model on the whole dataset except the $k^{th}$ partition. Next,  the prediction error of the $k^{th}$ fitted model is computed. Finally averaging all the $k$ prediction erros we obtain an estimate for the expected test error. We select the model which performs best in terms of expected prediction error.
 \\
 Usually, $K$ is set equal to 5 or 10. Leave-one-out cross validation is the case when $K$ is set equal to the size of the data.
 % REMEMBER: Parameters allow the model to learn the rules from the data while hyperparameters control how the model is training. Parameters learn their own values from data. In contrast, hyperparameters do not learn their values from data. We need to manually specify them before training the model
@@ -263,38 +263,38 @@ The same concept applies for multi step ahead forecasting, see Figure \ref{fig:c
 In predicting $\hat{y}_{N+m}$ we use as inputs $y_1, y_2, \dots, \hat{y}_{N},\hat{y}_{N+1},\dots, \hat{y}_{N+m-1}$, where $\hat{y}_{N},\hat{y}_{N+1},\dots, \hat{y}_{N+m-1}$ are one step ahead forecasts.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/crossvalidationtimeseries2.png}
-    \caption{Cross validation for m step ahead timeseries data \cite{hyndman2018forecasting}}
+    \caption{Cross validation for $m$ step ahead timeseries data \cite{hyndman2018forecasting}}
     \label{fig:crossvalidationtimeseries2}
 \end{figure}
 
 \section{Kernel methods best practices}
 Following, are reported a couple of considerations important to keep in mind when working with kernel methods.
 
-\subsection{Data normalization}\label{appendix:normalization}
+\subsection{Data normalisation}\label{appendix:normalization}
 With data normalization we transform the range of the feautures to a standard scale.
-Such preprocessing step is essential when employing distance based algorithms like SVM or K-nearest neighbors. The rationale behind it is that by normalizing data we give an uniform weight to each feature in the learning process; in this way we do not favour larger scale features.
+Such preprocessing step is essential when employing distance based algorithms like SVM or K-nearest neighbours. The rationale behind it is that by normalizing data we give an uniform weight to each feature in the learning process; in this way we do not favour larger scale features.
 Examples of the most popular features scaling are:
 \begin{itemize}
-    \item Standard scaler= it computes the standard score $z$ of a sample $x$
+    \item Standard scaler: it computes the standard score $z$ of a sample $x$
     \\
     $z=\frac{x-\mu}{\sigma}$.
-    \item MinMax scaler= it maps every data sample to the range $[0,1]$.
+    \item MinMax scaler: it maps every data sample to the range $[0,1]$.
     \\
     $\frac{x-\min(X)}{\max(X)-\min(X)}$
-    \item Robust scaler= it scales features using statistics that are robust to outliers.
+    \item Robust scaler: it scales features using statistics that are robust to outliers.
     Essentially, it subtracts the median and then scales the data according to the interquantile range.
 \end{itemize}
 Many other data scaling algorithms exists, we refer the reader to a thorough comparison \citeW{scikitscalers}.
 \\
-We conclude this subsection with a custom example that motivates the need of feature scaling \citeW{scikitscale_example}. The idea is to compare the results of modelling the data with K-nearest neighbors on the unscaled data against the scaled data. The considered data is the wine recognition dataset \href{https://archive.ics.uci.edu/dataset/109/wine}{https://archive.ics.uci.edu/da-taset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
+We conclude this subsection with a custom example that motivates the need of feature scaling \citeW{scikitscale_example}. The idea is to compare the results of modelling the data with K-nearest neighbours on the unscaled data against the scaled data. The considered data is the wine recognition dataset \href{https://archive.ics.uci.edu/dataset/109/wine}{https://archive.ics.uci.edu/da-taset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
 The unscaled and scaled version are compared in Figure \ref{fig:feature_scaler_example}.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/feature_scaler_example.png}
-    \caption{Importance of feature scaling}
+    \caption[Importance of feature scaling]{Importance of feature scaling \citeW{scikitscale_example}}
     \label{fig:feature_scaler_example}
 \end{figure}
 What we can conclude from the image is that, the model trained on scaled data is much better than the other.
-On the left, we can see that distances between categories are impacted solely by the larger scale feature. Conversely, on the right, we have that the two features contribute equally in determining the neighbors.
+On the left, we can see that distances between categories are impacted solely by the larger scale feature. Conversely, on the right, we have that the two features contribute equally in determining the neighbours.
 
 \subsection{Data compression}
 When the number of points $n$ is large, kernel methods suffer from high computational costs. 
@@ -321,8 +321,8 @@ The whole code for the project is hosted on
 \\
 \begin{itemize}
     \item query/: folder containing Scopus data and scripts to generate bibliometric survey plots in Section \ref{literature_review}.
-    \item thesis/: folder containing tex files for thesis.
-    \item beamer/: folder containing tex files for pptx thesis defence.
+    \item thesis/: folder containing tex files for thesis pdf.
+    \item beamer/: folder containing tex files for beamer pptx %pptx thesis defence.
     \item experiments: folder containing train, test script for each of the experiments carried out in the thesis alongside with the binary files of the pickled models.
     \item experiments/src/kernel\_quantile\_regression/kqr.py: file implementing our custom kernel quantile regression.
     \item experiments/Data: cleaned data used in our experimental studies.

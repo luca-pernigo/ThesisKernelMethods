@@ -9,45 +9,45 @@ Warning--empty journal in gaillardasemi
 Warning--empty year in gaillardasemi
 Warning--can't use both volume and number fields in macqueen1967some
 Warning--empty journal in nystrom
-You've used 111 entries,
+You've used 112 entries,
             2118 wiz_defined-function locations,
-            1133 strings with 21950 characters,
-and the built_in function-call counts, 36563 in all, are:
-= -- 3651
-> -- 1699
+            1140 strings with 22093 characters,
+and the built_in function-call counts, 36918 in all, are:
+= -- 3683
+> -- 1722
 < -- 11
-+ -- 683
-- -- 560
-* -- 2660
-:= -- 6188
-add.period$ -- 334
-call.type$ -- 111
-change.case$ -- 594
++ -- 692
+- -- 568
+* -- 2691
+:= -- 6251
+add.period$ -- 337
+call.type$ -- 112
+change.case$ -- 601
 chr.to.int$ -- 0
-cite$ -- 117
-duplicate$ -- 1313
-empty$ -- 2800
-format.name$ -- 560
-if$ -- 7476
+cite$ -- 118
+duplicate$ -- 1324
+empty$ -- 2824
+format.name$ -- 568
+if$ -- 7546
 int.to.chr$ -- 0
-int.to.str$ -- 111
-missing$ -- 130
-newline$ -- 556
-num.names$ -- 222
-pop$ -- 522
+int.to.str$ -- 112
+missing$ -- 131
+newline$ -- 561
+num.names$ -- 224
+pop$ -- 527
 preamble$ -- 1
-purify$ -- 500
+purify$ -- 506
 quote$ -- 0
-skip$ -- 908
+skip$ -- 915
 stack$ -- 0
-substring$ -- 2536
-swap$ -- 195
+substring$ -- 2553
+swap$ -- 196
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 406
+type$ -- 410
 warning$ -- 6
-while$ -- 375
-width$ -- 114
-write$ -- 1213
+while$ -- 378
+width$ -- 115
+write$ -- 1224
 (There were 6 warnings)

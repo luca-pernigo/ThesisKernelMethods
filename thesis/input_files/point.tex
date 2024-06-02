@@ -120,7 +120,7 @@ Next, we can introduce the slack variables $\xi$ and $\xi^*$ and obtain the foll
         \quad& \xi_i^*\geq0
     \end{aligned}
 \end{equation}
-The $C$ constant trades off between $\epsilon$ deviation tolerance and flatness of the function $f$. A bigger $C$ gives more importance to error minimization while as $C$ gets smaller, flattness gains importance.
+The $C$ constant trades off between $\epsilon$ deviation tolerance and flatness of the function $f$. A bigger $C$ gives more importance to error minimisation while as $C$ gets smaller, flattness gains importance.
 \\
 We seek to minimise the $\epsilon$ insensitive loss function, defined as follows
 \begin{equation}
@@ -195,7 +195,7 @@ Notice, depending on the numbers of layers, MLPs are sometimes referred to as de
 Long short term memory network (LSTM) extends MLP by introducing a cell state in its layers \cite{hochreiter1997long}. In this way, the current state of a cell depends on the current value $X_t$, on the previous cell activation and on the previous cell state $C_{t-1}$, see Figure \ref{fig:lstm_cell} for a visual representation. 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/lstm_cell.png}
-    \caption{Long short term memory cell}
+    \caption{Long short term memory cell \cite{Han2024}}
     \label{fig:lstm_cell}
 \end{figure}
 The cell is responsible for deciding whether to store/forget long and short term information. To do so, each cell is made of a forget gate, an input gate and an output gate.
@@ -238,9 +238,9 @@ In the setting of kernel ridge regression, we aim at estimating $f$ such that $y
 \end{equation}
 Before proceeding, we need to introduce the representer theorem.
 \begin{theorem}
-    Let $k:\mathcal{X} \times \mathcal{X} \mapsto \mathbb{R}$ on a non empty set $\mathcal{X}$ with corresponding RKHS $\mathcal{H}$,
+    Let $k:\mathcal{X} \times \mathcal{X} \to \mathbb{R}$ on a non empty set $\mathcal{X}$ with corresponding RKHS $\mathcal{H}$,
     a strictly increasing real valued function $g:[0,\infty) \to \mathbb{R}$, and the loss function $E:(\mathcal{X}\times \mathbb{R}^2)^n \to \mathbb{R} \cup \{\infty\}$.
-    Consider the regularized risk functional $Risk[f]:f \mapsto  E\left((x_{1},y_{1},f(x_{1})),\ldots, (x_{n},y_{n},f(x_{n}))\right)+g\left(\| f\|_{\mathcal{H}} \right)$. Then any minimizer of the empirical risk can be represented as $$ f^{*}(\cdot )=\sum\limits_{i=1}^{n}\alpha _{i}k(\cdot ,x_{i})$$
+    Consider the regularised risk functional $Risk[f]:f \mapsto  E\left((x_{1},y_{1},f(x_{1})),\ldots, (x_{n},y_{n},f(x_{n}))\right)+g\left(\| f\|_{\mathcal{H}} \right)$. Then any minimizer of the empirical risk can be represented as $$ f^{*}(\cdot )=\sum\limits_{i=1}^{n}\alpha _{i}k(\cdot ,x_{i})$$
 \end{theorem}
 
 \begin{proof}
@@ -257,7 +257,7 @@ Before proceeding, we need to introduce the representer theorem.
         \end{aligned}
     \end{equation}
     This means that setting $\nu=0$ does not affect the evaluation of $f$.
-    Next consider the regularization term. The functional $g$ is defined to be strictly monotonic in order to penalize more complex functions $f$.
+    Next consider the regularisation term. The functional $g$ is defined to be strictly monotonic in order to penalise more complex functions $f$.
     \begin{equation}
         \begin{aligned}
             g(\|f\|_{\mathcal{H}})=&g\left(\left\|\sum\limits_{i=1}^n \alpha_i \phi(x_i)+v\right\|_\mathcal{H}\right)
