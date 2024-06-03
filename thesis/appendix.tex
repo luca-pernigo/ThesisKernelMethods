@@ -45,7 +45,7 @@
 This section contains extensive comparison between our kernel quantile regression and other state of the art quantile regressors. We benchmark it on popular machine learning datasets.
 \subsection{Boston housing dataset}
 The Boston housing dataset \href{https://www.kaggle.com/datasets/altavish/boston-housing-dataset}{https://www.kaggle.com/datasets/altavish/boston-housing-dataset} contains information about various attributes for suburbs in Boston.
-There are 13 indipendent variables:
+There are 13 indipendent variables
 \begin{itemize}
 \item CRIM: per capita crime rate by town
 \item ZN: proportion of residential land zoned for lots over 25,000 sq.ft.\
@@ -106,8 +106,8 @@ MAE & 3.826326 & 2.845989 & 2.965490 & \textbf{2.810494} \\
 \end{table}
 
 \subsection{Abalone dataset}
-The abalone data \href{https://archive.ics.uci.edu/dataset/1/abalone}{https://archive.ics.uci.edu/dataset/1/abalone} consistst of measurements of abalone molluscs, the goal is predicting their age by building a model for estimating its number of rings; age is the number of rings plus 1.5.
-The data has 8 attributes:
+The abalone data \href{https://archive.ics.uci.edu/dataset/1/abalone}{https://archive.ics.uci.edu/dataset/1/abalone} consists of measurements of abalone molluscs, the goal is predicting their age by building a model for estimating its number of rings; age is the number of rings plus 1.5.
+The data has 8 attributes
 \begin{itemize}
     \item Sex: categorical variable either male, female or infant
     \item Length
@@ -161,7 +161,7 @@ The data has 8 attributes:
 \end{table} 
 
 \subsection{Vehicle dataset}
-This data contains info about used cars \href{https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho}{https://www.kaggle.com/datasets/ne-halbirla/vehicle-dataset-from-cardekho}, the predictors are:
+This data contains info about used cars \href{https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho}{https://www.kaggle.com/datasets/ne-halbirla/vehicle-dataset-from-cardekho}, the predictors are
 \begin{itemize}
     \item Year
     \item Present\_price: ex showroom price
@@ -237,9 +237,9 @@ Model performance depends higly on the choice of hyperparameters. Notice, there 
 using cross validation. For example, suppose that the grid contains 100 possible candidates and that we are doing 5-fold cross-validation, then the gridsearch algorithm will carry out 500 iterations.
 Therefore, we get an estimate of prediction error for each considered model and this guides us in the hyperparameters selection.
 
-\subsection{Randomized search}
-Randomized search controls the number of steps by choosing smartly the hyperparameters to try in each iterations.
-Let us say, there are 100 candidates and we set the number of iterations to 20 then the search will stop after the 20th iteration and return the best set among the hyperparameters observed.
+\subsection{Randomised search}
+Randomised search controls the number of steps by choosing smartly the hyperparameters to try in each iteration.
+Let us say, there are 100 candidates and we set the number of iterations to 20 then the search will stop after the $20^{th}$ iteration and return the best set among the hyperparameters observed.
 The advantage is that it is much more quicker than gridsearch, but on the other hand its performance is worse than gridsearch.
 
 \subsection{Halving gridsearch}
@@ -249,7 +249,7 @@ The scikit-learn team addressed this disadvantage of gridsearch by introducing t
 The ground concept underlying this method is successive halving. During the first iteration of halving gridsearch, all candidates are trained on a small subset of the training set. Next, we keep only the candidates which performed best and compare  them again on a bigger subset of the training set. As the iterations pass, the surviving candidates will be given more and more training samples. The algorithm stops when we are left with only the best set of hyperparameters.
 
 \subsection{Cross validation for time series data}
-When data points are dependent on preceding values, we cannot use standard $K$-fold cross validation. The rationale is that $K$-fold will randomize the order of the data, thus it might happen to use future data to predict the past; we want to avoid such behaviour in a time series setting. 
+When data points are dependent on preceding values, we cannot use standard $K$-fold cross validation. The rationale is that $K$-fold will randomise the order of the data, thus it might happen to use future data to predict the past; we want to avoid such behaviour in a time series setting. 
 When carrying out out any kind of cross validation, we must keep consistency in the way we evaluate our predictors during model selection and in the way we perform evaluation of the test data.
 Hence, for time series crossvalidation we have the timeseries split procedure, see Figure \ref{fig:crossvalidationtimeseries} for a visualisation. The blue observations make up the training sets while the orange observations form the test sets.
 \begin{figure}
@@ -271,8 +271,8 @@ In predicting $\hat{y}_{N+m}$ we use as inputs $y_1, y_2, \dots, \hat{y}_{N},\ha
 Following, are reported a couple of considerations important to keep in mind when working with kernel methods.
 
 \subsection{Data normalisation}\label{appendix:normalization}
-With data normalization we transform the range of the feautures to a standard scale.
-Such preprocessing step is essential when employing distance based algorithms like SVM or K-nearest neighbours. The rationale behind it is that by normalizing data we give an uniform weight to each feature in the learning process; in this way we do not favour larger scale features.
+With data normalisation we transform the range of the features to a standard scale.
+Such preprocessing step is essential when employing distance based algorithms like SVM or K-nearest neighbours. The rationale behind it is that by normalising data we give an uniform weight to each feature in the learning process; in this way we do not favour larger scale features.
 Examples of the most popular features scaling are:
 \begin{itemize}
     \item Standard scaler: it computes the standard score $z$ of a sample $x$
@@ -299,10 +299,10 @@ On the left, we can see that distances between categories are impacted solely by
 \subsection{Data compression}
 When the number of points $n$ is large, kernel methods suffer from high computational costs. 
 Using kernel methods, we have that the storage cost is of the order $O(n^2)$ while the computational cost for finding the solution is of the order $O(n^3)$.
-A significant speed up can be obtained thanks to low rank approximation.
+A significant speed up can be obtained thanks to low rank approximations.
 
 
-\subsubsection{Nystrom decomposition}
+\subsubsection{Nyström decomposition}
 The Nyström approximation involves storing a submatrix of the whole kernel matrix. Thus, storage and computational costs are reduced to $O(nm)$ and $O(nm^2)$ respectively.
 Nyström works by selecting $m<n$ points, called representative points; it approximates $K$ as
 \begin{equation}
@@ -320,7 +320,7 @@ The whole code for the project is hosted on
 \url{https://github.com/luca-pernigo/ThesisKernelMethods}\label{github_repo}.
 \\
 \begin{itemize}
-    \item query/: folder containing Scopus data and scripts to generate bibliometric survey plots in Section \ref{literature_review}.
+    \item query/: folder containing Scopus data and scripts to generate bibliometric survey plots in Section \ref{literature_review}. Database queries have been taken from \cite{nowotarski}.
     \item thesis/: folder containing tex files for thesis pdf.
     \item beamer/: folder containing tex files for beamer pptx %pptx thesis defence.
     \item experiments: folder containing train, test script for each of the experiments carried out in the thesis alongside with the binary files of the pickled models.

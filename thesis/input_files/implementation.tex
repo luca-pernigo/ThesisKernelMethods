@@ -1,4 +1,4 @@
-This section is intended to explain and aid for reproducibility studies. Hereafter, the specific libraries used and the custom implementatios are thoroughly documented.
+This section is intended to explain and aid for reproducibility studies. Hereafter, the specific libraries used and the custom implementations are thoroughly documented.
 \\
 For the list of Python packages needed, see the requirement.txt file on \url{https://github.com/luca-pernigo/ThesisKernelMethods}\label{github_repo}.
 % - indicate computer specifics
@@ -54,21 +54,21 @@ The implementation of \href{https://scikit-learn.org/stable/modules/generated/sk
 \subsection{Quantile forest}
 The implementation of \href{https://pypi.org/project/quantile-forest/}{quantile\_forest.RandomForestQuantileRegressor} has been used. This estimator is compatible with scikit-learn API \cite{Johnson2024}.
 \subsection{Kernel quantile regression}
-Kernel quantile regression had no previously implemented Python open source library, thus the need of implementing our own version.
+Kernel quantile regression had no previously implemented Python open source library, thus, the need of implementing our own version.
 \\
 The scikit-learn team provides a project template for the creation of estimators compatible with scikit-learn functionalities. Therefore, the KQR class is derived from the scikit-learn BaseEstimator and the mixin class RegressorMixin.
-Our KQR class is initialized by providing a quantile, the regularisation term $C$, the kernel family and its corresponding hyperparameters.
+Our KQR class is initialised by providing a quantile, the regularisation term $C$, the kernel family and its corresponding hyperparameters.
 \\
-In the fit method, we set up and solve the convex optimisation problem through the interior point method. This algorithm is taken from the cvxopt library, see its official manual \citeW{vandenberghe2010cvxopt} for a reference.
-When using this library, it is important to keep two things in mind. First this library assumes the quadratic term of the optimisation problem to be multiplied by the 0.5 factor, thus we just have to provide the $Q$ matrix with no 0.5 in front.
+In the fit method, we set up and solve the convex optimisation problem through the interior point algorithm. This algorithm is taken from the cvxopt library, see its official manual \citeW{vandenberghe2010cvxopt} for a reference.
+When using this library, it is important to keep two things in mind. First this library assumes the quadratic term of the optimisation problem to be multiplied by the 0.5 factor, thus, we just have to provide the $Q$ matrix with no 0.5 in front.
 Secondly, in order to specify multiple inequalities we have to stack them and provide them as a single matrix.
 \\
 Once a solution to the convex problem has been found, we create a mask for the support vectors of the estimator in order to estimate the constant term of our kernel quantile regressor.
 \\
 In the predict method, we pass a matrix $X\_eval$ of independent variables, next we compute the kernel matrix between $X\_train$ and $X\_eval$ and obtain $y\_eval$ with the formula $y=\alpha^\intercal K+b$.
 \\
-This estimator is compatible with in built scikit-learn methods like gridsearch, crossvalidation and scoring rules. Moreover, this code is compatible with sklearn in built kernel functions \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process.kernels}{sklearn.gaussian\_process.kernels}. Functions supported by our kernel quantile regression include: Gaussian RBF, absolute Laplacian, Matern 3/2, Matern 5/2, Linear, Cosine, Sigmoid, Periodic, Polynomial and custom composition of kernels. 
-Kernels from these two submodules use a different convention in the hyperparameters. The former has the lenghtscale parameter in the numerator while the latter in the denominator. In order to meaningfully compare across different kernels we made them consistent in this aspect. For this purpose we adhere to the convention of having lenghtscale hyperparameters in the denominator.
+This estimator is compatible with in built scikit-learn methods like gridsearch, crossvalidation and scoring rules. Moreover, this code is compatible with sklearn in built kernel functions \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process.kernels}{sklearn.gaussian\_process.kernels}. Functions supported by our kernel quantile regression include: Gaussian RBF, Absolute Laplacian, Matern 3/2, Matern 5/2, Linear, Cosine, Sigmoid, Periodic, Polynomial and custom composition of kernels. 
+Kernels from these two submodules use a different convention in the hyperparameters. The former has the lengthscale parameter in the numerator while the latter in the denominator. In order to meaningfully compare across different kernels we made them consistent in this aspect. For this purpose we adhere to the convention of having lengthscale hyperparameters in the denominator.
 
 % NOTICE, these kernel implementations differ in the form of passed parameters in the former we pass in the numerator gamma while in the latter we pass l, which stands for length scale in the denominator. To cross validate overt the same range of parameter across the different kernels we made sura that gamma=1/l.
 

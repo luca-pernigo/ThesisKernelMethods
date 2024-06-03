@@ -10,7 +10,7 @@ Meinshausen \cite{meinshausen2006quantile} extends the idea of random forest \ci
 In order to understand this algorithm, it is first necessary to cover the theory of decision trees and random forests.
 \subsection{Decision trees}
 Decision tree methods partition recursively the feature space in a set of binary rectangles and then fit a simple model in each of those partitions (the most straightforward is fitting just a constant).
-To get started, we first split the space into two disjoint regions, then we model the response variable by the mean of the observed predicted variables with associated features falling in that specific region. Our goal is selecting the best features and best split point to achieve the best generalizing fit.
+To get started, we first split the space into two disjoint regions, then we model the response variable by the mean of the observed predicted variables with associated features falling in that specific region. Our goal is selecting the best features and best split point to achieve the best generalising fit.
 For a visualisation consider the Figures \ref{fig:elements_statistical_learning1} and \ref{fig:elements_statistical_learning2}, where the decision tree algorithm is visualised for a regression problem with two independent variables $X_1$ and $X_2$.
 \begin{figure}
     \includegraphics[width=0.5\textwidth]{images/elsii1.png}
@@ -30,7 +30,7 @@ Suppose now to partition the feature space into M regions $R_1,\dots,R_M$, then 
 \end{equation}
 \\
 It follows that the function minimising the sum of squares is the one with $\hat{c}_m=mean(y_i|x_i \in R_m)$.
-Finding the best split in terms of minimum sum of squares is computationally infeasible in practice. Therefore we approximate a solution by approaching the problem in a greedy fashion.
+Finding the best split in terms of minimum sum of squares is computationally infeasible in practice. Therefore, we approximate a solution by approaching the problem in a greedy fashion.
 Let $j$ denote the splitting variable and $s$ be the split point we define the two half planes
 \begin{equation}
     R_1(j,s)=\{X|X_j\leq s\} \quad R_2(j,s)=\{X|X_j >s\}
@@ -311,7 +311,7 @@ Defining $\alpha=(\lambda-\lambda^*)$ and letting $K$ be the kernel matrix, we h
         \max_{\alpha} \quad & -\frac{1}{2}\alpha^\intercal K\alpha+\alpha^\intercal y\\
     \textrm{s.t.} \quad & 
     C(q-1)\mathbb{1}\preceq \alpha \preceq Cq\mathbb{1}\\
-    &\alpha^\intercal\mathbb{1}=1
+    &\alpha^\intercal\mathbb{1}=0
     \end{aligned}
     \end{equation}
 Switching sign, we rephrase it as a minimisation problem, which is the common practice in convex optimisation.
@@ -320,14 +320,14 @@ Switching sign, we rephrase it as a minimisation problem, which is the common pr
         \min_{\alpha} \quad & +\frac{1}{2}\alpha^\intercal K \alpha-\alpha^\intercal y\\
     \textrm{s.t.} \quad & 
     C(q-1)\mathbb{1}\preceq \alpha \preceq Cq\mathbb{1}\\
-    &\alpha^\intercal\mathbb{1}=1
+    &\alpha^\intercal\mathbb{1}=0
     \end{aligned}
     \end{equation}
 The kernel quantile regression estimator is then given by
 \begin{equation}
     f(x)=\sum\limits_{i=1}^{n} \alpha_i k(x_i, x)+b
 \end{equation}
-Since our optimisation problem possesses strong duality and it is differentiable in both the objective and the constraint, we have that it must satisfy the Karush Kuhn Tucker conditions (KKT), see Section 5.5.3 \cite{boyd2004convex}.
+Since our optimisation problem possesses strong duality and it is differentiable in both the objective and the constraint, we have that it must satisfy the Karush Kuhn Tucker conditions (KKT), see \cite[Section 5.5.3]{boyd2004convex}.
 Thanks to the KKT conditions on the primal optimisation problem we have that $f(x_i)=y_i \ \mathrm{for} \ \alpha_i \not \in \{C(q-1), Cq\}$. 
 To see this, we have to consider the KKT conditions.
 % optimal lambda times optimal x
@@ -458,15 +458,15 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \toprule
     Quantiles & Linear qr & Gbm qr & Quantile forest & KQR \\
     \midrule
-    0.100000 & 0.710644 & 0.549232 & 0.562888 & \textbf{0.540145} \\
-    0.200000 & 1.155014 & 0.938561 & 0.946712 & \textbf{0.903193} \\
-    0.300000 & 1.417805 & 1.212671 & 1.222407 & \textbf{1.173627} \\
-    0.400000 & 1.540108 & 1.399925 & 1.409293 & \textbf{1.368022} \\
-    0.500000 & 1.574957 & 1.517281 & 1.484589 & \textbf{1.456053} \\
-    0.600000 & 1.525114 & 1.498608 & 1.495474 & \textbf{1.447470} \\
-    0.700000 & 1.397918 & 1.372183 & 1.362173 & \textbf{1.331375} \\
-    0.800000 & 1.170140 & 1.115077 & 1.123195 & \textbf{1.096649} \\
-    0.900000 & 0.787195 & \textbf{0.714075} & 0.734112 & 0.715013 \\
+    0.1 & 0.710644 & 0.549232 & 0.562888 & \textbf{0.540145} \\
+    0.2 & 1.155014 & 0.938561 & 0.946712 & \textbf{0.903193} \\
+    0.3 & 1.417805 & 1.212671 & 1.222407 & \textbf{1.173627} \\
+    0.4 & 1.540108 & 1.399925 & 1.409293 & \textbf{1.368022} \\
+    0.5 & 1.574957 & 1.517281 & 1.484589 & \textbf{1.456053} \\
+    0.6 & 1.525114 & 1.498608 & 1.495474 & \textbf{1.447470} \\
+    0.7 & 1.397918 & 1.372183 & 1.362173 & \textbf{1.331375} \\
+    0.8 & 1.170140 & 1.115077 & 1.123195 & \textbf{1.096649} \\
+    0.9 & 0.787195 & \textbf{0.714075} & 0.734112 & 0.715013 \\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -481,12 +481,12 @@ As already pointed out, the quantile regression with $q=0.5$ corresponds to the 
     \bottomrule
     \end{tabular}
 \end{table}  
-From these tables, we can see that kernel quantile regression outperformes the simple quantile regressor as well as the more complex models like quantile forest and gradient boosting quantile regression for the Melbourne temperatures dataset. Not only kernel quantile regression was the best in terms of total pinball loss but also the best in terms of each quantile pinball loss and mean absolute error.
+From these tables, we can see that kernel quantile regression outperforms the simple quantile regressor as well as the more complex models like quantile forest and gradient boosting quantile regression for the Melbourne temperatures dataset. Not only kernel quantile regression was the best in terms of total pinball loss but also the best in terms of each quantile pinball loss and mean absolute error.
 Comparison has been carried out on further datasets, yielding similar conclusions as the one of above, to know more see Appendix \ref{appendix:quantile_regressor_extensive_comparison}.
 
 We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel pinball comparison}, \ref{tab:kernel pinball comparison quantile-wise}, \ref{tab:kernel mae comparison} and Figure \ref{fig:kernel quantile regressors comparison} comparing various kernel functions, see Section \ref{kernel families}.
 
-From these tables, we can conclude that the Matern and the Chi squared kernels are the top performers on the Melbourne weather data. Finally, the equaility in the scores of the Absolute Laplacian and the Matern 0.5 follows from the fact that regressors are one dimensional for the Melbourne weather data.
+From these tables, we can conclude that the Matern and the Chi squared kernels are the top performers on the Melbourne weather data. Finally, the equality in the scores of the Absolute Laplacian and the Matern 0.5 follows from the fact that regressors are one dimensional for the Melbourne weather data.
 % tables
 \begin{table}[!h]
     \caption{Kernels comparison pinball loss for Melbourne data}

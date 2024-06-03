@@ -15,14 +15,14 @@ Building on the theory introduced in Sections \ref{ch:point} and \ref{ch:prob}, 
 % - Other plots that will come up to mind
 
 \section{Point forecasting}
-This section carries out a comparative study between the state of the art methods for point forecasting, introduced in \ref{ch:point}.
+This section carries out a comparative study between the state of the art methods for point forecasting, introduced in Section \ref{ch:point}.
 As use case, we will consider the task of predicting the electric load from the GEFCom2014 dataset.
 In such setting we considered the following regressors
 \begin{itemize}
     \item Day
     \item Hour
     \item Month
-    \item Day of the week
+    \item Day of week: an ordinal categorical variable corresponding to the day of the week, e.i.\ Monday=0,$\dots$, Sunday=6
     \item Is holiday: a binary variable for holidays, where holiday=1 and working day=0
     \item Weather temperature
 \end{itemize}
@@ -40,7 +40,7 @@ What can be concluded, is that multiple linear regression is capable of catching
 
 \subsection{Trigonometric seasonality Box-Cox transformation ARMA errors trend and seasonal components}
 Next, we tried with the autoregressive approach. Unfortunately, AR, ARIMA and SARIMA models did not perform as expected, their output was slightly better than the one of linear regression. This is probably due to the fact that, the data considered entails two kinds of seasonalities, while ARIMA models can only handle one at a time. We remind the reader, that the electricity load time series involves both daily and weekly seasonalities. Hence, the need for a more advanced time series model. The Tbats \cite{de2011forecasting} model is a forecasting method capable of handling complex patterns in the data. Its name stands for trigonometric seasonality, Box-Cox transformation, ARMA errors, trend and seasonal components. 
-Tbats forecast is visualized in Figure \ref{fig:tbats_price}, meanwhile its RMSE on task 1 is 15.08.
+Tbats forecast is visualised in Figure \ref{fig:tbats_price}, meanwhile its RMSE on task 1 is 15.08.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/tbats_price.png}
     \caption{Tbats prediction}
@@ -50,7 +50,7 @@ From the plot we see that Tbats is capable of catching the lows and average tren
 \subsection{Prophet}
 Following, the prophet model has been considered. 
 We get started by considering the base implementation. In such setting, prophet takes as input the time series object and learns its data generating process.
-This method achieves on task 1 a RMSE of 23.96, its prediction is visualized in Figure \ref{fig:prophet_price_1}.
+This method achieves on task 1 a RMSE of 23.96, its prediction is visualised in Figure \ref{fig:prophet_price_1}.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/prophet_price_1.png}
     \caption{Prophet prediction}
@@ -222,7 +222,7 @@ We continue our experimental analysis by considering the probabilistic framework
 % quantile regressors
 \subsection{Quantile regressors comparison}
 Using the load data from \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts} for Germany and Switzerland, we proceeded to compare between quantile regression algorithms. In this study, we trained our models on the entire 2021 data and then tested them and measured their score on the 2022 data.
-Notice, for kernel quantile regression (KQR), the kernel of choice in this setting is the Absolute Laplacian. Additionally notice, the loss function utilized in this section is the normalized pinball loss. 
+Notice, for kernel quantile regression (KQR), the kernel of choice in this setting is the Absolute Laplacian. Additionally notice, the loss function utilised in this section is the normalised pinball loss. 
 % normalized by the magnitude of the average load of each country.
 Here, we built two models. In the first, the national load is forecasted by taking as predictor the following variables
 \begin{itemize}
@@ -353,15 +353,15 @@ What can be concluded from this first study is that kernel quantile regression e
 
 % kernel comparison
 \subsection{Kernel function choice}
-This section analyzes which kernel function best fits to the characteristics of the load data.
+This section analyses which kernel function best fits to the characteristics of the load data.
 The kernel functions considered are: Gaussian RBF, Absolute Laplacian, Matern 0.5, Matern 1.5, Matern 2.5, Linear, Periodic, Polynomial, Sigmoid, and Cosine. 
 Details concerning the hyperparameter selection for the different kernels can be found in \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process}{sklearn.gaussian\_process}.
 The pool of data for this study has been created by combining \href{https://zenodo.org/records/7907883}{SECURES-Met} data (predictors) \cite{Formayer2023} and the load data from \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts}.
-SECURES-Met data consists of historical data up to the end of $2020$ while from 2021 onward, the data consists of forecasts modeled by the European Centre for Medium-Range Weather Forecasts (ECMWF).
+SECURES-Met data consists of historical data up to the end of $2020$ while from 2021 onward, the data consists of forecasts modelled by the European Centre for Medium-Range Weather Forecasts (ECMWF).
 Therefore, in this experimental study, we used the whole data of $2020$ as the training set and then tested our kernels on the $2021$ data.
 Note that there are two kinds of predictions for data from $2021$ onward, one for each of the emission scenarios RCP$4.5$ and RCP$8.5$. In this study, we considered the more conservative RCP$4.5$ scenario data.
 
-The predictors making up the datasets follow:
+The predictors making up the datasets follow
 \begin{itemize}
     \item Direct irradiation: direct normal irradiation
     \item Global radiation: mean global radiation
@@ -454,7 +454,7 @@ Table \ref{tab:secures_met_de} shows results for Germany, Table \ref{tab:secures
 \end{adjustbox}
 \end{table}
 From our tables, it can be concluded that the Absolute Laplacian kernel is the one fitting best to the characteristics of load data.
-Additionally, we can conclude that our results are in line with the ones published in \cite{he2017short}. In that study, similarly to what we did in this subsection, the authors carried out a comparitive study concerning the choice of kernels in KQR. Nevertheless notice, that the set of kernel we considered in our study is larger than the one presented in \cite{he2017short}.
+Additionally, we can conclude that our results are in line with the ones published in \cite{he2017short}. In that study, similarly to what we did in this subsection, the authors carried out a comparative study concerning the choice of kernels in KQR. Nevertheless, notice that the set of kernels we considered in our study is larger than the one presented in \cite{he2017short}.
 Their paper showed evidence of the superiority of the Gaussian RBF among their set of kernel functions. Analogously, we can see from Tables \ref{tab:secures_met_de}, \ref{tab:secures_met_ch} and \ref{tab:secures_met_at} that the Matern kernels are the best in terms of pinball loss.
 The Periodic equipped with period $p=24$ shows good performance. 
 After those kernels, we have the Linear and Polynomial kernels.
@@ -486,13 +486,13 @@ In this setting, the predictors fed to our KQR models are
 Since target days vary all over the year, we trained a model for any month associated to them.
 
 Our results for this track are reported in Table \ref{tab:pinball loss gefcom2014 price data}. In this track, the top entries came from the teams: Tololo, Team Poland, GMD, and C3 Green Team; for a breakdown of each method's attributes, see \cite[Table 8]{hong2016probabilistic}. 
-The Gaussian RBF probabilistic prediction for the $4^{th}$ July $2013$ zonal price at the $90\%$ confidence interval is visualized in Figure \ref{fig:price_task_4_gaussian_rbf}.
-Cross validation results are visualised in Figure.
+The Gaussian RBF probabilistic prediction for the $4^{th}$ July $2013$ zonal price at the $90\%$ confidence interval is visualised in Figure \ref{fig:price_task_4_gaussian_rbf}.
+Cross validation results are visualised in Figure \ref{fig:cv_scatter}.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{images/cv_scatter.png}
-    \label{fig:cv_scatter}
     \caption{Cross validation price track task 4, Gaussian RBF kernel}
+    \label{fig:cv_scatter}
 \end{figure}
 
 
@@ -597,7 +597,7 @@ Cross validation results are visualised in Figure.
     \end{adjustbox}
   \end{table}
 
-What can be concluded from Table \ref{tab:pinball loss gefcom2014 price data} is that KQR performs consistently among the top algorithms. Furthermore, It ranks first in one out of the twelve tasks of the price track.
+What can be concluded from Table \ref{tab:pinball loss gefcom2014 price data} is that KQR performs consistently among the top algorithms. Furthermore, it ranks first in one out of the twelve tasks of the price track.
 \subsubsection{GEFCom2014 load track} 
 The GEFCom2014 load track constitutes a good setting for analysing the performance of KQR in the context of medium term load forecasting (MTLF).
 In this track we were faced with the challenge of predicting the load for the next month without the availability of weather temperature forecasts. 
@@ -605,14 +605,14 @@ Therefore, the primary task was to first accurately predict the weather temperat
 \begin{itemize}
     \item Day: the number of the day
     \item Hour
-    \item Day of week: an ordinal categorical variable for the day of the week
+    \item Day of week: an ordinal categorical variable corresponding to the day of the week, e.i.\ Monday=0,$\dots$, Sunday=6
     \item Is holiday: a binary variable for holidays, where holiday=1 and working day=0
     \item w avg: average of weather temperatures across 25 weather stations
 \end{itemize}
 We built $12$ models, one for each month, with each task model trained on the historical data of the month associated with it.
 
 Table \ref{tab:pinball loss gefcom2014 load data} reports our results for the load track. The top teams for the load forecasting track were Tololo, Adada, Jingrui(Rain) Xie, OxMAth, E.S. Managalova, Ziel Florian, and Bidong Liu; for a breakdown of the attributes of each method, see \cite[Table 6]{hong2016probabilistic}.
-Finally, the $90\%$ confidence interval forecast by our model equipped with the Absolute Laplacian kernel for task number $9$, that is the prediction for June, are reported in Figure \ref{fig:load_task_9} and Figuree \ref{fig:boxplot_load_task_9}.
+Finally, the $90\%$ confidence interval forecast by our model equipped with the Absolute Laplacian kernel for task number $9$, that is the prediction for June, is reported in Figure \ref{fig:load_task_9} and Figure \ref{fig:boxplot_load_task_9}.
 Similarly to the price track, we have that KQR was among the best algorithms also in the load forecasting track.
 
 \begin{figure*}[!ht]
@@ -745,7 +745,7 @@ Among the contributions of this thesis work, we can list
 % - comparison against state of the art algorithms from GEFCom2014, particularly KQR in medium term load forecasting which has not been deeply analyzed in the literature.
 \begin{itemize}
     \item We have studied kernel methods for electricity forecasting both in the point and probabilistic framework.
-    \item We provided a Python open source implementation for kernel quantile regression compatible with the sklearn API. The code has been packaged and uploaded to the Python Package Index (PyPI) with the name \href{https://pypi.org/project/kernel-quantile-regression/#2}{kernel-quantile-regression}. The \href{https://github.com/luca-pernigo/ThesisKernelMethods}{github repo} hosting the source code includes also the script implementing the experiments along with the cleaned datasets; this contribution is intended to forster reproducibility in research.
+    \item We provided a Python open source implementation for kernel quantile regression compatible with the sklearn API. The code has been packaged and uploaded to the Python Package Index (PyPI) with the name \href{https://pypi.org/project/kernel-quantile-regression/#2}{kernel-quantile-regression}. The \href{https://github.com/luca-pernigo/ThesisKernelMethods}{github repo} hosting the source code includes also the scripts implementing the experiments along with the cleaned datasets; this contribution is intended to forster reproducibility in research.
     \item We achieved superior performance of kernel quantile regression compared to standard quantile regressor algorithms. 
     \item We created and made available datasets suitable for algorithms benchmarking considering data from the DACH region (Germany, Switzerland and Austria). The format of these data takes inspiration from the popular GEFCom competitions.
     \item Kernel quantile regression extensive comparison between kernel function types.

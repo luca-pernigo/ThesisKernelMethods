@@ -43,7 +43,7 @@
 \contentsline {subsection}{\numberline {6.2.1}Autoregressive integrated moving average}{40}{subsection.6.2.1}%
 \contentsline {subsection}{\numberline {6.2.2}Autoregressive integrated moving average with exogenous variables}{40}{subsection.6.2.2}%
 \contentsline {subsection}{\numberline {6.2.3}Seasonal autoregressive integrated moving average and seasonal autoregressive integrated moving average with exogenous variables}{40}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Generalized additive model}{41}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Generalised additive model}{41}{section.6.3}%
 \contentsline {section}{\numberline {6.4}K-nearest neighbours regression}{41}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Support vector regression}{41}{section.6.5}%
 \contentsline {section}{\numberline {6.6}Artificial neural networks}{43}{section.6.6}%
@@ -98,17 +98,17 @@
 \contentsline {subsection}{\numberline {10.1.3}Prophet}{86}{subsection.10.1.3}%
 \contentsline {subsection}{\numberline {10.1.4}K-nearest neighbours}{87}{subsection.10.1.4}%
 \contentsline {subsection}{\numberline {10.1.5}Support vector regression}{88}{subsection.10.1.5}%
-\contentsline {subsection}{\numberline {10.1.6}Long short term memory}{88}{subsection.10.1.6}%
-\contentsline {subsection}{\numberline {10.1.7}Kernel ridge regression}{90}{subsection.10.1.7}%
+\contentsline {subsection}{\numberline {10.1.6}Long short term memory}{89}{subsection.10.1.6}%
+\contentsline {subsection}{\numberline {10.1.7}Kernel ridge regression}{89}{subsection.10.1.7}%
 \contentsline {subsection}{\numberline {10.1.8}Kernel support vector regression}{90}{subsection.10.1.8}%
-\contentsline {subsection}{\numberline {10.1.9}Results}{91}{subsection.10.1.9}%
+\contentsline {subsection}{\numberline {10.1.9}Results}{90}{subsection.10.1.9}%
 \contentsline {section}{\numberline {10.2}Probabilistic forecasting}{92}{section.10.2}%
 \contentsline {subsection}{\numberline {10.2.1}Quantile regressors comparison}{92}{subsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.2.2}Kernel function choice}{93}{subsection.10.2.2}%
-\contentsline {subsection}{\numberline {10.2.3}GEFCom2014}{96}{subsection.10.2.3}%
+\contentsline {subsection}{\numberline {10.2.2}Kernel function choice}{94}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}GEFCom2014}{97}{subsection.10.2.3}%
 \contentsline {subsubsection}{GEFCom2014 price track}{97}{section*.80}%
-\contentsline {subsubsection}{GEFCom2014 load track}{98}{section*.84}%
-\contentsline {section}{\numberline {10.3}Conclusions}{101}{section.10.3}%
+\contentsline {subsubsection}{GEFCom2014 load track}{99}{section*.84}%
+\contentsline {section}{\numberline {10.3}Conclusions}{100}{section.10.3}%
 \contentsline {chapter}{List of Symbols}{103}{section*.88}%
 \contentsline {appendix}{\chapternumberline {A}Appendix}{107}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Feature map normalisation}{107}{section.A.1}%
@@ -119,13 +119,13 @@
 \contentsline {section}{\numberline {A.3}Cross validation}{111}{section.A.3}%
 \contentsline {subsection}{\numberline {A.3.1}K-fold cross validation}{111}{subsection.A.3.1}%
 \contentsline {subsection}{\numberline {A.3.2}Gridsearch}{111}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Randomized search}{112}{subsection.A.3.3}%
+\contentsline {subsection}{\numberline {A.3.3}Randomised search}{112}{subsection.A.3.3}%
 \contentsline {subsection}{\numberline {A.3.4}Halving gridsearch}{112}{subsection.A.3.4}%
 \contentsline {subsection}{\numberline {A.3.5}Cross validation for time series data}{112}{subsection.A.3.5}%
 \contentsline {section}{\numberline {A.4}Kernel methods best practices}{113}{section.A.4}%
 \contentsline {subsection}{\numberline {A.4.1}Data normalisation}{113}{subsection.A.4.1}%
 \contentsline {subsection}{\numberline {A.4.2}Data compression}{115}{subsection.A.4.2}%
-\contentsline {subsubsection}{Nystrom decomposition}{115}{section*.102}%
+\contentsline {subsubsection}{Nyström decomposition}{115}{section*.102}%
 \contentsline {subsubsection}{Pivoted Cholesky decomposition}{115}{section*.103}%
 \contentsline {section}{\numberline {A.5}Source code}{116}{section.A.5}%
 \contentsline {chapter}{Bibliography}{117}{appendix*.104}%

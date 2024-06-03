@@ -40,7 +40,7 @@ def test(ith):
 
     pinball_tot=0
 
-    ktype="gaussian_rbf"
+    ktype="a_laplacian"
     
     # predict
     df_template_submission=pd.read_csv(f"experiments/Data/Load/Task {ith}/L{ith}-benchmark.csv")
@@ -72,7 +72,7 @@ def test(ith):
     # plot
     load_plot_ci(reo, y_test)
     plt.title(f"Task {ith}, {ktype} kernel")
-    # plt.savefig(f"plots/Load/load_task_{ith}_{ktype}.png")
+    # plt.savefig(f"experiments/plots/Load/load_task_{ith}_{ktype}.png")
     plt.show()
 
 

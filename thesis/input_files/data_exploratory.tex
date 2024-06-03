@@ -60,7 +60,7 @@ After that, we plotted the scatter plot for inspecting the correlation between t
 \end{figure}
 
 \subsection{GEFCom2014 load track}
-In the load track, contestants were asked to provide one month ahead hourly probabilistic forecasts on a rolling basis for 15 consecutive rounds. To get started, in the first round, organizers provided 69 months of hourly load data (from 01/01/2005 to 30/10/2010) and 117 months of hourly temperature data (from 01/01/2001 to 30/10/2010). 
+In the load track, contestants were asked to provide one month ahead hourly probabilistic forecasts on a rolling basis for 15 consecutive rounds. To get started, in the first round, organisers provided 69 months of hourly load data (from 01/01/2005 to 30/10/2010) and 117 months of hourly temperature data (from 01/01/2001 to 30/10/2010). 
 As for the price track, the true observed data from the previous track were made available as the competition progressed.
 \\
 The data for load forecasting is contained in the GEFCom2014-L\_V2 zip file. Within this subfolder, we have a txt file with the competition instructions and 15 subfolders one for each of the consecutive tasks. For each of those we have the prediction of the competition benchmark model and the train file upon which we will fit our model.
@@ -96,7 +96,7 @@ These plots motivate the selection of weather temperature as one of the predicto
 
 % \subsection{GEFCom ETL}
 \subsubsection{GEFCom ETL}
-The provided data is raw, hence the need for a standardized extract transform and load pipeline. 
+The provided data is raw, hence the need for a standardised extract transform and load pipeline. 
 Firstly, we drop all Nans and zeros. The provided data for the challenge has a timestamp column not coherent to any time format. Thus, we first pass the data through a method extracting time information: hour, day, month and year. This info is then combined into a datetime object, we selected the ISO format.
 Next, since the data does not provide the location for the target utility, the best we can do is selecting the average of weather temperatures as predictor variables. This independent variable is named w avg.
 The same thing applies in the cleaning of the test data with the addition of an if clause for handling the different naming conventions and formatting used in the last track of the challenge. The Python ETL pipeline has since been automated to loop every task folder through Bash scripting.
@@ -133,7 +133,7 @@ To get started we visualise the historical load data in Figure \ref{fig:CH_histo
     \caption{Switzerland historical load (2021)}
     \label{fig:CH_historical_load_2021}
 \end{figure}
-Next, we built scatter plots of the independent continous variables against the load as means of visualizing correlation between them.
+Next, we built scatter plots of the independent continous variables against the load as means of visualising correlation between them.
 Figure \ref{fig:CH_load_vs_temperature_2021} plots load against temperatures while Figure \ref{fig:CH_load_vs_wind_speed_2021} depicts load against wind speed. From these plots, we can clearly see there exists a relationship that ties wind speeds and temperatures to load.
 
 \begin{figure}[!h]
@@ -148,7 +148,7 @@ Figure \ref{fig:CH_load_vs_temperature_2021} plots load against temperatures whi
     \label{fig:CH_load_vs_wind_speed_2021}
 \end{figure}
 
-Following, we use box plots in order to visualize the relations between categorical independent variables and the dependent one. Such visualisation are reported in Figure \ref{fig:CH_day_of_week_boxplot_2021} and Figure \ref{fig:CH_is_holiday_boxplot_2021}. We can see that workdays involve a higher load and possess a wider range than weekdays and holidays.
+Following, we use box plots in order to visualise the relations between categorical independent variables and the dependent one. Such visualisations are reported in Figure \ref{fig:CH_day_of_week_boxplot_2021} and Figure \ref{fig:CH_is_holiday_boxplot_2021}. We can see that workdays involve a higher load and possess a wider range than weekdays and holidays.
 
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/CH_day_of_week_boxplot_2021.png}

@@ -46,11 +46,11 @@ plt.show()
 
 # price
 
-df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/experiments/gefcom_price/Price/Task 1/Task1_P_train.csv")
+df=pd.read_csv("/Users/luca/Desktop/ThesisKernelMethods/experiments/Data/Price/Task 1/Task1_P_train.csv")
 
 # # zonal price vs total load
 plt.plot(df["Forecasted Total Load"], df["Zonal Price"], "o", alpha=0.4, markersize=3)
-plt.xlabel("Forecsated total load")
+plt.xlabel("Forecasted total load")
 plt.ylabel("Price $/MW")
 plt.savefig("/Users/luca/Desktop/ThesisKernelMethods/thesis/images/gefcom_zonal_price_vs_total_load.png")
 plt.show()
@@ -58,7 +58,7 @@ plt.show()
 
 # # zonal price vs zonal load
 plt.plot(df["Forecasted Zonal Load"], df["Zonal Price"], "o", alpha=0.4, markersize=3)
-plt.xlabel("Forecsated zonal load")
+plt.xlabel("Forecasted zonal load")
 plt.ylabel("Price $/MW")
 plt.savefig("/Users/luca/Desktop/ThesisKernelMethods/thesis/images/gefcom_zonal_price_vs_zonal_load.png")
 plt.show()

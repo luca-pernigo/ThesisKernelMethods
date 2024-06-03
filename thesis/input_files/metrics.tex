@@ -41,7 +41,7 @@ Scaled errors constitute a robust family of scores.
 \begin{definition}
     The mean absolute scaled error is defined as
     $$
-    \mathrm{MASE}(y,\hat{y})=\frac{1}{h}\sum\limits_{k=1}^N\frac{|y_{n+k}-\hat{y}_{n+k}|}{\frac{1}{h-1}\sum\limits_{k=2}^{h}|y_{k}-y_{k-1}|}
+    \mathrm{MASE}(y,\hat{y})=\frac{1}{h}\sum\limits_{k=1}^h\frac{|y_{n+k}-\hat{y}_{n+k}|}{\frac{1}{h-1}\sum\limits_{k=2}^{h}|y_{k}-y_{k-1}|}
     $$
 \end{definition}
 In the denominator we have the error of the naïve/persistence model. 
@@ -50,7 +50,7 @@ In this model, the current demand makes up the prediction for the next time step
 \begin{definition}
     The root mean squared scaled error is defined as
     $$
-    \mathrm{RMSSE}(y,\hat{y})=\sqrt{\frac{1}{h}\sum\limits_{k=1}^N\left(\frac{|y_{n+k}-\hat{y}_{n+k}|}{\frac{1}{h-1}\sum\limits_{k=2}^{h}|y_{k}-y_{k-1}|}\right)^2}
+    \mathrm{RMSSE}(y,\hat{y})=\sqrt{\frac{1}{h}\sum\limits_{k=1}^h\left(\frac{|y_{n+k}-\hat{y}_{n+k}|}{\frac{1}{h-1}\sum\limits_{k=2}^{h}|y_{k}-y_{k-1}|}\right)^2}
     $$
 \end{definition}
 
@@ -78,14 +78,14 @@ By averaging all the pinball losses over all quantiles and over the whole foreca
 \begin{definition}
     The Winkler score is defined as
     $$
-    \mathrm{Winkler}(y_t,  u_{t},l_{t},q)=\begin{cases}
+    \mathrm{Winkler}(y_t,  u_{t},l_{t},\alpha)=\begin{cases}
         \delta & l_{t}\leq y_{t}\leq u_{t}\\
         \delta+2(l_{t}-y_{t})/\alpha & y_{t}< l_{t}\\
         \delta+2(l_{t}-u_{t})/\alpha & y_{t} \geq u_{t}
     \end{cases}
     $$
 \end{definition}
-Where $\delta$ is the prediction interval (PI) width, that is $\delta=u_t-l_t$, $u_t$ is the prediction interval upper threshold and $l_t$ is the prediction interval lower threshold at time step $t$. This score penalizes observations falling outside the prediction interval and rewards narrow prediction intervals.
+Where $\delta$ is the prediction interval (PI) width, that is $\delta=u_t-l_t$, $\alpha$ is (1-coverage level), $u_t$ is the prediction interval upper threshold and $l_t$ is the prediction interval lower threshold at time step $t$. This score penalises observations falling outside the prediction interval and rewards narrow prediction intervals.
 \section{Continous ranked probability score}
 The continous ranked probability score (CRPS) measures the difference between the estimated cumulative distribution $\hat{F}$ and the empirical cumulative density function (CDF).
 \begin{definition}\label{def_crps}
