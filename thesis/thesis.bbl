@@ -42,7 +42,7 @@ Ashutosh Bhagwat.
 
 \bibitem{box2015time}
 George~E.P. Box, Gwilym~M. Jenkins, Gregory~C. Reinsel, and Greta~M. Ljung.
-\newblock {\em Time series analysis: forecasting and control}.
+\newblock {\em Time Series Analysis: Forecasting and Control}.
 \newblock John Wiley \& Sons, 2015.
 
 \bibitem{boyd2004convex}
@@ -57,12 +57,12 @@ Leo Breiman.
 
 \bibitem{breiman2017classification}
 Leo Breiman and Jerome~H. Friedman.
-\newblock {\em Classification and regression trees}.
+\newblock {\em Classification and Regression Trees}.
 \newblock Chapman and Hall/CRC, Boca Raton, USA, 1984.
 
 \bibitem{brown1959statistical}
 Robert~Goodell Brown.
-\newblock {\em Statistical forecasting for inventory control}.
+\newblock {\em Statistical Forecasting for Inventory Control}.
 \newblock McGraw\-Hill, New York, USA, 1959.
 
 \bibitem{2022nystrom}
@@ -187,7 +187,7 @@ Trevor Hastie, Robert Tibshirani, , Jerome~H. Friedman, Richard~A. Olshen, and C
 
 \bibitem{hastie2017generalized}
 Trevor~J. Hastie and Robert~J. Tibshirani.
-\newblock {\em Generalized additive models}.
+\newblock {\em Generalized Additive Models}.
 \newblock Chapman and Hall/CRC, Boca Raton, USA, 1990.
 
 \bibitem{he2017short}
@@ -412,7 +412,7 @@ Bernhard Sch{\"o}lkopf, Alexander Smola, and Klaus-Robert M{\"u}ller.
 
 \bibitem{learning_with_kernels}
 Bernhard Sch{\"o}lkopf and Alexander~J. Smola.
-\newblock {\em Learning with kernels: support vector machines, regularization, optimization, and beyond}.
+\newblock {\em Learning with Kernels: Support Vector Machines, Regularization, Optimization, and Beyond}.
 \newblock MIT press, Cambridge, USA, 2002.
 
 \bibitem{Scott2015}
@@ -462,7 +462,7 @@ Dennis~W. Van~der Meer, Joakim Wid{\'e}n, and Joakim Munkhammar.
 
 \bibitem{vapnik2}
 Vladimir Vapnik.
-\newblock {\em The nature of statistical learning theory}.
+\newblock {\em The Nature of Statistical Learning Theory}.
 \newblock Springer science \& business media, 1995.
 
 \bibitem{vapnik1}
@@ -507,7 +507,7 @@ Max Welling and Yutian Chen.
 
 \bibitem{weron2006modeling}
 Rafal Weron.
-\newblock {\em Modeling and forecasting electricity loads and prices: A statistical approach}, volume 396.
+\newblock {\em Modeling and Forecasting Electricity Loads and Prices: A Statistical Approach}, volume 396.
 \newblock John Wiley \& Sons, Chichester, UK, 2006.
 
 \bibitem{EPF_review}
