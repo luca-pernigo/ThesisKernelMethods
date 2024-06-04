@@ -7,20 +7,18 @@ Therefore, with quantile regression we are able to study the impact of covariate
     \end{equation}
 \end{definition}
 Alternatively, in order  to ease the posing of the quantile regression problem, we can formulate quantiles as the solutions to the following optimisation problems.
-\\
 For any $0<q<1$ consider the pinball loss function from Section \ref{pinball}, $\rho_q(u)=u(q-\mathbb{I}_{\{u<0\}})$. 
 Such loss is minimised by the quantile $Q_q$.
  we can estimate quantiles by minimising the expectation of $\rho_q(y-g(x,\beta))$ with respect to the parameter $\beta$.
-\\
+
 Note, that in the special case $q=\frac{1}{2}$,  quantile regression corresponds exactly to standard regression with an absolute value loss function.
-\\
+
 It follows that the conditional linear quantile function $\hat{Q}_q=x_i\beta(q)$, can be estimated by solving
 \begin{equation}\label{eq:linear_quantile_regression_minimisation_problem}
     \hat{\beta}(q)=\argmin{\beta}\sum\limits_{i=1}^n \rho_q   (y_i-x_i \beta)
 \end{equation}
 \\
 Notice that, this cost function is not differentiable, therefore there is no analytical solution to the quantile regression problem. Nevertheless, we can easily solve it by employing linear programming and convex optimisation \cite{boyd2004convex}.
-\\
 Furthermore, we can extend this framework to non linear quantile regression by choosing a non linear model in place of $x\beta$ in the above Equation \ref{eq:linear_quantile_regression_minimisation_problem}.
 % \\
 % In order to illustrate the approach, let us consider applying quantile regression to the maximum daily temperature dataset in Melbourne \cite{hyndman1996estimating}; models considered will be linear, gradient boosting machine, quantile forest\cite{meinshausen2006quantile} and kernel quantile regression.

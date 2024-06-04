@@ -42,7 +42,7 @@ Raghav Rv, Guillaume Lemaitre, and Thomas Unterhiner.
 
 \bibitem{vandenberghe2010cvxopt}
 Lieven Vandenberghe.
-\newblock The {CVXOPT} linear and quadratic cone program solvers.
-\newblock \url{http://cvxopt.org/documentation/coneprog.pdf}, 2010.
+\newblock The {CVXOPT} linear and quadratic cone program solvers, release 1.3.2.
+\newblock \url{https://readthedocs.org/projects/cvxopt/downloads/pdf/dev/}, 2023.
 
 \end{thebibliography}

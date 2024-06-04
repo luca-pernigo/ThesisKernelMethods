@@ -38,10 +38,10 @@ To get started, standard multiple linear regression has been applied, see Figure
 The resulting RMSE on task 1 is 30.59.
 What can be concluded, is that multiple linear regression is capable of catching the daily seasonality. Nevertheless, it cannot catch the range of the price series properly.
 
-\subsection{Trigonometric seasonality Box-Cox transformation ARMA errors trend and seasonal components}
+\subsection{Trigonometric seasonality Box-Cox transformation AR\-MA errors trend and seasonal components}
 Next, we tried with the autoregressive approach. Unfortunately, AR, ARIMA and SARIMA models did not perform as expected, their output was slightly better than the one of linear regression. This is probably due to the fact that, the data considered entails two kinds of seasonalities, while ARIMA models can only handle one at a time. We remind the reader, that the electricity load time series involves both daily and weekly seasonalities. Hence, the need for a more advanced time series model. The Tbats \cite{de2011forecasting} model is a forecasting method capable of handling complex patterns in the data. Its name stands for trigonometric seasonality, Box-Cox transformation, ARMA errors, trend and seasonal components. 
 Tbats forecast is visualised in Figure \ref{fig:tbats_price}, meanwhile its RMSE on task 1 is 15.08.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/tbats_price.png}
     \caption{Tbats prediction}
     \label{fig:tbats_price}
@@ -51,7 +51,7 @@ From the plot we see that Tbats is capable of catching the lows and average tren
 Following, the prophet model has been considered. 
 We get started by considering the base implementation. In such setting, prophet takes as input the time series object and learns its data generating process.
 This method achieves on task 1 a RMSE of 23.96, its prediction is visualised in Figure \ref{fig:prophet_price_1}.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/prophet_price_1.png}
     \caption{Prophet prediction}
     \label{fig:prophet_price_1}
@@ -59,7 +59,7 @@ This method achieves on task 1 a RMSE of 23.96, its prediction is visualised in 
 What can be seen is that prophet correctly models the average trend but does not model peaks and lows precisely. 
 Next, a more complex model was trained. We added the weather temperature, the square of it and the categorical variable for holidays effect as regressors. Furthermore, we also applied a log transformation to the dependent variables. Doing so, RMSE on task 1 went down to 10.29. Forecast is visualised in Figure \ref{fig:prophet_price2}.
 % , moreover figure \ref{fig:prophet_price2.1} and figure \ref{fig:prophet_price2.2} break down the trend and the seasonalities respectively.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/prophet_price2.png}
     \caption{Prophet model\_2 prediction}
     \label{fig:prophet_price2}
@@ -80,7 +80,7 @@ Prophet alongside with the right features is a good model in the context of elec
 
 \subsection{K-nearest neighbours}
 Afterwards, K-nearest neighbours has been considered. In doing so, we cross validated the number of neighbours to get the best model instance. The forecast is visualised in Figure \ref{fig:knn_price}, RMSE on task 1 is 12.54.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/knn_price.png}
     \caption{K-nearest neighbours regression}
     \label{fig:knn_price}
@@ -89,7 +89,7 @@ What it can be said is that, K-nearest neighbours is capable of predicting load 
 
 \subsection{Support vector regression}
 In applying support vector regression we used gridsearch crossvalidation to search for the best regularisation parameter $C$. Support vector regression achieves on task 1 an RMSE of 23.24, for the prediction see Figure \ref{fig:svr_price}.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/svr_price.png}
     \caption{Support vector regression prediction}
     \label{fig:svr_price}
@@ -110,7 +110,7 @@ Various hyperparameters combinations were tried during the tuning phase. The fin
     \item window\_size= 24
 \end{itemize}
 LSTM forecast is reported in Figure \ref{fig:lstm_price}, it achieves on task 1 a RMSE of 9.1782
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/lstm_price.png}
     \caption{Long short term memory prediction}
     \label{fig:lstm_price}
@@ -120,7 +120,7 @@ LSTM forecast is reported in Figure \ref{fig:lstm_price}, it achieves on task 1 
 Subsequently, kernel ridge regression was considered. The kernel considered is the radial basis Gaussian function.
 Cross validation was carried jointly over the RBF kernel bandwith and the regularisation constant.
 The RMSE achieved on task 1 is 9.86, Figure \ref{fig:krnridge_price} reports the prediction.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/krnridge_price.png}
     \caption{Kernel ridge prediction}
     \label{fig:krnridge_price}
@@ -130,8 +130,7 @@ We can observe that, kernel ridge regression accurately models the electricity t
 \subsection{Kernel support vector regression}
 The last model we considered in this setting was the kernel support vector regression.
 RMSE achieved with this method on task 1 is 9.10, forecast is reported in Figure \ref{fig:krnsvr_price}.
-
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/krnsvr_price.png}
     \caption{Kernel support vector prediction}
     \label{fig:krnsvr_price}
@@ -521,7 +520,7 @@ Cross validation results are visualised in Figure \ref{fig:cv_scatter}.
     \begin{tabular}{lllllllllllll}
       \toprule
       \midrule
-      Team name\textbackslash Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12               \\
+      Team name/Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12               \\
   KQR Absolute Laplacian
   &
   \textbf{1.02492}
@@ -639,7 +638,7 @@ Similarly to the price track, we have that KQR was among the best algorithms als
     \begin{tabular}{lllllllllllll}
       \toprule
       \midrule
-      Team name\textbackslash Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12                              \\
+      Team name/Task number                       & 1                               & 2                                  & 3                               & 4                              & 5                              & 6       & 7                               & 8       & 9       & 10                             & 11                             & 12                              \\
   
   KQR Absolute Laplacian
   & 

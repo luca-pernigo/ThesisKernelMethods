@@ -109,7 +109,6 @@ The better the estimated cumulative density function is the smaller the total CR
     \caption{CRPS integral \cite{haben2023core}}
     \label{fig:crps}
   \end{figure}
-  \\
 It is worth noting, that the CRPS integral can be rewritten in terms of expectations. This makes its evaluation easier, since we know that the sample mean converges to the expectation for sufficiently big sample sizes by the law of large numbers. This was first pointed out by \cite{proper_scores}, where the authors take advantage of Lemma 2.2 of \cite{new_multi_test2} or equivalently identity (17) of \cite{new_multi_tes1}.
 \\
 \begin{lemma}
@@ -121,14 +120,14 @@ It is worth noting, that the CRPS integral can be rewritten in terms of expectat
 Notice that, in our case, Equation \ref{eq:crps_expectation}, the distribution $G$ of $Y_1$ and $Y_2$ is degenerate, with all probability mass on a single point $y$.
 %  (x notation will need to be cleaned here). Since $G(t)=:$
 It follows that the third addend in the summation is zero. That is because $Y_1$ and $Y_2$ both following distribution $G$ implies that $\mathbb{E}(|Y_1-Y_2|)$ corresponds to the difference of two equal constant numbers.
-\\
+
 Additionally, since $Y_1$ is just a constant, we have $Y_1=y$.
-\\
+
 Putting everything together we have obtained an alternative way of computing the CRPS score.
 \begin{equation}
     \int\limits_{-\infty}^{\infty}\left(\hat{F}(x)-\mathbb{I}_{\{x-y\}} \right)^2 dx=\mathbb{E}(|X_1-y|)-\frac{1}{2}\mathbb{E}(|X_1-X_2|)
 \end{equation}
-\\
+
 \section{Probability integral transform}
 The probability integral transform (PIT) is a method to assess visually the quality of a probabilistic forecast. PIT is obtained by applying the predicted cumulative density function $\hat{F}$ to the data. If applying such CDF to the data results in a uniform distributed PIT, then $\hat{F}$ is a valid prediction. If not, $\hat{F}$ is not a good estimate of the CDF for the considered data. Figure \ref{fig:pit} provides an example, applying the true CDF results in a well calibrated PIT (left). Alternatively, applying a bad CDF results in either an overdispersed (middle) or underdispersed (right) PIT.
 \begin{figure}
@@ -136,7 +135,7 @@ The probability integral transform (PIT) is a method to assess visually the qual
     \caption{Probability integral transform types \cite{haben2023core}}
     \label{fig:pit}
   \end{figure}
-\\
+
 %RELIABILITY PLOT
 %PICP,NMPIW,CWC,unconditional coverage(arora)-->Probability density forecasting of wind speed based on quantile regression and kernel density estimation Lei Zhang
 

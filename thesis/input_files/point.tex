@@ -63,7 +63,7 @@ The ARIMAX model adds explanatory variables to ARIMA. Hence, we have
 SARIMA and SARIMAX incorporate seasonalities into time series models. The notation for these models is ARIMA$(p,d,q)(P,D,Q)_m$. The second term $(P,D,Q)_m$ represents the autoregressive structure of the seasonal pattern, where $m$ indicates the number of seasonalities of the time series.
 For instance, in modelling series of hourly data with daily periodicity, we would set $m=24$.
 Writing SARIMA in compact notation we have
-\\
+
 \begin{equation}
     \psi(B)\Psi(B^P)\nabla^d\nabla_m^Dy_t=\theta(B)\Theta(B^Q)\epsilon_t
 \end{equation}
@@ -193,7 +193,7 @@ Notice, depending on the numbers of layers, MLPs are sometimes referred to as de
 
 % https://rtavenar.github.io/deep_book/book_en.pdf
 Long short term memory network (LSTM) extends MLP by introducing a cell state in its layers \cite{hochreiter1997long}. In this way, the current state of a cell depends on the current value $X_t$, on the previous cell activation and on the previous cell state $C_{t-1}$, see Figure \ref{fig:lstm_cell} for a visual representation. 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \includegraphics[width=\textwidth]{images/lstm_cell.png}
     \caption{Long short term memory cell \cite{Han2024}}
     \label{fig:lstm_cell}
@@ -328,7 +328,6 @@ See Figure \ref{fig:svr2} and Figure \ref{fig:svr3} for two examples. In the for
     \caption{Polynomial support vector regression}
     \label{fig:svr2}
 \end{figure}
-
 \begin{figure}
     \includegraphics[width=\textwidth]{images/svr3.png}
     \caption{Gaussian RBF support vector regression}

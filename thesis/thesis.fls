@@ -1485,6 +1485,7 @@ INPUT W.aux
 INPUT ./W.aux
 INPUT W.aux
 OUTPUT W.aux
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pplx.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pplx.fd
@@ -1701,6 +1702,8 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
 INPUT ./thesis.lof
 INPUT thesis.lof
 INPUT thesis.lof
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -1776,8 +1779,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/fplmbb.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
@@ -1812,12 +1813,12 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9c.vf
 INPUT ./images/workflow_kernels.png
 INPUT ./images/workflow_kernels.png
 INPUT images/workflow_kernels.png
 INPUT ./images/workflow_kernels.png
 INPUT ./images/workflow_kernels.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9c.vf
 INPUT ./input_files/metrics.tex
 INPUT input_files/metrics.tex
 INPUT ./input_files/metrics.tex
@@ -2116,7 +2117,6 @@ INPUT ./input_files/implementation.tex
 INPUT input_files/implementation.tex
 INPUT ./input_files/implementation.tex
 INPUT input_files/implementation.tex
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT ./input_files/analysis.tex
 INPUT ./input_files/analysis.tex
 INPUT ./input_files/analysis.tex
@@ -2196,7 +2196,6 @@ INPUT ./images/price_task_4_gaussian_rbf.png
 INPUT ./images/price_task_4_gaussian_rbf.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr9t.vf
 INPUT ./images/load_task_9_laplacian.png
 INPUT ./images/load_task_9_laplacian.png
@@ -2219,6 +2218,7 @@ INPUT appendix.tex
 INPUT ./appendix.tex
 INPUT ./appendix.tex
 INPUT appendix.tex
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT ./images/crossvalidationtimeseries.png
 INPUT ./images/crossvalidationtimeseries.png
 INPUT images/crossvalidationtimeseries.png

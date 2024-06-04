@@ -6,7 +6,6 @@ This approach enables us to account for prediction uncertainty and to make more 
 
 \section{Quantile forest}
 Meinshausen \cite{meinshausen2006quantile} extends the idea of random forest \cite{breiman2001random} generalising it, the result is the quantile forest algorithm. Quantile forest allows us to estimate conditional quantiles in a non parametric fashion.
-\\
 In order to understand this algorithm, it is first necessary to cover the theory of decision trees and random forests.
 \subsection{Decision trees}
 Decision tree methods partition recursively the feature space in a set of binary rectangles and then fit a simple model in each of those partitions (the most straightforward is fitting just a constant).
@@ -17,18 +16,18 @@ For a visualisation consider the Figures \ref{fig:elements_statistical_learning1
     \caption{Two-dimensional feature space partitioned by recursive binary splitting \cite{hastie2009elements}}
     \label{fig:elements_statistical_learning1}
   \end{figure}
-\\
+
 \begin{figure}
 \includegraphics[width=1\textwidth]{images/elsii2.png}
 \caption{Partition tree and regression model \cite{hastie2009elements}}
 \label{fig:elements_statistical_learning2}
 \end{figure}
-\\
+
 Suppose now to partition the feature space into M regions $R_1,\dots,R_M$, then the model reads as follows.
 \begin{equation}
     f(x)=\sum\limits_{m=1}^{M}c_m\mathbb{I}_{\{x \in R_m\}}
 \end{equation}
-\\
+
 It follows that the function minimising the sum of squares is the one with $\hat{c}_m=mean(y_i|x_i \in R_m)$.
 Finding the best split in terms of minimum sum of squares is computationally infeasible in practice. Therefore, we approximate a solution by approaching the problem in a greedy fashion.
 Let $j$ denote the splitting variable and $s$ be the split point we define the two half planes
@@ -76,7 +75,7 @@ Consider positively correlated i.d.\ random variables, then the variance of thei
     \rho \sigma^2+\frac{1-\rho}{B}\sigma^2
 \end{equation}
 The second term disappears as $B$ increases, while the first term depends heavily on the correlation between bagged trees. Random forest consists in reducing the correlation between the trees by randomly selecting $m$ of the $p$ features as candidates for splitting; $m$ tipically takes a value in the order of $\sqrt{p}$ or even 1 with default value $m=\left\lfloor \frac{p}{3} \right\rfloor$, while a good minimum node size is around five. 
-\\
+
 Letting $T(x;\Theta_b)$ be the $b^{th}$ bagged tree where $\Theta_b$ denotes the randomness characterising its splits, cutpoints and terminal node values, we have that the random forest regressor is given by
 \begin{equation}
     \hat{f}_{rf}^{B}=\frac{1}{B}\sum\limits_{b=1}^{B}T(x;\Theta_b)
@@ -212,14 +211,11 @@ Consider now a simple Lagrangian $$\mathcal{L}(x,\lambda, \nu)=f(x)+\sum\limits_
 where $r_i(x)$ are inequality constraints while $h_i(x)$ are equality constraints of the problem. Then it can be noted that, the lower bound on $p^*$ is non trivial only when the Lagrange multiplier $\lambda \succeq 0$.
 % when lagrange multiplier is negative, we have that g > p
 Therefore, the idea is that by maximising the dual function subject to the constraint $\lambda \succeq 0$, we can obtain an approximate or perfect solution to the primal problem.
-\\
 To explain why we may or may not be able to attain the best solution to the primal problem by maximising its dual, we have to introduce the concept of duality.
-\\
 We use $d^*$ to denote the optimal value of the Lagrange dual problem; we can think of it as the best lower bound on $p^*$. 
-\\
 The Inequality \ref{weak_duality} is called weak duality. The difference $p^*-d^*$ is the optimal duality gap. It is the gap between the optimal value of the primal problem and the best lower bound on it that can be obtained from the Lagrange dual function. Moreover, note that the optimal duality gap is always nonnegative.
 We say that strong duality holds, when the optimal duality gap is zero. In other words, the Lagrange dual bound is tight.
-\\
+
 Constraint qualifications are conditions under which strong duality holds. One of the most popular is Slater's condition.
 \begin{proposition}
     Slater's condition reads as
@@ -236,7 +232,7 @@ Slater's theorem naturally follows.
     If Slater's condition holds and the problem is convex then strong duality holds.
 \end{theorem}
 We can now check that our optimisation problem possesses strong duality by checking Slater's condition.
-\\
+
 In our case we do not have any equality constraint, so we do not have to worry about the $h_i(x)=0$ term in Equation \ref{slater_condition}. All we have to check is the convexity of our problem and that there exists an $x$ such that $r_i(x)<0$.
 For convexity, a sufficient condition is the positive definiteness of $Q$ in the quadratic programming problem 
 \begin{equation}
@@ -250,9 +246,9 @@ This condition is easily checked by the fact that kernel matrices are by definit
 % $\|w\|_{\mathcal{H}}^2= w^\intercal w= \alpha^\intercal K \alpha$, the last element is positive semidefinitive which in turn implies also $w^\intercal w$ is also positive semidefinite.
 Therefore, our problem is convex.
 Next we check that Slater's condition holds. Considering first the two non negative constraints on $\xi$ and $\xi^*$, we conclude that $\xi$  and $\xi^*$ have to be greater or equal to zero for the existence of an $x$ satisfying Slater's condition. Thus, let us suppose that $0 \leq \xi \leq \mu$ and $0 \leq \xi^* \leq \mu$.
-\\
+
 Next, let us consider the other two inequalities and make the following ansatz.
-\\
+
 \begin{equation}
     \begin{aligned}
         w=& \Phi^\intercal(\Phi \Phi^\intercal)^{-1} (y-b)
@@ -267,9 +263,9 @@ We then have for any $\xi > 0$ and $\xi^* > 0$  that
     \end{aligned}
 \end{equation}
 Hence, we conclude that our problem satisfies Slater's condition. Therefore, the solution of the dual and primal problems are equivalent.
-\\
+
 We end this section with the derivation of the dual problem, that is, the convex problem, which we will solve in order to get the quantiles prediction of our quantile kernel algorithm.
-\\
+
 First, take the dual function from Equation \ref{eq:kqr_min5}.
 \begin{equation}
     \begin{aligned}
@@ -289,7 +285,7 @@ Setting its derivatives to zero
     \end{cases}
 \end{equation}
 As pointed out previously, the lower bound resulting from the dual formulation is non trivial only when the Lagrange multipliers $\lambda$ are $\succeq 0$. Looking at the last two equations of the system \ref{eq:lagrange_derivatives}, this implies the following two constraints $\lambda \in [0, Cq\mathbb{1}]$ and $\lambda^*\in [0, C(1-q)\mathbb{1}]$.
-\\
+
 Substitute the conditions for an optimum into \ref{eq:kqr_min5}, we obtain the dual formulation.
 % nu and nu^* go away because they are multipliers accounting for equality constraint, which in the optimum have to be satisfied hence are zero => h_i \times \nu=0
 \begin{equation}
@@ -400,39 +396,39 @@ and let
 %contribution is implementation kernel quantile regression for pythos users since there exists only r version
 \subsection{Weather quantiles}
 In order to get acquainted with the inner workings of the presented methods, this section covers an application explaining practical details and comparing results.
-\\
+
 The dataset used is the Melbourne daily maximum temperatures \citeW{hdrcde}. It contains the daily maximum temperatures in Melbourne, Australia, from 1981-1990, excluding leap days, see Figure \ref{fig:melbourne_temperature_data}.
 Due to the bimodality of the data, such dataset is commonly used to give a difficult quantile regression problem \cite{hyndman1996estimating}, thus why we chose it. The observed bimodality is that a hot day is likely to be followed by either an equally hot day or one much cooler.
-\begin{figure}[!h]
+\begin{figure}[!htp]
     \includegraphics[width=\textwidth]{images/melbourne_temperature.png}
     \caption{Melbourne temperatures dataset}
     \label{fig:melbourne_temperature_data}
 \end{figure}
 Hereafter, the results of the four presented methods on the Melbourne dataset are reported, see Figure \ref{fig:melbourne_quantiles_comparison} for a visualisation. Notice, the kernel considered here is the Gaussian RBF. Hyperparameters have been tuned through cross validation, see Appendix \ref{appendix:cross_validation}.
-\begin{figure}[!h]
+\begin{figure}[!htp]
     \begin{subfigure}[b]{0.5\linewidth}
       \centering
-      \includegraphics[width=1.1\textwidth]{images/melbourne_linear_quantile_regression.png} 
+      \includegraphics[width=1.0\textwidth]{images/melbourne_linear_quantile_regression.png} 
       \caption{Linear quantile regression} 
       \label{fig:melbourne_linear_quantile_regression} 
       \vspace{4ex}
     \end{subfigure}%% 
     \begin{subfigure}[b]{0.5\linewidth}
       \centering
-      \includegraphics[width=1.1\textwidth]{images/melbourne_gradient_boosting_quantile_regression.png} 
+      \includegraphics[width=1.0\textwidth]{images/melbourne_gradient_boosting_quantile_regression.png} 
       \caption{Gradient boosting quantile regression} 
       \label{fig:melbourne_gradient_boosting_quantile_regression} 
       \vspace{4ex}
     \end{subfigure} 
     \begin{subfigure}[b]{0.5\linewidth}
       \centering
-      \includegraphics[width=1.1\textwidth]{images/melbourne_quantile_forest.png} 
+      \includegraphics[width=1.0\textwidth]{images/melbourne_quantile_forest.png} 
       \caption{Quantile forest} 
       \label{fig:melbourne_quantile_forest} 
     \end{subfigure}%%
     \begin{subfigure}[b]{0.5\linewidth}
       \centering
-      \includegraphics[width=1.1\textwidth]{images/melbourne_gaussian_rbf_kernel_quantile_regression.png}
+      \includegraphics[width=1.0\textwidth]{images/melbourne_gaussian_rbf_kernel_quantile_regression.png}
       \caption{Kernel quantile regression, Gaussian RBF} 
       \label{fig:melborune_kernel_quantile_regression} 
     \end{subfigure} 
@@ -441,7 +437,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
   \end{figure}
 
 % tables
-\begin{table}[!h]
+\begin{table}[!htp]
 \caption{Pinball loss for Melbourne data}
 \begin{tabular}{lllll}
     \toprule
@@ -452,7 +448,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \end{tabular}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}[!htp]
     \caption{Pinball loss quantile-wise for Melbourne data}
     \begin{tabular}{lllll}
     \toprule
@@ -471,7 +467,7 @@ Hereafter, the results of the four presented methods on the Melbourne dataset ar
     \end{tabular}
 \end{table}
 As already pointed out, the quantile regression with $q=0.5$ corresponds to the standard regression problem, hence we can compare the proposed methods also in terms of the mean absolute error.
-\begin{table}[!h]
+\begin{table}[!htp]
 \caption{Mean absolute error for Melbourne data}
 \begin{tabular}{lllll}
     \toprule
@@ -484,11 +480,10 @@ As already pointed out, the quantile regression with $q=0.5$ corresponds to the 
 From these tables, we can see that kernel quantile regression outperforms the simple quantile regressor as well as the more complex models like quantile forest and gradient boosting quantile regression for the Melbourne temperatures dataset. Not only kernel quantile regression was the best in terms of total pinball loss but also the best in terms of each quantile pinball loss and mean absolute error.
 Comparison has been carried out on further datasets, yielding similar conclusions as the one of above, to know more see Appendix \ref{appendix:quantile_regressor_extensive_comparison}.
 
-We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel pinball comparison}, \ref{tab:kernel pinball comparison quantile-wise}, \ref{tab:kernel mae comparison} and Figure \ref{fig:kernel quantile regressors comparison} comparing various kernel functions, see Section \ref{kernel families}.
-
+We conclude this chapter with reporting the same kind of Tables \ref{tab:kernel pinball comparison}, \ref{tab:kernel pinball comparison quantile-wise}, \ref{tab:kernel mae comparison} and Figures \ref{fig:kernel quantile regressors comparison1},\ref{fig:kernel quantile regressors comparison2} comparing various kernel functions, see Section \ref{kernel families}.
 From these tables, we can conclude that the Matern and the Chi squared kernels are the top performers on the Melbourne weather data. Finally, the equality in the scores of the Absolute Laplacian and the Matern 0.5 follows from the fact that regressors are one dimensional for the Melbourne weather data.
 % tables
-\begin{table}[!h]
+\begin{table}[!htp]
     \caption{Kernels comparison pinball loss for Melbourne data}
     \label{tab:kernel pinball comparison}
     \begin{center}
@@ -517,7 +512,7 @@ From these tables, we can conclude that the Matern and the Chi squared kernels a
     \end{center}
     \end{table}
     
-\begin{table}[!h]
+\begin{table}[!htp]
     \caption{Kernels comparison pinball loss quantile-wise for Melbourne data}
     \label{tab:kernel pinball comparison quantile-wise}
     \begin{adjustbox}{width=\textwidth}
@@ -640,7 +635,7 @@ From these tables, we can conclude that the Matern and the Chi squared kernels a
 \end{table}
 
 
-\begin{table}[!h]
+\begin{table}[!htp]
     \caption{Kernels comparison mean absolute error for Melbourne data}
     \label{tab:kernel mae comparison}
     \begin{center}
@@ -667,89 +662,84 @@ From these tables, we can conclude that the Matern and the Chi squared kernels a
 
 % kernels figure
 
-\begin{figure}[!h]
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_a_laplacian_kernel_quantile_regression.png} 
+\begin{figure}[!htp] 
+    \begin{minipage}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{images/melbourne_a_laplacian_kernel_quantile_regression.png} 
         \caption{Absolute Laplacian} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure}%% 
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_matern_0.5_kernel_quantile_regression.png} 
-        \caption{Matern 0.5/Laplacian} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure} 
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_matern_1.5_kernel_quantile_regression.png} 
+      \vspace{4ex}
+    \end{minipage}%%
+    \begin{minipage}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{images/melbourne_matern_0.5_kernel_quantile_regression.png} 
+        \caption{Matern 0.5/Laplacian}  
+      \vspace{4ex}
+    \end{minipage} 
+    \begin{minipage}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{images/melbourne_matern_1.5_kernel_quantile_regression.png} 
         \caption{Matern 1.5} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure}%%
-    \begin{subfigure}[b]{0.5\linewidth}
+      \vspace{4ex}
+    \end{minipage}%% 
+    \begin{minipage}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{images/melbourne_matern_2.5_kernel_quantile_regression.png}
+      \caption{Matern 2.5} 
+      \vspace{4ex}
+    \end{minipage} 
+    \begin{minipage}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_matern_2.5_kernel_quantile_regression.png}
-        \caption{Matern 2.5} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure} 
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_gaussian_rbf_kernel_quantile_regression.png}
+        \includegraphics[width=1.0\textwidth]{images/melbourne_gaussian_rbf_kernel_quantile_regression.png}
         \caption{Matern $\infty$/Gaussian RBF} 
-        \label{} 
         \vspace{4ex}
-    \end{subfigure} 
-    \begin{subfigure}[b]{0.5\linewidth}
+      \end{minipage}%% 
+      \begin{minipage}[b]{0.5\linewidth}
         \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_chi_squared_kernel_quantile_regression.png}
+        \includegraphics[width=1.0\textwidth]{images/melbourne_chi_squared_kernel_quantile_regression.png}
         \caption{Chi squared} 
-        \label{} 
         \vspace{4ex}
-    \end{subfigure} 
-    \end{figure}
-\begin{figure}[!h]\ContinuedFloat
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_linear_kernel_quantile_regression.png}
-        \caption{Linear} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure} 
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_periodic_kernel_quantile_regression.png}
-        \caption{Periodic} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_polynomial_kernel_quantile_regression.png}
-        \caption{Polynomial} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure} 
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_sigmoid_kernel_quantile_regression.png}
-        \caption{Sigmoid} 
-        \label{} 
-        \vspace{4ex}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.5\linewidth}
-        \centering
-        \includegraphics[width=1.1\textwidth]{images/melbourne_cosine_kernel_quantile_regression.png}
-        \caption{Cosine} 
-        \label{} 
-    \end{subfigure} 
-    \caption{Kernel quantile regressors comparison for Melbourne data}
-    \label{fig:kernel quantile regressors comparison} 
-\end{figure}
+      \end{minipage} 
+      \caption{Kernel quantile regressors comparison for Melbourne data}
+      \label{fig:kernel quantile regressors comparison1} 
+  \end{figure}
 
+  \begin{figure}[ht] 
+    \label{ fig8} 
+    \begin{minipage}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{images/melbourne_linear_kernel_quantile_regression.png}
+        \caption{Linear} 
+        
+      \vspace{4ex}
+    \end{minipage}%%
+    \begin{minipage}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{images/melbourne_periodic_kernel_quantile_regression.png}
+      \caption{Periodic} 
+      \vspace{4ex}
+    \end{minipage} 
+    \begin{minipage}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{images/melbourne_polynomial_kernel_quantile_regression.png}
+        \caption{Polynomial} 
+        
+      \vspace{4ex}
+    \end{minipage}%% 
+    \begin{minipage}[b]{0.5\linewidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{images/melbourne_sigmoid_kernel_quantile_regression.png}
+        \caption{Sigmoid} 
+      \vspace{4ex}
+    \end{minipage} 
+    \begin{minipage}[b]{0.5\linewidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{images/melbourne_cosine_kernel_quantile_regression.png}
+        \caption{Cosine}  
+        \vspace{4ex}
+      \end{minipage}%% 
+      \caption{Kernel quantile regressors comparison for Melbourne data}
+      \label{fig:kernel quantile regressors comparison2}
+  \end{figure}
 % \section{Kernel density estimation}
 % \input{input_files/kde.tex}
 

@@ -103,6 +103,7 @@ Alysha~M. De~Livera, Rob~J. Hyndman, and Ralph~D. Snyder.
 \bibitem{declean}
 Antonio De~Paola, Nikoleta Andreadou, Evangelos Kotsakis, et~al.
 \newblock Clean energy technology observatory: Smart grids in the {European Union} 2023. status report on technology development trends, value chains and markets.
+\newblock {\em European Commission Publications Office}, 2023.
 
 \bibitem{dudek2018probabilistic}
 Grzegorz Dudek.
@@ -130,8 +131,9 @@ Pierre Gaillard, Yannig Goude, and Rapha{\"e}l Nedellec.
 \newblock {\em International Journal of Forecasting}, 32(3):1038--1050, 2016.
 
 \bibitem{gaillardasemi}
-Pierre Gaillarda, Yannig Goudea, and Rapha{\"e}l Nedelleca.
+Pierre Gaillard, Yannig Goudea, and Rapha{\"e}l Nedelleca.
 \newblock Semi-parametric models and robust aggregation for {GEFCom2014} probabilistic electric load and electricity price forecasting.
+\newblock {\em International Journal of Forecasting}, 2016.
 
 \bibitem{gneiting2014probabilistic}
 Tilmann Gneiting and Matthias Katzfuss.
@@ -369,9 +371,9 @@ Jakub Nowotarski and Rafa{\l} Weron.
 \newblock {\em Renewable and Sustainable Energy Reviews}, 81:1548--1568, 2018.
 
 \bibitem{nystrom}
-Evert~J. Nystr{\"o}m.
-\newblock {\"U}ber die praktische aufl{\"o}sung von {Integralgleichungen} mit {Anwendungen} auf {Randwertaufgaben}.
-\newblock 1930.
+E.~J. Nystr\"{o}m.
+\newblock \"{U}ber die praktische aufl\"{o}sung von integralgleichungen mit anwendungen auf randwertaufgaben.
+\newblock {\em Acta Mathematica}, 54(0):185–204, 1930.
 
 \bibitem{forecasting_big}
 Fotios Petropoulos, Daniele Apiletti, Vassilios Assimakopoulos, Mohamed~Zied Babai, Devon~K Barrow, Souhaib~Ben Taieb, Christoph Bergmeir, Ricardo~J. Bessa, Jakub Bijak, John~E. Boylan, et~al.

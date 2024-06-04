@@ -1,12 +1,13 @@
-\chapter{Appendix}
 \section{Feature map normalisation}\label{appendix:new_feature}
 
 \begin{lemma}
     Associated to any RKHS $\mathcal{H}$, there exists a feature vector $\phi(x)$ such that $\|\phi(x)\|_{\mathcal{H}}=R \quad \forall x \in \mathcal{X}$.
     That is the Hilbert space norm of the feature vector is equal to a constant R for all states in the set $\mathcal{X}$.
 \end{lemma}
+
 \begin{proof}
     Taking the new feature vector as $\phi^{new} (x):=\frac{\phi(x)}{\|\phi(x)\|_{\mathcal{H}}}$ we have
+
 \begin{align*}
     \|
     \phi^{new}(x)\|_{\mathcal{H}}^{2} &= \left\|\frac{\phi(x)}{\|\phi(x)\|_{\mathcal{H}}}
@@ -39,12 +40,10 @@
 \end{align*}
 \end{proof}
 
-
-
 \section{Quantile regressor extensive comparison}\label{appendix:quantile_regressor_extensive_comparison}
 This section contains extensive comparison between our kernel quantile regression and other state of the art quantile regressors. We benchmark it on popular machine learning datasets.
 \subsection{Boston housing dataset}
-The Boston housing dataset \href{https://www.kaggle.com/datasets/altavish/boston-housing-dataset}{https://www.kaggle.com/datasets/altavish/boston-housing-dataset} contains information about various attributes for suburbs in Boston.
+The Boston housing dataset \url{https://www.kaggle.com/datasets/altavish/boston-housing-dataset} contains information about various attributes for suburbs in Boston.
 There are 13 indipendent variables
 \begin{itemize}
 \item CRIM: per capita crime rate by town
@@ -161,7 +160,7 @@ The data has 8 attributes
 \end{table} 
 
 \subsection{Vehicle dataset}
-This data contains info about used cars \href{https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho}{https://www.kaggle.com/datasets/ne-halbirla/vehicle-dataset-from-cardekho}, the predictors are
+This data contains info about used cars \url{https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho}, the predictors are
 \begin{itemize}
     \item Year
     \item Present\_price: ex showroom price
@@ -286,7 +285,7 @@ Examples of the most popular features scaling are:
 \end{itemize}
 Many other data scaling algorithms exists, we refer the reader to a thorough comparison \citeW{scikitscalers}.
 \\
-We conclude this subsection with a custom example that motivates the need of feature scaling \citeW{scikitscale_example}. The idea is to compare the results of modelling the data with K-nearest neighbours on the unscaled data against the scaled data. The considered data is the wine recognition dataset \href{https://archive.ics.uci.edu/dataset/109/wine}{https://archive.ics.uci.edu/da-taset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
+We conclude this subsection with a custom example that motivates the need of feature scaling \citeW{scikitscale_example}. The idea is to compare the results of modelling the data with K-nearest neighbours on the unscaled data against the scaled data. The considered data is the wine recognition dataset \url{https://archive.ics.uci.edu/dataset/109/wine}. The goal for this dataset is recognising from whose cultivator the wine comes based on two features with a completely different scale. The first feature has values in the [0,1000] range while the second feature has values contained in [1,10].
 The unscaled and scaled version are compared in Figure \ref{fig:feature_scaler_example}.
 \begin{figure}[!h]
     \includegraphics[width=\textwidth]{images/feature_scaler_example.png}
@@ -317,8 +316,8 @@ Pivoted Cholesky approximates the Cholesky decomposition of a matrix. Since kern
 \newpage
 \section{Source code}\label{src_code}
 The whole code for the project is hosted on
-\url{https://github.com/luca-pernigo/ThesisKernelMethods}\label{github_repo}.
-\\
+\href{https://github.com/luca-pernigo/ThesisKernelMethods}{github repo}.
+
 \begin{itemize}
     \item query/: folder containing Scopus data and scripts to generate bibliometric survey plots in Section \ref{literature_review}. Database queries have been taken from \cite{nowotarski}.
     \item thesis/: folder containing tex files for thesis pdf.
