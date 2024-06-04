@@ -86,8 +86,21 @@
 \def\UrlBreaks{\do\/\do-}
 
 % package for multiple bibliographys
+\usepackage{natbib}
 \usepackage[resetlabels,labeled]{multibib}
 \newcites{W}{Sitography}
+
+% this for second bibliography to link
+\usepackage{xparse}
+\let\oriCiteW\citeW
+%% The O{} in this re-definition means "an optional argument
+%% with an empty default value". It is not related to the
+%% "O" prefix in the OP's example. 
+\RenewDocumentCommand{\citeW}{O{} O{} m}{%
+  \renewcommand{\citenumfont}[1]{W##1}%
+  \oriCiteW[#1][#2]{#3}%
+  \renewcommand{\citenumfont}[1]{##1}%
+  }
 
 % colors
 \usepackage{xcolor}
