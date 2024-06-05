@@ -138,7 +138,7 @@ The model is depicted in Figure \ref{fig:svm_simple}. The grey band is called th
     \caption{Support vector regression \cite{learning_with_kernels}}
     \label{fig:svm_simple}
 \end{figure}
-Smola et al.\ \cite{smola2004tutorial} point out that considering the dual formulation makes our optimisation problem easier to solve. Doing so, we have the equivalent optimisation problem
+Smola et al.\ \cite{smola2004tutorial} points out that considering the dual formulation makes our optimisation problem easier to solve. Doing so, we have the equivalent optimisation problem
 \begin{equation}
     \begin{aligned}
         \max_{\lambda_i, \lambda_i^*} \quad& -\frac{1}{2}\sum\limits_{i,j=1}^n(\lambda_i-\lambda_i^*)(\lambda_j-\lambda_j^*)\langle x_i,x_j\rangle +\sum\limits_{i=1}^n(\lambda_i-\lambda_i^*)(y_i-\epsilon)
@@ -232,7 +232,7 @@ Finally, we output the current cell state and the tanh activated cell state filt
 
 \section{Kernel methods}
 \subsection{Kernel ridge regression}
-In the setting of kernel ridge regression, we aim at estimating $f$ such that $y=f(x)+\epsilon$. Given an RKHS $\mathcal{H}$, we can estimate $f$ by solving the optmisation problem
+In the setting of kernel ridge regression, we aim at estimating $f$ such that $y=f(x)+\epsilon$. Given a RKHS $\mathcal{H}$, we can estimate $f$ by solving the optmisation problem
 \begin{equation}\label{eq:kernel ridge}
     \hat{f}=\argmin{f\in \mathcal{H}}\frac{1}{2}\sum\limits_{i=1}^n(y_i-f(x_i))^2+\frac{\tau}{2}\|f\|_{\mathcal{H}}^2
 \end{equation}

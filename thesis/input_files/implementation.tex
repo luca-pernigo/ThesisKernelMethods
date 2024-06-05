@@ -56,7 +56,7 @@ The implementation of \href{https://pypi.org/project/quantile-forest/}{quantile\
 \subsection{Kernel quantile regression}
 Kernel quantile regression had no previously implemented Python open source library, thus, the need of implementing our own version.
 \\
-The scikit-learn team provides a project template for the creation of estimators compatible with scikit-learn functionalities. Therefore, the KQR class is derived from the scikit-learn BaseEstimator and the mixin class RegressorMixin.
+The scikit-learn team provides a project template for the creation of custom estimators compatible with scikit-learn functionalities. Therefore, the KQR class is derived from the scikit-learn BaseEstimator and the mixin class RegressorMixin.
 Our KQR class is initialised by providing a quantile, the regularisation term $C$, the kernel family and its corresponding hyperparameters.
 \\
 In the fit method, we set up and solve the convex optimisation problem through the interior point algorithm. This algorithm is taken from the cvxopt library, see its official manual \citeW{vandenberghe2010cvxopt} for a reference.

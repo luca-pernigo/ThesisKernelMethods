@@ -249,7 +249,7 @@ The ground concept underlying this method is successive halving. During the firs
 
 \subsection{Cross validation for time series data}
 When data points are dependent on preceding values, we cannot use standard $K$-fold cross validation. The rationale is that $K$-fold will randomise the order of the data, thus it might happen to use future data to predict the past; we want to avoid such behaviour in a time series setting. 
-When carrying out out any kind of cross validation, we must keep consistency in the way we evaluate our predictors during model selection and in the way we perform evaluation of the test data.
+When carrying out any kind of cross validation, we must keep consistency in the way we evaluate our predictors during model selection and in the way we perform evaluation of the test data.
 Hence, for time series crossvalidation we have the timeseries split procedure, see Figure \ref{fig:crossvalidationtimeseries} for a visualisation. The blue observations make up the training sets while the orange observations form the test sets.
 \begin{figure}
     \includegraphics[width=\textwidth]{images/crossvalidationtimeseries.png}
@@ -321,7 +321,7 @@ The whole code for the project is hosted on its
 \begin{itemize}
     \item query/: folder containing Scopus data and scripts to generate bibliometric survey plots in Section \ref{literature_review}. Database queries have been taken from \cite{nowotarski}.
     \item thesis/: folder containing tex files for thesis pdf.
-    \item beamer/: folder containing tex files for beamer pptx %pptx thesis defence.
+    \item beamer/: folder containing tex files for beamer pptx. %pptx thesis defence.
     \item experiments: folder containing train, test script for each of the experiments carried out in the thesis alongside with the binary files of the pickled models.
     \item experiments/src/kernel\_quantile\_regression/kqr.py: file implementing our custom kernel quantile regression.
     \item experiments/Data: cleaned data used in our experimental studies.

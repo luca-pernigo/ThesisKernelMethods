@@ -67,7 +67,7 @@ He et al.\ \cite{he2022cooperative} models multistep wind speed probabilistic fo
 Wan et al.\ \cite{wan2016direct} proposes a combination of QR and extreme learning machine (ELM) to generate non parametric probabilistic forecasts of wind generation.
 Zhang et al.\ \cite{zhang2019wind} forecasts wind speed by adopting QRMGM, which is a combination of QR with a minimal gated memory network.
 Hyndman et al.\ \cite{hyndman1996estimating} explains kernel estimator of conditional density, analyses its asymptotic behaviour and covers an application for the daily temperatures of Melbourne.
-Kaur et al.\ \cite{kaur2022energy} carries out a comparative study of techniques spanning ideas from statistic and artificial intelligence.
+Kaur et al.\ \cite{kaur2022energy} carries out a comparative study of techniques spanning ideas from statistics and artificial intelligence.
 Van der Meer et al.\ \cite{van2018review} provides another thorough analysis of the probabilistic forecasting realm by covering recent advances and identifying research gaps.
 The IEEE Power and Energy Society provides also insightful lecture notes on probabilistic energy forecasting methodologies,
 implementations, and applications \citeW{gm_22}.
@@ -129,7 +129,7 @@ In 1938, Schoenberg \cite{schoenberg} developed the mathematical results that al
 In 1941, Kolmogorov \cite{kolmogorov} carried out stuides on representing kernels in linear spaces.
 In 1950, Aronszajn \cite{aronszajn} published the first work on reproducing kernel Hilbert spaces (RKHS); developing the general method for representing kernels in linear spaces.
 In 1964, Aizerman \cite{aizerman} further improved the theory of RKHS.
-It was in the 1990s that the theory of kernel methods got popular, particularly in the field of machine learning. Kernels have been used in various different tasks such as support vector machines (SVM) \cite{vapnik1} \cite{vapnik2}, Gaussian process classifiers \cite{williams}, spline methods \cite{wahba}, neural networks \cite{poggio} and principal component analysis \cite{pca_scholkopf}.
+It was in the 1990s that the theory of kernel methods got popular, particularly in the field of machine learning. Kernels have been used in various different tasks such as support vector machines (SVM) \cite{vapnik1, vapnik2}, Gaussian process classifiers \cite{williams}, spline methods \cite{wahba}, neural networks \cite{poggio} and principal component analysis \cite{pca_scholkopf}.
 Nevertheless kernel methods received very little attention in the specific setting of EF literature.
 
 The kernel theory needed for this thesis work is covered in Section \ref{kernel_theory}. 
@@ -138,7 +138,7 @@ For an introduction to kernel methods, we refer to \cite{learning_with_kernels, 
 Kanagawa et Fukumizu introduces to the concept of kernel mean embedding \cite{pmlr}. Muandet et al.\ \cite{Muandet_2017} surveys established results and new advances in the theory of Hilbert space distribution embeddings. 
 It has to be said that, computing and storing such embeddings becomes prohibitive for large scale settings. Rudi et al.\ \cite{2022nystrom} proposes an efficient approximation procedure based on the Nyström method \cite{nystrom}, providing also an upper bound for the approximation error.
 Another example of the applicability of kernel methods is \cite{supersamples}. In that paper, Smola et al.\ kernelize the herding algorithm introduced in \cite{welling2009herding,welling2009herding,Welling2010}. The original herding algorithm converts empirical moments into a sequence of pseudo-samples approximating the probability density function (PDF) of the observed random variable. Its weakness is that it can only take a finite number of features and this limits its expressive power.
-Smola et al.\ overcome this by translating the algorithm into the framework of kernels.
+Smola et al.\ overcomes this by translating the algorithm into the framework of kernels.
 
 % Smola et al. \cite{supersamples} presents kernel herding; basically, the authores used the kernel trick to extend the herding algorithm to continous spaces. The result is an infinite memory deterministic process that takes in a collection of samples and learns to approximate a probability density function (PDF).
 

@@ -45,7 +45,8 @@ $$
 \end{aligned}
 $$
 
-While $k([2,4], [8,9])=(16+36)^2=2704$
+while $$k([2,4], [8,9])=(16+36)^2=2704$$
+
 We can see that the latter calculation is much quicker and compact.
 This gives a taste of how powerful kernels are thanks to the kernel trick.
 Indeed, the idea of the the kernel trick can be extended to feature maps
@@ -57,7 +58,7 @@ number of features of the data points.
 Subsequently, we introduce the definitions that make up the basis for the theory of kernel methods.
 
 \begin{definition}
-    A sequence $\{v_n\}_{n=1}^{\infty}$ of elements of a normed vector space $\mathcal{V}$ is a Cauchy sequence if for every $\epsilon>0$, there exist $N=N(\epsilon) \in \mathbb{N}$ such that $\|v_n-v_m\|_{\mathcal{V}}<\epsilon \ \ \forall m,n\geq N$  
+    A sequence $\{v_n\}_{n=1}^{\infty}$ of elements of a normed vector space $\mathcal{V}$ is a Cauchy sequence if for every $\epsilon>0$, there exists $N=N(\epsilon) \in \mathbb{N}$ such that $\|v_n-v_m\|_{\mathcal{V}}<\epsilon \ \ \forall m,n\geq N$  
 \end{definition}
 
 \begin{definition}
@@ -280,7 +281,7 @@ Furthermore, note that $k(\cdot, x)$ is itself a function lying in it
     z^\intercal aK z&= a z^\intercal K z \geq 0
     \end{aligned}
     $$
-    Let $K=K_1 \otimes K_2$, we have that the eigenvalues of $K$ are made up by the product pairs of the eigenvalues of $K_1$ and $K_2$. Thus, $K$ is positive semidefinite. Next, the matrix given by $k_1 \cdot k_2$ corresponds to the Schur product of $K_1$ and $K_2$, denote it $H$. Notice, $H$ is a principal submatrix of $K$, hence for any $z \in \mathbb{R}^n$ there exist a $t \in \mathbb{R}^{n^2}$ such that $z^\intercal H z= t^\intercal K t$. Using the fact that K is positive semidefinite we have that for any $z$, it holds 
+    Let $K=K_1 \otimes K_2$, we have that the eigenvalues of $K$ are made up by the product pairs of the eigenvalues of $K_1$ and $K_2$. Thus, $K$ is positive semidefinite. Next, the matrix given by $k_1 \cdot k_2$ corresponds to the Schur product of $K_1$ and $K_2$, denote it $H$. Notice, $H$ is a principal submatrix of $K$, hence for any $z \in \mathbb{R}^n$ there exists a $t \in \mathbb{R}^{n^2}$ such that $z^\intercal H z= t^\intercal K t$. Using the fact that K is positive semidefinite we have that for any $z$, it holds 
     $$
     \begin{aligned}
         z^\intercal H z= t^\intercal K t\geq 0
@@ -303,9 +304,9 @@ Table \ref{tab:kernel types} contains popular kernel families in literature and 
        Gaussian RBF &  $k(x,y)=\exp\left(-\frac{\|x-y\|_{2}^2}{2 l^2}\right)$ &   $l$\\
        Exponential RBF/Laplacian& $k(x,y)=\exp\left(-\frac{\|x-y\|_{2}}{l}\right)$ &   $l$\\
        Absolute Laplacian& $k(x,y)=\exp\left(-\frac{\|x-y\|_{1}}{l}\right)$ &   $l$\\
-       Hyperbolic/Sigmoid Kernel &  $k(x,y2)=\tanh(\gamma x^\intercal y+r)$ &  $\gamma$, r \\
+       Hyperbolic/Sigmoid &  $k(x,y)=\tanh(\gamma x^\intercal y+r)$ &  $\gamma$, r \\
        Periodic &  $k(x,y)=\exp\left(\frac{-2 sin^2\left(\frac{\pi}{p}\|x-y\|_{2} \right)}{l^2}\right) $ &   $p, l$\\
-       Chi-squared kernel &  $k(x,y)=\exp\left(-\gamma \sum\limits_i \frac{(x_i - y_i)^2}{x_i+y_i}\right) $ &   $\gamma$\\
+       Chi-squared &  $k(x,y)=\exp\left(-\gamma \sum\limits_i \frac{(x_i - y_i)^2}{x_i+y_i}\right) $ &   $\gamma$\\
         Cosine  &  $k(x,y)=\frac{x^\intercal y}{\|x\|_{2}\|y\|_{2}}$ &   \\
        Matern  &  $k(x, y) =  \frac{1}{\Gamma(\nu)2^{\nu-1}}\Bigg(
         \frac{\sqrt{2\nu}}{l} \|x-y|\|_{2}

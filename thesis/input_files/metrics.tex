@@ -1,7 +1,7 @@
 Proper evaluation methods guide researchers in choosing the model that best fits their needs. This chapter is dedicated to the most common evaluation metrics adopted by academics in the field of electricity forecasting. Error metrics and measures vary depending on whether we are concerned with point or probabilistic forecasts. Additionally, note that the latter can take different forms which therefore requires different measures.
 \section{Mean absolute error}\label{mae}
 Consider the time series with actual values given by $y=(y_{n+1}, y_{n+2},\dots, y_{n+h})$
-and its $h$ step ahead point forecast $\hat{y}=(\hat{y}_{n+1}, \hat{y}_{n+2},\dots, \hat{y}_{n+h})$ the mean absolute error (MAE) is defined as
+and its $h$ step ahead point forecast $\hat{y}=(\hat{y}_{n+1}, \hat{y}_{n+2},\dots, \hat{y}_{n+h})$
 \begin{definition}
     The mean absolute error is defined as
     $$
@@ -62,8 +62,8 @@ The pinball score or quantile score is used to measure the accuracy of a quantil
     $$
     \mathrm{Pinball}(y_{t},\hat{y}_{t,q},q)=
 \begin{cases}
-(q-1)(\hat{y}_{t,q}-y_{t}) & y_t > \hat{y}_{t,q} \\
-q(\hat{y}_{t,q}-y_t) & y_t \leq \hat{y}_{t,q}
+q(y_{t}-\hat{y}_{t,q}) & y_t > \hat{y}_{t,q} \\
+-(q-1)(y_{t}-\hat{y}_{t,q}) & y_t \leq \hat{y}_{t,q}
 \end{cases}
 $$
 \end{definition}
@@ -109,7 +109,7 @@ The better the estimated cumulative density function is the smaller the total CR
     \caption{CRPS integral \cite{haben2023core}}
     \label{fig:crps}
   \end{figure}
-It is worth noting, that the CRPS integral can be rewritten in terms of expectations. This makes its evaluation easier, since we know that the sample mean converges to the expectation for sufficiently big sample sizes by the law of large numbers. This was first pointed out by \cite{proper_scores}, where the authors take advantage of Lemma 2.2 of \cite{new_multi_test2} or equivalently identity (17) of \cite{new_multi_tes1}.
+It is worth noting, that the CRPS integral can be rewritten in terms of expectations. This makes its evaluation easier, since we know that the sample mean converges to the expectation for sufficiently big sample sizes by the law of large numbers. This was first pointed out by \cite{proper_scores}, where the authors take advantage of \cite[Lemma 2.2]{new_multi_test2} or equivalently of \cite[Identity (17)]{new_multi_tes1}.
 \\
 \begin{lemma}
     Let $X_1$, $X_2$, $Y_1$, $Y_2$ be independent real random variables with finite expectations. Let $X_1,X_2$ be identically distributed with distribution function $F$ and let $Y_1,Y_2$ be identically distributed with distribution function $G$. Then
