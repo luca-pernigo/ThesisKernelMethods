@@ -354,7 +354,7 @@ What can be concluded from this first study is that kernel quantile regression e
 \subsection{Kernel function choice}
 This section analyses which kernel function best fits to the characteristics of the load data.
 The kernel functions considered are: Gaussian RBF, Absolute Laplacian, Matern 0.5, Matern 1.5, Matern 2.5, Linear, Periodic, Polynomial, Sigmoid, and Cosine. 
-Details concerning the hyperparameter selection for the different kernels can be found in \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics.pairwise}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/modules/classes.html#module-sklearn.gaussian_process}{sklearn.gaussian\_process}.
+Details concerning the hyperparameter selection for the different kernels can be found in \href{https://scikit-learn.org/stable/api/sklearn.metrics.html}{sklearn.metrics.pairwise} and \href{https://scikit-learn.org/stable/api/sklearn.gaussian_process.html}{sklearn.gaussian\_process.kernels}.
 The pool of data for this study has been created by combining \href{https://zenodo.org/records/7907883}{SECURES-Met} data (predictors) \cite{Formayer2023} and the load data from \href{https://www.energy-charts.info/index.html?l=en&c=DE}{energy charts}.
 SECURES-Met data consists of historical data up to the end of $2020$ while from 2021 onward, the data consists of forecasts modelled by the European Centre for Medium-Range Weather Forecasts (ECMWF).
 Therefore, in this experimental study, we used the whole data of $2020$ as the training set and then tested our kernels on the $2021$ data.
