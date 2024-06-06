@@ -144,12 +144,3 @@ plt.yticks(np.arange(10, 45+1, 5))
 plt.savefig(f"experiments/plots/melbourne_{ktype}_kernel_quantile_regression.png")
 plt.show()
 
-
-#    Linear qr     Gbm qr      Quantile forest  Kernel qr rbf gaussian   Laplacian   Rbf gaussian x laplacian
-#    11.278895     10.317612   10.370558        10.031708                10.056884   10.150826       
-
-#    Cosine       Linear       Polynomial       Sigmoid                 Chi Squared  Matern     
-#    16.253973    10.463867    11.238393        16.253973               10.023732       10.021369  
-
-#    Periodic
-#    15.946272         
