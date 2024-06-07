@@ -141,7 +141,7 @@ The model is depicted in Figure \ref{fig:svm_simple}. The grey band is called th
 Smola et al.\ \cite{smola2004tutorial} points out that considering the dual formulation makes our optimisation problem easier to solve. Doing so, we have the equivalent optimisation problem
 \begin{equation}
     \begin{aligned}
-        \max_{\lambda_i, \lambda_i^*} \quad& -\frac{1}{2}\sum\limits_{i,j=1}^n(\lambda_i-\lambda_i^*)(\lambda_j-\lambda_j^*)\langle x_i,x_j\rangle +\sum\limits_{i=1}^n(\lambda_i-\lambda_i^*)(y_i-\epsilon)
+        \max_{\lambda_i, \lambda_i^*} \quad& -\frac{1}{2}\sum\limits_{i,j=1}^n(\lambda_i-\lambda_i^*)(\lambda_j-\lambda_j^*)\langle x_i,x_j\rangle +\sum\limits_{i=1}^n(\lambda_i-\lambda_i^*)y_i-\epsilon \sum\limits_{i=1}^n(\lambda_i+\lambda_i^*)
         \\
         s.t. \quad& \sum\limits_{i=1}^n(\lambda_i-\lambda_i^*)=0
         \\
@@ -308,7 +308,7 @@ We have then, that $\hat{\alpha}=(K+\tau I)^{-1}y$. It follows that the solution
 Support vector regression (SVR) can be kernelized by swapping the $\mathbb{R}^n$ Euclidean inner product of $x$ with the inner product in the higher feature space $\mathcal{H}$. Doing so, the optimisation problem can be restated as
 \begin{equation}
     \begin{aligned}
-        \max_{\lambda_i, \lambda_i^*} \quad& -\frac{1}{2}\sum\limits_{i,j=1}^n(\lambda_i-\lambda_i^*)(\lambda_i-\lambda_i^*)k(x_i, x_j)+\sum\limits_{i=1}^n(y_i-\epsilon)(\lambda_i-\lambda_i^*)
+        \max_{\lambda_i, \lambda_i^*} \quad& -\frac{1}{2}\sum\limits_{i,j=1}^n(\lambda_i-\lambda_i^*)(\lambda_j-\lambda_j^*)k(x_i, x_j)+\sum\limits_{i=1}^n(\lambda_i-\lambda_i^*)y_i-\epsilon \sum\limits_{i=1}^n(\lambda_i+\lambda_i^*)
         \\
         s.t. \quad& \sum\limits_{i=1}^n(\lambda_i-\lambda_i^*)=0
         \\
